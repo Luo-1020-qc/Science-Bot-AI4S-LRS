@@ -1,0 +1,319 @@
+{
+  "project_root": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent",
+  "archive_root": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28",
+  "moves": [
+    {
+      "source": "RUT_Science/delivery/policy_checkpoint",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\models\\retained_delivery_checkpoint",
+      "reason": "retain_all_existing_checkpoint_material_inside_harness"
+    },
+    {
+      "source": "RUT_Science/outputs",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\outputs",
+      "reason": "historical_material_outside_harness_workspace"
+    },
+    {
+      "source": "RUT_Science/delivery",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\delivery",
+      "reason": "historical_material_outside_harness_workspace"
+    },
+    {
+      "source": "maintenance",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\maintenance",
+      "reason": "historical_material_outside_harness_workspace"
+    },
+    {
+      "source": "RUT_Science/docs",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\docs",
+      "reason": "historical_material_outside_harness_workspace"
+    },
+    {
+      "source": "LangGraph_RL_demo_规划.md",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\historical_documents\\LangGraph_RL_demo_规划.md",
+      "reason": "merged_into_current_progress_and_usage_documents"
+    },
+    {
+      "source": "science_Bot_交付.md",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\historical_documents\\science_Bot_交付.md",
+      "reason": "merged_into_current_progress_and_usage_documents"
+    },
+    {
+      "source": "science_Bot_交接.md",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\historical_documents\\science_Bot_交接.md",
+      "reason": "merged_into_current_progress_and_usage_documents"
+    },
+    {
+      "source": "阶段性总结1.md",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\historical_documents\\阶段性总结1.md",
+      "reason": "merged_into_current_progress_and_usage_documents"
+    },
+    {
+      "source": "阶段性总结2_2026-10-27.md",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\historical_documents\\阶段性总结2_2026-10-27.md",
+      "reason": "merged_into_current_progress_and_usage_documents"
+    },
+    {
+      "source": "RUT_Science/README.md",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\README.md",
+      "reason": "application_readme_merged_into_root_navigation"
+    },
+    {
+      "source": "RUT_Science/scripts/audit_science_bot_artifacts.py",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\scripts\\audit_science_bot_artifacts.py",
+      "reason": "historical_delivery_and_standalone_scientific_launchers"
+    },
+    {
+      "source": "RUT_Science/scripts/demo_planner_graph.py",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\scripts\\demo_planner_graph.py",
+      "reason": "historical_delivery_and_standalone_scientific_launchers"
+    },
+    {
+      "source": "RUT_Science/scripts/package_science_bot_delivery.py",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\scripts\\package_science_bot_delivery.py",
+      "reason": "historical_delivery_and_standalone_scientific_launchers"
+    },
+    {
+      "source": "RUT_Science/scripts/package_science_workspace_update.py",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\scripts\\package_science_workspace_update.py",
+      "reason": "historical_delivery_and_standalone_scientific_launchers"
+    },
+    {
+      "source": "RUT_Science/scripts/report_science_bot_delivery.py",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\scripts\\report_science_bot_delivery.py",
+      "reason": "historical_delivery_and_standalone_scientific_launchers"
+    },
+    {
+      "source": "RUT_Science/scripts/reproduce_science_bot.py",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\scripts\\reproduce_science_bot.py",
+      "reason": "historical_delivery_and_standalone_scientific_launchers"
+    },
+    {
+      "source": "RUT_Science/scripts/Run-PlanningAgent.ps1",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\scripts\\Run-PlanningAgent.ps1",
+      "reason": "historical_delivery_and_standalone_scientific_launchers"
+    },
+    {
+      "source": "RUT_Science/scripts/Run-ResearchAgent.ps1",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\scripts\\Run-ResearchAgent.ps1",
+      "reason": "historical_delivery_and_standalone_scientific_launchers"
+    },
+    {
+      "source": "RUT_Science/scripts/verify_g1_delivery.py",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\scripts\\verify_g1_delivery.py",
+      "reason": "historical_delivery_and_standalone_scientific_launchers"
+    },
+    {
+      "source": "RUT_Science/scripts/verify_g2_1_delivery.py",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\scripts\\verify_g2_1_delivery.py",
+      "reason": "historical_delivery_and_standalone_scientific_launchers"
+    },
+    {
+      "source": "RUT_Science/scripts/verify_g2_delivery.py",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\scripts\\verify_g2_delivery.py",
+      "reason": "historical_delivery_and_standalone_scientific_launchers"
+    },
+    {
+      "source": "RUT_Science/scripts/verify_live_runs.py",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\scripts\\verify_live_runs.py",
+      "reason": "historical_delivery_and_standalone_scientific_launchers"
+    },
+    {
+      "source": "RUT_Science/scripts/verify_model_output_update.py",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\scripts\\verify_model_output_update.py",
+      "reason": "historical_delivery_and_standalone_scientific_launchers"
+    },
+    {
+      "source": "RUT_Science/scripts/verify_p1p2_delivery.py",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\scripts\\verify_p1p2_delivery.py",
+      "reason": "historical_delivery_and_standalone_scientific_launchers"
+    },
+    {
+      "source": "RUT_Science/scripts/verify_planning_delivery.py",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\scripts\\verify_planning_delivery.py",
+      "reason": "historical_delivery_and_standalone_scientific_launchers"
+    },
+    {
+      "source": "RUT_Science/scripts/verify_research_chat.py",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\scripts\\verify_research_chat.py",
+      "reason": "historical_delivery_and_standalone_scientific_launchers"
+    },
+    {
+      "source": "RUT_Science/scripts/verify_science_bot_delivery.py",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\scripts\\verify_science_bot_delivery.py",
+      "reason": "historical_delivery_and_standalone_scientific_launchers"
+    },
+    {
+      "source": "RUT_Science/scripts/verify_v030_delivery.py",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\scripts\\verify_v030_delivery.py",
+      "reason": "historical_delivery_and_standalone_scientific_launchers"
+    },
+    {
+      "source": "RUT_Science/research/strategy_learning/studies/g2_2/evidence/pre_consolidation",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\research\\strategy_learning\\studies\\g2_2\\evidence\\pre_consolidation",
+      "reason": "superseded_document_snapshots_or_regenerable_test_runs"
+    },
+    {
+      "source": "RUT_Science/research/strategy_learning/studies/g2_2/current_test_outputs",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\research\\strategy_learning\\studies\\g2_2\\current_test_outputs",
+      "reason": "superseded_document_snapshots_or_regenerable_test_runs"
+    },
+    {
+      "source": "RUT_Science/research/strategy_learning/studies/g2_2/test_outputs",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\research\\strategy_learning\\studies\\g2_2\\test_outputs",
+      "reason": "superseded_document_snapshots_or_regenerable_test_runs"
+    },
+    {
+      "source": "RUT_Science/research/strategy_learning/studies/g2_2/README_本轮交付.md",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\research\\strategy_learning\\studies\\g2_2\\README_本轮交付.md",
+      "reason": "study_delivery_documents_merged_into_progress"
+    },
+    {
+      "source": "RUT_Science/research/strategy_learning/studies/g2_2/标注指南.md",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\research\\strategy_learning\\studies\\g2_2\\标注指南.md",
+      "reason": "study_delivery_documents_merged_into_progress"
+    },
+    {
+      "source": "RUT_Science/research/strategy_learning/studies/g2_3/evidence/pre_consolidation",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\research\\strategy_learning\\studies\\g2_3\\evidence\\pre_consolidation",
+      "reason": "superseded_document_snapshots_or_regenerable_test_runs"
+    },
+    {
+      "source": "RUT_Science/research/strategy_learning/studies/g2_3/current_test_outputs",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\research\\strategy_learning\\studies\\g2_3\\current_test_outputs",
+      "reason": "superseded_document_snapshots_or_regenerable_test_runs"
+    },
+    {
+      "source": "RUT_Science/research/strategy_learning/studies/g2_3/test_outputs",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\research\\strategy_learning\\studies\\g2_3\\test_outputs",
+      "reason": "superseded_document_snapshots_or_regenerable_test_runs"
+    },
+    {
+      "source": "RUT_Science/research/strategy_learning/studies/g2_3/cache",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\research\\strategy_learning\\studies\\g2_3\\cache",
+      "reason": "superseded_document_snapshots_or_regenerable_test_runs"
+    },
+    {
+      "source": "RUT_Science/research/strategy_learning/studies/g2_3/README_本轮交付.md",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\research\\strategy_learning\\studies\\g2_3\\README_本轮交付.md",
+      "reason": "study_delivery_documents_merged_into_progress"
+    },
+    {
+      "source": "RUT_Science/research/strategy_learning/studies/g2_4/evidence/documents_before",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\research\\strategy_learning\\studies\\g2_4\\evidence\\documents_before",
+      "reason": "superseded_document_snapshots_or_regenerable_test_runs"
+    },
+    {
+      "source": "RUT_Science/research/strategy_learning/studies/g2_4/current_test_outputs",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\research\\strategy_learning\\studies\\g2_4\\current_test_outputs",
+      "reason": "superseded_document_snapshots_or_regenerable_test_runs"
+    },
+    {
+      "source": "RUT_Science/research/strategy_learning/studies/g2_4/README_本轮交付.md",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\RUT_Science\\research\\strategy_learning\\studies\\g2_4\\README_本轮交付.md",
+      "reason": "study_delivery_documents_merged_into_progress"
+    },
+    {
+      "source": "Training_Data_Darcy_CViT/v2/tool_runtime/sessions",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\Training_Data_Darcy_CViT\\v2\\tool_runtime\\sessions",
+      "reason": "historical_synthetic_sessions_not_training_inputs"
+    },
+    {
+      "source": "Research_Tool_Library/test_fixture",
+      "destination": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28\\Research_Tool_Library\\test_fixture",
+      "reason": "regenerable_test_fixture"
+    }
+  ],
+  "deletes": [
+    {
+      "source": "Training_Data_Darcy_CViT/v1",
+      "reason": "explicitly_retired_v1_dataset_and_duplicate_compatibility_tree"
+    },
+    {
+      "source": "Training_Data_Darcy_CViT/tasks",
+      "reason": "explicitly_retired_v1_dataset_and_duplicate_compatibility_tree"
+    },
+    {
+      "source": "Training_Data_Darcy_CViT/episodes",
+      "reason": "explicitly_retired_v1_dataset_and_duplicate_compatibility_tree"
+    },
+    {
+      "source": "Training_Data_Darcy_CViT/labels",
+      "reason": "explicitly_retired_v1_dataset_and_duplicate_compatibility_tree"
+    },
+    {
+      "source": "Training_Data_Darcy_CViT/evaluator_only",
+      "reason": "explicitly_retired_v1_dataset_and_duplicate_compatibility_tree"
+    },
+    {
+      "source": "Training_Data_Darcy_CViT/review",
+      "reason": "explicitly_retired_v1_dataset_and_duplicate_compatibility_tree"
+    },
+    {
+      "source": "Training_Data_Darcy_CViT/examples",
+      "reason": "explicitly_retired_v1_dataset_and_duplicate_compatibility_tree"
+    },
+    {
+      "source": "Training_Data_Darcy_CViT/schemas",
+      "reason": "explicitly_retired_v1_dataset_and_duplicate_compatibility_tree"
+    },
+    {
+      "source": "Training_Data_Darcy_CViT/reference_copy",
+      "reason": "explicitly_retired_v1_dataset_and_duplicate_compatibility_tree"
+    },
+    {
+      "source": "Training_Data_Darcy_CViT/tests",
+      "reason": "explicitly_retired_v1_dataset_and_duplicate_compatibility_tree"
+    },
+    {
+      "source": "Training_Data_Darcy_CViT/build_examples.py",
+      "reason": "explicitly_retired_v1_dataset_and_duplicate_compatibility_tree"
+    },
+    {
+      "source": "Training_Data_Darcy_CViT/dataset_lib.py",
+      "reason": "explicitly_retired_v1_dataset_and_duplicate_compatibility_tree"
+    },
+    {
+      "source": "Training_Data_Darcy_CViT/manifest.json",
+      "reason": "explicitly_retired_v1_dataset_and_duplicate_compatibility_tree"
+    },
+    {
+      "source": "Training_Data_Darcy_CViT/schemas.py",
+      "reason": "explicitly_retired_v1_dataset_and_duplicate_compatibility_tree"
+    },
+    {
+      "source": "Training_Data_Darcy_CViT/validate.py",
+      "reason": "explicitly_retired_v1_dataset_and_duplicate_compatibility_tree"
+    },
+    {
+      "source": "Training_Data_Darcy_CViT/validation.json",
+      "reason": "explicitly_retired_v1_dataset_and_duplicate_compatibility_tree"
+    },
+    {
+      "source": "Training_Data_Darcy_CViT/validation_tests.log",
+      "reason": "explicitly_retired_v1_dataset_and_duplicate_compatibility_tree"
+    },
+    {
+      "source": "Training_Data_Darcy_CViT/project_integrity.json",
+      "reason": "explicitly_retired_v1_dataset_and_duplicate_compatibility_tree"
+    },
+    {
+      "source": "Training_Data_Darcy_CViT/prepare_v2.py",
+      "reason": "explicitly_retired_v1_dataset_and_duplicate_compatibility_tree"
+    },
+    {
+      "source": "Training_Data_Darcy_CViT/字段与训练流程.md",
+      "reason": "retired_v1_field_guide_superseded_by_v2_and_expert_handoff"
+    },
+    {
+      "source": "Training_Data_Darcy_CViT/v2/v1_snapshot.json",
+      "reason": "retired_v1_migration_inventory"
+    },
+    {
+      "source": "Training_Data_Darcy_CViT/v2/original_root_names.json",
+      "reason": "retired_v1_migration_inventory"
+    }
+  ],
+  "protected_file_count": 1781,
+  "weight_file_count": 1642,
+  "architecture_file_count": 161
+}

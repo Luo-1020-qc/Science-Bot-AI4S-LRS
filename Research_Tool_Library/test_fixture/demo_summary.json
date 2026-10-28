@@ -347,9 +347,9 @@
         "freeze_ref": "26c792a720ce8d99de0e07f27297f40fdcf6301bbff9ed82aae856fba02f7e54"
       },
       "result": {
-        "job_ref": null,
-        "status": "none",
-        "reused": false
+        "job_ref": "ff26a50f1adc7080113ee0831bc62ae6dedf30548a90bb515f293197d9a8ab3d",
+        "status": "mock_completed",
+        "reused": true
       }
     },
     {
@@ -361,7 +361,7 @@
       "result": {
         "job_ref": "ff26a50f1adc7080113ee0831bc62ae6dedf30548a90bb515f293197d9a8ab3d",
         "status": "mock_completed",
-        "reused": false
+        "reused": true
       }
     },
     {

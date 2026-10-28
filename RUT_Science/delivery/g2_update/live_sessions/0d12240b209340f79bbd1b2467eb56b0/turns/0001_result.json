@@ -1,7 +1,0 @@
-{
-  "intent": "clarify",
-  "questions": [
-    "请明确研究问题、response 响应列、unit 实验单位列、数据来源 provenance、样本依据 sampling_note，并选择 independent（因素列与两个水平）、paired（按单位匹配的两个水平）或 prediction（数值特征列表）。可以用 /design {ExperimentSpec JSON} 提交完整规格；先生成草案，/confirm 后才执行。"
-  ],
-  "answer": "尚未创建实验草案。\n请明确研究问题、response 响应列、unit 实验单位列、数据来源 provenance、样本依据 sampling_note，并选择 independent（因素列与两个水平）、paired（按单位匹配的两个水平）或 prediction（数值特征列表）。可以用 /design {ExperimentSpec JSON} 提交完整规格；先生成草案，/confirm 后才执行。"
-}

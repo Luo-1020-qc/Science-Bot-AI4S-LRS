@@ -49,6 +49,6 @@ test_unanswered_question_cannot_be_treated_as_user_unable_to_answer (test_protoc
 test_unsupported_scope_requires_its_public_scope_record (test_protocol.ScoringTests.test_unsupported_scope_requires_its_public_scope_record) ... ok
 
 ----------------------------------------------------------------------
-Ran 49 tests in 2.218s
+Ran 49 tests in 2.370s
 
 OK

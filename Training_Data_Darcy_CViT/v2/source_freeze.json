@@ -1,5 +1,5 @@
 {
-  "version": "tool_harness_rl_v2",
+  "version": "tool_harness_rl_v2_cleaned_layout",
   "sha256": {
     "v2/build_dataset.py": "db4bedfdb74fb27e2c1eb11ef20c08966b54898f65e561569b6c85d78e28125e",
     "v2/environment.py": "3f5ffcdb83b1e789f6d050b5f1632e5f5296eaa3b7b7d4656c57987d0f06b32e",
@@ -9,20 +9,15 @@
     "v2/protocol.py": "a6752c742109b7ccd8026a810a72d69ba30e6f161db94834441f03c08891a276",
     "v2/schema_export.py": "ce5f596bafbb6aebb3b7406a14189f7d07a225d3d8b8aba7c6c3efe14409382a",
     "v2/validate.py": "61f15a97cd7b8eda1bad473b27f69470cd9149ec22c35aaed4184837c333c0be",
-    "v2/verify_delivery.py": "af197b5e324146f4f5506394312e78794a1633039f89a35bb0088d9f6a8b3604",
+    "v2/verify_delivery.py": "af476c7472e110f8b6f7969da00599060713c2414d3c647248cabdbbca98a5ce",
     "v2/tests/test_rl_data.py": "1e7923c8a5c549d49741464963892a5e3f9eb80729a3f9ce6f7ea1fd1b7dce5d",
     "v2/tool_runtime/catalog.py": "b50231667247bbb9514fd2f0f7548d16b35764c6119acd9994732646522623b2",
     "v2/tool_runtime/core.py": "4e15ce989d9aa7c1491e210c17b3b8839f9a7084ab95252ad722e5f7e4258f54",
     "v2/tool_runtime/doe_adapter.py": "6f34aaf5869ee91f1c368fcd5d6cd1e22286d90c7c22bd49b94d954a37feb78c",
-    "prepare_v2.py": "8975a512c2dc849ed71f760238e67a7a512f07b77e09f84062d0af92ce6789c9",
-    "validate_current.py": "ef840496c483dbbf7035dfb420f8cdab090e586b1c85231b60a60c8291d4471e",
-    "v2/schemas/ppo_transition.schema.json": "4b983621861eb53e9bc25da58ad6e70c378ef6cdb428ca7c85d15ae5abb2881f",
-    "v2/schemas/review_fields.schema.json": "e2102d02fe717b85132ee991106ab344ae43a2a6e06e218836f79332155a69c4",
-    "v2/schemas/task.schema.json": "4a9811b1fa8b94365b1705c8008796f2e3cbcdf524280652488826a1ee74bda5",
-    "v2/tool_runtime/source_manifest.json": "7fc0f104d8993c5c8e6281e10f1ba93a84f49c35ac4a3b59e527d4ee17f9be66"
+    "validate_current.py": "ef840496c483dbbf7035dfb420f8cdab090e586b1c85231b60a60c8291d4471e"
   },
   "environment_hash": "3f5ffcdb83b1e789f6d050b5f1632e5f5296eaa3b7b7d4656c57987d0f06b32e",
   "reward_protocol_hash": "a6752c742109b7ccd8026a810a72d69ba30e6f161db94834441f03c08891a276",
   "catalog_hash": "60b008e967a4ea98c61ad1e20560ac3362f2d3ca13a8b583dae2438a59f6c63e",
-  "scope": "Local reproducibility hashes; not a cryptographic signature or proof of scientific validity"
+  "scope": "Current source inventory; original policies and training environment retained byte-for-byte"
 }

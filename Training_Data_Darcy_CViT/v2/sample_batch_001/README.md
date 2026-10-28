@@ -9,6 +9,7 @@
 | 文件 | 内容与使用方式 |
 |---|---|
 | [tasks.jsonl](tasks.jsonl) | 3个完整任务，每行一个JSON对象 |
+| **[tasks_展开注释.jsonc](tasks_展开注释.jsonc)** | 3个任务逐字段换行，带中文注释；供阅读，训练仍读取原JSONL |
 | [Darcy任务](tasks/sample001_darcy_block_repair_v1.json) | 易读版：遗漏区组模型→复核→修正→模拟结论 |
 | [CViT任务](tasks/sample001_cvit_interaction_repair_v1.json) | 易读版：架构×学习率，需要交互模型 |
 | [停止任务](tasks/sample001_cvit_variance_unavailable_v1.json) | 方差缺失→询问→用户无法提供→有依据停止 |
@@ -23,6 +24,8 @@
 | [PPO结果](ppo_run_001/verification.json)／[批次验收](verification.json) | 概率、critic值、状态链与训练兼容性证据 |
 
 ## 审批字段的准确含义
+
+`tasks_展开注释.jsonc`与原任务逐对象一致。JSONL要求每行一个完整任务，因此训练源保持单行；展开版用JSONC数组并添加注释。运行`export_annotated.py`可从原JSONL重新生成并检查二者一致。若修改展开版，需另行转换、导入和预检，不能直接将其作为JSONL传给加载器。
 
 任务的`expert_review.status=approved`用于兼容当前批准任务扩展加载器；reviewer明确为`automated_synthetic_fixture_author_NOT_A_HUMAN_EXPERT`，reason明确仅批准作为合成兼容性夹具。**这不表示真人完成科学审批。**本批次不得计入真人标注库或科学设计准确率。
 
@@ -48,4 +51,4 @@
 
 可用于学习工具选择、顺序、有限模型修正、复核和停止；可作为后续专家任务的格式示例。它不训练DeepSeek参数，不生成任意工具参数，不自动扩充真实科学数据，也不进行正式多轮选模。3个任务沿用训练来源A，不能算成3个新独立来源，更不能用于证明泛化。
 
-本批次新增文件位于独立目录，随项目Git仓库交付；基础v1／v2数据、冻结权重及在线入口未改动。本地API key仍由Git忽略。
+本批次位于独立目录，随项目Git仓库交付；现有v2数据、冻结权重及在线入口未改动。弃用v1已在工作区清理时删除，本地API key仍由Git忽略。

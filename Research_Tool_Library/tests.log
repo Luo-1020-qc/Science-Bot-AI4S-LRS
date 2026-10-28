@@ -20,6 +20,6 @@ test_workflow_cycle_or_bad_output_reference_is_rejected (test_library.ToolLibrar
 test_workflow_is_ordered_with_tool_parameter_bindings (test_library.ToolLibraryTests.test_workflow_is_ordered_with_tool_parameter_bindings) ... ok
 
 ----------------------------------------------------------------------
-Ran 20 tests in 16.578s
+Ran 20 tests in 17.386s
 
 OK

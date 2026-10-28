@@ -39,6 +39,6 @@ test_tampered_context_and_source_hash_rejected (test_review.ReviewTests.test_tam
 test_well_formed_review_validates_without_claiming_verified_human_identity (test_review.ReviewTests.test_well_formed_review_validates_without_claiming_verified_human_identity) ... ok
 
 ----------------------------------------------------------------------
-Ran 39 tests in 0.832s
+Ran 39 tests in 0.746s
 
 OK

@@ -1,7 +1,0 @@
-{
-  "intent": "project_qa",
-  "answer": "model.py 全文共 9 行（SHA-256: fca44705e94baefa1feeb62926f7fd8a32bcbb60893c838b9ec723cf631cd854）。两个常量定义在第 2–3 行：FEATURE_GRID = 5（第 2 行）与 ALPHA = 1.0（第 3 行），从代码本身只能看出它们是模块级数值常量，文件未给出注释说明其具体含义，因此不能断言其用途。predict_mean 函数定义在第 6–9 行：它接收 values，若为空则在第 7–8 行抛出 ValueError(\"values must not be empty\")，否则在第 9 行返回 sum(values) / len(values)，即输入序列的算术平均值。",
-  "evidence_refs": [
-    "model.py:L1-L9#fca44705e94b"
-  ]
-}

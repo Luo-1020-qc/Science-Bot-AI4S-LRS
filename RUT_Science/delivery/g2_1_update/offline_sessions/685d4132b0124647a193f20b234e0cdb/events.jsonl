@@ -1,5 +1,0 @@
-{"kind":"created","payload":{"backend":"offline","engine_version":"general_v1"},"seq":1}
-{"kind":"task_routed","payload":{"intent":"design","reason":"design_interview"},"seq":2}
-{"kind":"design_decision","payload":{"action":"ask:research_question","interview_id":"63c3ced0e2974d6fa03a38752068f588","revision":0,"trace_ref":"design_interviews/63c3ced0e2974d6fa03a38752068f588/turns/0001.json"},"seq":3}
-{"kind":"task_routed","payload":{"intent":"design","reason":"design_interview"},"seq":4}
-{"kind":"design_decision","payload":{"action":"stop","interview_id":"63c3ced0e2974d6fa03a38752068f588","revision":1,"trace_ref":"design_interviews/63c3ced0e2974d6fa03a38752068f588/turns/0002.json"},"seq":5}

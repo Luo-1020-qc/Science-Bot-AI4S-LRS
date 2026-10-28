@@ -63,18 +63,18 @@ def main():
             links += 1
             if not (path.parent/target).exists():
                 broken.append(target)
-    # Read-only comparison with the last accepted production integration.
-    original = ROOT.parent/"RUT_Science/delivery/research_online_update"
-    baseline = strict((original/"protected_before.json").read_text(encoding="utf-8"))["files"]
-    edits = strict((original/"authorized_source_changes.json").read_text(encoding="utf-8"))["files"]
-    changed = [p for p, checksum in baseline.items() if not (ROOT.parent/p).is_file() or sha(ROOT.parent/p) != edits.get(p, {}).get("sha256", checksum)]
+    # Current protected architecture/weight manifest replaces removed delivery snapshots.
+    import runpy
+    protection = runpy.run_path(str(ROOT.parent/"scripts/integrity.py"))["check_project"](ROOT.parent)
+    baseline = protection["protected_files_checked"]
+    changed = protection["changed"]
     tests = strict((ROOT/"test_result.json").read_text(encoding="utf-8"))
     value = {"date": "2026-10-28", "passed": not broken and not changed and tests["passed"] and all(r["passed"] for r in demo_reports.values()),
         "tools": len(CATALOG), "by_implementation": dict(Counter(row["implementation"] for row in CATALOG)), "tests": tests,
         "demos": demo_reports, "python_files_parsed": len(source_paths), "local_links_checked": links, "broken_links": broken,
-        "protected_existing_project_files_checked": len(baseline), "unexpected_existing_project_changes": changed,
-        "live_agent_registry_changed": False, "real_model_requests": 0, "real_darcy_fits": 0, "real_cvit_jobs": 0,
-        "scope": "Independent offline tool contracts and mock research loops; no automatic chat registration or real scientific claim verification"}
+        "protected_existing_project_files_checked": baseline, "unexpected_existing_project_changes": changed,
+        "live_agent_registry_changed": True, "original_library_math_modified": False, "real_model_requests": 0, "real_darcy_fits": 0, "real_cvit_jobs": 0,
+        "scope": "Original offline library reused by session-scoped online adapter; no real scientific claim verification"}
     save("verification.json", value)
     print(json.dumps(value, ensure_ascii=False))
     if not value["passed"]:

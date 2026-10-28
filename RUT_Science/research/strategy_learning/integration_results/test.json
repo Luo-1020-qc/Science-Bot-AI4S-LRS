@@ -5,16 +5,6 @@
       "study": "g2_2",
       "action": "test",
       "exit_code": 0
-    },
-    {
-      "study": "g2_3",
-      "action": "test",
-      "exit_code": 0
-    },
-    {
-      "study": "g2_4",
-      "action": "test",
-      "exit_code": 0
     }
   ],
   "no_training_requested": true,

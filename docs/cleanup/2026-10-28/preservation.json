@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "protected_files_verified": 1781,
+  "weight_related_files_verified": 1642,
+  "architecture_files_verified": 161,
+  "protected_files_in_current_project": 1745,
+  "protected_historical_files_preserved_in_archive": 36,
+  "unexpected_changes": [],
+  "move_entries": 44,
+  "retired_entries_removed": 22,
+  "archive_root": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\ScienceBot_Archive_2026-10-28",
+  "moved_historical_files_hash_verified": 4859,
+  "weights_deleted": 0,
+  "weights_retrained": false,
+  "default_policy_changed": false
+}

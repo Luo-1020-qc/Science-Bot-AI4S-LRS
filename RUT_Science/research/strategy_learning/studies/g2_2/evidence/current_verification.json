@@ -1,26 +1,10 @@
 {
-  "version": "relocated_research_verification_v1",
-  "date": "2026-10-27",
   "study": "g2_2",
   "passed": true,
-  "checks": {
-    "all_original_files_preserved_or_explicitly_adapted": true,
-    "frozen_control_sources_match": true,
-    "selected_policies_match": true,
-    "current_tests_pass": true,
-    "historical_verification_retained": true,
-    "no_live_policy_promotion": true,
-    "no_real_model_calls_or_execution": true
-  },
-  "changed_artifacts": [],
   "tests": 39,
-  "frozen_source_files": 6,
-  "frozen_selected_policies": 3,
-  "historical_root": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace",
-  "current_root": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\research\\strategy_learning\\studies\\g2_2",
-  "scope": "Current relocation validity; historical no-change inventories remain evidence of the original run, not today's project layout",
-  "real_model_calls": 0,
+  "frozen_artifacts_checked": 22,
+  "protected_harness_files_checked": 1745,
+  "policies_retrained": false,
   "real_tool_executions": 0,
-  "real_gpu_jobs": 0,
-  "policies_retrained": false
+  "scope": "Current cleaned layout; original migration baselines remain in external archive"
 }

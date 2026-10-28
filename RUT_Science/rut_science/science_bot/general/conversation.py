@@ -16,7 +16,7 @@ from .adapters.legacy_numeric import prepare_numeric, restore_numeric
 
 ROOT = Path(__file__).resolve().parents[3]
 ENGINE_VERSION = "general_v1"
-DEFAULT_LIMITS = {"llm_requests": 12, "llm_tokens": 60000, "tool_calls": 12, "read_bytes": 24000}
+DEFAULT_LIMITS = {"llm_requests": 12, "llm_tokens": 60000, "tool_calls": 40, "read_bytes": 24000}
 
 
 def numeric_parameters(text):
@@ -63,6 +63,8 @@ class GeneralSession:
         load(self)  # Validate saved interview identity without rewriting history.
         from .research import saved
         saved(self)  # Verify saved research evidence on cross-process restore.
+        from .tool_library import restore as restore_detailed_tools
+        restore_detailed_tools(self)
 
     @classmethod
     def create(cls, base=None, *, backend="api", planner="rl", checkpoint=None,
@@ -159,6 +161,7 @@ class GeneralSession:
     def status(self):
         from .interview.runtime import load, summary
         from .research import summary as research_summary
+        from .tool_library import summary as detailed_summary
         interview = load(self)
         numeric = self.numeric.status() if self.env is not None else {}
         tabular = self.tabular.meta if self.meta["active_task"] == "tabular" and self.tabular else None
@@ -173,10 +176,14 @@ class GeneralSession:
                 "policy_hash": numeric.get("policy_hash"),
                 "interview": summary(interview) if interview else None,
                 "research": research_summary(self),
+                "tool_library": detailed_summary(self),
                 "report_available": bool(self.research_report()), "resources": self.resources(),
                 "last_answer": self.meta["last_answer"], "error": self.meta["error"]}
 
     def research_report(self):
+        if self.meta.get("last_report_kind") == "detailed_tool_library":
+            from .tool_library import report
+            return report(self)
         if self.meta.get("last_report_kind") == "research":
             from .research import saved
             return saved(self)
@@ -299,7 +306,10 @@ class GeneralSession:
         self.meta["active_task"] = intent
         self.emit("task_routed", {"intent": intent, "reason": request["reason"]})
         if intent == "research":
-            from .research import respond
+            if request["reason"] == "explicit_detailed_tool_library":
+                from .tool_library import respond
+            else:
+                from .research import respond
             try:
                 result = respond(self, request["raw_text"], turn)
             except (ValueError, OSError, TypeError, KeyError) as exc:
@@ -341,6 +351,17 @@ class GeneralSession:
         self.save()
         return result
 
+    def execute_library_tool(self, name, arguments, *, key):
+        """Host/training adapter: same registered tools, budgets, artifacts and evidence."""
+        from ...planning_agent import session_lock
+        from .tool_library import execute
+        with self.lock, session_lock(self.folder):
+            if self.meta["phase"] == "running":
+                raise ValueError("Pause the current run before using detailed research tools")
+            if self.pause_requested.is_set() or self.cancel_requested.is_set():
+                raise ValueError("Session tool execution stopped")
+            return execute(self, name, arguments, key)
+
     def _respond(self, request, turn):
         context = {"workspace": self.workspace, "allowed_paths": set(request["input_paths"]),
                    "max_read_bytes": self.limits["read_bytes"], "remaining_read_bytes": self.limits["read_bytes"]}
@@ -376,6 +397,7 @@ class GeneralSession:
                   "DOE只支持两处理CRD/RCBD和2x2全因子，检查通过仅表示可审阅，专家标签仍为0，"
                   "不得把策略模拟、条件功效或设计草案称为真实科研结果，也不能将研究策略设为默认。"
                   "尚未提供CViT训练、源码编辑或shell工具；讨论建议不代表这些工具已可执行。")
+        system += "20个详细离线研究工具已接入本Harness，显式使用/tools chat <任务>可由模型规划调用，/tools call可直接调用，/tools list查看状态；并不授权真实实验。"
         if project_qa:
             system += ("必须先调用适用的项目工具获取证据。只能读取用户明确选择的文件："+canonical(request["input_paths"])+
                 "。需要其他内容时询问用户，不得自行扩大范围。最终 content 必须为 JSON 对象，"

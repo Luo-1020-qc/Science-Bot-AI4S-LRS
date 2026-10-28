@@ -1,7 +1,0 @@
-{
-  "status": "failed",
-  "atomic": true,
-  "fixture": true,
-  "error": "fixture_pre_call_unavailable",
-  "used_cu": 0.25
-}

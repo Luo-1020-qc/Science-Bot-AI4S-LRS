@@ -10,6 +10,14 @@ from .contracts import ToolSpec
 def _validate(value, schema, label="arguments"):
     """Validate the deliberately small JSON-schema subset used by G1 tools."""
     kind = schema.get("type")
+    if isinstance(kind, list):
+        for choice in kind:
+            try:
+                _validate(value, {**schema, "type": choice}, label)
+                return
+            except ValueError:
+                pass
+        raise ValueError(f"Invalid {label}: no supported union type matches")
     valid = {"object": lambda v: type(v) is dict, "array": lambda v: type(v) is list,
              "string": lambda v: type(v) is str, "integer": lambda v: type(v) is int,
              "number": lambda v: type(v) in {int, float} and math.isfinite(v),
@@ -173,6 +181,8 @@ class ToolRegistry:
             register_tabular(self)
             from .research import register
             register(self)
+            from .tool_library import register as register_detailed_tools
+            register_detailed_tools(self)
 
     def register(self, spec, handler):
         if not isinstance(spec, ToolSpec) or not callable(handler):

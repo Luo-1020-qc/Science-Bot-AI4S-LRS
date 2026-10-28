@@ -1,0 +1,15 @@
+{
+  "sha256": {
+    "RUT_Science/rut_science/science_bot/general/registry.py": "1787619c71d10c276e52d8e20d4f546ae7c9ff3abc585323b3beeff258197b04",
+    "RUT_Science/rut_science/science_bot/general/router.py": "3f0dff1388216505bdc38a530bd22b2b3caaca613af16121b0655f375a667ddf",
+    "RUT_Science/rut_science/science_bot/general/conversation.py": "db2b393df200f1e0a0f9eaf0538f167b22560ce73b7c589b5d6be87b747769b5",
+    "RUT_Science/rut_science/science_bot/terminal.py": "3ec78cc38145783a1eb8845f9f1b90d9185ee735baeb38bbbbab0cf480f243ee",
+    "RUT_Science/rut_science/science_bot/general/tool_library.py": "7bb8f33af0329ed0e8052e3fd00980b4e7da737cf9b9608d7055630bca8e2378",
+    "Research_Tool_Library/online_worker.py": "7517fcc4c293116e708067320de0566028d5178a660581c11dd1df9c3027e212",
+    "Research_Tool_Library/core.py": "f8eba0e7ba9dbec2290bbd6e6d83882e1d3f562629ac1f6daae66310feaf1c18",
+    "Research_Tool_Library/catalog.py": "e6a13e3bc4fd9c377c13d472d487f33e763ea3ac411580618498edaa28b0fbff",
+    "Research_Tool_Library/doe_adapter.py": "043f688571c345f3a587733cc97b40318f48a92906e4a5ca5af92bfda098e5c0",
+    "Research_Tool_Library/tool_catalog.json": "2e54b9163a74cfe1533c796435cf90db078ed52e3211c278fe28e79baa503179"
+  },
+  "training_runtime_copies_modified": false
+}

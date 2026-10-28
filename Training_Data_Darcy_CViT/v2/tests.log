@@ -22,6 +22,6 @@ test_unknown_variance_cannot_use_template_default_to_pass_review (test_rl_data.R
 test_unobserved_future_unavailability_cannot_reward_stop (test_rl_data.RLDataTests.test_unobserved_future_unavailability_cannot_reward_stop) ... ok
 
 ----------------------------------------------------------------------
-Ran 22 tests in 7.362s
+Ran 22 tests in 6.595s
 
 OK

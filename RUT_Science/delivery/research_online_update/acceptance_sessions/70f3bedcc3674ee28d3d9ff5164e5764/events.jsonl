@@ -1,4 +1,0 @@
-{"kind":"created","payload":{"backend":"api","engine_version":"general_v1"},"seq":1}
-{"kind":"task_routed","payload":{"intent":"research","reason":"explicit_research_interface"},"seq":2}
-{"kind":"task_routed","payload":{"intent":"research","reason":"explicit_research_interface"},"seq":3}
-{"kind":"general_tool_result","payload":{"evidence_ref":"tool_b5a9d2bcbcf78656","result_ref":"tool_results/4c1db5cc7635d92fa9d152d074ffff03c09a0c0398f8019cdf296c96fb81a3f7.json","tool":"research_interface"},"seq":4}

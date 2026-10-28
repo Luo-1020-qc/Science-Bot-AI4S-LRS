@@ -120,6 +120,9 @@ def _paths(text, workspace):
 
 
 def route_request(text, workspace=None):
+    from .tool_library import recognizes as detailed_command, natural_command as detailed_natural
+    if isinstance(text, str) and (detailed_command(text) or detailed_natural(text)):
+        return TaskRequest(detailed_natural(text) or text, "research", reason="explicit_detailed_tool_library")
     if not isinstance(text, str) or not text.strip() or len(text) > 20000:
         return TaskRequest(str(text)[:20000], "clarify", questions=["请描述希望回答的问题或执行的具体任务。"], reason="missing_or_oversized_request")
     text = text.strip()

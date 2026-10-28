@@ -230,8 +230,15 @@ class IsolationTests(unittest.TestCase):
     def test_copied_fixtures_match_source_hashes_without_loading_live_code(self):
         from lab.guard import file_hash
         records = json.loads((LAB/"evidence/copied_files.json").read_text(encoding="utf-8"))
+        before = json.loads((PROJECT/"docs/cleanup/2026-10-28/inventory_before.json").read_text(encoding="utf-8"))["files"]
         self.assertGreater(records["count"], 10)
         for row in records["files"]:
             self.assertEqual(file_hash(LAB/row["copy"]), row["sha256"])
-            self.assertEqual(file_hash(Path(row["source"])), row["sha256"])
+            # The original source path may be an archived phase document. Check
+            # its independently recorded pre-cleanup digest, plus current source
+            # bytes when that source still belongs to the portable project.
+            relative = row["source"].replace("\\", "/").split("/LangGraph_RL_Agent/", 1)[1]
+            self.assertEqual(before[relative]["sha256"], row["sha256"])
+            if (PROJECT/relative).is_file():
+                self.assertEqual(file_hash(PROJECT/relative), row["sha256"])
         self.assertFalse(any(name == "rut_science" or name.startswith("rut_science.") for name in sys.modules))

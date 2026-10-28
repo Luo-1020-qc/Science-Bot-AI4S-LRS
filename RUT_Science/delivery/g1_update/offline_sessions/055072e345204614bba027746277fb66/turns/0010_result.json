@@ -1,7 +1,0 @@
-{
-  "intent": "project_qa",
-  "answer": "离线模式只展示实际文件片段，不生成模型解释。\n\nmodel.py:L1-L9#fca44705e94b\n\"\"\"Small public fixture for the G1 project-question acceptance run.\"\"\"\nFEATURE_GRID = 5\nALPHA = 1.0\n\n\ndef predict_mean(values):\n    if not values:\n        raise ValueError(\"values must not be empty\")\n    return sum(values) / len(values)\n",
-  "evidence_refs": [
-    "model.py:L1-L9#fca44705e94b"
-  ]
-}

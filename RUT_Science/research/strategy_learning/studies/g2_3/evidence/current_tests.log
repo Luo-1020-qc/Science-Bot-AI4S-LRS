@@ -37,6 +37,6 @@ test_oom_and_unknown_facts_are_not_missed_execution_denominator (test_reporting.
 test_selection_freeze_has_not_been_changed_for_reporting_correction (test_reporting.ReportingTests.test_selection_freeze_has_not_been_changed_for_reporting_correction) ... ok
 
 ----------------------------------------------------------------------
-Ran 37 tests in 4.734s
+Ran 37 tests in 4.949s
 
 OK

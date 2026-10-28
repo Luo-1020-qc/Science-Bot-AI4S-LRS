@@ -1,5 +1,0 @@
-{
-  "revalidated_from_saved_response": true,
-  "resource_scope": "pre-explanation counts; final totals in report.json",
-  "reason": "accept rounding at displayed decimal precision"
-}

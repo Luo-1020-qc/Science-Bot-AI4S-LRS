@@ -23,6 +23,8 @@ from .general.interview.runtime import COMMANDS as INTERVIEW_COMMANDS
 from .general.research import COMMANDS as RESEARCH_COMMANDS
 COMMANDS += sorted(INTERVIEW_COMMANDS)
 COMMANDS += sorted(RESEARCH_COMMANDS)
+from .general.tool_library import COMMANDS as DETAILED_COMMANDS
+COMMANDS += sorted(DETAILED_COMMANDS)
 
 
 def plain_model_text(value):
@@ -125,6 +127,10 @@ def banner(console, session):
 
 def show_status(console, session):
     status = session.status()
+    detailed = status.get("tool_library", {}).get("state")
+    if status.get("active_task") == "research" and detailed and detailed.get("calls"):
+        console.print(Panel(Text(f"Phase: {status['phase']}\nMode: detailed offline tools\nRegistered: 20 implemented / 45 contracts\nCalls: {detailed['calls']}\nScenario: {detailed['scenario']}\nReferences: {', '.join(detailed['refs'])}\nExecution: not authorized"), title="detailed tool library", border_style="cyan"))
+        return
     if status.get("active_task") == "research":
         research = status["research"]
         console.print(Panel(Text(f"Phase: {status['phase']}\nMode: research / simulation only\nStudies: G2.2 / G2.3 / G2.4\nDefault interview policy: rule\nLatest: {research['latest']}\nExecution: not authorized"), title="research workspace", border_style="cyan"))
@@ -260,7 +266,7 @@ async def interactive(args):
                     console.print(Panel("\n".join(COMMANDS)+"\n\n/workspace: current project and state directory\n/files [glob]: list project files\n/read <path>: display UTF-8 text locally (not sent to the model)\n/design <project-relative JSON file or JSON>: prepare a G2 tabular design draft\n/model-output [list|number]: replay saved model output locally; no new calls\n\nAsk a question, explicitly select a file for model analysis, or describe a registered experiment.\nAPI file questions send bounded selected snippets; CSV planning sends column metadata, not numeric rows. /read remains local.\nOffline mode supports local file excerpts, CSV profiles, structured G2 designs and generated / Darcy experiments.\nG2: independent Welch, paired t, mean/OLS prediction. /confirm executes the reviewed draft.\nUnknown tasks do not start a default experiment. Use --resume <session-folder> after restarting.", title="commands"))
                 elif command == "/status":
                     show_status(console, session)
-                elif command in RESEARCH_COMMANDS:
+                elif command in RESEARCH_COMMANDS or command in DETAILED_COMMANDS:
                     if running:
                         console.print("Pause the current run before opening research tools."); continue
                     response = await asyncio.to_thread(session.message, line)

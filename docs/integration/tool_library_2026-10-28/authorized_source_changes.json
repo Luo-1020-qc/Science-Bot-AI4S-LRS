@@ -1,0 +1,24 @@
+{
+  "files": {
+    "RUT_Science/rut_science/science_bot/general/registry.py": {
+      "before_sha256": "578c8511dac6083cc3e1fe3322e0e2ccd4946be930a2e6f4c74512d40bc97470",
+      "sha256": "1787619c71d10c276e52d8e20d4f546ae7c9ff3abc585323b3beeff258197b04",
+      "reason": "User authorized integrating implemented detailed offline tools in the existing Harness; no real execution or default learned-policy promotion"
+    },
+    "RUT_Science/rut_science/science_bot/general/router.py": {
+      "before_sha256": "a4cd5925fa82ac45728f54caebd6fa91a32313bb05612cddd33a40fa4e1d10b6",
+      "sha256": "3f0dff1388216505bdc38a530bd22b2b3caaca613af16121b0655f375a667ddf",
+      "reason": "User authorized integrating implemented detailed offline tools in the existing Harness; no real execution or default learned-policy promotion"
+    },
+    "RUT_Science/rut_science/science_bot/general/conversation.py": {
+      "before_sha256": "d4ed44b9ea8fedd29663378e86d26efdde0baa682423ef76cfa43418de75ff00",
+      "sha256": "db2b393df200f1e0a0f9eaf0538f167b22560ce73b7c589b5d6be87b747769b5",
+      "reason": "User authorized integrating implemented detailed offline tools in the existing Harness; no real execution or default learned-policy promotion"
+    },
+    "RUT_Science/rut_science/science_bot/terminal.py": {
+      "before_sha256": "49c5663fa9ae13c7b25a12c6a5471f840def06a1a76e6c31952fe012bba1a50e",
+      "sha256": "3ec78cc38145783a1eb8845f9f1b90d9185ee735baeb38bbbbab0cf480f243ee",
+      "reason": "User authorized integrating implemented detailed offline tools in the existing Harness; no real execution or default learned-policy promotion"
+    }
+  }
+}

@@ -90,9 +90,12 @@ def check(root, git):
         if run(prefix+["ls-files", "--", "API_key_Agent.json"], cwd=root).strip():
             raise ValueError("Local credential file is tracked")
         key_ignored = True
-    snapshot = json.loads((root/"Training_Data_Darcy_CViT/v2/v1_snapshot.json").read_text(encoding="utf-8"))["files"]
-    for path, checksum in snapshot.items():
-        if sha(root/"Training_Data_Darcy_CViT/v1"/path) != checksum: raise ValueError("v1 archive changed")
+    import runpy
+    protected = runpy.run_path(str(root/"scripts/integrity.py"))["check_project"](root)
+    dataset = root/"Training_Data_Darcy_CViT/v2"
+    manifest = json.loads((dataset/"manifest.json").read_text(encoding="utf-8"))
+    for path, checksum in manifest["artifact_sha256"].items():
+        if sha(dataset/path) != checksum: raise ValueError("Current v2 dataset changed: "+path)
     runtime = root/"Training_Data_Darcy_CViT/v2/tool_runtime"
     for record in json.loads((runtime/"source_manifest.json").read_text(encoding="utf-8")):
         if sha(runtime/record["copy"]) != record["copy_sha256"] or sha(root/"Research_Tool_Library"/record["copy"]) != record["source_sha256"]:
@@ -100,7 +103,8 @@ def check(root, git):
     preview = run([sys.executable, "-B", "-m", "rut_science", "science", "--backend", "offline", "--preview"], cwd=root/"RUT_Science")
     if "Bot" not in preview: raise ValueError("Terminal preview missing")
     return {"passed": True, "local_links_checked": link_count, "credential_ignored_and_untracked": key_ignored,
-        "v1_archive_files_checked": len(snapshot), "frozen_research_artifacts_checked": check_frozen(root),
+        "current_v2_artifacts_checked": len(manifest["artifact_sha256"]), "protected_harness_files_checked": protected["protected_files_checked"],
+        "frozen_research_artifacts_checked": check_frozen(root),
         "terminal_preview": True, "research_checks": worker_checks(root), "network_or_model_api_calls": 0,
         "real_scientific_executions": 0, "training_requested": False}
 
@@ -117,7 +121,7 @@ def main():
         if not git: raise ValueError("Git is needed to enumerate the shareable file set")
         names = run([git, "-c", "core.excludesFile=NUL", "-c", "core.quotePath=false", "ls-files", "--cached", "--others", "--exclude-standard", "-z"]).split("\0")
         names = sorted({name for name in names if name})
-        folder = ROOT/"maintenance/git_project_2026-10-28/relocation_smoke"/uuid.uuid4().hex[:12]
+        folder = ROOT/".local/relocation_smoke"/uuid.uuid4().hex[:12]
         folder.mkdir(parents=True, exist_ok=False)
         for name in names:
             source, target = ROOT/name, folder/name
@@ -134,7 +138,7 @@ def main():
     after_key = sha(ROOT/"API_key_Agent.json") if (ROOT/"API_key_Agent.json").exists() else None
     if before_key != after_key: raise ValueError("Local key file changed")
     result["local_api_key_unchanged"] = True
-    target = ROOT/"maintenance/git_project_2026-10-28/checks/repository_check.json"
+    target = ROOT/".local/checks/repository_check.json"
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(json.dumps(result, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
     print(json.dumps(result, ensure_ascii=False))

@@ -26,18 +26,21 @@ dist/
 Thumbs.db
 
 # Local sessions and bulk execution data; frozen research evidence stays tracked.
+/.local/
+**/current_test_outputs/
+**/test_outputs/
+**/.matplotlib/
 **/.sciencebot/
 /RUT_Science/outputs/
 /RUT_Science/data/darcy*/
 /Research_Tool_Library/sandbox/
+/Research_Tool_Library/test_fixture/
+**/cache/
 /Training_Data_Darcy_CViT/v2/tool_runtime/sessions/
 /Training_Data_Darcy_CViT/v2/ppo_smoke_next*/
 /Training_Data_Darcy_CViT/v2/expert/inbox/
 /Training_Data_Darcy_CViT/v2/expert/imports/
 /Training_Data_Darcy_CViT/v2/tmp*/
-/maintenance/organization_2026-10-21/
-/maintenance/git_project_2026-10-28/relocation_smoke/
-/maintenance/git_project_2026-10-28/checks/
 
 # Distribute the directory / Git repository, not generated archives.
 *.zip

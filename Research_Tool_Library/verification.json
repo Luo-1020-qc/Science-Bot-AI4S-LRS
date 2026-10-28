@@ -39,14 +39,15 @@
       "real_scientific_claim_verified": false
     }
   },
-  "python_files_parsed": 8,
-  "local_links_checked": 5,
+  "python_files_parsed": 9,
+  "local_links_checked": 7,
   "broken_links": [],
-  "protected_existing_project_files_checked": 2034,
+  "protected_existing_project_files_checked": 1745,
   "unexpected_existing_project_changes": [],
-  "live_agent_registry_changed": false,
+  "live_agent_registry_changed": true,
+  "original_library_math_modified": false,
   "real_model_requests": 0,
   "real_darcy_fits": 0,
   "real_cvit_jobs": 0,
-  "scope": "Independent offline tool contracts and mock research loops; no automatic chat registration or real scientific claim verification"
+  "scope": "Original offline library reused by session-scoped online adapter; no real scientific claim verification"
 }

@@ -1,5 +1,0 @@
-{
-  "intent": "research",
-  "answer": "研究接口已接入：G2.2 / G2.3 / G2.4（本地研究模式）。\n/research status | results [g2_2|g2_3|g2_4] | verify [study]\n/research simulate g2_2 [--policy rule|bc] [--seed 21|37|59] [--scenario ordinary_comparison]\n/research simulate g2_3 [--policy rule|bc|bc_ppo|ppo_scratch|feedback_baseline|feedback_ppo] [--domain cvit|tabular] [--scenario existing_running]\n/research compare g2_3 [--seed 21] [--domain cvit] [--scenario existing_running]\n/research review-export g2_2 | review-import g2_2 <工作区内已审阅JSONL路径>\n/doe demo | template [crd_two_arm|rcbd_two_arm|factorial_2x2]\n/doe validate <需求JSON路径> <草案JSON路径>（两个文件须位于绑定工作区）\n/doe validate {\"request\":{...},\"contract\":{...}}（显式结构化输入）\n/doe recheck | status | report | review-export\n/doe review-import <工作区内已审阅JSONL路径>\n默认规则访谈不变。策略仅运行开发集模拟，无真实计算/模型API/GPU/重训。\nDOE通过表示可审阅，未完成专家校准，也不授权实验执行。完整结果保存在当前会话 research/ 下。",
-  "execution_authorized": false
-}

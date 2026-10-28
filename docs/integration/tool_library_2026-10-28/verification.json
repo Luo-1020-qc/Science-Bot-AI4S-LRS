@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-28",
+  "passed": true,
+  "implemented_tools_registered": 20,
+  "catalog_contracts": 45,
+  "existing_terminal_and_http_entry_reused": true,
+  "session_scoped_artifacts": true,
+  "public_training_host_method": "GeneralSession.execute_library_tool",
+  "full_application_tests": {
+    "run": 319,
+    "skipped": 2,
+    "passed": 317
+  },
+  "final_detailed_integration_tests": 11,
+  "http_tests": 4,
+  "darcy_and_cvit_loop_calls_each": 21,
+  "offline_library_tests": 20,
+  "v2_protocol_tests": 22,
+  "ppo_example_records_reverified": 96,
+  "weight_related_files_unchanged": 1642,
+  "protection": {
+    "passed": true,
+    "protected_files_checked": 1745,
+    "authorized_host_changes": 4,
+    "integration_runtime_files_checked": 10,
+    "changed": []
+  },
+  "original_tool_core_and_training_copies_unchanged": true,
+  "default_new_session_tool_budget": 40,
+  "old_session_budgets_unchanged": true,
+  "mock_scenario_hidden_from_policy": true,
+  "actual_deepseek_requests_in_verification": 0,
+  "model_planning_test_method": "Synthetic provider responses; real registered tools, isolated workers and artifacts",
+  "real_scientific_executions": 0,
+  "new_policy_training": false,
+  "default_learned_policy_promoted": false,
+  "committed_or_pushed": false,
+  "active_documentation_links_checked": 51
+}

@@ -1,24 +1,10 @@
 {
-  "version": "g2_4_online_compatibility_v1",
-  "date": "2026-10-27",
   "study": "g2_4",
   "passed": true,
-  "checks": {
-    "frozen_sources_tasks_reviews_retained": true,
-    "protected_files_match_or_authorized_integration": true,
-    "tests_passed": true,
-    "development_reference_checks_pass": true,
-    "heldout_not_scored": true
-  },
   "tests": 49,
-  "changed_original_files": [],
-  "human_expert_labels": 0,
-  "pending_expert_reviews": 42,
-  "development_cases": 42,
+  "frozen_artifacts_checked": 17,
+  "protected_harness_files_checked": 1745,
+  "policies_retrained": false,
   "real_tool_executions": 0,
-  "real_model_requests": 0,
-  "real_gpu_jobs": 0,
-  "policy_training": false,
-  "live_policy_promotion": false,
-  "scope": "Current app integration explicitly changes listed host sources; original no-change report is preserved in online delivery/historical_before"
+  "scope": "Current cleaned layout; original migration baselines remain in external archive"
 }

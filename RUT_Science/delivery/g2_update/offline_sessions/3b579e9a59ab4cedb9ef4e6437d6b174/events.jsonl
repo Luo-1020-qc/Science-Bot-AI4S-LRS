@@ -1,8 +1,0 @@
-{"kind":"created","payload":{"backend":"offline","engine_version":"general_v1"},"seq":1}
-{"kind":"task_routed","payload":{"intent":"tabular","reason":"explicit_experiment_spec"},"seq":2}
-{"kind":"general_tool_result","payload":{"evidence_ref":"csv:paired_measurements.csv#300b205b2110","result_ref":"tool_results/cf1059edaccd72d5238d4a86b8b00f072e1f3ed4b20b2925c333cd97b9a804f7.json","tool":"csv_inspect"},"seq":3}
-{"kind":"general_tool_result","payload":{"evidence_ref":"tool_b6c3a3ae98fba0b7","result_ref":"tool_results/6a93e9fe126e32cd60845aa49ba526f624dbef3e944ea7235a189e939ccf85dc.json","tool":"prepare_tabular_experiment"},"seq":4}
-{"kind":"general_tool_result","payload":{"evidence_ref":"tool_1522cfd2795e52c7","result_ref":"tool_results/54f29482848f3bc6b668c8a333e8d19e9ee93bcf553cfa01641d16b68bcd19af.json","tool":"tabular_compare"},"seq":5}
-{"kind":"tabular_step","payload":{"experiment_id":"e62248b43d844408967e09581b3f6005","node":"compare","result_ref":"nodes/compare.json"},"seq":6}
-{"kind":"general_tool_result","payload":{"evidence_ref":"tool_e0996101b9c7e7f7","result_ref":"tool_results/d3aa30c07340ebd5a6762be30c93761ec94bbd0776fdab769ef29365c949d51a.json","tool":"tabular_report"},"seq":7}
-{"kind":"tabular_step","payload":{"experiment_id":"e62248b43d844408967e09581b3f6005","node":"report","result_ref":"nodes/report.json"},"seq":8}
