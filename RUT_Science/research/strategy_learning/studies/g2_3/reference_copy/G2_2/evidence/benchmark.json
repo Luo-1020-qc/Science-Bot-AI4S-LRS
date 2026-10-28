@@ -1,0 +1,381 @@
+{
+  "version": "g2_2_benchmark_v1",
+  "heldout": {
+    "context_rule_v2": {
+      "tasks": 96,
+      "success_rate": 1.0,
+      "design_correct_rate": 0.5,
+      "appropriate_stop_rate": 0.625,
+      "missed_execution_count": 0,
+      "blocked_execution_attempts": 0,
+      "real_execution_count": 0,
+      "real_model_calls": 0,
+      "mean_questions": 3.34375,
+      "mean_redundant_questions": 0.0,
+      "mean_unanswerable_questions": 0.125,
+      "mean_decisions": 7.34375,
+      "mean_mock_calls": 1.25,
+      "mean_rejected_designs": 0.0,
+      "mean_return": 2.2734375,
+      "by_scenario": {
+        "paired_revocation": {
+          "tasks": 12,
+          "successes": 12,
+          "mean_questions": 4.75
+        },
+        "prediction_goal_correction": {
+          "tasks": 12,
+          "successes": 12,
+          "mean_questions": 3.6666666666666665
+        },
+        "missing_read_denied": {
+          "tasks": 12,
+          "successes": 12,
+          "mean_questions": 1.0
+        },
+        "paired_unknown_source": {
+          "tasks": 12,
+          "successes": 12,
+          "mean_questions": 3.4166666666666665
+        },
+        "paired_conflict": {
+          "tasks": 12,
+          "successes": 12,
+          "mean_questions": 4.083333333333333
+        },
+        "temporal_prediction": {
+          "tasks": 12,
+          "successes": 12,
+          "mean_questions": 1.1666666666666667
+        },
+        "prediction_transient": {
+          "tasks": 12,
+          "successes": 12,
+          "mean_questions": 4.333333333333333
+        },
+        "comparison_confirmation_denied": {
+          "tasks": 12,
+          "successes": 12,
+          "mean_questions": 4.333333333333333
+        }
+      },
+      "interpretation": "Synthetic task episodes and reused templates; descriptive pilot, not a population-generalization estimate"
+    },
+    "slot_order_ablation": {
+      "tasks": 96,
+      "success_rate": 0.25,
+      "design_correct_rate": 0.125,
+      "appropriate_stop_rate": 0.25,
+      "missed_execution_count": 48,
+      "blocked_execution_attempts": 0,
+      "real_execution_count": 0,
+      "real_model_calls": 0,
+      "mean_questions": 5.5625,
+      "mean_redundant_questions": 0.0,
+      "mean_unanswerable_questions": 0.125,
+      "mean_decisions": 19.583333333333332,
+      "mean_mock_calls": 0.875,
+      "mean_rejected_designs": 10.083333333333334,
+      "mean_return": -16.018750000000004,
+      "by_scenario": {
+        "paired_revocation": {
+          "tasks": 12,
+          "successes": 0,
+          "mean_questions": 5.75
+        },
+        "prediction_goal_correction": {
+          "tasks": 12,
+          "successes": 0,
+          "mean_questions": 5.166666666666667
+        },
+        "missing_read_denied": {
+          "tasks": 12,
+          "successes": 12,
+          "mean_questions": 7.25
+        },
+        "paired_unknown_source": {
+          "tasks": 12,
+          "successes": 12,
+          "mean_questions": 3.4166666666666665
+        },
+        "paired_conflict": {
+          "tasks": 12,
+          "successes": 0,
+          "mean_questions": 5.166666666666667
+        },
+        "temporal_prediction": {
+          "tasks": 12,
+          "successes": 0,
+          "mean_questions": 6.0
+        },
+        "prediction_transient": {
+          "tasks": 12,
+          "successes": 0,
+          "mean_questions": 6.25
+        },
+        "comparison_confirmation_denied": {
+          "tasks": 12,
+          "successes": 0,
+          "mean_questions": 5.5
+        }
+      },
+      "interpretation": "Synthetic task episodes and reused templates; descriptive pilot, not a population-generalization estimate"
+    },
+    "random_legal": {
+      "tasks": 96,
+      "success_rate": 0.17708333333333334,
+      "design_correct_rate": 0.010416666666666666,
+      "appropriate_stop_rate": 0.17708333333333334,
+      "missed_execution_count": 65,
+      "blocked_execution_attempts": 0,
+      "real_execution_count": 0,
+      "real_model_calls": 0,
+      "mean_questions": 5.895833333333333,
+      "mean_redundant_questions": 3.8333333333333335,
+      "mean_unanswerable_questions": 0.11458333333333333,
+      "mean_decisions": 9.135416666666666,
+      "mean_mock_calls": 0.28125,
+      "mean_rejected_designs": 0.34375,
+      "mean_return": -3.7359375,
+      "by_scenario": {
+        "paired_revocation": {
+          "tasks": 12,
+          "successes": 0,
+          "mean_questions": 3.3333333333333335
+        },
+        "prediction_goal_correction": {
+          "tasks": 12,
+          "successes": 0,
+          "mean_questions": 7.25
+        },
+        "missing_read_denied": {
+          "tasks": 12,
+          "successes": 7,
+          "mean_questions": 7.583333333333333
+        },
+        "paired_unknown_source": {
+          "tasks": 12,
+          "successes": 6,
+          "mean_questions": 6.166666666666667
+        },
+        "paired_conflict": {
+          "tasks": 12,
+          "successes": 0,
+          "mean_questions": 7.916666666666667
+        },
+        "temporal_prediction": {
+          "tasks": 12,
+          "successes": 4,
+          "mean_questions": 4.666666666666667
+        },
+        "prediction_transient": {
+          "tasks": 12,
+          "successes": 0,
+          "mean_questions": 4.333333333333333
+        },
+        "comparison_confirmation_denied": {
+          "tasks": 12,
+          "successes": 0,
+          "mean_questions": 5.916666666666667
+        }
+      },
+      "interpretation": "Synthetic task episodes and reused templates; descriptive pilot, not a population-generalization estimate"
+    },
+    "bc_seed_21": {
+      "tasks": 96,
+      "success_rate": 0.20833333333333334,
+      "design_correct_rate": 0.19791666666666666,
+      "appropriate_stop_rate": 0.125,
+      "missed_execution_count": 41,
+      "blocked_execution_attempts": 0,
+      "real_execution_count": 0,
+      "real_model_calls": 0,
+      "mean_questions": 4.864583333333333,
+      "mean_redundant_questions": 0.0,
+      "mean_unanswerable_questions": 1.4479166666666667,
+      "mean_decisions": 20.09375,
+      "mean_mock_calls": 1.0833333333333333,
+      "mean_rejected_designs": 10.729166666666666,
+      "mean_return": -13.468229166666669,
+      "by_scenario": {
+        "paired_revocation": {
+          "tasks": 12,
+          "successes": 0,
+          "mean_questions": 4.75
+        },
+        "prediction_goal_correction": {
+          "tasks": 12,
+          "successes": 5,
+          "mean_questions": 3.0833333333333335
+        },
+        "missing_read_denied": {
+          "tasks": 12,
+          "successes": 12,
+          "mean_questions": 1.5833333333333333
+        },
+        "paired_unknown_source": {
+          "tasks": 12,
+          "successes": 0,
+          "mean_questions": 14.0
+        },
+        "paired_conflict": {
+          "tasks": 12,
+          "successes": 0,
+          "mean_questions": 4.083333333333333
+        },
+        "temporal_prediction": {
+          "tasks": 12,
+          "successes": 0,
+          "mean_questions": 3.5833333333333335
+        },
+        "prediction_transient": {
+          "tasks": 12,
+          "successes": 3,
+          "mean_questions": 3.5833333333333335
+        },
+        "comparison_confirmation_denied": {
+          "tasks": 12,
+          "successes": 0,
+          "mean_questions": 4.25
+        }
+      },
+      "interpretation": "Synthetic task episodes and reused templates; descriptive pilot, not a population-generalization estimate"
+    },
+    "bc_seed_37": {
+      "tasks": 96,
+      "success_rate": 0.20833333333333334,
+      "design_correct_rate": 0.20833333333333334,
+      "appropriate_stop_rate": 0.125,
+      "missed_execution_count": 40,
+      "blocked_execution_attempts": 0,
+      "real_execution_count": 0,
+      "real_model_calls": 0,
+      "mean_questions": 4.885416666666667,
+      "mean_redundant_questions": 0.0,
+      "mean_unanswerable_questions": 1.4479166666666667,
+      "mean_decisions": 20.09375,
+      "mean_mock_calls": 1.0833333333333333,
+      "mean_rejected_designs": 10.5,
+      "mean_return": -13.241145833333336,
+      "by_scenario": {
+        "paired_revocation": {
+          "tasks": 12,
+          "successes": 0,
+          "mean_questions": 4.75
+        },
+        "prediction_goal_correction": {
+          "tasks": 12,
+          "successes": 5,
+          "mean_questions": 3.0833333333333335
+        },
+        "missing_read_denied": {
+          "tasks": 12,
+          "successes": 12,
+          "mean_questions": 1.5833333333333333
+        },
+        "paired_unknown_source": {
+          "tasks": 12,
+          "successes": 0,
+          "mean_questions": 14.0
+        },
+        "paired_conflict": {
+          "tasks": 12,
+          "successes": 0,
+          "mean_questions": 4.083333333333333
+        },
+        "temporal_prediction": {
+          "tasks": 12,
+          "successes": 0,
+          "mean_questions": 3.6666666666666665
+        },
+        "prediction_transient": {
+          "tasks": 12,
+          "successes": 3,
+          "mean_questions": 3.5833333333333335
+        },
+        "comparison_confirmation_denied": {
+          "tasks": 12,
+          "successes": 0,
+          "mean_questions": 4.333333333333333
+        }
+      },
+      "interpretation": "Synthetic task episodes and reused templates; descriptive pilot, not a population-generalization estimate"
+    },
+    "bc_seed_59": {
+      "tasks": 96,
+      "success_rate": 0.20833333333333334,
+      "design_correct_rate": 0.19791666666666666,
+      "appropriate_stop_rate": 0.125,
+      "missed_execution_count": 41,
+      "blocked_execution_attempts": 0,
+      "real_execution_count": 0,
+      "real_model_calls": 0,
+      "mean_questions": 4.864583333333333,
+      "mean_redundant_questions": 0.0,
+      "mean_unanswerable_questions": 1.4479166666666667,
+      "mean_decisions": 20.09375,
+      "mean_mock_calls": 1.0833333333333333,
+      "mean_rejected_designs": 10.729166666666666,
+      "mean_return": -13.468229166666669,
+      "by_scenario": {
+        "paired_revocation": {
+          "tasks": 12,
+          "successes": 0,
+          "mean_questions": 4.75
+        },
+        "prediction_goal_correction": {
+          "tasks": 12,
+          "successes": 5,
+          "mean_questions": 3.0833333333333335
+        },
+        "missing_read_denied": {
+          "tasks": 12,
+          "successes": 12,
+          "mean_questions": 1.5833333333333333
+        },
+        "paired_unknown_source": {
+          "tasks": 12,
+          "successes": 0,
+          "mean_questions": 14.0
+        },
+        "paired_conflict": {
+          "tasks": 12,
+          "successes": 0,
+          "mean_questions": 4.083333333333333
+        },
+        "temporal_prediction": {
+          "tasks": 12,
+          "successes": 0,
+          "mean_questions": 3.5833333333333335
+        },
+        "prediction_transient": {
+          "tasks": 12,
+          "successes": 3,
+          "mean_questions": 3.5833333333333335
+        },
+        "comparison_confirmation_denied": {
+          "tasks": 12,
+          "successes": 0,
+          "mean_questions": 4.25
+        }
+      },
+      "interpretation": "Synthetic task episodes and reused templates; descriptive pilot, not a population-generalization estimate"
+    }
+  },
+  "models_selected_on": "development_only",
+  "freeze_hash": "19561cc024ba3449a7df6c2c34afe58dd0a4bbd7fbda33fe4aec456290b18660",
+  "training_reference_rows": 1133,
+  "human_expert_labels": 0,
+  "real_tools_connected": false,
+  "real_model_calls": 0,
+  "real_executions": 0,
+  "ppo_trained": false,
+  "heldout_record_load_stage": "after_models_frozen",
+  "no_promotion_to_live_agent": true,
+  "limitations": [
+    "Synthetic scenario templates and scripted users",
+    "BC imitates reference rules, not human-reviewed scientific judgment",
+    "No statistical or training tools executed; metrics concern behavior only",
+    "One frozen task bank, three training seeds; no broad generalization claim"
+  ]
+}

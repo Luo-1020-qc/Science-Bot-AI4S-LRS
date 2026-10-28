@@ -1,0 +1,27 @@
+{
+  "version": "tool_harness_rl_v2",
+  "passed": true,
+  "sampled_transitions": 64,
+  "ppo_batch_updates": 1,
+  "minibatch_gradient_steps": 4,
+  "losses": [
+    12.200884819030762,
+    10.766450881958008,
+    11.631308555603027,
+    11.141030311584473
+  ],
+  "behavior_policy_hash": "c4f903538d7cb36acf094910c04b3f31f592e5b6ac1dfb6d16801f4c3c223394",
+  "updated_policy_hash": "9e8f84d94776e08294ca8f06b939e4be155ac06958e99ccfc51d42e9585b7db2",
+  "parameters_changed": true,
+  "verification": {
+    "records": 64,
+    "all_behavior_log_probs_recomputed": true,
+    "all_values_recomputed": true
+  },
+  "terminated_episodes": 4,
+  "scope": "Mechanical CPU integration smoke, no efficacy or generalization claim",
+  "real_scientific_executions": 0,
+  "real_model_api_requests": 0,
+  "formal_research_training_transitions": 0,
+  "smoke_training_transitions_separately_recorded": 64
+}

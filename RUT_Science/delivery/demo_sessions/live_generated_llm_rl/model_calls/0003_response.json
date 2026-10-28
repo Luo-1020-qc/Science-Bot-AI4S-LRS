@@ -1,0 +1,57 @@
+{
+  "role": "report_explainer_v1",
+  "response": {
+    "schema_version": "report_explainer_v1",
+    "summary": "The run completed validly and passed quality checks under strict execution, terminating with an explicit submit after 2 decisions and 1 tool attempt with no retries. Only one candidate, ridge_full_5_10, was actually observed; it succeeded with a search validation mean of 0.046592746444219596 (std 0.018048377849544033) and was selected. The sealed error was 0.05678283862595852 against a threshold of 0.2. This is a controlled generated regression on a demo split, not a scientific discovery, and the sealed result must not be used for tuning.",
+    "findings": [
+      {
+        "id": "delivery",
+        "statement": "The run is marked valid and complete with termination 'explicit_submit', strict_execution true, and no retries or fixture faults.",
+        "evidence": "verified_report.valid, .complete, .termination, .strict_execution, .retries, .fixture_faults"
+      },
+      {
+        "id": "quality",
+        "statement": "Quality pass is true and scientific_success is true.",
+        "evidence": "verified_report.quality_pass, .scientific_success"
+      },
+      {
+        "id": "observed_candidate",
+        "statement": "Only ridge_full_5_10 (alpha=10.0, feature_grid=5, fidelity=full) was observed; it succeeded with validation mean 0.046592746444219596 and std 0.018048377849544033, and was the selected candidate.",
+        "evidence": "public_evidence_index entry ridge_full_5_10; verified_report.selected, .search_validation_error"
+      },
+      {
+        "id": "unobserved_candidates",
+        "statement": "All other listed candidates (mean and the remaining ridge variants) are marked untried with no validation measurements.",
+        "evidence": "public_evidence_index entries with status 'untried' and observed false"
+      },
+      {
+        "id": "sealed_result",
+        "statement": "The sealed error was 0.05678283862595852, below the threshold of 0.2, with evaluation_reads equal to 1.",
+        "evidence": "verified_report.sealed_error, .threshold, .evaluation_reads"
+      },
+      {
+        "id": "resources",
+        "statement": "Resource use reported: 2 decisions, 1 tool attempt, 2 LLM requests, 2143 LLM tokens, 5.298590600000352 active seconds, search_cu 4.0, finalization_cu 2.",
+        "evidence": "verified_report.resources"
+      },
+      {
+        "id": "provenance",
+        "statement": "Provenance identifies a controlled_generated_regression source on the demo split (instance 11, root_group 30000).",
+        "evidence": "verified_report.provenance"
+      }
+    ],
+    "limitations": [
+      "Only one candidate was observed; no comparative evidence exists for the untried candidates, so no ranking among them can be inferred.",
+      "The task is controlled synthetic regression, not scientific discovery.",
+      "The sealed error is a single evaluation read and must not be used to tune or select candidates.",
+      "No recovery or abstention behavior was exercised: retries were 0 and the run terminated by explicit submit.",
+      "No tool registry entries were provided, so no tool-level claims beyond the reported counts are made.",
+      "Historically exposed Darcy data, if relevant, would be a transfer pilot rather than a blind test; this report does not establish blind-test performance."
+    ],
+    "artifact_refs": [
+      "report.json",
+      "report.md"
+    ]
+  },
+  "response_hash": "069b6048defedbee206d974f876fbf6feb670b73aa485826126a99a2aaff18a2"
+}

@@ -1,0 +1,46 @@
+# Local credentials stay on disk; only API_key_Agent.example.json is shared.
+API_key_Agent.json
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+**/.local_token
+
+# Python / editors / build output
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local sessions and bulk execution data; frozen research evidence stays tracked.
+**/.sciencebot/
+/RUT_Science/outputs/
+/RUT_Science/data/darcy*/
+/Research_Tool_Library/sandbox/
+/Training_Data_Darcy_CViT/v2/tool_runtime/sessions/
+/Training_Data_Darcy_CViT/v2/ppo_smoke_next*/
+/Training_Data_Darcy_CViT/v2/expert/inbox/
+/Training_Data_Darcy_CViT/v2/expert/imports/
+/Training_Data_Darcy_CViT/v2/tmp*/
+/maintenance/organization_2026-10-21/
+/maintenance/git_project_2026-10-28/relocation_smoke/
+/maintenance/git_project_2026-10-28/checks/
+
+# Distribute the directory / Git repository, not generated archives.
+*.zip
+*.7z
+*.tar
+*.tar.gz

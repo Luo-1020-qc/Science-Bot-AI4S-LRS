@@ -1,0 +1,12 @@
+{"kind":"created","payload":{"backend":"offline","engine_version":"general_v1"},"seq":1}
+{"kind":"task_routed","payload":{"intent":"chat","reason":"explanation_only"},"seq":2}
+{"kind":"task_routed","payload":{"intent":"clarify","reason":"unrecognized_request"},"seq":3}
+{"kind":"task_routed","payload":{"intent":"unsupported","reason":"requested_task_or_target_not_registered"},"seq":4}
+{"kind":"task_routed","payload":{"intent":"unsupported","reason":"requested_task_or_target_not_registered"},"seq":5}
+{"kind":"task_routed","payload":{"intent":"numeric","reason":"explicit_registered_numeric_task"},"seq":6}
+{"kind":"task_routed","payload":{"intent":"numeric","reason":"explicit_registered_numeric_task"},"seq":7}
+{"kind":"task_routed","payload":{"intent":"unsupported","reason":"requested_method_not_registered"},"seq":8}
+{"kind":"task_routed","payload":{"intent":"clarify","reason":"numeric_protocol_override_not_supported"},"seq":9}
+{"kind":"task_routed","payload":{"intent":"design","reason":"experimental_design_requires_g2"},"seq":10}
+{"kind":"task_routed","payload":{"intent":"project_qa","reason":"explicit_file_context"},"seq":11}
+{"kind":"general_tool_result","payload":{"evidence_ref":"model.py:L1-L9#fca44705e94b","result_ref":"tool_results/83a73e46e526ea1ac5843e01f9931e544a5f2cebea8e496d0088fde22df5cfc3.json","tool":"project_read"},"seq":12}

@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-28",
+  "passed": true,
+  "tools": 45,
+  "by_implementation": {
+    "offline_implemented": 20,
+    "contract_only": 15,
+    "existing_agent_entry": 2,
+    "existing_via_plan_review": 1,
+    "existing_via_plan_create": 1,
+    "human_review_required": 2,
+    "disabled_real_execution": 4
+  },
+  "tests": {
+    "tests": 20,
+    "passed": true,
+    "failures": 0,
+    "errors": 0
+  },
+  "demos": {
+    "darcy": {
+      "passed": true,
+      "calls": 21,
+      "initial_findings": [
+        "analysis_model"
+      ],
+      "final_status": "supports_direction_under_assumptions",
+      "report_ref": "a8b28629449e4c231fa391951966dd3685f810455eb5b82ea80e00686c78b115",
+      "real_scientific_claim_verified": false
+    },
+    "cvit": {
+      "passed": true,
+      "calls": 21,
+      "initial_findings": [
+        "analysis_model"
+      ],
+      "final_status": "supports_direction_under_assumptions",
+      "report_ref": "483c8b64433e36f89a6d92af12d2f07712c28bb540e3c43153912ed14dab3ed6",
+      "real_scientific_claim_verified": false
+    }
+  },
+  "python_files_parsed": 8,
+  "local_links_checked": 5,
+  "broken_links": [],
+  "protected_existing_project_files_checked": 2034,
+  "unexpected_existing_project_changes": [],
+  "live_agent_registry_changed": false,
+  "real_model_requests": 0,
+  "real_darcy_fits": 0,
+  "real_cvit_jobs": 0,
+  "scope": "Independent offline tool contracts and mock research loops; no automatic chat registration or real scientific claim verification"
+}

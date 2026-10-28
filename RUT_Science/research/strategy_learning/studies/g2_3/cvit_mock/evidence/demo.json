@@ -1,0 +1,19 @@
+{
+  "scenario": "existing_running",
+  "actions": [
+    "cvit:ask:dataset",
+    "cvit:ask:budget",
+    "cvit:inspect",
+    "cvit:choose:pilot",
+    "cvit:draft",
+    "cvit:confirm",
+    "cvit:reconcile",
+    "cvit:poll_mock"
+  ],
+  "success": true,
+  "mock_launches": 0,
+  "existing_job_reused": true,
+  "real_gpu_jobs": 0,
+  "metric": null,
+  "restored_from_saved_state": true
+}

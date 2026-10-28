@@ -1,0 +1,133 @@
+{
+  "files": [
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\examples\\g2\\paired_measurements.csv",
+      "copy": "reference_copy/examples/g2/paired_measurements.csv",
+      "sha256": "300b205b2110f10a20aad79687e0a2e765deb38529ec273d54d5209a251821ba",
+      "bytes": 963
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\examples\\g2\\prediction.csv",
+      "copy": "reference_copy/examples/g2/prediction.csv",
+      "sha256": "119a03a30267d160c67e61d46d71fbe060c3c39529dec0bcd130f63c1654aa15",
+      "bytes": 6297
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\examples\\g2\\two_groups.csv",
+      "copy": "reference_copy/examples/g2/two_groups.csv",
+      "sha256": "c8d22904e456e37a661431a7b598956cdd7c5f9d1d4b05b8ed4b3c26d95c4316",
+      "bytes": 691
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\examples\\g2\\independent_design.json",
+      "copy": "reference_copy/examples/g2/independent_design.json",
+      "sha256": "07a2aeeb777a97120b260724d6f7e30d760362dfd673270a49b36455c6d19f23",
+      "bytes": 548
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\examples\\g2\\paired_design.json",
+      "copy": "reference_copy/examples/g2/paired_design.json",
+      "sha256": "4cec8e68c060599c98a1950871618db3b7722d9c11be02b28fc68c335562c134",
+      "bytes": 571
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\examples\\g2\\prediction_design.json",
+      "copy": "reference_copy/examples/g2/prediction_design.json",
+      "sha256": "4a55fd7ab14ee81c1878a102e47e10076594d7d174d7c53f27ff069e7894a167",
+      "bytes": 560
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\tests\\test_design_interview.py",
+      "copy": "reference_copy/tests/test_design_interview.py",
+      "sha256": "05c14081b40e8acccae9991bbd9e1953879603247bd84de67c40b66a8e1afe2f",
+      "bytes": 14953
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\tests\\test_interview_http.py",
+      "copy": "reference_copy/tests/test_interview_http.py",
+      "sha256": "abab34bae575949384fad32a0f5fe2aec8a35ac81be32625ebb8f8f15b493e24",
+      "bytes": 2712
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\tests\\test_interview_learning.py",
+      "copy": "reference_copy/tests/test_interview_learning.py",
+      "sha256": "da4ca4875daaa48a317c3669ff822bc816f770969cce0593391b8875477be4b8",
+      "bytes": 3838
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\rut_science\\science_bot\\general\\interview\\__init__.py",
+      "copy": "reference_copy/rut_science/science_bot/general/interview/__init__.py",
+      "sha256": "9663efbb1616a5cc86975ef2613d4121738146f1f298d630b8a76475ca023f0d",
+      "bytes": 72
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\rut_science\\science_bot\\general\\interview\\intake.py",
+      "copy": "reference_copy/rut_science/science_bot/general/interview/intake.py",
+      "sha256": "2e280d56d616fdb13594448a100d90f2ac8ff18a6ee50af94ca90023f0597b85",
+      "bytes": 7734
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\rut_science\\science_bot\\general\\interview\\learning.py",
+      "copy": "reference_copy/rut_science/science_bot/general/interview/learning.py",
+      "sha256": "b80d61a8962f2fcd5da2f69de0126f7d5206e7319063908c096003a6b6cd54cf",
+      "bytes": 11792
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\rut_science\\science_bot\\general\\interview\\policy.py",
+      "copy": "reference_copy/rut_science/science_bot/general/interview/policy.py",
+      "sha256": "d38ac43889797d1c1f864e3e396e034495db30cc306de66c0676822043a279fe",
+      "bytes": 5301
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\rut_science\\science_bot\\general\\interview\\runtime.py",
+      "copy": "reference_copy/rut_science/science_bot/general/interview/runtime.py",
+      "sha256": "58931ef67320f4170e58fb7cc811c6a327d9cee367f3b9efccabe4e2a4bcd3f2",
+      "bytes": 17982
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\rut_science\\science_bot\\general\\interview\\state.py",
+      "copy": "reference_copy/rut_science/science_bot/general/interview/state.py",
+      "sha256": "3746c244dc8f80732c6de91d697f0ddd46caa0bc163869caa5943089ed72d86f",
+      "bytes": 6318
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\rut_science\\science_bot\\general\\interview\\validation.py",
+      "copy": "reference_copy/rut_science/science_bot/general/interview/validation.py",
+      "sha256": "c1993841cd74e30e40e8efcde6bd9cea57c0d4791ce4120134a78143f10a9d13",
+      "bytes": 4186
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\tests\\test_tabular_g2.py",
+      "copy": "reference_copy/tests/test_tabular_g2.py",
+      "sha256": "abcab23ddb53188940a36ff6ed154a5d81016824c6c8951c6e47aa3cb0becbe4",
+      "bytes": 19359
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\models\\design_interview_bc\\manifest.json",
+      "copy": "reference_copy/models/design_interview_bc/manifest.json",
+      "sha256": "37ba421926110822c06895f5290a448dc52ec6d3376166796e407f47cd60ea2b",
+      "bytes": 949
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\models\\design_interview_bc\\policy.json",
+      "copy": "reference_copy/models/design_interview_bc/policy.json",
+      "sha256": "a092f4372c41b76ec8d2400c698d32e460c2a6dc0709615f3702993c91e4642e",
+      "bytes": 23144
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\models\\design_interview_bc\\evaluation.json",
+      "copy": "reference_copy/models/design_interview_bc/evaluation.json",
+      "sha256": "9dbaff68dab81e0dba15f5818f3a26dd29bf77c3cea5cfe526eddaa265c3ec75",
+      "bytes": 4068
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\docs\\Science_Bot_G2_1_设计访谈与学习环境_zh.md",
+      "copy": "reference_copy/docs/Science_Bot_G2_1_设计访谈与学习环境_zh.md",
+      "sha256": "c6be7f462dacb8f249825fa1d00fb50c4671ce010e9760e07f8b230511070e9d",
+      "bytes": 10208
+    }
+  ],
+  "count": 21,
+  "copied_code_executed": false,
+  "purpose": "Read-only reference; lab tests never import these modules or register their real tools"
+}

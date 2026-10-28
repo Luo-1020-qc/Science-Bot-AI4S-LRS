@@ -1,0 +1,17 @@
+{
+  "simulated": true,
+  "configurations": {
+    "pilot": {
+      "epochs": 2,
+      "cost": 4,
+      "memory_gb": 4
+    },
+    "full": {
+      "epochs": 20,
+      "cost": 8,
+      "memory_gb": 12
+    }
+  },
+  "job_metrics": null,
+  "real_gpu_execution_allowed": false
+}

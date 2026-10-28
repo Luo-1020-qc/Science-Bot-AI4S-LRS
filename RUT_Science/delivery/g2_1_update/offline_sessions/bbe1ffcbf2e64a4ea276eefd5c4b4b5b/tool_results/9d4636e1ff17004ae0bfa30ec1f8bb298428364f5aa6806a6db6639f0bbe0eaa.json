@@ -1,0 +1,65 @@
+{
+  "answer": "已生成表格实验草案。请检查下列设计与计划，/confirm 后执行。\n问题：同一合成单位before与after的平均差是否为零？\n设计：按实验单位匹配的配对 t 检验\n数据：paired_measurements.csv；来源声明：synthetic\n响应：y；实验单位列：id\n因素：condition；水平：before、after；差值方向为前者减后者。\n方法：paired_t；双侧检验，报告均值差、p值与置信区间。\n保留单位：16；因缺失排除单位：0\n缺失策略：reject；alpha=0.05；seed=42\n样本依据：全部现有合成样本，仅作探索性演示；未进行事先功效计算\n随机化说明：not_applicable\n执行步骤：compare → report；还需2次工具操作。\n来源、独立性和随机化需要依据实际设计核实；结果不自动支持因果结论。\n固定计划执行；数据变化需新草案，失败在工具边界暂停。完整规格和证据保存在实验目录。",
+  "spec": {
+    "data_path": "paired_measurements.csv",
+    "research_question": "同一合成单位before与after的平均差是否为零？",
+    "design": "paired",
+    "response": "y",
+    "unit": "id",
+    "provenance": "synthetic",
+    "sampling_note": "全部现有合成样本，仅作探索性演示；未进行事先功效计算",
+    "factor": "condition",
+    "levels": [
+      "before",
+      "after"
+    ],
+    "features": [],
+    "randomization_note": "not_applicable",
+    "missing_policy": "reject",
+    "alpha": 0.05,
+    "seed": 42,
+    "schema_version": "experiment_spec_v1"
+  },
+  "protocol": {
+    "goal": "two_sided_mean_comparison",
+    "hypothesis": "H0: E[y|before] - E[y|after] = 0",
+    "methods": [
+      "paired_t"
+    ],
+    "metric": "mean_difference, two-sided p, confidence interval",
+    "preprocessing": "no transformation",
+    "split": null,
+    "replication": "distinct declared units; random seed is not an independent replicate",
+    "assumptions": [
+      "independent units; inspect outliers and distributional assumptions",
+      "complete matched units; approximately normal within-unit differences"
+    ],
+    "sample_basis": "全部现有合成样本，仅作探索性演示；未进行事先功效计算",
+    "causal_claim": "not_established; provenance and randomization are user declarations",
+    "stopping": "fixed plan, no hyperparameter search or test feedback",
+    "failure": "pause at tool boundary; repair inputs with a new draft; no silent substitutions"
+  },
+  "plan": {
+    "nodes": [
+      {
+        "id": "compare",
+        "tool": "tabular_compare",
+        "depends_on": []
+      },
+      {
+        "id": "report",
+        "tool": "tabular_report",
+        "depends_on": [
+          "compare"
+        ]
+      }
+    ],
+    "spec_hash": "a9497c3d9ee8b98ac2975f76c2086adaf919841a3cf72bd063b19b2ceb1b0d64",
+    "data_sha256": "300b205b2110f10a20aad79687e0a2e765deb38529ec273d54d5209a251821ba",
+    "schema_version": "execution_plan_v1"
+  },
+  "draft_hash": "711cfe58806757d999d97466c4c630aadbbb7c94a73a5c4593d28eb1e34edffc",
+  "experiment_ref": "experiments/9de5c3d8adc64f1399f6272128deb903",
+  "requires_confirmation": true,
+  "evidence_ref": "tool_ef77a403e40deb63"
+}

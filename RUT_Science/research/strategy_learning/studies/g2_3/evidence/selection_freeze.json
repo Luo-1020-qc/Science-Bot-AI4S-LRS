@@ -1,0 +1,34 @@
+{
+  "stage": "all_policies_selected_before_final_tasks_loaded",
+  "date": "2026-10-26",
+  "training_config_hash": "0ac8d90d6f41c2ae28f3c46fe4d0edd84b7031497ea17bc5a71c77be07c712e7",
+  "bank_seal_hash": "901de80b121c54f651af8b75f74cca4d5101bb1be50e5bf896fe1c2eb1851b94",
+  "source_hashes": {
+    "lab/contracts.py": "db401d09c18d9b9cbeb45baf7f2d656aeb2017987140d203b2c8b658786d197e",
+    "lab/environment.py": "c3c88340cf62fda1b74deab91d011433ee36cfe4ad5b57ec7e5eb59f65ee4871",
+    "lab/verifier.py": "f213e256029daef5835da9f216fd26417806b99ea1acdbc0d070b260712fcb59",
+    "lab/mock_tools.py": "99bbee9335eb367355cf5ae5ee44c81356663870412cdf67a06ef17837b0b43f",
+    "lab/policies.py": "a6115b240abdd68ca73455f265597e2a33cb3305f76d0b1c3c448b919d399bc9",
+    "lab/tasks.py": "5cb67cba6612174d0c4e16a29a503989f3fb8dfbd2c526dd108fab50fde68712",
+    "lab/cvit_mock.py": "18bfd60f68d218e8ae5e9520a4ce2b66ce4b8e1a6a79db6286c071dbe0f7c68b",
+    "lab/suite_tasks.py": "a60df5a7c8cc4c1ce97046a520faea1949f6eda7790b4b5915958770c34261c9",
+    "lab/adapter_v3.py": "f54f8dde4f3037dcced0fae03f3d339c107986b3ac94a1fcb14247d8007802c1",
+    "lab/ppo.py": "81554285d2f73441b4aef4c0accaf4462b7aa8053c06199f35a667f7643651f1",
+    "lab/training_v3.py": "ce6078452c1165fe6dab9900274869593bfda4545b606d72eeb7281e4daea59c",
+    "lab/evaluation_v3.py": "04dbd3aa6f30c7cf55373a91a0d858cb3f21b2fdd7316b79b97000527e4c6aed"
+  },
+  "policies": {
+    "seed_21/bc": "30dbc5fb0442ddaab163f9da68cfe503f26ebc71b9ba2063c17c39866a0dfe5c",
+    "seed_21/bc_ppo": "30dbc5fb0442ddaab163f9da68cfe503f26ebc71b9ba2063c17c39866a0dfe5c",
+    "seed_21/ppo_scratch": "5cd2d1338933836a5e4c19186a823fc4deff5f534fa39cb505a96e640b9c24ac",
+    "seed_37/bc": "1b54657cc294e5a97431aba4c76de7ed64edd56419f5f596c602043ea69af38a",
+    "seed_37/bc_ppo": "9c1d6f79d7048c6f571fb5819103873615d6d88d96ddfccacbf597954e52f46e",
+    "seed_37/ppo_scratch": "6f07ed54becff0273d0aeb337223231d673d98ad040eda271b03908581b026b2",
+    "seed_59/bc": "42db0c2aad6567c18f549dcfd14c6f0604cddd973e4fd4cad6c35b405d1b4c36",
+    "seed_59/bc_ppo": "42db0c2aad6567c18f549dcfd14c6f0604cddd973e4fd4cad6c35b405d1b4c36",
+    "seed_59/ppo_scratch": "f4ee68ccdbe481ac0af22657e31ea4c37a76a822c6f3e08c31c1394ca0ec1371"
+  },
+  "final_tasks_loaded": false,
+  "model_selection": "development_only",
+  "real_tools_connected": false
+}

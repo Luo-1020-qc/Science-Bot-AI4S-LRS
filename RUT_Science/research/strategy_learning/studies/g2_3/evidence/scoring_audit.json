@@ -1,0 +1,241 @@
+{
+  "version": "public_evidence_stop_audit_v1",
+  "reports": {
+    "context_rule": {
+      "tasks": 96,
+      "strict_successes": 96,
+      "strict_success_rate": 1.0,
+      "unjustified_stops": 0,
+      "eligible_execution_tasks": 30,
+      "completed_eligible_tasks": 30,
+      "missed_eligible_tasks": 0,
+      "by_domain": {
+        "tabular": {
+          "tasks": 48,
+          "strict_successes": 48
+        },
+        "cvit": {
+          "tasks": 48,
+          "strict_successes": 48
+        }
+      }
+    },
+    "random_legal": {
+      "tasks": 96,
+      "strict_successes": 4,
+      "strict_success_rate": 0.041666666666666664,
+      "unjustified_stops": 49,
+      "eligible_execution_tasks": 30,
+      "completed_eligible_tasks": 0,
+      "missed_eligible_tasks": 30,
+      "by_domain": {
+        "tabular": {
+          "tasks": 48,
+          "strict_successes": 3
+        },
+        "cvit": {
+          "tasks": 48,
+          "strict_successes": 1
+        }
+      }
+    },
+    "seed_21/bc": {
+      "tasks": 96,
+      "strict_successes": 9,
+      "strict_success_rate": 0.09375,
+      "unjustified_stops": 76,
+      "eligible_execution_tasks": 30,
+      "completed_eligible_tasks": 0,
+      "missed_eligible_tasks": 30,
+      "by_domain": {
+        "tabular": {
+          "tasks": 48,
+          "strict_successes": 0
+        },
+        "cvit": {
+          "tasks": 48,
+          "strict_successes": 9
+        }
+      }
+    },
+    "seed_21/bc_ppo": {
+      "tasks": 96,
+      "strict_successes": 9,
+      "strict_success_rate": 0.09375,
+      "unjustified_stops": 76,
+      "eligible_execution_tasks": 30,
+      "completed_eligible_tasks": 0,
+      "missed_eligible_tasks": 30,
+      "by_domain": {
+        "tabular": {
+          "tasks": 48,
+          "strict_successes": 0
+        },
+        "cvit": {
+          "tasks": 48,
+          "strict_successes": 9
+        }
+      }
+    },
+    "seed_21/ppo_scratch": {
+      "tasks": 96,
+      "strict_successes": 0,
+      "strict_success_rate": 0.0,
+      "unjustified_stops": 96,
+      "eligible_execution_tasks": 30,
+      "completed_eligible_tasks": 0,
+      "missed_eligible_tasks": 30,
+      "by_domain": {
+        "tabular": {
+          "tasks": 48,
+          "strict_successes": 0
+        },
+        "cvit": {
+          "tasks": 48,
+          "strict_successes": 0
+        }
+      }
+    },
+    "seed_37/bc": {
+      "tasks": 96,
+      "strict_successes": 16,
+      "strict_success_rate": 0.16666666666666666,
+      "unjustified_stops": 2,
+      "eligible_execution_tasks": 30,
+      "completed_eligible_tasks": 1,
+      "missed_eligible_tasks": 29,
+      "by_domain": {
+        "tabular": {
+          "tasks": 48,
+          "strict_successes": 1
+        },
+        "cvit": {
+          "tasks": 48,
+          "strict_successes": 15
+        }
+      }
+    },
+    "seed_37/bc_ppo": {
+      "tasks": 96,
+      "strict_successes": 0,
+      "strict_success_rate": 0.0,
+      "unjustified_stops": 96,
+      "eligible_execution_tasks": 30,
+      "completed_eligible_tasks": 0,
+      "missed_eligible_tasks": 30,
+      "by_domain": {
+        "tabular": {
+          "tasks": 48,
+          "strict_successes": 0
+        },
+        "cvit": {
+          "tasks": 48,
+          "strict_successes": 0
+        }
+      }
+    },
+    "seed_37/ppo_scratch": {
+      "tasks": 96,
+      "strict_successes": 0,
+      "strict_success_rate": 0.0,
+      "unjustified_stops": 96,
+      "eligible_execution_tasks": 30,
+      "completed_eligible_tasks": 0,
+      "missed_eligible_tasks": 30,
+      "by_domain": {
+        "tabular": {
+          "tasks": 48,
+          "strict_successes": 0
+        },
+        "cvit": {
+          "tasks": 48,
+          "strict_successes": 0
+        }
+      }
+    },
+    "seed_59/bc": {
+      "tasks": 96,
+      "strict_successes": 9,
+      "strict_success_rate": 0.09375,
+      "unjustified_stops": 56,
+      "eligible_execution_tasks": 30,
+      "completed_eligible_tasks": 0,
+      "missed_eligible_tasks": 30,
+      "by_domain": {
+        "tabular": {
+          "tasks": 48,
+          "strict_successes": 0
+        },
+        "cvit": {
+          "tasks": 48,
+          "strict_successes": 9
+        }
+      }
+    },
+    "seed_59/bc_ppo": {
+      "tasks": 96,
+      "strict_successes": 9,
+      "strict_success_rate": 0.09375,
+      "unjustified_stops": 56,
+      "eligible_execution_tasks": 30,
+      "completed_eligible_tasks": 0,
+      "missed_eligible_tasks": 30,
+      "by_domain": {
+        "tabular": {
+          "tasks": 48,
+          "strict_successes": 0
+        },
+        "cvit": {
+          "tasks": 48,
+          "strict_successes": 9
+        }
+      }
+    },
+    "seed_59/ppo_scratch": {
+      "tasks": 96,
+      "strict_successes": 0,
+      "strict_success_rate": 0.0,
+      "unjustified_stops": 96,
+      "eligible_execution_tasks": 30,
+      "completed_eligible_tasks": 0,
+      "missed_eligible_tasks": 30,
+      "by_domain": {
+        "tabular": {
+          "tasks": 48,
+          "strict_successes": 0
+        },
+        "cvit": {
+          "tasks": 48,
+          "strict_successes": 0
+        }
+      }
+    }
+  },
+  "aggregates": {
+    "bc": {
+      "mean_strict_success_rate": 0.11805555555555554,
+      "min_strict_success_rate": 0.09375,
+      "max_strict_success_rate": 0.16666666666666666,
+      "eligible_tasks_per_seed": 30,
+      "completed_eligible_tasks_mean": 0.3333333333333333
+    },
+    "bc_ppo": {
+      "mean_strict_success_rate": 0.0625,
+      "min_strict_success_rate": 0.0,
+      "max_strict_success_rate": 0.09375,
+      "eligible_tasks_per_seed": 30,
+      "completed_eligible_tasks_mean": 0.0
+    },
+    "ppo_scratch": {
+      "mean_strict_success_rate": 0.0,
+      "min_strict_success_rate": 0.0,
+      "max_strict_success_rate": 0.0,
+      "eligible_tasks_per_seed": 30,
+      "completed_eligible_tasks_mean": 0.0
+    }
+  },
+  "reason": "Original CViT terminal reward could credit stopping for hidden future refusal/unknown facts; audited success requires an observed blocker. A reporting correction, not a training or selection change.",
+  "policy_retrained_or_reselected": false,
+  "original_frozen_report_preserved": true,
+  "limitation": "Policies were trained with the original terminal reward. This audit does not repair that reward or demonstrate policy improvement."
+}

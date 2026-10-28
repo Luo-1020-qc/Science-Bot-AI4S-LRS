@@ -1,0 +1,114 @@
+{
+  "version": "g2_3_bank_v1",
+  "date": "2026-10-26",
+  "splits": {
+    "train": {
+      "path": "bank_v3/train.jsonl",
+      "sha256": "dcf920beecc2377503b7616ea91a55cee047a2ec2a6099903fb78fba0e1625ae",
+      "tasks": 240,
+      "domains": {
+        "tabular": 128,
+        "cvit_mock": 112
+      },
+      "scenario_groups": [
+        "ordinary_comparison",
+        "paired_design",
+        "predictive_run",
+        "explanation_only",
+        "negated_execution",
+        "ambiguous_intent",
+        "unknown_structure",
+        "clustered_data",
+        "missing_cases",
+        "read_denied",
+        "transient_inspection",
+        "bad_tool_schema",
+        "goal_correction",
+        "conflicting_response",
+        "low_budget",
+        "causal_claim",
+        "pilot_run",
+        "full_design",
+        "explain_only",
+        "denied_read",
+        "insufficient_budget",
+        "unknown_dataset",
+        "unsupported_target",
+        "existing_running",
+        "existing_completed",
+        "job_oom",
+        "confirmation_denied",
+        "data_change",
+        "memory_low",
+        "job_mismatch"
+      ]
+    },
+    "development": {
+      "path": "bank_v3/development.jsonl",
+      "sha256": "e9af9a3b64a368163d3bf2d90077b1b5bcd5de4fce8ce8fe51bf4b4895eee234",
+      "tasks": 90,
+      "domains": {
+        "tabular": 48,
+        "cvit_mock": 42
+      },
+      "scenario_groups": [
+        "ordinary_comparison",
+        "paired_design",
+        "predictive_run",
+        "explanation_only",
+        "negated_execution",
+        "ambiguous_intent",
+        "unknown_structure",
+        "clustered_data",
+        "missing_cases",
+        "read_denied",
+        "transient_inspection",
+        "bad_tool_schema",
+        "goal_correction",
+        "conflicting_response",
+        "low_budget",
+        "causal_claim",
+        "pilot_run",
+        "full_design",
+        "explain_only",
+        "denied_read",
+        "insufficient_budget",
+        "unknown_dataset",
+        "unsupported_target",
+        "existing_running",
+        "existing_completed",
+        "job_oom",
+        "confirmation_denied",
+        "data_change",
+        "memory_low",
+        "job_mismatch"
+      ]
+    },
+    "heldout": {
+      "path": "bank_v3/heldout.jsonl",
+      "sha256": "4e6dbac09bf234f73908c68edc390f31ad21ac65d5c9d18d500ab85b487e01e0",
+      "tasks": 96,
+      "domains": {
+        "tabular": 48,
+        "cvit_mock": 48
+      },
+      "scenario_groups": [
+        "pair_conflict_revoke_v3",
+        "prediction_unknown_features_v3",
+        "prediction_change_transient_v3",
+        "paired_unknown_permission_v3",
+        "full_existing_completed",
+        "pilot_seed_unknown",
+        "full_data_change",
+        "full_existing_running",
+        "pilot_oom",
+        "full_confirmation_revoked",
+        "pilot_mismatched_existing",
+        "full_memory_low"
+      ]
+    }
+  },
+  "past_g2_2_heldout": "Previously exposed; not reused as this delivery's blind test",
+  "heldout_scope": "Fresh synthetic source identities and held-out combinations; not wholly unseen primitive mechanisms",
+  "cvit_scope": "Job protocol/configuration mock only; no actual CViT code or dataset loaded"
+}

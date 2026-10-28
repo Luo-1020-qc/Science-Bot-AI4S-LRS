@@ -1,0 +1,214 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Reference transition, not eligible for PPO",
+  "type": "object",
+  "properties": {
+    "decision_index": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "observation": {
+      "type": "object",
+      "properties": {
+        "action_mask": {
+          "type": "object"
+        },
+        "budget": {
+          "type": "object"
+        },
+        "draft": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "evidence": {
+          "type": "array"
+        },
+        "facts": {
+          "type": "object"
+        },
+        "history": {
+          "type": "array"
+        },
+        "job": {
+          "type": "object"
+        },
+        "permissions": {
+          "type": "object"
+        },
+        "unknown": {
+          "type": "array"
+        },
+        "user_messages": {
+          "type": "array"
+        }
+      },
+      "required": [
+        "action_mask",
+        "budget",
+        "draft",
+        "evidence",
+        "facts",
+        "history",
+        "job",
+        "permissions",
+        "unknown",
+        "user_messages"
+      ],
+      "additionalProperties": false
+    },
+    "observation_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "action": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "enum": [
+            "ask",
+            "inspect_mock",
+            "propose_design",
+            "check_design_mock",
+            "revise_design",
+            "reconcile_job_mock",
+            "resume_job_mock",
+            "stop_with_evidence",
+            "submit_for_review"
+          ]
+        },
+        "arguments": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "name",
+        "arguments"
+      ],
+      "additionalProperties": false
+    },
+    "feedback": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "const": "scripted_mock_feedback"
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1
+        },
+        "blocking_codes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "real_execution": {
+          "const": false
+        },
+        "scientific_metric": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "source",
+        "message",
+        "blocking_codes",
+        "real_execution",
+        "scientific_metric"
+      ],
+      "additionalProperties": false
+    },
+    "next_observation": {
+      "type": "object",
+      "properties": {
+        "action_mask": {
+          "type": "object"
+        },
+        "budget": {
+          "type": "object"
+        },
+        "draft": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "evidence": {
+          "type": "array"
+        },
+        "facts": {
+          "type": "object"
+        },
+        "history": {
+          "type": "array"
+        },
+        "job": {
+          "type": "object"
+        },
+        "permissions": {
+          "type": "object"
+        },
+        "unknown": {
+          "type": "array"
+        },
+        "user_messages": {
+          "type": "array"
+        }
+      },
+      "required": [
+        "action_mask",
+        "budget",
+        "draft",
+        "evidence",
+        "facts",
+        "history",
+        "job",
+        "permissions",
+        "unknown",
+        "user_messages"
+      ],
+      "additionalProperties": false
+    },
+    "next_observation_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "reward": {
+      "type": "number"
+    },
+    "terminated": {
+      "type": "boolean"
+    },
+    "truncated": {
+      "type": "boolean"
+    },
+    "behavior_log_probability": {
+      "type": "null"
+    },
+    "value_estimate": {
+      "type": "null"
+    },
+    "reference_action_is_recommended": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "decision_index",
+    "observation",
+    "observation_hash",
+    "action",
+    "feedback",
+    "next_observation",
+    "next_observation_hash",
+    "reward",
+    "terminated",
+    "truncated",
+    "behavior_log_probability",
+    "value_estimate",
+    "reference_action_is_recommended"
+  ],
+  "additionalProperties": false
+}

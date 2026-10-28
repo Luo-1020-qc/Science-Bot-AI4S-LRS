@@ -1,0 +1,85 @@
+{
+  "schema_version": "reviewed_label_set_v1",
+  "input_ref": "test_outputs/synthetic_approved_fixture.jsonl",
+  "input_sha256": "e54b21158a1d68ae40ec7bca8a0fdfcd49ed61df6a133962c0b5d273f232198d",
+  "records": [
+    {
+      "decision_id": "22afb84ba4e6353064445c689b89733c88b1d12a1d5a0b38cb4343864d8325dd",
+      "task_id": "77c8c0cd9ead52d16f38",
+      "split": "train",
+      "observation": {
+        "version": "g2_2_decisions_v2",
+        "facts": {
+          "goal": "compare_means",
+          "unit_structure": "independent_rows",
+          "sample_basis": "available_exploratory",
+          "levels": [
+            "control",
+            "treatment"
+          ],
+          "features": [
+            "x1",
+            "x2"
+          ],
+          "missing_policy": "reject",
+          "intent": "design"
+        },
+        "unknown": [],
+        "permissions": {
+          "read": true,
+          "execute": false
+        },
+        "profile": null,
+        "conflicts": {},
+        "method": null,
+        "draft_valid": false,
+        "confirmed_current": false,
+        "confirmation_refused": false,
+        "last_failure": null,
+        "remaining_questions": 14,
+        "remaining_resource": 12,
+        "turn": 0,
+        "asked": {},
+        "errors": [],
+        "mask": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          false,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          true,
+          true
+        ]
+      },
+      "action": "execute_mock",
+      "source_sha256": "511d8d91173fff547e4c5ebd21ebc50df5064bdc8a52835710cc7d168121a07d",
+      "review": {
+        "status": "approved",
+        "correct_action": "inspect",
+        "reviewer": "synthetic-test-reviewer-not-an-expert",
+        "reason": "Unit-test fixture only; not imported into training",
+        "reviewed_at": "2026-10-26T09:00:00+08:00"
+      },
+      "label_source": "externally_claimed_expert_review_identity_not_independently_verified"
+    }
+  ],
+  "records_sha256": "69b4e7c1078f55106c687a4e964c2e56c0e0de449221f7a1f431aea563f1564b",
+  "deployed": false
+}

@@ -1,0 +1,9 @@
+# Research manifests hash exact bytes. Preserve original line endings in clones.
+* -text
+*.png binary
+*.jpg binary
+*.pdf binary
+*.npz binary
+*.npy binary
+*.pt binary
+*.pth binary

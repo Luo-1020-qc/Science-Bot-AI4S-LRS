@@ -1,0 +1,27 @@
+{
+  "method": "welch_t",
+  "direction": "A minus B",
+  "levels": [
+    "A",
+    "B"
+  ],
+  "n": [
+    12,
+    15
+  ],
+  "means": [
+    9.97747079419157,
+    13.25103792624582
+  ],
+  "mean_difference": -3.27356713205425,
+  "statistic": -3.4340286715996107,
+  "degrees_of_freedom": 20.268761324223625,
+  "p_value": 0.00258848929234127,
+  "confidence_level": 0.95,
+  "confidence_interval": [
+    -5.260370983721181,
+    -1.2867632803873188
+  ],
+  "reject_null": true,
+  "evidence_ref": "tool_090ef11c709ca4b5"
+}

@@ -1,0 +1,8 @@
+{
+  "original_summary_hash": "a05d7e1eba181187ca62c4ecf7b673408e09e3c267e82205d31114060d454a54",
+  "trace_file_hash": "8f103554f91715d8f940940684c3de82863760a1c309a0fe0cf9471912d68561",
+  "episodes": 1056,
+  "all_summary_fields_match": true,
+  "policies_modified": false,
+  "reason": "Original final evaluation retained summaries only; deterministic replay adds public decision evidence for scoring audit"
+}

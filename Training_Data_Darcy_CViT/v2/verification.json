@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "tasks": 12,
+  "episodes": 12,
+  "reference_decisions": 134,
+  "bc_reference_labels": 86,
+  "action_candidates": 23,
+  "human_expert_labels": 0,
+  "task_source_groups_disjoint": true,
+  "scientific_source_ancestors_disjoint": true,
+  "reference_traces_are_ppo_rollouts": false,
+  "tests": 22,
+  "tests_passed": true,
+  "ppo_rollout_verification": {
+    "records": 64,
+    "all_behavior_log_probs_recomputed": true,
+    "all_values_recomputed": true,
+    "training_task_hashes_verified": true,
+    "public_masks_verified": true,
+    "state_chains_verified": true
+  },
+  "ppo_parameters_changed": true
+}

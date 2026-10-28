@@ -1,0 +1,10 @@
+{
+  "seed": 37,
+  "ppo_transitions": 12288,
+  "selected_update": 0,
+  "baseline_hash": "38a8f1960d38a8429871fa5863ee79be6111c517e83330f17a95cb10f15adc5c",
+  "selected_ppo_hash": "38a8f1960d38a8429871fa5863ee79be6111c517e83330f17a95cb10f15adc5c",
+  "initial_retained": true,
+  "parameter_updates_occurred": true,
+  "final_tasks_used": false
+}

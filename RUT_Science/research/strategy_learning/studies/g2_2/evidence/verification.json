@@ -1,0 +1,94 @@
+{
+  "schema_version": "g2_2_isolated_delivery_v1",
+  "date": "2026-10-26",
+  "passed": true,
+  "checks": {
+    "original_project_unchanged": true,
+    "reference_copies_match": true,
+    "own_tests_pass": true,
+    "bank_and_control_plane_frozen": true,
+    "no_live_agent_imported": true,
+    "no_real_tools_connected": true,
+    "no_real_api_or_execution": true,
+    "no_unapproved_simulated_execution": true,
+    "review_labels_remain_pending": true,
+    "expert_labels_not_fabricated": true,
+    "no_live_policy_promotion": true,
+    "no_zip_created": true
+  },
+  "tests": 39,
+  "copied_files": 21,
+  "protected_files": 37190,
+  "task_counts": {
+    "train": 192,
+    "development": 64,
+    "heldout": 96
+  },
+  "pending_review_rows": 72,
+  "real_model_calls": 0,
+  "real_tool_executions": 0,
+  "ppo_trained": false,
+  "reviewed_human_labels": 0,
+  "execution_denominators": {
+    "context_rule_v2": {
+      "eligible_execution_tasks": 36,
+      "missed_eligible_execution_count": 0,
+      "missed_eligible_execution_rate": 0.0,
+      "unauthorized_simulated_execution_count": 0,
+      "unauthorized_attempts_blocked": 0,
+      "real_execution_count": 0,
+      "real_model_calls": 0
+    },
+    "slot_order_ablation": {
+      "eligible_execution_tasks": 36,
+      "missed_eligible_execution_count": 36,
+      "missed_eligible_execution_rate": 1.0,
+      "unauthorized_simulated_execution_count": 0,
+      "unauthorized_attempts_blocked": 0,
+      "real_execution_count": 0,
+      "real_model_calls": 0
+    },
+    "random_legal": {
+      "eligible_execution_tasks": 36,
+      "missed_eligible_execution_count": 36,
+      "missed_eligible_execution_rate": 1.0,
+      "unauthorized_simulated_execution_count": 0,
+      "unauthorized_attempts_blocked": 0,
+      "real_execution_count": 0,
+      "real_model_calls": 0
+    },
+    "bc_seed_21": {
+      "eligible_execution_tasks": 36,
+      "missed_eligible_execution_count": 28,
+      "missed_eligible_execution_rate": 0.7777777777777778,
+      "unauthorized_simulated_execution_count": 0,
+      "unauthorized_attempts_blocked": 0,
+      "real_execution_count": 0,
+      "real_model_calls": 0
+    },
+    "bc_seed_37": {
+      "eligible_execution_tasks": 36,
+      "missed_eligible_execution_count": 28,
+      "missed_eligible_execution_rate": 0.7777777777777778,
+      "unauthorized_simulated_execution_count": 0,
+      "unauthorized_attempts_blocked": 0,
+      "real_execution_count": 0,
+      "real_model_calls": 0
+    },
+    "bc_seed_59": {
+      "eligible_execution_tasks": 36,
+      "missed_eligible_execution_count": 28,
+      "missed_eligible_execution_rate": 0.7777777777777778,
+      "unauthorized_simulated_execution_count": 0,
+      "unauthorized_attempts_blocked": 0,
+      "real_execution_count": 0,
+      "real_model_calls": 0
+    }
+  },
+  "limitations": [
+    "This folder is an isolated test deliverable; existing science Bot unchanged",
+    "Python audit guard is cooperative process defense, not an OS security sandbox",
+    "Synthetic users/reference-rule BC; no proven advantage or scientific generalization",
+    "Copied tests/source are reference only; original G2.1 suite not rerun because live imports are prohibited"
+  ]
+}

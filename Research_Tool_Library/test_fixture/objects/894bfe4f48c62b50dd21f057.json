@@ -1,0 +1,9 @@
+{
+  "ref": "894bfe4f48c62b50dd21f0576a12c79e1181c56037a2a266a7ddf8080261b231",
+  "kind": "project",
+  "data": {
+    "title": "cvit illustrative research",
+    "objective": "Compare a prespecified method effect under a bounded dataset protocol",
+    "mode": "offline_design_and_mock_only"
+  }
+}

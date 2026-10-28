@@ -1,0 +1,21 @@
+{
+  "ref": "f0cef4c98a99a6e2358c7ab1d4ba43cbba8bad82114858c1799cef5bc74649b1",
+  "kind": "assessment",
+  "data": {
+    "claim_ref": "1991873e1e291131d4744e5ea64030071b0386ff98cd18bdf273aa510ec073bd",
+    "analysis_ref": "32057142e2aed7593c494c5ccc1bae3846a4cbc4b801b7e67c354803a6d03356",
+    "status": "supports_direction_under_assumptions",
+    "practical_benefit_supported": true,
+    "interval": [
+      -0.06431426134489371,
+      -0.04054399230671938
+    ],
+    "evidence_scope": "synthetic_mock_only",
+    "real_scientific_claim_verified": false,
+    "limitations": [
+      "Model assumptions and measurement independence not independently verified",
+      "No causal or broad-domain generalization assertion",
+      "Inconclusive is not equivalence"
+    ]
+  }
+}

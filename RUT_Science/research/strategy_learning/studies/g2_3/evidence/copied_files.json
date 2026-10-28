@@ -1,0 +1,165 @@
+{
+  "records": [
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\lab\\__init__.py",
+      "copy": "lab\\__init__.py",
+      "sha256": "2d83ffacdab09d1dc73d7f04a907f9749d9b2534a4c40cd2ebe9b460d1f9f4e1"
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\lab\\guard.py",
+      "copy": "lab\\guard.py",
+      "sha256": "1de55a40d1fa08bcce278df2c818b70728f5e170d156b41b4814590bc746a586"
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\lab\\contracts.py",
+      "copy": "lab\\contracts.py",
+      "sha256": "db401d09c18d9b9cbeb45baf7f2d656aeb2017987140d203b2c8b658786d197e"
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\lab\\environment.py",
+      "copy": "lab\\environment.py",
+      "sha256": "c3c88340cf62fda1b74deab91d011433ee36cfe4ad5b57ec7e5eb59f65ee4871"
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\lab\\verifier.py",
+      "copy": "lab\\verifier.py",
+      "sha256": "f213e256029daef5835da9f216fd26417806b99ea1acdbc0d070b260712fcb59"
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\lab\\mock_tools.py",
+      "copy": "lab\\mock_tools.py",
+      "sha256": "99bbee9335eb367355cf5ae5ee44c81356663870412cdf67a06ef17837b0b43f"
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\lab\\policies.py",
+      "copy": "lab\\policies.py",
+      "sha256": "a6115b240abdd68ca73455f265597e2a33cb3305f76d0b1c3c448b919d399bc9"
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\lab\\tasks.py",
+      "copy": "lab\\tasks.py",
+      "sha256": "5cb67cba6612174d0c4e16a29a503989f3fb8dfbd2c526dd108fab50fde68712"
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\lab\\__init__.py",
+      "copy": "reference_copy\\G2_2\\lab\\__init__.py",
+      "sha256": "2d83ffacdab09d1dc73d7f04a907f9749d9b2534a4c40cd2ebe9b460d1f9f4e1"
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\lab\\benchmark.py",
+      "copy": "reference_copy\\G2_2\\lab\\benchmark.py",
+      "sha256": "9f043b82133dc19ead3737824f7542efa5541f01c247354224ce90c29e3b604f"
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\lab\\contracts.py",
+      "copy": "reference_copy\\G2_2\\lab\\contracts.py",
+      "sha256": "db401d09c18d9b9cbeb45baf7f2d656aeb2017987140d203b2c8b658786d197e"
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\lab\\delivery.py",
+      "copy": "reference_copy\\G2_2\\lab\\delivery.py",
+      "sha256": "f37ec53068bb23426090dd44bc644828e93d6299937a8727ec1c26f114496fa6"
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\lab\\environment.py",
+      "copy": "reference_copy\\G2_2\\lab\\environment.py",
+      "sha256": "c3c88340cf62fda1b74deab91d011433ee36cfe4ad5b57ec7e5eb59f65ee4871"
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\lab\\fixtures.py",
+      "copy": "reference_copy\\G2_2\\lab\\fixtures.py",
+      "sha256": "79e212a03132b515194f498a07df9c746363b6c94db153e19a079cbe06f9f099"
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\lab\\guard.py",
+      "copy": "reference_copy\\G2_2\\lab\\guard.py",
+      "sha256": "1de55a40d1fa08bcce278df2c818b70728f5e170d156b41b4814590bc746a586"
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\lab\\mock_tools.py",
+      "copy": "reference_copy\\G2_2\\lab\\mock_tools.py",
+      "sha256": "99bbee9335eb367355cf5ae5ee44c81356663870412cdf67a06ef17837b0b43f"
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\lab\\policies.py",
+      "copy": "reference_copy\\G2_2\\lab\\policies.py",
+      "sha256": "a6115b240abdd68ca73455f265597e2a33cb3305f76d0b1c3c448b919d399bc9"
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\lab\\review.py",
+      "copy": "reference_copy\\G2_2\\lab\\review.py",
+      "sha256": "1b9029666b069d20771ce256cc09a1d932220b569cb7de54fd417827ff5d85df"
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\lab\\tasks.py",
+      "copy": "reference_copy\\G2_2\\lab\\tasks.py",
+      "sha256": "5cb67cba6612174d0c4e16a29a503989f3fb8dfbd2c526dd108fab50fde68712"
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\lab\\verifier.py",
+      "copy": "reference_copy\\G2_2\\lab\\verifier.py",
+      "sha256": "f213e256029daef5835da9f216fd26417806b99ea1acdbc0d070b260712fcb59"
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\tests\\test_delivery.py",
+      "copy": "reference_copy\\G2_2\\tests\\test_delivery.py",
+      "sha256": "76e5b18b4f694c377d45e2badd259849c265f48c0f8e4a4ad1fa43b8c44c1506"
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\tests\\test_environment.py",
+      "copy": "reference_copy\\G2_2\\tests\\test_environment.py",
+      "sha256": "1ce16db4245711b10b43af5cb6f0d784d74e75859b42c6fb4b59d980ad549568"
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\tests\\test_review.py",
+      "copy": "reference_copy\\G2_2\\tests\\test_review.py",
+      "sha256": "5122d4a566365284ced26133bf4259980d3ac0846188ff30ede2eaf1e0df1636"
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\reference_copy\\examples\\g2\\paired_measurements.csv",
+      "copy": "reference_copy\\G2_2\\reference_copy\\examples\\g2\\paired_measurements.csv",
+      "sha256": "300b205b2110f10a20aad79687e0a2e765deb38529ec273d54d5209a251821ba"
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\reference_copy\\examples\\g2\\prediction.csv",
+      "copy": "reference_copy\\G2_2\\reference_copy\\examples\\g2\\prediction.csv",
+      "sha256": "119a03a30267d160c67e61d46d71fbe060c3c39529dec0bcd130f63c1654aa15"
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\reference_copy\\examples\\g2\\two_groups.csv",
+      "copy": "reference_copy\\G2_2\\reference_copy\\examples\\g2\\two_groups.csv",
+      "sha256": "c8d22904e456e37a661431a7b598956cdd7c5f9d1d4b05b8ed4b3c26d95c4316"
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\reference_copy\\examples\\g2\\independent_design.json",
+      "copy": "reference_copy\\G2_2\\reference_copy\\examples\\g2\\independent_design.json",
+      "sha256": "07a2aeeb777a97120b260724d6f7e30d760362dfd673270a49b36455c6d19f23"
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\reference_copy\\examples\\g2\\paired_design.json",
+      "copy": "reference_copy\\G2_2\\reference_copy\\examples\\g2\\paired_design.json",
+      "sha256": "4cec8e68c060599c98a1950871618db3b7722d9c11be02b28fc68c335562c134"
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\reference_copy\\examples\\g2\\prediction_design.json",
+      "copy": "reference_copy\\G2_2\\reference_copy\\examples\\g2\\prediction_design.json",
+      "sha256": "4a55fd7ab14ee81c1878a102e47e10076594d7d174d7c53f27ff069e7894a167"
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\bank\\seal.json",
+      "copy": "reference_copy\\G2_2\\bank\\seal.json",
+      "sha256": "2a8f47430b482e218a88e23381d853e8c673a66596156039abc983f6f2257415"
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\evidence\\benchmark.json",
+      "copy": "reference_copy\\G2_2\\evidence\\benchmark.json",
+      "sha256": "aeb21e289d3885f5a8c56e3fccd5b07de4be6dc9478cad63868e2efae2d3ee65"
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace\\README_本轮交付.md",
+      "copy": "reference_copy\\G2_2\\README_本轮交付.md",
+      "sha256": "4a61b566fd5c099639565718b8b12f7d48483286d31916826e60e0b796378197"
+    }
+  ],
+  "copied_tests_are_reference_only": true
+}

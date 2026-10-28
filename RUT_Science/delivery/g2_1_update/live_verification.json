@@ -1,0 +1,26 @@
+{
+  "session": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\delivery\\g2_1_update\\live_sessions\\f4a9603d34c7448db103313511ef8db9",
+  "metric_recomputes": true,
+  "p_value": 0.00258848929234127,
+  "mean_difference": -3.27356713205425,
+  "resources": {
+    "llm_requests": 1,
+    "llm_tokens": 632,
+    "tool_attempts": 4,
+    "limits": {
+      "llm_requests": 2,
+      "llm_tokens": 12000,
+      "tool_calls": 12,
+      "read_bytes": 24000
+    }
+  },
+  "provenance_source": {
+    "kind": "user_grounded_model",
+    "turn": 3,
+    "quote": "这些测量来自合成数据"
+  },
+  "only_user_quote_sent": true,
+  "all_calls_accepted": true,
+  "replay_cost_unchanged": true,
+  "no_auto_execution": true
+}

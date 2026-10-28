@@ -1,0 +1,21 @@
+{
+  "request_index": 2,
+  "role": "project_qa",
+  "model": "deepseek-flash",
+  "response": {
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_00_dHXKiL4ZEeIdKalBZowf9435",
+        "name": "project_read",
+        "arguments": {
+          "path": "model.py",
+          "start_line": 1,
+          "end_line": 200
+        }
+      }
+    ],
+    "actual_model": "deepseek-flash"
+  },
+  "response_hash": "e29710f05b6ccd4b140495663e915e56c9d6e43a6ab0951a88541742b7890491"
+}

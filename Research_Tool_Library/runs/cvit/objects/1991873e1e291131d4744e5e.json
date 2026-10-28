@@ -1,0 +1,29 @@
+{
+  "ref": "1991873e1e291131d4744e5ea64030071b0386ff98cd18bdf273aa510ec073bd",
+  "kind": "claim",
+  "data": {
+    "project_ref": "894bfe4f48c62b50dd21f0576a12c79e1181c56037a2a266a7ddf8080261b231",
+    "statement": "Candidate has lower mean relative L2 than baseline within the declared protocol",
+    "response": "relative_l2",
+    "primary_term": "architecture",
+    "direction": "lower",
+    "practical_margin": 0.01,
+    "population_scope": "declared_dataset_and_training_protocol",
+    "factor_levels": [
+      {
+        "factor": "architecture",
+        "baseline": "baseline_small",
+        "candidate": "candidate_small"
+      },
+      {
+        "factor": "learning_rate",
+        "baseline": "0.0001",
+        "candidate": "0.0003"
+      }
+    ],
+    "expected_unit_definition": "One independently seeded training run within a data-realization block",
+    "type": "directional_difference",
+    "decision_rule": "prespecified_two_sided_ci",
+    "real_world_verified": false
+  }
+}

@@ -1,0 +1,376 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000,
+      "enum": [
+        "doe_contract_v1"
+      ]
+    },
+    "request_hash": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64,
+      "pattern": "[a-f0-9]{64}"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 1000
+    },
+    "question": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000
+    },
+    "family": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000,
+      "enum": [
+        "crd_two_arm",
+        "rcbd_two_arm",
+        "factorial_2x2"
+      ]
+    },
+    "factors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40,
+            "pattern": "[A-Za-z][A-Za-z0-9_]*"
+          },
+          "levels": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 80
+            },
+            "minItems": 2,
+            "maxItems": 2,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "name",
+          "levels"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 2
+    },
+    "response": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "unit": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "direction": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000,
+          "enum": [
+            "lower",
+            "higher"
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "unit",
+        "direction"
+      ],
+      "additionalProperties": false
+    },
+    "experimental_unit": {
+      "type": "object",
+      "properties": {
+        "definition": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "independence_basis": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "measurement_repeats": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        }
+      },
+      "required": [
+        "definition",
+        "independence_basis",
+        "measurement_repeats"
+      ],
+      "additionalProperties": false
+    },
+    "blocks": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 50
+      },
+      "minItems": 0,
+      "maxItems": 100,
+      "uniqueItems": true
+    },
+    "replicates": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 100
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 2000,
+        "enum": [
+          "normal_iid_errors",
+          "constant_error_variance",
+          "no_treatment_block_interaction"
+        ]
+      },
+      "minItems": 2,
+      "maxItems": 3,
+      "uniqueItems": true
+    },
+    "randomization": {
+      "type": "object",
+      "properties": {
+        "seed": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "algorithm": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000,
+          "enum": [
+            "shuffle_v1"
+          ]
+        }
+      },
+      "required": [
+        "seed",
+        "algorithm"
+      ],
+      "additionalProperties": false
+    },
+    "analysis": {
+      "type": "object",
+      "properties": {
+        "model": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000,
+          "enum": [
+            "two_arm",
+            "additive_blocks",
+            "full_factorial",
+            "blocked_full_factorial"
+          ]
+        },
+        "primary_term": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "alpha": {
+          "type": "number",
+          "minimum": 0.001,
+          "maximum": 0.2
+        },
+        "minimum_effect": {
+          "type": "number",
+          "minimum": 1e-08,
+          "maximum": 1000000.0
+        },
+        "sigma": {
+          "type": "number",
+          "minimum": 1e-08,
+          "maximum": 1000000.0
+        },
+        "target_power": {
+          "type": "number",
+          "minimum": 0.5,
+          "maximum": 0.9999
+        },
+        "multiplicity": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000,
+          "enum": [
+            "single_primary"
+          ]
+        },
+        "missing_policy": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000,
+          "enum": [
+            "stop_and_review"
+          ]
+        },
+        "decision_rule": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000,
+          "enum": [
+            "two_sided_t_ci_practical_relevance_separate"
+          ]
+        }
+      },
+      "required": [
+        "model",
+        "primary_term",
+        "alpha",
+        "minimum_effect",
+        "sigma",
+        "target_power",
+        "multiplicity",
+        "missing_policy",
+        "decision_rule"
+      ],
+      "additionalProperties": false
+    },
+    "resources": {
+      "type": "object",
+      "properties": {
+        "per_run": {
+          "type": "number",
+          "minimum": 0.001,
+          "maximum": 1000000.0
+        },
+        "budget": {
+          "type": "number",
+          "minimum": 0.001,
+          "maximum": 1000000.0
+        }
+      },
+      "required": [
+        "per_run",
+        "budget"
+      ],
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000,
+            "enum": [
+              "/question",
+              "/factors",
+              "/response",
+              "/experimental_unit",
+              "/blocks",
+              "/assumptions",
+              "/analysis",
+              "/resources"
+            ]
+          },
+          "evidence_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          }
+        },
+        "required": [
+          "path",
+          "evidence_id"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 8,
+      "maxItems": 8
+    },
+    "run_plan": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "run": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1000
+          },
+          "unit_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "block": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 50
+          },
+          "levels": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 80
+            },
+            "minItems": 1,
+            "maxItems": 2
+          }
+        },
+        "required": [
+          "run",
+          "unit_id",
+          "block",
+          "levels"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 4,
+      "maxItems": 1000
+    }
+  },
+  "required": [
+    "schema_version",
+    "request_hash",
+    "revision",
+    "question",
+    "family",
+    "factors",
+    "response",
+    "experimental_unit",
+    "blocks",
+    "replicates",
+    "assumptions",
+    "randomization",
+    "analysis",
+    "resources",
+    "provenance",
+    "run_plan"
+  ],
+  "additionalProperties": false
+}

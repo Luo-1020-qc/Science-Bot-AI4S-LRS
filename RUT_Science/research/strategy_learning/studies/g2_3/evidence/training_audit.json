@@ -1,0 +1,50 @@
+{
+  "total_ppo_transitions": 122880,
+  "all_six_networks_updated": true,
+  "runs": {
+    "seed_21/bc_ppo": {
+      "transitions": 20480,
+      "updates": 40,
+      "parameters_changed": true,
+      "selected_update": 0,
+      "initial_policy_retained": true
+    },
+    "seed_21/ppo_scratch": {
+      "transitions": 20480,
+      "updates": 40,
+      "parameters_changed": true,
+      "selected_update": 40,
+      "initial_policy_retained": false
+    },
+    "seed_37/bc_ppo": {
+      "transitions": 20480,
+      "updates": 40,
+      "parameters_changed": true,
+      "selected_update": 40,
+      "initial_policy_retained": false
+    },
+    "seed_37/ppo_scratch": {
+      "transitions": 20480,
+      "updates": 40,
+      "parameters_changed": true,
+      "selected_update": 10,
+      "initial_policy_retained": false
+    },
+    "seed_59/bc_ppo": {
+      "transitions": 20480,
+      "updates": 40,
+      "parameters_changed": true,
+      "selected_update": 0,
+      "initial_policy_retained": true
+    },
+    "seed_59/ppo_scratch": {
+      "transitions": 20480,
+      "updates": 40,
+      "parameters_changed": true,
+      "selected_update": 10,
+      "initial_policy_retained": false
+    }
+  },
+  "unit_test_transitions_excluded": true,
+  "real_cvit_or_llm_weights_updated": false
+}

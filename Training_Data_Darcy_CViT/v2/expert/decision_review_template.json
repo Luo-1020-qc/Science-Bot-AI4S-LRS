@@ -1,0 +1,818 @@
+{
+  "schema_version": "expert_decision_review_v2",
+  "review_id": "214c8d6e747440465c0b969afc03b57776f1b015ee6391c2e7056b80adb9f0ef",
+  "task_id": "darcy_train_00",
+  "policy_split": "train",
+  "episode_id": "reference_darcy_train_00",
+  "decision_index": 0,
+  "observation": {
+    "schema_version": "tool_harness_rl_v2",
+    "goal": {
+      "domain": "darcy",
+      "user_request": "Compare candidate minus baseline relative L2 within the declared Darcy data/experimental-unit protocol; do not claim broad generalization. Use mock tools only.",
+      "family": "rcbd_two_arm",
+      "factors": [
+        {
+          "name": "predictor",
+          "levels": [
+            "mean_field",
+            "ridge_field"
+          ]
+        }
+      ],
+      "unit_definition": "One predictor application within an independent data-realization block",
+      "response": "relative_l2",
+      "primary_term": "predictor",
+      "direction": "lower",
+      "practical_margin": 0.01,
+      "minimum_effect": 0.02,
+      "sigma": 0.02,
+      "variance_source": "synthetic pilot declaration; not real evidence",
+      "target_power": 0.8,
+      "resource_budget": 256,
+      "max_decisions": 40
+    },
+    "current_contract": {
+      "schema_version": "doe_contract_v1",
+      "request_hash": "1c823abf9e378d23783e9a27480f20836f35e33388f85bae29fcb6a6c29282c8",
+      "revision": 3,
+      "question": "Compare candidate minus baseline relative L2 within the declared Darcy data/experimental-unit protocol; do not claim broad generalization. Use mock tools only.",
+      "family": "rcbd_two_arm",
+      "factors": [
+        {
+          "name": "predictor",
+          "levels": [
+            "mean_field",
+            "ridge_field"
+          ]
+        }
+      ],
+      "response": {
+        "name": "relative_l2",
+        "unit": "dimensionless",
+        "direction": "lower"
+      },
+      "experimental_unit": {
+        "definition": "One predictor application within an independent data-realization block",
+        "independence_basis": "Declared independent units and independent Gaussian residuals; not established by table structure",
+        "measurement_repeats": 1
+      },
+      "blocks": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6",
+        "b7",
+        "b8",
+        "b9",
+        "b10",
+        "b11",
+        "b12",
+        "b13",
+        "b14",
+        "b15",
+        "b16",
+        "b17",
+        "b18",
+        "b19",
+        "b20",
+        "b21",
+        "b22",
+        "b23",
+        "b24"
+      ],
+      "replicates": 1,
+      "assumptions": [
+        "normal_iid_errors",
+        "constant_error_variance",
+        "no_treatment_block_interaction"
+      ],
+      "randomization": {
+        "seed": 73,
+        "algorithm": "shuffle_v1"
+      },
+      "analysis": {
+        "model": "two_arm",
+        "primary_term": "predictor",
+        "alpha": 0.05,
+        "minimum_effect": 0.02,
+        "sigma": 0.02,
+        "target_power": 0.8,
+        "multiplicity": "single_primary",
+        "missing_policy": "stop_and_review",
+        "decision_rule": "two_sided_t_ci_practical_relevance_separate"
+      },
+      "resources": {
+        "per_run": 1.0,
+        "budget": 256
+      },
+      "provenance": [
+        {
+          "path": "/question",
+          "evidence_id": "e00"
+        },
+        {
+          "path": "/factors",
+          "evidence_id": "e01"
+        },
+        {
+          "path": "/response",
+          "evidence_id": "e02"
+        },
+        {
+          "path": "/experimental_unit",
+          "evidence_id": "e03"
+        },
+        {
+          "path": "/blocks",
+          "evidence_id": "e04"
+        },
+        {
+          "path": "/assumptions",
+          "evidence_id": "e05"
+        },
+        {
+          "path": "/analysis",
+          "evidence_id": "e06"
+        },
+        {
+          "path": "/resources",
+          "evidence_id": "e07"
+        }
+      ],
+      "run_plan": [
+        {
+          "run": 1,
+          "unit_id": "planned_b1_u2",
+          "block": "b1",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 2,
+          "unit_id": "planned_b1_u1",
+          "block": "b1",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 3,
+          "unit_id": "planned_b2_u1",
+          "block": "b2",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 4,
+          "unit_id": "planned_b2_u2",
+          "block": "b2",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 5,
+          "unit_id": "planned_b3_u1",
+          "block": "b3",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 6,
+          "unit_id": "planned_b3_u2",
+          "block": "b3",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 7,
+          "unit_id": "planned_b4_u2",
+          "block": "b4",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 8,
+          "unit_id": "planned_b4_u1",
+          "block": "b4",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 9,
+          "unit_id": "planned_b5_u2",
+          "block": "b5",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 10,
+          "unit_id": "planned_b5_u1",
+          "block": "b5",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 11,
+          "unit_id": "planned_b6_u1",
+          "block": "b6",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 12,
+          "unit_id": "planned_b6_u2",
+          "block": "b6",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 13,
+          "unit_id": "planned_b7_u2",
+          "block": "b7",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 14,
+          "unit_id": "planned_b7_u1",
+          "block": "b7",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 15,
+          "unit_id": "planned_b8_u1",
+          "block": "b8",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 16,
+          "unit_id": "planned_b8_u2",
+          "block": "b8",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 17,
+          "unit_id": "planned_b9_u2",
+          "block": "b9",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 18,
+          "unit_id": "planned_b9_u1",
+          "block": "b9",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 19,
+          "unit_id": "planned_b10_u1",
+          "block": "b10",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 20,
+          "unit_id": "planned_b10_u2",
+          "block": "b10",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 21,
+          "unit_id": "planned_b11_u1",
+          "block": "b11",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 22,
+          "unit_id": "planned_b11_u2",
+          "block": "b11",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 23,
+          "unit_id": "planned_b12_u2",
+          "block": "b12",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 24,
+          "unit_id": "planned_b12_u1",
+          "block": "b12",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 25,
+          "unit_id": "planned_b13_u2",
+          "block": "b13",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 26,
+          "unit_id": "planned_b13_u1",
+          "block": "b13",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 27,
+          "unit_id": "planned_b14_u2",
+          "block": "b14",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 28,
+          "unit_id": "planned_b14_u1",
+          "block": "b14",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 29,
+          "unit_id": "planned_b15_u1",
+          "block": "b15",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 30,
+          "unit_id": "planned_b15_u2",
+          "block": "b15",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 31,
+          "unit_id": "planned_b16_u2",
+          "block": "b16",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 32,
+          "unit_id": "planned_b16_u1",
+          "block": "b16",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 33,
+          "unit_id": "planned_b17_u2",
+          "block": "b17",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 34,
+          "unit_id": "planned_b17_u1",
+          "block": "b17",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 35,
+          "unit_id": "planned_b18_u2",
+          "block": "b18",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 36,
+          "unit_id": "planned_b18_u1",
+          "block": "b18",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 37,
+          "unit_id": "planned_b19_u1",
+          "block": "b19",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 38,
+          "unit_id": "planned_b19_u2",
+          "block": "b19",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 39,
+          "unit_id": "planned_b20_u1",
+          "block": "b20",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 40,
+          "unit_id": "planned_b20_u2",
+          "block": "b20",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 41,
+          "unit_id": "planned_b21_u2",
+          "block": "b21",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 42,
+          "unit_id": "planned_b21_u1",
+          "block": "b21",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 43,
+          "unit_id": "planned_b22_u2",
+          "block": "b22",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 44,
+          "unit_id": "planned_b22_u1",
+          "block": "b22",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 45,
+          "unit_id": "planned_b23_u2",
+          "block": "b23",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 46,
+          "unit_id": "planned_b23_u1",
+          "block": "b23",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 47,
+          "unit_id": "planned_b24_u2",
+          "block": "b24",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 48,
+          "unit_id": "planned_b24_u1",
+          "block": "b24",
+          "levels": [
+            "ridge_field"
+          ]
+        }
+      ]
+    },
+    "artifact_refs": {
+      "project": "1ca6634f5beecfc004b8794d74b74a947f5d6d2c6e9b5c77037f3b43a01d7273",
+      "plan": "7e81d4dde2b1d2e45d11c3edf6b7e0ad064545b1ffa021b991fa1e88cff9d8d3",
+      "claim": "3ed58c5d8a8e2c9620d1dc5dd46f5d581abef8711df68105bed6243a6be60223",
+      "parent": "480a0b86e6758f36d840d7099b6b0375e0fc1291ebe3e80cb9571ea57467ba38"
+    },
+    "flags": {
+      "review_current": false,
+      "review_passed": false,
+      "alignment_current": false,
+      "alignment_passed": false,
+      "workflow_checked": false,
+      "job_queried": false,
+      "variance_available": true,
+      "public_unavailable": false,
+      "public_tool_failure": false
+    },
+    "evidence": [
+      {
+        "id": "455bbfa356c7c144",
+        "kind": "initial_request",
+        "value": {
+          "user_request": "Compare candidate minus baseline relative L2 within the declared Darcy data/experimental-unit protocol; do not claim broad generalization. Use mock tools only."
+        },
+        "source": "offline_tool_or_scripted_user"
+      }
+    ],
+    "history": [],
+    "turn": 0,
+    "last_call_failed": false,
+    "candidates": [
+      {
+        "action_id": "review",
+        "tool": "plan_review",
+        "arguments": {
+          "plan_ref": "7e81d4dde2b1d2e45d11c3edf6b7e0ad064545b1ffa021b991fa1e88cff9d8d3"
+        },
+        "available": true
+      },
+      {
+        "action_id": "align_claim",
+        "tool": "claim_check_plan",
+        "arguments": {
+          "claim_ref": "3ed58c5d8a8e2c9620d1dc5dd46f5d581abef8711df68105bed6243a6be60223",
+          "plan_ref": "7e81d4dde2b1d2e45d11c3edf6b7e0ad064545b1ffa021b991fa1e88cff9d8d3"
+        },
+        "available": true
+      },
+      {
+        "action_id": "diff",
+        "tool": "plan_diff",
+        "arguments": {
+          "old_plan_ref": "480a0b86e6758f36d840d7099b6b0375e0fc1291ebe3e80cb9571ea57467ba38",
+          "new_plan_ref": "7e81d4dde2b1d2e45d11c3edf6b7e0ad064545b1ffa021b991fa1e88cff9d8d3"
+        },
+        "available": true
+      },
+      {
+        "action_id": "model_two_arm",
+        "tool": "plan_patch",
+        "arguments": {
+          "plan_ref": "7e81d4dde2b1d2e45d11c3edf6b7e0ad064545b1ffa021b991fa1e88cff9d8d3",
+          "expected_contract_hash": "c01d98759cab614e22650cae7f9fe9c9b8ec80f0bd20b144f4c2543a6410b045",
+          "changes": [
+            {
+              "path": "/analysis/model",
+              "value": "two_arm"
+            }
+          ],
+          "reason": "Agent selected a bounded public candidate amendment"
+        },
+        "available": true
+      },
+      {
+        "action_id": "model_additive_blocks",
+        "tool": "plan_patch",
+        "arguments": {
+          "plan_ref": "7e81d4dde2b1d2e45d11c3edf6b7e0ad064545b1ffa021b991fa1e88cff9d8d3",
+          "expected_contract_hash": "c01d98759cab614e22650cae7f9fe9c9b8ec80f0bd20b144f4c2543a6410b045",
+          "changes": [
+            {
+              "path": "/analysis/model",
+              "value": "additive_blocks"
+            }
+          ],
+          "reason": "Agent selected a bounded public candidate amendment"
+        },
+        "available": true
+      },
+      {
+        "action_id": "model_full_factorial",
+        "tool": "plan_patch",
+        "arguments": {
+          "plan_ref": "7e81d4dde2b1d2e45d11c3edf6b7e0ad064545b1ffa021b991fa1e88cff9d8d3",
+          "expected_contract_hash": "c01d98759cab614e22650cae7f9fe9c9b8ec80f0bd20b144f4c2543a6410b045",
+          "changes": [
+            {
+              "path": "/analysis/model",
+              "value": "full_factorial"
+            }
+          ],
+          "reason": "Agent selected a bounded public candidate amendment"
+        },
+        "available": true
+      },
+      {
+        "action_id": "model_blocked_full_factorial",
+        "tool": "plan_patch",
+        "arguments": {
+          "plan_ref": "7e81d4dde2b1d2e45d11c3edf6b7e0ad064545b1ffa021b991fa1e88cff9d8d3",
+          "expected_contract_hash": "c01d98759cab614e22650cae7f9fe9c9b8ec80f0bd20b144f4c2543a6410b045",
+          "changes": [
+            {
+              "path": "/analysis/model",
+              "value": "blocked_full_factorial"
+            }
+          ],
+          "reason": "Agent selected a bounded public candidate amendment"
+        },
+        "available": true
+      },
+      {
+        "action_id": "repair_response",
+        "tool": "plan_patch",
+        "arguments": {
+          "plan_ref": "7e81d4dde2b1d2e45d11c3edf6b7e0ad064545b1ffa021b991fa1e88cff9d8d3",
+          "expected_contract_hash": "c01d98759cab614e22650cae7f9fe9c9b8ec80f0bd20b144f4c2543a6410b045",
+          "changes": [
+            {
+              "path": "/response/name",
+              "value": "relative_l2"
+            }
+          ],
+          "reason": "Agent selected a bounded public candidate amendment"
+        },
+        "available": true
+      },
+      {
+        "action_id": "repair_budget",
+        "tool": "plan_patch",
+        "arguments": {
+          "plan_ref": "7e81d4dde2b1d2e45d11c3edf6b7e0ad064545b1ffa021b991fa1e88cff9d8d3",
+          "expected_contract_hash": "c01d98759cab614e22650cae7f9fe9c9b8ec80f0bd20b144f4c2543a6410b045",
+          "changes": [
+            {
+              "path": "/resources/budget",
+              "value": 256
+            }
+          ],
+          "reason": "Agent selected a bounded public candidate amendment"
+        },
+        "available": true
+      },
+      {
+        "action_id": "resolve",
+        "tool": "review_resolve",
+        "arguments": {
+          "old_review_ref": null,
+          "new_review_ref": null
+        },
+        "available": false
+      },
+      {
+        "action_id": "freeze",
+        "tool": "plan_freeze",
+        "arguments": {
+          "plan_ref": "7e81d4dde2b1d2e45d11c3edf6b7e0ad064545b1ffa021b991fa1e88cff9d8d3",
+          "review_ref": null,
+          "alignment_ref": null
+        },
+        "available": false
+      },
+      {
+        "action_id": "workflow",
+        "tool": "workflow_compile",
+        "arguments": {
+          "freeze_ref": null
+        },
+        "available": false
+      },
+      {
+        "action_id": "verify_workflow",
+        "tool": "workflow_verify",
+        "arguments": {
+          "workflow_ref": null
+        },
+        "available": false
+      },
+      {
+        "action_id": "reconcile",
+        "tool": "job_reconcile_mock",
+        "arguments": {
+          "freeze_ref": null
+        },
+        "available": false
+      },
+      {
+        "action_id": "run_mock",
+        "tool": "job_run_mock",
+        "arguments": {
+          "freeze_ref": null,
+          "scenario": {
+            "$host": "private_mock_fixture"
+          }
+        },
+        "available": false
+      },
+      {
+        "action_id": "poll",
+        "tool": "job_poll_mock",
+        "arguments": {
+          "job_ref": null
+        },
+        "available": false
+      },
+      {
+        "action_id": "analyze",
+        "tool": "result_analyze",
+        "arguments": {
+          "job_ref": null
+        },
+        "available": false
+      },
+      {
+        "action_id": "assess",
+        "tool": "claim_assess",
+        "arguments": {
+          "claim_ref": "3ed58c5d8a8e2c9620d1dc5dd46f5d581abef8711df68105bed6243a6be60223",
+          "analysis_ref": null
+        },
+        "available": false
+      },
+      {
+        "action_id": "next",
+        "tool": "loop_next_action",
+        "arguments": {
+          "assessment_ref": null
+        },
+        "available": false
+      },
+      {
+        "action_id": "report",
+        "tool": "report_build",
+        "arguments": {
+          "assessment_ref": null,
+          "workflow_ref": null
+        },
+        "available": false
+      },
+      {
+        "action_id": "read_plan",
+        "tool": "artifact_read",
+        "arguments": {
+          "artifact_ref": "7e81d4dde2b1d2e45d11c3edf6b7e0ad064545b1ffa021b991fa1e88cff9d8d3"
+        },
+        "available": true
+      },
+      {
+        "action_id": "ask_variance",
+        "tool": "host.ask_user",
+        "arguments": {
+          "field": "variance_source"
+        },
+        "available": true
+      },
+      {
+        "action_id": "stop",
+        "tool": "host.stop_with_evidence",
+        "arguments": {
+          "evidence_ids": []
+        },
+        "available": true
+      }
+    ],
+    "real_execution_allowed": false
+  },
+  "observation_hash": "e3c09ba48e5ac42e2399a8fb6a9738d2cb2791a5d5576b58c0564d9edf7b6c96",
+  "proposed_action_index": 0,
+  "review": {
+    "status": "pending",
+    "acceptable_action_ids": [],
+    "rejected_action_ids": [],
+    "reason": null,
+    "reviewer": null,
+    "reviewed_at": null
+  }
+}

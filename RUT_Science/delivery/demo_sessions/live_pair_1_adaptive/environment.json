@@ -1,0 +1,308 @@
+{
+  "state": {
+    "version": 4,
+    "phase": "completed",
+    "experiments": {
+      "mean": {
+        "status": "succeeded",
+        "attempts": 1,
+        "model": {
+          "kind": "mean",
+          "y_mean": [
+            1.0553347657126217,
+            0.9656176216120088,
+            1.031147430218661,
+            0.9797605554589209
+          ],
+          "n_fit": 96
+        },
+        "validation_mean": 0.3027587549415974,
+        "validation_std": 0.18060054664095496,
+        "prediction_hash": "4b6c42e1dc9e44bc7504afb6294962b6ba7d8a658aa987b3c2b88f04230f4eb8",
+        "tool_version": "budgeted_numpy_ridge_v1"
+      },
+      "ridge_half_3_1": {
+        "status": "succeeded",
+        "attempts": 1,
+        "model": {
+          "kind": "ridge",
+          "grid": 3,
+          "x_mean": [
+            -0.09966574438516333,
+            -0.12690421456584083,
+            -0.10557652489823811,
+            0.03062449138248514,
+            -0.041986220752315805,
+            -0.11713800449916245,
+            -0.0897472423246178,
+            -0.09959980381026323,
+            0.007206531463080553
+          ],
+          "x_scale": [
+            0.811407442918353,
+            0.7703217788128057,
+            0.7127708295141713,
+            0.6741204641751962,
+            0.7467654514474273,
+            0.7191132988528666,
+            0.7855395555841805,
+            0.7779850281591132,
+            0.6665359535125226
+          ],
+          "y_mean": [
+            1.0262867269904625,
+            0.9315869730065738,
+            1.0594869584039182,
+            1.0045631766192404
+          ],
+          "weights": [
+            [
+              0.15030141549420373,
+              0.1031911064646497,
+              0.024484862029152236,
+              0.06585716854891492
+            ],
+            [
+              -0.05493925693127737,
+              0.14977507148759964,
+              -0.040097873877767434,
+              -0.04287911769507371
+            ],
+            [
+              -0.08386270261843415,
+              0.09750086220781423,
+              0.16355655213209774,
+              -0.10286351891420117
+            ],
+            [
+              -0.12307585034281464,
+              -0.04738175698986968,
+              0.049549865689402804,
+              -0.05869532299439422
+            ],
+            [
+              -0.16150650558760718,
+              -0.17093737255809316,
+              0.06015556355485055,
+              0.02465441989450316
+            ],
+            [
+              -0.1044326024370739,
+              -0.025324055112602616,
+              -0.14515108230272547,
+              -0.07679710092410928
+            ],
+            [
+              0.010220619359832747,
+              0.09691244814199923,
+              -0.09897224176236989,
+              -0.06655866959670452
+            ],
+            [
+              -0.07192203727813122,
+              0.11888205455669659,
+              0.026300395931081508,
+              -0.019796520803934018
+            ],
+            [
+              -0.14821317746003881,
+              -0.050416551535260534,
+              -0.042984136165761126,
+              -0.020825805012097447
+            ]
+          ],
+          "n_fit": 48
+        },
+        "validation_mean": 0.1866553187306107,
+        "validation_std": 0.07858590251716875,
+        "prediction_hash": "bdcfa5ab3435644a914232ee28b9b7d58626d16e866fccfc633b20b0c99a2a4c",
+        "tool_version": "budgeted_numpy_ridge_v1"
+      }
+    },
+    "diagnostics": {
+      "input_variance": 0.3848448208520239,
+      "condition_number": 6.147567902509965,
+      "spatial_roughness": 0.4222802359321433,
+      "n": 96
+    },
+    "residuals": {},
+    "jobs": {
+      "2c7a81e57d8f86bac89705dc": {
+        "candidate": {
+          "id": "mean",
+          "kind": "fit_mean",
+          "parameters": {},
+          "cost": 1
+        },
+        "status": "succeeded",
+        "reserved_cu": 0,
+        "attempt": 1,
+        "retried": false,
+        "atomic": false,
+        "outcome_hash": "10ba5b9619135f93a53b9e65e44c2b7c73c109d5ad186539e472dac94d0fe1d2",
+        "fixture": false,
+        "error": null
+      },
+      "e95849000449b223bfa5d575": {
+        "candidate": {
+          "id": "ridge_half_3_1",
+          "kind": "fit_ridge",
+          "parameters": {
+            "fidelity": "half",
+            "feature_grid": 3,
+            "alpha": 1.0
+          },
+          "cost": 2
+        },
+        "status": "succeeded",
+        "reserved_cu": 0,
+        "attempt": 1,
+        "retried": false,
+        "atomic": false,
+        "outcome_hash": "14670fe825bb8c3c73e7fb5eda470fd3c62fc3deb6223cb3f437578e30f49987",
+        "fixture": false,
+        "error": null
+      }
+    },
+    "pending_job": null,
+    "latest_failure": null,
+    "retries": 0,
+    "cu": 4.0,
+    "attempts": 3,
+    "decisions": 4,
+    "tokens": 3780,
+    "requests": 2,
+    "active_seconds": 7.67026530000021,
+    "history": [
+      {
+        "action_id": "mean",
+        "kind": "fit_mean",
+        "cost_cu": 1.0,
+        "quoted_cost_cu": 1,
+        "incumbent": "mean",
+        "version": 1
+      },
+      {
+        "action_id": "diagnose_inputs",
+        "kind": "diagnose_inputs",
+        "cost_cu": 1.0,
+        "quoted_cost_cu": 1,
+        "incumbent": "mean",
+        "version": 2
+      },
+      {
+        "action_id": "ridge_half_3_1",
+        "kind": "fit_ridge",
+        "cost_cu": 2.0,
+        "quoted_cost_cu": 2,
+        "incumbent": "ridge_half_3_1",
+        "version": 3
+      },
+      {
+        "action_id": "submit_best",
+        "kind": "submit_best",
+        "cost_cu": 0.0,
+        "quoted_cost_cu": 0,
+        "incumbent": "ridge_half_3_1",
+        "version": 4
+      }
+    ],
+    "requests_done": {
+      "95ef7ac2b8994b3d809c724b57490df8_obs_000000_mean": {
+        "request_hash": "3800ebbeb45bd369f4f89862cc64bc064ded40baf95949be89b8c84edadc4a7b",
+        "result": {
+          "reward": -0.004910714285714286,
+          "terminated": false,
+          "truncated": false,
+          "observation_ref": "obs_000001",
+          "action_id": "mean"
+        }
+      },
+      "95ef7ac2b8994b3d809c724b57490df8_obs_000001_diagnose_inputs": {
+        "request_hash": "6b44592919193a0487011c783f3218fd19e39adfa0234192f1225c7a813acfad",
+        "result": {
+          "reward": -0.004910714285714286,
+          "terminated": false,
+          "truncated": false,
+          "observation_ref": "obs_000002",
+          "action_id": "diagnose_inputs"
+        }
+      },
+      "95ef7ac2b8994b3d809c724b57490df8_obs_000002_ridge_half_3_1": {
+        "request_hash": "6173d2645e3c2ae77080404657eff563ed928acdb754da99a6a57701c965a8cd",
+        "result": {
+          "reward": -0.009285714285714284,
+          "terminated": false,
+          "truncated": false,
+          "observation_ref": "obs_000003",
+          "action_id": "ridge_half_3_1"
+        }
+      },
+      "95ef7ac2b8994b3d809c724b57490df8_obs_000003_submit_best": {
+        "request_hash": "8e93525c9be1847d85ed0cb88a68bc2c3c314f21979feeef971f4df0be1d2a23",
+        "result": {
+          "reward": -0.009821428571428573,
+          "terminated": true,
+          "truncated": false,
+          "observation_ref": "obs_000004",
+          "action_id": "submit_best"
+        }
+      }
+    },
+    "report": {
+      "schema_version": "budgeted_report_v1",
+      "termination": "explicit_submit",
+      "selected": "ridge_half_3_1",
+      "complete": true,
+      "valid": true,
+      "quality_pass": false,
+      "scientific_success": false,
+      "sealed_error": 0.20802600613690145,
+      "threshold": 0.2,
+      "data_identity": "b5abbc93e0aaa11dcc92dbe1619d719f81e2e7eedc38c85bc656df5128948eee",
+      "provenance": {
+        "source": "controlled_generated_regression",
+        "root_group": 30001,
+        "split": "demo",
+        "instance": 11
+      },
+      "strict_execution": true,
+      "retries": 0,
+      "fixture_faults": false,
+      "search_validation_error": 0.1866553187306107,
+      "model_hash": "2b4167af8c629ca56e6317aa927007a88d840b1c12f449370b2a2944e4b1d9f7",
+      "resources": {
+        "search_cu": 4.0,
+        "finalization_cu": 2,
+        "tool_attempts": 3,
+        "finalization_tools": 2,
+        "decisions": 4,
+        "llm_requests": 2,
+        "llm_tokens": 3780,
+        "active_seconds": 7.67026530000021
+      },
+      "evaluation_reads": 1
+    },
+    "candidate_ids": [
+      "mean",
+      "ridge_half_3_0.1",
+      "ridge_half_3_1",
+      "ridge_half_3_10",
+      "ridge_half_5_0.1",
+      "ridge_half_5_1",
+      "ridge_half_5_10",
+      "ridge_full_3_0.1",
+      "ridge_full_3_1",
+      "ridge_full_3_10",
+      "ridge_full_5_0.1",
+      "ridge_full_5_1",
+      "ridge_full_5_10"
+    ],
+    "finalization_tools": 2,
+    "finalization_cu": 2,
+    "evaluation_reads": 1,
+    "selected": "ridge_half_3_1"
+  },
+  "hash": "f21e65ed3034c45260652851ad18f046725a0b058431817cffec7a0b2b63a6dc",
+  "data_identity": "b5abbc93e0aaa11dcc92dbe1619d719f81e2e7eedc38c85bc656df5128948eee"
+}

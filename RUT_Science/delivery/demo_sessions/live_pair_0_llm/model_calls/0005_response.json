@@ -1,0 +1,51 @@
+{
+  "role": "report_explainer_v1",
+  "response": {
+    "schema_version": "report_explainer_v1",
+    "summary": "The run completed validly and passed quality checks under strict execution with no retries or fixture faults, terminating via explicit submit. Two ridge candidates were observed; the selected candidate ridge_full_5_1 had the lower search validation error (0.04523) versus ridge_half_5_1 (0.05093). A sealed error of 0.05415 was recorded, below the 0.2 threshold. This is a controlled generated regression task, not scientific discovery.",
+    "findings": [
+      {
+        "id": "delivery",
+        "statement": "Delivery was valid: complete report, valid=true, quality_pass=true, strict_execution=true, termination=explicit_submit, retries=0, fixture_faults=false.",
+        "evidence": "verified_report fields"
+      },
+      {
+        "id": "selection",
+        "statement": "Selected candidate was ridge_full_5_1 (alpha=1.0, feature_grid=5, fidelity=full), with observed validation_mean 0.04522780162190493 and validation_std 0.01695366491693777.",
+        "evidence": "verified_report.selected; public_evidence_index entry ridge_full_5_1"
+      },
+      {
+        "id": "comparison",
+        "statement": "The only other observed candidate, ridge_half_5_1, had validation_mean 0.05093147672780046 and validation_std 0.019672550311759202, higher than the selected candidate.",
+        "evidence": "public_evidence_index entry ridge_half_5_1"
+      },
+      {
+        "id": "sealed",
+        "statement": "Sealed error was 0.05415164425795243, below the 0.2 threshold; evaluation_reads=1.",
+        "evidence": "verified_report.sealed_error, threshold, evaluation_reads"
+      },
+      {
+        "id": "coverage",
+        "statement": "Ten of twelve listed candidates were untried (attempts=0, observed=false); only two ridge configurations were observed.",
+        "evidence": "public_evidence_index statuses"
+      },
+      {
+        "id": "resources",
+        "statement": "Resources used: 3 decisions, 2 tool attempts, 4 LLM requests, 9345 LLM tokens, 6.0 search CU, 2 finalization CU, 7.3478 active seconds.",
+        "evidence": "verified_report.resources"
+      }
+    ],
+    "limitations": [
+      "Only two of twelve candidate configurations were observed; no evidence exists for the untried candidates.",
+      "No baseline mean candidate was observed, so no comparison against a trivial baseline is available.",
+      "The task is controlled synthetic regression (provenance source=controlled_generated_regression, split=demo), so results are not scientific discovery.",
+      "No tuning guidance is offered; sealed results must not be used for tuning.",
+      "No measurements beyond those in the verified report and public evidence index are asserted."
+    ],
+    "artifact_refs": [
+      "report.json",
+      "report.md"
+    ]
+  },
+  "response_hash": "175d6f5a8b72739aee78b62f9cc9ecebc81f2bfd1683d82dcd66fac4c5f814bc"
+}

@@ -1,0 +1,293 @@
+{
+  "schema_version": "design_trace_v1",
+  "turn": 5,
+  "interview_id": "65681455ae6e4a97a8cf884023a625e0",
+  "revision_before": 3,
+  "revision_after": 4,
+  "input": "/answer {\"design\": \"prediction\", \"response\": \"y\", \"unit\": \"id\", \"provenance\": \"synthetic\", \"sampling_note\": \"全部现有合成样本，仅作探索性演示；未进行事先功效计算\", \"levels\": [], \"features\": [\"x1\", \"x2\"], \"randomization_note\": \"not_applicable\", \"missing_policy\": \"reject\", \"alpha\": 0.05, \"seed\": 42}",
+  "updates": {
+    "design": "prediction",
+    "response": "y",
+    "unit": "id",
+    "provenance": "synthetic",
+    "sampling_note": "全部现有合成样本，仅作探索性演示；未进行事先功效计算",
+    "levels": [],
+    "features": [
+      "x1",
+      "x2"
+    ],
+    "randomization_note": "not_applicable",
+    "missing_policy": "reject",
+    "alpha": 0.05,
+    "seed": 42
+  },
+  "unknown": [],
+  "errors": [],
+  "observation": {
+    "feature_version": "design_decisions_v1",
+    "features": [
+      1.0,
+      1.0,
+      1.0,
+      0.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.16666666666666666,
+      1.0
+    ],
+    "mask": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      false
+    ],
+    "missing": [],
+    "blocker_codes": []
+  },
+  "selected_action": "prepare",
+  "policy_hash": "3d4ce9868292783839efa6c5eccfa5890ab4e757e6a3709e999a641f7b61e69f",
+  "validation": {
+    "schema_version": "design_validation_v1",
+    "contract_hash": "123f264d69c68061e6ac053b6c501d3200587301fa7cde21245c39796c0d8dc8",
+    "ready": true,
+    "checks": [
+      {
+        "code": "specification",
+        "status": "passed",
+        "detail": "字段结构与已注册方法匹配",
+        "fields": []
+      },
+      {
+        "code": "data_structure",
+        "status": "passed",
+        "detail": "保留100个声明单位；排除0个缺失单位",
+        "fields": []
+      },
+      {
+        "code": "tool_budget",
+        "status": "passed",
+        "detail": "还需准备及执行6次工具，当前剩余11次",
+        "fields": []
+      },
+      {
+        "code": "scientific_assumptions",
+        "status": "unverified",
+        "detail": "来源、独立性、随机化和样本依据是用户声明；未通过列检查证明",
+        "fields": []
+      }
+    ],
+    "missing": [],
+    "execution_authorized": false,
+    "scientific_success": null
+  },
+  "expert_action": null,
+  "annotation_status": "unreviewed",
+  "result": {
+    "intent": "tabular",
+    "answer": "已生成表格实验草案。请检查下列设计与计划，/confirm 后执行。\n问题：在未见合成单位上比较均值基线与OLS预测y的误差。\n设计：均值基线与 OLS 预测比较\n数据：prediction.csv；来源声明：synthetic\n响应：y；实验单位列：id\n特征：x1, x2\n划分：训练60%、验证20%、测试20%；仅在训练集拟合标准化和模型。\n按验证MSE选方法，冻结后测试一次。\n保留单位：100；因缺失排除单位：0\n缺失策略：reject；alpha=0.05；seed=42\n样本依据：全部现有合成样本，仅作探索性演示；未进行事先功效计算\n随机化说明：not_applicable\n执行步骤：partition → fit → select → evaluate → report；还需5次工具操作。\n来源、独立性和随机化需要依据实际设计核实；结果不自动支持因果结论。\n固定计划执行；数据变化需新草案，失败在工具边界暂停。完整规格和证据保存在实验目录。",
+    "spec": {
+      "data_path": "prediction.csv",
+      "research_question": "在未见合成单位上比较均值基线与OLS预测y的误差。",
+      "design": "prediction",
+      "response": "y",
+      "unit": "id",
+      "provenance": "synthetic",
+      "sampling_note": "全部现有合成样本，仅作探索性演示；未进行事先功效计算",
+      "factor": null,
+      "levels": [],
+      "features": [
+        "x1",
+        "x2"
+      ],
+      "randomization_note": "not_applicable",
+      "missing_policy": "reject",
+      "alpha": 0.05,
+      "seed": 42,
+      "schema_version": "experiment_spec_v1"
+    },
+    "protocol": {
+      "goal": "out_of_sample_prediction",
+      "hypothesis": "Validation MSE selects mean or OLS; evaluate winner once on frozen test",
+      "methods": [
+        "mean",
+        "ols"
+      ],
+      "metric": "MSE",
+      "preprocessing": "standardization fitted on train only; no imputation",
+      "split": {
+        "train": 0.6,
+        "validation": 0.2,
+        "test": 0.2,
+        "seed": 42
+      },
+      "replication": "distinct declared units; random seed is not an independent replicate",
+      "assumptions": [
+        "independent, exchangeable units; no temporal or clustered splitting",
+        "linear model; finite numeric features; full-rank train matrix"
+      ],
+      "sample_basis": "全部现有合成样本，仅作探索性演示；未进行事先功效计算",
+      "causal_claim": "not_established; provenance and randomization are user declarations",
+      "stopping": "fixed plan, no hyperparameter search or test feedback",
+      "failure": "pause at tool boundary; repair inputs with a new draft; no silent substitutions"
+    },
+    "plan": {
+      "nodes": [
+        {
+          "id": "partition",
+          "tool": "tabular_partition",
+          "depends_on": []
+        },
+        {
+          "id": "fit",
+          "tool": "tabular_fit",
+          "depends_on": [
+            "partition"
+          ]
+        },
+        {
+          "id": "select",
+          "tool": "tabular_select",
+          "depends_on": [
+            "fit"
+          ]
+        },
+        {
+          "id": "evaluate",
+          "tool": "tabular_evaluate",
+          "depends_on": [
+            "select"
+          ]
+        },
+        {
+          "id": "report",
+          "tool": "tabular_report",
+          "depends_on": [
+            "evaluate"
+          ]
+        }
+      ],
+      "spec_hash": "5fcaf52177149a04a6057e0cd16cd9fb1ed4018253837f408d34187cff58a1af",
+      "data_sha256": "119a03a30267d160c67e61d46d71fbe060c3c39529dec0bcd130f63c1654aa15",
+      "schema_version": "execution_plan_v1"
+    },
+    "draft_hash": "24f8178b8607136e52b0c091d227a5b8efc765df7b6bd2bf2155d942689ff6cc",
+    "experiment_ref": "experiments/230eb1fc3cd54934a1804c8ed403a78c",
+    "requires_confirmation": true,
+    "evidence_ref": "tool_6aecf37271c1a15a",
+    "interview": {
+      "id": "65681455ae6e4a97a8cf884023a625e0",
+      "revision": 4,
+      "active": true,
+      "fields": {
+        "alpha": 0.05,
+        "seed": 42,
+        "missing_policy": "reject",
+        "randomization_note": "not_applicable",
+        "data_path": "prediction.csv",
+        "research_question": "在未见合成单位上比较均值基线与OLS预测y的误差。",
+        "unit_structure": "independent_rows",
+        "design": "prediction",
+        "response": "y",
+        "unit": "id",
+        "provenance": "synthetic",
+        "sampling_note": "全部现有合成样本，仅作探索性演示；未进行事先功效计算",
+        "levels": [],
+        "features": [
+          "x1",
+          "x2"
+        ]
+      },
+      "unknown": [],
+      "conflicts": {},
+      "pending": null,
+      "validation": {
+        "schema_version": "design_validation_v1",
+        "contract_hash": "123f264d69c68061e6ac053b6c501d3200587301fa7cde21245c39796c0d8dc8",
+        "ready": true,
+        "checks": [
+          {
+            "code": "specification",
+            "status": "passed",
+            "detail": "字段结构与已注册方法匹配",
+            "fields": []
+          },
+          {
+            "code": "data_structure",
+            "status": "passed",
+            "detail": "保留100个声明单位；排除0个缺失单位",
+            "fields": []
+          },
+          {
+            "code": "tool_budget",
+            "status": "passed",
+            "detail": "还需准备及执行6次工具，当前剩余11次",
+            "fields": []
+          },
+          {
+            "code": "scientific_assumptions",
+            "status": "unverified",
+            "detail": "来源、独立性、随机化和样本依据是用户声明；未通过列检查证明",
+            "fields": []
+          }
+        ],
+        "missing": [],
+        "execution_authorized": false,
+        "scientific_success": null
+      },
+      "policy": "bc",
+      "turns": 4,
+      "max_turns": 24,
+      "draft": {
+        "draft_hash": "24f8178b8607136e52b0c091d227a5b8efc765df7b6bd2bf2155d942689ff6cc",
+        "experiment_ref": "experiments/230eb1fc3cd54934a1804c8ed403a78c",
+        "contract_hash": "123f264d69c68061e6ac053b6c501d3200587301fa7cde21245c39796c0d8dc8"
+      }
+    }
+  }
+}

@@ -1,0 +1,285 @@
+{
+  "ref": "124916b2dbc5921425eb237dc58cf91afb221af5a6079ff3e5ce31c7de885b07",
+  "kind": "review",
+  "data": {
+    "plan_ref": "c18de98144be090dd11b724d08ac0a1296f6e9080212667a82527a388b18aee9",
+    "reviewer": "fixed_g2_4_verifier_not_the_planner",
+    "validation": {
+      "schema_version": "doe_validation_v1",
+      "verifier_version": "doe_verifier_v1",
+      "contract_hash": "9c741a55004ba12144bd0148d8823d5a2e47b74cfe191e1a7115f37d938359bc",
+      "request_hash": "5d334d122319c6ba1464c1a5f4078bb4a53eb4476aa6572c87f54581d55c0c93",
+      "checks": [
+        {
+          "code": "request_schema",
+          "status": "passed",
+          "detail": []
+        },
+        {
+          "code": "contract_schema",
+          "status": "passed",
+          "detail": []
+        },
+        {
+          "code": "request_binding",
+          "status": "passed",
+          "detail": "Host-owned request identity must match"
+        },
+        {
+          "code": "supported_scope",
+          "status": "passed",
+          "detail": "v1 accepts only the explicitly requested registered family"
+        },
+        {
+          "code": "evidence_grounding",
+          "status": "passed",
+          "detail": {
+            "ungrounded_claims": []
+          }
+        },
+        {
+          "code": "critical_facts_available",
+          "status": "passed",
+          "detail": []
+        },
+        {
+          "code": "assumptions_declared",
+          "status": "passed",
+          "detail": "Nominal power requires these declared model assumptions"
+        },
+        {
+          "code": "analysis_model",
+          "status": "blocked",
+          "detail": "Analysis must include all factors/interactions and declared blocks"
+        },
+        {
+          "code": "design_layout",
+          "status": "passed",
+          "detail": "Bounded balanced design family"
+        },
+        {
+          "code": "randomization_schedule",
+          "status": "passed",
+          "detail": "Recomputed allocation and within-block order must match the locked seed"
+        },
+        {
+          "code": "experimental_units",
+          "status": "passed",
+          "detail": "Each planned treatment application needs a distinct unit id; measurements do not add units"
+        },
+        {
+          "code": "run_budget",
+          "status": "passed",
+          "detail": {
+            "planned_cost": 48.0,
+            "declared_budget": 100.0
+          }
+        },
+        {
+          "code": "estimability",
+          "status": "passed",
+          "detail": {
+            "runs": 48,
+            "columns": [
+              "intercept",
+              "architecture",
+              "learning_rate",
+              "architecture:learning_rate",
+              "block:b2",
+              "block:b3",
+              "block:b4",
+              "block:b5",
+              "block:b6"
+            ],
+            "rank": 9,
+            "parameters": 9,
+            "residual_df": 39,
+            "full_rank": true,
+            "nominal_power": 0.9218529483590627,
+            "power_scope": "conditional_gaussian_homoscedastic_fixed_effect_model",
+            "primary_estimable": true,
+            "pure_error_df": 24,
+            "contrast": [
+              0.0,
+              2.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contrast_definition": "high_minus_low_average",
+            "variance_factor": 0.08333333333333333,
+            "planned_standard_error": 0.005773502691896257,
+            "noncentrality": 3.464101615137755,
+            "critical_t": 2.022690920036761,
+            "sigma_sensitivity": [
+              {
+                "sigma_multiplier": 1.0,
+                "nominal_power": 0.9218529483590627
+              },
+              {
+                "sigma_multiplier": 1.25,
+                "nominal_power": 0.771112226135468
+              },
+              {
+                "sigma_multiplier": 1.5,
+                "nominal_power": 0.6149884109855592
+              }
+            ],
+            "pilot_variance_uncertainty_integrated": false
+          }
+        },
+        {
+          "code": "residual_degrees_of_freedom",
+          "status": "passed",
+          "detail": "Residual variance must be estimable under the declared model"
+        },
+        {
+          "code": "nominal_power",
+          "status": "passed",
+          "detail": {
+            "achieved": 0.9218529483590627,
+            "target": 0.8,
+            "conditional_on_declared_sigma_and_model": true
+          }
+        },
+        {
+          "code": "real_world_assumptions",
+          "status": "unverified",
+          "detail": "Unit independence, variance, additivity, measurement quality and actual randomization require external evidence; no observed outcomes were analyzed"
+        }
+      ],
+      "diagnostics": {
+        "runs": 48,
+        "columns": [
+          "intercept",
+          "architecture",
+          "learning_rate",
+          "architecture:learning_rate",
+          "block:b2",
+          "block:b3",
+          "block:b4",
+          "block:b5",
+          "block:b6"
+        ],
+        "rank": 9,
+        "parameters": 9,
+        "residual_df": 39,
+        "full_rank": true,
+        "nominal_power": 0.9218529483590627,
+        "power_scope": "conditional_gaussian_homoscedastic_fixed_effect_model",
+        "primary_estimable": true,
+        "pure_error_df": 24,
+        "contrast": [
+          0.0,
+          2.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "contrast_definition": "high_minus_low_average",
+        "variance_factor": 0.08333333333333333,
+        "planned_standard_error": 0.005773502691896257,
+        "noncentrality": 3.464101615137755,
+        "critical_t": 2.022690920036761,
+        "sigma_sensitivity": [
+          {
+            "sigma_multiplier": 1.0,
+            "nominal_power": 0.9218529483590627
+          },
+          {
+            "sigma_multiplier": 1.25,
+            "nominal_power": 0.771112226135468
+          },
+          {
+            "sigma_multiplier": 1.5,
+            "nominal_power": 0.6149884109855592
+          }
+        ],
+        "pilot_variance_uncertainty_integrated": false
+      },
+      "experiment_steps": {
+        "version": "doe_steps_v1",
+        "mode": "design_review_only",
+        "contract_family": "factorial_2x2",
+        "steps": [
+          {
+            "id": "ground_facts",
+            "depends_on": [],
+            "acceptance": "Every required claim has a current source; unresolved facts block submission",
+            "executed": false
+          },
+          {
+            "id": "check_design",
+            "depends_on": [
+              "ground_facts"
+            ],
+            "acceptance": "Unit allocation, model, estimability, nominal power and budget pass the verifier",
+            "executed": false
+          },
+          {
+            "id": "preregister",
+            "depends_on": [
+              "check_design"
+            ],
+            "acceptance": "Freeze request, contract, primary contrast, alpha, analysis, missing-data rule and run order",
+            "executed": false
+          },
+          {
+            "id": "external_review",
+            "depends_on": [
+              "preregister"
+            ],
+            "acceptance": "Review real-world assumptions and obtain separate host authorization",
+            "executed": false
+          },
+          {
+            "id": "collect_outcomes",
+            "depends_on": [
+              "external_review"
+            ],
+            "acceptance": "Record actual assignment, treatment application, measurement, deviations and failures",
+            "executed": false
+          },
+          {
+            "id": "analyze",
+            "depends_on": [
+              "collect_outcomes"
+            ],
+            "acceptance": "Check assumptions; use the prespecified model and unit-level response; deviations require review",
+            "executed": false
+          },
+          {
+            "id": "report",
+            "depends_on": [
+              "analyze"
+            ],
+            "acceptance": "Report effect, two-sided interval, practical relevance, exclusions and limitations including negative results",
+            "executed": false
+          }
+        ],
+        "execution_authorized": false,
+        "observed_outcomes": null
+      },
+      "ready_for_review": false,
+      "execution_authorized": false,
+      "scientific_success": null,
+      "expert_calibrated": false,
+      "validation_hash": "b81da028c92a742b8e29dee318bdf14b61ed3e8f6a0c8f47df43ab9480fd6500"
+    },
+    "findings": [
+      {
+        "finding_id": "68ffefe6ed9ad1bc",
+        "code": "analysis_model",
+        "detail": "Analysis must include all factors/interactions and declared blocks"
+      }
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-27",
+  "files": {
+    "bootstrap.py": {
+      "sha256": "52d5d9e97cb9769a02b33f4fd0abd26d1de09b9933b708312d676954d1b3de69",
+      "original_sha256": "8eb1a1bf78e956e4dda316b8223d60784e160126a9ddb266c69aee2a6b47b84c",
+      "reason": "Resolve prior study inside unified research; prevent relocated baseline overwrite"
+    },
+    "lab/guard.py": {
+      "sha256": "385104636e0027b479eb88cd4fe9c552e961b919935c6b0eb2f884efd3d65275",
+      "original_sha256": "1de55a40d1fa08bcce278df2c818b70728f5e170d156b41b4814590bc746a586",
+      "reason": "Find actual project root after relocation; retain per-study write/import boundaries"
+    },
+    "README_本轮交付.md": {
+      "sha256": "0f9baf22297d2555c853d25ad6adb215e825ae5083c8a176f4825c59bfb6fe42",
+      "original_sha256": "fa78aa6582891a4c8d27a1ed2ce4084372d26d373ab9d66e5d16524c01e86caa",
+      "reason": "Current navigation and commands; complete original report retained as historical evidence"
+    },
+    "run.py": {
+      "sha256": "7f0cbdcb986c4494c5bcc144d8223d4b6a5e31fe183fb969c957802dafa1ad26",
+      "original_sha256": "f617c3be039777c4522e576651baea67197132070ac80bc975dddbf769fff7bb",
+      "reason": "Route current integrity checks separately and retain original test logs; refuse baseline overwrite"
+    },
+    "tests/test_isolation.py": {
+      "sha256": "165c8479bdb7c73b0300eb3a7de6cfc1a559075a702d24c4a5301358014e8b16",
+      "original_sha256": "a6274a5d76fd3bd35727357583dcc5f2cb7bc0feb21359c3fae01c1fa8f3791d",
+      "reason": "Use relocated prior-study path for the outside-write negative test"
+    },
+    "tests/test_ppo.py": {
+      "sha256": "102a3d017a25ba4d757345f6d6b5cb1bdbda73c3b0b09bef48fe281e3c549e18",
+      "original_sha256": "43d5d8100841ef578a63dc490d61536cd5fc5c5f8741aeedac576dee936d1694",
+      "reason": "Write repeatable current checkpoint tests separately from historical test artifacts"
+    }
+  },
+  "frozen_sources_modified": false,
+  "new_runtime_helper": "lab/relocation.py",
+  "new_runtime_helper_sha256": "63875408adb70df93aa81b298e96789a157c8ff55e06d3f76a282579489bc23d"
+}

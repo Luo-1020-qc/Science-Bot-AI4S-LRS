@@ -1,0 +1,39 @@
+{
+  "schema_version": "harness_examples_v1",
+  "date": "2026-10-28",
+  "purpose": "Small exposed training-data examples and validation, not a scientific benchmark",
+  "human_expert_labels": 0,
+  "blind_heldout_tasks": 0,
+  "policy_split_counts": {
+    "train": 8,
+    "development": 2,
+    "evaluation_example": 2
+  },
+  "underlying_groups_disjoint": true,
+  "shared_scenario_templates": true,
+  "evaluation_example_is_public": true,
+  "compatible_with_live_agent_loader": false,
+  "ppo_training_data": false,
+  "formal_training_transitions": 0,
+  "real_scientific_data_copied": false,
+  "artifact_sha256": {
+    "tasks/train.jsonl": "cc4a919a9bdbdec87b23921389d6b5e9b85a5388a598488d3fe3969af4eb10be",
+    "episodes/train.jsonl": "2e60071293b64b2501efdddaaa86f9bbff380cfc4da3800887d5138f6db96d7b",
+    "tasks/development.jsonl": "95ad9d60d22fafa800b52e2b18d80d78399ccce4d577c96dfde8cd327dae0614",
+    "episodes/development.jsonl": "e7ade3705d84724cec4b3ae56c300a8cb9a59f7b938db6e5ea9b402988ac5bc9",
+    "tasks/evaluation_example.jsonl": "ab91d822b41e838e9dd3580451ab33fe162ec76957f2379186c6cc79c40fe60e",
+    "episodes/evaluation_example.jsonl": "0872390c079ae06fe8f0f8ebf802694bfcdcad00d6f1276d793a93d7086e2d1a",
+    "evaluator_only/scenarios.jsonl": "52072fc66ffe359890a22a54b9c2aec9ab8a208b841ed1893bf3aaaddaa59d78",
+    "labels/bc_train.jsonl": "ade07462ad0cfcfdfb2a6b8e7e7d667780f5b24fa0c52e844788c5f82290aed0",
+    "labels/preferences_train.jsonl": "3d850bae3eb5dd143b89de98db5a877b1f72a6c234061a214cb207e2d7f84ed4",
+    "review/pending.jsonl": "fa1b4b85d127c04f726e9fd603bae5e846cea76931152bd85fe92fb5e2235621",
+    "examples/darcy_full_example.json": "6d672ac328bce9652c9e77772c02218ef08493d5b7f433aa26d4def31866a387",
+    "examples/cvit_full_example.json": "051638c9dd8043cce19c54c8c2316b4ae4942309ea42b399461c78864e123f81",
+    "schemas/task.schema.json": "d1b27e0d5a555285b4d24213589e462fc6a8e3f04849d48338b7e96bc51f7a96",
+    "schemas/transition.schema.json": "bb8b1cd466c063ff56cb750c97d4148aff8adab3216f1cbb6702e6cae3d1d7b6",
+    "schemas/ppo_rollout.schema.json": "dc755d6b538ef09ae7ef2f79ab8c999a7790d4a0fd28e643145dac2766248eab",
+    "reference_copy/lab_contracts.py": "db401d09c18d9b9cbeb45baf7f2d656aeb2017987140d203b2c8b658786d197e",
+    "reference_copy/doe_schema.py": "d239c7c6c03cc1dc2012e3b471cc6d60f14bee73400a0eca9a3d18142439ecc5",
+    "reference_copy/manifest.json": "2086336a4e4a6b15bea28a45283084173bf0266d6a7139b4a0490af17dda5b44"
+  }
+}

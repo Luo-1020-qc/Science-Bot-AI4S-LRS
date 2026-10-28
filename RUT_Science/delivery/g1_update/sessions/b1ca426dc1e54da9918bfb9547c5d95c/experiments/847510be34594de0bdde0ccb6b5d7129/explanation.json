@@ -1,0 +1,52 @@
+{
+  "schema_version": "report_explainer_v1",
+  "summary": "The run completed validly and passed quality checks under strict execution with no retries or fixture faults, terminating via explicit submit. Only one candidate was observed: ridge_full_5_10, which succeeded with a search validation error of 0.04659 (std 0.01805) and a sealed error of 0.05678, both below the 0.2 threshold. The remaining twelve candidates were untried. This is a controlled synthetic regression task, not scientific discovery; the Darcy data is a historically exposed transfer pilot, not a blind test.",
+  "findings": [
+    {
+      "id": "delivery",
+      "statement": "Valid delivery: verified_report.valid=true, complete=true, strict_execution=true, termination=explicit_submit, retries=0, fixture_faults=false.",
+      "evidence": "verified_report"
+    },
+    {
+      "id": "quality",
+      "statement": "Quality pass: quality_pass=true and scientific_success=true; sealed_error=0.05678 and search_validation_error=0.04659 are both below threshold=0.2.",
+      "evidence": "verified_report"
+    },
+    {
+      "id": "selection",
+      "statement": "Selected candidate ridge_full_5_10 (fit_ridge, alpha=10.0, feature_grid=5, fidelity=full) is the only observed candidate; it succeeded on 1 attempt with validation_mean=0.04659 and validation_std=0.01805.",
+      "evidence": "public_evidence_index, verified_report"
+    },
+    {
+      "id": "untried",
+      "statement": "Twelve listed candidates (mean plus ridge variants at half/full fidelity and grids 3/5 with alphas 0.1/1/10) were untried with attempts=0 and no validation values.",
+      "evidence": "public_evidence_index"
+    },
+    {
+      "id": "recovery",
+      "statement": "No recovery was needed: retries=0 and no fixture faults were reported.",
+      "evidence": "verified_report"
+    },
+    {
+      "id": "abstention",
+      "statement": "No abstention occurred; the run terminated with an explicit submit and a selected candidate.",
+      "evidence": "verified_report"
+    },
+    {
+      "id": "resources",
+      "statement": "Pre-explanation usage: active_seconds=3.472, decisions=2, llm_requests=4, llm_tokens=3737, tool_attempts=1, search_cu=4.0, finalization_cu=2, finalization_tools=2. Final totals including this explanation are supplied by the host ledger.",
+      "evidence": "verified_report"
+    }
+  ],
+  "limitations": [
+    "Only one of thirteen candidates was observed; no comparative evidence exists for the untried candidates.",
+    "This is a controlled generated synthetic regression task, not scientific discovery.",
+    "The Darcy data is a historically exposed transfer pilot, not a blind test.",
+    "Resource counts shown are pre-explanation usage; final totals including this explanation come from the host ledger.",
+    "No tuning on sealed results is suggested or supported by this evidence."
+  ],
+  "artifact_refs": [
+    "report.json",
+    "report.md"
+  ]
+}

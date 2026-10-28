@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rut-science"
+version = "0.5.0"
+description = "Executable, RUT-inspired evaluation of scientific tool agents"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+darcy = ["numpy>=1.26,<3", "scipy>=1.11,<2"]
+planning = ["langgraph==1.2.14"]
+science-bot = ["numpy>=1.26,<3", "scipy>=1.11,<2", "langgraph==1.2.14", "langgraph-checkpoint-sqlite>=3,<4", "torch>=2.5,<3", "gymnasium>=1,<2", "rich>=13,<16", "prompt-toolkit>=3,<4"]
+
+[project.scripts]
+rut-science = "rut_science.cli:main"
+science-bot = "rut_science.science_bot.terminal:main"
+
+[tool.setuptools.packages.find]
+include = ["rut_science*"]

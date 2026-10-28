@@ -1,0 +1,11 @@
+{
+  "version": "study_relocation_v1",
+  "date": "2026-10-27",
+  "study": "g2_3",
+  "old_root": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_3_Test_Workspace",
+  "new_root": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\research\\strategy_learning\\studies\\g2_3",
+  "project_root": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent",
+  "manifest_ref": "maintenance/consolidation_2026-10-27/migration.json",
+  "historical_evidence": "Old verification/protected inventories refer to original isolated-run conditions; retained without rewriting",
+  "live_verification": "evidence/current_verification.json"
+}

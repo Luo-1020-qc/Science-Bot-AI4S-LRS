@@ -1,0 +1,11 @@
+{
+  "plan_ref": "c12c0fc1e17a308fd68897790df0c3eb262430827b3a59f7824bf529e9c8a0eb",
+  "expected_contract_hash": "f766fa909010664b2c570a6f64b0f1886ff54d022fd256b3ab89e051f94b1752",
+  "changes": [
+    {
+      "path": "/resources/budget",
+      "value": 256
+    }
+  ],
+  "reason": "Illustrative requested budget amendment; requires a new review"
+}

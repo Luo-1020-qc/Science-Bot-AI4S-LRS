@@ -1,0 +1,52 @@
+{
+  "role": "report_explainer_v1",
+  "response": {
+    "schema_version": "report_explainer_v1",
+    "summary": "The run completed validly and passed quality checks under strict execution with no retries or fixture faults. A single candidate, ridge_full_5_10, was observed and selected; its search-validation error was 0.11246 and the sealed error was 0.11901, both below the 0.2 threshold. The data are historically exposed Darcy benchmark data, so this is a transfer pilot, not a blind test.",
+    "findings": [
+      {
+        "id": "delivery",
+        "statement": "Delivery was valid: the report is complete, valid=true, termination was explicit_submit, and strict_execution=true with zero retries and no fixture faults.",
+        "evidence": "verified_report.complete, valid, termination, strict_execution, retries, fixture_faults"
+      },
+      {
+        "id": "quality",
+        "statement": "Quality pass was achieved (quality_pass=true) and scientific_success=true.",
+        "evidence": "verified_report.quality_pass, scientific_success"
+      },
+      {
+        "id": "selection",
+        "statement": "Only one candidate was observed: ridge_full_5_10 (alpha=10.0, feature_grid=5, fidelity=full), with status succeeded after 1 attempt. All other listed candidates remained untried.",
+        "evidence": "public_evidence_index entries; verified_report.selected"
+      },
+      {
+        "id": "errors",
+        "statement": "Observed search-validation error was 0.1124603273569916 (std 0.028651454777302653) and sealed error was 0.11901471468481795, both below the 0.2 threshold.",
+        "evidence": "public_evidence_index ridge_full_5_10 validation_mean/validation_std; verified_report.search_validation_error, sealed_error, threshold"
+      },
+      {
+        "id": "provenance",
+        "statement": "The dataset is marked historically_exposed=true with scope transfer_pilot_not_blind_test, sourced from a published Darcy numerical benchmark rather than physical measurements.",
+        "evidence": "verified_report.provenance"
+      },
+      {
+        "id": "resources",
+        "statement": "Resources used: 2 decisions, 1 tool attempt, 2 LLM requests (2150 tokens), 5.0367 active seconds, search_cu 4.0, finalization_cu 2, finalization_tools 2, and 1 evaluation read.",
+        "evidence": "verified_report.resources, evaluation_reads"
+      }
+    ],
+    "limitations": [
+      "Only one candidate was observed; the remaining eleven listed candidates are untried, so no comparative model-selection evidence exists.",
+      "The data are historically exposed and are a transfer pilot, not a blind test; sealed_error should not be interpreted as blind generalization.",
+      "The source is a published numerical benchmark, not physical measurements.",
+      "No recovery or abstention events occurred (retries=0, termination=explicit_submit); recovery and abstention behavior is therefore unexercised.",
+      "No generated-task or synthetic-regression results are present in the observed evidence; any such tasks would be controlled synthetic regression, not scientific discovery.",
+      "No tuning on sealed results is warranted or supported by this evidence."
+    ],
+    "artifact_refs": [
+      "report.json",
+      "report.md"
+    ]
+  },
+  "response_hash": "caa8d2db9a5dbece7de2a7c1029915c7782d648a4e63d69dac5360c1981e5d56"
+}

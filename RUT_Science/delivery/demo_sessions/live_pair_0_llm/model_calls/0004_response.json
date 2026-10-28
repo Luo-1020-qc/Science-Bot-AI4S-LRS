@@ -1,0 +1,14 @@
+{
+  "role": "llm_selector_v1",
+  "response": {
+    "schema_version": "action_selection_v1",
+    "observation_ref": "obs_000002",
+    "action_id": "submit_best",
+    "evidence_refs": [
+      "ridge_full_5_1",
+      "ridge_half_5_1"
+    ],
+    "reason": "Compute units are exhausted (0 remaining) and no fit/diagnostic candidates are legal; incumbent ridge_full_5_1 has the lowest observed validation error (0.0452) and is well under the 0.2 threshold, so submit_best is the only productive legal action."
+  },
+  "response_hash": "45655a589e1a189a2358ef14e44dedee56078c56fb4a0a8295d8a485ab1803e4"
+}

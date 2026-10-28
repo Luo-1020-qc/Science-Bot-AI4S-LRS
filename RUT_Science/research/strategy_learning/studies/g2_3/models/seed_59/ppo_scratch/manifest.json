@@ -1,0 +1,19 @@
+{
+  "algorithm": "ppo_scratch",
+  "seed": 59,
+  "ppo_updates": 40,
+  "transitions": 20480,
+  "selected_update": 10,
+  "selected_by": "development success, then fewer blocked attempts, then fewer decisions",
+  "policy_hash": "f4ee68ccdbe481ac0af22657e31ea4c37a76a822c6f3e08c31c1394ca0ec1371",
+  "initial_policy_hash": "92a5e2f53fd534948df4fa64c336753d04f2a7760e0eb813a408f8f9b7c115c3",
+  "initialization": "random_same_architecture",
+  "initial_policy_retained": false,
+  "train_tasks_hash": "f2ce26f22a4ce380c9c6572bee394698ed851215fa882134ce503c0620509649",
+  "development_tasks_hash": "41d423d6c55a6846ae74b03b22d42cc39e404463b2c2277953972331fc85036f",
+  "config_hash": "e47130875a838e307662da8b3a874943beca97dcb4744f7251260f14a3abc96c",
+  "heldout_used": false,
+  "device": "cpu",
+  "real_cvit_jobs": 0,
+  "cpu_seconds_this_invocation": 20.917870699999185
+}

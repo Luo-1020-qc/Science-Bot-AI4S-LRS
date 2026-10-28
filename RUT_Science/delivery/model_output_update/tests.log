@@ -1,0 +1,328 @@
+python.exe : test_both_data_dependent_selection_outcomes_and_tie_rule (test_adaptive_planning.AdaptivePlanningTests.tes
+t_both_data_dependent_selection_outcomes_and_tie_rule) ... ok
+所在位置 行:3 字符: 1
++ & '.\.venv\Scripts\python.exe' -m unittest discover -s tests -v *> 'd ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (test_both_data_...ie_rule) ... ok:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+test_full_mean_branch_on_constant_field_fixture (test_adaptive_planning.AdaptivePlanningTests.test_full_mean_branch_on_
+constant_field_fixture) ... ok
+test_full_selection_and_recovery_independent_scientific_audit (test_adaptive_planning.AdaptivePlanningTests.test_full_s
+election_and_recovery_independent_scientific_audit) ... ok
+test_mock_api_intake_plan_execution_recovery_and_shared_ledger (test_adaptive_planning.AdaptivePlanningTests.test_mock_
+api_intake_plan_execution_recovery_and_shared_ledger) ... ok
+test_plan_roundtrip_and_selected_model_binding_enforced (test_adaptive_planning.AdaptivePlanningTests.test_plan_roundtr
+ip_and_selected_model_binding_enforced) ... ok
+test_selection_requires_both_candidates_and_only_selected_is_tested (test_adaptive_planning.AdaptivePlanningTests.test_
+selection_requires_both_candidates_and_only_selected_is_tested) ... ok
+test_atomic_failure_retries_with_versions_and_separate_strict_score (test_adaptive_planning.RecoveryTests.test_atomic_f
+ailure_retries_with_versions_and_separate_strict_score) ... ok
+test_crash_after_persisted_recovery_decision_does_not_consume_second_retry (test_adaptive_planning.RecoveryTests.test_c
+rash_after_persisted_recovery_decision_does_not_consume_second_retry) ... ok
+test_exhaustion_stops_without_infinite_replanning (test_adaptive_planning.RecoveryTests.test_exhaustion_stops_without_i
+nfinite_replanning) ... ok
+test_nontransient_or_mutating_failures_never_retry (test_adaptive_planning.RecoveryTests.test_nontransient_or_mutating_
+failures_never_retry) ... ok
+test_recovery_score_rejects_changed_retry_arguments (test_adaptive_planning.RecoveryTests.test_recovery_score_rejects_c
+hanged_retry_arguments) ... ok
+test_resume_after_failed_call_preserves_retry_count_and_completed_nodes (test_adaptive_planning.RecoveryTests.test_resu
+me_after_failed_call_preserves_retry_count_and_completed_nodes) ... ok
+test_total_retry_bound_is_hard_limited (test_adaptive_planning.RecoveryTests.test_total_retry_bound_is_hard_limited) ..
+. ok
+test_http_credential_transport_requires_actual_localhost (test_analysis_api.AnalysisAndAPITests.test_http_credential_tr
+ansport_requires_actual_localhost) ... ok
+test_json_adapter_records_usage_without_credentials_in_payload (test_analysis_api.AnalysisAndAPITests.test_json_adapter
+_records_usage_without_credentials_in_payload) ... ok
+test_pair_intersection_and_task_clusters (test_analysis_api.AnalysisAndAPITests.test_pair_intersection_and_task_cluster
+s) ... ok
+test_service_error_has_no_secret (test_analysis_api.AnalysisAndAPITests.test_service_error_has_no_secret) ... ok
+test_service_failure_excluded_but_counted (test_analysis_api.AnalysisAndAPITests.test_service_failure_excluded_but_coun
+ted) ... ok
+test_darcy_cli_uses_the_same_default_file (test_api_config_entrypoints.APIConfigurationEntrypointTests.test_darcy_cli_u
+ses_the_same_default_file) ... ok
+test_default_path_is_project_anchored_and_cwd_independent (test_api_config_entrypoints.APIConfigurationEntrypointTests.
+test_default_path_is_project_anchored_and_cwd_independent) ... ok
+test_environment_key_does_not_override_file_and_endpoint_must_match (test_api_config_entrypoints.APIConfigurationEntryp
+ointTests.test_environment_key_does_not_override_file_and_endpoint_must_match) ... ok
+test_missing_file_does_not_fall_back_to_environment (test_api_config_entrypoints.APIConfigurationEntrypointTests.test_m
+issing_file_does_not_fall_back_to_environment) ... ok
+test_scientific_cli_uses_file_without_api_config_argument (test_api_config_entrypoints.APIConfigurationEntrypointTests.
+test_scientific_cli_uses_file_without_api_config_argument) ... ok
+test_bundle_hash_and_saved_artifact_verification (test_darcy_workflow.DarcyWorkflowTests.test_bundle_hash_and_saved_art
+ifact_verification) ... ok
+test_complete_workflow_independent_reference_and_json_score (test_darcy_workflow.DarcyWorkflowTests.test_complete_workf
+low_independent_reference_and_json_score) ... ok
+test_failed_call_not_erased_by_successful_final_state (test_darcy_workflow.DarcyWorkflowTests.test_failed_call_not_eras
+ed_by_successful_final_state) ... ok
+test_mean_field_is_a_valid_separately_confirmed_method (test_darcy_workflow.DarcyWorkflowTests.test_mean_field_is_a_val
+id_separately_confirmed_method) ... ok
+test_post_test_training_and_repeated_test_are_blocked (test_darcy_workflow.DarcyWorkflowTests.test_post_test_training_a
+nd_repeated_test_are_blocked) ... ok
+test_scientific_tampering_is_detected (test_darcy_workflow.DarcyWorkflowTests.test_scientific_tampering_is_detected) ..
+. ok
+test_sealed_data_and_reference_not_exposed_to_agent (test_darcy_workflow.DarcyWorkflowTests.test_sealed_data_and_refere
+nce_not_exposed_to_agent) ... ok
+test_train_validation_and_test_sources_are_separate (test_darcy_workflow.DarcyWorkflowTests.test_train_validation_and_t
+est_sources_are_separate) ... ok
+test_entity_specific_precondition (test_environment.EnvironmentTests.test_entity_specific_precondition) ... ok
+test_failed_calls_are_atomic (test_environment.EnvironmentTests.test_failed_calls_are_atomic) ... ok
+test_sealed_score_not_exposed_and_no_repeated_test (test_environment.EnvironmentTests.test_sealed_score_not_exposed_and
+_no_repeated_test) ... ok
+test_snapshots_are_copies_and_reset_reproducible (test_environment.EnvironmentTests.test_snapshots_are_copies_and_reset
+_reproducible) ... ok
+test_train_uses_only_training_rows (test_environment.EnvironmentTests.test_train_uses_only_training_rows) ... ok
+test_oracle_all_three_checks (test_evaluator.EvaluatorTests.test_oracle_all_three_checks) ... ok
+test_r1a_claiming_success_without_writes (test_evaluator.EvaluatorTests.test_r1a_claiming_success_without_writes) ... o
+k
+test_r1b_partial_write (test_evaluator.EvaluatorTests.test_r1b_partial_write) ... ok
+test_r2_early_violation_not_erased_by_recovery (test_evaluator.EvaluatorTests.test_r2_early_violation_not_erased_by_rec
+overy) ... ok
+test_r3_wrong_model_with_complete_sequence (test_evaluator.EvaluatorTests.test_r3_wrong_model_with_complete_sequence) .
+.. ok
+test_r4_blocked_forbidden_call_still_counts (test_evaluator.EvaluatorTests.test_r4_blocked_forbidden_call_still_counts)
+ ... ok
+test_repeated_same_tool_on_wrong_entity_does_not_cover_gold (test_evaluator.EvaluatorTests.test_repeated_same_tool_on_w
+rong_entity_does_not_cover_gold) ... ok
+test_step_limit_is_failure_even_with_final_artifacts (test_evaluator.EvaluatorTests.test_step_limit_is_failure_even_wit
+h_final_artifacts) ... ok
+test_tampered_metric_and_leakage_fail_scientific_checks (test_evaluator.EvaluatorTests.test_tampered_metric_and_leakage
+_fail_scientific_checks) ... ok
+test_wrong_arguments_not_rescued_by_correct_terminal_state (test_evaluator.EvaluatorTests.test_wrong_arguments_not_resc
+ued_by_correct_terminal_state) ... ok
+test_adjacent_objects_trailing_comma_and_quoted_comma_preserved (test_live_readiness.LiveReadinessTests.test_adjacent_o
+bjects_trailing_comma_and_quoted_comma_preserved) ... ok
+test_bilingual_relevant_question_and_fabricated_metric (test_live_readiness.LiveReadinessTests.test_bilingual_relevant_
+question_and_fabricated_metric) ... ok
+test_config_errors_do_not_include_secret (test_live_readiness.LiveReadinessTests.test_config_errors_do_not_include_secr
+et) ... ok
+test_provider_body_and_call_records_do_not_contain_credential (test_live_readiness.LiveReadinessTests.test_provider_bod
+y_and_call_records_do_not_contain_credential) ... ok
+test_request_limit_and_actual_usage_replace_reservation (test_live_readiness.LiveReadinessTests.test_request_limit_and_
+actual_usage_replace_reservation) ... ok
+test_resume_skips_saved_episodes_and_rejects_changed_config (test_live_readiness.LiveReadinessTests.test_resume_skips_s
+aved_episodes_and_rejects_changed_config) ... ok
+test_token_and_context_limits_prevent_network_admission (test_live_readiness.LiveReadinessTests.test_token_and_context_
+limits_prevent_network_admission) ... ok
+test_unknown_usage_remains_reserved_and_persisted (test_live_readiness.LiveReadinessTests.test_unknown_usage_remains_re
+served_and_persisted) ... ok
+test_explanation_rejection_keeps_scientific_report_available (test_model_output.ModelOutputTests.test_explanation_rejec
+tion_keeps_scientific_report_available) ... ok
+test_format_and_transport_failures_are_saved_without_fake_responses (test_model_output.ModelOutputTests.test_format_and
+_transport_failures_are_saved_without_fake_responses) ... ok
+test_invalid_candidate_does_not_become_an_accepted_plan (test_model_output.ModelOutputTests.test_invalid_candidate_does
+_not_become_an_accepted_plan) ... ok
+test_invalid_user_provenance_is_displayed_as_rejected_without_execution (test_model_output.ModelOutputTests.test_invali
+d_user_provenance_is_displayed_as_rejected_without_execution) ... ok
+test_legacy_output_replays_without_claiming_host_acceptance (test_model_output.ModelOutputTests.test_legacy_output_repl
+ays_without_claiming_host_acceptance) ... ok
+test_live_events_display_actual_roles_and_host_validation (test_model_output.ModelOutputTests.test_live_events_display_
+actual_roles_and_host_validation) ... ok
+test_missing_information_has_its_own_status (test_model_output.ModelOutputTests.test_missing_information_has_its_own_st
+atus) ... ok
+test_model_text_is_literal_and_cannot_send_terminal_controls (test_model_output.ModelOutputTests.test_model_text_is_lit
+eral_and_cannot_send_terminal_controls) ... ok
+test_offline_empty_history_and_invalid_selectors_do_not_access_network (test_model_output.ModelOutputTests.test_offline
+_empty_history_and_invalid_selectors_do_not_access_network) ... ok
+test_real_llm_selector_reason_and_stale_rejection (test_model_output.ModelOutputTests.test_real_llm_selector_reason_and
+_stale_rejection) ... ok
+test_replay_after_restore_is_read_only_and_does_not_call_model (test_model_output.ModelOutputTests.test_replay_after_re
+store_is_read_only_and_does_not_call_model) ... ok
+test_replay_refuses_tampered_response (test_model_output.ModelOutputTests.test_replay_refuses_tampered_response) ... ok
+test_acceptance_boolean_is_not_integer_and_output_is_required (test_plan_spec.PlanSpecTests.test_acceptance_boolean_is_
+not_integer_and_output_is_required) ... ok
+test_binding_requires_successful_observed_output (test_plan_spec.PlanSpecTests.test_binding_requires_successful_observe
+d_output) ... ok
+test_invalid_plans_rejected_before_any_effects (test_plan_spec.PlanSpecTests.test_invalid_plans_rejected_before_any_eff
+ects) ... ok
+test_revision_metadata_and_safe_identifiers (test_plan_spec.PlanSpecTests.test_revision_metadata_and_safe_identifiers) 
+... ok
+test_split_can_reference_validated_dataset_identity (test_plan_spec.PlanSpecTests.test_split_can_reference_validated_da
+taset_identity) ... ok
+test_valid_plan_and_permuted_storage_order (test_plan_spec.PlanSpecTests.test_valid_plan_and_permuted_storage_order) ..
+. ok
+test_checkpoint_and_artifact_tampering_are_detected (test_planning_agent.PlanningAgentTests.test_checkpoint_and_artifac
+t_tampering_are_detected) ... ok
+test_cli_run_status_resume_and_verify (test_planning_agent.PlanningAgentTests.test_cli_run_status_resume_and_verify) ..
+. ok
+test_complete_offline_plan_executes_and_independently_scores (test_planning_agent.PlanningAgentTests.test_complete_offl
+ine_plan_executes_and_independently_scores) ... ok
+test_completed_resume_refuses_changed_artifacts (test_planning_agent.PlanningAgentTests.test_completed_resume_refuses_c
+hanged_artifacts) ... ok
+test_equivalent_validated_dataset_binding_executes_same_science (test_planning_agent.PlanningAgentTests.test_equivalent
+_validated_dataset_binding_executes_same_science) ... ok
+test_failed_tool_preserves_original_error_and_blocks_successors (test_planning_agent.PlanningAgentTests.test_failed_too
+l_preserves_original_error_and_blocks_successors) ... ok
+test_file_backend_accepts_powershell_utf8_bom (test_planning_agent.PlanningAgentTests.test_file_backend_accepts_powersh
+ell_utf8_bom) ... ok
+test_host_deadline_prevents_execution_after_late_plan_reply (test_planning_agent.PlanningAgentTests.test_host_deadline_
+prevents_execution_after_late_plan_reply) ... ok
+test_invalid_file_plan_never_calls_tools (test_planning_agent.PlanningAgentTests.test_invalid_file_plan_never_calls_too
+ls) ... ok
+test_os_lock_prevents_two_concurrent_executors (test_planning_agent.PlanningAgentTests.test_os_lock_prevents_two_concur
+rent_executors) ... ok
+test_pause_resume_does_not_repeat_completed_training (test_planning_agent.PlanningAgentTests.test_pause_resume_does_not
+_repeat_completed_training) ... ok
+test_planner_only_sees_public_context_and_can_repair_invalid_proposal (test_planning_agent.PlanningAgentTests.test_plan
+ner_only_sees_public_context_and_can_repair_invalid_proposal) ... ok
+test_result_publication_can_resume_without_scientific_reexecution (test_planning_agent.PlanningAgentTests.test_result_p
+ublication_can_resume_without_scientific_reexecution) ... ok
+test_revision_cannot_change_completed_evidence_or_spec (test_planning_agent.PlanningAgentTests.test_revision_cannot_cha
+nge_completed_evidence_or_spec) ... ok
+test_revision_preserves_completed_nodes_and_records_versions (test_planning_agent.PlanningAgentTests.test_revision_pres
+erves_completed_nodes_and_records_versions) ... ok
+test_uncertain_running_marker_refuses_automatic_replay (test_planning_agent.PlanningAgentTests.test_uncertain_running_m
+arker_refuses_automatic_replay) ... ok
+test_ambiguous_dataset_does_not_become_model_choice (test_research_chat.ResearchChatTests.test_ambiguous_dataset_does_n
+ot_become_model_choice) ... ok
+test_api_intake_and_planner_share_persistent_request_quota (test_research_chat.ResearchChatTests.test_api_intake_and_pl
+anner_share_persistent_request_quota) ... ok
+test_confirmation_and_idempotent_execution (test_research_chat.ResearchChatTests.test_confirmation_and_idempotent_execu
+tion) ... ok
+test_conflicting_numbers_block_until_unambiguous_correction (test_research_chat.ResearchChatTests.test_conflicting_numb
+ers_block_until_unambiguous_correction) ... ok
+test_conflicting_training_constraint_requires_resolution (test_research_chat.ResearchChatTests.test_conflicting_trainin
+g_constraint_requires_resolution) ... ok
+test_default_provenance_is_distinct_from_user (test_research_chat.ResearchChatTests.test_default_provenance_is_distinct
+_from_user) ... ok
+test_edit_invalidates_confirmation_and_old_hash_is_refused (test_research_chat.ResearchChatTests.test_edit_invalidates_
+confirmation_and_old_hash_is_refused) ... ok
+test_missing_target_clarifies_without_execution (test_research_chat.ResearchChatTests.test_missing_target_clarifies_wit
+hout_execution) ... ok
+test_model_cannot_confirm_itself_or_spoof_user_provenance (test_research_chat.ResearchChatTests.test_model_cannot_confi
+rm_itself_or_spoof_user_provenance) ... ok
+test_prepare_only_disables_run_command (test_research_chat.ResearchChatTests.test_prepare_only_disables_run_command) ..
+. ok
+test_receipt_hash_and_execution_policy_tampering_refused (test_research_chat.ResearchChatTests.test_receipt_hash_and_ex
+ecution_policy_tampering_refused) ... ok
+test_resume_preserves_draft_receipt_and_pause_boundary (test_research_chat.ResearchChatTests.test_resume_preserves_draf
+t_receipt_and_pause_boundary) ... ok
+test_suggestion_cannot_override_explicit_value (test_research_chat.ResearchChatTests.test_suggestion_cannot_override_ex
+plicit_value) ... ok
+test_ungrounded_required_target_cannot_be_used_as_default (test_research_chat.ResearchChatTests.test_ungrounded_require
+d_target_cannot_be_used_as_default) ... ok
+test_unsupported_dataset_and_wrong_target_refuse_execution (test_research_chat.ResearchChatTests.test_unsupported_datas
+et_and_wrong_target_refuse_execution) ... ok
+test_cannot_replace_spec_after_split (test_research_spec.ResearchSpecTests.test_cannot_replace_spec_after_split) ... ok
+test_confirmation_not_exposed_before_bound_turn (test_research_spec.ResearchSpecTests.test_confirmation_not_exposed_bef
+ore_bound_turn) ... ok
+test_dataset_identity_and_units_are_bound (test_research_spec.ResearchSpecTests.test_dataset_identity_and_units_are_bou
+nd) ... ok
+test_invalid_spec_values_rejected (test_research_spec.ResearchSpecTests.test_invalid_spec_values_rejected) ... ok
+test_legal_but_unconfirmed_parameters_rejected_atomically (test_research_spec.ResearchSpecTests.test_legal_but_unconfir
+med_parameters_rejected_atomically) ... ok
+test_schema_advertises_exact_models_and_bounds (test_research_spec.ResearchSpecTests.test_schema_advertises_exact_model
+s_and_bounds) ... ok
+test_writes_require_trusted_confirmation_and_model_cannot_confirm (test_research_spec.ResearchSpecTests.test_writes_req
+uire_trusted_confirmation_and_model_cannot_confirm) ... ok
+test_all_five_tasks_and_seven_context_control_variants (test_runtime.RuntimeTests.test_all_five_tasks_and_seven_context
+_control_variants) ... ok
+test_claimed_clarification_with_irrelevant_text_fails (test_runtime.RuntimeTests.test_claimed_clarification_with_irrele
+vant_text_fails) ... ok
+test_future_user_turn_and_gold_not_exposed (test_runtime.RuntimeTests.test_future_user_turn_and_gold_not_exposed) ... o
+k
+test_invalid_time_budget_rejected (test_runtime.RuntimeTests.test_invalid_time_budget_rejected) ... ok
+test_isolated_runs_do_not_reuse_mutated_environment (test_runtime.RuntimeTests.test_isolated_runs_do_not_reuse_mutated_
+environment) ... ok
+test_late_reply_cannot_claim_completion_after_deadline (test_runtime.RuntimeTests.test_late_reply_cannot_claim_completi
+on_after_deadline) ... ok
+test_malformed_actions_cannot_escape_step_budget (test_runtime.RuntimeTests.test_malformed_actions_cannot_escape_step_b
+udget) ... ok
+test_no_write_before_confirmation_and_attempt_preserved (test_runtime.RuntimeTests.test_no_write_before_confirmation_an
+d_attempt_preserved) ... ok
+test_response_cases_have_separate_success_not_execution_sr (test_runtime.RuntimeTests.test_response_cases_have_separate
+_success_not_execution_sr) ... ok
+test_rule_latest_failure_is_authored_context_control (test_runtime.RuntimeTests.test_rule_latest_failure_is_authored_co
+ntext_control) ... ok
+test_abstention_not_success (test_science_bot.ScienceBotTests.test_abstention_not_success) ... ok
+test_boolean_cannot_alias_registered_alpha (test_science_bot.ScienceBotTests.test_boolean_cannot_alias_registered_alpha
+) ... ok
+test_budget_mask (test_science_bot.ScienceBotTests.test_budget_mask) ... ok
+test_candidate_domain (test_science_bot.ScienceBotTests.test_candidate_domain) ... ok
+test_completed_job_reconciles_without_refit (test_science_bot.ScienceBotTests.test_completed_job_reconciles_without_ref
+it) ... ok
+test_confirmation_interrupt_persists_and_resumes (test_science_bot.ScienceBotTests.test_confirmation_interrupt_persists
+_and_resumes) ... ok
+test_explanation_accepts_honest_decimal_rounding (test_science_bot.ScienceBotTests.test_explanation_accepts_honest_deci
+mal_rounding) ... ok
+test_explanation_cannot_replace_scientific_score (test_science_bot.ScienceBotTests.test_explanation_cannot_replace_scie
+ntific_score) ... ok
+test_fault_retry_is_bounded_and_charged (test_science_bot.ScienceBotTests.test_fault_retry_is_bounded_and_charged) ... 
+ok
+test_feature_permutation_preserves_semantics (test_science_bot.ScienceBotTests.test_feature_permutation_preserves_seman
+tics) ... ok
+test_frozen_pre_evaluation_state_cannot_reopen_search (test_science_bot.ScienceBotTests.test_frozen_pre_evaluation_stat
+e_cannot_reopen_search) ... ok
+test_gym_matches_direct_transition (test_science_bot.ScienceBotTests.test_gym_matches_direct_transition) ... ok
+test_http_auth_and_idempotency (test_science_bot.ScienceBotTests.test_http_auth_and_idempotency) ... ok
+test_idempotent_request_and_changed_payload (test_science_bot.ScienceBotTests.test_idempotent_request_and_changed_paylo
+ad) ... ok
+test_independent_recompute_detects_tampered_model (test_science_bot.ScienceBotTests.test_independent_recompute_detects_
+tampered_model) ... ok
+test_intake_cannot_turn_unrelated_number_into_budget (test_science_bot.ScienceBotTests.test_intake_cannot_turn_unrelate
+d_number_into_budget) ... ok
+test_last_fit_auto_finalizes_with_reserved_resources (test_science_bot.ScienceBotTests.test_last_fit_auto_finalizes_wit
+h_reserved_resources) ... ok
+test_llm_stale_selection_does_not_execute (test_science_bot.ScienceBotTests.test_llm_stale_selection_does_not_execute) 
+... ok
+test_message_revokes_confirmation (test_science_bot.ScienceBotTests.test_message_revokes_confirmation) ... ok
+test_missing_rl_weights_fail (test_science_bot.ScienceBotTests.test_missing_rl_weights_fail) ... ok
+test_missing_target_requests_input_without_execution (test_science_bot.ScienceBotTests.test_missing_target_requests_inp
+ut_without_execution) ... ok
+test_model_preprocessing_fits_only_training_subset (test_science_bot.ScienceBotTests.test_model_preprocessing_fits_only
+_training_subset) ... ok
+test_no_duplicate_fit_and_diagnostic (test_science_bot.ScienceBotTests.test_no_duplicate_fit_and_diagnostic) ... ok
+test_persistent_session_restore_and_confirmation (test_science_bot.ScienceBotTests.test_persistent_session_restore_and_
+confirmation) ... ok
+test_policy_features_do_not_include_ids (test_science_bot.ScienceBotTests.test_policy_features_do_not_include_ids) ... 
+ok
+test_ppo_parameters_and_probability_ratio (test_science_bot.ScienceBotTests.test_ppo_parameters_and_probability_ratio) 
+... ok
+test_sealed_changes_do_not_change_observation_or_mask (test_science_bot.ScienceBotTests.test_sealed_changes_do_not_chan
+ge_observation_or_mask) ... ok
+test_stale_observation_rejected (test_science_bot.ScienceBotTests.test_stale_observation_rejected) ... ok
+test_terminal_cannot_reenter_loop (test_science_bot.ScienceBotTests.test_terminal_cannot_reenter_loop) ... ok
+test_unknown_pending_job_pauses (test_science_bot.ScienceBotTests.test_unknown_pending_job_pauses) ... ok
+test_unknown_sealed_evaluation_is_not_repeated (test_science_bot.ScienceBotTests.test_unknown_sealed_evaluation_is_not_
+repeated) ... ok
+test_cli_demo_works_from_another_cwd (test_science_workspace.WorkspaceTests.test_cli_demo_works_from_another_cwd) ... o
+k
+test_confirmation_is_bound_to_workspace (test_science_workspace.WorkspaceTests.test_confirmation_is_bound_to_workspace)
+ ... ok
+test_credentials_state_and_binary_not_readable (test_science_workspace.WorkspaceTests.test_credentials_state_and_binary
+_not_readable) ... ok
+test_default_session_directory_cannot_be_redirected (test_science_workspace.WorkspaceTests.test_default_session_directo
+ry_cannot_be_redirected) ... ok
+test_directory_junction_escape_is_not_listed_or_read (test_science_workspace.WorkspaceTests.test_directory_junction_esc
+ape_is_not_listed_or_read) ... ok
+test_explicit_output_override_is_preserved (test_science_workspace.WorkspaceTests.test_explicit_output_override_is_pres
+erved) ... ok
+test_identity_is_stable_and_config_persisted (test_science_workspace.WorkspaceTests.test_identity_is_stable_and_config_
+persisted) ... ok
+test_invalid_workspace_does_not_create_project (test_science_workspace.WorkspaceTests.test_invalid_workspace_does_not_c
+reate_project) ... ok
+test_large_files_are_bounded (test_science_workspace.WorkspaceTests.test_large_files_are_bounded) ... ok
+test_legacy_session_still_restores_without_workspace (test_science_workspace.WorkspaceTests.test_legacy_session_still_r
+estores_without_workspace) ... ok
+test_listing_exclusions_and_limit (test_science_workspace.WorkspaceTests.test_listing_exclusions_and_limit) ... ok
+test_local_project_commands_do_not_call_llm_or_spend_budget (test_science_workspace.WorkspaceTests.test_local_project_c
+ommands_do_not_call_llm_or_spend_budget) ... ok
+test_missing_or_replaced_identity_rejected (test_science_workspace.WorkspaceTests.test_missing_or_replaced_identity_rej
+ected) ... ok
+test_parent_and_absolute_escape_rejected (test_science_workspace.WorkspaceTests.test_parent_and_absolute_escape_rejecte
+d) ... ok
+test_restore_by_id_and_reject_another_workspace (test_science_workspace.WorkspaceTests.test_restore_by_id_and_reject_an
+other_workspace) ... ok
+test_session_location_and_cwd_independence (test_science_workspace.WorkspaceTests.test_session_location_and_cwd_indepen
+dence) ... ok
+test_symlink_escape_and_excluded_alias_rejected (test_science_workspace.WorkspaceTests.test_symlink_escape_and_excluded
+_alias_rejected) ... skipped 'Windows account cannot create symlinks'
+test_unicode_and_quoted_file_paths (test_science_workspace.WorkspaceTests.test_unicode_and_quoted_file_paths) ... ok
+test_workspace_http_is_server_bound (test_science_workspace.WorkspaceTests.test_workspace_http_is_server_bound) ... ok
+test_workspace_state_cannot_be_redirected (test_science_workspace.WorkspaceTests.test_workspace_state_cannot_be_redirec
+ted) ... ok
+
+----------------------------------------------------------------------
+Ran 171 tests in 62.508s
+
+OK (skipped=1)

@@ -1,0 +1,11 @@
+{
+  "role": "llm_selector_v1",
+  "response": {
+    "schema_version": "action_selection_v1",
+    "observation_ref": "obs_000000",
+    "action_id": "ridge_half_3_1",
+    "evidence_refs": [],
+    "reason": "No experiments observed yet; start with a low-cost half-fidelity ridge fit (cost 2) to probe signal before committing to full-fidelity runs, preserving budget for diagnostics and finalization."
+  },
+  "response_hash": "305af63eeba83292c37a49e3d34d3720563ff008ed4346087ecebdf91b8849d5"
+}

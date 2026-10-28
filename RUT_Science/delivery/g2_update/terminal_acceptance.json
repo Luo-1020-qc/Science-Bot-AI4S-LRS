@@ -1,0 +1,16 @@
+{
+  "entry_command": ".\\science-bot.cmd -Backend offline -Workspace RUT_Science\\examples\\g2",
+  "session": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\examples\\g2\\.sciencebot\\sessions\\617478680897466290ebb281a3214314",
+  "initial_observed_phase": "ready",
+  "initial_observed_numeric_environment": null,
+  "inputs": [
+    "/design independent_design.json",
+    "/confirm",
+    "/model-output list",
+    "/exit"
+  ],
+  "observed_report_path": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\examples\\g2\\.sciencebot\\sessions\\617478680897466290ebb281a3214314\\experiments\\07d09ff747e548098c242d5740b63444\\report.md",
+  "final_phase": "complete",
+  "model_requests": 0,
+  "note": "Actual CMD/PTTY commands executed during acceptance; replay is rendered from saved state, not a raw terminal recording."
+}

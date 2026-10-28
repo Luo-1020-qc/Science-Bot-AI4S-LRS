@@ -1,0 +1,616 @@
+{
+  "schema_version": "doe_reviewed_labels_v1",
+  "input_ref": "current_test_outputs/review.jsonl",
+  "input_sha256": "ded3f10c440cabb3140ca3f63c084a12690219839ddee5bc0ef553f889a98e31",
+  "records": [
+    {
+      "decision_id": "3752cb85c053587085bdd0c72fdfa840986dc6a364182c238ff3955abc6fd9fd",
+      "observation": {
+        "candidate": {
+          "analysis": {
+            "alpha": 0.05,
+            "decision_rule": "two_sided_t_ci_practical_relevance_separate",
+            "minimum_effect": 1.0,
+            "missing_policy": "stop_and_review",
+            "model": "two_arm",
+            "multiplicity": "single_primary",
+            "primary_term": "A",
+            "sigma": 1.0,
+            "target_power": 0.8
+          },
+          "assumptions": [
+            "normal_iid_errors",
+            "constant_error_variance"
+          ],
+          "blocks": [],
+          "experimental_unit": {
+            "definition": "One separately allocated synthetic treatment application",
+            "independence_basis": "Declared independent units and independent Gaussian residuals; not established by table structure",
+            "measurement_repeats": 1
+          },
+          "factors": [
+            {
+              "levels": [
+                "control",
+                "candidate"
+              ],
+              "name": "A"
+            }
+          ],
+          "family": "crd_two_arm",
+          "provenance": [
+            {
+              "evidence_id": "e00",
+              "path": "/question"
+            },
+            {
+              "evidence_id": "e01",
+              "path": "/factors"
+            },
+            {
+              "evidence_id": "e02",
+              "path": "/response"
+            },
+            {
+              "evidence_id": "e03",
+              "path": "/experimental_unit"
+            },
+            {
+              "evidence_id": "e04",
+              "path": "/blocks"
+            },
+            {
+              "evidence_id": "e05",
+              "path": "/assumptions"
+            },
+            {
+              "evidence_id": "e06",
+              "path": "/analysis"
+            },
+            {
+              "evidence_id": "e07",
+              "path": "/resources"
+            }
+          ],
+          "question": "Estimate the prespecified high-minus-low effect on a synthetic response",
+          "randomization": {
+            "algorithm": "shuffle_v1",
+            "seed": 1001
+          },
+          "replicates": 24,
+          "request_hash": "98a6a1c7293ae53b415feb2b6d601682da426c2cd663f2c56b78a97ed2122297",
+          "resources": {
+            "budget": 100.0,
+            "per_run": 1.0
+          },
+          "response": {
+            "direction": "lower",
+            "name": "synthetic_error",
+            "unit": "declared_units"
+          },
+          "revision": 1,
+          "run_plan": [
+            {
+              "block": "unblocked",
+              "levels": [
+                "control"
+              ],
+              "run": 1,
+              "unit_id": "planned_b1_u22"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "control"
+              ],
+              "run": 2,
+              "unit_id": "planned_b1_u23"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "control"
+              ],
+              "run": 3,
+              "unit_id": "planned_b1_u18"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "candidate"
+              ],
+              "run": 4,
+              "unit_id": "planned_b1_u38"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "control"
+              ],
+              "run": 5,
+              "unit_id": "planned_b1_u15"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "candidate"
+              ],
+              "run": 6,
+              "unit_id": "planned_b1_u8"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "candidate"
+              ],
+              "run": 7,
+              "unit_id": "planned_b1_u4"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "control"
+              ],
+              "run": 8,
+              "unit_id": "planned_b1_u32"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "candidate"
+              ],
+              "run": 9,
+              "unit_id": "planned_b1_u16"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "candidate"
+              ],
+              "run": 10,
+              "unit_id": "planned_b1_u48"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "candidate"
+              ],
+              "run": 11,
+              "unit_id": "planned_b1_u30"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "control"
+              ],
+              "run": 12,
+              "unit_id": "planned_b1_u14"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "control"
+              ],
+              "run": 13,
+              "unit_id": "planned_b1_u26"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "control"
+              ],
+              "run": 14,
+              "unit_id": "planned_b1_u21"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "candidate"
+              ],
+              "run": 15,
+              "unit_id": "planned_b1_u41"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "control"
+              ],
+              "run": 16,
+              "unit_id": "planned_b1_u35"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "candidate"
+              ],
+              "run": 17,
+              "unit_id": "planned_b1_u7"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "candidate"
+              ],
+              "run": 18,
+              "unit_id": "planned_b1_u13"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "candidate"
+              ],
+              "run": 19,
+              "unit_id": "planned_b1_u5"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "control"
+              ],
+              "run": 20,
+              "unit_id": "planned_b1_u19"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "control"
+              ],
+              "run": 21,
+              "unit_id": "planned_b1_u29"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "control"
+              ],
+              "run": 22,
+              "unit_id": "planned_b1_u10"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "control"
+              ],
+              "run": 23,
+              "unit_id": "planned_b1_u6"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "candidate"
+              ],
+              "run": 24,
+              "unit_id": "planned_b1_u12"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "control"
+              ],
+              "run": 25,
+              "unit_id": "planned_b1_u1"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "candidate"
+              ],
+              "run": 26,
+              "unit_id": "planned_b1_u33"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "control"
+              ],
+              "run": 27,
+              "unit_id": "planned_b1_u45"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "candidate"
+              ],
+              "run": 28,
+              "unit_id": "planned_b1_u40"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "candidate"
+              ],
+              "run": 29,
+              "unit_id": "planned_b1_u28"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "control"
+              ],
+              "run": 30,
+              "unit_id": "planned_b1_u2"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "control"
+              ],
+              "run": 31,
+              "unit_id": "planned_b1_u36"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "candidate"
+              ],
+              "run": 32,
+              "unit_id": "planned_b1_u39"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "control"
+              ],
+              "run": 33,
+              "unit_id": "planned_b1_u46"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "candidate"
+              ],
+              "run": 34,
+              "unit_id": "planned_b1_u31"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "candidate"
+              ],
+              "run": 35,
+              "unit_id": "planned_b1_u11"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "candidate"
+              ],
+              "run": 36,
+              "unit_id": "planned_b1_u44"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "control"
+              ],
+              "run": 37,
+              "unit_id": "planned_b1_u37"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "control"
+              ],
+              "run": 38,
+              "unit_id": "planned_b1_u43"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "candidate"
+              ],
+              "run": 39,
+              "unit_id": "planned_b1_u9"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "candidate"
+              ],
+              "run": 40,
+              "unit_id": "planned_b1_u20"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "candidate"
+              ],
+              "run": 41,
+              "unit_id": "planned_b1_u27"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "control"
+              ],
+              "run": 42,
+              "unit_id": "planned_b1_u25"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "candidate"
+              ],
+              "run": 43,
+              "unit_id": "planned_b1_u3"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "candidate"
+              ],
+              "run": 44,
+              "unit_id": "planned_b1_u17"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "control"
+              ],
+              "run": 45,
+              "unit_id": "planned_b1_u42"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "control"
+              ],
+              "run": 46,
+              "unit_id": "planned_b1_u47"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "control"
+              ],
+              "run": 47,
+              "unit_id": "planned_b1_u24"
+            },
+            {
+              "block": "unblocked",
+              "levels": [
+                "candidate"
+              ],
+              "run": 48,
+              "unit_id": "planned_b1_u34"
+            }
+          ],
+          "schema_version": "doe_contract_v1"
+        },
+        "request": {
+          "evidence": [
+            {
+              "id": "e00",
+              "path": "/question",
+              "reference": "Synthetic user/pilot statement; not real-world verification",
+              "source": "synthetic_fixture",
+              "status": "provided",
+              "value": "Estimate the prespecified high-minus-low effect on a synthetic response"
+            },
+            {
+              "id": "e01",
+              "path": "/factors",
+              "reference": "Synthetic user/pilot statement; not real-world verification",
+              "source": "synthetic_fixture",
+              "status": "provided",
+              "value": [
+                {
+                  "levels": [
+                    "control",
+                    "candidate"
+                  ],
+                  "name": "A"
+                }
+              ]
+            },
+            {
+              "id": "e02",
+              "path": "/response",
+              "reference": "Synthetic user/pilot statement; not real-world verification",
+              "source": "synthetic_fixture",
+              "status": "provided",
+              "value": {
+                "direction": "lower",
+                "name": "synthetic_error",
+                "unit": "declared_units"
+              }
+            },
+            {
+              "id": "e03",
+              "path": "/experimental_unit",
+              "reference": "Synthetic user/pilot statement; not real-world verification",
+              "source": "synthetic_fixture",
+              "status": "provided",
+              "value": {
+                "definition": "One separately allocated synthetic treatment application",
+                "independence_basis": "Declared independent units and independent Gaussian residuals; not established by table structure",
+                "measurement_repeats": 1
+              }
+            },
+            {
+              "id": "e04",
+              "path": "/blocks",
+              "reference": "Synthetic user/pilot statement; not real-world verification",
+              "source": "synthetic_fixture",
+              "status": "provided",
+              "value": []
+            },
+            {
+              "id": "e05",
+              "path": "/assumptions",
+              "reference": "Synthetic user/pilot statement; not real-world verification",
+              "source": "synthetic_fixture",
+              "status": "provided",
+              "value": [
+                "normal_iid_errors",
+                "constant_error_variance"
+              ]
+            },
+            {
+              "id": "e06",
+              "path": "/analysis",
+              "reference": "Synthetic user/pilot statement; not real-world verification",
+              "source": "synthetic_fixture",
+              "status": "provided",
+              "value": {
+                "alpha": 0.05,
+                "decision_rule": "two_sided_t_ci_practical_relevance_separate",
+                "minimum_effect": 1.0,
+                "missing_policy": "stop_and_review",
+                "model": "two_arm",
+                "multiplicity": "single_primary",
+                "primary_term": "A",
+                "sigma": 1.0,
+                "target_power": 0.8
+              }
+            },
+            {
+              "id": "e07",
+              "path": "/resources",
+              "reference": "Synthetic user/pilot statement; not real-world verification",
+              "source": "synthetic_fixture",
+              "status": "provided",
+              "value": {
+                "budget": 100.0,
+                "per_run": 1.0
+              }
+            },
+            {
+              "id": "e08",
+              "path": "/family",
+              "reference": "Synthetic user/pilot statement; not real-world verification",
+              "source": "synthetic_fixture",
+              "status": "provided",
+              "value": "crd_two_arm"
+            }
+          ],
+          "execution_permission": "denied",
+          "requested_family": "crd_two_arm",
+          "schema_version": "doe_request_v1",
+          "scope": "design_only"
+        }
+      },
+      "observation_hash": "b110c6ad66a2c441ba8f5560f3ee4d76651bfd45f623794aab6d01da99c82e32",
+      "reference_source": "synthetic_protocol_case_awaiting_independent_review",
+      "review": {
+        "blocking_codes": [],
+        "rationale": "Synthetic test of import validation only",
+        "reviewed_at": "2026-10-27T12:00:00+08:00",
+        "reviewer": "synthetic-unit-test-reviewer-not-an-expert",
+        "status": "approved",
+        "verdict": "reject"
+      },
+      "schema_version": "doe_review_v1",
+      "source_ref": "bank/train.jsonl",
+      "source_row": 0,
+      "source_sha256": "8856f59d60668c84b255569417dcfb3220a71492195928889ea770c7dc9839d5",
+      "split": "train",
+      "task_id": "g24_train_0001",
+      "identity_status": "externally_claimed_not_independently_verified"
+    }
+  ],
+  "records_hash": "0de5edd71738e7d34cd0b0dde658f1d79801e73faac7e66e8734ee49b2d90251",
+  "expert_identity_independently_verified": false,
+  "automatic_training": false,
+  "live_policy_promotion": false
+}

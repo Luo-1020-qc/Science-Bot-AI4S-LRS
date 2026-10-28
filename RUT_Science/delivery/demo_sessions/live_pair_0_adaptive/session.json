@@ -1,0 +1,30 @@
+{
+  "id": "9de22338ac6a4698a7ccec0a45d7ebb0",
+  "backend": "api",
+  "planner": "adaptive",
+  "checkpoint": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\RUT_Science\\models\\planner\\v1\\selected",
+  "model": "deepseek-flash",
+  "spec": {
+    "dataset": "generated",
+    "task_seed": 11,
+    "group": 0,
+    "split": "demo",
+    "quality_threshold": 0.2,
+    "compute_units": 6,
+    "tool_attempts": 12,
+    "decision_steps": 16,
+    "llm_requests": 12,
+    "llm_tokens": 100000,
+    "active_seconds": 600,
+    "fault_rate": 0.0,
+    "schema_version": "budgeted_research_v1"
+  },
+  "confirmed": "e9a366141eb1f98c439abac7052ed9e56ba9aef2ba8a3e7904e6a8710ad0eee7",
+  "candidates_ready": true,
+  "messages": [],
+  "command_results": {},
+  "phase": "completed",
+  "error": null,
+  "policy_identity": "3601884fb4d32e1329587d34cd871dd1bc3a70346b52c2eb01f328ed571f974d",
+  "explanation_attempted": true
+}

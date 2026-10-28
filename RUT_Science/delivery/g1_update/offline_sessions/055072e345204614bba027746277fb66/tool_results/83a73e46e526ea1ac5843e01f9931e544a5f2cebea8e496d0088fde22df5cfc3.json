@@ -1,0 +1,23 @@
+{
+  "path": "model.py",
+  "sha256": "fca44705e94baefa1feeb62926f7fd8a32bcbb60893c838b9ec723cf631cd854",
+  "text": "\"\"\"Small public fixture for the G1 project-question acceptance run.\"\"\"\nFEATURE_GRID = 5\nALPHA = 1.0\n\n\ndef predict_mean(values):\n    if not values:\n        raise ValueError(\"values must not be empty\")\n    return sum(values) / len(values)\n",
+  "start_line": 1,
+  "end_line": 9,
+  "line_numbers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "bytes": 237,
+  "file_bytes": 237,
+  "total_lines": 9,
+  "truncated": false,
+  "evidence_ref": "model.py:L1-L9#fca44705e94b"
+}

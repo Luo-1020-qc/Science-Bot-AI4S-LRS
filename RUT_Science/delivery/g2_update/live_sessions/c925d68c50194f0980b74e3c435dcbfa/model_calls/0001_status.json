@@ -1,0 +1,7 @@
+{
+  "request_index": 1,
+  "role": "tabular_planner",
+  "status": "accepted",
+  "model": "deepseek-flash",
+  "response_hash": "21758f30895d419cd27b3c26f19fa2914491dff163cf4f88102789bd0f34e844"
+}

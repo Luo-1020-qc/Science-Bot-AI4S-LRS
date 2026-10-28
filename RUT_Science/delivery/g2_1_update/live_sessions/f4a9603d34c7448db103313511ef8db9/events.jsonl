@@ -1,0 +1,17 @@
+{"kind":"created","payload":{"backend":"api","engine_version":"general_v1"},"seq":1}
+{"kind":"task_routed","payload":{"intent":"design","reason":"design_interview"},"seq":2}
+{"kind":"general_tool_result","payload":{"evidence_ref":"csv:two_groups.csv#c8d22904e456","result_ref":"tool_results/8ec96044ec601f25f88cc7ef49a859aac66f6cb8e6071e0d8bdf488c4e1389a5.json","tool":"csv_inspect"},"seq":3}
+{"kind":"design_decision","payload":{"action":"ask:research_question","interview_id":"cdd1d7376f06420796fd41d58581eb40","revision":1,"trace_ref":"design_interviews/cdd1d7376f06420796fd41d58581eb40/turns/0001.json"},"seq":4}
+{"kind":"task_routed","payload":{"intent":"design","reason":"design_interview"},"seq":5}
+{"kind":"design_decision","payload":{"action":"ask:provenance","interview_id":"cdd1d7376f06420796fd41d58581eb40","revision":2,"trace_ref":"design_interviews/cdd1d7376f06420796fd41d58581eb40/turns/0002.json"},"seq":6}
+{"kind":"task_routed","payload":{"intent":"design","reason":"design_interview"},"seq":7}
+{"kind":"model_output","payload":{"model":"deepseek-flash","request_index":1,"response_hash":"cc0dbd5ddc6a48faf00161c142bc5a840a2962d4a6d507b2eabcb817c3e12313","role":"design_intake","status":"pending_validation"},"seq":8}
+{"kind":"model_validation","payload":{"model":"deepseek-flash","request_index":1,"response_hash":"cc0dbd5ddc6a48faf00161c142bc5a840a2962d4a6d507b2eabcb817c3e12313","role":"design_intake","status":"accepted"},"seq":9}
+{"kind":"design_decision","payload":{"action":"ask:factor","interview_id":"cdd1d7376f06420796fd41d58581eb40","revision":3,"trace_ref":"design_interviews/cdd1d7376f06420796fd41d58581eb40/turns/0003.json"},"seq":10}
+{"kind":"task_routed","payload":{"intent":"design","reason":"design_interview"},"seq":11}
+{"kind":"general_tool_result","payload":{"evidence_ref":"tool_85d387e8232f8957","result_ref":"tool_results/802aa273cfbf6b10fd6ef2640860b708d5a8fa730a5f8fc918602633cadc8088.json","tool":"prepare_tabular_experiment"},"seq":12}
+{"kind":"design_decision","payload":{"action":"prepare","interview_id":"cdd1d7376f06420796fd41d58581eb40","revision":4,"trace_ref":"design_interviews/cdd1d7376f06420796fd41d58581eb40/turns/0004.json"},"seq":13}
+{"kind":"general_tool_result","payload":{"evidence_ref":"tool_47d9ec4ded524f41","result_ref":"tool_results/1cade475490d78fe70dc95b67e1a5d968befa2cf54bff7e9b22ca999fb00ac60.json","tool":"tabular_compare"},"seq":14}
+{"kind":"tabular_step","payload":{"experiment_id":"1629919652794db19d05482804d80e71","node":"compare","result_ref":"nodes/compare.json"},"seq":15}
+{"kind":"general_tool_result","payload":{"evidence_ref":"tool_de06d2ec7888b432","result_ref":"tool_results/b7563867c17d6190c8f8027a263aa3268c2669cf43fdac6b1921093649ef4bc0.json","tool":"tabular_report"},"seq":16}
+{"kind":"tabular_step","payload":{"experiment_id":"1629919652794db19d05482804d80e71","node":"report","result_ref":"nodes/report.json"},"seq":17}

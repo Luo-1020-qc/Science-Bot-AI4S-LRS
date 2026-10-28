@@ -1,0 +1,33 @@
+{
+  "request_index": 2,
+  "role": "tabular_planner",
+  "model": "deepseek-flash",
+  "response": {
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_00_Ng04Mtwb53Ldhu1tVd3X7662",
+        "name": "prepare_tabular_experiment",
+        "arguments": {
+          "data_path": "two_groups.csv",
+          "research_question": "A组与B组的平均y是否不同？",
+          "design": "independent",
+          "response": "y",
+          "unit": "id",
+          "factor": "group",
+          "levels": [
+            "A",
+            "B"
+          ],
+          "provenance": "synthetic",
+          "sampling_note": "全部现有合成样本，仅作探索性演示；未进行事先功效计算。",
+          "alpha": 0.05,
+          "seed": 42,
+          "missing_policy": "reject"
+        }
+      }
+    ],
+    "actual_model": "deepseek-flash"
+  },
+  "response_hash": "8738ea36b3504db442600e15b181a927e91f9b230cb4ccdb321717ccda0125f2"
+}

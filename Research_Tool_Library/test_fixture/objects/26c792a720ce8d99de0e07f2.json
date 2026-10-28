@@ -1,0 +1,14 @@
+{
+  "ref": "26c792a720ce8d99de0e07f27297f40fdcf6301bbff9ed82aae856fba02f7e54",
+  "kind": "freeze",
+  "data": {
+    "plan_ref": "c12c0fc1e17a308fd68897790df0c3eb262430827b3a59f7824bf529e9c8a0eb",
+    "review_ref": "65022542ab0e7d3058c53d9fd82f26c8b41c2729bc48c209542e0260848bc3c4",
+    "alignment_ref": "af6937599813ad91aca57423b2c28650d8af6235002ea298f274bb76b6fa666f",
+    "contract_hash": "f766fa909010664b2c570a6f64b0f1886ff54d022fd256b3ab89e051f94b1752",
+    "mode": "mock_only",
+    "real_execution_authorized": false,
+    "human_approval": null,
+    "primary_term_locked": "architecture"
+  }
+}

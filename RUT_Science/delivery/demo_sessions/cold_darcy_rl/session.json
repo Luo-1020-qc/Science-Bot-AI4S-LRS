@@ -1,0 +1,29 @@
+{
+  "id": "3bb2638e1d6b4bd99c10adb9013cde18",
+  "backend": "offline",
+  "planner": "rl",
+  "checkpoint": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\RUT_Science\\models\\planner\\v1\\selected",
+  "model": "deepseek-flash",
+  "spec": {
+    "dataset": "darcy",
+    "task_seed": 11,
+    "group": 0,
+    "split": "demo",
+    "quality_threshold": 0.2,
+    "compute_units": 10,
+    "tool_attempts": 12,
+    "decision_steps": 16,
+    "llm_requests": 24,
+    "llm_tokens": 160000,
+    "active_seconds": 600,
+    "fault_rate": 0.0,
+    "schema_version": "budgeted_research_v1"
+  },
+  "confirmed": "0e9e81637e7836ab2c1c58c697f9f09e045b5c95f9d671cabb9b0c8fbef33b78",
+  "candidates_ready": true,
+  "messages": [],
+  "command_results": {},
+  "phase": "completed",
+  "error": null,
+  "policy_identity": "bb9ab7212bd86bd8a8b5393a9f5ac9f88414ea6b927607128d13bda1bb24780e"
+}

@@ -1,0 +1,24 @@
+{
+  "ref": "32057142e2aed7593c494c5ccc1bae3846a4cbc4b801b7e67c354803a6d03356",
+  "kind": "analysis",
+  "data": {
+    "job_ref": "ff26a50f1adc7080113ee0831bc62ae6dedf30548a90bb515f293197d9a8ab3d",
+    "freeze_ref": "26c792a720ce8d99de0e07f27297f40fdcf6301bbff9ed82aae856fba02f7e54",
+    "plan_ref": "c12c0fc1e17a308fd68897790df0c3eb262430827b3a59f7824bf529e9c8a0eb",
+    "response": "relative_l2",
+    "primary_term": "architecture",
+    "effect": -0.05242912682580655,
+    "interval": [
+      -0.06431426134489371,
+      -0.04054399230671938
+    ],
+    "confidence": 0.95,
+    "df": 39,
+    "model_assumptions_verified": false,
+    "source_kind": "synthetic_mock",
+    "original_unit_count": 48,
+    "decision_rule": "prespecified_two_sided_ci",
+    "posthoc_model_selection": false,
+    "scientific_success": null
+  }
+}

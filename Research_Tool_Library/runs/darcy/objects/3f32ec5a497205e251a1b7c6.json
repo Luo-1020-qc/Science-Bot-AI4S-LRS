@@ -1,0 +1,206 @@
+{
+  "ref": "3f32ec5a497205e251a1b7c695dcee098ee5c200aa3f0ffd8a5500253a038f2a",
+  "kind": "job",
+  "data": {
+    "freeze_ref": "9f232d41b243aac368b89895ab23d60f09089bb37d9e3c5185718b463ace08d8",
+    "scenario": "benefit",
+    "status": "mock_completed",
+    "source_kind": "synthetic_mock",
+    "rows": [
+      {
+        "unit_id": "planned_b1_u2",
+        "response": 0.36628905143458396
+      },
+      {
+        "unit_id": "planned_b1_u1",
+        "response": 0.26043586327948676
+      },
+      {
+        "unit_id": "planned_b2_u1",
+        "response": 0.2688141816035783
+      },
+      {
+        "unit_id": "planned_b2_u2",
+        "response": 0.34146163196077056
+      },
+      {
+        "unit_id": "planned_b3_u1",
+        "response": 0.32573422540797065
+      },
+      {
+        "unit_id": "planned_b3_u2",
+        "response": 0.2721360700246945
+      },
+      {
+        "unit_id": "planned_b4_u2",
+        "response": 0.36813954267993976
+      },
+      {
+        "unit_id": "planned_b4_u1",
+        "response": 0.29701708035456065
+      },
+      {
+        "unit_id": "planned_b5_u2",
+        "response": 0.34697820040016547
+      },
+      {
+        "unit_id": "planned_b5_u1",
+        "response": 0.274074706111677
+      },
+      {
+        "unit_id": "planned_b6_u1",
+        "response": 0.3373585531911635
+      },
+      {
+        "unit_id": "planned_b6_u2",
+        "response": 0.3067721958529989
+      },
+      {
+        "unit_id": "planned_b7_u2",
+        "response": 0.33713164389637773
+      },
+      {
+        "unit_id": "planned_b7_u1",
+        "response": 0.28872518187913915
+      },
+      {
+        "unit_id": "planned_b8_u1",
+        "response": 0.28986621351854547
+      },
+      {
+        "unit_id": "planned_b8_u2",
+        "response": 0.324945790471148
+      },
+      {
+        "unit_id": "planned_b9_u2",
+        "response": 0.3046815170816495
+      },
+      {
+        "unit_id": "planned_b9_u1",
+        "response": 0.3220326225918739
+      },
+      {
+        "unit_id": "planned_b10_u1",
+        "response": 0.34175372395286135
+      },
+      {
+        "unit_id": "planned_b10_u2",
+        "response": 0.23185016474273906
+      },
+      {
+        "unit_id": "planned_b11_u1",
+        "response": 0.3674913171812609
+      },
+      {
+        "unit_id": "planned_b11_u2",
+        "response": 0.29215214754633334
+      },
+      {
+        "unit_id": "planned_b12_u2",
+        "response": 0.27091296473878707
+      },
+      {
+        "unit_id": "planned_b12_u1",
+        "response": 0.3021684695980663
+      },
+      {
+        "unit_id": "planned_b13_u2",
+        "response": 0.3503731797145028
+      },
+      {
+        "unit_id": "planned_b13_u1",
+        "response": 0.28704366021773314
+      },
+      {
+        "unit_id": "planned_b14_u2",
+        "response": 0.27173229875826266
+      },
+      {
+        "unit_id": "planned_b14_u1",
+        "response": 0.3211433813190981
+      },
+      {
+        "unit_id": "planned_b15_u1",
+        "response": 0.3720150883707734
+      },
+      {
+        "unit_id": "planned_b15_u2",
+        "response": 0.30855340572096895
+      },
+      {
+        "unit_id": "planned_b16_u2",
+        "response": 0.31704535039610976
+      },
+      {
+        "unit_id": "planned_b16_u1",
+        "response": 0.25996651553254363
+      },
+      {
+        "unit_id": "planned_b17_u2",
+        "response": 0.33612868197103707
+      },
+      {
+        "unit_id": "planned_b17_u1",
+        "response": 0.2957920870563046
+      },
+      {
+        "unit_id": "planned_b18_u2",
+        "response": 0.31927243275081457
+      },
+      {
+        "unit_id": "planned_b18_u1",
+        "response": 0.2811279258458184
+      },
+      {
+        "unit_id": "planned_b19_u1",
+        "response": 0.36452694337224184
+      },
+      {
+        "unit_id": "planned_b19_u2",
+        "response": 0.2794951285295946
+      },
+      {
+        "unit_id": "planned_b20_u1",
+        "response": 0.28225313475871994
+      },
+      {
+        "unit_id": "planned_b20_u2",
+        "response": 0.3704799554897763
+      },
+      {
+        "unit_id": "planned_b21_u2",
+        "response": 0.3277190931382886
+      },
+      {
+        "unit_id": "planned_b21_u1",
+        "response": 0.27989791715421997
+      },
+      {
+        "unit_id": "planned_b22_u2",
+        "response": 0.36745412842954966
+      },
+      {
+        "unit_id": "planned_b22_u1",
+        "response": 0.24056048131684285
+      },
+      {
+        "unit_id": "planned_b23_u2",
+        "response": 0.3415144725540006
+      },
+      {
+        "unit_id": "planned_b23_u1",
+        "response": 0.320690522706804
+      },
+      {
+        "unit_id": "planned_b24_u2",
+        "response": 0.35632014219733327
+      },
+      {
+        "unit_id": "planned_b24_u1",
+        "response": 0.2785674166652625
+      }
+    ],
+    "real_training_performed": false,
+    "declared_tool_cost_only": true
+  }
+}

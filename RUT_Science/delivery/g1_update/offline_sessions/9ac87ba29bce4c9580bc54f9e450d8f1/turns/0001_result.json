@@ -1,0 +1,23 @@
+{
+  "intent": "numeric",
+  "answer": "已生成科研草案。请检查数据集、预算和门槛，输入 /confirm 后执行。",
+  "spec": {
+    "dataset": "darcy",
+    "task_seed": 11,
+    "group": 0,
+    "split": "demo",
+    "quality_threshold": 0.2,
+    "compute_units": 6,
+    "tool_attempts": 12,
+    "decision_steps": 16,
+    "llm_requests": 12,
+    "llm_tokens": 60000,
+    "active_seconds": 600,
+    "fault_rate": 0.0,
+    "schema_version": "budgeted_research_v1"
+  },
+  "draft_hash": "645ceb7b91ba335f8b008c538cfae262e71bfeb58457c2cb3c24eb6b37d32b13",
+  "experiment_ref": "experiments/233126f444314602baaee04c111abea9",
+  "requires_confirmation": true,
+  "evidence_ref": "tool_0784ba7fddd5a3ba"
+}

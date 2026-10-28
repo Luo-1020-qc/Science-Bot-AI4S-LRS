@@ -1,0 +1,11 @@
+{
+  "request_index": 1,
+  "role": "general_chat",
+  "model": "deepseek-flash",
+  "response": {
+    "content": "区组设计是把试验单元按已知干扰因素分成若干同质区组、再在区组内比较处理的一种试验设计方法。其目的是通过区组控制或消除干扰因素引起的变异，从而提高处理效应比较的精度。",
+    "tool_calls": [],
+    "actual_model": "deepseek-flash"
+  },
+  "response_hash": "c1c00d7197bdde78dc66bf024e8f9d8d26ef7b5cb229a308e65ddfdc0e563ba5"
+}

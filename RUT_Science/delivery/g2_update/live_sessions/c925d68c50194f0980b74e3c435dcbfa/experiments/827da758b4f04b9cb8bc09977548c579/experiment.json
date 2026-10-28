@@ -1,0 +1,122 @@
+{
+  "engine_version": "tabular_v1",
+  "id": "827da758b4f04b9cb8bc09977548c579",
+  "spec": {
+    "data_path": "two_groups.csv",
+    "research_question": "A组与B组的平均y是否不同？",
+    "design": "independent",
+    "response": "y",
+    "unit": "id",
+    "provenance": "synthetic",
+    "sampling_note": "全部现有合成样本，仅作探索性演示；未进行事先功效计算。",
+    "factor": "group",
+    "levels": [
+      "A",
+      "B"
+    ],
+    "features": [],
+    "randomization_note": "not_applicable",
+    "missing_policy": "reject",
+    "alpha": 0.05,
+    "seed": 42,
+    "schema_version": "experiment_spec_v1"
+  },
+  "plan": {
+    "nodes": [
+      {
+        "id": "compare",
+        "tool": "tabular_compare",
+        "depends_on": []
+      },
+      {
+        "id": "report",
+        "tool": "tabular_report",
+        "depends_on": [
+          "compare"
+        ]
+      }
+    ],
+    "spec_hash": "f4524d52072e74a6f2346984718eadb4aa65b03fc88ded710cce773e85b7193c",
+    "data_sha256": "c8d22904e456e37a661431a7b598956cdd7c5f9d1d4b05b8ed4b3c26d95c4316",
+    "schema_version": "execution_plan_v1"
+  },
+  "protocol": {
+    "goal": "two_sided_mean_comparison",
+    "hypothesis": "H0: E[y|A] - E[y|B] = 0",
+    "methods": [
+      "welch_t"
+    ],
+    "metric": "mean_difference, two-sided p, confidence interval",
+    "preprocessing": "no transformation",
+    "split": null,
+    "replication": "distinct declared units; random seed is not an independent replicate",
+    "assumptions": [
+      "independent units; inspect outliers and distributional assumptions",
+      "normal approximation for group means"
+    ],
+    "sample_basis": "全部现有合成样本，仅作探索性演示；未进行事先功效计算。",
+    "causal_claim": "not_established; provenance and randomization are user declarations",
+    "stopping": "fixed plan, no hyperparameter search or test feedback",
+    "failure": "pause at tool boundary; repair inputs with a new draft; no silent substitutions"
+  },
+  "data_sha256": "c8d22904e456e37a661431a7b598956cdd7c5f9d1d4b05b8ed4b3c26d95c4316",
+  "workspace": {
+    "schema_version": "science_workspace_v1",
+    "workspace_id": "906a69e8f6b5495b862106b098c91fa5",
+    "root": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\examples\\g2",
+    "read_policy": "project_text_v1"
+  },
+  "draft_hash": "aa7bb918159cb36b5ae76f97a5687a1c30d37786090626485b6d339c29521193",
+  "confirmed": "aa7bb918159cb36b5ae76f97a5687a1c30d37786090626485b6d339c29521193",
+  "phase": "complete",
+  "completed": {
+    "compare": {
+      "ref": "nodes/compare.json",
+      "sha256": "205ca2ee47caa14dcc65cbc8b3f687dee9c453914b72b01fc14cbdc98c05611c"
+    },
+    "report": {
+      "ref": "nodes/report.json",
+      "sha256": "5647b809897946befb08e5622a8dfb8ea9c9528357f8d8d5e55399a58229fbec"
+    }
+  },
+  "report_ref": "nodes/report.json",
+  "error": null,
+  "validation": {
+    "retained_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26
+    ],
+    "omitted_indices": [],
+    "units": 27,
+    "missing_units": 0
+  },
+  "tool_budget": {
+    "required": 2,
+    "remaining_at_draft": 10
+  }
+}

@@ -1,0 +1,644 @@
+{
+  "ref": "7127e772cceac324b42b3e4fbeac814e46d3fd390452b9af5b4324e194214ffe",
+  "kind": "plan",
+  "data": {
+    "project_ref": "ceead2eb79a8d0f7da2b76ec527251a295aaaf116681585817a1c2a81d1835e5",
+    "parent": "cd430c246db3b251ab141d9388632b76dc0622bc43bb6979485bf0cff73f7500",
+    "amendment_reason": "Illustrative requested scientific fields; intentionally omit block/interaction model terms to exercise review",
+    "request": {
+      "evidence": [
+        {
+          "id": "e00",
+          "path": "/question",
+          "reference": "Explicit local amendment: Illustrative requested scientific fields; intentionally omit block/interaction model terms to exercise review",
+          "source": "user_declaration",
+          "status": "provided",
+          "value": "Compare candidate minus baseline mean relative L2 under the declared dataset protocol"
+        },
+        {
+          "id": "e01",
+          "path": "/factors",
+          "reference": "Explicit local amendment: Illustrative requested scientific fields; intentionally omit block/interaction model terms to exercise review",
+          "source": "user_declaration",
+          "status": "provided",
+          "value": [
+            {
+              "levels": [
+                "mean_field",
+                "ridge_field"
+              ],
+              "name": "predictor"
+            }
+          ]
+        },
+        {
+          "id": "e02",
+          "path": "/response",
+          "reference": "Explicit local amendment: Illustrative requested scientific fields; intentionally omit block/interaction model terms to exercise review",
+          "source": "user_declaration",
+          "status": "provided",
+          "value": {
+            "direction": "lower",
+            "name": "relative_l2",
+            "unit": "dimensionless"
+          }
+        },
+        {
+          "id": "e03",
+          "path": "/experimental_unit",
+          "reference": "Explicit local amendment: Illustrative requested scientific fields; intentionally omit block/interaction model terms to exercise review",
+          "source": "user_declaration",
+          "status": "provided",
+          "value": {
+            "definition": "One predictor application within an independently drawn data-realization block",
+            "independence_basis": "Declared independent units and independent Gaussian residuals; not established by table structure",
+            "measurement_repeats": 1
+          }
+        },
+        {
+          "id": "e04",
+          "path": "/blocks",
+          "reference": "Synthetic user/pilot statement; not real-world verification",
+          "source": "synthetic_fixture",
+          "status": "provided",
+          "value": [
+            "b1",
+            "b2",
+            "b3",
+            "b4",
+            "b5",
+            "b6",
+            "b7",
+            "b8",
+            "b9",
+            "b10",
+            "b11",
+            "b12",
+            "b13",
+            "b14",
+            "b15",
+            "b16",
+            "b17",
+            "b18",
+            "b19",
+            "b20",
+            "b21",
+            "b22",
+            "b23",
+            "b24"
+          ]
+        },
+        {
+          "id": "e05",
+          "path": "/assumptions",
+          "reference": "Synthetic user/pilot statement; not real-world verification",
+          "source": "synthetic_fixture",
+          "status": "provided",
+          "value": [
+            "normal_iid_errors",
+            "constant_error_variance",
+            "no_treatment_block_interaction"
+          ]
+        },
+        {
+          "id": "e06",
+          "path": "/analysis",
+          "reference": "Explicit local amendment: Illustrative requested scientific fields; intentionally omit block/interaction model terms to exercise review",
+          "source": "user_declaration",
+          "status": "provided",
+          "value": {
+            "alpha": 0.05,
+            "decision_rule": "two_sided_t_ci_practical_relevance_separate",
+            "minimum_effect": 0.02,
+            "missing_policy": "stop_and_review",
+            "model": "two_arm",
+            "multiplicity": "single_primary",
+            "primary_term": "predictor",
+            "sigma": 0.02,
+            "target_power": 0.8
+          }
+        },
+        {
+          "id": "e07",
+          "path": "/resources",
+          "reference": "Synthetic user/pilot statement; not real-world verification",
+          "source": "synthetic_fixture",
+          "status": "provided",
+          "value": {
+            "budget": 100.0,
+            "per_run": 1.0
+          }
+        },
+        {
+          "id": "e08",
+          "path": "/family",
+          "reference": "Synthetic user/pilot statement; not real-world verification",
+          "source": "synthetic_fixture",
+          "status": "provided",
+          "value": "rcbd_two_arm"
+        }
+      ],
+      "execution_permission": "denied",
+      "requested_family": "rcbd_two_arm",
+      "schema_version": "doe_request_v1",
+      "scope": "design_only"
+    },
+    "contract": {
+      "analysis": {
+        "alpha": 0.05,
+        "decision_rule": "two_sided_t_ci_practical_relevance_separate",
+        "minimum_effect": 0.02,
+        "missing_policy": "stop_and_review",
+        "model": "two_arm",
+        "multiplicity": "single_primary",
+        "primary_term": "predictor",
+        "sigma": 0.02,
+        "target_power": 0.8
+      },
+      "assumptions": [
+        "normal_iid_errors",
+        "constant_error_variance",
+        "no_treatment_block_interaction"
+      ],
+      "blocks": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6",
+        "b7",
+        "b8",
+        "b9",
+        "b10",
+        "b11",
+        "b12",
+        "b13",
+        "b14",
+        "b15",
+        "b16",
+        "b17",
+        "b18",
+        "b19",
+        "b20",
+        "b21",
+        "b22",
+        "b23",
+        "b24"
+      ],
+      "experimental_unit": {
+        "definition": "One predictor application within an independently drawn data-realization block",
+        "independence_basis": "Declared independent units and independent Gaussian residuals; not established by table structure",
+        "measurement_repeats": 1
+      },
+      "factors": [
+        {
+          "levels": [
+            "mean_field",
+            "ridge_field"
+          ],
+          "name": "predictor"
+        }
+      ],
+      "family": "rcbd_two_arm",
+      "provenance": [
+        {
+          "evidence_id": "e00",
+          "path": "/question"
+        },
+        {
+          "evidence_id": "e01",
+          "path": "/factors"
+        },
+        {
+          "evidence_id": "e02",
+          "path": "/response"
+        },
+        {
+          "evidence_id": "e03",
+          "path": "/experimental_unit"
+        },
+        {
+          "evidence_id": "e04",
+          "path": "/blocks"
+        },
+        {
+          "evidence_id": "e05",
+          "path": "/assumptions"
+        },
+        {
+          "evidence_id": "e06",
+          "path": "/analysis"
+        },
+        {
+          "evidence_id": "e07",
+          "path": "/resources"
+        }
+      ],
+      "question": "Compare candidate minus baseline mean relative L2 under the declared dataset protocol",
+      "randomization": {
+        "algorithm": "shuffle_v1",
+        "seed": 73
+      },
+      "replicates": 1,
+      "request_hash": "44b38b2d62c80d038b15643c1c09d2f443283e67f16ddecdb32919af3e2c9609",
+      "resources": {
+        "budget": 100.0,
+        "per_run": 1.0
+      },
+      "response": {
+        "direction": "lower",
+        "name": "relative_l2",
+        "unit": "dimensionless"
+      },
+      "revision": 2,
+      "run_plan": [
+        {
+          "run": 1,
+          "unit_id": "planned_b1_u2",
+          "block": "b1",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 2,
+          "unit_id": "planned_b1_u1",
+          "block": "b1",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 3,
+          "unit_id": "planned_b2_u1",
+          "block": "b2",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 4,
+          "unit_id": "planned_b2_u2",
+          "block": "b2",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 5,
+          "unit_id": "planned_b3_u1",
+          "block": "b3",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 6,
+          "unit_id": "planned_b3_u2",
+          "block": "b3",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 7,
+          "unit_id": "planned_b4_u2",
+          "block": "b4",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 8,
+          "unit_id": "planned_b4_u1",
+          "block": "b4",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 9,
+          "unit_id": "planned_b5_u2",
+          "block": "b5",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 10,
+          "unit_id": "planned_b5_u1",
+          "block": "b5",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 11,
+          "unit_id": "planned_b6_u1",
+          "block": "b6",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 12,
+          "unit_id": "planned_b6_u2",
+          "block": "b6",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 13,
+          "unit_id": "planned_b7_u2",
+          "block": "b7",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 14,
+          "unit_id": "planned_b7_u1",
+          "block": "b7",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 15,
+          "unit_id": "planned_b8_u1",
+          "block": "b8",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 16,
+          "unit_id": "planned_b8_u2",
+          "block": "b8",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 17,
+          "unit_id": "planned_b9_u2",
+          "block": "b9",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 18,
+          "unit_id": "planned_b9_u1",
+          "block": "b9",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 19,
+          "unit_id": "planned_b10_u1",
+          "block": "b10",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 20,
+          "unit_id": "planned_b10_u2",
+          "block": "b10",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 21,
+          "unit_id": "planned_b11_u1",
+          "block": "b11",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 22,
+          "unit_id": "planned_b11_u2",
+          "block": "b11",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 23,
+          "unit_id": "planned_b12_u2",
+          "block": "b12",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 24,
+          "unit_id": "planned_b12_u1",
+          "block": "b12",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 25,
+          "unit_id": "planned_b13_u2",
+          "block": "b13",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 26,
+          "unit_id": "planned_b13_u1",
+          "block": "b13",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 27,
+          "unit_id": "planned_b14_u2",
+          "block": "b14",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 28,
+          "unit_id": "planned_b14_u1",
+          "block": "b14",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 29,
+          "unit_id": "planned_b15_u1",
+          "block": "b15",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 30,
+          "unit_id": "planned_b15_u2",
+          "block": "b15",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 31,
+          "unit_id": "planned_b16_u2",
+          "block": "b16",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 32,
+          "unit_id": "planned_b16_u1",
+          "block": "b16",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 33,
+          "unit_id": "planned_b17_u2",
+          "block": "b17",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 34,
+          "unit_id": "planned_b17_u1",
+          "block": "b17",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 35,
+          "unit_id": "planned_b18_u2",
+          "block": "b18",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 36,
+          "unit_id": "planned_b18_u1",
+          "block": "b18",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 37,
+          "unit_id": "planned_b19_u1",
+          "block": "b19",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 38,
+          "unit_id": "planned_b19_u2",
+          "block": "b19",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 39,
+          "unit_id": "planned_b20_u1",
+          "block": "b20",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 40,
+          "unit_id": "planned_b20_u2",
+          "block": "b20",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 41,
+          "unit_id": "planned_b21_u2",
+          "block": "b21",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 42,
+          "unit_id": "planned_b21_u1",
+          "block": "b21",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 43,
+          "unit_id": "planned_b22_u2",
+          "block": "b22",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 44,
+          "unit_id": "planned_b22_u1",
+          "block": "b22",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 45,
+          "unit_id": "planned_b23_u2",
+          "block": "b23",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 46,
+          "unit_id": "planned_b23_u1",
+          "block": "b23",
+          "levels": [
+            "ridge_field"
+          ]
+        },
+        {
+          "run": 47,
+          "unit_id": "planned_b24_u2",
+          "block": "b24",
+          "levels": [
+            "mean_field"
+          ]
+        },
+        {
+          "run": 48,
+          "unit_id": "planned_b24_u1",
+          "block": "b24",
+          "levels": [
+            "ridge_field"
+          ]
+        }
+      ],
+      "schema_version": "doe_contract_v1"
+    }
+  }
+}

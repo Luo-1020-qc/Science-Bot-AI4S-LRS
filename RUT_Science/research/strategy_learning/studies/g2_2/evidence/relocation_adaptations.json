@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-27",
+  "files": {
+    "lab/guard.py": {
+      "sha256": "385104636e0027b479eb88cd4fe9c552e961b919935c6b0eb2f884efd3d65275",
+      "original_sha256": "1de55a40d1fa08bcce278df2c818b70728f5e170d156b41b4814590bc746a586",
+      "reason": "Find actual project root after relocation; retain per-study write/import boundaries"
+    },
+    "README_本轮交付.md": {
+      "sha256": "8b7852bc1770192e3ddeee4c2e7dcab5679057db296a8a68944f7035c4e2a178",
+      "original_sha256": "4a61b566fd5c099639565718b8b12f7d48483286d31916826e60e0b796378197",
+      "reason": "Current navigation and commands; complete original report retained as historical evidence"
+    },
+    "run.py": {
+      "sha256": "2b408314c41a161689be81351fd1aac6f37b9cd3059e58e8e9ffbbefe48c1ff8",
+      "original_sha256": "e5d7638f6bf1d5fa122eeac98134b583ba92cd3e1b04552eda82e8b6d59091df",
+      "reason": "Route current integrity checks separately and retain original test logs; refuse baseline overwrite"
+    },
+    "tests/test_review.py": {
+      "sha256": "9efc07167b14735ebd52e97d1c64c12ab9f16c4bea9be5fa642e6c781cfbd3b0",
+      "original_sha256": "5122d4a566365284ced26133bf4259980d3ac0846188ff30ede2eaf1e0df1636",
+      "reason": "Write current review fixtures separately from historical test artifacts"
+    }
+  },
+  "frozen_sources_modified": false,
+  "new_runtime_helper": "lab/relocation.py",
+  "new_runtime_helper_sha256": "63875408adb70df93aa81b298e96789a157c8ff55e06d3f76a282579489bc23d"
+}

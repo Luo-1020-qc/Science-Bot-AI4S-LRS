@@ -1,0 +1,56 @@
+{
+  "role": "report_explainer_v1",
+  "response": {
+    "schema_version": "report_explainer_v1",
+    "summary": "The run completed validly and passed quality checks under strict execution, terminating with an explicit submit after one tool attempt and no retries. Only one candidate (ridge_full_5_10) was actually observed, with a search validation error of 0.04659; the sealed error of 0.05678 is below the 0.2 threshold. This is a controlled synthetic regression task, not scientific discovery, and the sealed result must not be used for tuning.",
+    "findings": [
+      {
+        "claim": "Delivery was valid and complete",
+        "evidence": "verified_report.valid=true, complete=true, termination=explicit_submit, fixture_faults=false",
+        "status": "verified"
+      },
+      {
+        "claim": "Quality gate passed",
+        "evidence": "verified_report.quality_pass=true",
+        "status": "verified"
+      },
+      {
+        "claim": "Execution was strict with no retries",
+        "evidence": "strict_execution=true, retries=0, tool_attempts=1, decisions=2",
+        "status": "verified"
+      },
+      {
+        "claim": "Only one candidate was observed; all others remain untried",
+        "evidence": "public_evidence_index: ridge_full_5_10 observed=true status=succeeded; all other 12 candidates observed=false status=untried",
+        "status": "verified"
+      },
+      {
+        "claim": "Selected candidate achieved search validation error 0.04659 (std 0.01805)",
+        "evidence": "public_evidence_index ridge_full_5_10 validation_mean=0.046592746444219596, validation_std=0.018048377849544033; verified_report.search_validation_error matches",
+        "status": "verified"
+      },
+      {
+        "claim": "Sealed error 0.05678 is below the 0.2 threshold",
+        "evidence": "verified_report.sealed_error=0.05678283862595852, threshold=0.2, scientific_success=true",
+        "status": "verified"
+      },
+      {
+        "claim": "Task is controlled synthetic regression, not scientific discovery",
+        "evidence": "provenance.source=controlled_generated_regression, split=demo",
+        "status": "verified"
+      }
+    ],
+    "limitations": [
+      "Only one of 13 listed candidates was observed; no comparative evidence exists for the untried candidates.",
+      "The sealed error is a single evaluation read (evaluation_reads=1) and must not be used to tune or select models.",
+      "The task is controlled synthetic regression; results do not constitute scientific discovery.",
+      "No transfer or blind-test claims are supported by this evidence; provenance indicates a demo split of generated regression data.",
+      "No tool registry entries were available, so no external tool evidence is cited."
+    ],
+    "artifact_refs": [
+      "report.json",
+      "report.md"
+    ]
+  },
+  "response_hash": "66e55d275de4ed1fa1d783331c14bec6783f7c2fb5cfed4dc764d7c89ca76e7e"
+}

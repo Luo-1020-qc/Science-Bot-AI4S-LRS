@@ -1,0 +1,36 @@
+{
+  "ref": "483c8b64433e36f89a6d92af12d2f07712c28bb540e3c43153912ed14dab3ed6",
+  "kind": "report",
+  "data": {
+    "assessment_ref": "f0cef4c98a99a6e2358c7ab1d4ba43cbba8bad82114858c1799cef5bc74649b1",
+    "workflow_ref": "8ab0bd0b83ddf1b26e50666c7880060d38dbbcce4706f8c5b1e28ae2d2c0792c",
+    "design_status": "conditionally_reviewed",
+    "execution_status": "mock_completed",
+    "statistical_evidence": {
+      "claim_ref": "1991873e1e291131d4744e5ea64030071b0386ff98cd18bdf273aa510ec073bd",
+      "analysis_ref": "32057142e2aed7593c494c5ccc1bae3846a4cbc4b801b7e67c354803a6d03356",
+      "status": "supports_direction_under_assumptions",
+      "practical_benefit_supported": true,
+      "interval": [
+        -0.06431426134489371,
+        -0.04054399230671938
+      ],
+      "evidence_scope": "synthetic_mock_only",
+      "real_scientific_claim_verified": false,
+      "limitations": [
+        "Model assumptions and measurement independence not independently verified",
+        "No causal or broad-domain generalization assertion",
+        "Inconclusive is not equivalence"
+      ]
+    },
+    "real_scientific_claim_verified": false,
+    "next_action": {
+      "next_step": "report_result_and_limitations",
+      "automatic_retest": false,
+      "change_success_threshold": false,
+      "required_new_version_for_followup": true,
+      "real_execution_authorized": false
+    },
+    "source": "synthetic_local_demo"
+  }
+}

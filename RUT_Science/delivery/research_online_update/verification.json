@@ -1,0 +1,50 @@
+{
+  "schema_version": "research_online_delivery_v1",
+  "date": "2026-10-27",
+  "passed": true,
+  "checks": {
+    "protected_files_match_or_explicitly_authorized": true,
+    "frozen_studies_unchanged": true,
+    "only_expected_core_additions": true,
+    "pinned_runtime_artifacts_match": true,
+    "integration_tests_pass": true,
+    "research_tests_pass": true,
+    "copied_compatibility_tests_match": true,
+    "entry_and_credentials_unchanged": true,
+    "saved_entry_acceptance_pass": true,
+    "no_live_model_calls_or_training": true,
+    "current_links_valid": true,
+    "source_syntax_valid": true
+  },
+  "integration_tests": 54,
+  "integration_passed": 53,
+  "integration_skipped": 1,
+  "research_tests": {
+    "g2_2": 39,
+    "g2_3": 37,
+    "g2_4": 49
+  },
+  "total_research_tests": 125,
+  "protected_files": 2034,
+  "authorized_modified_host_sources": 6,
+  "unexpected_changes": [],
+  "retained_study_files": 575,
+  "new_core_files": [
+    "RUT_Science/rut_science/science_bot/general/research.py"
+  ],
+  "changed_study_files": [],
+  "pinned_online_artifacts": 78,
+  "current_documents_checked": 8,
+  "local_links_checked": 89,
+  "broken_links": [],
+  "parsed_python_files": 21,
+  "syntax_errors": [],
+  "real_model_requests": 0,
+  "real_scientific_tool_executions": 0,
+  "real_gpu_jobs": 0,
+  "formal_training_transitions": 0,
+  "default_interview_policy": "rule",
+  "learned_policy_mode": "explicit_development_simulation_only",
+  "expert_identity_verified_labels": 0,
+  "scope": "Local terminal and existing HTTP messages integration; no external deployment, real scientific execution or default policy promotion"
+}

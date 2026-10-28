@@ -1,0 +1,69 @@
+{
+  "schema_version": "g2_2_bank_seal_v1",
+  "date": "2026-10-26",
+  "splits": {
+    "train": {
+      "path": "bank/train.jsonl",
+      "sha256": "b93aa6b295846916dd756338bce7051ff19196df9c9e46ce8fb132b3951b1727",
+      "count": 192,
+      "scenarios": [
+        "ordinary_comparison",
+        "paired_design",
+        "predictive_run",
+        "explanation_only",
+        "negated_execution",
+        "ambiguous_intent",
+        "unknown_structure",
+        "clustered_data",
+        "missing_cases",
+        "read_denied",
+        "transient_inspection",
+        "bad_tool_schema",
+        "goal_correction",
+        "conflicting_response",
+        "low_budget",
+        "causal_claim"
+      ]
+    },
+    "development": {
+      "path": "bank/development.jsonl",
+      "sha256": "7019c0f4a10c5d0c523d7051442e12425b13bcf064f3dd82ac4552bfd234cc62",
+      "count": 64,
+      "scenarios": [
+        "ordinary_comparison",
+        "paired_design",
+        "predictive_run",
+        "explanation_only",
+        "negated_execution",
+        "ambiguous_intent",
+        "unknown_structure",
+        "clustered_data",
+        "missing_cases",
+        "read_denied",
+        "transient_inspection",
+        "bad_tool_schema",
+        "goal_correction",
+        "conflicting_response",
+        "low_budget",
+        "causal_claim"
+      ]
+    },
+    "heldout": {
+      "path": "bank/heldout.jsonl",
+      "sha256": "de5192f075996265464906b20538dcb5d80211cee89108d163df0668a7102577",
+      "count": 96,
+      "scenarios": [
+        "paired_revocation",
+        "prediction_goal_correction",
+        "missing_read_denied",
+        "paired_unknown_source",
+        "paired_conflict",
+        "temporal_prediction",
+        "prediction_transient",
+        "comparison_confirmation_denied"
+      ]
+    }
+  },
+  "heldout_policy": "Heldout scenarios are absent from train/development. Sealed before BC training; final task records loaded only for evaluation.",
+  "expert_status": "No human expert labels yet; reference actions are synthetic curriculum labels"
+}

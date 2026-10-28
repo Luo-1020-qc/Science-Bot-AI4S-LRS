@@ -1,0 +1,16 @@
+{
+  "session": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\delivery\\g2_update\\live_sessions\\0d12240b209340f79bbd1b2467eb56b0",
+  "resources": {
+    "llm_requests": 4,
+    "llm_tokens": 7064,
+    "tool_attempts": 3,
+    "limits": {
+      "llm_requests": 4,
+      "llm_tokens": 20000,
+      "tool_calls": 12,
+      "read_bytes": 24000
+    }
+  },
+  "no_experiment_created": true,
+  "reviewed_reason": "Free-text exact-match incorrectly applied ASCII token boundary after sentence punctuation; fixed with regression test. Native provider also invented a randomization_note and host correctly rejected it; clarified schema description. Original outputs retained."
+}

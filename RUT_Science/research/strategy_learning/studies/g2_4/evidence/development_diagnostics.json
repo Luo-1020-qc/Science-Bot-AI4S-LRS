@@ -1,0 +1,540 @@
+{
+  "version": "doe_calibration_diagnostics_v1",
+  "cases": 42,
+  "matched": 42,
+  "results": [
+    {
+      "task_id": "g24_development_0085",
+      "scenario": "valid",
+      "family": "crd_two_arm",
+      "matched_scripted_expectation": true,
+      "ready_for_review": true,
+      "blocking_codes": [],
+      "validation_hash": "a16fb413d65a02a183c100b1bdcf2468590fe1ff3874c5a2503045fa7fcaba5c",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0086",
+      "scenario": "technical_repeats",
+      "family": "crd_two_arm",
+      "matched_scripted_expectation": true,
+      "ready_for_review": true,
+      "blocking_codes": [],
+      "validation_hash": "1d547e557c464aa599553c2d2d7ca6366b8109cbec8264d0aa592a28f79705f1",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0087",
+      "scenario": "duplicate_units",
+      "family": "crd_two_arm",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "randomization_schedule",
+        "experimental_units"
+      ],
+      "validation_hash": "5f5945585f07525204388c712fbe16764cfd14acc943011a374cdf01c6a9b455",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0088",
+      "scenario": "unrandomized_schedule",
+      "family": "crd_two_arm",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "randomization_schedule"
+      ],
+      "validation_hash": "d6db24acd38e5264f78e5821048d7a58c4a1721b7a0cf930b890c66ba8d37cf4",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0089",
+      "scenario": "missing_cell",
+      "family": "crd_two_arm",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "randomization_schedule",
+        "estimability",
+        "nominal_power"
+      ],
+      "validation_hash": "b7f4a1b7fd4fd940af2ed4cf0573e35843f0784b1acb024a0a62166b7a4661f3",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0090",
+      "scenario": "wrong_model",
+      "family": "crd_two_arm",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "evidence_grounding",
+        "analysis_model"
+      ],
+      "validation_hash": "6a9f2e8cd11346751c05721bc8c3b38ffe71ddd8c3349724b976b317f1095734",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0091",
+      "scenario": "low_power",
+      "family": "crd_two_arm",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "nominal_power"
+      ],
+      "validation_hash": "a1c20fd38557109309b4b0c254fd49d4deb9577e1716786393424869723273ff",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0092",
+      "scenario": "over_budget",
+      "family": "crd_two_arm",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "run_budget"
+      ],
+      "validation_hash": "c47b5f3f0e64716a129b83e9063383f496fc52cd9d1dbec4babba7bfed0d65d3",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0093",
+      "scenario": "forged_sigma",
+      "family": "crd_two_arm",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "evidence_grounding"
+      ],
+      "validation_hash": "da29b28832bc0a8d497f1339a28db733f58120fa680643310dd0fef28de3a10f",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0094",
+      "scenario": "unavailable_fact",
+      "family": "crd_two_arm",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "evidence_grounding",
+        "critical_facts_available"
+      ],
+      "validation_hash": "7d1291ed3287152213f3022e8ce9f0a6a545bf2bacad6871a52807daffc34d44",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0095",
+      "scenario": "unanswered_fact",
+      "family": "crd_two_arm",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "evidence_grounding",
+        "critical_facts_available"
+      ],
+      "validation_hash": "fc210683d2481ce1e1096a1d065d5a72a5d7de51ae5f7e273bbc795510fd1b41",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0096",
+      "scenario": "missing_provenance",
+      "family": "crd_two_arm",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "contract_schema"
+      ],
+      "validation_hash": "b5a40ff6e17415deade8101ba8c9e7c92e5147f33b5526969638f93177576734",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0097",
+      "scenario": "changed_primary",
+      "family": "crd_two_arm",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "evidence_grounding",
+        "estimability",
+        "nominal_power"
+      ],
+      "validation_hash": "1a270ff09e718904f67b472d248f8fb1db47e4a16be967d1fcaa6820f67c82aa",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0098",
+      "scenario": "unsupported_scope",
+      "family": "crd_two_arm",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "supported_scope"
+      ],
+      "validation_hash": "ed2b1d75a6769410311ceb6497f55461234ee8576396751a2c84e8db1bb06ab6",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0099",
+      "scenario": "valid",
+      "family": "rcbd_two_arm",
+      "matched_scripted_expectation": true,
+      "ready_for_review": true,
+      "blocking_codes": [],
+      "validation_hash": "e66f3b02b44e469e3951df80bb5461f994966e2efcc6c401171924ec10fdd08d",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0100",
+      "scenario": "technical_repeats",
+      "family": "rcbd_two_arm",
+      "matched_scripted_expectation": true,
+      "ready_for_review": true,
+      "blocking_codes": [],
+      "validation_hash": "957fb78123047da4ca5dbae40300882d440a4ad3d07133eb637a0ead5de30054",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0101",
+      "scenario": "duplicate_units",
+      "family": "rcbd_two_arm",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "randomization_schedule",
+        "experimental_units"
+      ],
+      "validation_hash": "ab8ec904b9f77d16e1f6cd603d4993e91896fb0e882eba240981c8927d539833",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0102",
+      "scenario": "unrandomized_schedule",
+      "family": "rcbd_two_arm",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "randomization_schedule"
+      ],
+      "validation_hash": "4c90f890e82a9572387d4d2a8f5ac73fbe95129b5d00b20bd347734653c4ecf2",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0103",
+      "scenario": "missing_cell",
+      "family": "rcbd_two_arm",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "randomization_schedule",
+        "estimability",
+        "residual_degrees_of_freedom",
+        "nominal_power"
+      ],
+      "validation_hash": "0df2d74bb6b88f9acaa37006dc48dfe88ad210187838d590816ba70ef6a69fb4",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0104",
+      "scenario": "wrong_model",
+      "family": "rcbd_two_arm",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "evidence_grounding",
+        "analysis_model"
+      ],
+      "validation_hash": "7df64659ea641d42d9779aec3a00b692680a8ba8d824d81ecdfb07b4bf6c6f54",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0105",
+      "scenario": "low_power",
+      "family": "rcbd_two_arm",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "nominal_power"
+      ],
+      "validation_hash": "2a00ae2151cc0169629413e6057b659c5456a015ab926b0a261a7ffcace61a77",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0106",
+      "scenario": "over_budget",
+      "family": "rcbd_two_arm",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "run_budget"
+      ],
+      "validation_hash": "7e62453d54b140b32b50848cbb14dc7ebc99bba3876d82a32d3178297b944443",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0107",
+      "scenario": "forged_sigma",
+      "family": "rcbd_two_arm",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "evidence_grounding"
+      ],
+      "validation_hash": "171eb14b9b1e76606c637d217120b54b0c7d4e0fefa8249c20a07872728a737b",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0108",
+      "scenario": "unavailable_fact",
+      "family": "rcbd_two_arm",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "evidence_grounding",
+        "critical_facts_available"
+      ],
+      "validation_hash": "90fb9cd870805e7307055fd9cdfa50b2864246865c3e4cd9e5fa86cc6bf50ab6",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0109",
+      "scenario": "unanswered_fact",
+      "family": "rcbd_two_arm",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "evidence_grounding",
+        "critical_facts_available"
+      ],
+      "validation_hash": "0449db88d24dd7499dfd2c13fadad9c34d7b080bc4a48931d81e15134498cef2",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0110",
+      "scenario": "missing_provenance",
+      "family": "rcbd_two_arm",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "contract_schema"
+      ],
+      "validation_hash": "84dd09fece0562fea2c3d51576907f2331badd3b2e9e314d5817b20f2990e0dd",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0111",
+      "scenario": "changed_primary",
+      "family": "rcbd_two_arm",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "evidence_grounding",
+        "estimability",
+        "nominal_power"
+      ],
+      "validation_hash": "fbf7933dec35c3df143236240e608f71f1deb19627f41aa11f07ffe24ec69fb2",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0112",
+      "scenario": "unsupported_scope",
+      "family": "rcbd_two_arm",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "supported_scope"
+      ],
+      "validation_hash": "8dcd28fa2c77f0631eb050d03df1834c5f41820f92d46f9a36431320e4edca50",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0113",
+      "scenario": "valid",
+      "family": "factorial_2x2",
+      "matched_scripted_expectation": true,
+      "ready_for_review": true,
+      "blocking_codes": [],
+      "validation_hash": "0d076480332264f3af544eb2186553caaf85d2b845946bf353ec1a24f903c153",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0114",
+      "scenario": "technical_repeats",
+      "family": "factorial_2x2",
+      "matched_scripted_expectation": true,
+      "ready_for_review": true,
+      "blocking_codes": [],
+      "validation_hash": "d30406796a130d520ee28077ecad5ba5591caf424498b03c01315e3c8c5625fa",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0115",
+      "scenario": "duplicate_units",
+      "family": "factorial_2x2",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "randomization_schedule",
+        "experimental_units"
+      ],
+      "validation_hash": "4e3e5093f6a3a5db515b3af3fb0c4674cb277761f62864f7a2bc00fb2a825dba",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0116",
+      "scenario": "unrandomized_schedule",
+      "family": "factorial_2x2",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "randomization_schedule"
+      ],
+      "validation_hash": "84ff326a34ee13779f3cd782137b493b7fd47a783d3b34ee161ca07d35cbb312",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0117",
+      "scenario": "missing_cell",
+      "family": "factorial_2x2",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "randomization_schedule",
+        "estimability",
+        "nominal_power"
+      ],
+      "validation_hash": "2cca662140d3e27671cc07f7915081ee86e4a8679a21d0ea4b8ef04811158bb2",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0118",
+      "scenario": "wrong_model",
+      "family": "factorial_2x2",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "evidence_grounding",
+        "analysis_model"
+      ],
+      "validation_hash": "7b67b9a8951850e35c2dad15419f1ee7f270eb2fb4adc7b90ea531df95411be8",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0119",
+      "scenario": "low_power",
+      "family": "factorial_2x2",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "nominal_power"
+      ],
+      "validation_hash": "82136cdf6d7825ec34d8d766ba8b964dcbfe27785bcab462d7c9293d680cdb55",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0120",
+      "scenario": "over_budget",
+      "family": "factorial_2x2",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "run_budget"
+      ],
+      "validation_hash": "345724a4924024ea9d76eae65acb1d224ce361784239f4de43c4c04d3383923f",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0121",
+      "scenario": "forged_sigma",
+      "family": "factorial_2x2",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "evidence_grounding"
+      ],
+      "validation_hash": "2804f013bc65cccf66e02b66f9292a794f9a84002ec202c4302cdc5fcdc9b6ee",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0122",
+      "scenario": "unavailable_fact",
+      "family": "factorial_2x2",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "evidence_grounding",
+        "critical_facts_available"
+      ],
+      "validation_hash": "cc363d459c169946f602d412077ecdf2494d4eef01105259142e6d5ff414d4fe",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0123",
+      "scenario": "unanswered_fact",
+      "family": "factorial_2x2",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "evidence_grounding",
+        "critical_facts_available"
+      ],
+      "validation_hash": "61fad31299ac4f538597534850497080e4737000f561dd8256b3cba15bd7418f",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0124",
+      "scenario": "missing_provenance",
+      "family": "factorial_2x2",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "contract_schema"
+      ],
+      "validation_hash": "a4321d8bb29a77a7923ec8d4656bbdab87cdff88f7ca6f8532883e61a4eed227",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0125",
+      "scenario": "changed_primary",
+      "family": "factorial_2x2",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "evidence_grounding",
+        "estimability",
+        "nominal_power"
+      ],
+      "validation_hash": "6b7c007c656af2119e86514bcec54f6e049ddbac5d3d62b6dabb99da1f210689",
+      "score_same_across_stages": true
+    },
+    {
+      "task_id": "g24_development_0126",
+      "scenario": "unsupported_scope",
+      "family": "factorial_2x2",
+      "matched_scripted_expectation": true,
+      "ready_for_review": false,
+      "blocking_codes": [
+        "supported_scope"
+      ],
+      "validation_hash": "bd270127d97743ccba4503df0291c6f90b2f969692946bdd94ee451351df0726",
+      "score_same_across_stages": true
+    }
+  ],
+  "labels": "scripted regression expectations; not expert judgments or learned-agent performance",
+  "positive_cases": 6,
+  "negative_cases": 36,
+  "always_stop_diagnostic": {
+    "cases": 42,
+    "correct_stops": 6,
+    "unjustified_stops": 36,
+    "note": "Publicly grounded reason chosen when present; blanket stopping still fails designable tasks"
+  },
+  "heldout_records_opened": false,
+  "scorer_version": "doe_score_v1",
+  "verifier_version": "doe_verifier_v1",
+  "human_expert_labels": 0,
+  "real_tool_executions": 0,
+  "real_model_requests": 0,
+  "real_gpu_jobs": 0
+}

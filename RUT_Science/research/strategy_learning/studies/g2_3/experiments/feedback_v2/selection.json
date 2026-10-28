@@ -1,0 +1,17 @@
+{
+  "stage": "selected_before_loading_trial_final",
+  "policies": {
+    "seed_21/baseline": "33dbda4e00ea7f5513d08f3d35cf5772a3089fff101652ec56c6df8b4668c796",
+    "seed_21/ppo": "33dbda4e00ea7f5513d08f3d35cf5772a3089fff101652ec56c6df8b4668c796",
+    "seed_37/baseline": "38a8f1960d38a8429871fa5863ee79be6111c517e83330f17a95cb10f15adc5c",
+    "seed_37/ppo": "38a8f1960d38a8429871fa5863ee79be6111c517e83330f17a95cb10f15adc5c",
+    "seed_59/baseline": "ed763886b3cdf292f8c563238a3d039698992e42cf25700f495d6144c6df5e6d",
+    "seed_59/ppo": "42e97fa764ac18b1ec51de6f5ca806d06e343abe1b5ffe29999e4beb7e764629"
+  },
+  "config_hash": "4dca357ce8be18fdd7de3692bcc2ad37aca06484afd614f18b285d93c27f4498",
+  "bank_hash": "8cd86d77893beb96dbfa8025e6e21170f901a87a420055c40b0b3a6c9bb236a5",
+  "source_hash": "98ca8270c53a103cf010fd1c22fbea41f2c22222b66c79b0d1eb5771a5937498",
+  "total_ppo_transitions": 36864,
+  "reward_version": "public_evidence_and_completion_weighted_v2",
+  "first_experiment_preserved": true
+}

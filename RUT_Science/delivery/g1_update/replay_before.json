@@ -1,0 +1,11 @@
+{
+  "llm_requests": 6,
+  "llm_tokens": 6031,
+  "tool_attempts": 2,
+  "limits": {
+    "llm_requests": 8,
+    "llm_tokens": 60000,
+    "tool_calls": 12,
+    "read_bytes": 24000
+  }
+}

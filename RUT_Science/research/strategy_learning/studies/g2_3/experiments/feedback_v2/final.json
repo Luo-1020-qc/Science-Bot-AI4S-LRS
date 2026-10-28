@@ -1,0 +1,125 @@
+{
+  "reports": {
+    "context_rule": {
+      "tasks": 48,
+      "strict_successes": 48,
+      "strict_success_rate": 1.0,
+      "mean_decisions": 11.041666666666666,
+      "by_domain": {
+        "tabular": {
+          "tasks": 24,
+          "successes": 24
+        },
+        "cvit": {
+          "tasks": 24,
+          "successes": 24
+        }
+      }
+    },
+    "seed_21/baseline": {
+      "tasks": 48,
+      "strict_successes": 36,
+      "strict_success_rate": 0.75,
+      "mean_decisions": 14.375,
+      "by_domain": {
+        "tabular": {
+          "tasks": 24,
+          "successes": 12
+        },
+        "cvit": {
+          "tasks": 24,
+          "successes": 24
+        }
+      }
+    },
+    "seed_21/ppo": {
+      "tasks": 48,
+      "strict_successes": 36,
+      "strict_success_rate": 0.75,
+      "mean_decisions": 14.375,
+      "by_domain": {
+        "tabular": {
+          "tasks": 24,
+          "successes": 12
+        },
+        "cvit": {
+          "tasks": 24,
+          "successes": 24
+        }
+      }
+    },
+    "seed_37/baseline": {
+      "tasks": 48,
+      "strict_successes": 15,
+      "strict_success_rate": 0.3125,
+      "mean_decisions": 21.875,
+      "by_domain": {
+        "tabular": {
+          "tasks": 24,
+          "successes": 12
+        },
+        "cvit": {
+          "tasks": 24,
+          "successes": 3
+        }
+      }
+    },
+    "seed_37/ppo": {
+      "tasks": 48,
+      "strict_successes": 15,
+      "strict_success_rate": 0.3125,
+      "mean_decisions": 21.875,
+      "by_domain": {
+        "tabular": {
+          "tasks": 24,
+          "successes": 12
+        },
+        "cvit": {
+          "tasks": 24,
+          "successes": 3
+        }
+      }
+    },
+    "seed_59/baseline": {
+      "tasks": 48,
+      "strict_successes": 36,
+      "strict_success_rate": 0.75,
+      "mean_decisions": 14.375,
+      "by_domain": {
+        "tabular": {
+          "tasks": 24,
+          "successes": 12
+        },
+        "cvit": {
+          "tasks": 24,
+          "successes": 24
+        }
+      }
+    },
+    "seed_59/ppo": {
+      "tasks": 48,
+      "strict_successes": 11,
+      "strict_success_rate": 0.22916666666666666,
+      "mean_decisions": 15.395833333333334,
+      "by_domain": {
+        "tabular": {
+          "tasks": 24,
+          "successes": 11
+        },
+        "cvit": {
+          "tasks": 24,
+          "successes": 0
+        }
+      }
+    }
+  },
+  "summary": {
+    "baseline_mean": 0.6041666666666666,
+    "feedback_ppo_mean": 0.4305555555555556,
+    "rule_success": 1.0,
+    "tasks": 48,
+    "limitations": "Corrective exploratory trial with fresh combinations; not a replacement for the original preregistered comparison"
+  },
+  "selection_hash": "dcca6fab5fa5b094df1d19a3b739258688d284c4b556af8c304bc661d56cbbbc",
+  "real_gpu_jobs": 0
+}

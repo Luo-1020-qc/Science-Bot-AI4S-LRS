@@ -1,0 +1,14 @@
+{
+  "algorithm": "masked_softmax_behavior_cloning",
+  "seed": 37,
+  "selected_epoch": 240,
+  "selected_using": "development_success_then_blocked_attempts_then_decisions",
+  "policy_hash": "20c28ff2a6738511bb216a7d9154f02089979fe851ec6fe0be8b6c8ac4d96741",
+  "training_rows": 1133,
+  "human_expert_labels": 0,
+  "externally_claimed_reviewed_labels": 0,
+  "ppo_trained": false,
+  "train_tasks_hash": "2d1b1397102cba51bcdb3e30390fd80e25fde6f7cbcaf5aaf5403d315fd926d1",
+  "development_tasks_hash": "9185c05dd1eff1611e0286a090b53bda74098a4eb0d2372ed59a29a9068c546a",
+  "heldout_loaded": false
+}

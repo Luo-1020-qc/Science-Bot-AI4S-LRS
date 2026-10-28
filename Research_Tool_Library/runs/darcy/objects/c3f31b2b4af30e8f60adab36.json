@@ -1,0 +1,72 @@
+{
+  "ref": "c3f31b2b4af30e8f60adab3661d8dde3cfc8f1eb4a432c1e5ccf0d93a536539e",
+  "kind": "workflow",
+  "data": {
+    "freeze_ref": "9f232d41b243aac368b89895ab23d60f09089bb37d9e3c5185718b463ace08d8",
+    "mode": "mock_only",
+    "nodes": [
+      {
+        "id": "inspect_frozen_inputs",
+        "tool": "artifact_read",
+        "depends_on": [],
+        "acceptance": "Frozen plan identity valid"
+      },
+      {
+        "id": "reconcile",
+        "tool": "job_reconcile_mock",
+        "depends_on": [
+          "inspect_frozen_inputs"
+        ],
+        "acceptance": "Match existing job to same frozen plan"
+      },
+      {
+        "id": "run_or_reuse",
+        "tool": "job_run_mock",
+        "depends_on": [
+          "reconcile"
+        ],
+        "acceptance": "At most one synthetic job per frozen plan"
+      },
+      {
+        "id": "poll",
+        "tool": "job_poll_mock",
+        "depends_on": [
+          "run_or_reuse"
+        ],
+        "acceptance": "Only mock-completed unit rows accepted"
+      },
+      {
+        "id": "analyze",
+        "tool": "result_analyze",
+        "depends_on": [
+          "poll"
+        ],
+        "acceptance": "All frozen units accounted for; locked primary contrast analyzed"
+      },
+      {
+        "id": "assess_claim",
+        "tool": "claim_assess",
+        "depends_on": [
+          "analyze"
+        ],
+        "acceptance": "Plan, source, contrast and interval agree"
+      },
+      {
+        "id": "choose_next",
+        "tool": "loop_next_action",
+        "depends_on": [
+          "assess_claim"
+        ],
+        "acceptance": "No significance chasing or automatic retest"
+      },
+      {
+        "id": "write_report",
+        "tool": "report_build",
+        "depends_on": [
+          "choose_next"
+        ],
+        "acceptance": "Separate design pass, mock completion and conditional statistical evidence"
+      }
+    ]
+  }
+}

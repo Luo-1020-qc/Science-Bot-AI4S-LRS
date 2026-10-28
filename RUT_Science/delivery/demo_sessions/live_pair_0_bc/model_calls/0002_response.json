@@ -1,0 +1,29 @@
+{
+  "role": "report_explainer_v1",
+  "response": {
+    "schema_version": "report_explainer_v1",
+    "summary": "The run completed as a valid, strictly executed delivery: the agent submitted explicitly after 2 decisions and 1 tool attempt, with no retries and no fixture faults. The selected candidate was the 'mean' baseline, the only observed candidate; its search validation error was 0.2361 (std 0.0835) and the sealed error was 0.2399, both above the 0.2 threshold, so quality_pass and scientific_success are false. All ridge candidates were untried, so no comparison among them is available.",
+    "findings": [
+      "Valid delivery: verified_report reports valid=true, complete=true, termination='explicit_submit', fixture_faults=false, retries=0, and evaluation_reads=1.",
+      "Strict execution: strict_execution=true with 2 decisions, 1 tool attempt, 1 LLM request, and 1674 LLM tokens; active time was about 3.78 seconds.",
+      "Only one candidate was observed: 'mean' (fit_mean) succeeded with validation_mean=0.2361158964908156 and validation_std=0.08348837920905393.",
+      "All 12 ridge candidates (half/full fidelity, feature_grid 3 or 5, alpha 0.1/1/10) are marked untried with attempts=0 and null validation values; no ridge result was measured.",
+      "Quality did not pass: quality_pass=false and scientific_success=false, because the selected mean candidate's search validation error (0.2361) and sealed error (0.2399) both exceed the 0.2 threshold.",
+      "Provenance identifies the source as controlled_generated_regression on the demo split (instance 11, root_group 30000), i.e., controlled synthetic regression rather than scientific discovery.",
+      "No recovery was needed: retries=0 and no fixture faults were reported; the run ended by explicit submission rather than abstention or error.",
+      "The report records a data identity hash and model hash, but these are identifiers only and are not interpreted here as evidence of quality."
+    ],
+    "limitations": [
+      "Only the mean baseline was observed; no ridge candidate was attempted, so no evidence exists about whether any ridge configuration would perform better or worse.",
+      "The sealed error (0.2399) is a single reported value with no uncertainty estimate; the validation std (0.0835) applies to the mean candidate's validation measurements, not to the sealed result.",
+      "The task is controlled synthetic regression on a demo split, so results do not constitute scientific discovery or evidence about real-world systems.",
+      "No information is available on why ridge candidates were left untried; this report does not infer causes beyond the recorded decision count and tool attempts.",
+      "No tuning guidance is offered, and nothing here should be used to tune against the sealed result."
+    ],
+    "artifact_refs": [
+      "report.json",
+      "report.md"
+    ]
+  },
+  "response_hash": "2e80599966db7a9dc3e4681c01d9fe3d4bdf7e5c5af6074d184bdf7d1611bcd8"
+}

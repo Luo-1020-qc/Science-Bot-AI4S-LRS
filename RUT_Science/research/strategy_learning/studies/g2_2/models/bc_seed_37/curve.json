@@ -1,0 +1,522 @@
+[
+  {
+    "epoch": 20,
+    "train_loss": 1.8988316654217472,
+    "development": {
+      "tasks": 64,
+      "success_rate": 0.328125,
+      "design_correct_rate": 0.0,
+      "appropriate_stop_rate": 0.328125,
+      "missed_execution_count": 24,
+      "blocked_execution_attempts": 0,
+      "real_execution_count": 0,
+      "real_model_calls": 0,
+      "mean_questions": 3.171875,
+      "mean_redundant_questions": 1.171875,
+      "mean_unanswerable_questions": 0.84375,
+      "mean_decisions": 13.359375,
+      "mean_mock_calls": 0.8125,
+      "mean_rejected_designs": 8.28125,
+      "mean_return": -10.146093750000002,
+      "by_scenario": {
+        "ordinary_comparison": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 0.25
+        },
+        "paired_design": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 4.0
+        },
+        "predictive_run": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 2.0
+        },
+        "explanation_only": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 0.75
+        },
+        "negated_execution": {
+          "tasks": 4,
+          "successes": 4,
+          "mean_questions": 0.25
+        },
+        "ambiguous_intent": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 0.75
+        },
+        "unknown_structure": {
+          "tasks": 4,
+          "successes": 4,
+          "mean_questions": 14.0
+        },
+        "clustered_data": {
+          "tasks": 4,
+          "successes": 4,
+          "mean_questions": 4.5
+        },
+        "missing_cases": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 2.25
+        },
+        "read_denied": {
+          "tasks": 4,
+          "successes": 3,
+          "mean_questions": 1.0
+        },
+        "transient_inspection": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 4.75
+        },
+        "bad_tool_schema": {
+          "tasks": 4,
+          "successes": 3,
+          "mean_questions": 10.75
+        },
+        "goal_correction": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 1.25
+        },
+        "conflicting_response": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 1.25
+        },
+        "low_budget": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 1.75
+        },
+        "causal_claim": {
+          "tasks": 4,
+          "successes": 3,
+          "mean_questions": 1.25
+        }
+      },
+      "interpretation": "Synthetic task episodes and reused templates; descriptive pilot, not a population-generalization estimate"
+    }
+  },
+  {
+    "epoch": 60,
+    "train_loss": 1.4431685545585606,
+    "development": {
+      "tasks": 64,
+      "success_rate": 0.34375,
+      "design_correct_rate": 0.0,
+      "appropriate_stop_rate": 0.34375,
+      "missed_execution_count": 24,
+      "blocked_execution_attempts": 0,
+      "real_execution_count": 0,
+      "real_model_calls": 0,
+      "mean_questions": 2.390625,
+      "mean_redundant_questions": 0.0,
+      "mean_unanswerable_questions": 0.84375,
+      "mean_decisions": 12.078125,
+      "mean_mock_calls": 0.765625,
+      "mean_rejected_designs": 7.828125,
+      "mean_return": -9.121093750000002,
+      "by_scenario": {
+        "ordinary_comparison": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 0.25
+        },
+        "paired_design": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 1.25
+        },
+        "predictive_run": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 3.25
+        },
+        "explanation_only": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 0.75
+        },
+        "negated_execution": {
+          "tasks": 4,
+          "successes": 4,
+          "mean_questions": 0.25
+        },
+        "ambiguous_intent": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 1.75
+        },
+        "unknown_structure": {
+          "tasks": 4,
+          "successes": 4,
+          "mean_questions": 14.0
+        },
+        "clustered_data": {
+          "tasks": 4,
+          "successes": 4,
+          "mean_questions": 1.5
+        },
+        "missing_cases": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 2.75
+        },
+        "read_denied": {
+          "tasks": 4,
+          "successes": 4,
+          "mean_questions": 1.25
+        },
+        "transient_inspection": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 2.5
+        },
+        "bad_tool_schema": {
+          "tasks": 4,
+          "successes": 3,
+          "mean_questions": 1.75
+        },
+        "goal_correction": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 1.75
+        },
+        "conflicting_response": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 1.75
+        },
+        "low_budget": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 2.0
+        },
+        "causal_claim": {
+          "tasks": 4,
+          "successes": 3,
+          "mean_questions": 1.5
+        }
+      },
+      "interpretation": "Synthetic task episodes and reused templates; descriptive pilot, not a population-generalization estimate"
+    }
+  },
+  {
+    "epoch": 120,
+    "train_loss": 1.1011538545130597,
+    "development": {
+      "tasks": 64,
+      "success_rate": 0.453125,
+      "design_correct_rate": 0.09375,
+      "appropriate_stop_rate": 0.359375,
+      "missed_execution_count": 18,
+      "blocked_execution_attempts": 0,
+      "real_execution_count": 0,
+      "real_model_calls": 0,
+      "mean_questions": 3.0625,
+      "mean_redundant_questions": 0.0,
+      "mean_unanswerable_questions": 0.84375,
+      "mean_decisions": 12.078125,
+      "mean_mock_calls": 0.90625,
+      "mean_rejected_designs": 6.8125,
+      "mean_return": -7.625781250000002,
+      "by_scenario": {
+        "ordinary_comparison": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 0.5
+        },
+        "paired_design": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 2.0
+        },
+        "predictive_run": {
+          "tasks": 4,
+          "successes": 1,
+          "mean_questions": 4.25
+        },
+        "explanation_only": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 0.5
+        },
+        "negated_execution": {
+          "tasks": 4,
+          "successes": 4,
+          "mean_questions": 0.0
+        },
+        "ambiguous_intent": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 4.5
+        },
+        "unknown_structure": {
+          "tasks": 4,
+          "successes": 4,
+          "mean_questions": 14.0
+        },
+        "clustered_data": {
+          "tasks": 4,
+          "successes": 4,
+          "mean_questions": 1.5
+        },
+        "missing_cases": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 4.25
+        },
+        "read_denied": {
+          "tasks": 4,
+          "successes": 4,
+          "mean_questions": 1.75
+        },
+        "transient_inspection": {
+          "tasks": 4,
+          "successes": 2,
+          "mean_questions": 4.5
+        },
+        "bad_tool_schema": {
+          "tasks": 4,
+          "successes": 4,
+          "mean_questions": 1.25
+        },
+        "goal_correction": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 2.5
+        },
+        "conflicting_response": {
+          "tasks": 4,
+          "successes": 3,
+          "mean_questions": 3.0
+        },
+        "low_budget": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 2.75
+        },
+        "causal_claim": {
+          "tasks": 4,
+          "successes": 3,
+          "mean_questions": 1.75
+        }
+      },
+      "interpretation": "Synthetic task episodes and reused templates; descriptive pilot, not a population-generalization estimate"
+    }
+  },
+  {
+    "epoch": 180,
+    "train_loss": 0.8970463801944687,
+    "development": {
+      "tasks": 64,
+      "success_rate": 0.453125,
+      "design_correct_rate": 0.15625,
+      "appropriate_stop_rate": 0.328125,
+      "missed_execution_count": 16,
+      "blocked_execution_attempts": 0,
+      "real_execution_count": 0,
+      "real_model_calls": 0,
+      "mean_questions": 3.375,
+      "mean_redundant_questions": 0.0,
+      "mean_unanswerable_questions": 0.84375,
+      "mean_decisions": 12.875,
+      "mean_mock_calls": 0.875,
+      "mean_rejected_designs": 6.703125,
+      "mean_return": -7.587500000000002,
+      "by_scenario": {
+        "ordinary_comparison": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 0.5
+        },
+        "paired_design": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 4.25
+        },
+        "predictive_run": {
+          "tasks": 4,
+          "successes": 1,
+          "mean_questions": 4.0
+        },
+        "explanation_only": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 0.25
+        },
+        "negated_execution": {
+          "tasks": 4,
+          "successes": 4,
+          "mean_questions": 0.0
+        },
+        "ambiguous_intent": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 5.0
+        },
+        "unknown_structure": {
+          "tasks": 4,
+          "successes": 4,
+          "mean_questions": 14.0
+        },
+        "clustered_data": {
+          "tasks": 4,
+          "successes": 3,
+          "mean_questions": 1.75
+        },
+        "missing_cases": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 4.75
+        },
+        "read_denied": {
+          "tasks": 4,
+          "successes": 4,
+          "mean_questions": 2.25
+        },
+        "transient_inspection": {
+          "tasks": 4,
+          "successes": 4,
+          "mean_questions": 5.0
+        },
+        "bad_tool_schema": {
+          "tasks": 4,
+          "successes": 4,
+          "mean_questions": 1.25
+        },
+        "goal_correction": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 2.0
+        },
+        "conflicting_response": {
+          "tasks": 4,
+          "successes": 3,
+          "mean_questions": 3.0
+        },
+        "low_budget": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 3.5
+        },
+        "causal_claim": {
+          "tasks": 4,
+          "successes": 2,
+          "mean_questions": 2.5
+        }
+      },
+      "interpretation": "Synthetic task episodes and reused templates; descriptive pilot, not a population-generalization estimate"
+    }
+  },
+  {
+    "epoch": 240,
+    "train_loss": 0.7577249467674626,
+    "development": {
+      "tasks": 64,
+      "success_rate": 0.53125,
+      "design_correct_rate": 0.234375,
+      "appropriate_stop_rate": 0.328125,
+      "missed_execution_count": 15,
+      "blocked_execution_attempts": 0,
+      "real_execution_count": 0,
+      "real_model_calls": 0,
+      "mean_questions": 3.296875,
+      "mean_redundant_questions": 0.0,
+      "mean_unanswerable_questions": 0.65625,
+      "mean_decisions": 11.796875,
+      "mean_mock_calls": 0.890625,
+      "mean_rejected_designs": 5.59375,
+      "mean_return": -5.988281250000002,
+      "by_scenario": {
+        "ordinary_comparison": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 0.5
+        },
+        "paired_design": {
+          "tasks": 4,
+          "successes": 4,
+          "mean_questions": 5.25
+        },
+        "predictive_run": {
+          "tasks": 4,
+          "successes": 1,
+          "mean_questions": 4.0
+        },
+        "explanation_only": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 0.25
+        },
+        "negated_execution": {
+          "tasks": 4,
+          "successes": 4,
+          "mean_questions": 0.0
+        },
+        "ambiguous_intent": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 5.0
+        },
+        "unknown_structure": {
+          "tasks": 4,
+          "successes": 4,
+          "mean_questions": 11.0
+        },
+        "clustered_data": {
+          "tasks": 4,
+          "successes": 3,
+          "mean_questions": 1.75
+        },
+        "missing_cases": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 5.25
+        },
+        "read_denied": {
+          "tasks": 4,
+          "successes": 4,
+          "mean_questions": 2.25
+        },
+        "transient_inspection": {
+          "tasks": 4,
+          "successes": 4,
+          "mean_questions": 5.0
+        },
+        "bad_tool_schema": {
+          "tasks": 4,
+          "successes": 4,
+          "mean_questions": 1.25
+        },
+        "goal_correction": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 2.0
+        },
+        "conflicting_response": {
+          "tasks": 4,
+          "successes": 4,
+          "mean_questions": 3.25
+        },
+        "low_budget": {
+          "tasks": 4,
+          "successes": 0,
+          "mean_questions": 3.5
+        },
+        "causal_claim": {
+          "tasks": 4,
+          "successes": 2,
+          "mean_questions": 2.5
+        }
+      },
+      "interpretation": "Synthetic task episodes and reused templates; descriptive pilot, not a population-generalization estimate"
+    }
+  }
+]

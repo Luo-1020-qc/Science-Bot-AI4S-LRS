@@ -1,0 +1,1932 @@
+{
+  "version": "g2_3_final_v1",
+  "reports": {
+    "context_rule": {
+      "tasks": 96,
+      "successes": 96,
+      "success_rate": 1.0,
+      "mean_decisions": 8.1875,
+      "mean_questions": 3.375,
+      "blocked_attempts": 0,
+      "duplicate_mock_launches": 0,
+      "real_gpu_jobs": 0,
+      "real_executions": 0,
+      "by_domain": {
+        "cvit": {
+          "tasks": 48,
+          "successes": 48,
+          "success_rate": 1.0,
+          "mean_decisions": 8.166666666666666,
+          "mean_questions": 2.7916666666666665,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "tabular": {
+          "tasks": 48,
+          "successes": 48,
+          "success_rate": 1.0,
+          "mean_decisions": 8.208333333333334,
+          "mean_questions": 3.9583333333333335,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      },
+      "by_scenario": {
+        "full_data_change": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 11.166666666666666,
+          "mean_questions": 2.1666666666666665,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_confirmation_revoked": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 7.5,
+          "mean_questions": 2.5,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_seed_unknown": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 3.0,
+          "mean_questions": 2.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pair_conflict_revoke_v3": {
+          "tasks": 12,
+          "successes": 12,
+          "success_rate": 1.0,
+          "mean_decisions": 10.0,
+          "mean_questions": 4.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "prediction_unknown_features_v3": {
+          "tasks": 12,
+          "successes": 12,
+          "success_rate": 1.0,
+          "mean_decisions": 6.583333333333333,
+          "mean_questions": 4.583333333333333,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_oom": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 11.666666666666666,
+          "mean_questions": 3.6666666666666665,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_existing_running": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 9.0,
+          "mean_questions": 3.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_existing_completed": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 9.0,
+          "mean_questions": 3.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_memory_low": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 4.666666666666667,
+          "mean_questions": 2.6666666666666665,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_mismatched_existing": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 9.333333333333334,
+          "mean_questions": 3.3333333333333335,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "prediction_change_transient_v3": {
+          "tasks": 12,
+          "successes": 12,
+          "success_rate": 1.0,
+          "mean_decisions": 10.0,
+          "mean_questions": 3.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "paired_unknown_permission_v3": {
+          "tasks": 12,
+          "successes": 12,
+          "success_rate": 1.0,
+          "mean_decisions": 6.25,
+          "mean_questions": 4.25,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      }
+    },
+    "random_legal": {
+      "tasks": 96,
+      "successes": 17,
+      "success_rate": 0.17708333333333334,
+      "mean_decisions": 6.302083333333333,
+      "mean_questions": 3.8229166666666665,
+      "blocked_attempts": 0,
+      "duplicate_mock_launches": 0,
+      "real_gpu_jobs": 0,
+      "real_executions": 0,
+      "by_domain": {
+        "cvit": {
+          "tasks": 48,
+          "successes": 14,
+          "success_rate": 0.2916666666666667,
+          "mean_decisions": 5.5,
+          "mean_questions": 3.0833333333333335,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "tabular": {
+          "tasks": 48,
+          "successes": 3,
+          "success_rate": 0.0625,
+          "mean_decisions": 7.104166666666667,
+          "mean_questions": 4.5625,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      },
+      "by_scenario": {
+        "full_data_change": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.6666666666666667,
+          "mean_questions": 0.6666666666666666,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_confirmation_revoked": {
+          "tasks": 6,
+          "successes": 3,
+          "success_rate": 0.5,
+          "mean_decisions": 3.3333333333333335,
+          "mean_questions": 1.6666666666666667,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_seed_unknown": {
+          "tasks": 6,
+          "successes": 2,
+          "success_rate": 0.3333333333333333,
+          "mean_decisions": 2.6666666666666665,
+          "mean_questions": 1.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pair_conflict_revoke_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 6.75,
+          "mean_questions": 3.9166666666666665,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "prediction_unknown_features_v3": {
+          "tasks": 12,
+          "successes": 2,
+          "success_rate": 0.16666666666666666,
+          "mean_decisions": 6.416666666666667,
+          "mean_questions": 4.25,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_oom": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 9.333333333333334,
+          "mean_questions": 6.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_existing_running": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 9.5,
+          "mean_questions": 5.666666666666667,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_existing_completed": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 3.5,
+          "mean_questions": 2.3333333333333335,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_memory_low": {
+          "tasks": 6,
+          "successes": 5,
+          "success_rate": 0.8333333333333334,
+          "mean_decisions": 8.666666666666666,
+          "mean_questions": 4.166666666666667,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_mismatched_existing": {
+          "tasks": 6,
+          "successes": 4,
+          "success_rate": 0.6666666666666666,
+          "mean_decisions": 5.333333333333333,
+          "mean_questions": 3.1666666666666665,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "prediction_change_transient_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 6.666666666666667,
+          "mean_questions": 3.9166666666666665,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "paired_unknown_permission_v3": {
+          "tasks": 12,
+          "successes": 1,
+          "success_rate": 0.08333333333333333,
+          "mean_decisions": 8.583333333333334,
+          "mean_questions": 6.166666666666667,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      }
+    },
+    "seed_21/bc": {
+      "tasks": 96,
+      "successes": 24,
+      "success_rate": 0.25,
+      "mean_decisions": 7.479166666666667,
+      "mean_questions": 3.15625,
+      "blocked_attempts": 0,
+      "duplicate_mock_launches": 0,
+      "real_gpu_jobs": 0,
+      "real_executions": 0,
+      "by_domain": {
+        "cvit": {
+          "tasks": 48,
+          "successes": 24,
+          "success_rate": 0.5,
+          "mean_decisions": 3.3125,
+          "mean_questions": 0.3125,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "tabular": {
+          "tasks": 48,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 11.645833333333334,
+          "mean_questions": 6.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      },
+      "by_scenario": {
+        "full_data_change": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 3.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_confirmation_revoked": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 3.1666666666666665,
+          "mean_questions": 0.16666666666666666,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_seed_unknown": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 3.3333333333333335,
+          "mean_questions": 0.3333333333333333,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pair_conflict_revoke_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 14.583333333333334,
+          "mean_questions": 5.166666666666667,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "prediction_unknown_features_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 9.25,
+          "mean_questions": 4.833333333333333,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_oom": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 3.6666666666666665,
+          "mean_questions": 0.6666666666666666,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_existing_running": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 3.3333333333333335,
+          "mean_questions": 0.3333333333333333,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_existing_completed": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 3.3333333333333335,
+          "mean_questions": 0.3333333333333333,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_memory_low": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 3.1666666666666665,
+          "mean_questions": 0.16666666666666666,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_mismatched_existing": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 3.5,
+          "mean_questions": 0.5,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "prediction_change_transient_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 9.666666666666666,
+          "mean_questions": 1.9166666666666667,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "paired_unknown_permission_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 13.083333333333334,
+          "mean_questions": 12.083333333333334,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      }
+    },
+    "seed_21/bc_ppo": {
+      "tasks": 96,
+      "successes": 24,
+      "success_rate": 0.25,
+      "mean_decisions": 7.479166666666667,
+      "mean_questions": 3.15625,
+      "blocked_attempts": 0,
+      "duplicate_mock_launches": 0,
+      "real_gpu_jobs": 0,
+      "real_executions": 0,
+      "by_domain": {
+        "cvit": {
+          "tasks": 48,
+          "successes": 24,
+          "success_rate": 0.5,
+          "mean_decisions": 3.3125,
+          "mean_questions": 0.3125,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "tabular": {
+          "tasks": 48,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 11.645833333333334,
+          "mean_questions": 6.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      },
+      "by_scenario": {
+        "full_data_change": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 3.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_confirmation_revoked": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 3.1666666666666665,
+          "mean_questions": 0.16666666666666666,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_seed_unknown": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 3.3333333333333335,
+          "mean_questions": 0.3333333333333333,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pair_conflict_revoke_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 14.583333333333334,
+          "mean_questions": 5.166666666666667,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "prediction_unknown_features_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 9.25,
+          "mean_questions": 4.833333333333333,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_oom": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 3.6666666666666665,
+          "mean_questions": 0.6666666666666666,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_existing_running": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 3.3333333333333335,
+          "mean_questions": 0.3333333333333333,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_existing_completed": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 3.3333333333333335,
+          "mean_questions": 0.3333333333333333,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_memory_low": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 3.1666666666666665,
+          "mean_questions": 0.16666666666666666,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_mismatched_existing": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 3.5,
+          "mean_questions": 0.5,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "prediction_change_transient_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 9.666666666666666,
+          "mean_questions": 1.9166666666666667,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "paired_unknown_permission_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 13.083333333333334,
+          "mean_questions": 12.083333333333334,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      }
+    },
+    "seed_21/ppo_scratch": {
+      "tasks": 96,
+      "successes": 24,
+      "success_rate": 0.25,
+      "mean_decisions": 1.0,
+      "mean_questions": 0.0,
+      "blocked_attempts": 0,
+      "duplicate_mock_launches": 0,
+      "real_gpu_jobs": 0,
+      "real_executions": 0,
+      "by_domain": {
+        "cvit": {
+          "tasks": 48,
+          "successes": 24,
+          "success_rate": 0.5,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "tabular": {
+          "tasks": 48,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      },
+      "by_scenario": {
+        "full_data_change": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_confirmation_revoked": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_seed_unknown": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pair_conflict_revoke_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "prediction_unknown_features_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_oom": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_existing_running": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_existing_completed": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_memory_low": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_mismatched_existing": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "prediction_change_transient_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "paired_unknown_permission_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      }
+    },
+    "seed_37/bc": {
+      "tasks": 96,
+      "successes": 16,
+      "success_rate": 0.16666666666666666,
+      "mean_decisions": 22.708333333333332,
+      "mean_questions": 6.958333333333333,
+      "blocked_attempts": 0,
+      "duplicate_mock_launches": 0,
+      "real_gpu_jobs": 0,
+      "real_executions": 0,
+      "by_domain": {
+        "cvit": {
+          "tasks": 48,
+          "successes": 15,
+          "success_rate": 0.3125,
+          "mean_decisions": 21.854166666666668,
+          "mean_questions": 3.6666666666666665,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "tabular": {
+          "tasks": 48,
+          "successes": 1,
+          "success_rate": 0.020833333333333332,
+          "mean_decisions": 23.5625,
+          "mean_questions": 10.25,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      },
+      "by_scenario": {
+        "full_data_change": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 28.0,
+          "mean_questions": 2.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_confirmation_revoked": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 28.0,
+          "mean_questions": 2.1666666666666665,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_seed_unknown": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 28.0,
+          "mean_questions": 10.166666666666666,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pair_conflict_revoke_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 24.0,
+          "mean_questions": 9.416666666666666,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "prediction_unknown_features_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 24.0,
+          "mean_questions": 13.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_oom": {
+          "tasks": 6,
+          "successes": 4,
+          "success_rate": 0.6666666666666666,
+          "mean_decisions": 17.5,
+          "mean_questions": 3.3333333333333335,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_existing_running": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 28.0,
+          "mean_questions": 3.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_existing_completed": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 28.0,
+          "mean_questions": 3.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_memory_low": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 4.5,
+          "mean_questions": 2.5,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_mismatched_existing": {
+          "tasks": 6,
+          "successes": 5,
+          "success_rate": 0.8333333333333334,
+          "mean_decisions": 12.833333333333334,
+          "mean_questions": 3.1666666666666665,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "prediction_change_transient_v3": {
+          "tasks": 12,
+          "successes": 1,
+          "success_rate": 0.08333333333333333,
+          "mean_decisions": 23.75,
+          "mean_questions": 10.333333333333334,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "paired_unknown_permission_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 22.5,
+          "mean_questions": 8.25,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      }
+    },
+    "seed_37/bc_ppo": {
+      "tasks": 96,
+      "successes": 24,
+      "success_rate": 0.25,
+      "mean_decisions": 1.1458333333333333,
+      "mean_questions": 0.09375,
+      "blocked_attempts": 0,
+      "duplicate_mock_launches": 0,
+      "real_gpu_jobs": 0,
+      "real_executions": 0,
+      "by_domain": {
+        "cvit": {
+          "tasks": 48,
+          "successes": 24,
+          "success_rate": 0.5,
+          "mean_decisions": 1.2916666666666667,
+          "mean_questions": 0.1875,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "tabular": {
+          "tasks": 48,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      },
+      "by_scenario": {
+        "full_data_change": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.3333333333333333,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_confirmation_revoked": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_seed_unknown": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 1.5,
+          "mean_questions": 0.16666666666666666,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pair_conflict_revoke_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "prediction_unknown_features_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_oom": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.5,
+          "mean_questions": 0.5,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_existing_running": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.5,
+          "mean_questions": 0.5,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_existing_completed": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_memory_low": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 1.1666666666666667,
+          "mean_questions": 0.16666666666666666,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_mismatched_existing": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 1.3333333333333333,
+          "mean_questions": 0.16666666666666666,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "prediction_change_transient_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "paired_unknown_permission_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      }
+    },
+    "seed_37/ppo_scratch": {
+      "tasks": 96,
+      "successes": 24,
+      "success_rate": 0.25,
+      "mean_decisions": 1.0,
+      "mean_questions": 0.0,
+      "blocked_attempts": 0,
+      "duplicate_mock_launches": 0,
+      "real_gpu_jobs": 0,
+      "real_executions": 0,
+      "by_domain": {
+        "cvit": {
+          "tasks": 48,
+          "successes": 24,
+          "success_rate": 0.5,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "tabular": {
+          "tasks": 48,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      },
+      "by_scenario": {
+        "full_data_change": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_confirmation_revoked": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_seed_unknown": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pair_conflict_revoke_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "prediction_unknown_features_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_oom": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_existing_running": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_existing_completed": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_memory_low": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_mismatched_existing": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "prediction_change_transient_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "paired_unknown_permission_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      }
+    },
+    "seed_59/bc": {
+      "tasks": 96,
+      "successes": 23,
+      "success_rate": 0.23958333333333334,
+      "mean_decisions": 13.114583333333334,
+      "mean_questions": 6.25,
+      "blocked_attempts": 0,
+      "duplicate_mock_launches": 0,
+      "real_gpu_jobs": 0,
+      "real_executions": 0,
+      "by_domain": {
+        "cvit": {
+          "tasks": 48,
+          "successes": 23,
+          "success_rate": 0.4791666666666667,
+          "mean_decisions": 7.166666666666667,
+          "mean_questions": 0.08333333333333333,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "tabular": {
+          "tasks": 48,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 19.0625,
+          "mean_questions": 12.416666666666666,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      },
+      "by_scenario": {
+        "full_data_change": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 7.166666666666667,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_confirmation_revoked": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 3.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_seed_unknown": {
+          "tasks": 6,
+          "successes": 5,
+          "success_rate": 0.8333333333333334,
+          "mean_decisions": 7.166666666666667,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pair_conflict_revoke_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 19.333333333333332,
+          "mean_questions": 14.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "prediction_unknown_features_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 23.333333333333332,
+          "mean_questions": 14.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_oom": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 3.0,
+          "mean_questions": 0.3333333333333333,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_existing_running": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 19.833333333333332,
+          "mean_questions": 0.16666666666666666,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_existing_completed": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 11.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_memory_low": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 3.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_mismatched_existing": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 3.1666666666666665,
+          "mean_questions": 0.16666666666666666,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "prediction_change_transient_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 18.583333333333332,
+          "mean_questions": 7.666666666666667,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "paired_unknown_permission_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 15.0,
+          "mean_questions": 14.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      }
+    },
+    "seed_59/bc_ppo": {
+      "tasks": 96,
+      "successes": 23,
+      "success_rate": 0.23958333333333334,
+      "mean_decisions": 13.114583333333334,
+      "mean_questions": 6.25,
+      "blocked_attempts": 0,
+      "duplicate_mock_launches": 0,
+      "real_gpu_jobs": 0,
+      "real_executions": 0,
+      "by_domain": {
+        "cvit": {
+          "tasks": 48,
+          "successes": 23,
+          "success_rate": 0.4791666666666667,
+          "mean_decisions": 7.166666666666667,
+          "mean_questions": 0.08333333333333333,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "tabular": {
+          "tasks": 48,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 19.0625,
+          "mean_questions": 12.416666666666666,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      },
+      "by_scenario": {
+        "full_data_change": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 7.166666666666667,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_confirmation_revoked": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 3.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_seed_unknown": {
+          "tasks": 6,
+          "successes": 5,
+          "success_rate": 0.8333333333333334,
+          "mean_decisions": 7.166666666666667,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pair_conflict_revoke_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 19.333333333333332,
+          "mean_questions": 14.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "prediction_unknown_features_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 23.333333333333332,
+          "mean_questions": 14.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_oom": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 3.0,
+          "mean_questions": 0.3333333333333333,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_existing_running": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 19.833333333333332,
+          "mean_questions": 0.16666666666666666,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_existing_completed": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 11.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_memory_low": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 3.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_mismatched_existing": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 3.1666666666666665,
+          "mean_questions": 0.16666666666666666,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "prediction_change_transient_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 18.583333333333332,
+          "mean_questions": 7.666666666666667,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "paired_unknown_permission_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 15.0,
+          "mean_questions": 14.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      }
+    },
+    "seed_59/ppo_scratch": {
+      "tasks": 96,
+      "successes": 24,
+      "success_rate": 0.25,
+      "mean_decisions": 1.0,
+      "mean_questions": 0.0,
+      "blocked_attempts": 0,
+      "duplicate_mock_launches": 0,
+      "real_gpu_jobs": 0,
+      "real_executions": 0,
+      "by_domain": {
+        "cvit": {
+          "tasks": 48,
+          "successes": 24,
+          "success_rate": 0.5,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "tabular": {
+          "tasks": 48,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      },
+      "by_scenario": {
+        "full_data_change": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_confirmation_revoked": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_seed_unknown": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pair_conflict_revoke_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "prediction_unknown_features_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_oom": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_existing_running": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_existing_completed": {
+          "tasks": 6,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_memory_low": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_mismatched_existing": {
+          "tasks": 6,
+          "successes": 6,
+          "success_rate": 1.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "prediction_change_transient_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "paired_unknown_permission_v3": {
+          "tasks": 12,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      }
+    }
+  },
+  "aggregates": {
+    "bc": {
+      "training_seeds": 3,
+      "mean_success_rate": 0.21875,
+      "min_success_rate": 0.16666666666666666,
+      "max_success_rate": 0.25,
+      "mean_decisions": 14.434027777777779,
+      "by_domain": {
+        "tabular": {
+          "mean_success_rate": 0.006944444444444444,
+          "min_success_rate": 0.0,
+          "max_success_rate": 0.020833333333333332
+        },
+        "cvit": {
+          "mean_success_rate": 0.4305555555555556,
+          "min_success_rate": 0.3125,
+          "max_success_rate": 0.5
+        }
+      }
+    },
+    "bc_ppo": {
+      "training_seeds": 3,
+      "mean_success_rate": 0.2465277777777778,
+      "min_success_rate": 0.23958333333333334,
+      "max_success_rate": 0.25,
+      "mean_decisions": 7.246527777777779,
+      "by_domain": {
+        "tabular": {
+          "mean_success_rate": 0.0,
+          "min_success_rate": 0.0,
+          "max_success_rate": 0.0
+        },
+        "cvit": {
+          "mean_success_rate": 0.4930555555555556,
+          "min_success_rate": 0.4791666666666667,
+          "max_success_rate": 0.5
+        }
+      }
+    },
+    "ppo_scratch": {
+      "training_seeds": 3,
+      "mean_success_rate": 0.25,
+      "min_success_rate": 0.25,
+      "max_success_rate": 0.25,
+      "mean_decisions": 1.0,
+      "by_domain": {
+        "tabular": {
+          "mean_success_rate": 0.0,
+          "min_success_rate": 0.0,
+          "max_success_rate": 0.0
+        },
+        "cvit": {
+          "mean_success_rate": 0.5,
+          "min_success_rate": 0.5,
+          "max_success_rate": 0.5
+        }
+      }
+    }
+  },
+  "selection_freeze_hash": "9f95f9718919f1bc5df94c694d43cd1377a12847e5949e47cdd01cc5f7bb8c76",
+  "final_tasks_hash": "f28682013f38cdbbd0291bbd3b81db63ad00f244ae4d772474c281a439b70f94",
+  "note": "Three training seeds, reused scripted scenario templates; descriptive result, not a population-generalization estimate",
+  "real_model_calls": 0,
+  "real_tool_executions": 0,
+  "real_gpu_jobs": 0,
+  "cvit_metrics": null,
+  "ppo_trained": true,
+  "live_policy_promoted": false
+}

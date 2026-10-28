@@ -1,0 +1,42 @@
+{
+  "schema_version": "workspace_update_v1",
+  "passed": true,
+  "checks": {
+    "full_regression_suite": true,
+    "workspace_bound_to_caller_directory": true,
+    "local_commands_exercised": true,
+    "same_session_exited_and_restored": true,
+    "local_reads_used_no_scientific_resources": true,
+    "trained_policy_loads": true,
+    "windows_junction_cases_passed": true
+  },
+  "tests": {
+    "run": 159,
+    "skipped": 1
+  },
+  "skip_reason": "Windows account cannot create file symlinks; directory junction tests passed",
+  "smoke_session": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\RUT_Science\\outputs\\workspace_smoke\\workspace demo 项目\\.sciencebot\\sessions\\3ca6b34b5ce64c2c9314bcebb85d77ec",
+  "commands": [
+    "/workspace",
+    "/files *.py",
+    "/read dynamic_cvit_demo.py",
+    "/exit"
+  ],
+  "api": "server-bound workspace creation and client path override rejection verified by regression tests",
+  "scope": "project identity, local file reads, isolated sessions and restoration; scientific actions unchanged",
+  "rl_retrained": false,
+  "new_live_model_api_calls": 0,
+  "source_hashes": {
+    "RUT_Science/rut_science/science_bot/workspace.py": "fb9f8a4291c4e028edb49e7dc9b6b64ca529a38c7ecf25008ebaac5495ddea90",
+    "RUT_Science/rut_science/science_bot/session.py": "5c96159cb35e320139a58cb419f59138bde52faff1083a0e017d830a90a5a965",
+    "RUT_Science/rut_science/science_bot/terminal.py": "ecbfb5b2dfccf00fc581c43cc113869557e8628865e078f560b42561360ad43c",
+    "RUT_Science/rut_science/science_bot/api.py": "54a35144ae5f9d4bd1c011a643c454e54d3aa17939ccf91c6e53ab6ffd47137a",
+    "RUT_Science/tests/test_science_workspace.py": "90207ec4117166de563fca9bd145a256c75faec5bfb46a5dd62ee5e043c6685c",
+    "RUT_Science/docs/Science_Bot_Workspace_zh.md": "bab6737700a701a2a01fab77d6feed8e3b0599f5b4f7645b2e296ecc592cca31",
+    "RUT_Science/delivery/README_运行与复现.md": "c2f65bce39767270cde47faf3c11af92c740d3db8e1e45154ba00d53836c47fe",
+    "RUT_Science/scripts/package_science_workspace_update.py": "5081f8277e3897b84401805621e585b9bf0a8c6aaafeefa62ecc86ed64b997c0",
+    "LangGraph_RL_Agent/Start-ScienceBot.ps1": "ef1945e32ad04a82c46b88e2da4cd2df13bf5ccabb522e30f818e415fce143e3",
+    "LangGraph_RL_Agent/science-bot.cmd": "73a7daafddbd114a117c7d57cbe57e540a24cf20a827e35f772934e7a89ee9c6",
+    "LangGraph_RL_Agent/science_Bot_交付.md": "16deafb0ebc7421c3e8a8474770f8c0913a92a47f98dda9fcb8620c70af005a2"
+  }
+}

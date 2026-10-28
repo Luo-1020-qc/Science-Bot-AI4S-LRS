@@ -1,0 +1,184 @@
+{
+  "schema_version": "design_interview_v1",
+  "id": "7857feb34bfe424c899b297af56c438f",
+  "revision": 7,
+  "active": true,
+  "fields": {
+    "alpha": 0.05,
+    "seed": 42,
+    "missing_policy": "reject",
+    "randomization_note": "not_applicable",
+    "data_path": "two_groups.csv",
+    "research_question": "合成数据中A与B组的平均响应是否不同？",
+    "unit_structure": "independent_rows",
+    "response": "y",
+    "design": "independent",
+    "unit": "id",
+    "provenance": "synthetic",
+    "sampling_note": "全部现有合成样本，仅作探索性演示；未进行事先功效计算",
+    "factor": "group",
+    "levels": [
+      "A",
+      "B"
+    ],
+    "features": []
+  },
+  "sources": {
+    "alpha": {
+      "kind": "user_structured",
+      "turn": 7,
+      "quote": "{\"design\": \"independent\", \"response\": \"y\", \"unit\": \"id\", \"provenance\": \"synthetic\", \"sampling_note\": \"全部现有合成样本，仅作探索性演示；未进行事先功效计算\", \"factor\": \"group\", \"levels\": [\"A\", \"B\"], \"features\": [], \"randomization_note\": \"not_applicable\", \"missing_policy\": \"reject\", \"alpha\": 0.05, \"seed\": 42}"
+    },
+    "seed": {
+      "kind": "user_structured",
+      "turn": 7,
+      "quote": "{\"design\": \"independent\", \"response\": \"y\", \"unit\": \"id\", \"provenance\": \"synthetic\", \"sampling_note\": \"全部现有合成样本，仅作探索性演示；未进行事先功效计算\", \"factor\": \"group\", \"levels\": [\"A\", \"B\"], \"features\": [], \"randomization_note\": \"not_applicable\", \"missing_policy\": \"reject\", \"alpha\": 0.05, \"seed\": 42}"
+    },
+    "missing_policy": {
+      "kind": "user_structured",
+      "turn": 7,
+      "quote": "{\"design\": \"independent\", \"response\": \"y\", \"unit\": \"id\", \"provenance\": \"synthetic\", \"sampling_note\": \"全部现有合成样本，仅作探索性演示；未进行事先功效计算\", \"factor\": \"group\", \"levels\": [\"A\", \"B\"], \"features\": [], \"randomization_note\": \"not_applicable\", \"missing_policy\": \"reject\", \"alpha\": 0.05, \"seed\": 42}"
+    },
+    "randomization_note": {
+      "kind": "user_structured",
+      "turn": 7,
+      "quote": "{\"design\": \"independent\", \"response\": \"y\", \"unit\": \"id\", \"provenance\": \"synthetic\", \"sampling_note\": \"全部现有合成样本，仅作探索性演示；未进行事先功效计算\", \"factor\": \"group\", \"levels\": [\"A\", \"B\"], \"features\": [], \"randomization_note\": \"not_applicable\", \"missing_policy\": \"reject\", \"alpha\": 0.05, \"seed\": 42}"
+    },
+    "data_path": {
+      "kind": "user_answer",
+      "turn": 1,
+      "quote": "two_groups.csv"
+    },
+    "research_question": {
+      "kind": "user_structured",
+      "turn": 2,
+      "quote": "{\"research_question\": \"合成数据中A与B组的平均响应是否不同？\"}"
+    },
+    "unit_structure": {
+      "kind": "user_structured",
+      "turn": 3,
+      "quote": "{\"unit_structure\": \"independent_rows\"}"
+    },
+    "response": {
+      "kind": "user_structured",
+      "turn": 6,
+      "quote": "{\"response\": \"y\"}"
+    },
+    "design": {
+      "kind": "user_structured",
+      "turn": 7,
+      "quote": "{\"design\": \"independent\", \"response\": \"y\", \"unit\": \"id\", \"provenance\": \"synthetic\", \"sampling_note\": \"全部现有合成样本，仅作探索性演示；未进行事先功效计算\", \"factor\": \"group\", \"levels\": [\"A\", \"B\"], \"features\": [], \"randomization_note\": \"not_applicable\", \"missing_policy\": \"reject\", \"alpha\": 0.05, \"seed\": 42}"
+    },
+    "unit": {
+      "kind": "user_structured",
+      "turn": 7,
+      "quote": "{\"design\": \"independent\", \"response\": \"y\", \"unit\": \"id\", \"provenance\": \"synthetic\", \"sampling_note\": \"全部现有合成样本，仅作探索性演示；未进行事先功效计算\", \"factor\": \"group\", \"levels\": [\"A\", \"B\"], \"features\": [], \"randomization_note\": \"not_applicable\", \"missing_policy\": \"reject\", \"alpha\": 0.05, \"seed\": 42}"
+    },
+    "provenance": {
+      "kind": "user_structured",
+      "turn": 7,
+      "quote": "{\"design\": \"independent\", \"response\": \"y\", \"unit\": \"id\", \"provenance\": \"synthetic\", \"sampling_note\": \"全部现有合成样本，仅作探索性演示；未进行事先功效计算\", \"factor\": \"group\", \"levels\": [\"A\", \"B\"], \"features\": [], \"randomization_note\": \"not_applicable\", \"missing_policy\": \"reject\", \"alpha\": 0.05, \"seed\": 42}"
+    },
+    "sampling_note": {
+      "kind": "user_structured",
+      "turn": 7,
+      "quote": "{\"design\": \"independent\", \"response\": \"y\", \"unit\": \"id\", \"provenance\": \"synthetic\", \"sampling_note\": \"全部现有合成样本，仅作探索性演示；未进行事先功效计算\", \"factor\": \"group\", \"levels\": [\"A\", \"B\"], \"features\": [], \"randomization_note\": \"not_applicable\", \"missing_policy\": \"reject\", \"alpha\": 0.05, \"seed\": 42}"
+    },
+    "factor": {
+      "kind": "user_structured",
+      "turn": 7,
+      "quote": "{\"design\": \"independent\", \"response\": \"y\", \"unit\": \"id\", \"provenance\": \"synthetic\", \"sampling_note\": \"全部现有合成样本，仅作探索性演示；未进行事先功效计算\", \"factor\": \"group\", \"levels\": [\"A\", \"B\"], \"features\": [], \"randomization_note\": \"not_applicable\", \"missing_policy\": \"reject\", \"alpha\": 0.05, \"seed\": 42}"
+    },
+    "levels": {
+      "kind": "user_structured",
+      "turn": 7,
+      "quote": "{\"design\": \"independent\", \"response\": \"y\", \"unit\": \"id\", \"provenance\": \"synthetic\", \"sampling_note\": \"全部现有合成样本，仅作探索性演示；未进行事先功效计算\", \"factor\": \"group\", \"levels\": [\"A\", \"B\"], \"features\": [], \"randomization_note\": \"not_applicable\", \"missing_policy\": \"reject\", \"alpha\": 0.05, \"seed\": 42}"
+    },
+    "features": {
+      "kind": "user_structured",
+      "turn": 7,
+      "quote": "{\"design\": \"independent\", \"response\": \"y\", \"unit\": \"id\", \"provenance\": \"synthetic\", \"sampling_note\": \"全部现有合成样本，仅作探索性演示；未进行事先功效计算\", \"factor\": \"group\", \"levels\": [\"A\", \"B\"], \"features\": [], \"randomization_note\": \"not_applicable\", \"missing_policy\": \"reject\", \"alpha\": 0.05, \"seed\": 42}"
+    }
+  },
+  "unknown": {},
+  "conflicts": {},
+  "pending": null,
+  "profile": {
+    "path": "two_groups.csv",
+    "sha256": "c8d22904e456e37a661431a7b598956cdd7c5f9d1d4b05b8ed4b3c26d95c4316",
+    "bytes": 691,
+    "rows": 27,
+    "columns": [
+      {
+        "name": "id",
+        "kind": "text",
+        "missing": 0,
+        "unique": 27,
+        "levels": []
+      },
+      {
+        "name": "group",
+        "kind": "text",
+        "missing": 0,
+        "unique": 2,
+        "levels": [
+          "A",
+          "B"
+        ]
+      },
+      {
+        "name": "y",
+        "kind": "numeric",
+        "missing": 0,
+        "unique": 27,
+        "levels": []
+      }
+    ],
+    "evidence_ref": "csv:two_groups.csv#c8d22904e456"
+  },
+  "validation": {
+    "schema_version": "design_validation_v1",
+    "contract_hash": "4ce8711a4d6d20b4efeba9b322cd6633e698cd944c0bae4f8ba1e155756ee500",
+    "ready": true,
+    "checks": [
+      {
+        "code": "specification",
+        "status": "passed",
+        "detail": "字段结构与已注册方法匹配",
+        "fields": []
+      },
+      {
+        "code": "data_structure",
+        "status": "passed",
+        "detail": "保留27个声明单位；排除0个缺失单位",
+        "fields": []
+      },
+      {
+        "code": "tool_budget",
+        "status": "passed",
+        "detail": "还需准备及执行3次工具，当前剩余11次",
+        "fields": []
+      },
+      {
+        "code": "scientific_assumptions",
+        "status": "unverified",
+        "detail": "来源、独立性、随机化和样本依据是用户声明；未通过列检查证明",
+        "fields": []
+      }
+    ],
+    "missing": [],
+    "execution_authorized": false,
+    "scientific_success": null
+  },
+  "turns": 7,
+  "max_turns": 24,
+  "policy": "rule",
+  "draft": {
+    "draft_hash": "836b2d5fbe0bf4b24e6937457ce226e157e6482502bd92c4423aed024e34d60a",
+    "experiment_ref": "experiments/bab2ce18b0394c849024b98c8bad91b2",
+    "contract_hash": "4ce8711a4d6d20b4efeba9b322cd6633e698cd944c0bae4f8ba1e155756ee500"
+  },
+  "feedback": [],
+  "last_errors": [],
+  "closed_reason": null
+}

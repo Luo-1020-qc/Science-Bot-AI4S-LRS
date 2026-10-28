@@ -1,0 +1,20 @@
+{
+  "data_path": "prediction.csv",
+  "research_question": "在未见合成单位上比较均值基线与OLS预测y的误差。",
+  "design": "prediction",
+  "response": "y",
+  "unit": "id",
+  "provenance": "synthetic",
+  "sampling_note": "全部现有合成样本，仅作探索性演示；未进行事先功效计算",
+  "factor": null,
+  "levels": [],
+  "features": [
+    "x1",
+    "x2"
+  ],
+  "randomization_note": "not_applicable",
+  "missing_policy": "reject",
+  "alpha": 0.05,
+  "seed": 42,
+  "schema_version": "experiment_spec_v1"
+}

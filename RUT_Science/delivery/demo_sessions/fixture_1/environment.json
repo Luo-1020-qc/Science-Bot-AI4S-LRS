@@ -1,0 +1,275 @@
+{
+  "state": {
+    "version": 3,
+    "phase": "completed",
+    "experiments": {
+      "ridge_full_5_10": {
+        "status": "failed",
+        "attempts": 1
+      },
+      "ridge_full_3_10": {
+        "status": "succeeded",
+        "attempts": 1,
+        "model": {
+          "kind": "ridge",
+          "grid": 3,
+          "x_mean": [
+            -0.08169758343981631,
+            -0.08240083082880072,
+            -0.012225697948394445,
+            -0.03567924430319038,
+            -0.0385255395702799,
+            -0.08166674367563193,
+            0.06796329748710307,
+            -0.19185871641729238,
+            0.008986648414540846
+          ],
+          "x_scale": [
+            0.7978470131928653,
+            0.7522698151650093,
+            0.7383930876169088,
+            0.6818388330650059,
+            0.7724471141975426,
+            0.6933097500615766,
+            0.8131611739890797,
+            0.723902418144639,
+            0.6559134351032254
+          ],
+          "y_mean": [
+            1.0553347657126217,
+            0.9656176216120088,
+            1.031147430218661,
+            0.9797605554589209
+          ],
+          "weights": [
+            [
+              0.14202343378746227,
+              0.08851560891689948,
+              0.044250753617596075,
+              0.03651442604581573
+            ],
+            [
+              -0.021488612442843072,
+              0.14230786358588285,
+              -0.054848760286391546,
+              -0.04112019629828366
+            ],
+            [
+              -0.057992627810713016,
+              0.0960723829749332,
+              0.11955518212336412,
+              -0.09894348981126913
+            ],
+            [
+              -0.12051766869698238,
+              -0.033661063246987845,
+              0.04705226071768287,
+              -0.03520670135763297
+            ],
+            [
+              -0.1507131216284105,
+              -0.16958675387664807,
+              0.051997901493942254,
+              0.04060388951728821
+            ],
+            [
+              -0.09731377918809606,
+              -0.03118378674110787,
+              -0.14395675606961517,
+              -0.030252314546007165
+            ],
+            [
+              0.013569345992353838,
+              0.07121471713685924,
+              -0.07577276713725123,
+              -0.0791095228475676
+            ],
+            [
+              -0.08424854702211436,
+              0.08787323819996724,
+              0.013082193665984372,
+              -0.014792371429662996
+            ],
+            [
+              -0.10922597973612974,
+              -0.049273929600932874,
+              -0.040345578244552774,
+              0.010226260810907705
+            ]
+          ],
+          "n_fit": 96
+        },
+        "validation_mean": 0.18603373317003938,
+        "validation_std": 0.07913074394757134,
+        "prediction_hash": "500472e353bce5ef3b61009a4a60a34a4d8e847ac3f28b66953b75ac69be6c2f",
+        "tool_version": "budgeted_numpy_ridge_v1"
+      }
+    },
+    "diagnostics": {},
+    "residuals": {},
+    "jobs": {
+      "2506de344f7719cd881031c9": {
+        "candidate": {
+          "id": "ridge_full_5_10",
+          "kind": "fit_ridge",
+          "parameters": {
+            "fidelity": "full",
+            "feature_grid": 5,
+            "alpha": 10.0
+          },
+          "cost": 4
+        },
+        "status": "failed",
+        "reserved_cu": 0,
+        "attempt": 1,
+        "retried": false,
+        "atomic": true,
+        "outcome_hash": "b52e8869ba5e5810ceb12755527ccd816b78fb393d633f9c9ecf031229109d07",
+        "fixture": true,
+        "error": "fixture_pre_call_unavailable"
+      },
+      "66458ecce5c77a09910e1fa6": {
+        "candidate": {
+          "id": "ridge_full_3_10",
+          "kind": "fit_ridge",
+          "parameters": {
+            "fidelity": "full",
+            "feature_grid": 3,
+            "alpha": 10.0
+          },
+          "cost": 4
+        },
+        "status": "succeeded",
+        "reserved_cu": 0,
+        "attempt": 1,
+        "retried": false,
+        "atomic": false,
+        "outcome_hash": "3d30ed1f01b8e58353eaa3101b5db8a07fb4ab9bdfc7223a5a424e84f8489122",
+        "fixture": false,
+        "error": null
+      }
+    },
+    "pending_job": null,
+    "latest_failure": "2506de344f7719cd881031c9",
+    "retries": 0,
+    "cu": 4.25,
+    "attempts": 2,
+    "decisions": 3,
+    "tokens": 0,
+    "requests": 0,
+    "active_seconds": 0.02220760000000155,
+    "history": [
+      {
+        "action_id": "ridge_full_5_10",
+        "kind": "fit_ridge",
+        "cost_cu": 0.25,
+        "quoted_cost_cu": 4,
+        "incumbent": null,
+        "version": 1
+      },
+      {
+        "action_id": "ridge_full_3_10",
+        "kind": "fit_ridge",
+        "cost_cu": 4.0,
+        "quoted_cost_cu": 4,
+        "incumbent": "ridge_full_3_10",
+        "version": 2
+      },
+      {
+        "action_id": "submit_best",
+        "kind": "submit_best",
+        "cost_cu": 0.0,
+        "quoted_cost_cu": 0,
+        "incumbent": "ridge_full_3_10",
+        "version": 3
+      }
+    ],
+    "requests_done": {
+      "db0854fd3268447494f6b8a89c69d63f_obs_000000_ridge_full_5_10": {
+        "request_hash": "5e4a5fcb66028ab21fcea27225d34fb3c52a3ad095bcbbf19777c18e7e2199f1",
+        "result": {
+          "reward": -0.0012648809523809524,
+          "terminated": false,
+          "truncated": false,
+          "observation_ref": "obs_000001",
+          "action_id": "ridge_full_5_10"
+        }
+      },
+      "db0854fd3268447494f6b8a89c69d63f_obs_000001_ridge_full_3_10": {
+        "request_hash": "954b54304e2b4667036dbe3f7707bbdb2d1eb8171be1cb1eb6656c936608117c",
+        "result": {
+          "reward": -0.012202380952380952,
+          "terminated": false,
+          "truncated": false,
+          "observation_ref": "obs_000002",
+          "action_id": "ridge_full_3_10"
+        }
+      },
+      "db0854fd3268447494f6b8a89c69d63f_obs_000002_submit_best": {
+        "request_hash": "eaee35d7460901a839d7dcac8854592b2900619fa1f85457139dd46ef09187e4",
+        "result": {
+          "reward": -0.006904761904761906,
+          "terminated": true,
+          "truncated": false,
+          "observation_ref": "obs_000003",
+          "action_id": "submit_best"
+        }
+      }
+    },
+    "report": {
+      "schema_version": "budgeted_report_v1",
+      "termination": "explicit_submit",
+      "selected": "ridge_full_3_10",
+      "complete": true,
+      "valid": true,
+      "quality_pass": false,
+      "scientific_success": false,
+      "sealed_error": 0.2014820577305418,
+      "threshold": 0.2,
+      "data_identity": "b5abbc93e0aaa11dcc92dbe1619d719f81e2e7eedc38c85bc656df5128948eee",
+      "provenance": {
+        "source": "controlled_generated_regression",
+        "root_group": 30001,
+        "split": "demo",
+        "instance": 11
+      },
+      "strict_execution": false,
+      "retries": 0,
+      "fixture_faults": true,
+      "search_validation_error": 0.18603373317003938,
+      "model_hash": "b7ed5bd7c02d146808c46f350754c9c35e476490da93768f1585732915171124",
+      "resources": {
+        "search_cu": 4.25,
+        "finalization_cu": 2,
+        "tool_attempts": 2,
+        "finalization_tools": 2,
+        "decisions": 3,
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "active_seconds": 0.02220760000000155
+      },
+      "evaluation_reads": 1
+    },
+    "candidate_ids": [
+      "mean",
+      "ridge_half_3_0.1",
+      "ridge_half_3_1",
+      "ridge_half_3_10",
+      "ridge_half_5_0.1",
+      "ridge_half_5_1",
+      "ridge_half_5_10",
+      "ridge_full_3_0.1",
+      "ridge_full_3_1",
+      "ridge_full_3_10",
+      "ridge_full_5_0.1",
+      "ridge_full_5_1",
+      "ridge_full_5_10"
+    ],
+    "finalization_tools": 2,
+    "finalization_cu": 2,
+    "evaluation_reads": 1,
+    "selected": "ridge_full_3_10"
+  },
+  "hash": "8dbadf0385eab5c200682362fc2fc9234688293e2155da74c2efbdab8c79d350",
+  "data_identity": "b5abbc93e0aaa11dcc92dbe1619d719f81e2e7eedc38c85bc656df5128948eee"
+}

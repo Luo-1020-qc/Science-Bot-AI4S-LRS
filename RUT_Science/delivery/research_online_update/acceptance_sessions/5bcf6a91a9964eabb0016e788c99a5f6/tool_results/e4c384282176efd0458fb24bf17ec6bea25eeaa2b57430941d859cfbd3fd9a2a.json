@@ -1,0 +1,136 @@
+{
+  "comparisons": [
+    {
+      "policy_hash": "context_rule_v3",
+      "policy": "rule",
+      "domain": "cvit",
+      "scenario": "existing_running",
+      "split": "development",
+      "decisions": 8,
+      "success": true,
+      "legacy_success": true,
+      "score": "public_evidence_strict",
+      "actions": [
+        "cvit:ask:dataset",
+        "cvit:ask:budget",
+        "cvit:inspect",
+        "cvit:choose:pilot",
+        "cvit:draft",
+        "cvit:confirm",
+        "cvit:reconcile",
+        "cvit:poll_mock"
+      ],
+      "mock_launches": 0,
+      "metric": null,
+      "state_restore_checked": true
+    },
+    {
+      "policy_hash": "1b54657cc294e5a97431aba4c76de7ed64edd56419f5f596c602043ea69af38a",
+      "policy": "bc",
+      "domain": "cvit",
+      "scenario": "existing_running",
+      "split": "development",
+      "decisions": 8,
+      "success": true,
+      "legacy_success": true,
+      "score": "public_evidence_strict",
+      "actions": [
+        "cvit:ask:dataset",
+        "cvit:ask:budget",
+        "cvit:inspect",
+        "cvit:choose:pilot",
+        "cvit:draft",
+        "cvit:confirm",
+        "cvit:reconcile",
+        "cvit:poll_mock"
+      ],
+      "mock_launches": 0,
+      "metric": null,
+      "state_restore_checked": true
+    },
+    {
+      "policy_hash": "9c1d6f79d7048c6f571fb5819103873615d6d88d96ddfccacbf597954e52f46e",
+      "policy": "bc_ppo",
+      "domain": "cvit",
+      "scenario": "existing_running",
+      "split": "development",
+      "decisions": 1,
+      "success": false,
+      "legacy_success": false,
+      "score": "public_evidence_strict",
+      "actions": [
+        "stop"
+      ],
+      "mock_launches": 0,
+      "metric": null,
+      "state_restore_checked": false
+    },
+    {
+      "policy_hash": "6f07ed54becff0273d0aeb337223231d673d98ad040eda271b03908581b026b2",
+      "policy": "ppo_scratch",
+      "domain": "cvit",
+      "scenario": "existing_running",
+      "split": "development",
+      "decisions": 1,
+      "success": false,
+      "legacy_success": false,
+      "score": "public_evidence_strict",
+      "actions": [
+        "stop"
+      ],
+      "mock_launches": 0,
+      "metric": null,
+      "state_restore_checked": false
+    },
+    {
+      "policy_hash": "38a8f1960d38a8429871fa5863ee79be6111c517e83330f17a95cb10f15adc5c",
+      "policy": "feedback_baseline",
+      "domain": "cvit",
+      "scenario": "existing_running",
+      "split": "development",
+      "decisions": 8,
+      "success": true,
+      "legacy_success": true,
+      "score": "public_evidence_strict",
+      "actions": [
+        "cvit:ask:dataset",
+        "cvit:ask:budget",
+        "cvit:inspect",
+        "cvit:choose:pilot",
+        "cvit:draft",
+        "cvit:confirm",
+        "cvit:reconcile",
+        "cvit:poll_mock"
+      ],
+      "mock_launches": 0,
+      "metric": null,
+      "state_restore_checked": true
+    },
+    {
+      "policy_hash": "38a8f1960d38a8429871fa5863ee79be6111c517e83330f17a95cb10f15adc5c",
+      "policy": "feedback_ppo",
+      "domain": "cvit",
+      "scenario": "existing_running",
+      "split": "development",
+      "decisions": 8,
+      "success": true,
+      "legacy_success": true,
+      "score": "public_evidence_strict",
+      "actions": [
+        "cvit:ask:dataset",
+        "cvit:ask:budget",
+        "cvit:inspect",
+        "cvit:choose:pilot",
+        "cvit:draft",
+        "cvit:confirm",
+        "cvit:reconcile",
+        "cvit:poll_mock"
+      ],
+      "mock_launches": 0,
+      "metric": null,
+      "state_restore_checked": true
+    }
+  ],
+  "interpretation": "Single development scenario comparison; no heldout evaluation or model selection",
+  "evidence_ref": "tool_187ff76a7aacdb80"
+}

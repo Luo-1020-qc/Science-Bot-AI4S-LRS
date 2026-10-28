@@ -1,0 +1,152 @@
+{
+  "role": "candidate_generator_v1",
+  "response": {
+    "schema_version": "candidate_proposal_v1",
+    "candidates": [
+      {
+        "template_id": "fit_mean",
+        "parameters": {},
+        "purpose": "Establish a baseline fit with no features to compare against regularized models.",
+        "expected_effect": "Hypothesis: provides a reference level of fit quality against which ridge variants may show improvement or degradation.",
+        "evidence_refs": []
+      },
+      {
+        "template_id": "fit_ridge",
+        "parameters": {
+          "alpha": 0.1,
+          "feature_grid": 3,
+          "fidelity": "half"
+        },
+        "purpose": "Low-regularization ridge fit on a coarse feature grid at half fidelity.",
+        "expected_effect": "Hypothesis: weak regularization with coarse features may capture broad structure while limiting overfitting.",
+        "evidence_refs": []
+      },
+      {
+        "template_id": "fit_ridge",
+        "parameters": {
+          "alpha": 1.0,
+          "feature_grid": 3,
+          "fidelity": "half"
+        },
+        "purpose": "Moderate-regularization ridge fit on a coarse feature grid at half fidelity.",
+        "expected_effect": "Hypothesis: moderate regularization may balance bias and variance on the coarse grid.",
+        "evidence_refs": []
+      },
+      {
+        "template_id": "fit_ridge",
+        "parameters": {
+          "alpha": 10.0,
+          "feature_grid": 3,
+          "fidelity": "half"
+        },
+        "purpose": "Strong-regularization ridge fit on a coarse feature grid at half fidelity.",
+        "expected_effect": "Hypothesis: strong regularization may reduce variance at the cost of underfitting coarse features.",
+        "evidence_refs": []
+      },
+      {
+        "template_id": "fit_ridge",
+        "parameters": {
+          "alpha": 0.1,
+          "feature_grid": 5,
+          "fidelity": "half"
+        },
+        "purpose": "Low-regularization ridge fit on a finer feature grid at half fidelity.",
+        "expected_effect": "Hypothesis: finer features with weak regularization may capture more detail but risk overfitting.",
+        "evidence_refs": []
+      },
+      {
+        "template_id": "fit_ridge",
+        "parameters": {
+          "alpha": 1.0,
+          "feature_grid": 5,
+          "fidelity": "half"
+        },
+        "purpose": "Moderate-regularization ridge fit on a finer feature grid at half fidelity.",
+        "expected_effect": "Hypothesis: finer features with moderate regularization may improve fit quality relative to coarse grid.",
+        "evidence_refs": []
+      },
+      {
+        "template_id": "fit_ridge",
+        "parameters": {
+          "alpha": 10.0,
+          "feature_grid": 5,
+          "fidelity": "half"
+        },
+        "purpose": "Strong-regularization ridge fit on a finer feature grid at half fidelity.",
+        "expected_effect": "Hypothesis: strong regularization may stabilize the finer feature expansion.",
+        "evidence_refs": []
+      },
+      {
+        "template_id": "fit_ridge",
+        "parameters": {
+          "alpha": 0.1,
+          "feature_grid": 3,
+          "fidelity": "full"
+        },
+        "purpose": "Low-regularization ridge fit on a coarse feature grid at full fidelity.",
+        "expected_effect": "Hypothesis: full fidelity may reduce sampling noise for the weakly regularized coarse model.",
+        "evidence_refs": []
+      },
+      {
+        "template_id": "fit_ridge",
+        "parameters": {
+          "alpha": 1.0,
+          "feature_grid": 3,
+          "fidelity": "full"
+        },
+        "purpose": "Moderate-regularization ridge fit on a coarse feature grid at full fidelity.",
+        "expected_effect": "Hypothesis: full fidelity with moderate regularization may yield a stable coarse-grid fit.",
+        "evidence_refs": []
+      },
+      {
+        "template_id": "fit_ridge",
+        "parameters": {
+          "alpha": 10.0,
+          "feature_grid": 3,
+          "fidelity": "full"
+        },
+        "purpose": "Strong-regularization ridge fit on a coarse feature grid at full fidelity.",
+        "expected_effect": "Hypothesis: full fidelity may clarify whether strong regularization underfits coarse features.",
+        "evidence_refs": []
+      },
+      {
+        "template_id": "fit_ridge",
+        "parameters": {
+          "alpha": 0.1,
+          "feature_grid": 5,
+          "fidelity": "full"
+        },
+        "purpose": "Low-regularization ridge fit on a finer feature grid at full fidelity.",
+        "expected_effect": "Hypothesis: full fidelity with fine features and weak regularization may capture detailed structure.",
+        "evidence_refs": []
+      },
+      {
+        "template_id": "fit_ridge",
+        "parameters": {
+          "alpha": 1.0,
+          "feature_grid": 5,
+          "fidelity": "full"
+        },
+        "purpose": "Moderate-regularization ridge fit on a finer feature grid at full fidelity.",
+        "expected_effect": "Hypothesis: full fidelity with moderate regularization on fine features may offer a balanced fit.",
+        "evidence_refs": []
+      },
+      {
+        "template_id": "fit_ridge",
+        "parameters": {
+          "alpha": 10.0,
+          "feature_grid": 5,
+          "fidelity": "full"
+        },
+        "purpose": "Strong-regularization ridge fit on a finer feature grid at full fidelity.",
+        "expected_effect": "Hypothesis: full fidelity may reveal whether strong regularization stabilizes fine features.",
+        "evidence_refs": []
+      }
+    ],
+    "unresolved": [
+      "No observed evidence is available to prioritize among candidates.",
+      "Optimal alpha and feature_grid values are unknown prior to evaluation."
+    ]
+  },
+  "response_hash": "d878483679d21dbd80a32699f8d5c18fab0b80066052662546b2f5078d8d4739"
+}

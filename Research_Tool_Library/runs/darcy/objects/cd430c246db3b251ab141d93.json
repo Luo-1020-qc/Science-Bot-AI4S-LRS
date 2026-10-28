@@ -1,0 +1,644 @@
+{
+  "ref": "cd430c246db3b251ab141d9388632b76dc0622bc43bb6979485bf0cff73f7500",
+  "kind": "plan",
+  "data": {
+    "project_ref": "ceead2eb79a8d0f7da2b76ec527251a295aaaf116681585817a1c2a81d1835e5",
+    "parent": null,
+    "amendment_reason": "synthetic template",
+    "request": {
+      "schema_version": "doe_request_v1",
+      "scope": "design_only",
+      "requested_family": "rcbd_two_arm",
+      "execution_permission": "denied",
+      "evidence": [
+        {
+          "id": "e00",
+          "path": "/question",
+          "value": "Estimate the prespecified high-minus-low effect on a synthetic response",
+          "status": "provided",
+          "source": "synthetic_fixture",
+          "reference": "Synthetic user/pilot statement; not real-world verification"
+        },
+        {
+          "id": "e01",
+          "path": "/factors",
+          "value": [
+            {
+              "name": "A",
+              "levels": [
+                "control",
+                "candidate"
+              ]
+            }
+          ],
+          "status": "provided",
+          "source": "synthetic_fixture",
+          "reference": "Synthetic user/pilot statement; not real-world verification"
+        },
+        {
+          "id": "e02",
+          "path": "/response",
+          "value": {
+            "name": "synthetic_error",
+            "unit": "declared_units",
+            "direction": "lower"
+          },
+          "status": "provided",
+          "source": "synthetic_fixture",
+          "reference": "Synthetic user/pilot statement; not real-world verification"
+        },
+        {
+          "id": "e03",
+          "path": "/experimental_unit",
+          "value": {
+            "definition": "One separately allocated synthetic treatment application",
+            "independence_basis": "Declared independent units and independent Gaussian residuals; not established by table structure",
+            "measurement_repeats": 1
+          },
+          "status": "provided",
+          "source": "synthetic_fixture",
+          "reference": "Synthetic user/pilot statement; not real-world verification"
+        },
+        {
+          "id": "e04",
+          "path": "/blocks",
+          "value": [
+            "b1",
+            "b2",
+            "b3",
+            "b4",
+            "b5",
+            "b6",
+            "b7",
+            "b8",
+            "b9",
+            "b10",
+            "b11",
+            "b12",
+            "b13",
+            "b14",
+            "b15",
+            "b16",
+            "b17",
+            "b18",
+            "b19",
+            "b20",
+            "b21",
+            "b22",
+            "b23",
+            "b24"
+          ],
+          "status": "provided",
+          "source": "synthetic_fixture",
+          "reference": "Synthetic user/pilot statement; not real-world verification"
+        },
+        {
+          "id": "e05",
+          "path": "/assumptions",
+          "value": [
+            "normal_iid_errors",
+            "constant_error_variance",
+            "no_treatment_block_interaction"
+          ],
+          "status": "provided",
+          "source": "synthetic_fixture",
+          "reference": "Synthetic user/pilot statement; not real-world verification"
+        },
+        {
+          "id": "e06",
+          "path": "/analysis",
+          "value": {
+            "model": "additive_blocks",
+            "primary_term": "A",
+            "alpha": 0.05,
+            "minimum_effect": 1.3,
+            "sigma": 1.3,
+            "target_power": 0.8,
+            "multiplicity": "single_primary",
+            "missing_policy": "stop_and_review",
+            "decision_rule": "two_sided_t_ci_practical_relevance_separate"
+          },
+          "status": "provided",
+          "source": "synthetic_fixture",
+          "reference": "Synthetic user/pilot statement; not real-world verification"
+        },
+        {
+          "id": "e07",
+          "path": "/resources",
+          "value": {
+            "per_run": 1.0,
+            "budget": 100.0
+          },
+          "status": "provided",
+          "source": "synthetic_fixture",
+          "reference": "Synthetic user/pilot statement; not real-world verification"
+        },
+        {
+          "id": "e08",
+          "path": "/family",
+          "value": "rcbd_two_arm",
+          "status": "provided",
+          "source": "synthetic_fixture",
+          "reference": "Synthetic user/pilot statement; not real-world verification"
+        }
+      ]
+    },
+    "contract": {
+      "schema_version": "doe_contract_v1",
+      "request_hash": "81f4f5797822ec90f57c15590286f1d5e341c83b5eb723bdcb657894b5a986fa",
+      "revision": 1,
+      "question": "Estimate the prespecified high-minus-low effect on a synthetic response",
+      "family": "rcbd_two_arm",
+      "factors": [
+        {
+          "name": "A",
+          "levels": [
+            "control",
+            "candidate"
+          ]
+        }
+      ],
+      "response": {
+        "name": "synthetic_error",
+        "unit": "declared_units",
+        "direction": "lower"
+      },
+      "experimental_unit": {
+        "definition": "One separately allocated synthetic treatment application",
+        "independence_basis": "Declared independent units and independent Gaussian residuals; not established by table structure",
+        "measurement_repeats": 1
+      },
+      "blocks": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6",
+        "b7",
+        "b8",
+        "b9",
+        "b10",
+        "b11",
+        "b12",
+        "b13",
+        "b14",
+        "b15",
+        "b16",
+        "b17",
+        "b18",
+        "b19",
+        "b20",
+        "b21",
+        "b22",
+        "b23",
+        "b24"
+      ],
+      "replicates": 1,
+      "assumptions": [
+        "normal_iid_errors",
+        "constant_error_variance",
+        "no_treatment_block_interaction"
+      ],
+      "randomization": {
+        "seed": 73,
+        "algorithm": "shuffle_v1"
+      },
+      "analysis": {
+        "model": "additive_blocks",
+        "primary_term": "A",
+        "alpha": 0.05,
+        "minimum_effect": 1.3,
+        "sigma": 1.3,
+        "target_power": 0.8,
+        "multiplicity": "single_primary",
+        "missing_policy": "stop_and_review",
+        "decision_rule": "two_sided_t_ci_practical_relevance_separate"
+      },
+      "resources": {
+        "per_run": 1.0,
+        "budget": 100.0
+      },
+      "provenance": [
+        {
+          "path": "/question",
+          "evidence_id": "e00"
+        },
+        {
+          "path": "/factors",
+          "evidence_id": "e01"
+        },
+        {
+          "path": "/response",
+          "evidence_id": "e02"
+        },
+        {
+          "path": "/experimental_unit",
+          "evidence_id": "e03"
+        },
+        {
+          "path": "/blocks",
+          "evidence_id": "e04"
+        },
+        {
+          "path": "/assumptions",
+          "evidence_id": "e05"
+        },
+        {
+          "path": "/analysis",
+          "evidence_id": "e06"
+        },
+        {
+          "path": "/resources",
+          "evidence_id": "e07"
+        }
+      ],
+      "run_plan": [
+        {
+          "run": 1,
+          "unit_id": "planned_b1_u2",
+          "block": "b1",
+          "levels": [
+            "control"
+          ]
+        },
+        {
+          "run": 2,
+          "unit_id": "planned_b1_u1",
+          "block": "b1",
+          "levels": [
+            "candidate"
+          ]
+        },
+        {
+          "run": 3,
+          "unit_id": "planned_b2_u1",
+          "block": "b2",
+          "levels": [
+            "candidate"
+          ]
+        },
+        {
+          "run": 4,
+          "unit_id": "planned_b2_u2",
+          "block": "b2",
+          "levels": [
+            "control"
+          ]
+        },
+        {
+          "run": 5,
+          "unit_id": "planned_b3_u1",
+          "block": "b3",
+          "levels": [
+            "control"
+          ]
+        },
+        {
+          "run": 6,
+          "unit_id": "planned_b3_u2",
+          "block": "b3",
+          "levels": [
+            "candidate"
+          ]
+        },
+        {
+          "run": 7,
+          "unit_id": "planned_b4_u2",
+          "block": "b4",
+          "levels": [
+            "control"
+          ]
+        },
+        {
+          "run": 8,
+          "unit_id": "planned_b4_u1",
+          "block": "b4",
+          "levels": [
+            "candidate"
+          ]
+        },
+        {
+          "run": 9,
+          "unit_id": "planned_b5_u2",
+          "block": "b5",
+          "levels": [
+            "control"
+          ]
+        },
+        {
+          "run": 10,
+          "unit_id": "planned_b5_u1",
+          "block": "b5",
+          "levels": [
+            "candidate"
+          ]
+        },
+        {
+          "run": 11,
+          "unit_id": "planned_b6_u1",
+          "block": "b6",
+          "levels": [
+            "control"
+          ]
+        },
+        {
+          "run": 12,
+          "unit_id": "planned_b6_u2",
+          "block": "b6",
+          "levels": [
+            "candidate"
+          ]
+        },
+        {
+          "run": 13,
+          "unit_id": "planned_b7_u2",
+          "block": "b7",
+          "levels": [
+            "control"
+          ]
+        },
+        {
+          "run": 14,
+          "unit_id": "planned_b7_u1",
+          "block": "b7",
+          "levels": [
+            "candidate"
+          ]
+        },
+        {
+          "run": 15,
+          "unit_id": "planned_b8_u1",
+          "block": "b8",
+          "levels": [
+            "candidate"
+          ]
+        },
+        {
+          "run": 16,
+          "unit_id": "planned_b8_u2",
+          "block": "b8",
+          "levels": [
+            "control"
+          ]
+        },
+        {
+          "run": 17,
+          "unit_id": "planned_b9_u2",
+          "block": "b9",
+          "levels": [
+            "candidate"
+          ]
+        },
+        {
+          "run": 18,
+          "unit_id": "planned_b9_u1",
+          "block": "b9",
+          "levels": [
+            "control"
+          ]
+        },
+        {
+          "run": 19,
+          "unit_id": "planned_b10_u1",
+          "block": "b10",
+          "levels": [
+            "control"
+          ]
+        },
+        {
+          "run": 20,
+          "unit_id": "planned_b10_u2",
+          "block": "b10",
+          "levels": [
+            "candidate"
+          ]
+        },
+        {
+          "run": 21,
+          "unit_id": "planned_b11_u1",
+          "block": "b11",
+          "levels": [
+            "control"
+          ]
+        },
+        {
+          "run": 22,
+          "unit_id": "planned_b11_u2",
+          "block": "b11",
+          "levels": [
+            "candidate"
+          ]
+        },
+        {
+          "run": 23,
+          "unit_id": "planned_b12_u2",
+          "block": "b12",
+          "levels": [
+            "candidate"
+          ]
+        },
+        {
+          "run": 24,
+          "unit_id": "planned_b12_u1",
+          "block": "b12",
+          "levels": [
+            "control"
+          ]
+        },
+        {
+          "run": 25,
+          "unit_id": "planned_b13_u2",
+          "block": "b13",
+          "levels": [
+            "control"
+          ]
+        },
+        {
+          "run": 26,
+          "unit_id": "planned_b13_u1",
+          "block": "b13",
+          "levels": [
+            "candidate"
+          ]
+        },
+        {
+          "run": 27,
+          "unit_id": "planned_b14_u2",
+          "block": "b14",
+          "levels": [
+            "candidate"
+          ]
+        },
+        {
+          "run": 28,
+          "unit_id": "planned_b14_u1",
+          "block": "b14",
+          "levels": [
+            "control"
+          ]
+        },
+        {
+          "run": 29,
+          "unit_id": "planned_b15_u1",
+          "block": "b15",
+          "levels": [
+            "control"
+          ]
+        },
+        {
+          "run": 30,
+          "unit_id": "planned_b15_u2",
+          "block": "b15",
+          "levels": [
+            "candidate"
+          ]
+        },
+        {
+          "run": 31,
+          "unit_id": "planned_b16_u2",
+          "block": "b16",
+          "levels": [
+            "control"
+          ]
+        },
+        {
+          "run": 32,
+          "unit_id": "planned_b16_u1",
+          "block": "b16",
+          "levels": [
+            "candidate"
+          ]
+        },
+        {
+          "run": 33,
+          "unit_id": "planned_b17_u2",
+          "block": "b17",
+          "levels": [
+            "control"
+          ]
+        },
+        {
+          "run": 34,
+          "unit_id": "planned_b17_u1",
+          "block": "b17",
+          "levels": [
+            "candidate"
+          ]
+        },
+        {
+          "run": 35,
+          "unit_id": "planned_b18_u2",
+          "block": "b18",
+          "levels": [
+            "control"
+          ]
+        },
+        {
+          "run": 36,
+          "unit_id": "planned_b18_u1",
+          "block": "b18",
+          "levels": [
+            "candidate"
+          ]
+        },
+        {
+          "run": 37,
+          "unit_id": "planned_b19_u1",
+          "block": "b19",
+          "levels": [
+            "control"
+          ]
+        },
+        {
+          "run": 38,
+          "unit_id": "planned_b19_u2",
+          "block": "b19",
+          "levels": [
+            "candidate"
+          ]
+        },
+        {
+          "run": 39,
+          "unit_id": "planned_b20_u1",
+          "block": "b20",
+          "levels": [
+            "candidate"
+          ]
+        },
+        {
+          "run": 40,
+          "unit_id": "planned_b20_u2",
+          "block": "b20",
+          "levels": [
+            "control"
+          ]
+        },
+        {
+          "run": 41,
+          "unit_id": "planned_b21_u2",
+          "block": "b21",
+          "levels": [
+            "control"
+          ]
+        },
+        {
+          "run": 42,
+          "unit_id": "planned_b21_u1",
+          "block": "b21",
+          "levels": [
+            "candidate"
+          ]
+        },
+        {
+          "run": 43,
+          "unit_id": "planned_b22_u2",
+          "block": "b22",
+          "levels": [
+            "control"
+          ]
+        },
+        {
+          "run": 44,
+          "unit_id": "planned_b22_u1",
+          "block": "b22",
+          "levels": [
+            "candidate"
+          ]
+        },
+        {
+          "run": 45,
+          "unit_id": "planned_b23_u2",
+          "block": "b23",
+          "levels": [
+            "control"
+          ]
+        },
+        {
+          "run": 46,
+          "unit_id": "planned_b23_u1",
+          "block": "b23",
+          "levels": [
+            "candidate"
+          ]
+        },
+        {
+          "run": 47,
+          "unit_id": "planned_b24_u2",
+          "block": "b24",
+          "levels": [
+            "control"
+          ]
+        },
+        {
+          "run": 48,
+          "unit_id": "planned_b24_u1",
+          "block": "b24",
+          "levels": [
+            "candidate"
+          ]
+        }
+      ]
+    }
+  }
+}

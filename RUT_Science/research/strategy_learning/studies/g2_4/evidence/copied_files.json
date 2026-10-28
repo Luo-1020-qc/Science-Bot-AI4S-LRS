@@ -1,0 +1,34 @@
+{
+  "files": [
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\Reference_Paper\\Harness_Engineering_Agent_Insights.md",
+      "copy": "reference_copy/00_Harness_Engineering_Agent_Insights.md",
+      "sha256": "6f5f1ab50d43ca001a8dfb2057330e0b19c6b12e14b1d313ba72d511e134f104",
+      "reference_only_not_imported": true
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\rut_science\\science_bot\\general\\interview\\validation.py",
+      "copy": "reference_copy/01_validation.py",
+      "sha256": "c1993841cd74e30e40e8efcde6bd9cea57c0d4791ce4120134a78143f10a9d13",
+      "reference_only_not_imported": true
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\research\\strategy_learning\\studies\\g2_3\\evidence\\scoring_audit.json",
+      "copy": "reference_copy/02_scoring_audit.json",
+      "sha256": "b6dbe9821baaa916f8ffb38f123027fc132fab387867e20f6034fd2bd5865f9c",
+      "reference_only_not_imported": true
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\research\\strategy_learning\\studies\\g2_3\\lab\\contracts.py",
+      "copy": "reference_copy/03_contracts.py",
+      "sha256": "db401d09c18d9b9cbeb45baf7f2d656aeb2017987140d203b2c8b658786d197e",
+      "reference_only_not_imported": true
+    },
+    {
+      "source": "D:\\Python Files\\CityU_Project\\DSC6008 Design of Experiments\\Assignment2\\Assignment2_参考答案与解析_中英对照.md",
+      "copy": "reference_copy/04_Assignment2_参考答案与解析_中英对照.md",
+      "sha256": "af216521e5e0640b067bd49936ee24b49e9153c8471df0e433d019e683302ea9",
+      "reference_only_not_imported": true
+    }
+  ]
+}

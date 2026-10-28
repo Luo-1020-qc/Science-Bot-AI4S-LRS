@@ -1,0 +1,2463 @@
+{
+  "task": {
+    "schema_version": "harness_examples_v1",
+    "task_id": "cvit_train_factorial_design",
+    "root_group": "source_A",
+    "domain": "cvit",
+    "policy_split": "train",
+    "scenario_for_curator_only": "factorial_design",
+    "data_lineage": {
+      "underlying_source_ids": [
+        "synthetic_darcy_source_A"
+      ],
+      "source_kind": "synthetic_references_only_no_scientific_arrays",
+      "within_experiment_partition": {
+        "train": "mock://source_A/darcy/train",
+        "validation": "mock://source_A/darcy/validation",
+        "test": "mock://source_A/darcy/test"
+      },
+      "scope_note": "All variants sharing these synthetic sources are assigned to the same policy split"
+    },
+    "initial_observation": {
+      "user_messages": [
+        {
+          "role": "user",
+          "content": "请设计CViT架构×学习率的2×2实验，考虑交互、区组与验收，本次只设计。"
+        }
+      ],
+      "facts": {
+        "domain": "cvit",
+        "scientific_problem": "Darcy coefficient_field_to_pressure_field",
+        "target": "pressure_field",
+        "response_metric": "relative_l2",
+        "scope": "design_only",
+        "unit_basis": "Separate synthetic data realizations; training-run variability conditional on data for CViT"
+      },
+      "unknown": [],
+      "evidence": [
+        {
+          "id": "ev_3876b448b6cc",
+          "kind": "user_declaration",
+          "field": "initial_request",
+          "value": "请设计CViT架构×学习率的2×2实验，考虑交互、区组与验收，本次只设计。",
+          "source": "synthetic_user_or_mock_fixture",
+          "real_world_verified": false
+        },
+        {
+          "id": "ev_8a466bf4b890",
+          "kind": "user_declaration",
+          "field": "unit_basis",
+          "value": "Separate synthetic data realizations; training-run variability conditional on data for CViT",
+          "source": "synthetic_user_or_mock_fixture",
+          "real_world_verified": false
+        }
+      ],
+      "draft": null,
+      "permissions": {
+        "inspect_mock": true,
+        "design": true,
+        "run_mock_job": true,
+        "real_execution": false
+      },
+      "budget": {
+        "remaining_mock_units": 240,
+        "max_decisions": 24
+      },
+      "job": {
+        "status": "not_queried",
+        "matched_current_plan": null
+      },
+      "history": [],
+      "action_mask": {
+        "ask": true,
+        "inspect_mock": true,
+        "propose_design": true,
+        "check_design_mock": true,
+        "revise_design": true,
+        "reconcile_job_mock": true,
+        "resume_job_mock": false,
+        "stop_with_evidence": true,
+        "submit_for_review": true
+      }
+    },
+    "training_target": "Harness decisions, not pressure fields or CViT weights",
+    "expert_status": "pending",
+    "origin": "hand_authored_scripted_example"
+  },
+  "episode": {
+    "schema_version": "harness_examples_v1",
+    "episode_id": "ep_cvit_train_factorial_design",
+    "task_id": "cvit_train_factorial_design",
+    "policy_split": "train",
+    "source": "scripted_reference_not_human_expert",
+    "ppo_eligible": false,
+    "classification": "illustrative_plan_submitted",
+    "reward_version": "toy_example_reward_v1",
+    "steps": [
+      {
+        "decision_index": 0,
+        "observation": {
+          "user_messages": [
+            {
+              "role": "user",
+              "content": "请设计CViT架构×学习率的2×2实验，考虑交互、区组与验收，本次只设计。"
+            }
+          ],
+          "facts": {
+            "domain": "cvit",
+            "scientific_problem": "Darcy coefficient_field_to_pressure_field",
+            "target": "pressure_field",
+            "response_metric": "relative_l2",
+            "scope": "design_only",
+            "unit_basis": "Separate synthetic data realizations; training-run variability conditional on data for CViT"
+          },
+          "unknown": [],
+          "evidence": [
+            {
+              "id": "ev_3876b448b6cc",
+              "kind": "user_declaration",
+              "field": "initial_request",
+              "value": "请设计CViT架构×学习率的2×2实验，考虑交互、区组与验收，本次只设计。",
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_8a466bf4b890",
+              "kind": "user_declaration",
+              "field": "unit_basis",
+              "value": "Separate synthetic data realizations; training-run variability conditional on data for CViT",
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            }
+          ],
+          "draft": null,
+          "permissions": {
+            "inspect_mock": true,
+            "design": true,
+            "run_mock_job": true,
+            "real_execution": false
+          },
+          "budget": {
+            "remaining_mock_units": 240,
+            "max_decisions": 24
+          },
+          "job": {
+            "status": "not_queried",
+            "matched_current_plan": null
+          },
+          "history": [],
+          "action_mask": {
+            "ask": true,
+            "inspect_mock": true,
+            "propose_design": true,
+            "check_design_mock": true,
+            "revise_design": true,
+            "reconcile_job_mock": true,
+            "resume_job_mock": false,
+            "stop_with_evidence": true,
+            "submit_for_review": true
+          }
+        },
+        "observation_hash": "ade504a1357b074e1f75bfc0f02ec4340af9a531713d3cee3405167a74199164",
+        "action": {
+          "name": "inspect_mock",
+          "arguments": {
+            "dataset_ref": "mock://source_A/darcy/train",
+            "include_sealed_test_values": false
+          }
+        },
+        "feedback": {
+          "source": "scripted_mock_feedback",
+          "message": "Synthetic metadata only; sealed outcome values are not returned",
+          "blocking_codes": [],
+          "real_execution": false,
+          "scientific_metric": null
+        },
+        "next_observation": {
+          "user_messages": [
+            {
+              "role": "user",
+              "content": "请设计CViT架构×学习率的2×2实验，考虑交互、区组与验收，本次只设计。"
+            }
+          ],
+          "facts": {
+            "domain": "cvit",
+            "scientific_problem": "Darcy coefficient_field_to_pressure_field",
+            "target": "pressure_field",
+            "response_metric": "relative_l2",
+            "scope": "design_only",
+            "unit_basis": "Separate synthetic data realizations; training-run variability conditional on data for CViT",
+            "profile": {
+              "input": "coefficient_field",
+              "target": "pressure_field",
+              "partition_overlap": false,
+              "training_variance": "not_measured",
+              "real_data_read": false
+            }
+          },
+          "unknown": [],
+          "evidence": [
+            {
+              "id": "ev_3876b448b6cc",
+              "kind": "user_declaration",
+              "field": "initial_request",
+              "value": "请设计CViT架构×学习率的2×2实验，考虑交互、区组与验收，本次只设计。",
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_8a466bf4b890",
+              "kind": "user_declaration",
+              "field": "unit_basis",
+              "value": "Separate synthetic data realizations; training-run variability conditional on data for CViT",
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_28a075c410c1",
+              "kind": "mock_inspection",
+              "field": "profile",
+              "value": {
+                "input": "coefficient_field",
+                "target": "pressure_field",
+                "partition_overlap": false,
+                "training_variance": "not_measured",
+                "real_data_read": false
+              },
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            }
+          ],
+          "draft": null,
+          "permissions": {
+            "inspect_mock": true,
+            "design": true,
+            "run_mock_job": true,
+            "real_execution": false
+          },
+          "budget": {
+            "remaining_mock_units": 239,
+            "max_decisions": 24
+          },
+          "job": {
+            "status": "not_queried",
+            "matched_current_plan": null
+          },
+          "history": [
+            {
+              "action": "inspect_mock",
+              "feedback": "Synthetic metadata only; sealed outcome values are not returned"
+            }
+          ],
+          "action_mask": {
+            "ask": true,
+            "inspect_mock": true,
+            "propose_design": true,
+            "check_design_mock": true,
+            "revise_design": true,
+            "reconcile_job_mock": true,
+            "resume_job_mock": false,
+            "stop_with_evidence": true,
+            "submit_for_review": true
+          }
+        },
+        "next_observation_hash": "e7bc09a2893149b022afc4dd4b12af23815c2ed197a94090014afcdb721bae04",
+        "reward": 0.08,
+        "terminated": false,
+        "truncated": false,
+        "behavior_log_probability": null,
+        "value_estimate": null,
+        "reference_action_is_recommended": true
+      },
+      {
+        "decision_index": 1,
+        "observation": {
+          "user_messages": [
+            {
+              "role": "user",
+              "content": "请设计CViT架构×学习率的2×2实验，考虑交互、区组与验收，本次只设计。"
+            }
+          ],
+          "facts": {
+            "domain": "cvit",
+            "scientific_problem": "Darcy coefficient_field_to_pressure_field",
+            "target": "pressure_field",
+            "response_metric": "relative_l2",
+            "scope": "design_only",
+            "unit_basis": "Separate synthetic data realizations; training-run variability conditional on data for CViT",
+            "profile": {
+              "input": "coefficient_field",
+              "target": "pressure_field",
+              "partition_overlap": false,
+              "training_variance": "not_measured",
+              "real_data_read": false
+            }
+          },
+          "unknown": [],
+          "evidence": [
+            {
+              "id": "ev_3876b448b6cc",
+              "kind": "user_declaration",
+              "field": "initial_request",
+              "value": "请设计CViT架构×学习率的2×2实验，考虑交互、区组与验收，本次只设计。",
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_8a466bf4b890",
+              "kind": "user_declaration",
+              "field": "unit_basis",
+              "value": "Separate synthetic data realizations; training-run variability conditional on data for CViT",
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_28a075c410c1",
+              "kind": "mock_inspection",
+              "field": "profile",
+              "value": {
+                "input": "coefficient_field",
+                "target": "pressure_field",
+                "partition_overlap": false,
+                "training_variance": "not_measured",
+                "real_data_read": false
+              },
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            }
+          ],
+          "draft": null,
+          "permissions": {
+            "inspect_mock": true,
+            "design": true,
+            "run_mock_job": true,
+            "real_execution": false
+          },
+          "budget": {
+            "remaining_mock_units": 239,
+            "max_decisions": 24
+          },
+          "job": {
+            "status": "not_queried",
+            "matched_current_plan": null
+          },
+          "history": [
+            {
+              "action": "inspect_mock",
+              "feedback": "Synthetic metadata only; sealed outcome values are not returned"
+            }
+          ],
+          "action_mask": {
+            "ask": true,
+            "inspect_mock": true,
+            "propose_design": true,
+            "check_design_mock": true,
+            "revise_design": true,
+            "reconcile_job_mock": true,
+            "resume_job_mock": false,
+            "stop_with_evidence": true,
+            "submit_for_review": true
+          }
+        },
+        "observation_hash": "e7bc09a2893149b022afc4dd4b12af23815c2ed197a94090014afcdb721bae04",
+        "action": {
+          "name": "propose_design",
+          "arguments": {
+            "plan": {
+              "schema_version": "illustrative_experiment_plan_v1",
+              "revision": 1,
+              "research_question": "Estimate architecture and learning-rate effects on pressure prediction",
+              "design": "blocked_full_factorial_2x2",
+              "factors": [
+                {
+                  "name": "architecture",
+                  "levels": [
+                    "baseline_small",
+                    "candidate_small"
+                  ]
+                },
+                {
+                  "name": "learning_rate",
+                  "levels": [
+                    0.0001,
+                    0.0003
+                  ]
+                }
+              ],
+              "primary_contrast": "architecture_high_minus_low_averaged_over_learning_rate",
+              "analysis_terms": [
+                "architecture",
+                "learning_rate",
+                "data_realization_block"
+              ],
+              "experimental_unit": "One separately seeded model-training run within a data-realization block",
+              "blocks": {
+                "factor": "independent_synthetic_data_realization",
+                "count": 6
+              },
+              "replicates_per_cell_per_block": 2,
+              "planned_runs": 48,
+              "unit_response": "Mean relative L2 across the fixed test fields for this run; fields are not independent architecture replicates",
+              "randomization": {
+                "method": "allocate_independent_rng_streams_and_shuffle_within_block",
+                "seed": 21017
+              },
+              "analysis_assumptions": [
+                "independent_residuals_conditional_on_block",
+                "normal_homoscedastic_errors",
+                "additive_blocks"
+              ],
+              "assumptions_status": "synthetic_declared_not_verified",
+              "sample_size_basis": {
+                "method": "pending_real_pilot_then_power_or_precision_analysis",
+                "nominal_alpha": 0.05,
+                "target_power": 0.8,
+                "minimum_relevant_effect": 0.02,
+                "sigma": 0.02,
+                "numeric_inputs_source": "invented_for_schema_example_not_real_pilot",
+                "achieved_power": null
+              },
+              "training_validation_test": {
+                "fit_preprocessing": "train_only",
+                "select_checkpoint_and_hyperparameters": "validation_only",
+                "final_test": "after_plan_and_selection_lock_only",
+                "test_for_tuning": false
+              },
+              "acceptance": {
+                "design": [
+                  "unit_definition_and_source",
+                  "all_planned_cells",
+                  "interactions_and_blocks_in_analysis",
+                  "budget_and_plan_identity"
+                ],
+                "execution": [
+                  "record_assignment_and_deviations",
+                  "no_duplicate_job_launch",
+                  "current_plan_confirmation"
+                ],
+                "scientific": [
+                  "report_effect_and_interval",
+                  "practical_relevance_separate",
+                  "negative_results_are_valid"
+                ],
+                "scientific_conclusion": null,
+                "expert_review": "pending"
+              },
+              "resources": {
+                "unit": "mock_resource_unit",
+                "per_run": 4,
+                "planned_total": 192,
+                "measured_hardware_cost": null
+              },
+              "execution_authorized": false
+            }
+          }
+        },
+        "feedback": {
+          "source": "scripted_mock_feedback",
+          "message": "Intentionally flawed candidate retained as a negative example",
+          "blocking_codes": [],
+          "real_execution": false,
+          "scientific_metric": null
+        },
+        "next_observation": {
+          "user_messages": [
+            {
+              "role": "user",
+              "content": "请设计CViT架构×学习率的2×2实验，考虑交互、区组与验收，本次只设计。"
+            }
+          ],
+          "facts": {
+            "domain": "cvit",
+            "scientific_problem": "Darcy coefficient_field_to_pressure_field",
+            "target": "pressure_field",
+            "response_metric": "relative_l2",
+            "scope": "design_only",
+            "unit_basis": "Separate synthetic data realizations; training-run variability conditional on data for CViT",
+            "profile": {
+              "input": "coefficient_field",
+              "target": "pressure_field",
+              "partition_overlap": false,
+              "training_variance": "not_measured",
+              "real_data_read": false
+            }
+          },
+          "unknown": [],
+          "evidence": [
+            {
+              "id": "ev_3876b448b6cc",
+              "kind": "user_declaration",
+              "field": "initial_request",
+              "value": "请设计CViT架构×学习率的2×2实验，考虑交互、区组与验收，本次只设计。",
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_8a466bf4b890",
+              "kind": "user_declaration",
+              "field": "unit_basis",
+              "value": "Separate synthetic data realizations; training-run variability conditional on data for CViT",
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_28a075c410c1",
+              "kind": "mock_inspection",
+              "field": "profile",
+              "value": {
+                "input": "coefficient_field",
+                "target": "pressure_field",
+                "partition_overlap": false,
+                "training_variance": "not_measured",
+                "real_data_read": false
+              },
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            }
+          ],
+          "draft": {
+            "schema_version": "illustrative_experiment_plan_v1",
+            "revision": 1,
+            "research_question": "Estimate architecture and learning-rate effects on pressure prediction",
+            "design": "blocked_full_factorial_2x2",
+            "factors": [
+              {
+                "name": "architecture",
+                "levels": [
+                  "baseline_small",
+                  "candidate_small"
+                ]
+              },
+              {
+                "name": "learning_rate",
+                "levels": [
+                  0.0001,
+                  0.0003
+                ]
+              }
+            ],
+            "primary_contrast": "architecture_high_minus_low_averaged_over_learning_rate",
+            "analysis_terms": [
+              "architecture",
+              "learning_rate",
+              "data_realization_block"
+            ],
+            "experimental_unit": "One separately seeded model-training run within a data-realization block",
+            "blocks": {
+              "factor": "independent_synthetic_data_realization",
+              "count": 6
+            },
+            "replicates_per_cell_per_block": 2,
+            "planned_runs": 48,
+            "unit_response": "Mean relative L2 across the fixed test fields for this run; fields are not independent architecture replicates",
+            "randomization": {
+              "method": "allocate_independent_rng_streams_and_shuffle_within_block",
+              "seed": 21017
+            },
+            "analysis_assumptions": [
+              "independent_residuals_conditional_on_block",
+              "normal_homoscedastic_errors",
+              "additive_blocks"
+            ],
+            "assumptions_status": "synthetic_declared_not_verified",
+            "sample_size_basis": {
+              "method": "pending_real_pilot_then_power_or_precision_analysis",
+              "nominal_alpha": 0.05,
+              "target_power": 0.8,
+              "minimum_relevant_effect": 0.02,
+              "sigma": 0.02,
+              "numeric_inputs_source": "invented_for_schema_example_not_real_pilot",
+              "achieved_power": null
+            },
+            "training_validation_test": {
+              "fit_preprocessing": "train_only",
+              "select_checkpoint_and_hyperparameters": "validation_only",
+              "final_test": "after_plan_and_selection_lock_only",
+              "test_for_tuning": false
+            },
+            "acceptance": {
+              "design": [
+                "unit_definition_and_source",
+                "all_planned_cells",
+                "interactions_and_blocks_in_analysis",
+                "budget_and_plan_identity"
+              ],
+              "execution": [
+                "record_assignment_and_deviations",
+                "no_duplicate_job_launch",
+                "current_plan_confirmation"
+              ],
+              "scientific": [
+                "report_effect_and_interval",
+                "practical_relevance_separate",
+                "negative_results_are_valid"
+              ],
+              "scientific_conclusion": null,
+              "expert_review": "pending"
+            },
+            "resources": {
+              "unit": "mock_resource_unit",
+              "per_run": 4,
+              "planned_total": 192,
+              "measured_hardware_cost": null
+            },
+            "execution_authorized": false
+          },
+          "permissions": {
+            "inspect_mock": true,
+            "design": true,
+            "run_mock_job": true,
+            "real_execution": false
+          },
+          "budget": {
+            "remaining_mock_units": 239,
+            "max_decisions": 24
+          },
+          "job": {
+            "status": "not_queried",
+            "matched_current_plan": null
+          },
+          "history": [
+            {
+              "action": "inspect_mock",
+              "feedback": "Synthetic metadata only; sealed outcome values are not returned"
+            },
+            {
+              "action": "propose_design",
+              "feedback": "Intentionally flawed candidate retained as a negative example"
+            }
+          ],
+          "action_mask": {
+            "ask": true,
+            "inspect_mock": true,
+            "propose_design": true,
+            "check_design_mock": true,
+            "revise_design": true,
+            "reconcile_job_mock": true,
+            "resume_job_mock": false,
+            "stop_with_evidence": true,
+            "submit_for_review": true
+          }
+        },
+        "next_observation_hash": "5f7a38223d1df5e4efc805d4396a81537e56f6ac36b975a6b56be51305565c24",
+        "reward": -0.02,
+        "terminated": false,
+        "truncated": false,
+        "behavior_log_probability": null,
+        "value_estimate": null,
+        "reference_action_is_recommended": false
+      },
+      {
+        "decision_index": 2,
+        "observation": {
+          "user_messages": [
+            {
+              "role": "user",
+              "content": "请设计CViT架构×学习率的2×2实验，考虑交互、区组与验收，本次只设计。"
+            }
+          ],
+          "facts": {
+            "domain": "cvit",
+            "scientific_problem": "Darcy coefficient_field_to_pressure_field",
+            "target": "pressure_field",
+            "response_metric": "relative_l2",
+            "scope": "design_only",
+            "unit_basis": "Separate synthetic data realizations; training-run variability conditional on data for CViT",
+            "profile": {
+              "input": "coefficient_field",
+              "target": "pressure_field",
+              "partition_overlap": false,
+              "training_variance": "not_measured",
+              "real_data_read": false
+            }
+          },
+          "unknown": [],
+          "evidence": [
+            {
+              "id": "ev_3876b448b6cc",
+              "kind": "user_declaration",
+              "field": "initial_request",
+              "value": "请设计CViT架构×学习率的2×2实验，考虑交互、区组与验收，本次只设计。",
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_8a466bf4b890",
+              "kind": "user_declaration",
+              "field": "unit_basis",
+              "value": "Separate synthetic data realizations; training-run variability conditional on data for CViT",
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_28a075c410c1",
+              "kind": "mock_inspection",
+              "field": "profile",
+              "value": {
+                "input": "coefficient_field",
+                "target": "pressure_field",
+                "partition_overlap": false,
+                "training_variance": "not_measured",
+                "real_data_read": false
+              },
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            }
+          ],
+          "draft": {
+            "schema_version": "illustrative_experiment_plan_v1",
+            "revision": 1,
+            "research_question": "Estimate architecture and learning-rate effects on pressure prediction",
+            "design": "blocked_full_factorial_2x2",
+            "factors": [
+              {
+                "name": "architecture",
+                "levels": [
+                  "baseline_small",
+                  "candidate_small"
+                ]
+              },
+              {
+                "name": "learning_rate",
+                "levels": [
+                  0.0001,
+                  0.0003
+                ]
+              }
+            ],
+            "primary_contrast": "architecture_high_minus_low_averaged_over_learning_rate",
+            "analysis_terms": [
+              "architecture",
+              "learning_rate",
+              "data_realization_block"
+            ],
+            "experimental_unit": "One separately seeded model-training run within a data-realization block",
+            "blocks": {
+              "factor": "independent_synthetic_data_realization",
+              "count": 6
+            },
+            "replicates_per_cell_per_block": 2,
+            "planned_runs": 48,
+            "unit_response": "Mean relative L2 across the fixed test fields for this run; fields are not independent architecture replicates",
+            "randomization": {
+              "method": "allocate_independent_rng_streams_and_shuffle_within_block",
+              "seed": 21017
+            },
+            "analysis_assumptions": [
+              "independent_residuals_conditional_on_block",
+              "normal_homoscedastic_errors",
+              "additive_blocks"
+            ],
+            "assumptions_status": "synthetic_declared_not_verified",
+            "sample_size_basis": {
+              "method": "pending_real_pilot_then_power_or_precision_analysis",
+              "nominal_alpha": 0.05,
+              "target_power": 0.8,
+              "minimum_relevant_effect": 0.02,
+              "sigma": 0.02,
+              "numeric_inputs_source": "invented_for_schema_example_not_real_pilot",
+              "achieved_power": null
+            },
+            "training_validation_test": {
+              "fit_preprocessing": "train_only",
+              "select_checkpoint_and_hyperparameters": "validation_only",
+              "final_test": "after_plan_and_selection_lock_only",
+              "test_for_tuning": false
+            },
+            "acceptance": {
+              "design": [
+                "unit_definition_and_source",
+                "all_planned_cells",
+                "interactions_and_blocks_in_analysis",
+                "budget_and_plan_identity"
+              ],
+              "execution": [
+                "record_assignment_and_deviations",
+                "no_duplicate_job_launch",
+                "current_plan_confirmation"
+              ],
+              "scientific": [
+                "report_effect_and_interval",
+                "practical_relevance_separate",
+                "negative_results_are_valid"
+              ],
+              "scientific_conclusion": null,
+              "expert_review": "pending"
+            },
+            "resources": {
+              "unit": "mock_resource_unit",
+              "per_run": 4,
+              "planned_total": 192,
+              "measured_hardware_cost": null
+            },
+            "execution_authorized": false
+          },
+          "permissions": {
+            "inspect_mock": true,
+            "design": true,
+            "run_mock_job": true,
+            "real_execution": false
+          },
+          "budget": {
+            "remaining_mock_units": 239,
+            "max_decisions": 24
+          },
+          "job": {
+            "status": "not_queried",
+            "matched_current_plan": null
+          },
+          "history": [
+            {
+              "action": "inspect_mock",
+              "feedback": "Synthetic metadata only; sealed outcome values are not returned"
+            },
+            {
+              "action": "propose_design",
+              "feedback": "Intentionally flawed candidate retained as a negative example"
+            }
+          ],
+          "action_mask": {
+            "ask": true,
+            "inspect_mock": true,
+            "propose_design": true,
+            "check_design_mock": true,
+            "revise_design": true,
+            "reconcile_job_mock": true,
+            "resume_job_mock": false,
+            "stop_with_evidence": true,
+            "submit_for_review": true
+          }
+        },
+        "observation_hash": "5f7a38223d1df5e4efc805d4396a81537e56f6ac36b975a6b56be51305565c24",
+        "action": {
+          "name": "check_design_mock",
+          "arguments": {
+            "draft_hash": "b02afd9cd931d954f807ec9bc2767ac641ad857f4d56c7f05198e8c8368617d1"
+          }
+        },
+        "feedback": {
+          "source": "scripted_mock_feedback",
+          "message": "Scripted mock verifier detects the deliberately injected defect",
+          "blocking_codes": [
+            "missing_interaction"
+          ],
+          "real_execution": false,
+          "scientific_metric": null
+        },
+        "next_observation": {
+          "user_messages": [
+            {
+              "role": "user",
+              "content": "请设计CViT架构×学习率的2×2实验，考虑交互、区组与验收，本次只设计。"
+            }
+          ],
+          "facts": {
+            "domain": "cvit",
+            "scientific_problem": "Darcy coefficient_field_to_pressure_field",
+            "target": "pressure_field",
+            "response_metric": "relative_l2",
+            "scope": "design_only",
+            "unit_basis": "Separate synthetic data realizations; training-run variability conditional on data for CViT",
+            "profile": {
+              "input": "coefficient_field",
+              "target": "pressure_field",
+              "partition_overlap": false,
+              "training_variance": "not_measured",
+              "real_data_read": false
+            }
+          },
+          "unknown": [],
+          "evidence": [
+            {
+              "id": "ev_3876b448b6cc",
+              "kind": "user_declaration",
+              "field": "initial_request",
+              "value": "请设计CViT架构×学习率的2×2实验，考虑交互、区组与验收，本次只设计。",
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_8a466bf4b890",
+              "kind": "user_declaration",
+              "field": "unit_basis",
+              "value": "Separate synthetic data realizations; training-run variability conditional on data for CViT",
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_28a075c410c1",
+              "kind": "mock_inspection",
+              "field": "profile",
+              "value": {
+                "input": "coefficient_field",
+                "target": "pressure_field",
+                "partition_overlap": false,
+                "training_variance": "not_measured",
+                "real_data_read": false
+              },
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_090404645b51",
+              "kind": "design_check_blocked",
+              "field": "draft_validation",
+              "value": {
+                "draft_hash": "b02afd9cd931d954f807ec9bc2767ac641ad857f4d56c7f05198e8c8368617d1",
+                "blocking_code": "missing_interaction"
+              },
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            }
+          ],
+          "draft": {
+            "schema_version": "illustrative_experiment_plan_v1",
+            "revision": 1,
+            "research_question": "Estimate architecture and learning-rate effects on pressure prediction",
+            "design": "blocked_full_factorial_2x2",
+            "factors": [
+              {
+                "name": "architecture",
+                "levels": [
+                  "baseline_small",
+                  "candidate_small"
+                ]
+              },
+              {
+                "name": "learning_rate",
+                "levels": [
+                  0.0001,
+                  0.0003
+                ]
+              }
+            ],
+            "primary_contrast": "architecture_high_minus_low_averaged_over_learning_rate",
+            "analysis_terms": [
+              "architecture",
+              "learning_rate",
+              "data_realization_block"
+            ],
+            "experimental_unit": "One separately seeded model-training run within a data-realization block",
+            "blocks": {
+              "factor": "independent_synthetic_data_realization",
+              "count": 6
+            },
+            "replicates_per_cell_per_block": 2,
+            "planned_runs": 48,
+            "unit_response": "Mean relative L2 across the fixed test fields for this run; fields are not independent architecture replicates",
+            "randomization": {
+              "method": "allocate_independent_rng_streams_and_shuffle_within_block",
+              "seed": 21017
+            },
+            "analysis_assumptions": [
+              "independent_residuals_conditional_on_block",
+              "normal_homoscedastic_errors",
+              "additive_blocks"
+            ],
+            "assumptions_status": "synthetic_declared_not_verified",
+            "sample_size_basis": {
+              "method": "pending_real_pilot_then_power_or_precision_analysis",
+              "nominal_alpha": 0.05,
+              "target_power": 0.8,
+              "minimum_relevant_effect": 0.02,
+              "sigma": 0.02,
+              "numeric_inputs_source": "invented_for_schema_example_not_real_pilot",
+              "achieved_power": null
+            },
+            "training_validation_test": {
+              "fit_preprocessing": "train_only",
+              "select_checkpoint_and_hyperparameters": "validation_only",
+              "final_test": "after_plan_and_selection_lock_only",
+              "test_for_tuning": false
+            },
+            "acceptance": {
+              "design": [
+                "unit_definition_and_source",
+                "all_planned_cells",
+                "interactions_and_blocks_in_analysis",
+                "budget_and_plan_identity"
+              ],
+              "execution": [
+                "record_assignment_and_deviations",
+                "no_duplicate_job_launch",
+                "current_plan_confirmation"
+              ],
+              "scientific": [
+                "report_effect_and_interval",
+                "practical_relevance_separate",
+                "negative_results_are_valid"
+              ],
+              "scientific_conclusion": null,
+              "expert_review": "pending"
+            },
+            "resources": {
+              "unit": "mock_resource_unit",
+              "per_run": 4,
+              "planned_total": 192,
+              "measured_hardware_cost": null
+            },
+            "execution_authorized": false
+          },
+          "permissions": {
+            "inspect_mock": true,
+            "design": true,
+            "run_mock_job": true,
+            "real_execution": false
+          },
+          "budget": {
+            "remaining_mock_units": 239,
+            "max_decisions": 24
+          },
+          "job": {
+            "status": "not_queried",
+            "matched_current_plan": null
+          },
+          "history": [
+            {
+              "action": "inspect_mock",
+              "feedback": "Synthetic metadata only; sealed outcome values are not returned"
+            },
+            {
+              "action": "propose_design",
+              "feedback": "Intentionally flawed candidate retained as a negative example"
+            },
+            {
+              "action": "check_design_mock",
+              "feedback": "Scripted mock verifier detects the deliberately injected defect"
+            }
+          ],
+          "action_mask": {
+            "ask": true,
+            "inspect_mock": true,
+            "propose_design": true,
+            "check_design_mock": true,
+            "revise_design": true,
+            "reconcile_job_mock": true,
+            "resume_job_mock": false,
+            "stop_with_evidence": true,
+            "submit_for_review": true
+          }
+        },
+        "next_observation_hash": "b1ce1c7a32982562335f1d89323bac7fb2d22a0080a8435b2b3561a01b8e2de1",
+        "reward": -1.02,
+        "terminated": false,
+        "truncated": false,
+        "behavior_log_probability": null,
+        "value_estimate": null,
+        "reference_action_is_recommended": true
+      },
+      {
+        "decision_index": 3,
+        "observation": {
+          "user_messages": [
+            {
+              "role": "user",
+              "content": "请设计CViT架构×学习率的2×2实验，考虑交互、区组与验收，本次只设计。"
+            }
+          ],
+          "facts": {
+            "domain": "cvit",
+            "scientific_problem": "Darcy coefficient_field_to_pressure_field",
+            "target": "pressure_field",
+            "response_metric": "relative_l2",
+            "scope": "design_only",
+            "unit_basis": "Separate synthetic data realizations; training-run variability conditional on data for CViT",
+            "profile": {
+              "input": "coefficient_field",
+              "target": "pressure_field",
+              "partition_overlap": false,
+              "training_variance": "not_measured",
+              "real_data_read": false
+            }
+          },
+          "unknown": [],
+          "evidence": [
+            {
+              "id": "ev_3876b448b6cc",
+              "kind": "user_declaration",
+              "field": "initial_request",
+              "value": "请设计CViT架构×学习率的2×2实验，考虑交互、区组与验收，本次只设计。",
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_8a466bf4b890",
+              "kind": "user_declaration",
+              "field": "unit_basis",
+              "value": "Separate synthetic data realizations; training-run variability conditional on data for CViT",
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_28a075c410c1",
+              "kind": "mock_inspection",
+              "field": "profile",
+              "value": {
+                "input": "coefficient_field",
+                "target": "pressure_field",
+                "partition_overlap": false,
+                "training_variance": "not_measured",
+                "real_data_read": false
+              },
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_090404645b51",
+              "kind": "design_check_blocked",
+              "field": "draft_validation",
+              "value": {
+                "draft_hash": "b02afd9cd931d954f807ec9bc2767ac641ad857f4d56c7f05198e8c8368617d1",
+                "blocking_code": "missing_interaction"
+              },
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            }
+          ],
+          "draft": {
+            "schema_version": "illustrative_experiment_plan_v1",
+            "revision": 1,
+            "research_question": "Estimate architecture and learning-rate effects on pressure prediction",
+            "design": "blocked_full_factorial_2x2",
+            "factors": [
+              {
+                "name": "architecture",
+                "levels": [
+                  "baseline_small",
+                  "candidate_small"
+                ]
+              },
+              {
+                "name": "learning_rate",
+                "levels": [
+                  0.0001,
+                  0.0003
+                ]
+              }
+            ],
+            "primary_contrast": "architecture_high_minus_low_averaged_over_learning_rate",
+            "analysis_terms": [
+              "architecture",
+              "learning_rate",
+              "data_realization_block"
+            ],
+            "experimental_unit": "One separately seeded model-training run within a data-realization block",
+            "blocks": {
+              "factor": "independent_synthetic_data_realization",
+              "count": 6
+            },
+            "replicates_per_cell_per_block": 2,
+            "planned_runs": 48,
+            "unit_response": "Mean relative L2 across the fixed test fields for this run; fields are not independent architecture replicates",
+            "randomization": {
+              "method": "allocate_independent_rng_streams_and_shuffle_within_block",
+              "seed": 21017
+            },
+            "analysis_assumptions": [
+              "independent_residuals_conditional_on_block",
+              "normal_homoscedastic_errors",
+              "additive_blocks"
+            ],
+            "assumptions_status": "synthetic_declared_not_verified",
+            "sample_size_basis": {
+              "method": "pending_real_pilot_then_power_or_precision_analysis",
+              "nominal_alpha": 0.05,
+              "target_power": 0.8,
+              "minimum_relevant_effect": 0.02,
+              "sigma": 0.02,
+              "numeric_inputs_source": "invented_for_schema_example_not_real_pilot",
+              "achieved_power": null
+            },
+            "training_validation_test": {
+              "fit_preprocessing": "train_only",
+              "select_checkpoint_and_hyperparameters": "validation_only",
+              "final_test": "after_plan_and_selection_lock_only",
+              "test_for_tuning": false
+            },
+            "acceptance": {
+              "design": [
+                "unit_definition_and_source",
+                "all_planned_cells",
+                "interactions_and_blocks_in_analysis",
+                "budget_and_plan_identity"
+              ],
+              "execution": [
+                "record_assignment_and_deviations",
+                "no_duplicate_job_launch",
+                "current_plan_confirmation"
+              ],
+              "scientific": [
+                "report_effect_and_interval",
+                "practical_relevance_separate",
+                "negative_results_are_valid"
+              ],
+              "scientific_conclusion": null,
+              "expert_review": "pending"
+            },
+            "resources": {
+              "unit": "mock_resource_unit",
+              "per_run": 4,
+              "planned_total": 192,
+              "measured_hardware_cost": null
+            },
+            "execution_authorized": false
+          },
+          "permissions": {
+            "inspect_mock": true,
+            "design": true,
+            "run_mock_job": true,
+            "real_execution": false
+          },
+          "budget": {
+            "remaining_mock_units": 239,
+            "max_decisions": 24
+          },
+          "job": {
+            "status": "not_queried",
+            "matched_current_plan": null
+          },
+          "history": [
+            {
+              "action": "inspect_mock",
+              "feedback": "Synthetic metadata only; sealed outcome values are not returned"
+            },
+            {
+              "action": "propose_design",
+              "feedback": "Intentionally flawed candidate retained as a negative example"
+            },
+            {
+              "action": "check_design_mock",
+              "feedback": "Scripted mock verifier detects the deliberately injected defect"
+            }
+          ],
+          "action_mask": {
+            "ask": true,
+            "inspect_mock": true,
+            "propose_design": true,
+            "check_design_mock": true,
+            "revise_design": true,
+            "reconcile_job_mock": true,
+            "resume_job_mock": false,
+            "stop_with_evidence": true,
+            "submit_for_review": true
+          }
+        },
+        "observation_hash": "b1ce1c7a32982562335f1d89323bac7fb2d22a0080a8435b2b3561a01b8e2de1",
+        "action": {
+          "name": "revise_design",
+          "arguments": {
+            "plan": {
+              "schema_version": "illustrative_experiment_plan_v1",
+              "revision": 2,
+              "research_question": "Estimate architecture and learning-rate effects on pressure prediction",
+              "design": "blocked_full_factorial_2x2",
+              "factors": [
+                {
+                  "name": "architecture",
+                  "levels": [
+                    "baseline_small",
+                    "candidate_small"
+                  ]
+                },
+                {
+                  "name": "learning_rate",
+                  "levels": [
+                    0.0001,
+                    0.0003
+                  ]
+                }
+              ],
+              "primary_contrast": "architecture_high_minus_low_averaged_over_learning_rate",
+              "analysis_terms": [
+                "architecture",
+                "learning_rate",
+                "architecture:learning_rate",
+                "data_realization_block"
+              ],
+              "experimental_unit": "One separately seeded model-training run within a data-realization block",
+              "blocks": {
+                "factor": "independent_synthetic_data_realization",
+                "count": 6
+              },
+              "replicates_per_cell_per_block": 2,
+              "planned_runs": 48,
+              "unit_response": "Mean relative L2 across the fixed test fields for this run; fields are not independent architecture replicates",
+              "randomization": {
+                "method": "allocate_independent_rng_streams_and_shuffle_within_block",
+                "seed": 21017
+              },
+              "analysis_assumptions": [
+                "independent_residuals_conditional_on_block",
+                "normal_homoscedastic_errors",
+                "additive_blocks"
+              ],
+              "assumptions_status": "synthetic_declared_not_verified",
+              "sample_size_basis": {
+                "method": "pending_real_pilot_then_power_or_precision_analysis",
+                "nominal_alpha": 0.05,
+                "target_power": 0.8,
+                "minimum_relevant_effect": 0.02,
+                "sigma": 0.02,
+                "numeric_inputs_source": "invented_for_schema_example_not_real_pilot",
+                "achieved_power": null
+              },
+              "training_validation_test": {
+                "fit_preprocessing": "train_only",
+                "select_checkpoint_and_hyperparameters": "validation_only",
+                "final_test": "after_plan_and_selection_lock_only",
+                "test_for_tuning": false
+              },
+              "acceptance": {
+                "design": [
+                  "unit_definition_and_source",
+                  "all_planned_cells",
+                  "interactions_and_blocks_in_analysis",
+                  "budget_and_plan_identity"
+                ],
+                "execution": [
+                  "record_assignment_and_deviations",
+                  "no_duplicate_job_launch",
+                  "current_plan_confirmation"
+                ],
+                "scientific": [
+                  "report_effect_and_interval",
+                  "practical_relevance_separate",
+                  "negative_results_are_valid"
+                ],
+                "scientific_conclusion": null,
+                "expert_review": "pending"
+              },
+              "resources": {
+                "unit": "mock_resource_unit",
+                "per_run": 4,
+                "planned_total": 192,
+                "measured_hardware_cost": null
+              },
+              "execution_authorized": false
+            },
+            "invalidate_previous_confirmation": true
+          }
+        },
+        "feedback": {
+          "source": "scripted_mock_feedback",
+          "message": "Repair current design and invalidate old confirmation; values remain synthetic planning inputs",
+          "blocking_codes": [],
+          "real_execution": false,
+          "scientific_metric": null
+        },
+        "next_observation": {
+          "user_messages": [
+            {
+              "role": "user",
+              "content": "请设计CViT架构×学习率的2×2实验，考虑交互、区组与验收，本次只设计。"
+            }
+          ],
+          "facts": {
+            "domain": "cvit",
+            "scientific_problem": "Darcy coefficient_field_to_pressure_field",
+            "target": "pressure_field",
+            "response_metric": "relative_l2",
+            "scope": "design_only",
+            "unit_basis": "Separate synthetic data realizations; training-run variability conditional on data for CViT",
+            "profile": {
+              "input": "coefficient_field",
+              "target": "pressure_field",
+              "partition_overlap": false,
+              "training_variance": "not_measured",
+              "real_data_read": false
+            }
+          },
+          "unknown": [],
+          "evidence": [
+            {
+              "id": "ev_3876b448b6cc",
+              "kind": "user_declaration",
+              "field": "initial_request",
+              "value": "请设计CViT架构×学习率的2×2实验，考虑交互、区组与验收，本次只设计。",
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_8a466bf4b890",
+              "kind": "user_declaration",
+              "field": "unit_basis",
+              "value": "Separate synthetic data realizations; training-run variability conditional on data for CViT",
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_28a075c410c1",
+              "kind": "mock_inspection",
+              "field": "profile",
+              "value": {
+                "input": "coefficient_field",
+                "target": "pressure_field",
+                "partition_overlap": false,
+                "training_variance": "not_measured",
+                "real_data_read": false
+              },
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_090404645b51",
+              "kind": "design_check_blocked",
+              "field": "draft_validation",
+              "value": {
+                "draft_hash": "b02afd9cd931d954f807ec9bc2767ac641ad857f4d56c7f05198e8c8368617d1",
+                "blocking_code": "missing_interaction"
+              },
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            }
+          ],
+          "draft": {
+            "schema_version": "illustrative_experiment_plan_v1",
+            "revision": 2,
+            "research_question": "Estimate architecture and learning-rate effects on pressure prediction",
+            "design": "blocked_full_factorial_2x2",
+            "factors": [
+              {
+                "name": "architecture",
+                "levels": [
+                  "baseline_small",
+                  "candidate_small"
+                ]
+              },
+              {
+                "name": "learning_rate",
+                "levels": [
+                  0.0001,
+                  0.0003
+                ]
+              }
+            ],
+            "primary_contrast": "architecture_high_minus_low_averaged_over_learning_rate",
+            "analysis_terms": [
+              "architecture",
+              "learning_rate",
+              "architecture:learning_rate",
+              "data_realization_block"
+            ],
+            "experimental_unit": "One separately seeded model-training run within a data-realization block",
+            "blocks": {
+              "factor": "independent_synthetic_data_realization",
+              "count": 6
+            },
+            "replicates_per_cell_per_block": 2,
+            "planned_runs": 48,
+            "unit_response": "Mean relative L2 across the fixed test fields for this run; fields are not independent architecture replicates",
+            "randomization": {
+              "method": "allocate_independent_rng_streams_and_shuffle_within_block",
+              "seed": 21017
+            },
+            "analysis_assumptions": [
+              "independent_residuals_conditional_on_block",
+              "normal_homoscedastic_errors",
+              "additive_blocks"
+            ],
+            "assumptions_status": "synthetic_declared_not_verified",
+            "sample_size_basis": {
+              "method": "pending_real_pilot_then_power_or_precision_analysis",
+              "nominal_alpha": 0.05,
+              "target_power": 0.8,
+              "minimum_relevant_effect": 0.02,
+              "sigma": 0.02,
+              "numeric_inputs_source": "invented_for_schema_example_not_real_pilot",
+              "achieved_power": null
+            },
+            "training_validation_test": {
+              "fit_preprocessing": "train_only",
+              "select_checkpoint_and_hyperparameters": "validation_only",
+              "final_test": "after_plan_and_selection_lock_only",
+              "test_for_tuning": false
+            },
+            "acceptance": {
+              "design": [
+                "unit_definition_and_source",
+                "all_planned_cells",
+                "interactions_and_blocks_in_analysis",
+                "budget_and_plan_identity"
+              ],
+              "execution": [
+                "record_assignment_and_deviations",
+                "no_duplicate_job_launch",
+                "current_plan_confirmation"
+              ],
+              "scientific": [
+                "report_effect_and_interval",
+                "practical_relevance_separate",
+                "negative_results_are_valid"
+              ],
+              "scientific_conclusion": null,
+              "expert_review": "pending"
+            },
+            "resources": {
+              "unit": "mock_resource_unit",
+              "per_run": 4,
+              "planned_total": 192,
+              "measured_hardware_cost": null
+            },
+            "execution_authorized": false
+          },
+          "permissions": {
+            "inspect_mock": true,
+            "design": true,
+            "run_mock_job": true,
+            "real_execution": false
+          },
+          "budget": {
+            "remaining_mock_units": 239,
+            "max_decisions": 24
+          },
+          "job": {
+            "status": "not_queried",
+            "matched_current_plan": null
+          },
+          "history": [
+            {
+              "action": "inspect_mock",
+              "feedback": "Synthetic metadata only; sealed outcome values are not returned"
+            },
+            {
+              "action": "propose_design",
+              "feedback": "Intentionally flawed candidate retained as a negative example"
+            },
+            {
+              "action": "check_design_mock",
+              "feedback": "Scripted mock verifier detects the deliberately injected defect"
+            },
+            {
+              "action": "revise_design",
+              "feedback": "Repair current design and invalidate old confirmation; values remain synthetic planning inputs"
+            }
+          ],
+          "action_mask": {
+            "ask": true,
+            "inspect_mock": true,
+            "propose_design": true,
+            "check_design_mock": true,
+            "revise_design": true,
+            "reconcile_job_mock": true,
+            "resume_job_mock": false,
+            "stop_with_evidence": true,
+            "submit_for_review": true
+          }
+        },
+        "next_observation_hash": "c5dde2b221bc014bdc0edaa7667023485492e3572fd856c3279bf41a123cdc29",
+        "reward": -0.02,
+        "terminated": false,
+        "truncated": false,
+        "behavior_log_probability": null,
+        "value_estimate": null,
+        "reference_action_is_recommended": true
+      },
+      {
+        "decision_index": 4,
+        "observation": {
+          "user_messages": [
+            {
+              "role": "user",
+              "content": "请设计CViT架构×学习率的2×2实验，考虑交互、区组与验收，本次只设计。"
+            }
+          ],
+          "facts": {
+            "domain": "cvit",
+            "scientific_problem": "Darcy coefficient_field_to_pressure_field",
+            "target": "pressure_field",
+            "response_metric": "relative_l2",
+            "scope": "design_only",
+            "unit_basis": "Separate synthetic data realizations; training-run variability conditional on data for CViT",
+            "profile": {
+              "input": "coefficient_field",
+              "target": "pressure_field",
+              "partition_overlap": false,
+              "training_variance": "not_measured",
+              "real_data_read": false
+            }
+          },
+          "unknown": [],
+          "evidence": [
+            {
+              "id": "ev_3876b448b6cc",
+              "kind": "user_declaration",
+              "field": "initial_request",
+              "value": "请设计CViT架构×学习率的2×2实验，考虑交互、区组与验收，本次只设计。",
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_8a466bf4b890",
+              "kind": "user_declaration",
+              "field": "unit_basis",
+              "value": "Separate synthetic data realizations; training-run variability conditional on data for CViT",
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_28a075c410c1",
+              "kind": "mock_inspection",
+              "field": "profile",
+              "value": {
+                "input": "coefficient_field",
+                "target": "pressure_field",
+                "partition_overlap": false,
+                "training_variance": "not_measured",
+                "real_data_read": false
+              },
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_090404645b51",
+              "kind": "design_check_blocked",
+              "field": "draft_validation",
+              "value": {
+                "draft_hash": "b02afd9cd931d954f807ec9bc2767ac641ad857f4d56c7f05198e8c8368617d1",
+                "blocking_code": "missing_interaction"
+              },
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            }
+          ],
+          "draft": {
+            "schema_version": "illustrative_experiment_plan_v1",
+            "revision": 2,
+            "research_question": "Estimate architecture and learning-rate effects on pressure prediction",
+            "design": "blocked_full_factorial_2x2",
+            "factors": [
+              {
+                "name": "architecture",
+                "levels": [
+                  "baseline_small",
+                  "candidate_small"
+                ]
+              },
+              {
+                "name": "learning_rate",
+                "levels": [
+                  0.0001,
+                  0.0003
+                ]
+              }
+            ],
+            "primary_contrast": "architecture_high_minus_low_averaged_over_learning_rate",
+            "analysis_terms": [
+              "architecture",
+              "learning_rate",
+              "architecture:learning_rate",
+              "data_realization_block"
+            ],
+            "experimental_unit": "One separately seeded model-training run within a data-realization block",
+            "blocks": {
+              "factor": "independent_synthetic_data_realization",
+              "count": 6
+            },
+            "replicates_per_cell_per_block": 2,
+            "planned_runs": 48,
+            "unit_response": "Mean relative L2 across the fixed test fields for this run; fields are not independent architecture replicates",
+            "randomization": {
+              "method": "allocate_independent_rng_streams_and_shuffle_within_block",
+              "seed": 21017
+            },
+            "analysis_assumptions": [
+              "independent_residuals_conditional_on_block",
+              "normal_homoscedastic_errors",
+              "additive_blocks"
+            ],
+            "assumptions_status": "synthetic_declared_not_verified",
+            "sample_size_basis": {
+              "method": "pending_real_pilot_then_power_or_precision_analysis",
+              "nominal_alpha": 0.05,
+              "target_power": 0.8,
+              "minimum_relevant_effect": 0.02,
+              "sigma": 0.02,
+              "numeric_inputs_source": "invented_for_schema_example_not_real_pilot",
+              "achieved_power": null
+            },
+            "training_validation_test": {
+              "fit_preprocessing": "train_only",
+              "select_checkpoint_and_hyperparameters": "validation_only",
+              "final_test": "after_plan_and_selection_lock_only",
+              "test_for_tuning": false
+            },
+            "acceptance": {
+              "design": [
+                "unit_definition_and_source",
+                "all_planned_cells",
+                "interactions_and_blocks_in_analysis",
+                "budget_and_plan_identity"
+              ],
+              "execution": [
+                "record_assignment_and_deviations",
+                "no_duplicate_job_launch",
+                "current_plan_confirmation"
+              ],
+              "scientific": [
+                "report_effect_and_interval",
+                "practical_relevance_separate",
+                "negative_results_are_valid"
+              ],
+              "scientific_conclusion": null,
+              "expert_review": "pending"
+            },
+            "resources": {
+              "unit": "mock_resource_unit",
+              "per_run": 4,
+              "planned_total": 192,
+              "measured_hardware_cost": null
+            },
+            "execution_authorized": false
+          },
+          "permissions": {
+            "inspect_mock": true,
+            "design": true,
+            "run_mock_job": true,
+            "real_execution": false
+          },
+          "budget": {
+            "remaining_mock_units": 239,
+            "max_decisions": 24
+          },
+          "job": {
+            "status": "not_queried",
+            "matched_current_plan": null
+          },
+          "history": [
+            {
+              "action": "inspect_mock",
+              "feedback": "Synthetic metadata only; sealed outcome values are not returned"
+            },
+            {
+              "action": "propose_design",
+              "feedback": "Intentionally flawed candidate retained as a negative example"
+            },
+            {
+              "action": "check_design_mock",
+              "feedback": "Scripted mock verifier detects the deliberately injected defect"
+            },
+            {
+              "action": "revise_design",
+              "feedback": "Repair current design and invalidate old confirmation; values remain synthetic planning inputs"
+            }
+          ],
+          "action_mask": {
+            "ask": true,
+            "inspect_mock": true,
+            "propose_design": true,
+            "check_design_mock": true,
+            "revise_design": true,
+            "reconcile_job_mock": true,
+            "resume_job_mock": false,
+            "stop_with_evidence": true,
+            "submit_for_review": true
+          }
+        },
+        "observation_hash": "c5dde2b221bc014bdc0edaa7667023485492e3572fd856c3279bf41a123cdc29",
+        "action": {
+          "name": "check_design_mock",
+          "arguments": {
+            "draft_hash": "56834d7684765d5b5cd5d554281c02c0c0a96b2ea0e806f8b51099ab513d3143"
+          }
+        },
+        "feedback": {
+          "source": "scripted_mock_feedback",
+          "message": "Mock protocol check passes; actual DOE validation, power calculation and expert review remain required",
+          "blocking_codes": [],
+          "real_execution": false,
+          "scientific_metric": null
+        },
+        "next_observation": {
+          "user_messages": [
+            {
+              "role": "user",
+              "content": "请设计CViT架构×学习率的2×2实验，考虑交互、区组与验收，本次只设计。"
+            }
+          ],
+          "facts": {
+            "domain": "cvit",
+            "scientific_problem": "Darcy coefficient_field_to_pressure_field",
+            "target": "pressure_field",
+            "response_metric": "relative_l2",
+            "scope": "design_only",
+            "unit_basis": "Separate synthetic data realizations; training-run variability conditional on data for CViT",
+            "profile": {
+              "input": "coefficient_field",
+              "target": "pressure_field",
+              "partition_overlap": false,
+              "training_variance": "not_measured",
+              "real_data_read": false
+            }
+          },
+          "unknown": [],
+          "evidence": [
+            {
+              "id": "ev_3876b448b6cc",
+              "kind": "user_declaration",
+              "field": "initial_request",
+              "value": "请设计CViT架构×学习率的2×2实验，考虑交互、区组与验收，本次只设计。",
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_8a466bf4b890",
+              "kind": "user_declaration",
+              "field": "unit_basis",
+              "value": "Separate synthetic data realizations; training-run variability conditional on data for CViT",
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_28a075c410c1",
+              "kind": "mock_inspection",
+              "field": "profile",
+              "value": {
+                "input": "coefficient_field",
+                "target": "pressure_field",
+                "partition_overlap": false,
+                "training_variance": "not_measured",
+                "real_data_read": false
+              },
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_090404645b51",
+              "kind": "design_check_blocked",
+              "field": "draft_validation",
+              "value": {
+                "draft_hash": "b02afd9cd931d954f807ec9bc2767ac641ad857f4d56c7f05198e8c8368617d1",
+                "blocking_code": "missing_interaction"
+              },
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_acf99528ed7c",
+              "kind": "design_check_passed",
+              "field": "draft_validation",
+              "value": {
+                "draft_hash": "56834d7684765d5b5cd5d554281c02c0c0a96b2ea0e806f8b51099ab513d3143",
+                "status": "illustrative_protocol_check_passed",
+                "real_assumptions_verified": false,
+                "power_computed": false,
+                "expert_review": "pending"
+              },
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            }
+          ],
+          "draft": {
+            "schema_version": "illustrative_experiment_plan_v1",
+            "revision": 2,
+            "research_question": "Estimate architecture and learning-rate effects on pressure prediction",
+            "design": "blocked_full_factorial_2x2",
+            "factors": [
+              {
+                "name": "architecture",
+                "levels": [
+                  "baseline_small",
+                  "candidate_small"
+                ]
+              },
+              {
+                "name": "learning_rate",
+                "levels": [
+                  0.0001,
+                  0.0003
+                ]
+              }
+            ],
+            "primary_contrast": "architecture_high_minus_low_averaged_over_learning_rate",
+            "analysis_terms": [
+              "architecture",
+              "learning_rate",
+              "architecture:learning_rate",
+              "data_realization_block"
+            ],
+            "experimental_unit": "One separately seeded model-training run within a data-realization block",
+            "blocks": {
+              "factor": "independent_synthetic_data_realization",
+              "count": 6
+            },
+            "replicates_per_cell_per_block": 2,
+            "planned_runs": 48,
+            "unit_response": "Mean relative L2 across the fixed test fields for this run; fields are not independent architecture replicates",
+            "randomization": {
+              "method": "allocate_independent_rng_streams_and_shuffle_within_block",
+              "seed": 21017
+            },
+            "analysis_assumptions": [
+              "independent_residuals_conditional_on_block",
+              "normal_homoscedastic_errors",
+              "additive_blocks"
+            ],
+            "assumptions_status": "synthetic_declared_not_verified",
+            "sample_size_basis": {
+              "method": "pending_real_pilot_then_power_or_precision_analysis",
+              "nominal_alpha": 0.05,
+              "target_power": 0.8,
+              "minimum_relevant_effect": 0.02,
+              "sigma": 0.02,
+              "numeric_inputs_source": "invented_for_schema_example_not_real_pilot",
+              "achieved_power": null
+            },
+            "training_validation_test": {
+              "fit_preprocessing": "train_only",
+              "select_checkpoint_and_hyperparameters": "validation_only",
+              "final_test": "after_plan_and_selection_lock_only",
+              "test_for_tuning": false
+            },
+            "acceptance": {
+              "design": [
+                "unit_definition_and_source",
+                "all_planned_cells",
+                "interactions_and_blocks_in_analysis",
+                "budget_and_plan_identity"
+              ],
+              "execution": [
+                "record_assignment_and_deviations",
+                "no_duplicate_job_launch",
+                "current_plan_confirmation"
+              ],
+              "scientific": [
+                "report_effect_and_interval",
+                "practical_relevance_separate",
+                "negative_results_are_valid"
+              ],
+              "scientific_conclusion": null,
+              "expert_review": "pending"
+            },
+            "resources": {
+              "unit": "mock_resource_unit",
+              "per_run": 4,
+              "planned_total": 192,
+              "measured_hardware_cost": null
+            },
+            "execution_authorized": false
+          },
+          "permissions": {
+            "inspect_mock": true,
+            "design": true,
+            "run_mock_job": true,
+            "real_execution": false
+          },
+          "budget": {
+            "remaining_mock_units": 239,
+            "max_decisions": 24
+          },
+          "job": {
+            "status": "not_queried",
+            "matched_current_plan": null
+          },
+          "history": [
+            {
+              "action": "inspect_mock",
+              "feedback": "Synthetic metadata only; sealed outcome values are not returned"
+            },
+            {
+              "action": "propose_design",
+              "feedback": "Intentionally flawed candidate retained as a negative example"
+            },
+            {
+              "action": "check_design_mock",
+              "feedback": "Scripted mock verifier detects the deliberately injected defect"
+            },
+            {
+              "action": "revise_design",
+              "feedback": "Repair current design and invalidate old confirmation; values remain synthetic planning inputs"
+            },
+            {
+              "action": "check_design_mock",
+              "feedback": "Mock protocol check passes; actual DOE validation, power calculation and expert review remain required"
+            }
+          ],
+          "action_mask": {
+            "ask": true,
+            "inspect_mock": true,
+            "propose_design": true,
+            "check_design_mock": true,
+            "revise_design": true,
+            "reconcile_job_mock": true,
+            "resume_job_mock": false,
+            "stop_with_evidence": true,
+            "submit_for_review": true
+          }
+        },
+        "next_observation_hash": "6f78f130bfe06a806a2c4afe1da54a6c1d381dbca8ce23cfe461265fd2d28dff",
+        "reward": 0.08,
+        "terminated": false,
+        "truncated": false,
+        "behavior_log_probability": null,
+        "value_estimate": null,
+        "reference_action_is_recommended": true
+      },
+      {
+        "decision_index": 5,
+        "observation": {
+          "user_messages": [
+            {
+              "role": "user",
+              "content": "请设计CViT架构×学习率的2×2实验，考虑交互、区组与验收，本次只设计。"
+            }
+          ],
+          "facts": {
+            "domain": "cvit",
+            "scientific_problem": "Darcy coefficient_field_to_pressure_field",
+            "target": "pressure_field",
+            "response_metric": "relative_l2",
+            "scope": "design_only",
+            "unit_basis": "Separate synthetic data realizations; training-run variability conditional on data for CViT",
+            "profile": {
+              "input": "coefficient_field",
+              "target": "pressure_field",
+              "partition_overlap": false,
+              "training_variance": "not_measured",
+              "real_data_read": false
+            }
+          },
+          "unknown": [],
+          "evidence": [
+            {
+              "id": "ev_3876b448b6cc",
+              "kind": "user_declaration",
+              "field": "initial_request",
+              "value": "请设计CViT架构×学习率的2×2实验，考虑交互、区组与验收，本次只设计。",
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_8a466bf4b890",
+              "kind": "user_declaration",
+              "field": "unit_basis",
+              "value": "Separate synthetic data realizations; training-run variability conditional on data for CViT",
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_28a075c410c1",
+              "kind": "mock_inspection",
+              "field": "profile",
+              "value": {
+                "input": "coefficient_field",
+                "target": "pressure_field",
+                "partition_overlap": false,
+                "training_variance": "not_measured",
+                "real_data_read": false
+              },
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_090404645b51",
+              "kind": "design_check_blocked",
+              "field": "draft_validation",
+              "value": {
+                "draft_hash": "b02afd9cd931d954f807ec9bc2767ac641ad857f4d56c7f05198e8c8368617d1",
+                "blocking_code": "missing_interaction"
+              },
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_acf99528ed7c",
+              "kind": "design_check_passed",
+              "field": "draft_validation",
+              "value": {
+                "draft_hash": "56834d7684765d5b5cd5d554281c02c0c0a96b2ea0e806f8b51099ab513d3143",
+                "status": "illustrative_protocol_check_passed",
+                "real_assumptions_verified": false,
+                "power_computed": false,
+                "expert_review": "pending"
+              },
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            }
+          ],
+          "draft": {
+            "schema_version": "illustrative_experiment_plan_v1",
+            "revision": 2,
+            "research_question": "Estimate architecture and learning-rate effects on pressure prediction",
+            "design": "blocked_full_factorial_2x2",
+            "factors": [
+              {
+                "name": "architecture",
+                "levels": [
+                  "baseline_small",
+                  "candidate_small"
+                ]
+              },
+              {
+                "name": "learning_rate",
+                "levels": [
+                  0.0001,
+                  0.0003
+                ]
+              }
+            ],
+            "primary_contrast": "architecture_high_minus_low_averaged_over_learning_rate",
+            "analysis_terms": [
+              "architecture",
+              "learning_rate",
+              "architecture:learning_rate",
+              "data_realization_block"
+            ],
+            "experimental_unit": "One separately seeded model-training run within a data-realization block",
+            "blocks": {
+              "factor": "independent_synthetic_data_realization",
+              "count": 6
+            },
+            "replicates_per_cell_per_block": 2,
+            "planned_runs": 48,
+            "unit_response": "Mean relative L2 across the fixed test fields for this run; fields are not independent architecture replicates",
+            "randomization": {
+              "method": "allocate_independent_rng_streams_and_shuffle_within_block",
+              "seed": 21017
+            },
+            "analysis_assumptions": [
+              "independent_residuals_conditional_on_block",
+              "normal_homoscedastic_errors",
+              "additive_blocks"
+            ],
+            "assumptions_status": "synthetic_declared_not_verified",
+            "sample_size_basis": {
+              "method": "pending_real_pilot_then_power_or_precision_analysis",
+              "nominal_alpha": 0.05,
+              "target_power": 0.8,
+              "minimum_relevant_effect": 0.02,
+              "sigma": 0.02,
+              "numeric_inputs_source": "invented_for_schema_example_not_real_pilot",
+              "achieved_power": null
+            },
+            "training_validation_test": {
+              "fit_preprocessing": "train_only",
+              "select_checkpoint_and_hyperparameters": "validation_only",
+              "final_test": "after_plan_and_selection_lock_only",
+              "test_for_tuning": false
+            },
+            "acceptance": {
+              "design": [
+                "unit_definition_and_source",
+                "all_planned_cells",
+                "interactions_and_blocks_in_analysis",
+                "budget_and_plan_identity"
+              ],
+              "execution": [
+                "record_assignment_and_deviations",
+                "no_duplicate_job_launch",
+                "current_plan_confirmation"
+              ],
+              "scientific": [
+                "report_effect_and_interval",
+                "practical_relevance_separate",
+                "negative_results_are_valid"
+              ],
+              "scientific_conclusion": null,
+              "expert_review": "pending"
+            },
+            "resources": {
+              "unit": "mock_resource_unit",
+              "per_run": 4,
+              "planned_total": 192,
+              "measured_hardware_cost": null
+            },
+            "execution_authorized": false
+          },
+          "permissions": {
+            "inspect_mock": true,
+            "design": true,
+            "run_mock_job": true,
+            "real_execution": false
+          },
+          "budget": {
+            "remaining_mock_units": 239,
+            "max_decisions": 24
+          },
+          "job": {
+            "status": "not_queried",
+            "matched_current_plan": null
+          },
+          "history": [
+            {
+              "action": "inspect_mock",
+              "feedback": "Synthetic metadata only; sealed outcome values are not returned"
+            },
+            {
+              "action": "propose_design",
+              "feedback": "Intentionally flawed candidate retained as a negative example"
+            },
+            {
+              "action": "check_design_mock",
+              "feedback": "Scripted mock verifier detects the deliberately injected defect"
+            },
+            {
+              "action": "revise_design",
+              "feedback": "Repair current design and invalidate old confirmation; values remain synthetic planning inputs"
+            },
+            {
+              "action": "check_design_mock",
+              "feedback": "Mock protocol check passes; actual DOE validation, power calculation and expert review remain required"
+            }
+          ],
+          "action_mask": {
+            "ask": true,
+            "inspect_mock": true,
+            "propose_design": true,
+            "check_design_mock": true,
+            "revise_design": true,
+            "reconcile_job_mock": true,
+            "resume_job_mock": false,
+            "stop_with_evidence": true,
+            "submit_for_review": true
+          }
+        },
+        "observation_hash": "6f78f130bfe06a806a2c4afe1da54a6c1d381dbca8ce23cfe461265fd2d28dff",
+        "action": {
+          "name": "submit_for_review",
+          "arguments": {
+            "draft_hash": "56834d7684765d5b5cd5d554281c02c0c0a96b2ea0e806f8b51099ab513d3143",
+            "execute": false
+          }
+        },
+        "feedback": {
+          "source": "scripted_mock_feedback",
+          "message": "Ready for review in this toy environment; scientific conclusion=null",
+          "blocking_codes": [],
+          "real_execution": false,
+          "scientific_metric": null
+        },
+        "next_observation": {
+          "user_messages": [
+            {
+              "role": "user",
+              "content": "请设计CViT架构×学习率的2×2实验，考虑交互、区组与验收，本次只设计。"
+            }
+          ],
+          "facts": {
+            "domain": "cvit",
+            "scientific_problem": "Darcy coefficient_field_to_pressure_field",
+            "target": "pressure_field",
+            "response_metric": "relative_l2",
+            "scope": "design_only",
+            "unit_basis": "Separate synthetic data realizations; training-run variability conditional on data for CViT",
+            "profile": {
+              "input": "coefficient_field",
+              "target": "pressure_field",
+              "partition_overlap": false,
+              "training_variance": "not_measured",
+              "real_data_read": false
+            }
+          },
+          "unknown": [],
+          "evidence": [
+            {
+              "id": "ev_3876b448b6cc",
+              "kind": "user_declaration",
+              "field": "initial_request",
+              "value": "请设计CViT架构×学习率的2×2实验，考虑交互、区组与验收，本次只设计。",
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_8a466bf4b890",
+              "kind": "user_declaration",
+              "field": "unit_basis",
+              "value": "Separate synthetic data realizations; training-run variability conditional on data for CViT",
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_28a075c410c1",
+              "kind": "mock_inspection",
+              "field": "profile",
+              "value": {
+                "input": "coefficient_field",
+                "target": "pressure_field",
+                "partition_overlap": false,
+                "training_variance": "not_measured",
+                "real_data_read": false
+              },
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_090404645b51",
+              "kind": "design_check_blocked",
+              "field": "draft_validation",
+              "value": {
+                "draft_hash": "b02afd9cd931d954f807ec9bc2767ac641ad857f4d56c7f05198e8c8368617d1",
+                "blocking_code": "missing_interaction"
+              },
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            },
+            {
+              "id": "ev_acf99528ed7c",
+              "kind": "design_check_passed",
+              "field": "draft_validation",
+              "value": {
+                "draft_hash": "56834d7684765d5b5cd5d554281c02c0c0a96b2ea0e806f8b51099ab513d3143",
+                "status": "illustrative_protocol_check_passed",
+                "real_assumptions_verified": false,
+                "power_computed": false,
+                "expert_review": "pending"
+              },
+              "source": "synthetic_user_or_mock_fixture",
+              "real_world_verified": false
+            }
+          ],
+          "draft": {
+            "schema_version": "illustrative_experiment_plan_v1",
+            "revision": 2,
+            "research_question": "Estimate architecture and learning-rate effects on pressure prediction",
+            "design": "blocked_full_factorial_2x2",
+            "factors": [
+              {
+                "name": "architecture",
+                "levels": [
+                  "baseline_small",
+                  "candidate_small"
+                ]
+              },
+              {
+                "name": "learning_rate",
+                "levels": [
+                  0.0001,
+                  0.0003
+                ]
+              }
+            ],
+            "primary_contrast": "architecture_high_minus_low_averaged_over_learning_rate",
+            "analysis_terms": [
+              "architecture",
+              "learning_rate",
+              "architecture:learning_rate",
+              "data_realization_block"
+            ],
+            "experimental_unit": "One separately seeded model-training run within a data-realization block",
+            "blocks": {
+              "factor": "independent_synthetic_data_realization",
+              "count": 6
+            },
+            "replicates_per_cell_per_block": 2,
+            "planned_runs": 48,
+            "unit_response": "Mean relative L2 across the fixed test fields for this run; fields are not independent architecture replicates",
+            "randomization": {
+              "method": "allocate_independent_rng_streams_and_shuffle_within_block",
+              "seed": 21017
+            },
+            "analysis_assumptions": [
+              "independent_residuals_conditional_on_block",
+              "normal_homoscedastic_errors",
+              "additive_blocks"
+            ],
+            "assumptions_status": "synthetic_declared_not_verified",
+            "sample_size_basis": {
+              "method": "pending_real_pilot_then_power_or_precision_analysis",
+              "nominal_alpha": 0.05,
+              "target_power": 0.8,
+              "minimum_relevant_effect": 0.02,
+              "sigma": 0.02,
+              "numeric_inputs_source": "invented_for_schema_example_not_real_pilot",
+              "achieved_power": null
+            },
+            "training_validation_test": {
+              "fit_preprocessing": "train_only",
+              "select_checkpoint_and_hyperparameters": "validation_only",
+              "final_test": "after_plan_and_selection_lock_only",
+              "test_for_tuning": false
+            },
+            "acceptance": {
+              "design": [
+                "unit_definition_and_source",
+                "all_planned_cells",
+                "interactions_and_blocks_in_analysis",
+                "budget_and_plan_identity"
+              ],
+              "execution": [
+                "record_assignment_and_deviations",
+                "no_duplicate_job_launch",
+                "current_plan_confirmation"
+              ],
+              "scientific": [
+                "report_effect_and_interval",
+                "practical_relevance_separate",
+                "negative_results_are_valid"
+              ],
+              "scientific_conclusion": null,
+              "expert_review": "pending"
+            },
+            "resources": {
+              "unit": "mock_resource_unit",
+              "per_run": 4,
+              "planned_total": 192,
+              "measured_hardware_cost": null
+            },
+            "execution_authorized": false
+          },
+          "permissions": {
+            "inspect_mock": true,
+            "design": true,
+            "run_mock_job": true,
+            "real_execution": false
+          },
+          "budget": {
+            "remaining_mock_units": 239,
+            "max_decisions": 24
+          },
+          "job": {
+            "status": "not_queried",
+            "matched_current_plan": null
+          },
+          "history": [
+            {
+              "action": "inspect_mock",
+              "feedback": "Synthetic metadata only; sealed outcome values are not returned"
+            },
+            {
+              "action": "propose_design",
+              "feedback": "Intentionally flawed candidate retained as a negative example"
+            },
+            {
+              "action": "check_design_mock",
+              "feedback": "Scripted mock verifier detects the deliberately injected defect"
+            },
+            {
+              "action": "revise_design",
+              "feedback": "Repair current design and invalidate old confirmation; values remain synthetic planning inputs"
+            },
+            {
+              "action": "check_design_mock",
+              "feedback": "Mock protocol check passes; actual DOE validation, power calculation and expert review remain required"
+            },
+            {
+              "action": "submit_for_review",
+              "feedback": "Ready for review in this toy environment; scientific conclusion=null"
+            }
+          ],
+          "action_mask": {
+            "ask": false,
+            "inspect_mock": false,
+            "propose_design": false,
+            "check_design_mock": false,
+            "revise_design": false,
+            "reconcile_job_mock": false,
+            "resume_job_mock": false,
+            "stop_with_evidence": false,
+            "submit_for_review": false
+          }
+        },
+        "next_observation_hash": "4695938481a1c5aad2af3078381b439cd49eb637e4c4ed622e8cb91d47336b4e",
+        "reward": 9.98,
+        "terminated": true,
+        "truncated": false,
+        "behavior_log_probability": null,
+        "value_estimate": null,
+        "reference_action_is_recommended": true
+      }
+    ],
+    "expert_review": "pending",
+    "real_tool_executions": 0,
+    "scientific_outcome": null
+  }
+}

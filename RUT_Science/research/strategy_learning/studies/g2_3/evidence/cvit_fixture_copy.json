@@ -1,0 +1,6 @@
+{
+  "source": "cvit_mock/fixtures/configurations.json",
+  "copy": "cvit_mock/test_copies/configurations.json",
+  "sha256": "b75ca937985debaf583a79c37e93af14fed61d272d5fb80ab2266897e246a5fd",
+  "matches": true
+}

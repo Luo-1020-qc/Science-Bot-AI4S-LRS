@@ -1,0 +1,69 @@
+{
+  "version": "research_online_entry_acceptance_v1",
+  "date": "2026-10-27",
+  "passed": true,
+  "session": "acceptance_sessions\\5bcf6a91a9964eabb0016e788c99a5f6",
+  "backend": "api",
+  "model_requests_used": 0,
+  "resources": {
+    "llm_requests": 0,
+    "llm_tokens": 0,
+    "tool_attempts": 6,
+    "limits": {
+      "llm_requests": 12,
+      "llm_tokens": 60000,
+      "tool_calls": 12,
+      "read_bytes": 24000
+    }
+  },
+  "commands": [
+    {
+      "command": "/research",
+      "intent": "research",
+      "result_ref": null,
+      "execution_authorized": false
+    },
+    {
+      "command": "/doe demo",
+      "intent": "research",
+      "result_ref": "research/3359dc9d4b90cfff/result.json",
+      "execution_authorized": false
+    },
+    {
+      "command": "/research simulate g2_2 --policy bc --seed 37",
+      "intent": "research",
+      "result_ref": "research/a46beedebc220c70/result.json",
+      "execution_authorized": false
+    },
+    {
+      "command": "/research compare g2_3 --seed 37",
+      "intent": "research",
+      "result_ref": "research/2b368c063858be43/result.json",
+      "execution_authorized": false
+    },
+    {
+      "command": "/research results g2_3",
+      "intent": "research",
+      "result_ref": "research/5c307c9f8b735ff4/result.json",
+      "execution_authorized": false
+    },
+    {
+      "command": "/doe recheck",
+      "intent": "research",
+      "result_ref": "research/2c62236ef9ed74cf/result.json",
+      "execution_authorized": false
+    },
+    {
+      "command": "/doe review-export",
+      "intent": "research",
+      "result_ref": "research/7bdc87e7fb1b5c35/result.json",
+      "execution_authorized": false
+    }
+  ],
+  "restore_and_replay_no_extra_spend": true,
+  "confirm_and_resume_blocked": true,
+  "doe_result_survives_study_switch": true,
+  "real_tool_executions": 0,
+  "real_gpu_jobs": 0,
+  "formal_training_transitions": 0
+}

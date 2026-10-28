@@ -1,0 +1,11 @@
+{
+  "role": "llm_selector_v1",
+  "response": {
+    "schema_version": "action_selection_v1",
+    "observation_ref": "obs_000000",
+    "action_id": "ridge_half_5_1",
+    "evidence_refs": [],
+    "reason": "No experiments observed yet; incumbent null. Start with a low-cost half-fidelity ridge (cost 2) using the larger feature grid and moderate alpha to probe model quality before committing to full-fidelity runs."
+  },
+  "response_hash": "1dcbeab7789f19649a049afced3be7c35a22398b0eeb389532c9652c320bbdcb"
+}

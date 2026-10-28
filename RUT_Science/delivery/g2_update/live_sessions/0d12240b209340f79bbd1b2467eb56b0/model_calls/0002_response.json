@@ -1,0 +1,34 @@
+{
+  "request_index": 2,
+  "role": "tabular_planner",
+  "model": "deepseek-flash",
+  "response": {
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_00_lv6w82ixqrRJpnB0U1ZZ7425",
+        "name": "prepare_tabular_experiment",
+        "arguments": {
+          "data_path": "two_groups.csv",
+          "research_question": "A组与B组的平均y是否不同（独立两组Welch比较）",
+          "design": "independent",
+          "response": "y",
+          "unit": "id",
+          "factor": "group",
+          "levels": [
+            "A",
+            "B"
+          ],
+          "provenance": "synthetic",
+          "sampling_note": "全部现有合成样本，仅作探索性演示；未进行事先功效计算。",
+          "randomization_note": "未提供随机化说明；数据为合成数据，组别分配非随机化设计，仅作探索性演示。",
+          "alpha": 0.05,
+          "seed": 42,
+          "missing_policy": "reject"
+        }
+      }
+    ],
+    "actual_model": "deepseek-flash"
+  },
+  "response_hash": "719ee9def2675c7968da0daebe716e77422ad3929867e1bb76ebf3b00acf8d3d"
+}

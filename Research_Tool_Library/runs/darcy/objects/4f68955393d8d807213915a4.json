@@ -1,0 +1,22 @@
+{
+  "ref": "4f68955393d8d807213915a4cfa3cee1cb76d579926d5386f959b8161342ca43",
+  "kind": "alignment",
+  "data": {
+    "claim_ref": "e9a0d5b5be5470fb9013537d5cc5939a455d847f0c8146c098116e0a5abb02d4",
+    "plan_ref": "d8200038c8cb82df97991bda89261ffa3e6b036d5f4f7ff663831ca74df64c5a",
+    "checks": {
+      "same_project": true,
+      "response_matches": true,
+      "contrast_matches": true,
+      "direction_matches": true,
+      "factor_levels_match": true,
+      "unit_definition_matches": true,
+      "scope_bounded": true,
+      "inference_protocol_supported": true
+    },
+    "can_test_conditionally": true,
+    "claim_supported": null,
+    "real_world_assumptions_verified": false,
+    "note": "Alignment checks do not prove independent units, causal identification or broad-domain generalization"
+  }
+}

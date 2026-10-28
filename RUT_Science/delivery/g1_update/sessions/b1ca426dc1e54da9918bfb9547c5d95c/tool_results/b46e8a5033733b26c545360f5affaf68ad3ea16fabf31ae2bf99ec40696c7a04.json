@@ -1,0 +1,21 @@
+{
+  "spec": {
+    "dataset": "generated",
+    "task_seed": 11,
+    "group": 0,
+    "split": "demo",
+    "quality_threshold": 0.2,
+    "compute_units": 6,
+    "tool_attempts": 12,
+    "decision_steps": 16,
+    "llm_requests": 8,
+    "llm_tokens": 60000,
+    "active_seconds": 600,
+    "fault_rate": 0.0,
+    "schema_version": "budgeted_research_v1"
+  },
+  "draft_hash": "c9b56fbf9945aeaeb9de6ced20e7f8efa754a4d79175e5dc28666212b6ff2cb2",
+  "experiment_ref": "experiments/847510be34594de0bdde0ccb6b5d7129",
+  "requires_confirmation": true,
+  "evidence_ref": "tool_b2eaa3406d6f6006"
+}

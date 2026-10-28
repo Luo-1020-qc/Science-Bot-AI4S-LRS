@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-27",
+  "results": [
+    {
+      "study": "g2_2",
+      "action": "verify",
+      "exit_code": 0
+    },
+    {
+      "study": "g2_3",
+      "action": "verify",
+      "exit_code": 0
+    },
+    {
+      "study": "g2_4",
+      "action": "verify",
+      "exit_code": 0
+    }
+  ],
+  "no_training_requested": true,
+  "no_real_tools_requested": true
+}

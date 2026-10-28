@@ -1,0 +1,41 @@
+{
+  "cases": {
+    "independent": {
+      "session": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\delivery\\g2_update\\offline_sessions\\fa42e20f24e34a17afec161bf258c7e9",
+      "fresh_no_environment": true,
+      "paused_then_new_process_completed": true,
+      "metric_recomputes": true,
+      "p_value": 0.00258848929234127,
+      "mean_difference": -3.27356713205425,
+      "completed_run_did_not_spend_again": true,
+      "model_requests": 0,
+      "tool_attempts": 4
+    },
+    "paired": {
+      "session": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\delivery\\g2_update\\offline_sessions\\3b579e9a59ab4cedb9ef4e6437d6b174",
+      "fresh_no_environment": true,
+      "paused_then_new_process_completed": true,
+      "metric_recomputes": true,
+      "p_value": 0.004010810606680008,
+      "mean_difference": -1.5454934138640486,
+      "completed_run_did_not_spend_again": true,
+      "model_requests": 0,
+      "tool_attempts": 4
+    },
+    "prediction": {
+      "session": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\delivery\\g2_update\\offline_sessions\\8fbb01221aa5440e87d6960076f4a4a6",
+      "fresh_no_environment": true,
+      "paused_then_new_process_completed": true,
+      "metric_recomputes": true,
+      "selection_recomputes": true,
+      "disjoint_partitions": true,
+      "test_evaluations": 1,
+      "test_mse": 0.07063582068357449,
+      "winner": "ols",
+      "completed_run_did_not_spend_again": true,
+      "model_requests": 0,
+      "tool_attempts": 7
+    }
+  },
+  "new_online_calls": 0
+}

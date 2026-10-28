@@ -1,0 +1,29 @@
+{
+  "id": "aa201085a22c4d94ba008bac64e78287",
+  "backend": "offline",
+  "planner": "rl",
+  "checkpoint": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\models\\planner\\v1\\selected",
+  "model": "deepseek-flash",
+  "spec": {
+    "dataset": "generated",
+    "task_seed": 11,
+    "group": 0,
+    "split": "demo",
+    "quality_threshold": 0.2,
+    "compute_units": 6,
+    "tool_attempts": 12,
+    "decision_steps": 16,
+    "llm_requests": 12,
+    "llm_tokens": 60000,
+    "active_seconds": 600,
+    "fault_rate": 0.0,
+    "schema_version": "budgeted_research_v1"
+  },
+  "confirmed": "055782d8ef5f4cfefdab9b680481ea88eaf2eae719fd1c3225721bc6d7c4cf51",
+  "candidates_ready": true,
+  "messages": [],
+  "command_results": {},
+  "phase": "completed",
+  "error": null,
+  "policy_identity": "bb9ab7212bd86bd8a8b5393a9f5ac9f88414ea6b927607128d13bda1bb24780e"
+}

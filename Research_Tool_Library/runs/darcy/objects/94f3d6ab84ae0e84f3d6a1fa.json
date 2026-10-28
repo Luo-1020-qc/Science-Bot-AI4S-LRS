@@ -1,0 +1,24 @@
+{
+  "ref": "94f3d6ab84ae0e84f3d6a1fafd136497d29436a61db3d68292b37b4db02301f3",
+  "kind": "analysis",
+  "data": {
+    "job_ref": "3f32ec5a497205e251a1b7c695dcee098ee5c200aa3f0ffd8a5500253a038f2a",
+    "freeze_ref": "9f232d41b243aac368b89895ab23d60f09089bb37d9e3c5185718b463ace08d8",
+    "plan_ref": "d8200038c8cb82df97991bda89261ffa3e6b036d5f4f7ff663831ca74df64c5a",
+    "response": "relative_l2",
+    "primary_term": "predictor",
+    "effect": -0.061764951728018436,
+    "interval": [
+      -0.0737131298905185,
+      -0.04981677356551838
+    ],
+    "confidence": 0.95,
+    "df": 23,
+    "model_assumptions_verified": false,
+    "source_kind": "synthetic_mock",
+    "original_unit_count": 48,
+    "decision_rule": "prespecified_two_sided_ci",
+    "posthoc_model_selection": false,
+    "scientific_success": null
+  }
+}

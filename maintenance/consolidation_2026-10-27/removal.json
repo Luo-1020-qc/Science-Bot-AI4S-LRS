@@ -1,0 +1,10 @@
+﻿{
+    "date":  "2026-10-27",
+    "removed":  [
+                    "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_2_Test_Workspace",
+                    "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\G2_3_Test_Workspace"
+                ],
+    "migrated_original_files":  517,
+    "source_hashes_checked_immediately_before_removal":  true,
+    "passed":  true
+}

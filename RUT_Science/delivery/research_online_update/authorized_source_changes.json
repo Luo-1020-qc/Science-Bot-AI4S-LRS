@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-27",
+  "files": {
+    "RUT_Science/rut_science/science_bot/terminal.py": {
+      "sha256": "49c5663fa9ae13c7b25a12c6a5471f840def06a1a76e6c31952fe012bba1a50e",
+      "before_sha256": "8168c4d7de65cd64ab61630ccf4d60ecec1b977f9742daf42fc2e64a13fe3b9f",
+      "reason": "User authorized exposing all research interfaces through the existing local Agent; simulation and DOE only",
+      "original_backup": "source_before/RUT_Science/rut_science/science_bot/terminal.py"
+    },
+    "RUT_Science/rut_science/science_bot/general/contracts.py": {
+      "sha256": "95567b828dcb3837d37085c53d8b15c05be83bbe26be59a6c06981648740ffa3",
+      "before_sha256": "684ccd3dd17d62d97eedd198d081ebeeaa1c541cb5c72d8fcff556f97a5019a2",
+      "reason": "User authorized exposing all research interfaces through the existing local Agent; simulation and DOE only"
+    },
+    "RUT_Science/rut_science/science_bot/general/conversation.py": {
+      "sha256": "d4ed44b9ea8fedd29663378e86d26efdde0baa682423ef76cfa43418de75ff00",
+      "before_sha256": "aaaa3b6c9b58015114cae5d49f45048e994600596f334693a7bf240f9bb02a4f",
+      "reason": "User authorized exposing all research interfaces through the existing local Agent; simulation and DOE only",
+      "original_backup": "source_before/RUT_Science/rut_science/science_bot/general/conversation.py"
+    },
+    "RUT_Science/rut_science/science_bot/general/graph.py": {
+      "sha256": "579839825dcfbb1eb4bd01eed602bdd70d25a242d6625f43617dd905270e3d77",
+      "before_sha256": "c7692447d004fc40b388fdd89665062387e34404a8b5ee610e24cd8a90f9b6fa",
+      "reason": "User authorized exposing all research interfaces through the existing local Agent; simulation and DOE only",
+      "original_backup": "source_before/RUT_Science/rut_science/science_bot/general/graph.py"
+    },
+    "RUT_Science/rut_science/science_bot/general/registry.py": {
+      "sha256": "578c8511dac6083cc3e1fe3322e0e2ccd4946be930a2e6f4c74512d40bc97470",
+      "before_sha256": "dd33ff9dc9d44466134057ab30e657f188e574899555907fd9aad5da62720368",
+      "reason": "User authorized exposing all research interfaces through the existing local Agent; simulation and DOE only"
+    },
+    "RUT_Science/rut_science/science_bot/general/router.py": {
+      "sha256": "a4cd5925fa82ac45728f54caebd6fa91a32313bb05612cddd33a40fa4e1d10b6",
+      "before_sha256": "7ca2dda6fd505b166fda2e9f7b19e46cb35b0d26953bf406732a7b48e13e1f66",
+      "reason": "User authorized exposing all research interfaces through the existing local Agent; simulation and DOE only"
+    }
+  }
+}

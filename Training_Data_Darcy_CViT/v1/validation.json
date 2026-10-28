@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "tasks": 12,
+  "episodes": 12,
+  "steps": 61,
+  "bc_training_decisions": 35,
+  "policy_task_splits": {
+    "train": 8,
+    "development": 2,
+    "evaluation_example": 2
+  },
+  "pending_reviews": 12,
+  "human_expert_labels": 0,
+  "blind_heldout_tasks": 0,
+  "real_model_requests": 0,
+  "real_tool_executions": 0,
+  "real_cvit_jobs": 0,
+  "tests": 10,
+  "test_failures": 0,
+  "test_errors": 0
+}

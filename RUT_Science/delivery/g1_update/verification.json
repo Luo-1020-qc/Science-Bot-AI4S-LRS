@@ -1,0 +1,168 @@
+{
+  "schema_version": "science_bot_g1_delivery_v1",
+  "date": "2026-10-22",
+  "passed": true,
+  "checks": {
+    "full_regression": true,
+    "fresh_no_implicit_numeric": true,
+    "unknown_and_unsupported_no_numeric": true,
+    "offline_reads_have_real_source": true,
+    "both_datasets_restore_and_finish": true,
+    "old_session_compatible_without_rewriting": true,
+    "live_general_numeric_general_shared_history": true,
+    "live_native_tool_ids_match_results": true,
+    "live_file_citations_match_read_evidence": true,
+    "live_model_outputs_host_accepted": true,
+    "live_provider_requests_successful": true,
+    "live_numeric_report_retained": true,
+    "replay_cost_unchanged": true,
+    "real_terminal_commands_saved": true,
+    "default_existing_entry_is_general": true,
+    "no_new_zip": true,
+    "credential_absent_in_new_evidence": true
+  },
+  "tests": {
+    "run": 223,
+    "skipped": 2
+  },
+  "new_live_model_api_calls": 6,
+  "usage": {
+    "reported_prompt_tokens": 4114,
+    "reported_completion_tokens": 1917,
+    "accounted_tokens": 6031,
+    "monetary_cost": null
+  },
+  "live_session": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\delivery\\g1_update\\sessions\\b1ca426dc1e54da9918bfb9547c5d95c",
+  "numeric_report": {
+    "schema_version": "budgeted_report_v1",
+    "termination": "explicit_submit",
+    "selected": "ridge_full_5_10",
+    "complete": true,
+    "valid": true,
+    "quality_pass": true,
+    "scientific_success": true,
+    "sealed_error": 0.05678283862595852,
+    "threshold": 0.2,
+    "data_identity": "926a58301a00649094af2c4d5c5ff771624ab8a104f022fc5e0211c9c04b7400",
+    "provenance": {
+      "source": "controlled_generated_regression",
+      "root_group": 30000,
+      "split": "demo",
+      "instance": 11
+    },
+    "strict_execution": true,
+    "retries": 0,
+    "fixture_faults": false,
+    "search_validation_error": 0.046592746444219596,
+    "model_hash": "98c5905c73eb0c3378a5b8cc01a2e8f8430af4ca4c730191c5c352b005aafc0f",
+    "resources": {
+      "search_cu": 4.0,
+      "finalization_cu": 2,
+      "tool_attempts": 1,
+      "finalization_tools": 2,
+      "decisions": 2,
+      "llm_requests": 5,
+      "llm_tokens": 5691,
+      "active_seconds": 6.561574800000017
+    },
+    "evaluation_reads": 1
+  },
+  "weights_hash": "bb9ab7212bd86bd8a8b5393a9f5ac9f88414ea6b927607128d13bda1bb24780e",
+  "rl_retrained": false,
+  "offline": {
+    "fresh_no_numeric_environment": true,
+    "route_cases": {
+      "什么是区组设计？": {
+        "intent": "chat",
+        "no_numeric_environment": true
+      },
+      "未知任务abc": {
+        "intent": "clarify",
+        "no_numeric_environment": true
+      },
+      "运行 Darcy 预测温度场": {
+        "intent": "unsupported",
+        "no_numeric_environment": true
+      },
+      "在 generated 做分类实验": {
+        "intent": "unsupported",
+        "no_numeric_environment": true
+      },
+      "运行 generated 实验，预算6.5": {
+        "intent": "clarify",
+        "no_numeric_environment": true
+      },
+      "运行 Darcy，门槛-0.2": {
+        "intent": "clarify",
+        "no_numeric_environment": true
+      },
+      "用 CViT 训练当前模型": {
+        "intent": "unsupported",
+        "no_numeric_environment": true
+      },
+      "运行 Darcy 实验，alpha=0.1": {
+        "intent": "clarify",
+        "no_numeric_environment": true
+      },
+      "设计一个新实验": {
+        "intent": "design",
+        "no_numeric_environment": true
+      }
+    },
+    "offline_file_reference": "model.py:L1-L9#fca44705e94b",
+    "file_reference_matches_sha": true,
+    "model_requests_for_routing_and_local_read": 0,
+    "numeric": {
+      "generated": {
+        "session": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\delivery\\g1_update\\offline_sessions\\8106c2ffd4a04b399b35537785895df7",
+        "attempts_at_pause": 1,
+        "success": true,
+        "evaluation_reads": 1,
+        "repeat_run_did_not_repeat_experiment": true,
+        "model_requests": 0
+      },
+      "darcy": {
+        "session": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\delivery\\g1_update\\offline_sessions\\9ac87ba29bce4c9580bc54f9e450d8f1",
+        "attempts_at_pause": 1,
+        "success": true,
+        "evaluation_reads": 1,
+        "repeat_run_did_not_repeat_experiment": true,
+        "model_requests": 0
+      }
+    },
+    "legacy_snapshot_restores": true,
+    "legacy_snapshot_unchanged": true
+  },
+  "entry_point": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\science-bot.cmd",
+  "source_hashes": {
+    "RUT_Science/rut_science/science_bot/general/contracts.py": "337ad1e102f5c642c9774f166f026312307a9ca33017616ccd385806e3d930ab",
+    "RUT_Science/rut_science/science_bot/general/conversation.py": "4d83aebec7d4b10c6e005acbca4a5e6a52b12e7588ee8239fd2456b5b9160835",
+    "RUT_Science/rut_science/science_bot/general/graph.py": "cc0a35ea35e47789c04cfd480597793dc3a0e1a0d615ec7527acb7cd394c1276",
+    "RUT_Science/rut_science/science_bot/general/provider.py": "5cfaed544844ff7174c08acfbe42595c10528b099da16231a80201ac88c27755",
+    "RUT_Science/rut_science/science_bot/general/registry.py": "d59ac78d650f00f63c88a8e9b578335334752db1ff6c52c9cc154db76535336a",
+    "RUT_Science/rut_science/science_bot/general/router.py": "a85e67aa9a0b7bf0df3d7b524248d7887b696b07d7d2fd10a49c56561dcd860a",
+    "RUT_Science/rut_science/science_bot/general/__init__.py": "5e24adc2e8b007d77a39b5801e246b4adf469de7c1339c9c8e6a15a6f50ca295",
+    "RUT_Science/rut_science/science_bot/general/adapters/legacy_numeric.py": "327292c32a37b35914e413a739c20268743745fde74afa2b4adada5c3555bcca",
+    "RUT_Science/rut_science/science_bot/general/adapters/__init__.py": "12564d557c142632817bb6bb7a740a6d94891d71b9d05c88c01fd33224a42566",
+    "RUT_Science/rut_science/science_bot/api.py": "4e037278d908b340870f7f074371976bac39e31a3cd6c96520572ac10344dec8",
+    "RUT_Science/rut_science/science_bot/terminal.py": "15d43c919d94bad732403d011a73efdce0832513964e8efc32ae33fdec5adbc5",
+    "RUT_Science/rut_science/science_bot/session.py": "d8ed0be7f41176fd18d2d9d35b5650f20513413958c70823bbccb20592f11619",
+    "RUT_Science/rut_science/science_bot/llm.py": "a807b8b9dc10b4e7c000ba375a7aa393f3f926dd82755a2de9dac17987ba49c4",
+    "RUT_Science/rut_science/science_bot/model_output.py": "26b409c288ea8778994f026df68315cb4241b36df5bc6729e0990f3c16436b73",
+    "RUT_Science/docs/Science_Bot_G1_通用入口_zh.md": "fc2f1cc7ce0fcfd1bcd950aa97ff7046c8e115abaadb2e50a9d0290ba0b8115b",
+    "RUT_Science/scripts/verify_g1_delivery.py": "736e2156fde5c3d676d8900afa784f89c8f4e98d161a69ba06ac34bbe5cd2420",
+    "RUT_Science/tests/test_general_http.py": "33dfe84e74109c668ab4e716b771e1f9b63a8421646778df40400c45a8bdf9c2",
+    "RUT_Science/tests/test_general_provider.py": "bd9b0b7ecbf6b3f1eb33e18357693083e409ed82fed4b44f21d489dbaf3a41de",
+    "RUT_Science/tests/test_general_regressions.py": "72ef6a8ff5228198de4c516c44aaa22e19db181742ab6dbcb68c48a1583748ef",
+    "RUT_Science/tests/test_general_session.py": "eeef6cd24520aac2e5338d127484a7e790292638de7e37079cecee86e40c27d6",
+    "RUT_Science/tests/test_general_tools.py": "f71b21fc3fe199fdf5bb75539f5053aa7a690b8b6df5d96b934c94ccae73cfdc",
+    "science-bot.cmd": "73a7daafddbd114a117c7d57cbe57e540a24cf20a827e35f772934e7a89ee9c6",
+    "Start-ScienceBot.ps1": "203f5d4665da05db75c62d5fd3f3a109ce96b062dbd18b9db49241821e17b070"
+  },
+  "limitations": [
+    "Conservative host routing; ambiguous phrasing asks for clarification",
+    "Citations verify source identity and read coverage, not every semantic statement",
+    "G2 statistical experiment execution, G3 CViT training, editing, shell and web search remain unimplemented",
+    "Live proof uses one synthetic file fixture and one generated regression; it is not a broad generalization benchmark"
+  ]
+}

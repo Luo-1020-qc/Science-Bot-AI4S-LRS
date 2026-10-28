@@ -1,0 +1,52 @@
+{
+  "limits": {
+    "max_requests": 12,
+    "max_tokens": 100000,
+    "max_context_bytes": 50000
+  },
+  "requests": 2,
+  "reported_prompt_tokens": 2043,
+  "reported_completion_tokens": 1754,
+  "unresolved_token_reservations": 0,
+  "accounted_tokens": 3797,
+  "monetary_cost": null,
+  "calls": [
+    {
+      "request_index": 1,
+      "reservation": 4818,
+      "context_bytes": 2890,
+      "status": "ok",
+      "episode_id": "9de22338ac6a4698a7ccec0a45d7ebb0",
+      "model": "deepseek-flash",
+      "submitted_utc": "2026-10-20T11:35:33.300073+00:00",
+      "request_body_hash": "77ae01d7a3fd5aa0355fc042693c49743a2bca977c72e37d84a5211bf4100f2b",
+      "actual_model": "deepseek-flash",
+      "latency_ms": 3875.0,
+      "response_id": "cdb1fc81-8711-46d1-9d9d-0883b5b62828",
+      "usage_known": true,
+      "prompt_tokens": 719,
+      "completion_tokens": 970,
+      "total_tokens": 1689,
+      "cached_tokens": 512
+    },
+    {
+      "request_index": 2,
+      "reservation": 7009,
+      "context_bytes": 5081,
+      "status": "ok",
+      "episode_id": "9de22338ac6a4698a7ccec0a45d7ebb0",
+      "model": "deepseek-flash",
+      "submitted_utc": "2026-10-20T11:35:37.394670+00:00",
+      "request_body_hash": "353cc6ecdc51932b7856e52d6933823c07f8b243301e0e769d1d7977233e4468",
+      "actual_model": "deepseek-flash",
+      "latency_ms": 4125.0,
+      "response_id": "9a908753-f0a3-46f4-a8b4-f456a761b7bb",
+      "usage_known": true,
+      "prompt_tokens": 1324,
+      "completion_tokens": 784,
+      "total_tokens": 2108,
+      "cached_tokens": 1024
+    }
+  ],
+  "token_policy": "UTF-8 bytes plus message overhead used for admission; actual usage replaces estimate; unknown usage retains reservation"
+}

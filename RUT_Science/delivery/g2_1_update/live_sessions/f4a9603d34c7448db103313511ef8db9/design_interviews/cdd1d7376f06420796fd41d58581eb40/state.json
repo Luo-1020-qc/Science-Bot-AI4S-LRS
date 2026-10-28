@@ -1,0 +1,178 @@
+{
+  "schema_version": "design_interview_v1",
+  "id": "cdd1d7376f06420796fd41d58581eb40",
+  "revision": 4,
+  "active": true,
+  "fields": {
+    "alpha": 0.05,
+    "seed": 42,
+    "missing_policy": "reject",
+    "randomization_note": "not_applicable",
+    "data_path": "two_groups.csv",
+    "research_question": "比较A与B的平均y",
+    "design": "independent",
+    "unit_structure": "independent_rows",
+    "response": "y",
+    "unit": "id",
+    "provenance": "synthetic",
+    "factor": "group",
+    "levels": [
+      "A",
+      "B"
+    ],
+    "sampling_note": "全部现有合成样本，仅作探索性分析"
+  },
+  "sources": {
+    "alpha": {
+      "kind": "protocol_default",
+      "turn": 0,
+      "quote": "G2 frozen defaults"
+    },
+    "seed": {
+      "kind": "protocol_default",
+      "turn": 0,
+      "quote": "G2 frozen defaults"
+    },
+    "missing_policy": {
+      "kind": "protocol_default",
+      "turn": 0,
+      "quote": "G2 frozen defaults"
+    },
+    "randomization_note": {
+      "kind": "protocol_default",
+      "turn": 0,
+      "quote": "G2 frozen defaults"
+    },
+    "data_path": {
+      "kind": "user_answer",
+      "turn": 1,
+      "quote": "two_groups.csv"
+    },
+    "research_question": {
+      "kind": "user_structured",
+      "turn": 2,
+      "quote": "{\"research_question\": \"比较A与B的平均y\", \"design\": \"independent\", \"unit_structure\": \"independent_rows\", \"response\": \"y\", \"unit\": \"id\"}"
+    },
+    "design": {
+      "kind": "user_structured",
+      "turn": 2,
+      "quote": "{\"research_question\": \"比较A与B的平均y\", \"design\": \"independent\", \"unit_structure\": \"independent_rows\", \"response\": \"y\", \"unit\": \"id\"}"
+    },
+    "unit_structure": {
+      "kind": "user_structured",
+      "turn": 2,
+      "quote": "{\"research_question\": \"比较A与B的平均y\", \"design\": \"independent\", \"unit_structure\": \"independent_rows\", \"response\": \"y\", \"unit\": \"id\"}"
+    },
+    "response": {
+      "kind": "user_structured",
+      "turn": 2,
+      "quote": "{\"research_question\": \"比较A与B的平均y\", \"design\": \"independent\", \"unit_structure\": \"independent_rows\", \"response\": \"y\", \"unit\": \"id\"}"
+    },
+    "unit": {
+      "kind": "user_structured",
+      "turn": 2,
+      "quote": "{\"research_question\": \"比较A与B的平均y\", \"design\": \"independent\", \"unit_structure\": \"independent_rows\", \"response\": \"y\", \"unit\": \"id\"}"
+    },
+    "provenance": {
+      "kind": "user_grounded_model",
+      "turn": 3,
+      "quote": "这些测量来自合成数据"
+    },
+    "factor": {
+      "kind": "user_structured",
+      "turn": 4,
+      "quote": "{\"factor\": \"group\", \"levels\": [\"A\", \"B\"], \"sampling_note\": \"全部现有合成样本，仅作探索性分析\"}"
+    },
+    "levels": {
+      "kind": "user_structured",
+      "turn": 4,
+      "quote": "{\"factor\": \"group\", \"levels\": [\"A\", \"B\"], \"sampling_note\": \"全部现有合成样本，仅作探索性分析\"}"
+    },
+    "sampling_note": {
+      "kind": "user_structured",
+      "turn": 4,
+      "quote": "{\"factor\": \"group\", \"levels\": [\"A\", \"B\"], \"sampling_note\": \"全部现有合成样本，仅作探索性分析\"}"
+    }
+  },
+  "unknown": {},
+  "conflicts": {},
+  "pending": null,
+  "profile": {
+    "path": "two_groups.csv",
+    "sha256": "c8d22904e456e37a661431a7b598956cdd7c5f9d1d4b05b8ed4b3c26d95c4316",
+    "bytes": 691,
+    "rows": 27,
+    "columns": [
+      {
+        "name": "id",
+        "kind": "text",
+        "missing": 0,
+        "unique": 27,
+        "levels": []
+      },
+      {
+        "name": "group",
+        "kind": "text",
+        "missing": 0,
+        "unique": 2,
+        "levels": [
+          "A",
+          "B"
+        ]
+      },
+      {
+        "name": "y",
+        "kind": "numeric",
+        "missing": 0,
+        "unique": 27,
+        "levels": []
+      }
+    ],
+    "evidence_ref": "csv:two_groups.csv#c8d22904e456"
+  },
+  "validation": {
+    "schema_version": "design_validation_v1",
+    "contract_hash": "9aaa0e5ce4193ec212f4600494c926f3c6bbd7639df3810ca4296115138119f9",
+    "ready": true,
+    "checks": [
+      {
+        "code": "specification",
+        "status": "passed",
+        "detail": "字段结构与已注册方法匹配",
+        "fields": []
+      },
+      {
+        "code": "data_structure",
+        "status": "passed",
+        "detail": "保留27个声明单位；排除0个缺失单位",
+        "fields": []
+      },
+      {
+        "code": "tool_budget",
+        "status": "passed",
+        "detail": "还需准备及执行3次工具，当前剩余11次",
+        "fields": []
+      },
+      {
+        "code": "scientific_assumptions",
+        "status": "unverified",
+        "detail": "来源、独立性、随机化和样本依据是用户声明；未通过列检查证明",
+        "fields": []
+      }
+    ],
+    "missing": [],
+    "execution_authorized": false,
+    "scientific_success": null
+  },
+  "turns": 4,
+  "max_turns": 24,
+  "policy": "rule",
+  "draft": {
+    "draft_hash": "8e0d8049178536c626214c2f932a9412a3321ead1c96c9c9f7928ca6f79458d0",
+    "experiment_ref": "experiments/1629919652794db19d05482804d80e71",
+    "contract_hash": "9aaa0e5ce4193ec212f4600494c926f3c6bbd7639df3810ca4296115138119f9"
+  },
+  "feedback": [],
+  "last_errors": [],
+  "closed_reason": null
+}

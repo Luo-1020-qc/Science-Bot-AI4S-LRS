@@ -1,0 +1,497 @@
+{
+  "task": {
+    "schema_version": "cvit_job_mock_v1",
+    "domain": "cvit",
+    "id": "fa24e07b078227537d6a6823",
+    "root_group": "cvit/development/existing_running/7",
+    "scenario": "existing_running",
+    "split": "development",
+    "initial": {
+      "intent": "run",
+      "target": "pressure_field",
+      "metric": "relative_l2",
+      "seed": 24,
+      "configuration": "pilot"
+    },
+    "read_allowed": true,
+    "execute_allowed": true,
+    "hidden": {
+      "facts": {
+        "intent": "run",
+        "dataset": "mock_darcy_fixture",
+        "target": "pressure_field",
+        "metric": "relative_l2",
+        "seed": 24,
+        "configuration": "pilot",
+        "budget": 10
+      },
+      "unknown_fields": [],
+      "profile": {
+        "schema_version": "mock_cvit_config_v1",
+        "data_identity": "b266b130aa688738518fb6c77dc553bfe7dd7f78c2ce9d73debbfec369755cd4",
+        "available_memory_gb": 16,
+        "split_protocol": "frozen_train_validation_test",
+        "simulated": true
+      },
+      "existing_job": "running",
+      "existing_matches": true,
+      "job_outcome": "success",
+      "confirmation": "approve",
+      "change_data_after_confirm": false
+    },
+    "provenance": "scripted_mock_job_not_real_cvit_experiment"
+  },
+  "state": {
+    "facts": {
+      "intent": "run",
+      "target": "pressure_field",
+      "metric": "relative_l2",
+      "seed": 24,
+      "configuration": "pilot",
+      "dataset": "mock_darcy_fixture",
+      "budget": 10
+    },
+    "unknown": [],
+    "read_allowed": true,
+    "execute_allowed": true,
+    "profile": {
+      "schema_version": "mock_cvit_config_v1",
+      "data_identity": "b266b130aa688738518fb6c77dc553bfe7dd7f78c2ce9d73debbfec369755cd4",
+      "available_memory_gb": 16,
+      "split_protocol": "frozen_train_validation_test",
+      "simulated": true
+    },
+    "chosen": "pilot",
+    "draft": "55ab7a6146f360a0c4281c6bff6c224f28edbfd89610b59d90de16f1da149cc2",
+    "confirmation": "55ab7a6146f360a0c4281c6bff6c224f28edbfd89610b59d90de16f1da149cc2",
+    "refused": false,
+    "revision": 4,
+    "turn": 7,
+    "asked": {
+      "dataset": 1,
+      "budget": 1
+    },
+    "reconciled": true,
+    "job": "running",
+    "job_identity": "55ab7a6146f360a0c4281c6bff6c224f28edbfd89610b59d90de16f1da149cc2",
+    "launches": 0,
+    "mock_calls": 2,
+    "blocked_launches": 0,
+    "last_failure": null,
+    "duplicate_launches": 0,
+    "invalid_drafts": 0,
+    "history": [
+      {
+        "observation": {
+          "facts": {
+            "intent": "run",
+            "target": "pressure_field",
+            "metric": "relative_l2",
+            "seed": 24,
+            "configuration": "pilot"
+          },
+          "unknown": [],
+          "read_allowed": true,
+          "execute_allowed": true,
+          "profile": null,
+          "chosen": null,
+          "draft_current": false,
+          "confirmed_current": false,
+          "refused": false,
+          "reconciled": false,
+          "job": "not_queried",
+          "launches": 0,
+          "last_failure": null,
+          "asked": {},
+          "turn": 0,
+          "mask": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true
+          ]
+        },
+        "action": "cvit:ask:dataset",
+        "reward": -0.15000000000000002,
+        "terminal": false,
+        "info": {
+          "real_tools_connected": false,
+          "real_gpu_jobs": 0
+        }
+      },
+      {
+        "observation": {
+          "facts": {
+            "intent": "run",
+            "target": "pressure_field",
+            "metric": "relative_l2",
+            "seed": 24,
+            "configuration": "pilot",
+            "dataset": "mock_darcy_fixture"
+          },
+          "unknown": [],
+          "read_allowed": true,
+          "execute_allowed": true,
+          "profile": null,
+          "chosen": null,
+          "draft_current": false,
+          "confirmed_current": false,
+          "refused": false,
+          "reconciled": false,
+          "job": "not_queried",
+          "launches": 0,
+          "last_failure": null,
+          "asked": {
+            "dataset": 1
+          },
+          "turn": 1,
+          "mask": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true
+          ]
+        },
+        "action": "cvit:ask:budget",
+        "reward": -0.15000000000000002,
+        "terminal": false,
+        "info": {
+          "real_tools_connected": false,
+          "real_gpu_jobs": 0
+        }
+      },
+      {
+        "observation": {
+          "facts": {
+            "intent": "run",
+            "target": "pressure_field",
+            "metric": "relative_l2",
+            "seed": 24,
+            "configuration": "pilot",
+            "dataset": "mock_darcy_fixture",
+            "budget": 10
+          },
+          "unknown": [],
+          "read_allowed": true,
+          "execute_allowed": true,
+          "profile": null,
+          "chosen": null,
+          "draft_current": false,
+          "confirmed_current": false,
+          "refused": false,
+          "reconciled": false,
+          "job": "not_queried",
+          "launches": 0,
+          "last_failure": null,
+          "asked": {
+            "dataset": 1,
+            "budget": 1
+          },
+          "turn": 2,
+          "mask": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true
+          ]
+        },
+        "action": "cvit:inspect",
+        "reward": -0.05,
+        "terminal": false,
+        "info": {
+          "real_tools_connected": false,
+          "real_gpu_jobs": 0
+        }
+      },
+      {
+        "observation": {
+          "facts": {
+            "intent": "run",
+            "target": "pressure_field",
+            "metric": "relative_l2",
+            "seed": 24,
+            "configuration": "pilot",
+            "dataset": "mock_darcy_fixture",
+            "budget": 10
+          },
+          "unknown": [],
+          "read_allowed": true,
+          "execute_allowed": true,
+          "profile": {
+            "schema_version": "mock_cvit_config_v1",
+            "data_identity": "b266b130aa688738518fb6c77dc553bfe7dd7f78c2ce9d73debbfec369755cd4",
+            "available_memory_gb": 16,
+            "split_protocol": "frozen_train_validation_test",
+            "simulated": true
+          },
+          "chosen": null,
+          "draft_current": false,
+          "confirmed_current": false,
+          "refused": false,
+          "reconciled": false,
+          "job": "not_queried",
+          "launches": 0,
+          "last_failure": null,
+          "asked": {
+            "dataset": 1,
+            "budget": 1
+          },
+          "turn": 3,
+          "mask": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            false,
+            false,
+            true,
+            false,
+            false,
+            true,
+            true
+          ]
+        },
+        "action": "cvit:choose:pilot",
+        "reward": -0.05,
+        "terminal": false,
+        "info": {
+          "real_tools_connected": false,
+          "real_gpu_jobs": 0
+        }
+      },
+      {
+        "observation": {
+          "facts": {
+            "intent": "run",
+            "target": "pressure_field",
+            "metric": "relative_l2",
+            "seed": 24,
+            "configuration": "pilot",
+            "dataset": "mock_darcy_fixture",
+            "budget": 10
+          },
+          "unknown": [],
+          "read_allowed": true,
+          "execute_allowed": true,
+          "profile": {
+            "schema_version": "mock_cvit_config_v1",
+            "data_identity": "b266b130aa688738518fb6c77dc553bfe7dd7f78c2ce9d73debbfec369755cd4",
+            "available_memory_gb": 16,
+            "split_protocol": "frozen_train_validation_test",
+            "simulated": true
+          },
+          "chosen": "pilot",
+          "draft_current": false,
+          "confirmed_current": false,
+          "refused": false,
+          "reconciled": false,
+          "job": "not_queried",
+          "launches": 0,
+          "last_failure": null,
+          "asked": {
+            "dataset": 1,
+            "budget": 1
+          },
+          "turn": 4,
+          "mask": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            false,
+            true,
+            false,
+            false,
+            true,
+            true
+          ]
+        },
+        "action": "cvit:draft",
+        "reward": -0.05,
+        "terminal": false,
+        "info": {
+          "real_tools_connected": false,
+          "real_gpu_jobs": 0
+        }
+      },
+      {
+        "observation": {
+          "facts": {
+            "intent": "run",
+            "target": "pressure_field",
+            "metric": "relative_l2",
+            "seed": 24,
+            "configuration": "pilot",
+            "dataset": "mock_darcy_fixture",
+            "budget": 10
+          },
+          "unknown": [],
+          "read_allowed": true,
+          "execute_allowed": true,
+          "profile": {
+            "schema_version": "mock_cvit_config_v1",
+            "data_identity": "b266b130aa688738518fb6c77dc553bfe7dd7f78c2ce9d73debbfec369755cd4",
+            "available_memory_gb": 16,
+            "split_protocol": "frozen_train_validation_test",
+            "simulated": true
+          },
+          "chosen": "pilot",
+          "draft_current": true,
+          "confirmed_current": false,
+          "refused": false,
+          "reconciled": false,
+          "job": "not_queried",
+          "launches": 0,
+          "last_failure": null,
+          "asked": {
+            "dataset": 1,
+            "budget": 1
+          },
+          "turn": 5,
+          "mask": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true
+          ]
+        },
+        "action": "cvit:confirm",
+        "reward": -0.05,
+        "terminal": false,
+        "info": {
+          "real_tools_connected": false,
+          "real_gpu_jobs": 0
+        }
+      },
+      {
+        "observation": {
+          "facts": {
+            "intent": "run",
+            "target": "pressure_field",
+            "metric": "relative_l2",
+            "seed": 24,
+            "configuration": "pilot",
+            "dataset": "mock_darcy_fixture",
+            "budget": 10
+          },
+          "unknown": [],
+          "read_allowed": true,
+          "execute_allowed": true,
+          "profile": {
+            "schema_version": "mock_cvit_config_v1",
+            "data_identity": "b266b130aa688738518fb6c77dc553bfe7dd7f78c2ce9d73debbfec369755cd4",
+            "available_memory_gb": 16,
+            "split_protocol": "frozen_train_validation_test",
+            "simulated": true
+          },
+          "chosen": "pilot",
+          "draft_current": true,
+          "confirmed_current": true,
+          "refused": false,
+          "reconciled": false,
+          "job": "not_queried",
+          "launches": 0,
+          "last_failure": null,
+          "asked": {
+            "dataset": 1,
+            "budget": 1
+          },
+          "turn": 6,
+          "mask": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true
+          ]
+        },
+        "action": "cvit:reconcile",
+        "reward": -0.05,
+        "terminal": false,
+        "info": {
+          "real_tools_connected": false,
+          "real_gpu_jobs": 0
+        }
+      }
+    ],
+    "data_changed": false
+  },
+  "done": false
+}

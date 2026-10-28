@@ -1,0 +1,3489 @@
+{
+  "gates": {
+    "complementary_reasonable_rules": true,
+    "diagnostics_conditional_net_value": true,
+    "evidence_rule_beats_random": true,
+    "budget_changes_oracle_choices": false,
+    "cache_matches_real": true
+  },
+  "admitted": false,
+  "cheap_wins": 54,
+  "dense_wins": 18,
+  "diagnostic_wins": 14,
+  "diagnostic_loses": 19,
+  "cache_checks": 39,
+  "e0": [
+    {
+      "group": 0,
+      "budget": 3,
+      "reachable": [
+        {
+          "subset": [
+            "mean"
+          ],
+          "selected": "mean",
+          "sealed_error": 0.16920805590486127,
+          "utility": 0.9773928571428572,
+          "cu": 1
+        },
+        {
+          "subset": [
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.05175878476940107,
+          "utility": 0.9703928571428572,
+          "cu": 2
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.05175878476940107,
+          "utility": 0.9628571428571429,
+          "cu": 3
+        }
+      ],
+      "oracle": {
+        "subset": [
+          "mean"
+        ],
+        "selected": "mean",
+        "sealed_error": 0.16920805590486127,
+        "utility": 0.9773928571428572,
+        "cu": 1
+      }
+    },
+    {
+      "group": 0,
+      "budget": 6,
+      "reachable": [
+        {
+          "subset": [
+            "mean"
+          ],
+          "selected": "mean",
+          "sealed_error": 0.16920805590486127,
+          "utility": 0.9852678571428571,
+          "cu": 1
+        },
+        {
+          "subset": [
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.05175878476940107,
+          "utility": 0.9808928571428571,
+          "cu": 2
+        },
+        {
+          "subset": [
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.04610489257980144,
+          "utility": 0.9721428571428572,
+          "cu": 4
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.05175878476940107,
+          "utility": 0.9759821428571429,
+          "cu": 3
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.04610489257980144,
+          "utility": 0.9672321428571429,
+          "cu": 5
+        },
+        {
+          "subset": [
+            "ridge_half_3_1",
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.04610489257980144,
+          "utility": 0.9628571428571429,
+          "cu": 6
+        }
+      ],
+      "oracle": {
+        "subset": [
+          "mean"
+        ],
+        "selected": "mean",
+        "sealed_error": 0.16920805590486127,
+        "utility": 0.9852678571428571,
+        "cu": 1
+      }
+    },
+    {
+      "group": 1,
+      "budget": 3,
+      "reachable": [
+        {
+          "subset": [
+            "mean"
+          ],
+          "selected": "mean",
+          "sealed_error": 0.01132689473564682,
+          "utility": 0.9773928571428572,
+          "cu": 1
+        },
+        {
+          "subset": [
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.01064000221161227,
+          "utility": 0.9703928571428572,
+          "cu": 2
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.01064000221161227,
+          "utility": 0.9628571428571429,
+          "cu": 3
+        }
+      ],
+      "oracle": {
+        "subset": [
+          "mean"
+        ],
+        "selected": "mean",
+        "sealed_error": 0.01132689473564682,
+        "utility": 0.9773928571428572,
+        "cu": 1
+      }
+    },
+    {
+      "group": 1,
+      "budget": 6,
+      "reachable": [
+        {
+          "subset": [
+            "mean"
+          ],
+          "selected": "mean",
+          "sealed_error": 0.01132689473564682,
+          "utility": 0.9852678571428571,
+          "cu": 1
+        },
+        {
+          "subset": [
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.01064000221161227,
+          "utility": 0.9808928571428571,
+          "cu": 2
+        },
+        {
+          "subset": [
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.011318130175220476,
+          "utility": 0.9721428571428572,
+          "cu": 4
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.01064000221161227,
+          "utility": 0.9759821428571429,
+          "cu": 3
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.011318130175220476,
+          "utility": 0.9672321428571429,
+          "cu": 5
+        },
+        {
+          "subset": [
+            "ridge_half_3_1",
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.011318130175220476,
+          "utility": 0.9628571428571429,
+          "cu": 6
+        }
+      ],
+      "oracle": {
+        "subset": [
+          "mean"
+        ],
+        "selected": "mean",
+        "sealed_error": 0.01132689473564682,
+        "utility": 0.9852678571428571,
+        "cu": 1
+      }
+    },
+    {
+      "group": 2,
+      "budget": 3,
+      "reachable": [
+        {
+          "subset": [
+            "mean"
+          ],
+          "selected": "mean",
+          "sealed_error": 0.07389086119951488,
+          "utility": 0.9773928571428572,
+          "cu": 1
+        },
+        {
+          "subset": [
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.04628453206571451,
+          "utility": 0.9703928571428572,
+          "cu": 2
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.04628453206571451,
+          "utility": 0.9628571428571429,
+          "cu": 3
+        }
+      ],
+      "oracle": {
+        "subset": [
+          "mean"
+        ],
+        "selected": "mean",
+        "sealed_error": 0.07389086119951488,
+        "utility": 0.9773928571428572,
+        "cu": 1
+      }
+    },
+    {
+      "group": 2,
+      "budget": 6,
+      "reachable": [
+        {
+          "subset": [
+            "mean"
+          ],
+          "selected": "mean",
+          "sealed_error": 0.07389086119951488,
+          "utility": 0.9852678571428571,
+          "cu": 1
+        },
+        {
+          "subset": [
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.04628453206571451,
+          "utility": 0.9808928571428571,
+          "cu": 2
+        },
+        {
+          "subset": [
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.010477826066380667,
+          "utility": 0.9721428571428572,
+          "cu": 4
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.04628453206571451,
+          "utility": 0.9759821428571429,
+          "cu": 3
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.010477826066380667,
+          "utility": 0.9672321428571429,
+          "cu": 5
+        },
+        {
+          "subset": [
+            "ridge_half_3_1",
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.010477826066380667,
+          "utility": 0.9628571428571429,
+          "cu": 6
+        }
+      ],
+      "oracle": {
+        "subset": [
+          "mean"
+        ],
+        "selected": "mean",
+        "sealed_error": 0.07389086119951488,
+        "utility": 0.9852678571428571,
+        "cu": 1
+      }
+    },
+    {
+      "group": 3,
+      "budget": 3,
+      "reachable": [
+        {
+          "subset": [
+            "mean"
+          ],
+          "selected": "mean",
+          "sealed_error": 0.11592931518305181,
+          "utility": 0.9773928571428572,
+          "cu": 1
+        },
+        {
+          "subset": [
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.10865725142281144,
+          "utility": 0.9703928571428572,
+          "cu": 2
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.10865725142281144,
+          "utility": 0.9628571428571429,
+          "cu": 3
+        }
+      ],
+      "oracle": {
+        "subset": [
+          "mean"
+        ],
+        "selected": "mean",
+        "sealed_error": 0.11592931518305181,
+        "utility": 0.9773928571428572,
+        "cu": 1
+      }
+    },
+    {
+      "group": 3,
+      "budget": 6,
+      "reachable": [
+        {
+          "subset": [
+            "mean"
+          ],
+          "selected": "mean",
+          "sealed_error": 0.11592931518305181,
+          "utility": 0.9852678571428571,
+          "cu": 1
+        },
+        {
+          "subset": [
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.10865725142281144,
+          "utility": 0.9808928571428571,
+          "cu": 2
+        },
+        {
+          "subset": [
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.010708161018452057,
+          "utility": 0.9721428571428572,
+          "cu": 4
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.10865725142281144,
+          "utility": 0.9759821428571429,
+          "cu": 3
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.010708161018452057,
+          "utility": 0.9672321428571429,
+          "cu": 5
+        },
+        {
+          "subset": [
+            "ridge_half_3_1",
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.010708161018452057,
+          "utility": 0.9628571428571429,
+          "cu": 6
+        }
+      ],
+      "oracle": {
+        "subset": [
+          "mean"
+        ],
+        "selected": "mean",
+        "sealed_error": 0.11592931518305181,
+        "utility": 0.9852678571428571,
+        "cu": 1
+      }
+    },
+    {
+      "group": 4,
+      "budget": 3,
+      "reachable": [
+        {
+          "subset": [
+            "mean"
+          ],
+          "selected": "mean",
+          "sealed_error": 0.08692780179658957,
+          "utility": 0.9773928571428572,
+          "cu": 1
+        },
+        {
+          "subset": [
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.06816182755139717,
+          "utility": 0.9703928571428572,
+          "cu": 2
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.06816182755139717,
+          "utility": 0.9628571428571429,
+          "cu": 3
+        }
+      ],
+      "oracle": {
+        "subset": [
+          "mean"
+        ],
+        "selected": "mean",
+        "sealed_error": 0.08692780179658957,
+        "utility": 0.9773928571428572,
+        "cu": 1
+      }
+    },
+    {
+      "group": 4,
+      "budget": 6,
+      "reachable": [
+        {
+          "subset": [
+            "mean"
+          ],
+          "selected": "mean",
+          "sealed_error": 0.08692780179658957,
+          "utility": 0.9852678571428571,
+          "cu": 1
+        },
+        {
+          "subset": [
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.06816182755139717,
+          "utility": 0.9808928571428571,
+          "cu": 2
+        },
+        {
+          "subset": [
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.05896535045422361,
+          "utility": 0.9721428571428572,
+          "cu": 4
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.06816182755139717,
+          "utility": 0.9759821428571429,
+          "cu": 3
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.05896535045422361,
+          "utility": 0.9672321428571429,
+          "cu": 5
+        },
+        {
+          "subset": [
+            "ridge_half_3_1",
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.05896535045422361,
+          "utility": 0.9628571428571429,
+          "cu": 6
+        }
+      ],
+      "oracle": {
+        "subset": [
+          "mean"
+        ],
+        "selected": "mean",
+        "sealed_error": 0.08692780179658957,
+        "utility": 0.9852678571428571,
+        "cu": 1
+      }
+    },
+    {
+      "group": 5,
+      "budget": 3,
+      "reachable": [
+        {
+          "subset": [
+            "mean"
+          ],
+          "selected": "mean",
+          "sealed_error": 0.11064159978911976,
+          "utility": 0.9773928571428572,
+          "cu": 1
+        },
+        {
+          "subset": [
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.009894786875966788,
+          "utility": 0.9703928571428572,
+          "cu": 2
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.009894786875966788,
+          "utility": 0.9628571428571429,
+          "cu": 3
+        }
+      ],
+      "oracle": {
+        "subset": [
+          "mean"
+        ],
+        "selected": "mean",
+        "sealed_error": 0.11064159978911976,
+        "utility": 0.9773928571428572,
+        "cu": 1
+      }
+    },
+    {
+      "group": 5,
+      "budget": 6,
+      "reachable": [
+        {
+          "subset": [
+            "mean"
+          ],
+          "selected": "mean",
+          "sealed_error": 0.11064159978911976,
+          "utility": 0.9852678571428571,
+          "cu": 1
+        },
+        {
+          "subset": [
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.009894786875966788,
+          "utility": 0.9808928571428571,
+          "cu": 2
+        },
+        {
+          "subset": [
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.009708467069111403,
+          "utility": 0.9721428571428572,
+          "cu": 4
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.009894786875966788,
+          "utility": 0.9759821428571429,
+          "cu": 3
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.009708467069111403,
+          "utility": 0.9672321428571429,
+          "cu": 5
+        },
+        {
+          "subset": [
+            "ridge_half_3_1",
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.009708467069111403,
+          "utility": 0.9628571428571429,
+          "cu": 6
+        }
+      ],
+      "oracle": {
+        "subset": [
+          "mean"
+        ],
+        "selected": "mean",
+        "sealed_error": 0.11064159978911976,
+        "utility": 0.9852678571428571,
+        "cu": 1
+      }
+    },
+    {
+      "group": 6,
+      "budget": 3,
+      "reachable": [
+        {
+          "subset": [
+            "mean"
+          ],
+          "selected": "mean",
+          "sealed_error": 0.01042078164298806,
+          "utility": 0.9773928571428572,
+          "cu": 1
+        },
+        {
+          "subset": [
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.010614975922112021,
+          "utility": 0.9703928571428572,
+          "cu": 2
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_half_3_1"
+          ],
+          "selected": "mean",
+          "sealed_error": 0.01042078164298806,
+          "utility": 0.9628571428571429,
+          "cu": 3
+        }
+      ],
+      "oracle": {
+        "subset": [
+          "mean"
+        ],
+        "selected": "mean",
+        "sealed_error": 0.01042078164298806,
+        "utility": 0.9773928571428572,
+        "cu": 1
+      }
+    },
+    {
+      "group": 6,
+      "budget": 6,
+      "reachable": [
+        {
+          "subset": [
+            "mean"
+          ],
+          "selected": "mean",
+          "sealed_error": 0.01042078164298806,
+          "utility": 0.9852678571428571,
+          "cu": 1
+        },
+        {
+          "subset": [
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.010614975922112021,
+          "utility": 0.9808928571428571,
+          "cu": 2
+        },
+        {
+          "subset": [
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.010794559700298585,
+          "utility": 0.9721428571428572,
+          "cu": 4
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_half_3_1"
+          ],
+          "selected": "mean",
+          "sealed_error": 0.01042078164298806,
+          "utility": 0.9759821428571429,
+          "cu": 3
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_full_5_1"
+          ],
+          "selected": "mean",
+          "sealed_error": 0.01042078164298806,
+          "utility": 0.9672321428571429,
+          "cu": 5
+        },
+        {
+          "subset": [
+            "ridge_half_3_1",
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.010614975922112021,
+          "utility": 0.9628571428571429,
+          "cu": 6
+        }
+      ],
+      "oracle": {
+        "subset": [
+          "mean"
+        ],
+        "selected": "mean",
+        "sealed_error": 0.01042078164298806,
+        "utility": 0.9852678571428571,
+        "cu": 1
+      }
+    },
+    {
+      "group": 7,
+      "budget": 3,
+      "reachable": [
+        {
+          "subset": [
+            "mean"
+          ],
+          "selected": "mean",
+          "sealed_error": 0.29971522947463924,
+          "utility": -0.022607142857142853,
+          "cu": 1
+        },
+        {
+          "subset": [
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.252053437675058,
+          "utility": -0.029607142857142856,
+          "cu": 2
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.252053437675058,
+          "utility": -0.03714285714285714,
+          "cu": 3
+        }
+      ],
+      "oracle": {
+        "subset": [
+          "mean"
+        ],
+        "selected": "mean",
+        "sealed_error": 0.29971522947463924,
+        "utility": -0.022607142857142853,
+        "cu": 1
+      }
+    },
+    {
+      "group": 7,
+      "budget": 6,
+      "reachable": [
+        {
+          "subset": [
+            "mean"
+          ],
+          "selected": "mean",
+          "sealed_error": 0.29971522947463924,
+          "utility": -0.014732142857142855,
+          "cu": 1
+        },
+        {
+          "subset": [
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.252053437675058,
+          "utility": -0.019107142857142857,
+          "cu": 2
+        },
+        {
+          "subset": [
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.2173429814734868,
+          "utility": -0.027857142857142855,
+          "cu": 4
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.252053437675058,
+          "utility": -0.024017857142857146,
+          "cu": 3
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.2173429814734868,
+          "utility": -0.03276785714285714,
+          "cu": 5
+        },
+        {
+          "subset": [
+            "ridge_half_3_1",
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.2173429814734868,
+          "utility": -0.03714285714285714,
+          "cu": 6
+        }
+      ],
+      "oracle": {
+        "subset": [
+          "mean"
+        ],
+        "selected": "mean",
+        "sealed_error": 0.29971522947463924,
+        "utility": -0.014732142857142855,
+        "cu": 1
+      }
+    },
+    {
+      "group": 8,
+      "budget": 3,
+      "reachable": [
+        {
+          "subset": [
+            "mean"
+          ],
+          "selected": "mean",
+          "sealed_error": 0.12000136317880206,
+          "utility": 0.9773928571428572,
+          "cu": 1
+        },
+        {
+          "subset": [
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.04830928069804755,
+          "utility": 0.9703928571428572,
+          "cu": 2
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.04830928069804755,
+          "utility": 0.9628571428571429,
+          "cu": 3
+        }
+      ],
+      "oracle": {
+        "subset": [
+          "mean"
+        ],
+        "selected": "mean",
+        "sealed_error": 0.12000136317880206,
+        "utility": 0.9773928571428572,
+        "cu": 1
+      }
+    },
+    {
+      "group": 8,
+      "budget": 6,
+      "reachable": [
+        {
+          "subset": [
+            "mean"
+          ],
+          "selected": "mean",
+          "sealed_error": 0.12000136317880206,
+          "utility": 0.9852678571428571,
+          "cu": 1
+        },
+        {
+          "subset": [
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.04830928069804755,
+          "utility": 0.9808928571428571,
+          "cu": 2
+        },
+        {
+          "subset": [
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.050987025656739925,
+          "utility": 0.9721428571428572,
+          "cu": 4
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.04830928069804755,
+          "utility": 0.9759821428571429,
+          "cu": 3
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.050987025656739925,
+          "utility": 0.9672321428571429,
+          "cu": 5
+        },
+        {
+          "subset": [
+            "ridge_half_3_1",
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.050987025656739925,
+          "utility": 0.9628571428571429,
+          "cu": 6
+        }
+      ],
+      "oracle": {
+        "subset": [
+          "mean"
+        ],
+        "selected": "mean",
+        "sealed_error": 0.12000136317880206,
+        "utility": 0.9852678571428571,
+        "cu": 1
+      }
+    },
+    {
+      "group": 9,
+      "budget": 3,
+      "reachable": [
+        {
+          "subset": [
+            "mean"
+          ],
+          "selected": "mean",
+          "sealed_error": 0.28262818904948994,
+          "utility": -0.022607142857142853,
+          "cu": 1
+        },
+        {
+          "subset": [
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.05292618812612766,
+          "utility": 0.9703928571428572,
+          "cu": 2
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.05292618812612766,
+          "utility": 0.9628571428571429,
+          "cu": 3
+        }
+      ],
+      "oracle": {
+        "subset": [
+          "ridge_half_3_1"
+        ],
+        "selected": "ridge_half_3_1",
+        "sealed_error": 0.05292618812612766,
+        "utility": 0.9703928571428572,
+        "cu": 2
+      }
+    },
+    {
+      "group": 9,
+      "budget": 6,
+      "reachable": [
+        {
+          "subset": [
+            "mean"
+          ],
+          "selected": "mean",
+          "sealed_error": 0.28262818904948994,
+          "utility": -0.014732142857142855,
+          "cu": 1
+        },
+        {
+          "subset": [
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.05292618812612766,
+          "utility": 0.9808928571428571,
+          "cu": 2
+        },
+        {
+          "subset": [
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.051536226580367446,
+          "utility": 0.9721428571428572,
+          "cu": 4
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.05292618812612766,
+          "utility": 0.9759821428571429,
+          "cu": 3
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.051536226580367446,
+          "utility": 0.9672321428571429,
+          "cu": 5
+        },
+        {
+          "subset": [
+            "ridge_half_3_1",
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.051536226580367446,
+          "utility": 0.9628571428571429,
+          "cu": 6
+        }
+      ],
+      "oracle": {
+        "subset": [
+          "ridge_half_3_1"
+        ],
+        "selected": "ridge_half_3_1",
+        "sealed_error": 0.05292618812612766,
+        "utility": 0.9808928571428571,
+        "cu": 2
+      }
+    },
+    {
+      "group": 10,
+      "budget": 3,
+      "reachable": [
+        {
+          "subset": [
+            "mean"
+          ],
+          "selected": "mean",
+          "sealed_error": 0.24634086563228752,
+          "utility": -0.022607142857142853,
+          "cu": 1
+        },
+        {
+          "subset": [
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.05326950705373848,
+          "utility": 0.9703928571428572,
+          "cu": 2
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.05326950705373848,
+          "utility": 0.9628571428571429,
+          "cu": 3
+        }
+      ],
+      "oracle": {
+        "subset": [
+          "ridge_half_3_1"
+        ],
+        "selected": "ridge_half_3_1",
+        "sealed_error": 0.05326950705373848,
+        "utility": 0.9703928571428572,
+        "cu": 2
+      }
+    },
+    {
+      "group": 10,
+      "budget": 6,
+      "reachable": [
+        {
+          "subset": [
+            "mean"
+          ],
+          "selected": "mean",
+          "sealed_error": 0.24634086563228752,
+          "utility": -0.014732142857142855,
+          "cu": 1
+        },
+        {
+          "subset": [
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.05326950705373848,
+          "utility": 0.9808928571428571,
+          "cu": 2
+        },
+        {
+          "subset": [
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.051012382725003115,
+          "utility": 0.9721428571428572,
+          "cu": 4
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.05326950705373848,
+          "utility": 0.9759821428571429,
+          "cu": 3
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.051012382725003115,
+          "utility": 0.9672321428571429,
+          "cu": 5
+        },
+        {
+          "subset": [
+            "ridge_half_3_1",
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.051012382725003115,
+          "utility": 0.9628571428571429,
+          "cu": 6
+        }
+      ],
+      "oracle": {
+        "subset": [
+          "ridge_half_3_1"
+        ],
+        "selected": "ridge_half_3_1",
+        "sealed_error": 0.05326950705373848,
+        "utility": 0.9808928571428571,
+        "cu": 2
+      }
+    },
+    {
+      "group": 11,
+      "budget": 3,
+      "reachable": [
+        {
+          "subset": [
+            "mean"
+          ],
+          "selected": "mean",
+          "sealed_error": 0.01101131092593554,
+          "utility": 0.9773928571428572,
+          "cu": 1
+        },
+        {
+          "subset": [
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.010859269272088027,
+          "utility": 0.9703928571428572,
+          "cu": 2
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_half_3_1"
+          ],
+          "selected": "mean",
+          "sealed_error": 0.01101131092593554,
+          "utility": 0.9628571428571429,
+          "cu": 3
+        }
+      ],
+      "oracle": {
+        "subset": [
+          "mean"
+        ],
+        "selected": "mean",
+        "sealed_error": 0.01101131092593554,
+        "utility": 0.9773928571428572,
+        "cu": 1
+      }
+    },
+    {
+      "group": 11,
+      "budget": 6,
+      "reachable": [
+        {
+          "subset": [
+            "mean"
+          ],
+          "selected": "mean",
+          "sealed_error": 0.01101131092593554,
+          "utility": 0.9852678571428571,
+          "cu": 1
+        },
+        {
+          "subset": [
+            "ridge_half_3_1"
+          ],
+          "selected": "ridge_half_3_1",
+          "sealed_error": 0.010859269272088027,
+          "utility": 0.9808928571428571,
+          "cu": 2
+        },
+        {
+          "subset": [
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.010547370255066144,
+          "utility": 0.9721428571428572,
+          "cu": 4
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_half_3_1"
+          ],
+          "selected": "mean",
+          "sealed_error": 0.01101131092593554,
+          "utility": 0.9759821428571429,
+          "cu": 3
+        },
+        {
+          "subset": [
+            "mean",
+            "ridge_full_5_1"
+          ],
+          "selected": "mean",
+          "sealed_error": 0.01101131092593554,
+          "utility": 0.9672321428571429,
+          "cu": 5
+        },
+        {
+          "subset": [
+            "ridge_half_3_1",
+            "ridge_full_5_1"
+          ],
+          "selected": "ridge_full_5_1",
+          "sealed_error": 0.010547370255066144,
+          "utility": 0.9628571428571429,
+          "cu": 6
+        }
+      ],
+      "oracle": {
+        "subset": [
+          "mean"
+        ],
+        "selected": "mean",
+        "sealed_error": 0.01101131092593554,
+        "utility": 0.9852678571428571,
+        "cu": 1
+      }
+    }
+  ],
+  "paired_training_rules": [
+    {
+      "group": 0,
+      "budget": 6,
+      "cheap": {
+        "reward": 0.9759821428571429,
+        "success": true,
+        "cu": 3.0
+      },
+      "dense": {
+        "reward": 0.9721428571428572,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9623214285714287,
+        "success": true,
+        "cu": 6.0
+      },
+      "random": {
+        "reward": 0.9716071428571429,
+        "success": true,
+        "cu": 4.0
+      },
+      "search": {
+        "reward": 0.9808928571428572,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 0,
+      "budget": 10,
+      "cheap": {
+        "reward": 0.9832738095238096,
+        "success": true,
+        "cu": 3.0
+      },
+      "dense": {
+        "reward": 0.9808928571428572,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9739880952380953,
+        "success": true,
+        "cu": 6.0
+      },
+      "random": {
+        "reward": 0.964702380952381,
+        "success": true,
+        "cu": 9.0
+      },
+      "search": {
+        "reward": 0.9867261904761905,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 0,
+      "budget": 14,
+      "cheap": {
+        "reward": 0.986919642857143,
+        "success": true,
+        "cu": 3.0
+      },
+      "dense": {
+        "reward": 0.9852678571428573,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9798214285714286,
+        "success": true,
+        "cu": 6.0
+      },
+      "random": {
+        "reward": 0.9634375000000001,
+        "success": true,
+        "cu": 13.0
+      },
+      "search": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 1,
+      "budget": 6,
+      "cheap": {
+        "reward": 0.9852678571428571,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9721428571428572,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9852678571428571,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.9716071428571429,
+        "success": true,
+        "cu": 4.0
+      },
+      "search": {
+        "reward": 0.9808928571428572,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 1,
+      "budget": 10,
+      "cheap": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9808928571428572,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.964702380952381,
+        "success": true,
+        "cu": 9.0
+      },
+      "search": {
+        "reward": 0.9867261904761905,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 1,
+      "budget": 14,
+      "cheap": {
+        "reward": 0.9918303571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9852678571428573,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9918303571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.9634375000000001,
+        "success": true,
+        "cu": 13.0
+      },
+      "search": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 2,
+      "budget": 6,
+      "cheap": {
+        "reward": 0.9852678571428571,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9721428571428572,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9852678571428571,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.9716071428571429,
+        "success": true,
+        "cu": 4.0
+      },
+      "search": {
+        "reward": 0.9808928571428572,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 2,
+      "budget": 10,
+      "cheap": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9808928571428572,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.964702380952381,
+        "success": true,
+        "cu": 9.0
+      },
+      "search": {
+        "reward": 0.9867261904761905,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 2,
+      "budget": 14,
+      "cheap": {
+        "reward": 0.9918303571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9852678571428573,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9918303571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.9634375000000001,
+        "success": true,
+        "cu": 13.0
+      },
+      "search": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 3,
+      "budget": 6,
+      "cheap": {
+        "reward": 0.9852678571428571,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9721428571428572,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9852678571428571,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.9716071428571429,
+        "success": true,
+        "cu": 4.0
+      },
+      "search": {
+        "reward": 0.9808928571428572,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 3,
+      "budget": 10,
+      "cheap": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9808928571428572,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.964702380952381,
+        "success": true,
+        "cu": 9.0
+      },
+      "search": {
+        "reward": 0.9867261904761905,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 3,
+      "budget": 14,
+      "cheap": {
+        "reward": 0.9918303571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9852678571428573,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9918303571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.9634375000000001,
+        "success": true,
+        "cu": 13.0
+      },
+      "search": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 4,
+      "budget": 6,
+      "cheap": {
+        "reward": 0.9852678571428571,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9721428571428572,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9852678571428571,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.9716071428571429,
+        "success": true,
+        "cu": 4.0
+      },
+      "search": {
+        "reward": 0.9808928571428572,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 4,
+      "budget": 10,
+      "cheap": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9808928571428572,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.964702380952381,
+        "success": true,
+        "cu": 9.0
+      },
+      "search": {
+        "reward": 0.9867261904761905,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 4,
+      "budget": 14,
+      "cheap": {
+        "reward": 0.9918303571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9852678571428573,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9918303571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.9634375000000001,
+        "success": true,
+        "cu": 13.0
+      },
+      "search": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 5,
+      "budget": 6,
+      "cheap": {
+        "reward": 0.9852678571428571,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9721428571428572,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9852678571428571,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.9716071428571429,
+        "success": true,
+        "cu": 4.0
+      },
+      "search": {
+        "reward": 0.9808928571428572,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 5,
+      "budget": 10,
+      "cheap": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9808928571428572,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.964702380952381,
+        "success": true,
+        "cu": 9.0
+      },
+      "search": {
+        "reward": 0.9867261904761905,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 5,
+      "budget": 14,
+      "cheap": {
+        "reward": 0.9918303571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9852678571428573,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9918303571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.9634375000000001,
+        "success": true,
+        "cu": 13.0
+      },
+      "search": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 6,
+      "budget": 6,
+      "cheap": {
+        "reward": 0.9852678571428571,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9721428571428572,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9852678571428571,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.9716071428571429,
+        "success": true,
+        "cu": 4.0
+      },
+      "search": {
+        "reward": 0.9808928571428572,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 6,
+      "budget": 10,
+      "cheap": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9808928571428572,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.964702380952381,
+        "success": true,
+        "cu": 9.0
+      },
+      "search": {
+        "reward": 0.9867261904761905,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 6,
+      "budget": 14,
+      "cheap": {
+        "reward": 0.9918303571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9852678571428573,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9918303571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.9634375000000001,
+        "success": true,
+        "cu": 13.0
+      },
+      "search": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 7,
+      "budget": 6,
+      "cheap": {
+        "reward": -0.03330357142857143,
+        "success": false,
+        "cu": 5.0
+      },
+      "dense": {
+        "reward": -0.03276785714285714,
+        "success": false,
+        "cu": 5.0
+      },
+      "adaptive": {
+        "reward": -0.02892857142857143,
+        "success": false,
+        "cu": 4.0
+      },
+      "random": {
+        "reward": -0.028392857142857136,
+        "success": false,
+        "cu": 4.0
+      },
+      "search": {
+        "reward": -0.03767857142857143,
+        "success": false,
+        "cu": 6.0
+      }
+    },
+    {
+      "group": 7,
+      "budget": 10,
+      "cheap": {
+        "reward": -0.03529761904761905,
+        "success": false,
+        "cu": 9.0
+      },
+      "dense": {
+        "reward": -0.03476190476190476,
+        "success": false,
+        "cu": 9.0
+      },
+      "adaptive": {
+        "reward": -0.032380952380952385,
+        "success": false,
+        "cu": 8.0
+      },
+      "random": {
+        "reward": -0.03529761904761905,
+        "success": false,
+        "cu": 9.0
+      },
+      "search": {
+        "reward": -0.03821428571428571,
+        "success": false,
+        "cu": 10.0
+      }
+    },
+    {
+      "group": 7,
+      "budget": 14,
+      "cheap": {
+        "reward": -0.0365625,
+        "success": false,
+        "cu": 13.0
+      },
+      "dense": {
+        "reward": -0.031651785714285716,
+        "success": false,
+        "cu": 11.0
+      },
+      "adaptive": {
+        "reward": -0.034374999999999996,
+        "success": false,
+        "cu": 12.0
+      },
+      "random": {
+        "reward": -0.0365625,
+        "success": false,
+        "cu": 13.0
+      },
+      "search": {
+        "reward": -0.03875,
+        "success": false,
+        "cu": 14.0
+      }
+    },
+    {
+      "group": 8,
+      "budget": 6,
+      "cheap": {
+        "reward": 0.9852678571428571,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9721428571428572,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9852678571428571,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.9716071428571429,
+        "success": true,
+        "cu": 4.0
+      },
+      "search": {
+        "reward": 0.9808928571428572,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 8,
+      "budget": 10,
+      "cheap": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9808928571428572,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.964702380952381,
+        "success": true,
+        "cu": 9.0
+      },
+      "search": {
+        "reward": 0.9867261904761905,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 8,
+      "budget": 14,
+      "cheap": {
+        "reward": 0.9918303571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9852678571428573,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9918303571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.9634375000000001,
+        "success": true,
+        "cu": 13.0
+      },
+      "search": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 9,
+      "budget": 6,
+      "cheap": {
+        "reward": 0.9759821428571429,
+        "success": true,
+        "cu": 3.0
+      },
+      "dense": {
+        "reward": 0.9721428571428572,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9623214285714287,
+        "success": true,
+        "cu": 6.0
+      },
+      "random": {
+        "reward": 0.9716071428571429,
+        "success": true,
+        "cu": 4.0
+      },
+      "search": {
+        "reward": 0.9808928571428572,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 9,
+      "budget": 10,
+      "cheap": {
+        "reward": 0.9832738095238096,
+        "success": true,
+        "cu": 3.0
+      },
+      "dense": {
+        "reward": 0.9808928571428572,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9739880952380953,
+        "success": true,
+        "cu": 6.0
+      },
+      "random": {
+        "reward": 0.964702380952381,
+        "success": true,
+        "cu": 9.0
+      },
+      "search": {
+        "reward": 0.9867261904761905,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 9,
+      "budget": 14,
+      "cheap": {
+        "reward": 0.986919642857143,
+        "success": true,
+        "cu": 3.0
+      },
+      "dense": {
+        "reward": 0.9852678571428573,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9798214285714286,
+        "success": true,
+        "cu": 6.0
+      },
+      "random": {
+        "reward": 0.9634375000000001,
+        "success": true,
+        "cu": 13.0
+      },
+      "search": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 10,
+      "budget": 6,
+      "cheap": {
+        "reward": 0.9759821428571429,
+        "success": true,
+        "cu": 3.0
+      },
+      "dense": {
+        "reward": 0.9721428571428572,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9710714285714286,
+        "success": true,
+        "cu": 4.0
+      },
+      "random": {
+        "reward": 0.9716071428571429,
+        "success": true,
+        "cu": 4.0
+      },
+      "search": {
+        "reward": 0.9808928571428572,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 10,
+      "budget": 10,
+      "cheap": {
+        "reward": 0.9832738095238096,
+        "success": true,
+        "cu": 3.0
+      },
+      "dense": {
+        "reward": 0.9808928571428572,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9798214285714286,
+        "success": true,
+        "cu": 4.0
+      },
+      "random": {
+        "reward": 0.964702380952381,
+        "success": true,
+        "cu": 9.0
+      },
+      "search": {
+        "reward": 0.9867261904761905,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 10,
+      "budget": 14,
+      "cheap": {
+        "reward": 0.986919642857143,
+        "success": true,
+        "cu": 3.0
+      },
+      "dense": {
+        "reward": 0.9852678571428573,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9841964285714286,
+        "success": true,
+        "cu": 4.0
+      },
+      "random": {
+        "reward": 0.9634375000000001,
+        "success": true,
+        "cu": 13.0
+      },
+      "search": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 11,
+      "budget": 6,
+      "cheap": {
+        "reward": 0.9852678571428571,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9721428571428572,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9852678571428571,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.9716071428571429,
+        "success": true,
+        "cu": 4.0
+      },
+      "search": {
+        "reward": 0.9808928571428572,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 11,
+      "budget": 10,
+      "cheap": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9808928571428572,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.964702380952381,
+        "success": true,
+        "cu": 9.0
+      },
+      "search": {
+        "reward": 0.9867261904761905,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 11,
+      "budget": 14,
+      "cheap": {
+        "reward": 0.9918303571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9852678571428573,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9918303571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.9634375000000001,
+        "success": true,
+        "cu": 13.0
+      },
+      "search": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 12,
+      "budget": 6,
+      "cheap": {
+        "reward": 0.9852678571428571,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9721428571428572,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9852678571428571,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.9716071428571429,
+        "success": true,
+        "cu": 4.0
+      },
+      "search": {
+        "reward": 0.9808928571428572,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 12,
+      "budget": 10,
+      "cheap": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9808928571428572,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.964702380952381,
+        "success": true,
+        "cu": 9.0
+      },
+      "search": {
+        "reward": 0.9867261904761905,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 12,
+      "budget": 14,
+      "cheap": {
+        "reward": 0.9918303571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9852678571428573,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9918303571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.9634375000000001,
+        "success": true,
+        "cu": 13.0
+      },
+      "search": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 13,
+      "budget": 6,
+      "cheap": {
+        "reward": 0.9759821428571429,
+        "success": true,
+        "cu": 3.0
+      },
+      "dense": {
+        "reward": -0.03276785714285714,
+        "success": false,
+        "cu": 5.0
+      },
+      "adaptive": {
+        "reward": 0.9710714285714286,
+        "success": true,
+        "cu": 4.0
+      },
+      "random": {
+        "reward": 0.9716071428571429,
+        "success": true,
+        "cu": 4.0
+      },
+      "search": {
+        "reward": -0.019107142857142857,
+        "success": false,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 13,
+      "budget": 10,
+      "cheap": {
+        "reward": 0.9832738095238096,
+        "success": true,
+        "cu": 3.0
+      },
+      "dense": {
+        "reward": -0.03476190476190476,
+        "success": false,
+        "cu": 9.0
+      },
+      "adaptive": {
+        "reward": 0.9798214285714286,
+        "success": true,
+        "cu": 4.0
+      },
+      "random": {
+        "reward": 0.964702380952381,
+        "success": true,
+        "cu": 9.0
+      },
+      "search": {
+        "reward": -0.013273809523809521,
+        "success": false,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 13,
+      "budget": 14,
+      "cheap": {
+        "reward": 0.986919642857143,
+        "success": true,
+        "cu": 3.0
+      },
+      "dense": {
+        "reward": 0.9683482142857143,
+        "success": true,
+        "cu": 11.0
+      },
+      "adaptive": {
+        "reward": 0.9841964285714286,
+        "success": true,
+        "cu": 4.0
+      },
+      "random": {
+        "reward": 0.9634375000000001,
+        "success": true,
+        "cu": 13.0
+      },
+      "search": {
+        "reward": -0.010357142857142856,
+        "success": false,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 14,
+      "budget": 6,
+      "cheap": {
+        "reward": 0.9852678571428571,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9721428571428572,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9852678571428571,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.9716071428571429,
+        "success": true,
+        "cu": 4.0
+      },
+      "search": {
+        "reward": 0.9808928571428572,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 14,
+      "budget": 10,
+      "cheap": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9808928571428572,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.964702380952381,
+        "success": true,
+        "cu": 9.0
+      },
+      "search": {
+        "reward": 0.9867261904761905,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 14,
+      "budget": 14,
+      "cheap": {
+        "reward": 0.9918303571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9852678571428573,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9918303571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.9634375000000001,
+        "success": true,
+        "cu": 13.0
+      },
+      "search": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 15,
+      "budget": 6,
+      "cheap": {
+        "reward": 0.9852678571428571,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9672321428571429,
+        "success": true,
+        "cu": 5.0
+      },
+      "adaptive": {
+        "reward": 0.9852678571428571,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": -0.028392857142857136,
+        "success": false,
+        "cu": 4.0
+      },
+      "search": {
+        "reward": -0.03767857142857143,
+        "success": false,
+        "cu": 6.0
+      }
+    },
+    {
+      "group": 15,
+      "budget": 10,
+      "cheap": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9652380952380952,
+        "success": true,
+        "cu": 9.0
+      },
+      "adaptive": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": -0.03529761904761905,
+        "success": false,
+        "cu": 9.0
+      },
+      "search": {
+        "reward": -0.03821428571428571,
+        "success": false,
+        "cu": 10.0
+      }
+    },
+    {
+      "group": 15,
+      "budget": 14,
+      "cheap": {
+        "reward": 0.9918303571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9732589285714286,
+        "success": true,
+        "cu": 9.0
+      },
+      "adaptive": {
+        "reward": 0.9918303571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": -0.0365625,
+        "success": false,
+        "cu": 13.0
+      },
+      "search": {
+        "reward": 0.96125,
+        "success": true,
+        "cu": 14.0
+      }
+    },
+    {
+      "group": 16,
+      "budget": 6,
+      "cheap": {
+        "reward": 0.9666964285714286,
+        "success": true,
+        "cu": 5.0
+      },
+      "dense": {
+        "reward": -0.03276785714285714,
+        "success": false,
+        "cu": 5.0
+      },
+      "adaptive": {
+        "reward": 0.9617857142857144,
+        "success": true,
+        "cu": 6.0
+      },
+      "random": {
+        "reward": 0.9716071428571429,
+        "success": true,
+        "cu": 4.0
+      },
+      "search": {
+        "reward": 0.9623214285714287,
+        "success": true,
+        "cu": 6.0
+      }
+    },
+    {
+      "group": 16,
+      "budget": 10,
+      "cheap": {
+        "reward": 0.964702380952381,
+        "success": true,
+        "cu": 9.0
+      },
+      "dense": {
+        "reward": -0.03476190476190476,
+        "success": false,
+        "cu": 9.0
+      },
+      "adaptive": {
+        "reward": 0.96125,
+        "success": true,
+        "cu": 10.0
+      },
+      "random": {
+        "reward": 0.964702380952381,
+        "success": true,
+        "cu": 9.0
+      },
+      "search": {
+        "reward": 0.9617857142857144,
+        "success": true,
+        "cu": 10.0
+      }
+    },
+    {
+      "group": 16,
+      "budget": 14,
+      "cheap": {
+        "reward": 0.9634375000000001,
+        "success": true,
+        "cu": 13.0
+      },
+      "dense": {
+        "reward": 0.9683482142857143,
+        "success": true,
+        "cu": 11.0
+      },
+      "adaptive": {
+        "reward": 0.9700000000000001,
+        "success": true,
+        "cu": 10.0
+      },
+      "random": {
+        "reward": 0.9634375000000001,
+        "success": true,
+        "cu": 13.0
+      },
+      "search": {
+        "reward": 0.96125,
+        "success": true,
+        "cu": 14.0
+      }
+    },
+    {
+      "group": 17,
+      "budget": 6,
+      "cheap": {
+        "reward": 0.9852678571428571,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9721428571428572,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9852678571428571,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.9716071428571429,
+        "success": true,
+        "cu": 4.0
+      },
+      "search": {
+        "reward": 0.9808928571428572,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 17,
+      "budget": 10,
+      "cheap": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9808928571428572,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.964702380952381,
+        "success": true,
+        "cu": 9.0
+      },
+      "search": {
+        "reward": 0.9867261904761905,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 17,
+      "budget": 14,
+      "cheap": {
+        "reward": 0.9918303571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9852678571428573,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9918303571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.9634375000000001,
+        "success": true,
+        "cu": 13.0
+      },
+      "search": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 18,
+      "budget": 6,
+      "cheap": {
+        "reward": 0.9666964285714286,
+        "success": true,
+        "cu": 5.0
+      },
+      "dense": {
+        "reward": -0.03276785714285714,
+        "success": false,
+        "cu": 5.0
+      },
+      "adaptive": {
+        "reward": 0.9617857142857144,
+        "success": true,
+        "cu": 6.0
+      },
+      "random": {
+        "reward": 0.9716071428571429,
+        "success": true,
+        "cu": 4.0
+      },
+      "search": {
+        "reward": 0.9623214285714287,
+        "success": true,
+        "cu": 6.0
+      }
+    },
+    {
+      "group": 18,
+      "budget": 10,
+      "cheap": {
+        "reward": 0.964702380952381,
+        "success": true,
+        "cu": 9.0
+      },
+      "dense": {
+        "reward": 0.9652380952380952,
+        "success": true,
+        "cu": 9.0
+      },
+      "adaptive": {
+        "reward": 0.96125,
+        "success": true,
+        "cu": 10.0
+      },
+      "random": {
+        "reward": 0.964702380952381,
+        "success": true,
+        "cu": 9.0
+      },
+      "search": {
+        "reward": 0.9617857142857144,
+        "success": true,
+        "cu": 10.0
+      }
+    },
+    {
+      "group": 18,
+      "budget": 14,
+      "cheap": {
+        "reward": 0.9634375000000001,
+        "success": true,
+        "cu": 13.0
+      },
+      "dense": {
+        "reward": 0.9683482142857143,
+        "success": true,
+        "cu": 11.0
+      },
+      "adaptive": {
+        "reward": 0.9700000000000001,
+        "success": true,
+        "cu": 10.0
+      },
+      "random": {
+        "reward": 0.9634375000000001,
+        "success": true,
+        "cu": 13.0
+      },
+      "search": {
+        "reward": 0.96125,
+        "success": true,
+        "cu": 14.0
+      }
+    },
+    {
+      "group": 19,
+      "budget": 6,
+      "cheap": {
+        "reward": -0.03330357142857143,
+        "success": false,
+        "cu": 5.0
+      },
+      "dense": {
+        "reward": -0.03276785714285714,
+        "success": false,
+        "cu": 5.0
+      },
+      "adaptive": {
+        "reward": -0.03767857142857143,
+        "success": false,
+        "cu": 6.0
+      },
+      "random": {
+        "reward": -0.028392857142857136,
+        "success": false,
+        "cu": 4.0
+      },
+      "search": {
+        "reward": -0.03767857142857143,
+        "success": false,
+        "cu": 6.0
+      }
+    },
+    {
+      "group": 19,
+      "budget": 10,
+      "cheap": {
+        "reward": -0.03529761904761905,
+        "success": false,
+        "cu": 9.0
+      },
+      "dense": {
+        "reward": -0.03476190476190476,
+        "success": false,
+        "cu": 9.0
+      },
+      "adaptive": {
+        "reward": -0.032380952380952385,
+        "success": false,
+        "cu": 8.0
+      },
+      "random": {
+        "reward": -0.03529761904761905,
+        "success": false,
+        "cu": 9.0
+      },
+      "search": {
+        "reward": -0.03821428571428571,
+        "success": false,
+        "cu": 10.0
+      }
+    },
+    {
+      "group": 19,
+      "budget": 14,
+      "cheap": {
+        "reward": -0.0365625,
+        "success": false,
+        "cu": 13.0
+      },
+      "dense": {
+        "reward": -0.031651785714285716,
+        "success": false,
+        "cu": 11.0
+      },
+      "adaptive": {
+        "reward": -0.034374999999999996,
+        "success": false,
+        "cu": 12.0
+      },
+      "random": {
+        "reward": -0.0365625,
+        "success": false,
+        "cu": 13.0
+      },
+      "search": {
+        "reward": -0.03875,
+        "success": false,
+        "cu": 14.0
+      }
+    },
+    {
+      "group": 20,
+      "budget": 6,
+      "cheap": {
+        "reward": -0.03330357142857143,
+        "success": false,
+        "cu": 5.0
+      },
+      "dense": {
+        "reward": -0.03276785714285714,
+        "success": false,
+        "cu": 5.0
+      },
+      "adaptive": {
+        "reward": -0.038214285714285715,
+        "success": false,
+        "cu": 6.0
+      },
+      "random": {
+        "reward": -0.028392857142857136,
+        "success": false,
+        "cu": 4.0
+      },
+      "search": {
+        "reward": -0.03767857142857143,
+        "success": false,
+        "cu": 6.0
+      }
+    },
+    {
+      "group": 20,
+      "budget": 10,
+      "cheap": {
+        "reward": -0.03529761904761905,
+        "success": false,
+        "cu": 9.0
+      },
+      "dense": {
+        "reward": -0.03476190476190476,
+        "success": false,
+        "cu": 9.0
+      },
+      "adaptive": {
+        "reward": -0.03874999999999999,
+        "success": false,
+        "cu": 10.0
+      },
+      "random": {
+        "reward": -0.03529761904761905,
+        "success": false,
+        "cu": 9.0
+      },
+      "search": {
+        "reward": -0.03821428571428571,
+        "success": false,
+        "cu": 10.0
+      }
+    },
+    {
+      "group": 20,
+      "budget": 14,
+      "cheap": {
+        "reward": -0.0365625,
+        "success": false,
+        "cu": 13.0
+      },
+      "dense": {
+        "reward": -0.031651785714285716,
+        "success": false,
+        "cu": 11.0
+      },
+      "adaptive": {
+        "reward": -0.029999999999999995,
+        "success": false,
+        "cu": 10.0
+      },
+      "random": {
+        "reward": -0.0365625,
+        "success": false,
+        "cu": 13.0
+      },
+      "search": {
+        "reward": -0.03875,
+        "success": false,
+        "cu": 14.0
+      }
+    },
+    {
+      "group": 21,
+      "budget": 6,
+      "cheap": {
+        "reward": 0.9666964285714286,
+        "success": true,
+        "cu": 5.0
+      },
+      "dense": {
+        "reward": 0.9672321428571429,
+        "success": true,
+        "cu": 5.0
+      },
+      "adaptive": {
+        "reward": 0.9710714285714286,
+        "success": true,
+        "cu": 4.0
+      },
+      "random": {
+        "reward": 0.9716071428571429,
+        "success": true,
+        "cu": 4.0
+      },
+      "search": {
+        "reward": 0.9623214285714287,
+        "success": true,
+        "cu": 6.0
+      }
+    },
+    {
+      "group": 21,
+      "budget": 10,
+      "cheap": {
+        "reward": 0.964702380952381,
+        "success": true,
+        "cu": 9.0
+      },
+      "dense": {
+        "reward": 0.9652380952380952,
+        "success": true,
+        "cu": 9.0
+      },
+      "adaptive": {
+        "reward": 0.9676190476190477,
+        "success": true,
+        "cu": 8.0
+      },
+      "random": {
+        "reward": 0.964702380952381,
+        "success": true,
+        "cu": 9.0
+      },
+      "search": {
+        "reward": 0.9617857142857144,
+        "success": true,
+        "cu": 10.0
+      }
+    },
+    {
+      "group": 21,
+      "budget": 14,
+      "cheap": {
+        "reward": 0.9634375000000001,
+        "success": true,
+        "cu": 13.0
+      },
+      "dense": {
+        "reward": 0.9683482142857143,
+        "success": true,
+        "cu": 11.0
+      },
+      "adaptive": {
+        "reward": 0.9656250000000001,
+        "success": true,
+        "cu": 12.0
+      },
+      "random": {
+        "reward": 0.9634375000000001,
+        "success": true,
+        "cu": 13.0
+      },
+      "search": {
+        "reward": 0.96125,
+        "success": true,
+        "cu": 14.0
+      }
+    },
+    {
+      "group": 22,
+      "budget": 6,
+      "cheap": {
+        "reward": -0.03330357142857143,
+        "success": false,
+        "cu": 5.0
+      },
+      "dense": {
+        "reward": -0.03276785714285714,
+        "success": false,
+        "cu": 5.0
+      },
+      "adaptive": {
+        "reward": -0.02892857142857143,
+        "success": false,
+        "cu": 4.0
+      },
+      "random": {
+        "reward": -0.028392857142857136,
+        "success": false,
+        "cu": 4.0
+      },
+      "search": {
+        "reward": -0.03767857142857143,
+        "success": false,
+        "cu": 6.0
+      }
+    },
+    {
+      "group": 22,
+      "budget": 10,
+      "cheap": {
+        "reward": -0.03529761904761905,
+        "success": false,
+        "cu": 9.0
+      },
+      "dense": {
+        "reward": -0.03476190476190476,
+        "success": false,
+        "cu": 9.0
+      },
+      "adaptive": {
+        "reward": -0.032380952380952385,
+        "success": false,
+        "cu": 8.0
+      },
+      "random": {
+        "reward": 0.964702380952381,
+        "success": true,
+        "cu": 9.0
+      },
+      "search": {
+        "reward": -0.03821428571428571,
+        "success": false,
+        "cu": 10.0
+      }
+    },
+    {
+      "group": 22,
+      "budget": 14,
+      "cheap": {
+        "reward": -0.0365625,
+        "success": false,
+        "cu": 13.0
+      },
+      "dense": {
+        "reward": -0.031651785714285716,
+        "success": false,
+        "cu": 11.0
+      },
+      "adaptive": {
+        "reward": -0.034374999999999996,
+        "success": false,
+        "cu": 12.0
+      },
+      "random": {
+        "reward": 0.9634375000000001,
+        "success": true,
+        "cu": 13.0
+      },
+      "search": {
+        "reward": 0.96125,
+        "success": true,
+        "cu": 14.0
+      }
+    },
+    {
+      "group": 23,
+      "budget": 6,
+      "cheap": {
+        "reward": 0.9852678571428571,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9721428571428572,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9852678571428571,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.9716071428571429,
+        "success": true,
+        "cu": 4.0
+      },
+      "search": {
+        "reward": 0.9808928571428572,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 23,
+      "budget": 10,
+      "cheap": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9808928571428572,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.964702380952381,
+        "success": true,
+        "cu": 9.0
+      },
+      "search": {
+        "reward": 0.9867261904761905,
+        "success": true,
+        "cu": 2.0
+      }
+    },
+    {
+      "group": 23,
+      "budget": 14,
+      "cheap": {
+        "reward": 0.9918303571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "dense": {
+        "reward": 0.9852678571428573,
+        "success": true,
+        "cu": 4.0
+      },
+      "adaptive": {
+        "reward": 0.9918303571428572,
+        "success": true,
+        "cu": 1.0
+      },
+      "random": {
+        "reward": 0.9634375000000001,
+        "success": true,
+        "cu": 13.0
+      },
+      "search": {
+        "reward": 0.9896428571428572,
+        "success": true,
+        "cu": 2.0
+      }
+    }
+  ],
+  "oracle_cost_scope": "separate_offline_environment_audit_not_online_policy",
+  "elapsed_seconds": 1.5962108999997326
+}

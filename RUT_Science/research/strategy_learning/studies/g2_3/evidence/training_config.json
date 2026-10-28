@@ -1,0 +1,40 @@
+{
+  "version": "g2_3_training_v1",
+  "seeds": [
+    21,
+    37,
+    59
+  ],
+  "device": "cpu",
+  "threads": 1,
+  "bc_epochs": 100,
+  "bc_lr": 0.001,
+  "bc_evaluate_epochs": [
+    20,
+    40,
+    60,
+    80,
+    100
+  ],
+  "ppo_updates": 40,
+  "rollout_steps": 512,
+  "ppo_lr": 0.0003,
+  "ppo_epochs": 4,
+  "minibatch": 128,
+  "gamma": 0.99,
+  "gae_lambda": 0.95,
+  "clip_epsilon": 0.2,
+  "entropy_weight": 0.01,
+  "critic_weight": 0.5,
+  "max_gradient_norm": 0.5,
+  "evaluate_updates": [
+    0,
+    10,
+    20,
+    30,
+    40
+  ],
+  "model_selection": "development success, then fewer blocked attempts, then fewer decisions",
+  "source_labels": "scripted_reference_not_human_experts",
+  "real_tools_connected": false
+}

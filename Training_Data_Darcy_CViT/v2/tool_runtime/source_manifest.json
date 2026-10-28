@@ -1,0 +1,23 @@
+[
+  {
+    "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\Research_Tool_Library\\core.py",
+    "source_sha256": "f8eba0e7ba9dbec2290bbd6e6d83882e1d3f562629ac1f6daae66310feaf1c18",
+    "copy": "core.py",
+    "copy_sha256": "4e15ce989d9aa7c1491e210c17b3b8839f9a7084ab95252ad722e5f7e4258f54",
+    "adaptation": null
+  },
+  {
+    "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\Research_Tool_Library\\catalog.py",
+    "source_sha256": "e6a13e3bc4fd9c377c13d472d487f33e763ea3ac411580618498edaa28b0fbff",
+    "copy": "catalog.py",
+    "copy_sha256": "b50231667247bbb9514fd2f0f7548d16b35764c6119acd9994732646522623b2",
+    "adaptation": null
+  },
+  {
+    "source": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\Research_Tool_Library\\doe_adapter.py",
+    "source_sha256": "043f688571c345f3a587733cc97b40318f48a92906e4a5ca5af92bfda098e5c0",
+    "copy": "doe_adapter.py",
+    "copy_sha256": "6f34aaf5869ee91f1c368fcd5d6cd1e22286d90c7c22bd49b94d954a37feb78c",
+    "adaptation": "Ancestor project lookup for relocated read-only DOE adapter"
+  }
+]

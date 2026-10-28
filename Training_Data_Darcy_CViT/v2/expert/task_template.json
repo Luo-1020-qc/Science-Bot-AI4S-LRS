@@ -1,0 +1,55 @@
+{
+  "schema_version": "tool_harness_rl_v2",
+  "task_id": "darcy_train_00",
+  "policy_split": "train",
+  "root_group": "synthetic_darcy_family_source_A",
+  "data_lineage": {
+    "source_ancestor_ids": [
+      "synthetic_darcy_source_A"
+    ],
+    "scientific_partitions": {
+      "train": "mock://source_A/train",
+      "validation": "mock://source_A/validation",
+      "test": "mock://source_A/test"
+    },
+    "source_kind": "synthetic_reference_only"
+  },
+  "public": {
+    "domain": "darcy",
+    "user_request": "Compare candidate minus baseline relative L2 within the declared Darcy data/experimental-unit protocol; do not claim broad generalization. Use mock tools only.",
+    "family": "rcbd_two_arm",
+    "factors": [
+      {
+        "name": "predictor",
+        "levels": [
+          "mean_field",
+          "ridge_field"
+        ]
+      }
+    ],
+    "unit_definition": "One predictor application within an independent data-realization block",
+    "response": "relative_l2",
+    "primary_term": "predictor",
+    "direction": "lower",
+    "practical_margin": 0.01,
+    "minimum_effect": 0.02,
+    "sigma": 0.02,
+    "variance_source": "synthetic pilot declaration; not real evidence",
+    "target_power": 0.8,
+    "resource_budget": 256,
+    "max_decisions": 40
+  },
+  "simulator": {
+    "initial_fault": "wrong_model",
+    "outcome_scenario": "benefit",
+    "user_variance_answer": null,
+    "existing_job": false,
+    "job_failure": null
+  },
+  "expert_review": {
+    "status": "pending",
+    "reviewer": null,
+    "reason": null,
+    "reviewed_at": null
+  }
+}

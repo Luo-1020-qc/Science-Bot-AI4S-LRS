@@ -1,0 +1,14 @@
+{
+  "ref": "2529b9000692154d8497f13b2d3651b3a7a80b8e9c1c67bc1d56e61d8ea14b9e",
+  "kind": "resolution",
+  "data": {
+    "old_review_ref": "d5293a3bbe6cff5d2f72e1ba56fc1078c0f5c819710c8c2f2ba5f54cad5e59a6",
+    "new_review_ref": "21f6a971734016fbec1bc679d61401ccd40592b810252db16d03a8a891786c6f",
+    "resolved": [
+      "c4707e61f5823319"
+    ],
+    "still_blocked": [],
+    "new_findings": [],
+    "all_clear": true
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "version": "g2_3_delivery_v1",
+  "passed": true,
+  "checks": {
+    "original_project_and_g2_2_unchanged": true,
+    "own_tests_pass": true,
+    "bank_and_policies_frozen": true,
+    "ppo_trained_with_audited_transitions": true,
+    "ppo_network_parameters_updated": true,
+    "corrective_trial_updates_audited": true,
+    "corrective_trial_selected_before_final": true,
+    "no_final_task_selection": true,
+    "no_real_api_gpu_or_tool_execution": true,
+    "no_cvit_numeric_metric_fabricated": true,
+    "cvit_fixture_copy_matches": true,
+    "existing_mock_job_reused_after_restore": true,
+    "no_duplicate_mock_launches_in_evaluation": true,
+    "live_policy_not_promoted": true,
+    "live_science_bot_not_imported": true,
+    "no_new_zip_package": true
+  },
+  "protected_files": 37271,
+  "tests": 37,
+  "task_counts": {
+    "train": 240,
+    "development": 90,
+    "heldout": 96
+  },
+  "ppo_transitions": 159744,
+  "primary_ppo_transitions": 122880,
+  "corrective_ppo_transitions": 36864,
+  "real_api_calls": 0,
+  "real_tool_executions": 0,
+  "real_gpu_jobs": 0,
+  "live_policy_promoted": false,
+  "aggregates": {
+    "bc": {
+      "training_seeds": 3,
+      "mean_success_rate": 0.21875,
+      "min_success_rate": 0.16666666666666666,
+      "max_success_rate": 0.25,
+      "mean_decisions": 14.434027777777779,
+      "by_domain": {
+        "tabular": {
+          "mean_success_rate": 0.006944444444444444,
+          "min_success_rate": 0.0,
+          "max_success_rate": 0.020833333333333332
+        },
+        "cvit": {
+          "mean_success_rate": 0.4305555555555556,
+          "min_success_rate": 0.3125,
+          "max_success_rate": 0.5
+        }
+      }
+    },
+    "bc_ppo": {
+      "training_seeds": 3,
+      "mean_success_rate": 0.2465277777777778,
+      "min_success_rate": 0.23958333333333334,
+      "max_success_rate": 0.25,
+      "mean_decisions": 7.246527777777779,
+      "by_domain": {
+        "tabular": {
+          "mean_success_rate": 0.0,
+          "min_success_rate": 0.0,
+          "max_success_rate": 0.0
+        },
+        "cvit": {
+          "mean_success_rate": 0.4930555555555556,
+          "min_success_rate": 0.4791666666666667,
+          "max_success_rate": 0.5
+        }
+      }
+    },
+    "ppo_scratch": {
+      "training_seeds": 3,
+      "mean_success_rate": 0.25,
+      "min_success_rate": 0.25,
+      "max_success_rate": 0.25,
+      "mean_decisions": 1.0,
+      "by_domain": {
+        "tabular": {
+          "mean_success_rate": 0.0,
+          "min_success_rate": 0.0,
+          "max_success_rate": 0.0
+        },
+        "cvit": {
+          "mean_success_rate": 0.5,
+          "min_success_rate": 0.5,
+          "max_success_rate": 0.5
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Scripted task protocol learning, not language-model RLHF",
+    "CViT configuration/job lifecycle mock, not a real training experiment",
+    "Three seeds, synthetic held-out combinations; no broad generalization or superiority claim"
+  ],
+  "audited_aggregates": {
+    "bc": {
+      "mean_strict_success_rate": 0.11805555555555554,
+      "min_strict_success_rate": 0.09375,
+      "max_strict_success_rate": 0.16666666666666666,
+      "eligible_tasks_per_seed": 30,
+      "completed_eligible_tasks_mean": 0.3333333333333333
+    },
+    "bc_ppo": {
+      "mean_strict_success_rate": 0.0625,
+      "min_strict_success_rate": 0.0,
+      "max_strict_success_rate": 0.09375,
+      "eligible_tasks_per_seed": 30,
+      "completed_eligible_tasks_mean": 0.0
+    },
+    "ppo_scratch": {
+      "mean_strict_success_rate": 0.0,
+      "min_strict_success_rate": 0.0,
+      "max_strict_success_rate": 0.0,
+      "eligible_tasks_per_seed": 30,
+      "completed_eligible_tasks_mean": 0.0
+    }
+  },
+  "reward_limitation_disclosed": true,
+  "corrective_trial": {
+    "baseline_mean": 0.6041666666666666,
+    "feedback_ppo_mean": 0.4305555555555556,
+    "rule_success": 1.0,
+    "tasks": 48,
+    "limitations": "Corrective exploratory trial with fresh combinations; not a replacement for the original preregistered comparison"
+  },
+  "release_gate": {
+    "promote_to_live_agent": false,
+    "reason": "PPO not superior to rule or the matched baseline; all experiments remain isolated"
+  }
+}

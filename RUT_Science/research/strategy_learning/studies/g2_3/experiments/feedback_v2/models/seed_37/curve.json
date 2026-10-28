@@ -1,0 +1,1936 @@
+[
+  {
+    "update": 0,
+    "development": {
+      "tasks": 90,
+      "successes": 90,
+      "success_rate": 1.0,
+      "mean_decisions": 6.144444444444445,
+      "mean_questions": 2.577777777777778,
+      "blocked_attempts": 0,
+      "duplicate_mock_launches": 0,
+      "real_gpu_jobs": 0,
+      "real_executions": 0,
+      "by_domain": {
+        "cvit": {
+          "tasks": 42,
+          "successes": 42,
+          "success_rate": 1.0,
+          "mean_decisions": 6.5,
+          "mean_questions": 2.357142857142857,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "tabular": {
+          "tasks": 48,
+          "successes": 48,
+          "success_rate": 1.0,
+          "mean_decisions": 5.833333333333333,
+          "mean_questions": 2.7708333333333335,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      },
+      "by_scenario": {
+        "unknown_structure": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 3.0,
+          "mean_questions": 2.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "bad_tool_schema": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 3.0,
+          "mean_questions": 1.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "insufficient_budget": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 5.0,
+          "mean_questions": 3.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "ordinary_comparison": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 7.0,
+          "mean_questions": 4.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "low_budget": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 2.6666666666666665,
+          "mean_questions": 0.6666666666666666,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_design": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 7.0,
+          "mean_questions": 4.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "clustered_data": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 1.3333333333333333,
+          "mean_questions": 0.3333333333333333,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "predictive_run": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 9.0,
+          "mean_questions": 4.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "goal_correction": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 9.333333333333334,
+          "mean_questions": 3.3333333333333335,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "denied_read": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "job_mismatch": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 9.0,
+          "mean_questions": 3.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "causal_claim": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 2.0,
+          "mean_questions": 1.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "existing_completed": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 8.333333333333334,
+          "mean_questions": 2.3333333333333335,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "unsupported_target": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 4.0,
+          "mean_questions": 3.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "explain_only": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "conflicting_response": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 10.0,
+          "mean_questions": 4.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "unknown_dataset": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 2.0,
+          "mean_questions": 1.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "confirmation_denied": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 8.333333333333334,
+          "mean_questions": 3.3333333333333335,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "data_change": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 12.333333333333334,
+          "mean_questions": 3.3333333333333335,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "negated_execution": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "memory_low": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 4.0,
+          "mean_questions": 2.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "explanation_only": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "missing_cases": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 11.0,
+          "mean_questions": 6.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "existing_running": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 8.333333333333334,
+          "mean_questions": 2.3333333333333335,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "ambiguous_intent": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 12.666666666666666,
+          "mean_questions": 7.666666666666667,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "job_oom": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 10.666666666666666,
+          "mean_questions": 2.6666666666666665,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "paired_design": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 7.666666666666667,
+          "mean_questions": 4.666666666666667,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "transient_inspection": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 10.666666666666666,
+          "mean_questions": 4.666666666666667,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_run": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 10.0,
+          "mean_questions": 3.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "read_denied": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 2.0,
+          "mean_questions": 1.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      }
+    }
+  },
+  {
+    "update": 1,
+    "loss": 7.286840558052063
+  },
+  {
+    "update": 2,
+    "loss": 6.143644988536835
+  },
+  {
+    "update": 3,
+    "loss": 5.97282287478447
+  },
+  {
+    "update": 4,
+    "loss": 6.078645646572113
+  },
+  {
+    "update": 5,
+    "loss": 4.2700320184230804
+  },
+  {
+    "update": 6,
+    "loss": 4.394322708249092,
+    "development": {
+      "tasks": 90,
+      "successes": 90,
+      "success_rate": 1.0,
+      "mean_decisions": 7.355555555555555,
+      "mean_questions": 3.7888888888888888,
+      "blocked_attempts": 0,
+      "duplicate_mock_launches": 0,
+      "real_gpu_jobs": 0,
+      "real_executions": 0,
+      "by_domain": {
+        "cvit": {
+          "tasks": 42,
+          "successes": 42,
+          "success_rate": 1.0,
+          "mean_decisions": 6.5,
+          "mean_questions": 2.357142857142857,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "tabular": {
+          "tasks": 48,
+          "successes": 48,
+          "success_rate": 1.0,
+          "mean_decisions": 8.104166666666666,
+          "mean_questions": 5.041666666666667,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      },
+      "by_scenario": {
+        "unknown_structure": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 3.0,
+          "mean_questions": 2.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "bad_tool_schema": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 3.0,
+          "mean_questions": 1.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "insufficient_budget": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 5.0,
+          "mean_questions": 3.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "ordinary_comparison": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 17.0,
+          "mean_questions": 14.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "low_budget": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 2.6666666666666665,
+          "mean_questions": 0.6666666666666666,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_design": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 7.0,
+          "mean_questions": 4.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "clustered_data": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 1.3333333333333333,
+          "mean_questions": 0.3333333333333333,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "predictive_run": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 9.0,
+          "mean_questions": 4.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "goal_correction": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 9.333333333333334,
+          "mean_questions": 3.3333333333333335,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "denied_read": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "job_mismatch": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 9.0,
+          "mean_questions": 3.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "causal_claim": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 2.0,
+          "mean_questions": 1.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "existing_completed": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 8.333333333333334,
+          "mean_questions": 2.3333333333333335,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "unsupported_target": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 4.0,
+          "mean_questions": 3.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "explain_only": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "conflicting_response": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 19.333333333333332,
+          "mean_questions": 13.333333333333334,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "unknown_dataset": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 2.0,
+          "mean_questions": 1.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "confirmation_denied": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 8.333333333333334,
+          "mean_questions": 3.3333333333333335,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "data_change": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 12.333333333333334,
+          "mean_questions": 3.3333333333333335,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "negated_execution": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 1.3333333333333333,
+          "mean_questions": 0.3333333333333333,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "memory_low": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 4.0,
+          "mean_questions": 2.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "explanation_only": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "missing_cases": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 12.0,
+          "mean_questions": 7.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "existing_running": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 8.333333333333334,
+          "mean_questions": 2.3333333333333335,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "ambiguous_intent": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 19.0,
+          "mean_questions": 14.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "job_oom": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 10.666666666666666,
+          "mean_questions": 2.6666666666666665,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "paired_design": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 7.666666666666667,
+          "mean_questions": 4.666666666666667,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "transient_inspection": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 20.0,
+          "mean_questions": 14.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_run": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 10.0,
+          "mean_questions": 3.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "read_denied": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 2.0,
+          "mean_questions": 1.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      }
+    }
+  },
+  {
+    "update": 7,
+    "loss": 4.520556166768074
+  },
+  {
+    "update": 8,
+    "loss": 4.684722185134888
+  },
+  {
+    "update": 9,
+    "loss": 4.0054580718278885
+  },
+  {
+    "update": 10,
+    "loss": 3.3773686289787292
+  },
+  {
+    "update": 11,
+    "loss": 3.2884200662374496
+  },
+  {
+    "update": 12,
+    "loss": 3.007970541715622,
+    "development": {
+      "tasks": 90,
+      "successes": 83,
+      "success_rate": 0.9222222222222223,
+      "mean_decisions": 8.366666666666667,
+      "mean_questions": 4.166666666666667,
+      "blocked_attempts": 0,
+      "duplicate_mock_launches": 0,
+      "real_gpu_jobs": 0,
+      "real_executions": 0,
+      "by_domain": {
+        "cvit": {
+          "tasks": 42,
+          "successes": 42,
+          "success_rate": 1.0,
+          "mean_decisions": 6.571428571428571,
+          "mean_questions": 2.4285714285714284,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "tabular": {
+          "tasks": 48,
+          "successes": 41,
+          "success_rate": 0.8541666666666666,
+          "mean_decisions": 9.9375,
+          "mean_questions": 5.6875,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      },
+      "by_scenario": {
+        "unknown_structure": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 3.0,
+          "mean_questions": 2.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "bad_tool_schema": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 3.0,
+          "mean_questions": 1.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "insufficient_budget": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 5.0,
+          "mean_questions": 3.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "ordinary_comparison": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 17.0,
+          "mean_questions": 14.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "low_budget": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 2.6666666666666665,
+          "mean_questions": 0.6666666666666666,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_design": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 7.0,
+          "mean_questions": 4.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "clustered_data": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 1.3333333333333333,
+          "mean_questions": 0.3333333333333333,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "predictive_run": {
+          "tasks": 3,
+          "successes": 1,
+          "success_rate": 0.3333333333333333,
+          "mean_decisions": 19.333333333333332,
+          "mean_questions": 7.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "goal_correction": {
+          "tasks": 3,
+          "successes": 2,
+          "success_rate": 0.6666666666666666,
+          "mean_decisions": 14.666666666666666,
+          "mean_questions": 7.333333333333333,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "denied_read": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "job_mismatch": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 9.0,
+          "mean_questions": 3.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "causal_claim": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 2.0,
+          "mean_questions": 1.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "existing_completed": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 8.333333333333334,
+          "mean_questions": 2.3333333333333335,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "unsupported_target": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 4.0,
+          "mean_questions": 3.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "explain_only": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "conflicting_response": {
+          "tasks": 3,
+          "successes": 1,
+          "success_rate": 0.3333333333333333,
+          "mean_decisions": 22.666666666666668,
+          "mean_questions": 11.666666666666666,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "unknown_dataset": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 3.0,
+          "mean_questions": 2.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "confirmation_denied": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 8.333333333333334,
+          "mean_questions": 3.3333333333333335,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "data_change": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 12.333333333333334,
+          "mean_questions": 3.3333333333333335,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "negated_execution": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 2.0,
+          "mean_questions": 1.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "memory_low": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 4.0,
+          "mean_questions": 2.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "explanation_only": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "missing_cases": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 17.0,
+          "mean_questions": 12.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "existing_running": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 8.333333333333334,
+          "mean_questions": 2.3333333333333335,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "ambiguous_intent": {
+          "tasks": 3,
+          "successes": 1,
+          "success_rate": 0.3333333333333333,
+          "mean_decisions": 22.333333333333332,
+          "mean_questions": 12.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "job_oom": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 10.666666666666666,
+          "mean_questions": 2.6666666666666665,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "paired_design": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 9.0,
+          "mean_questions": 6.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "transient_inspection": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 20.0,
+          "mean_questions": 14.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_run": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 10.0,
+          "mean_questions": 3.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "read_denied": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 2.0,
+          "mean_questions": 1.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      }
+    }
+  },
+  {
+    "update": 13,
+    "loss": 2.714812621474266
+  },
+  {
+    "update": 14,
+    "loss": 2.4187066629529
+  },
+  {
+    "update": 15,
+    "loss": 2.5375014543533325
+  },
+  {
+    "update": 16,
+    "loss": 2.122772127389908
+  },
+  {
+    "update": 17,
+    "loss": 3.7128589898347855
+  },
+  {
+    "update": 18,
+    "loss": 2.506085366010666,
+    "development": {
+      "tasks": 90,
+      "successes": 87,
+      "success_rate": 0.9666666666666667,
+      "mean_decisions": 7.988888888888889,
+      "mean_questions": 4.233333333333333,
+      "blocked_attempts": 0,
+      "duplicate_mock_launches": 0,
+      "real_gpu_jobs": 0,
+      "real_executions": 0,
+      "by_domain": {
+        "cvit": {
+          "tasks": 42,
+          "successes": 42,
+          "success_rate": 1.0,
+          "mean_decisions": 6.690476190476191,
+          "mean_questions": 2.5476190476190474,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "tabular": {
+          "tasks": 48,
+          "successes": 45,
+          "success_rate": 0.9375,
+          "mean_decisions": 9.125,
+          "mean_questions": 5.708333333333333,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      },
+      "by_scenario": {
+        "unknown_structure": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 3.0,
+          "mean_questions": 2.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "bad_tool_schema": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 3.0,
+          "mean_questions": 1.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "insufficient_budget": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 5.0,
+          "mean_questions": 3.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "ordinary_comparison": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 15.0,
+          "mean_questions": 12.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "low_budget": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 2.6666666666666665,
+          "mean_questions": 0.6666666666666666,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_design": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 7.0,
+          "mean_questions": 4.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "clustered_data": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 1.3333333333333333,
+          "mean_questions": 0.3333333333333333,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "predictive_run": {
+          "tasks": 3,
+          "successes": 2,
+          "success_rate": 0.6666666666666666,
+          "mean_decisions": 13.666666666666666,
+          "mean_questions": 7.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "goal_correction": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 10.666666666666666,
+          "mean_questions": 4.666666666666667,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "denied_read": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "job_mismatch": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 9.0,
+          "mean_questions": 3.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "causal_claim": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 2.0,
+          "mean_questions": 1.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "existing_completed": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 8.333333333333334,
+          "mean_questions": 2.3333333333333335,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "unsupported_target": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 4.0,
+          "mean_questions": 3.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "explain_only": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "conflicting_response": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 20.0,
+          "mean_questions": 14.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "unknown_dataset": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 4.666666666666667,
+          "mean_questions": 3.6666666666666665,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "confirmation_denied": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 8.333333333333334,
+          "mean_questions": 3.3333333333333335,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "data_change": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 12.333333333333334,
+          "mean_questions": 3.3333333333333335,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "negated_execution": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 1.3333333333333333,
+          "mean_questions": 0.3333333333333333,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "memory_low": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 4.0,
+          "mean_questions": 2.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "explanation_only": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "missing_cases": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 16.333333333333332,
+          "mean_questions": 11.333333333333334,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "existing_running": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 8.333333333333334,
+          "mean_questions": 2.3333333333333335,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "ambiguous_intent": {
+          "tasks": 3,
+          "successes": 2,
+          "success_rate": 0.6666666666666666,
+          "mean_decisions": 20.666666666666668,
+          "mean_questions": 14.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "job_oom": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 10.666666666666666,
+          "mean_questions": 2.6666666666666665,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "paired_design": {
+          "tasks": 3,
+          "successes": 2,
+          "success_rate": 0.6666666666666666,
+          "mean_decisions": 13.333333333333334,
+          "mean_questions": 8.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "transient_inspection": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 20.0,
+          "mean_questions": 14.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_run": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 10.0,
+          "mean_questions": 3.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "read_denied": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 2.0,
+          "mean_questions": 1.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      }
+    }
+  },
+  {
+    "update": 19,
+    "loss": 2.081217385828495
+  },
+  {
+    "update": 20,
+    "loss": 2.328097455203533
+  },
+  {
+    "update": 21,
+    "loss": 2.7212070375680923
+  },
+  {
+    "update": 22,
+    "loss": 2.822505310177803
+  },
+  {
+    "update": 23,
+    "loss": 1.8244362100958824
+  },
+  {
+    "update": 24,
+    "loss": 1.5300161764025688,
+    "development": {
+      "tasks": 90,
+      "successes": 85,
+      "success_rate": 0.9444444444444444,
+      "mean_decisions": 7.855555555555555,
+      "mean_questions": 3.966666666666667,
+      "blocked_attempts": 0,
+      "duplicate_mock_launches": 0,
+      "real_gpu_jobs": 0,
+      "real_executions": 0,
+      "by_domain": {
+        "cvit": {
+          "tasks": 42,
+          "successes": 42,
+          "success_rate": 1.0,
+          "mean_decisions": 6.571428571428571,
+          "mean_questions": 2.4523809523809526,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "tabular": {
+          "tasks": 48,
+          "successes": 43,
+          "success_rate": 0.8958333333333334,
+          "mean_decisions": 8.979166666666666,
+          "mean_questions": 5.291666666666667,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      },
+      "by_scenario": {
+        "unknown_structure": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 3.0,
+          "mean_questions": 2.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "bad_tool_schema": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 3.0,
+          "mean_questions": 1.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "insufficient_budget": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 4.333333333333333,
+          "mean_questions": 2.6666666666666665,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "ordinary_comparison": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 8.666666666666666,
+          "mean_questions": 5.666666666666667,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "low_budget": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 2.6666666666666665,
+          "mean_questions": 0.6666666666666666,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "full_design": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 7.0,
+          "mean_questions": 4.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "clustered_data": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 1.3333333333333333,
+          "mean_questions": 0.3333333333333333,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "predictive_run": {
+          "tasks": 3,
+          "successes": 2,
+          "success_rate": 0.6666666666666666,
+          "mean_decisions": 17.0,
+          "mean_questions": 9.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "goal_correction": {
+          "tasks": 3,
+          "successes": 2,
+          "success_rate": 0.6666666666666666,
+          "mean_decisions": 14.666666666666666,
+          "mean_questions": 7.333333333333333,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "denied_read": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "job_mismatch": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 9.0,
+          "mean_questions": 3.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "causal_claim": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 2.0,
+          "mean_questions": 1.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "existing_completed": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 8.333333333333334,
+          "mean_questions": 2.3333333333333335,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "unsupported_target": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 4.0,
+          "mean_questions": 3.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "explain_only": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "conflicting_response": {
+          "tasks": 3,
+          "successes": 2,
+          "success_rate": 0.6666666666666666,
+          "mean_decisions": 21.333333333333332,
+          "mean_questions": 14.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "unknown_dataset": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 3.6666666666666665,
+          "mean_questions": 2.6666666666666665,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "confirmation_denied": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 8.333333333333334,
+          "mean_questions": 3.3333333333333335,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "data_change": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 12.333333333333334,
+          "mean_questions": 3.3333333333333335,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "negated_execution": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 2.0,
+          "mean_questions": 1.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "memory_low": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 4.0,
+          "mean_questions": 2.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "explanation_only": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 1.0,
+          "mean_questions": 0.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "missing_cases": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 17.0,
+          "mean_questions": 12.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "existing_running": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 8.333333333333334,
+          "mean_questions": 2.3333333333333335,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "ambiguous_intent": {
+          "tasks": 3,
+          "successes": 1,
+          "success_rate": 0.3333333333333333,
+          "mean_decisions": 22.333333333333332,
+          "mean_questions": 13.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "job_oom": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 10.666666666666666,
+          "mean_questions": 2.6666666666666665,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "paired_design": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 7.666666666666667,
+          "mean_questions": 4.666666666666667,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "transient_inspection": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 18.0,
+          "mean_questions": 12.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "pilot_run": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 10.0,
+          "mean_questions": 3.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        },
+        "read_denied": {
+          "tasks": 3,
+          "successes": 3,
+          "success_rate": 1.0,
+          "mean_decisions": 2.0,
+          "mean_questions": 1.0,
+          "blocked_attempts": 0,
+          "duplicate_mock_launches": 0,
+          "real_gpu_jobs": 0,
+          "real_executions": 0
+        }
+      }
+    }
+  }
+]

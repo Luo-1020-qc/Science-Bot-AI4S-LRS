@@ -1,0 +1,152 @@
+{
+  "role": "candidate_generator_v1",
+  "response": {
+    "schema_version": "candidate_proposal_v1",
+    "candidates": [
+      {
+        "template_id": "fit_mean",
+        "parameters": {},
+        "purpose": "Establish a baseline fit with no features to compare against regularized models.",
+        "expected_effect": "Hypothesis: provides a reference quality level; regularized fits may or may not improve on it.",
+        "evidence_refs": []
+      },
+      {
+        "template_id": "fit_ridge",
+        "parameters": {
+          "alpha": 0.1,
+          "feature_grid": 3,
+          "fidelity": "half"
+        },
+        "purpose": "Low-regularization, coarse feature grid, half fidelity for a cheap initial probe.",
+        "expected_effect": "Hypothesis: weak regularization may capture signal if features are informative.",
+        "evidence_refs": []
+      },
+      {
+        "template_id": "fit_ridge",
+        "parameters": {
+          "alpha": 1.0,
+          "feature_grid": 3,
+          "fidelity": "half"
+        },
+        "purpose": "Moderate regularization, coarse grid, half fidelity.",
+        "expected_effect": "Hypothesis: balanced bias-variance may yield stable quality.",
+        "evidence_refs": []
+      },
+      {
+        "template_id": "fit_ridge",
+        "parameters": {
+          "alpha": 10.0,
+          "feature_grid": 3,
+          "fidelity": "half"
+        },
+        "purpose": "Strong regularization, coarse grid, half fidelity.",
+        "expected_effect": "Hypothesis: heavy shrinkage may help if features are noisy.",
+        "evidence_refs": []
+      },
+      {
+        "template_id": "fit_ridge",
+        "parameters": {
+          "alpha": 0.1,
+          "feature_grid": 5,
+          "fidelity": "half"
+        },
+        "purpose": "Low regularization with finer feature grid at half fidelity.",
+        "expected_effect": "Hypothesis: finer grid may capture more structure with mild shrinkage.",
+        "evidence_refs": []
+      },
+      {
+        "template_id": "fit_ridge",
+        "parameters": {
+          "alpha": 1.0,
+          "feature_grid": 5,
+          "fidelity": "half"
+        },
+        "purpose": "Moderate regularization with finer feature grid at half fidelity.",
+        "expected_effect": "Hypothesis: finer grid plus moderate shrinkage may improve fit quality.",
+        "evidence_refs": []
+      },
+      {
+        "template_id": "fit_ridge",
+        "parameters": {
+          "alpha": 10.0,
+          "feature_grid": 5,
+          "fidelity": "half"
+        },
+        "purpose": "Strong regularization with finer feature grid at half fidelity.",
+        "expected_effect": "Hypothesis: finer grid with heavy shrinkage may remain stable.",
+        "evidence_refs": []
+      },
+      {
+        "template_id": "fit_ridge",
+        "parameters": {
+          "alpha": 0.1,
+          "feature_grid": 3,
+          "fidelity": "full"
+        },
+        "purpose": "Low regularization, coarse grid, full fidelity for higher-precision estimate.",
+        "expected_effect": "Hypothesis: full fidelity may reduce variance in quality estimate.",
+        "evidence_refs": []
+      },
+      {
+        "template_id": "fit_ridge",
+        "parameters": {
+          "alpha": 1.0,
+          "feature_grid": 3,
+          "fidelity": "full"
+        },
+        "purpose": "Moderate regularization, coarse grid, full fidelity.",
+        "expected_effect": "Hypothesis: balanced setting at full fidelity may be competitive.",
+        "evidence_refs": []
+      },
+      {
+        "template_id": "fit_ridge",
+        "parameters": {
+          "alpha": 10.0,
+          "feature_grid": 3,
+          "fidelity": "full"
+        },
+        "purpose": "Strong regularization, coarse grid, full fidelity.",
+        "expected_effect": "Hypothesis: heavy shrinkage at full fidelity may be robust.",
+        "evidence_refs": []
+      },
+      {
+        "template_id": "fit_ridge",
+        "parameters": {
+          "alpha": 0.1,
+          "feature_grid": 5,
+          "fidelity": "full"
+        },
+        "purpose": "Low regularization, finer grid, full fidelity.",
+        "expected_effect": "Hypothesis: finer grid at full fidelity may capture more signal.",
+        "evidence_refs": []
+      },
+      {
+        "template_id": "fit_ridge",
+        "parameters": {
+          "alpha": 1.0,
+          "feature_grid": 5,
+          "fidelity": "full"
+        },
+        "purpose": "Moderate regularization, finer grid, full fidelity.",
+        "expected_effect": "Hypothesis: balanced setting with finer grid may yield strong quality.",
+        "evidence_refs": []
+      },
+      {
+        "template_id": "fit_ridge",
+        "parameters": {
+          "alpha": 10.0,
+          "feature_grid": 5,
+          "fidelity": "full"
+        },
+        "purpose": "Strong regularization, finer grid, full fidelity.",
+        "expected_effect": "Hypothesis: heavy shrinkage with finer grid may be stable at full fidelity.",
+        "evidence_refs": []
+      }
+    ],
+    "unresolved": [
+      "No observed evidence yet; expected effects are untested hypotheses.",
+      "Optimal alpha and feature_grid unknown prior to evaluation."
+    ]
+  },
+  "response_hash": "b254d81744bb9f43b463c2a6fd0f0a47e6e67b07547c611e84bd0dcd27fa2df7"
+}

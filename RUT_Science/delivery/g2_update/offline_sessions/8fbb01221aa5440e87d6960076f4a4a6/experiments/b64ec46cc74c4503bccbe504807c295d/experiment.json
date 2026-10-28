@@ -1,0 +1,234 @@
+{
+  "engine_version": "tabular_v1",
+  "id": "b64ec46cc74c4503bccbe504807c295d",
+  "spec": {
+    "data_path": "prediction.csv",
+    "research_question": "在未见合成单位上比较均值基线与OLS预测y的误差。",
+    "design": "prediction",
+    "response": "y",
+    "unit": "id",
+    "provenance": "synthetic",
+    "sampling_note": "全部现有合成样本，仅作探索性演示；未进行事先功效计算",
+    "factor": null,
+    "levels": [],
+    "features": [
+      "x1",
+      "x2"
+    ],
+    "randomization_note": "not_applicable",
+    "missing_policy": "reject",
+    "alpha": 0.05,
+    "seed": 42,
+    "schema_version": "experiment_spec_v1"
+  },
+  "plan": {
+    "nodes": [
+      {
+        "id": "partition",
+        "tool": "tabular_partition",
+        "depends_on": []
+      },
+      {
+        "id": "fit",
+        "tool": "tabular_fit",
+        "depends_on": [
+          "partition"
+        ]
+      },
+      {
+        "id": "select",
+        "tool": "tabular_select",
+        "depends_on": [
+          "fit"
+        ]
+      },
+      {
+        "id": "evaluate",
+        "tool": "tabular_evaluate",
+        "depends_on": [
+          "select"
+        ]
+      },
+      {
+        "id": "report",
+        "tool": "tabular_report",
+        "depends_on": [
+          "evaluate"
+        ]
+      }
+    ],
+    "spec_hash": "5fcaf52177149a04a6057e0cd16cd9fb1ed4018253837f408d34187cff58a1af",
+    "data_sha256": "119a03a30267d160c67e61d46d71fbe060c3c39529dec0bcd130f63c1654aa15",
+    "schema_version": "execution_plan_v1"
+  },
+  "protocol": {
+    "goal": "out_of_sample_prediction",
+    "hypothesis": "Validation MSE selects mean or OLS; evaluate winner once on frozen test",
+    "methods": [
+      "mean",
+      "ols"
+    ],
+    "metric": "MSE",
+    "preprocessing": "standardization fitted on train only; no imputation",
+    "split": {
+      "train": 0.6,
+      "validation": 0.2,
+      "test": 0.2,
+      "seed": 42
+    },
+    "replication": "distinct declared units; random seed is not an independent replicate",
+    "assumptions": [
+      "independent, exchangeable units; no temporal or clustered splitting",
+      "linear model; finite numeric features; full-rank train matrix"
+    ],
+    "sample_basis": "全部现有合成样本，仅作探索性演示；未进行事先功效计算",
+    "causal_claim": "not_established; provenance and randomization are user declarations",
+    "stopping": "fixed plan, no hyperparameter search or test feedback",
+    "failure": "pause at tool boundary; repair inputs with a new draft; no silent substitutions"
+  },
+  "data_sha256": "119a03a30267d160c67e61d46d71fbe060c3c39529dec0bcd130f63c1654aa15",
+  "workspace": {
+    "schema_version": "science_workspace_v1",
+    "workspace_id": "906a69e8f6b5495b862106b098c91fa5",
+    "root": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\examples\\g2",
+    "read_policy": "project_text_v1"
+  },
+  "draft_hash": "24f8178b8607136e52b0c091d227a5b8efc765df7b6bd2bf2155d942689ff6cc",
+  "confirmed": "24f8178b8607136e52b0c091d227a5b8efc765df7b6bd2bf2155d942689ff6cc",
+  "phase": "complete",
+  "completed": {
+    "partition": {
+      "ref": "nodes/partition.json",
+      "sha256": "ad44e90a647f035cb05845f0cf55ff4aba5c513ee9c6087855db37cd1640efa2"
+    },
+    "fit": {
+      "ref": "nodes/fit.json",
+      "sha256": "8553f33425eeb704d8b286b583917ffaff4ec6d18170314a48f0b1e04ac2d016"
+    },
+    "select": {
+      "ref": "nodes/select.json",
+      "sha256": "404e3f53123c8b1802d1ee73c63d3ab1ac387566a69fd0f9a87aa19bac3fc1f2"
+    },
+    "evaluate": {
+      "ref": "nodes/evaluate.json",
+      "sha256": "745256b5433c4f1979505ab8ed665d7e7bd48610443cf60b2db8d17ee4b863d3"
+    },
+    "report": {
+      "ref": "nodes/report.json",
+      "sha256": "6f028463e2684707b4c51251cdbfec7f84067488510aeef7df593cb9995b27df"
+    }
+  },
+  "report_ref": "nodes/report.json",
+  "error": null,
+  "validation": {
+    "retained_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99
+    ],
+    "omitted_indices": [],
+    "units": 100,
+    "missing_units": 0
+  },
+  "tool_budget": {
+    "required": 5,
+    "remaining_at_draft": 10
+  }
+}

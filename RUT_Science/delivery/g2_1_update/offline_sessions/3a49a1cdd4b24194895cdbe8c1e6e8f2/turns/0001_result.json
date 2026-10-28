@@ -1,0 +1,105 @@
+{
+  "intent": "design",
+  "answer": "已记录：data_path=two_groups.csv\n你希望回答的研究问题是什么？请描述比较/预测目标。\n\n可回复选项编号，或 /answer {字段JSON}；不知道时请明确说明。",
+  "interview": {
+    "id": "7857feb34bfe424c899b297af56c438f",
+    "revision": 1,
+    "active": true,
+    "fields": {
+      "alpha": 0.05,
+      "seed": 42,
+      "missing_policy": "reject",
+      "randomization_note": "not_applicable",
+      "data_path": "two_groups.csv"
+    },
+    "unknown": [],
+    "conflicts": {},
+    "pending": {
+      "action": "ask:research_question",
+      "field": "research_question",
+      "question": "你希望回答的研究问题是什么？请描述比较/预测目标。",
+      "options": []
+    },
+    "validation": {
+      "schema_version": "design_validation_v1",
+      "contract_hash": "c61393baf694632ae83c5bc6a4056183abb9e3d2b620c6aa19513e43916fcfe8",
+      "ready": false,
+      "checks": [
+        {
+          "code": "missing_fields",
+          "status": "blocked",
+          "detail": "尚缺：research_question, unit_structure, design, response, unit, provenance, sampling_note",
+          "fields": [
+            "research_question",
+            "unit_structure",
+            "design",
+            "response",
+            "unit",
+            "provenance",
+            "sampling_note"
+          ]
+        },
+        {
+          "code": "scientific_assumptions",
+          "status": "unverified",
+          "detail": "来源、独立性、随机化和样本依据是用户声明；未通过列检查证明",
+          "fields": []
+        }
+      ],
+      "missing": [
+        "research_question",
+        "unit_structure",
+        "design",
+        "response",
+        "unit",
+        "provenance",
+        "sampling_note"
+      ],
+      "execution_authorized": false,
+      "scientific_success": null
+    },
+    "policy": "rule",
+    "turns": 1,
+    "max_turns": 24,
+    "draft": null
+  },
+  "validation": {
+    "schema_version": "design_validation_v1",
+    "contract_hash": "c61393baf694632ae83c5bc6a4056183abb9e3d2b620c6aa19513e43916fcfe8",
+    "ready": false,
+    "checks": [
+      {
+        "code": "missing_fields",
+        "status": "blocked",
+        "detail": "尚缺：research_question, unit_structure, design, response, unit, provenance, sampling_note",
+        "fields": [
+          "research_question",
+          "unit_structure",
+          "design",
+          "response",
+          "unit",
+          "provenance",
+          "sampling_note"
+        ]
+      },
+      {
+        "code": "scientific_assumptions",
+        "status": "unverified",
+        "detail": "来源、独立性、随机化和样本依据是用户声明；未通过列检查证明",
+        "fields": []
+      }
+    ],
+    "missing": [
+      "research_question",
+      "unit_structure",
+      "design",
+      "response",
+      "unit",
+      "provenance",
+      "sampling_note"
+    ],
+    "execution_authorized": false,
+    "scientific_success": null
+  },
+  "action": "ask:research_question"
+}

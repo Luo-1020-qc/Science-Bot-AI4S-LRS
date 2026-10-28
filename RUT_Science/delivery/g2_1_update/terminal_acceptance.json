@@ -1,0 +1,15 @@
+{
+  "entry_command": ".\\science-bot.cmd -Backend offline -Workspace RUT_Science\\examples\\g2",
+  "session": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\examples\\g2\\.sciencebot\\sessions\\827b274dc1bf45cea232779247d12a72",
+  "inputs": [
+    "/interview two_groups.csv",
+    "/answer 比较A组与B组的平均y",
+    "1",
+    "/confirm",
+    "/model-output list",
+    "/exit"
+  ],
+  "final_phase": "complete",
+  "model_requests": 0,
+  "note": "Actual terminal commands executed; display replay is rendered from saved state, not raw PTY recording."
+}

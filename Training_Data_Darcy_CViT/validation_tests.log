@@ -1,0 +1,15 @@
+test_actor_observation_excludes_oracle_and_curator_metadata (test_data.TrainingDataTests.test_actor_observation_excludes_oracle_and_curator_metadata) ... ok
+test_darcy_and_cvit_show_different_units_and_designs (test_data.TrainingDataTests.test_darcy_and_cvit_show_different_units_and_designs) ... ok
+test_error_proposals_are_preserved_but_excluded_from_bc_targets (test_data.TrainingDataTests.test_error_proposals_are_preserved_but_excluded_from_bc_targets) ... ok
+test_full_dataset_is_internally_consistent (test_data.TrainingDataTests.test_full_dataset_is_internally_consistent) ... ok
+test_hash_tamper_fails_before_loading_training_records (test_data.TrainingDataTests.test_hash_tamper_fails_before_loading_training_records) ... ok
+test_mock_completion_and_design_are_never_scientific_results (test_data.TrainingDataTests.test_mock_completion_and_design_are_never_scientific_results) ... ok
+test_pending_reviews_are_not_expert_labels (test_data.TrainingDataTests.test_pending_reviews_are_not_expert_labels) ... ok
+test_reference_probabilities_are_null_and_not_ppo_rollouts (test_data.TrainingDataTests.test_reference_probabilities_are_null_and_not_ppo_rollouts) ... ok
+test_scientific_source_group_leakage_is_rejected_even_with_updated_file_hash (test_data.TrainingDataTests.test_scientific_source_group_leakage_is_rejected_even_with_updated_file_hash) ... ok
+test_stop_cannot_cite_future_or_irrelevant_evidence (test_data.TrainingDataTests.test_stop_cannot_cite_future_or_irrelevant_evidence) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.279s
+
+OK

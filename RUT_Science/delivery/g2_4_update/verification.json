@@ -1,0 +1,49 @@
+{
+  "schema_version": "g2_4_release_v1",
+  "date": "2026-10-27",
+  "passed": true,
+  "checks": {
+    "all_research_studies_pass": true,
+    "protected_existing_files_unchanged": true,
+    "frozen_doe_sources_unchanged": true,
+    "current_document_links_valid": true,
+    "source_syntax_valid": true,
+    "development_expected_results_match": true,
+    "heldout_records_not_scored": true,
+    "no_expert_labels_fabricated": true,
+    "no_training_or_live_promotion": true
+  },
+  "tests_by_study": {
+    "g2_2": 39,
+    "g2_3": 37,
+    "g2_4": 49
+  },
+  "total_research_tests": 125,
+  "protected_files": 1976,
+  "changed_existing_files": [],
+  "added_core_files": [],
+  "frozen_doe_source_files": 11,
+  "frozen_doe_source_changes": [],
+  "python_files_parsed": 17,
+  "syntax_errors": [],
+  "current_documents_checked": 9,
+  "local_links_checked": 83,
+  "broken_links": [],
+  "development_cases": 42,
+  "matched_scripted_expectations": 42,
+  "always_stop_diagnostic": {
+    "cases": 42,
+    "correct_stops": 6,
+    "unjustified_stops": 36,
+    "note": "Publicly grounded reason chosen when present; blanket stopping still fails designable tasks"
+  },
+  "pending_expert_reviews": 42,
+  "human_expert_labels": 0,
+  "heldout_records_scored": false,
+  "real_tool_executions": 0,
+  "real_model_requests": 0,
+  "real_cvit_jobs": 0,
+  "formal_training_transitions": 0,
+  "application_entry_unchanged": true,
+  "scope": "Synthetic DOE protocol release. Original application full tool tests were not rerun; no expert calibration or learned-policy gains claimed."
+}

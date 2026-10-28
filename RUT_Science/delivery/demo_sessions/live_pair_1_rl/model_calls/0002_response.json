@@ -1,0 +1,47 @@
+{
+  "role": "report_explainer_v1",
+  "response": {
+    "schema_version": "report_explainer_v1",
+    "summary": "The run completed validly and under strict execution, terminating with an explicit submit after one observed candidate. The single fitted candidate (ridge_full_5_10) achieved a search validation error of 0.19978, marginally below the 0.2 threshold, but the report records quality_pass=false and scientific_success=false, with a sealed error of 0.20875. No recovery or retries occurred; no abstention is indicated.",
+    "findings": [
+      {
+        "id": "delivery",
+        "statement": "Delivery was valid: verified_report.valid=true, complete=true, termination=explicit_submit, retries=0, fixture_faults=false.",
+        "evidence": "verified_report.valid, .complete, .termination, .retries, .fixture_faults"
+      },
+      {
+        "id": "strict_execution",
+        "statement": "Strict execution was satisfied (strict_execution=true) with 2 decisions, 1 tool attempt, 1 evaluation read, and 1 LLM request.",
+        "evidence": "verified_report.strict_execution, .resources"
+      },
+      {
+        "id": "observed_candidate",
+        "statement": "Only one candidate was observed: ridge_full_5_10 (alpha=10.0, feature_grid=5, fidelity=full), status succeeded, attempts=1, validation_mean=0.19977902746757026, validation_std=0.09172988037105059. All other listed candidates remain untried with null validation values.",
+        "evidence": "public_evidence_index"
+      },
+      {
+        "id": "threshold_margin",
+        "statement": "The observed search validation error (0.19978) is below the 0.2 threshold, but the sealed error (0.20875) is above it; the report records quality_pass=false and scientific_success=false.",
+        "evidence": "verified_report.search_validation_error, .sealed_error, .threshold, .quality_pass, .scientific_success"
+      },
+      {
+        "id": "recovery_abstention",
+        "statement": "No recovery occurred (retries=0) and no abstention is indicated; the run ended by explicit submit.",
+        "evidence": "verified_report.retries, .termination"
+      }
+    ],
+    "limitations": [
+      "Only one of twelve listed candidates was observed; the remaining eleven are untried with null validation statistics, so no comparative model selection evidence exists.",
+      "The single observed validation mean has a reported std of about 0.0917, indicating substantial variability; no repeated measurements are available.",
+      "The sealed error exceeds the threshold while the search validation error is below it; the report does not establish generalization beyond the recorded sealed value.",
+      "Provenance is a controlled generated regression fixture (source=controlled_generated_regression, split=demo), so results are controlled synthetic regression, not scientific discovery.",
+      "No Darcy transfer-pilot or blind-test evidence is present in the provided data; any historically exposed Darcy data would be a transfer pilot, not a blind test.",
+      "No tuning on sealed results is suggested or supported by this evidence."
+    ],
+    "artifact_refs": [
+      "report.json",
+      "report.md"
+    ]
+  },
+  "response_hash": "fb671f05ddbcf5fe28e26ebbe9d8078a511250e389e071a81f346b368316a45c"
+}

@@ -1,0 +1,9 @@
+{
+  "ref": "ceead2eb79a8d0f7da2b76ec527251a295aaaf116681585817a1c2a81d1835e5",
+  "kind": "project",
+  "data": {
+    "title": "darcy illustrative research",
+    "objective": "Compare a prespecified method effect under a bounded dataset protocol",
+    "mode": "offline_design_and_mock_only"
+  }
+}

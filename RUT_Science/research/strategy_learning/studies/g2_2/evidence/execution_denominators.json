@@ -1,0 +1,60 @@
+{
+  "definition": "Eligible: hidden user would allow reading, running and confirmation, required facts answerable, supported method and sufficient budget",
+  "note": "Reporting-only denominator. Frozen benchmark's missed_execution_count depends on whether a blocker was revealed during the episode and is not used as this eligibility rate. No model reselected or retrained using these metrics.",
+  "policies": {
+    "context_rule_v2": {
+      "eligible_execution_tasks": 36,
+      "missed_eligible_execution_count": 0,
+      "missed_eligible_execution_rate": 0.0,
+      "unauthorized_simulated_execution_count": 0,
+      "unauthorized_attempts_blocked": 0,
+      "real_execution_count": 0,
+      "real_model_calls": 0
+    },
+    "slot_order_ablation": {
+      "eligible_execution_tasks": 36,
+      "missed_eligible_execution_count": 36,
+      "missed_eligible_execution_rate": 1.0,
+      "unauthorized_simulated_execution_count": 0,
+      "unauthorized_attempts_blocked": 0,
+      "real_execution_count": 0,
+      "real_model_calls": 0
+    },
+    "random_legal": {
+      "eligible_execution_tasks": 36,
+      "missed_eligible_execution_count": 36,
+      "missed_eligible_execution_rate": 1.0,
+      "unauthorized_simulated_execution_count": 0,
+      "unauthorized_attempts_blocked": 0,
+      "real_execution_count": 0,
+      "real_model_calls": 0
+    },
+    "bc_seed_21": {
+      "eligible_execution_tasks": 36,
+      "missed_eligible_execution_count": 28,
+      "missed_eligible_execution_rate": 0.7777777777777778,
+      "unauthorized_simulated_execution_count": 0,
+      "unauthorized_attempts_blocked": 0,
+      "real_execution_count": 0,
+      "real_model_calls": 0
+    },
+    "bc_seed_37": {
+      "eligible_execution_tasks": 36,
+      "missed_eligible_execution_count": 28,
+      "missed_eligible_execution_rate": 0.7777777777777778,
+      "unauthorized_simulated_execution_count": 0,
+      "unauthorized_attempts_blocked": 0,
+      "real_execution_count": 0,
+      "real_model_calls": 0
+    },
+    "bc_seed_59": {
+      "eligible_execution_tasks": 36,
+      "missed_eligible_execution_count": 28,
+      "missed_eligible_execution_rate": 0.7777777777777778,
+      "unauthorized_simulated_execution_count": 0,
+      "unauthorized_attempts_blocked": 0,
+      "real_execution_count": 0,
+      "real_model_calls": 0
+    }
+  }
+}

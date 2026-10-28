@@ -1,0 +1,40 @@
+{
+  "intent": "research",
+  "answer": "g2_3 历史研究结果：\n{\n  \"historical\": true,\n  \"strict_public_evidence_metrics\": {\n    \"context_rule\": 1.0,\n    \"random_legal\": 0.041666666666666664,\n    \"seed_21/bc\": 0.09375,\n    \"seed_21/bc_ppo\": 0.09375,\n    \"seed_21/ppo_scratch\": 0.0,\n    \"seed_37/bc\": 0.16666666666666666,\n    \"seed_37/bc_ppo\": 0.0,\n    \"seed_37/ppo_scratch\": 0.0,\n    \"seed_59/bc\": 0.09375,\n    \"seed_59/bc_ppo\": 0.09375,\n    \"seed_59/ppo_scratch\": 0.0\n  },\n  \"corrective_trial\": {\n    \"baseline_mean\": 0.6041666666666666,\n    \"feedback_ppo_mean\": 0.4305555555555556,\n    \"rule_success\": 1.0,\n    \"tasks\": 48,\n    \"limitations\": \"Corrective exploratory trial with fresh combinations; not a replacement for the original preregistered comparison\"\n  },\n  \"interpretation\": \"Original rewards overcredit hidden stop reasons; use strict results, no policy promotion\",\n  \"evidence_ref\": \"tool_327a68970e818418\"\n}\n真实工具/模型API/GPU/策略训练均未执行；实验执行未授权。\n结果：D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\delivery\\research_online_update\\acceptance_sessions\\5bcf6a91a9964eabb0016e788c99a5f6\\research\\5c307c9f8b735ff4\\result.json",
+  "research": {
+    "schema_version": "online_research_result_v1",
+    "study": "g2_3",
+    "action": "results",
+    "request_hash": "5c307c9f8b735ff4a61c98c57cf2965326a9208d91be5185c1d416aeec3034da",
+    "input_evidence": [],
+    "result": {
+      "historical": true,
+      "strict_public_evidence_metrics": {
+        "context_rule": 1.0,
+        "random_legal": 0.041666666666666664,
+        "seed_21/bc": 0.09375,
+        "seed_21/bc_ppo": 0.09375,
+        "seed_21/ppo_scratch": 0.0,
+        "seed_37/bc": 0.16666666666666666,
+        "seed_37/bc_ppo": 0.0,
+        "seed_37/ppo_scratch": 0.0,
+        "seed_59/bc": 0.09375,
+        "seed_59/bc_ppo": 0.09375,
+        "seed_59/ppo_scratch": 0.0
+      },
+      "corrective_trial": {
+        "baseline_mean": 0.6041666666666666,
+        "feedback_ppo_mean": 0.4305555555555556,
+        "rule_success": 1.0,
+        "tasks": 48,
+        "limitations": "Corrective exploratory trial with fresh combinations; not a replacement for the original preregistered comparison"
+      },
+      "interpretation": "Original rewards overcredit hidden stop reasons; use strict results, no policy promotion",
+      "evidence_ref": "tool_327a68970e818418"
+    },
+    "execution_authorized": false
+  },
+  "result_ref": "research/5c307c9f8b735ff4/result.json",
+  "requires_confirmation": false,
+  "execution_authorized": false
+}

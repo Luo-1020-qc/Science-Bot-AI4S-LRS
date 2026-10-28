@@ -1,0 +1,235 @@
+{
+  "schema_version": "design_trace_v1",
+  "turn": 6,
+  "interview_id": "7857feb34bfe424c899b297af56c438f",
+  "revision_before": 5,
+  "revision_after": 6,
+  "input": "/resolve {\"response\": \"y\"}",
+  "updates": {
+    "response": "y"
+  },
+  "unknown": [],
+  "errors": [],
+  "observation": {
+    "feature_version": "design_decisions_v1",
+    "features": [
+      1.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      1.0,
+      1.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.25,
+      1.0
+    ],
+    "mask": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      true,
+      false,
+      true,
+      false,
+      true,
+      false,
+      false,
+      false
+    ],
+    "missing": [
+      "design",
+      "unit",
+      "provenance",
+      "sampling_note"
+    ],
+    "blocker_codes": [
+      "missing_fields"
+    ]
+  },
+  "selected_action": "options:design",
+  "policy_hash": "d6e9aaceaf58d970867102d3ea0e0ee65d472236fa20b91c5a04be011346fb51",
+  "validation": {
+    "schema_version": "design_validation_v1",
+    "contract_hash": "faf4d393392707afad451f8ec3960147e93cbf08675e812822ffd5e744b18560",
+    "ready": false,
+    "checks": [
+      {
+        "code": "missing_fields",
+        "status": "blocked",
+        "detail": "尚缺：design, unit, provenance, sampling_note",
+        "fields": [
+          "design",
+          "unit",
+          "provenance",
+          "sampling_note"
+        ]
+      },
+      {
+        "code": "scientific_assumptions",
+        "status": "unverified",
+        "detail": "来源、独立性、随机化和样本依据是用户声明；未通过列检查证明",
+        "fields": []
+      }
+    ],
+    "missing": [
+      "design",
+      "unit",
+      "provenance",
+      "sampling_note"
+    ],
+    "execution_authorized": false,
+    "scientific_success": null
+  },
+  "expert_action": null,
+  "annotation_status": "unreviewed",
+  "result": {
+    "intent": "design",
+    "answer": "已记录：data_path=two_groups.csv, research_question=合成数据中A与B组的平均响应是否不同？, unit_structure=independent_rows, response=y\n请选择实验设计。各方法需要满足相应单位关系，不代表可以互相替换。\n1. 独立两组Welch：比较两个水平的均值差，需要独立单位和分组列 (independent)\n2. 配对t检验：按同一单位匹配两个水平，分析单位内差值 (paired)\n3. 均值基线/OLS预测：独立单位，固定60/20/20划分，以验证MSE选择后一次测试 (prediction)\n可回复选项编号，或 /answer {字段JSON}；不知道时请明确说明。",
+    "interview": {
+      "id": "7857feb34bfe424c899b297af56c438f",
+      "revision": 6,
+      "active": true,
+      "fields": {
+        "alpha": 0.05,
+        "seed": 42,
+        "missing_policy": "reject",
+        "randomization_note": "not_applicable",
+        "data_path": "two_groups.csv",
+        "research_question": "合成数据中A与B组的平均响应是否不同？",
+        "unit_structure": "independent_rows",
+        "response": "y"
+      },
+      "unknown": [],
+      "conflicts": {},
+      "pending": {
+        "action": "options:design",
+        "field": "design",
+        "question": "请选择实验设计。各方法需要满足相应单位关系，不代表可以互相替换。",
+        "options": [
+          {
+            "number": 1,
+            "value": "independent",
+            "description": "独立两组Welch：比较两个水平的均值差，需要独立单位和分组列"
+          },
+          {
+            "number": 2,
+            "value": "paired",
+            "description": "配对t检验：按同一单位匹配两个水平，分析单位内差值"
+          },
+          {
+            "number": 3,
+            "value": "prediction",
+            "description": "均值基线/OLS预测：独立单位，固定60/20/20划分，以验证MSE选择后一次测试"
+          }
+        ]
+      },
+      "validation": {
+        "schema_version": "design_validation_v1",
+        "contract_hash": "faf4d393392707afad451f8ec3960147e93cbf08675e812822ffd5e744b18560",
+        "ready": false,
+        "checks": [
+          {
+            "code": "missing_fields",
+            "status": "blocked",
+            "detail": "尚缺：design, unit, provenance, sampling_note",
+            "fields": [
+              "design",
+              "unit",
+              "provenance",
+              "sampling_note"
+            ]
+          },
+          {
+            "code": "scientific_assumptions",
+            "status": "unverified",
+            "detail": "来源、独立性、随机化和样本依据是用户声明；未通过列检查证明",
+            "fields": []
+          }
+        ],
+        "missing": [
+          "design",
+          "unit",
+          "provenance",
+          "sampling_note"
+        ],
+        "execution_authorized": false,
+        "scientific_success": null
+      },
+      "policy": "rule",
+      "turns": 6,
+      "max_turns": 24,
+      "draft": null
+    },
+    "validation": {
+      "schema_version": "design_validation_v1",
+      "contract_hash": "faf4d393392707afad451f8ec3960147e93cbf08675e812822ffd5e744b18560",
+      "ready": false,
+      "checks": [
+        {
+          "code": "missing_fields",
+          "status": "blocked",
+          "detail": "尚缺：design, unit, provenance, sampling_note",
+          "fields": [
+            "design",
+            "unit",
+            "provenance",
+            "sampling_note"
+          ]
+        },
+        {
+          "code": "scientific_assumptions",
+          "status": "unverified",
+          "detail": "来源、独立性、随机化和样本依据是用户声明；未通过列检查证明",
+          "fields": []
+        }
+      ],
+      "missing": [
+        "design",
+        "unit",
+        "provenance",
+        "sampling_note"
+      ],
+      "execution_authorized": false,
+      "scientific_success": null
+    },
+    "action": "options:design"
+  }
+}

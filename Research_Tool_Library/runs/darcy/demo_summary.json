@@ -1,0 +1,485 @@
+{
+  "domain": "darcy",
+  "passed": true,
+  "plan_ref": "d8200038c8cb82df97991bda89261ffa3e6b036d5f4f7ff663831ca74df64c5a",
+  "claim_ref": "e9a0d5b5be5470fb9013537d5cc5939a455d847f0c8146c098116e0a5abb02d4",
+  "review_ref": "21f6a971734016fbec1bc679d61401ccd40592b810252db16d03a8a891786c6f",
+  "freeze_ref": "9f232d41b243aac368b89895ab23d60f09089bb37d9e3c5185718b463ace08d8",
+  "workflow_ref": "af2b8f437654c32d1299ecb4d81164c442de824cb2c369f779e8add841a354d1",
+  "job_ref": "3f32ec5a497205e251a1b7c695dcee098ee5c200aa3f0ffd8a5500253a038f2a",
+  "analysis_ref": "94f3d6ab84ae0e84f3d6a1fafd136497d29436a61db3d68292b37b4db02301f3",
+  "assessment_ref": "fbb0060c6c826f99050e731642ea7df80286b0619b1de751cbcfead186faa462",
+  "report_ref": "a8b28629449e4c231fa391951966dd3685f810455eb5b82ea80e00686c78b115",
+  "initial_findings": [
+    "analysis_model"
+  ],
+  "resolution": {
+    "resolution_ref": "2529b9000692154d8497f13b2d3651b3a7a80b8e9c1c67bc1d56e61d8ea14b9e",
+    "old_review_ref": "d5293a3bbe6cff5d2f72e1ba56fc1078c0f5c819710c8c2f2ba5f54cad5e59a6",
+    "new_review_ref": "21f6a971734016fbec1bc679d61401ccd40592b810252db16d03a8a891786c6f",
+    "resolved": [
+      "c4707e61f5823319"
+    ],
+    "still_blocked": [],
+    "new_findings": [],
+    "all_clear": true
+  },
+  "final_assessment": {
+    "assessment_ref": "fbb0060c6c826f99050e731642ea7df80286b0619b1de751cbcfead186faa462",
+    "claim_ref": "e9a0d5b5be5470fb9013537d5cc5939a455d847f0c8146c098116e0a5abb02d4",
+    "analysis_ref": "94f3d6ab84ae0e84f3d6a1fafd136497d29436a61db3d68292b37b4db02301f3",
+    "status": "supports_direction_under_assumptions",
+    "practical_benefit_supported": true,
+    "interval": [
+      -0.0737131298905185,
+      -0.04981677356551838
+    ],
+    "evidence_scope": "synthetic_mock_only",
+    "real_scientific_claim_verified": false,
+    "limitations": [
+      "Model assumptions and measurement independence not independently verified",
+      "No causal or broad-domain generalization assertion",
+      "Inconclusive is not equivalence"
+    ]
+  },
+  "real_scientific_claim_verified": false,
+  "real_tool_executions": 0,
+  "note": "Synthetic unit responses used only to exercise evidence logic. No Darcy/CViT network was run.",
+  "tool_calls": [
+    {
+      "tool": "project_create",
+      "arguments": {
+        "title": "darcy illustrative research",
+        "objective": "Compare a prespecified method effect under a bounded dataset protocol"
+      },
+      "result": {
+        "project_ref": "ceead2eb79a8d0f7da2b76ec527251a295aaaf116681585817a1c2a81d1835e5"
+      }
+    },
+    {
+      "tool": "plan_create",
+      "arguments": {
+        "project_ref": "ceead2eb79a8d0f7da2b76ec527251a295aaaf116681585817a1c2a81d1835e5",
+        "family": "rcbd_two_arm"
+      },
+      "result": {
+        "plan_ref": "cd430c246db3b251ab141d9388632b76dc0622bc43bb6979485bf0cff73f7500",
+        "synthetic": true,
+        "execution_authorized": false
+      }
+    },
+    {
+      "tool": "plan_patch",
+      "arguments": {
+        "plan_ref": "cd430c246db3b251ab141d9388632b76dc0622bc43bb6979485bf0cff73f7500",
+        "expected_contract_hash": "e02fb2cbacbb187b2c8d2c287f15838b9bc69338597e58280083db2d4d3aeff1",
+        "changes": [
+          {
+            "path": "/question",
+            "value": "Compare candidate minus baseline mean relative L2 under the declared dataset protocol"
+          },
+          {
+            "path": "/factors",
+            "value": [
+              {
+                "name": "predictor",
+                "levels": [
+                  "mean_field",
+                  "ridge_field"
+                ]
+              }
+            ]
+          },
+          {
+            "path": "/experimental_unit/definition",
+            "value": "One predictor application within an independently drawn data-realization block"
+          },
+          {
+            "path": "/response/name",
+            "value": "relative_l2"
+          },
+          {
+            "path": "/response/unit",
+            "value": "dimensionless"
+          },
+          {
+            "path": "/analysis/primary_term",
+            "value": "predictor"
+          },
+          {
+            "path": "/analysis/minimum_effect",
+            "value": 0.02
+          },
+          {
+            "path": "/analysis/sigma",
+            "value": 0.02
+          },
+          {
+            "path": "/analysis/model",
+            "value": "two_arm"
+          }
+        ],
+        "reason": "Illustrative requested scientific fields; intentionally omit block/interaction model terms to exercise review"
+      },
+      "result": {
+        "plan_ref": "7127e772cceac324b42b3e4fbeac814e46d3fd390452b9af5b4324e194214ffe",
+        "prior_review_invalidated": true,
+        "execution_authorized": false
+      }
+    },
+    {
+      "tool": "claim_define",
+      "arguments": {
+        "project_ref": "ceead2eb79a8d0f7da2b76ec527251a295aaaf116681585817a1c2a81d1835e5",
+        "statement": "Candidate has lower mean relative L2 than baseline within the declared protocol",
+        "response": "relative_l2",
+        "primary_term": "predictor",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "population_scope": "declared_dataset_and_training_protocol",
+        "factor_levels": [
+          {
+            "factor": "predictor",
+            "baseline": "mean_field",
+            "candidate": "ridge_field"
+          }
+        ],
+        "expected_unit_definition": "One predictor application within an independently drawn data-realization block"
+      },
+      "result": {
+        "claim_ref": "e9a0d5b5be5470fb9013537d5cc5939a455d847f0c8146c098116e0a5abb02d4"
+      }
+    },
+    {
+      "tool": "plan_review",
+      "arguments": {
+        "plan_ref": "7127e772cceac324b42b3e4fbeac814e46d3fd390452b9af5b4324e194214ffe"
+      },
+      "result": {
+        "review_ref": "d5293a3bbe6cff5d2f72e1ba56fc1078c0f5c819710c8c2f2ba5f54cad5e59a6",
+        "ready_for_review": false,
+        "finding_codes": [
+          "analysis_model"
+        ],
+        "expert_calibrated": false
+      }
+    },
+    {
+      "tool": "plan_patch",
+      "arguments": {
+        "plan_ref": "7127e772cceac324b42b3e4fbeac814e46d3fd390452b9af5b4324e194214ffe",
+        "expected_contract_hash": "ac9cd3f8305c74af6b184a516abb44eec38f3cb2db8753299a1b1c7ad1a811f1",
+        "changes": [
+          {
+            "path": "/analysis/model",
+            "value": "additive_blocks"
+          }
+        ],
+        "reason": "Resolve fixed verifier feedback; include declared blocks and all requested factorial interactions"
+      },
+      "result": {
+        "plan_ref": "d8200038c8cb82df97991bda89261ffa3e6b036d5f4f7ff663831ca74df64c5a",
+        "prior_review_invalidated": true,
+        "execution_authorized": false
+      }
+    },
+    {
+      "tool": "plan_diff",
+      "arguments": {
+        "old_plan_ref": "7127e772cceac324b42b3e4fbeac814e46d3fd390452b9af5b4324e194214ffe",
+        "new_plan_ref": "d8200038c8cb82df97991bda89261ffa3e6b036d5f4f7ff663831ca74df64c5a"
+      },
+      "result": {
+        "changes": [
+          {
+            "path": "/analysis",
+            "before": {
+              "alpha": 0.05,
+              "decision_rule": "two_sided_t_ci_practical_relevance_separate",
+              "minimum_effect": 0.02,
+              "missing_policy": "stop_and_review",
+              "model": "two_arm",
+              "multiplicity": "single_primary",
+              "primary_term": "predictor",
+              "sigma": 0.02,
+              "target_power": 0.8
+            },
+            "after": {
+              "alpha": 0.05,
+              "decision_rule": "two_sided_t_ci_practical_relevance_separate",
+              "minimum_effect": 0.02,
+              "missing_policy": "stop_and_review",
+              "model": "additive_blocks",
+              "multiplicity": "single_primary",
+              "primary_term": "predictor",
+              "sigma": 0.02,
+              "target_power": 0.8
+            }
+          },
+          {
+            "path": "/request_hash",
+            "before": "44b38b2d62c80d038b15643c1c09d2f443283e67f16ddecdb32919af3e2c9609",
+            "after": "3beeb7bfa835d5cd3edb597a2a2aaebbf6f797def5bce64c835096ca103f5692"
+          },
+          {
+            "path": "/revision",
+            "before": 2,
+            "after": 3
+          }
+        ],
+        "old_plan_ref": "7127e772cceac324b42b3e4fbeac814e46d3fd390452b9af5b4324e194214ffe",
+        "new_plan_ref": "d8200038c8cb82df97991bda89261ffa3e6b036d5f4f7ff663831ca74df64c5a"
+      }
+    },
+    {
+      "tool": "plan_review",
+      "arguments": {
+        "plan_ref": "d8200038c8cb82df97991bda89261ffa3e6b036d5f4f7ff663831ca74df64c5a"
+      },
+      "result": {
+        "review_ref": "21f6a971734016fbec1bc679d61401ccd40592b810252db16d03a8a891786c6f",
+        "ready_for_review": true,
+        "finding_codes": [],
+        "expert_calibrated": false
+      }
+    },
+    {
+      "tool": "claim_check_plan",
+      "arguments": {
+        "claim_ref": "e9a0d5b5be5470fb9013537d5cc5939a455d847f0c8146c098116e0a5abb02d4",
+        "plan_ref": "d8200038c8cb82df97991bda89261ffa3e6b036d5f4f7ff663831ca74df64c5a"
+      },
+      "result": {
+        "alignment_ref": "4f68955393d8d807213915a4cfa3cee1cb76d579926d5386f959b8161342ca43",
+        "claim_ref": "e9a0d5b5be5470fb9013537d5cc5939a455d847f0c8146c098116e0a5abb02d4",
+        "plan_ref": "d8200038c8cb82df97991bda89261ffa3e6b036d5f4f7ff663831ca74df64c5a",
+        "checks": {
+          "same_project": true,
+          "response_matches": true,
+          "contrast_matches": true,
+          "direction_matches": true,
+          "factor_levels_match": true,
+          "unit_definition_matches": true,
+          "scope_bounded": true,
+          "inference_protocol_supported": true
+        },
+        "can_test_conditionally": true,
+        "claim_supported": null,
+        "real_world_assumptions_verified": false,
+        "note": "Alignment checks do not prove independent units, causal identification or broad-domain generalization"
+      }
+    },
+    {
+      "tool": "review_resolve",
+      "arguments": {
+        "old_review_ref": "d5293a3bbe6cff5d2f72e1ba56fc1078c0f5c819710c8c2f2ba5f54cad5e59a6",
+        "new_review_ref": "21f6a971734016fbec1bc679d61401ccd40592b810252db16d03a8a891786c6f"
+      },
+      "result": {
+        "resolution_ref": "2529b9000692154d8497f13b2d3651b3a7a80b8e9c1c67bc1d56e61d8ea14b9e",
+        "old_review_ref": "d5293a3bbe6cff5d2f72e1ba56fc1078c0f5c819710c8c2f2ba5f54cad5e59a6",
+        "new_review_ref": "21f6a971734016fbec1bc679d61401ccd40592b810252db16d03a8a891786c6f",
+        "resolved": [
+          "c4707e61f5823319"
+        ],
+        "still_blocked": [],
+        "new_findings": [],
+        "all_clear": true
+      }
+    },
+    {
+      "tool": "plan_freeze",
+      "arguments": {
+        "plan_ref": "d8200038c8cb82df97991bda89261ffa3e6b036d5f4f7ff663831ca74df64c5a",
+        "review_ref": "21f6a971734016fbec1bc679d61401ccd40592b810252db16d03a8a891786c6f",
+        "alignment_ref": "4f68955393d8d807213915a4cfa3cee1cb76d579926d5386f959b8161342ca43"
+      },
+      "result": {
+        "freeze_ref": "9f232d41b243aac368b89895ab23d60f09089bb37d9e3c5185718b463ace08d8",
+        "real_execution_authorized": false
+      }
+    },
+    {
+      "tool": "workflow_compile",
+      "arguments": {
+        "freeze_ref": "9f232d41b243aac368b89895ab23d60f09089bb37d9e3c5185718b463ace08d8"
+      },
+      "result": {
+        "workflow_ref": "af2b8f437654c32d1299ecb4d81164c442de824cb2c369f779e8add841a354d1"
+      }
+    },
+    {
+      "tool": "workflow_verify",
+      "arguments": {
+        "workflow_ref": "af2b8f437654c32d1299ecb4d81164c442de824cb2c369f779e8add841a354d1"
+      },
+      "result": {
+        "passed": true,
+        "topological_order": [
+          "inspect_frozen_inputs",
+          "reconcile",
+          "run_or_reuse",
+          "poll",
+          "analyze",
+          "assess_claim",
+          "choose_next",
+          "write_report"
+        ],
+        "mode": "mock_only",
+        "scientific_success": null
+      }
+    },
+    {
+      "tool": "job_reconcile_mock",
+      "arguments": {
+        "freeze_ref": "9f232d41b243aac368b89895ab23d60f09089bb37d9e3c5185718b463ace08d8"
+      },
+      "result": {
+        "job_ref": "3f32ec5a497205e251a1b7c695dcee098ee5c200aa3f0ffd8a5500253a038f2a",
+        "status": "mock_completed",
+        "reused": true
+      }
+    },
+    {
+      "tool": "job_run_mock",
+      "arguments": {
+        "freeze_ref": "9f232d41b243aac368b89895ab23d60f09089bb37d9e3c5185718b463ace08d8",
+        "scenario": "benefit"
+      },
+      "result": {
+        "job_ref": "3f32ec5a497205e251a1b7c695dcee098ee5c200aa3f0ffd8a5500253a038f2a",
+        "status": "mock_completed",
+        "reused": true
+      }
+    },
+    {
+      "tool": "job_run_mock",
+      "arguments": {
+        "freeze_ref": "9f232d41b243aac368b89895ab23d60f09089bb37d9e3c5185718b463ace08d8",
+        "scenario": "benefit"
+      },
+      "result": {
+        "job_ref": "3f32ec5a497205e251a1b7c695dcee098ee5c200aa3f0ffd8a5500253a038f2a",
+        "status": "mock_completed",
+        "reused": true
+      }
+    },
+    {
+      "tool": "job_poll_mock",
+      "arguments": {
+        "job_ref": "3f32ec5a497205e251a1b7c695dcee098ee5c200aa3f0ffd8a5500253a038f2a"
+      },
+      "result": {
+        "job_ref": "3f32ec5a497205e251a1b7c695dcee098ee5c200aa3f0ffd8a5500253a038f2a",
+        "status": "mock_completed",
+        "units": 48,
+        "real_training_performed": false
+      }
+    },
+    {
+      "tool": "result_analyze",
+      "arguments": {
+        "job_ref": "3f32ec5a497205e251a1b7c695dcee098ee5c200aa3f0ffd8a5500253a038f2a"
+      },
+      "result": {
+        "analysis_ref": "94f3d6ab84ae0e84f3d6a1fafd136497d29436a61db3d68292b37b4db02301f3",
+        "job_ref": "3f32ec5a497205e251a1b7c695dcee098ee5c200aa3f0ffd8a5500253a038f2a",
+        "freeze_ref": "9f232d41b243aac368b89895ab23d60f09089bb37d9e3c5185718b463ace08d8",
+        "plan_ref": "d8200038c8cb82df97991bda89261ffa3e6b036d5f4f7ff663831ca74df64c5a",
+        "response": "relative_l2",
+        "primary_term": "predictor",
+        "effect": -0.061764951728018436,
+        "interval": [
+          -0.0737131298905185,
+          -0.04981677356551838
+        ],
+        "confidence": 0.95,
+        "df": 23,
+        "model_assumptions_verified": false,
+        "source_kind": "synthetic_mock",
+        "original_unit_count": 48,
+        "decision_rule": "prespecified_two_sided_ci",
+        "posthoc_model_selection": false,
+        "scientific_success": null
+      }
+    },
+    {
+      "tool": "claim_assess",
+      "arguments": {
+        "claim_ref": "e9a0d5b5be5470fb9013537d5cc5939a455d847f0c8146c098116e0a5abb02d4",
+        "analysis_ref": "94f3d6ab84ae0e84f3d6a1fafd136497d29436a61db3d68292b37b4db02301f3"
+      },
+      "result": {
+        "assessment_ref": "fbb0060c6c826f99050e731642ea7df80286b0619b1de751cbcfead186faa462",
+        "claim_ref": "e9a0d5b5be5470fb9013537d5cc5939a455d847f0c8146c098116e0a5abb02d4",
+        "analysis_ref": "94f3d6ab84ae0e84f3d6a1fafd136497d29436a61db3d68292b37b4db02301f3",
+        "status": "supports_direction_under_assumptions",
+        "practical_benefit_supported": true,
+        "interval": [
+          -0.0737131298905185,
+          -0.04981677356551838
+        ],
+        "evidence_scope": "synthetic_mock_only",
+        "real_scientific_claim_verified": false,
+        "limitations": [
+          "Model assumptions and measurement independence not independently verified",
+          "No causal or broad-domain generalization assertion",
+          "Inconclusive is not equivalence"
+        ]
+      }
+    },
+    {
+      "tool": "loop_next_action",
+      "arguments": {
+        "assessment_ref": "fbb0060c6c826f99050e731642ea7df80286b0619b1de751cbcfead186faa462"
+      },
+      "result": {
+        "next_step": "report_result_and_limitations",
+        "automatic_retest": false,
+        "change_success_threshold": false,
+        "required_new_version_for_followup": true,
+        "real_execution_authorized": false
+      }
+    },
+    {
+      "tool": "report_build",
+      "arguments": {
+        "assessment_ref": "fbb0060c6c826f99050e731642ea7df80286b0619b1de751cbcfead186faa462",
+        "workflow_ref": "af2b8f437654c32d1299ecb4d81164c442de824cb2c369f779e8add841a354d1"
+      },
+      "result": {
+        "report_ref": "a8b28629449e4c231fa391951966dd3685f810455eb5b82ea80e00686c78b115",
+        "assessment_ref": "fbb0060c6c826f99050e731642ea7df80286b0619b1de751cbcfead186faa462",
+        "workflow_ref": "af2b8f437654c32d1299ecb4d81164c442de824cb2c369f779e8add841a354d1",
+        "design_status": "conditionally_reviewed",
+        "execution_status": "mock_completed",
+        "statistical_evidence": {
+          "claim_ref": "e9a0d5b5be5470fb9013537d5cc5939a455d847f0c8146c098116e0a5abb02d4",
+          "analysis_ref": "94f3d6ab84ae0e84f3d6a1fafd136497d29436a61db3d68292b37b4db02301f3",
+          "status": "supports_direction_under_assumptions",
+          "practical_benefit_supported": true,
+          "interval": [
+            -0.0737131298905185,
+            -0.04981677356551838
+          ],
+          "evidence_scope": "synthetic_mock_only",
+          "real_scientific_claim_verified": false,
+          "limitations": [
+            "Model assumptions and measurement independence not independently verified",
+            "No causal or broad-domain generalization assertion",
+            "Inconclusive is not equivalence"
+          ]
+        },
+        "real_scientific_claim_verified": false,
+        "next_action": {
+          "next_step": "report_result_and_limitations",
+          "automatic_retest": false,
+          "change_success_threshold": false,
+          "required_new_version_for_followup": true,
+          "real_execution_authorized": false
+        },
+        "source": "synthetic_local_demo"
+      }
+    }
+  ]
+}

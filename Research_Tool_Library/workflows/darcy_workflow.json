@@ -1,0 +1,185 @@
+{
+  "freeze_ref": "9f232d41b243aac368b89895ab23d60f09089bb37d9e3c5185718b463ace08d8",
+  "mode": "mock_only",
+  "nodes": [
+    {
+      "id": "inspect_frozen_inputs",
+      "tool": "artifact_read",
+      "depends_on": [],
+      "acceptance": "Frozen plan identity valid",
+      "arguments": {
+        "artifact_ref": "9f232d41b243aac368b89895ab23d60f09089bb37d9e3c5185718b463ace08d8"
+      },
+      "produces": [
+        "artifact"
+      ],
+      "on_failure": "stop_preserve_evidence_then_revise_and_review_new_version"
+    },
+    {
+      "id": "reconcile",
+      "tool": "job_reconcile_mock",
+      "depends_on": [
+        "inspect_frozen_inputs"
+      ],
+      "acceptance": "Match existing job to same frozen plan",
+      "arguments": {
+        "freeze_ref": "9f232d41b243aac368b89895ab23d60f09089bb37d9e3c5185718b463ace08d8"
+      },
+      "produces": [
+        "job_ref",
+        "status",
+        "reused"
+      ],
+      "on_failure": "stop_preserve_evidence_then_revise_and_review_new_version"
+    },
+    {
+      "id": "run_or_reuse",
+      "tool": "job_run_mock",
+      "depends_on": [
+        "reconcile"
+      ],
+      "acceptance": "At most one synthetic job per frozen plan",
+      "arguments": {
+        "freeze_ref": "9f232d41b243aac368b89895ab23d60f09089bb37d9e3c5185718b463ace08d8",
+        "scenario": {
+          "$input": "mock_fixture_scenario"
+        }
+      },
+      "produces": [
+        "job_ref",
+        "status",
+        "reused"
+      ],
+      "on_failure": "stop_preserve_evidence_then_revise_and_review_new_version"
+    },
+    {
+      "id": "poll",
+      "tool": "job_poll_mock",
+      "depends_on": [
+        "run_or_reuse"
+      ],
+      "acceptance": "Only mock-completed unit rows accepted",
+      "arguments": {
+        "job_ref": {
+          "$from": "run_or_reuse.job_ref"
+        }
+      },
+      "produces": [
+        "job_ref",
+        "status",
+        "units",
+        "real_training_performed"
+      ],
+      "on_failure": "stop_preserve_evidence_then_revise_and_review_new_version"
+    },
+    {
+      "id": "analyze",
+      "tool": "result_analyze",
+      "depends_on": [
+        "poll"
+      ],
+      "acceptance": "All frozen units accounted for; locked primary contrast analyzed",
+      "arguments": {
+        "job_ref": {
+          "$from": "run_or_reuse.job_ref"
+        }
+      },
+      "produces": [
+        "analysis_ref",
+        "job_ref",
+        "freeze_ref",
+        "plan_ref",
+        "response",
+        "primary_term",
+        "effect",
+        "interval",
+        "confidence",
+        "df",
+        "model_assumptions_verified",
+        "source_kind",
+        "original_unit_count",
+        "decision_rule",
+        "posthoc_model_selection",
+        "scientific_success"
+      ],
+      "on_failure": "stop_preserve_evidence_then_revise_and_review_new_version"
+    },
+    {
+      "id": "assess_claim",
+      "tool": "claim_assess",
+      "depends_on": [
+        "analyze"
+      ],
+      "acceptance": "Plan, source, contrast and interval agree",
+      "arguments": {
+        "claim_ref": {
+          "$input": "claim_ref"
+        },
+        "analysis_ref": {
+          "$from": "analyze.analysis_ref"
+        }
+      },
+      "produces": [
+        "assessment_ref",
+        "claim_ref",
+        "analysis_ref",
+        "status",
+        "practical_benefit_supported",
+        "interval",
+        "evidence_scope",
+        "real_scientific_claim_verified",
+        "limitations"
+      ],
+      "on_failure": "stop_preserve_evidence_then_revise_and_review_new_version"
+    },
+    {
+      "id": "choose_next",
+      "tool": "loop_next_action",
+      "depends_on": [
+        "assess_claim"
+      ],
+      "acceptance": "No significance chasing or automatic retest",
+      "arguments": {
+        "assessment_ref": {
+          "$from": "assess_claim.assessment_ref"
+        }
+      },
+      "produces": [
+        "next_step",
+        "automatic_retest",
+        "change_success_threshold",
+        "required_new_version_for_followup",
+        "real_execution_authorized"
+      ],
+      "on_failure": "stop_preserve_evidence_then_revise_and_review_new_version"
+    },
+    {
+      "id": "write_report",
+      "tool": "report_build",
+      "depends_on": [
+        "choose_next"
+      ],
+      "acceptance": "Separate design pass, mock completion and conditional statistical evidence",
+      "arguments": {
+        "assessment_ref": {
+          "$from": "assess_claim.assessment_ref"
+        },
+        "workflow_ref": {
+          "$input": "workflow_ref"
+        }
+      },
+      "produces": [
+        "report_ref",
+        "assessment_ref",
+        "workflow_ref",
+        "design_status",
+        "execution_status",
+        "statistical_evidence",
+        "real_scientific_claim_verified",
+        "next_action",
+        "source"
+      ],
+      "on_failure": "stop_preserve_evidence_then_revise_and_review_new_version"
+    }
+  ]
+}

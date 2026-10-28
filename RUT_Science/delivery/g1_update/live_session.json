@@ -1,0 +1,11 @@
+{
+  "session": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\delivery\\g1_update\\sessions\\b1ca426dc1e54da9918bfb9547c5d95c",
+  "id": "b1ca426dc1e54da9918bfb9547c5d95c",
+  "workspace": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\delivery\\g1_update\\fixture_project",
+  "limits": {
+    "llm_requests": 8,
+    "llm_tokens": 60000,
+    "tool_calls": 12,
+    "read_bytes": 24000
+  }
+}

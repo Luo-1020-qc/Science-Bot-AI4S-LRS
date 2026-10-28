@@ -1,0 +1,14 @@
+{
+  "algorithm": "behavior_cloning",
+  "seed": 59,
+  "selected_epoch": 40,
+  "policy_hash": "42db0c2aad6567c18f549dcfd14c6f0604cddd973e4fd4cad6c35b405d1b4c36",
+  "training_rows": 1495,
+  "train_tasks_hash": "f2ce26f22a4ce380c9c6572bee394698ed851215fa882134ce503c0620509649",
+  "development_tasks_hash": "41d423d6c55a6846ae74b03b22d42cc39e404463b2c2277953972331fc85036f",
+  "human_expert_labels": 0,
+  "heldout_used": false,
+  "cpu_seconds": 3.1184366999987105,
+  "device": "cpu",
+  "epochs": 100
+}

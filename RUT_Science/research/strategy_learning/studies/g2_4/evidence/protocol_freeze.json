@@ -1,0 +1,31 @@
+{
+  "version": "doe_protocol_freeze_v1",
+  "date": "2026-10-27",
+  "source_hashes": {
+    "run.py": "5d1fe1ee2b6904d79d46e3cb1f2e2995606b7067b485568f74d74a0cef132e38",
+    "doe/__init__.py": "efc9de22a63991e8ccbf52d8856ee76b4d36efcaafce9fbeb3e7a7fe7fb2b75e",
+    "doe/compiler.py": "298c071884204f476af5ed3b84afd32d004485d13fb2ee226f435178d7896567",
+    "doe/evaluation.py": "e95aa069ade9abd075704a3c0acb66ab779673457147fabf0ec64e3b409fa118",
+    "doe/guard.py": "6ecc0d7d69468318e7908e628eb14ccabd9a0ed95a815506aac1b4f3f4d096ec",
+    "doe/io.py": "3b05d0a1d4ca71fd64029c559a0e5c716e4e782dffc7fd362565751ea078a852",
+    "doe/review.py": "b6f94e08d391ea32dcb8e15f2c23ba7b818374c0c4bf7e474bdc223a82b7d63a",
+    "doe/schema.py": "d239c7c6c03cc1dc2012e3b471cc6d60f14bee73400a0eca9a3d18142439ecc5",
+    "doe/scoring.py": "dcc2023ba3f33f8d214719ad737e37672075505c571f40fbcf72de2f66e41cb3",
+    "doe/tasks.py": "ddd59f679d04635a2c2c46ce8fef7b3af7ad8b4159dc91bb88279d8d43680976",
+    "doe/validation.py": "af522b6edc70b5d040ddd03f35764d8d3861f273a382accc8c35adc89135a9e6"
+  },
+  "seal_sha256": "1c13df86b66f4a9645305a30c769f8129474118f591943c23b3848b3fa3ede9a",
+  "pending_review_sha256": "a16435bd86270ad87d257d43926c350fc7a0cfc14e097200abec28f573380f53",
+  "schema_hashes": {
+    "experiment_contract.schema.json": "dcf69a597a439922ef7e9d7d4ed579ffec05234c8081022e1f3381b555e6cb3b",
+    "request.schema.json": "9cf9a1f95a63ea354eb92fb7a8426e1ee35d56e9eef0a9202f1c0ee2d2f8eeb4"
+  },
+  "scorer_version": "doe_score_v1",
+  "verifier_version": "doe_verifier_v1",
+  "before_development_diagnostics": true,
+  "heldout_records_evaluated": false,
+  "policy_training": false,
+  "python": "3.12.14",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1"
+}

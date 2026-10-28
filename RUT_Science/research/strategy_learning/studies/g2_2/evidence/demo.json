@@ -1,0 +1,1332 @@
+{
+  "task_id": "5b1b282a4dbb6bada03a",
+  "root_group": "development/conflicting_response/13",
+  "scenario": "conflicting_response",
+  "family": "independent",
+  "success": true,
+  "design_correct": true,
+  "appropriate_stop": false,
+  "missed_execution": false,
+  "blocked_execution_attempts": 0,
+  "simulated_executions": 1,
+  "real_executions": 0,
+  "real_model_calls": 0,
+  "questions": 2,
+  "redundant_questions": 0,
+  "unanswerable_questions": 0,
+  "decisions": 8,
+  "mock_calls": 2,
+  "rejected_designs": 0,
+  "return": 2.4000000000000004,
+  "trace": [
+    {
+      "observation": {
+        "version": "g2_2_decisions_v2",
+        "facts": {
+          "intent": "run",
+          "goal": "compare_means",
+          "unit_structure": "independent_rows",
+          "response": "old_response",
+          "sample_basis": "available_exploratory",
+          "factor": "condition",
+          "levels": [
+            "control",
+            "treatment"
+          ]
+        },
+        "unknown": [],
+        "permissions": {
+          "read": true,
+          "execute": true
+        },
+        "profile": null,
+        "conflicts": {},
+        "method": null,
+        "draft_valid": false,
+        "confirmed_current": false,
+        "confirmation_refused": false,
+        "last_failure": null,
+        "remaining_questions": 14,
+        "remaining_resource": 12,
+        "turn": 0,
+        "asked": {},
+        "errors": [],
+        "mask": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          false,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          true,
+          true
+        ]
+      },
+      "action": "inspect",
+      "reward": -0.05,
+      "next_observation": {
+        "version": "g2_2_decisions_v2",
+        "facts": {
+          "intent": "run",
+          "goal": "compare_means",
+          "unit_structure": "independent_rows",
+          "response": "old_response",
+          "sample_basis": "available_exploratory",
+          "factor": "condition",
+          "levels": [
+            "control",
+            "treatment"
+          ]
+        },
+        "unknown": [],
+        "permissions": {
+          "read": true,
+          "execute": true
+        },
+        "profile": {
+          "schema_version": "mock_csv_profile_v1",
+          "columns": [
+            "unit_id",
+            "condition",
+            "response",
+            "x1",
+            "x2"
+          ],
+          "rows": 60,
+          "rows_per_unit": 1,
+          "missing_fraction": 0,
+          "estimated_execution_cost": 3,
+          "data_identity": "5b1b282a4dbb6bada03a4bacabac59670ad16c845a398bcdaf9c922536bfad56",
+          "simulated": true
+        },
+        "conflicts": {},
+        "method": null,
+        "draft_valid": false,
+        "confirmed_current": false,
+        "confirmation_refused": false,
+        "last_failure": null,
+        "remaining_questions": 14,
+        "remaining_resource": 11,
+        "turn": 1,
+        "asked": {},
+        "errors": [],
+        "mask": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          true,
+          true
+        ]
+      },
+      "terminal": false,
+      "info": {
+        "simulated": true,
+        "real_tools_connected": false,
+        "real_model_calls": 0
+      }
+    },
+    {
+      "observation": {
+        "version": "g2_2_decisions_v2",
+        "facts": {
+          "intent": "run",
+          "goal": "compare_means",
+          "unit_structure": "independent_rows",
+          "response": "old_response",
+          "sample_basis": "available_exploratory",
+          "factor": "condition",
+          "levels": [
+            "control",
+            "treatment"
+          ]
+        },
+        "unknown": [],
+        "permissions": {
+          "read": true,
+          "execute": true
+        },
+        "profile": {
+          "schema_version": "mock_csv_profile_v1",
+          "columns": [
+            "unit_id",
+            "condition",
+            "response",
+            "x1",
+            "x2"
+          ],
+          "rows": 60,
+          "rows_per_unit": 1,
+          "missing_fraction": 0,
+          "estimated_execution_cost": 3,
+          "data_identity": "5b1b282a4dbb6bada03a4bacabac59670ad16c845a398bcdaf9c922536bfad56",
+          "simulated": true
+        },
+        "conflicts": {},
+        "method": null,
+        "draft_valid": false,
+        "confirmed_current": false,
+        "confirmation_refused": false,
+        "last_failure": null,
+        "remaining_questions": 14,
+        "remaining_resource": 11,
+        "turn": 1,
+        "asked": {},
+        "errors": [],
+        "mask": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          true,
+          true
+        ]
+      },
+      "action": "ask:unit",
+      "reward": -0.15000000000000002,
+      "next_observation": {
+        "version": "g2_2_decisions_v2",
+        "facts": {
+          "intent": "run",
+          "goal": "compare_means",
+          "unit_structure": "independent_rows",
+          "response": "old_response",
+          "sample_basis": "available_exploratory",
+          "factor": "condition",
+          "levels": [
+            "control",
+            "treatment"
+          ],
+          "unit": "unit_id"
+        },
+        "unknown": [],
+        "permissions": {
+          "read": true,
+          "execute": true
+        },
+        "profile": {
+          "schema_version": "mock_csv_profile_v1",
+          "columns": [
+            "unit_id",
+            "condition",
+            "response",
+            "x1",
+            "x2"
+          ],
+          "rows": 60,
+          "rows_per_unit": 1,
+          "missing_fraction": 0,
+          "estimated_execution_cost": 3,
+          "data_identity": "5b1b282a4dbb6bada03a4bacabac59670ad16c845a398bcdaf9c922536bfad56",
+          "simulated": true
+        },
+        "conflicts": {
+          "response": {
+            "previous": "old_response",
+            "user_proposed": "response"
+          }
+        },
+        "method": null,
+        "draft_valid": false,
+        "confirmed_current": false,
+        "confirmation_refused": false,
+        "last_failure": null,
+        "remaining_questions": 13,
+        "remaining_resource": 11,
+        "turn": 2,
+        "asked": {
+          "unit": 1
+        },
+        "errors": [],
+        "mask": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          true,
+          true
+        ]
+      },
+      "terminal": false,
+      "info": {
+        "simulated": true,
+        "real_tools_connected": false,
+        "real_model_calls": 0
+      }
+    },
+    {
+      "observation": {
+        "version": "g2_2_decisions_v2",
+        "facts": {
+          "intent": "run",
+          "goal": "compare_means",
+          "unit_structure": "independent_rows",
+          "response": "old_response",
+          "sample_basis": "available_exploratory",
+          "factor": "condition",
+          "levels": [
+            "control",
+            "treatment"
+          ],
+          "unit": "unit_id"
+        },
+        "unknown": [],
+        "permissions": {
+          "read": true,
+          "execute": true
+        },
+        "profile": {
+          "schema_version": "mock_csv_profile_v1",
+          "columns": [
+            "unit_id",
+            "condition",
+            "response",
+            "x1",
+            "x2"
+          ],
+          "rows": 60,
+          "rows_per_unit": 1,
+          "missing_fraction": 0,
+          "estimated_execution_cost": 3,
+          "data_identity": "5b1b282a4dbb6bada03a4bacabac59670ad16c845a398bcdaf9c922536bfad56",
+          "simulated": true
+        },
+        "conflicts": {
+          "response": {
+            "previous": "old_response",
+            "user_proposed": "response"
+          }
+        },
+        "method": null,
+        "draft_valid": false,
+        "confirmed_current": false,
+        "confirmation_refused": false,
+        "last_failure": null,
+        "remaining_questions": 13,
+        "remaining_resource": 11,
+        "turn": 2,
+        "asked": {
+          "unit": 1
+        },
+        "errors": [],
+        "mask": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          true,
+          true
+        ]
+      },
+      "action": "resolve",
+      "reward": -0.05,
+      "next_observation": {
+        "version": "g2_2_decisions_v2",
+        "facts": {
+          "intent": "run",
+          "goal": "compare_means",
+          "unit_structure": "independent_rows",
+          "response": "response",
+          "sample_basis": "available_exploratory",
+          "factor": "condition",
+          "levels": [
+            "control",
+            "treatment"
+          ],
+          "unit": "unit_id"
+        },
+        "unknown": [],
+        "permissions": {
+          "read": true,
+          "execute": true
+        },
+        "profile": {
+          "schema_version": "mock_csv_profile_v1",
+          "columns": [
+            "unit_id",
+            "condition",
+            "response",
+            "x1",
+            "x2"
+          ],
+          "rows": 60,
+          "rows_per_unit": 1,
+          "missing_fraction": 0,
+          "estimated_execution_cost": 3,
+          "data_identity": "5b1b282a4dbb6bada03a4bacabac59670ad16c845a398bcdaf9c922536bfad56",
+          "simulated": true
+        },
+        "conflicts": {},
+        "method": null,
+        "draft_valid": false,
+        "confirmed_current": false,
+        "confirmation_refused": false,
+        "last_failure": null,
+        "remaining_questions": 13,
+        "remaining_resource": 11,
+        "turn": 3,
+        "asked": {
+          "unit": 1
+        },
+        "errors": [],
+        "mask": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          true,
+          true
+        ]
+      },
+      "terminal": false,
+      "info": {
+        "simulated": true,
+        "real_tools_connected": false,
+        "real_model_calls": 0
+      }
+    },
+    {
+      "observation": {
+        "version": "g2_2_decisions_v2",
+        "facts": {
+          "intent": "run",
+          "goal": "compare_means",
+          "unit_structure": "independent_rows",
+          "response": "response",
+          "sample_basis": "available_exploratory",
+          "factor": "condition",
+          "levels": [
+            "control",
+            "treatment"
+          ],
+          "unit": "unit_id"
+        },
+        "unknown": [],
+        "permissions": {
+          "read": true,
+          "execute": true
+        },
+        "profile": {
+          "schema_version": "mock_csv_profile_v1",
+          "columns": [
+            "unit_id",
+            "condition",
+            "response",
+            "x1",
+            "x2"
+          ],
+          "rows": 60,
+          "rows_per_unit": 1,
+          "missing_fraction": 0,
+          "estimated_execution_cost": 3,
+          "data_identity": "5b1b282a4dbb6bada03a4bacabac59670ad16c845a398bcdaf9c922536bfad56",
+          "simulated": true
+        },
+        "conflicts": {},
+        "method": null,
+        "draft_valid": false,
+        "confirmed_current": false,
+        "confirmation_refused": false,
+        "last_failure": null,
+        "remaining_questions": 13,
+        "remaining_resource": 11,
+        "turn": 3,
+        "asked": {
+          "unit": 1
+        },
+        "errors": [],
+        "mask": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          true,
+          true
+        ]
+      },
+      "action": "ask:provenance",
+      "reward": -0.15000000000000002,
+      "next_observation": {
+        "version": "g2_2_decisions_v2",
+        "facts": {
+          "intent": "run",
+          "goal": "compare_means",
+          "unit_structure": "independent_rows",
+          "response": "response",
+          "sample_basis": "available_exploratory",
+          "factor": "condition",
+          "levels": [
+            "control",
+            "treatment"
+          ],
+          "unit": "unit_id",
+          "provenance": "synthetic"
+        },
+        "unknown": [],
+        "permissions": {
+          "read": true,
+          "execute": true
+        },
+        "profile": {
+          "schema_version": "mock_csv_profile_v1",
+          "columns": [
+            "unit_id",
+            "condition",
+            "response",
+            "x1",
+            "x2"
+          ],
+          "rows": 60,
+          "rows_per_unit": 1,
+          "missing_fraction": 0,
+          "estimated_execution_cost": 3,
+          "data_identity": "5b1b282a4dbb6bada03a4bacabac59670ad16c845a398bcdaf9c922536bfad56",
+          "simulated": true
+        },
+        "conflicts": {},
+        "method": null,
+        "draft_valid": false,
+        "confirmed_current": false,
+        "confirmation_refused": false,
+        "last_failure": null,
+        "remaining_questions": 12,
+        "remaining_resource": 11,
+        "turn": 4,
+        "asked": {
+          "unit": 1,
+          "provenance": 1
+        },
+        "errors": [],
+        "mask": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          true,
+          true
+        ]
+      },
+      "terminal": false,
+      "info": {
+        "simulated": true,
+        "real_tools_connected": false,
+        "real_model_calls": 0
+      }
+    },
+    {
+      "observation": {
+        "version": "g2_2_decisions_v2",
+        "facts": {
+          "intent": "run",
+          "goal": "compare_means",
+          "unit_structure": "independent_rows",
+          "response": "response",
+          "sample_basis": "available_exploratory",
+          "factor": "condition",
+          "levels": [
+            "control",
+            "treatment"
+          ],
+          "unit": "unit_id",
+          "provenance": "synthetic"
+        },
+        "unknown": [],
+        "permissions": {
+          "read": true,
+          "execute": true
+        },
+        "profile": {
+          "schema_version": "mock_csv_profile_v1",
+          "columns": [
+            "unit_id",
+            "condition",
+            "response",
+            "x1",
+            "x2"
+          ],
+          "rows": 60,
+          "rows_per_unit": 1,
+          "missing_fraction": 0,
+          "estimated_execution_cost": 3,
+          "data_identity": "5b1b282a4dbb6bada03a4bacabac59670ad16c845a398bcdaf9c922536bfad56",
+          "simulated": true
+        },
+        "conflicts": {},
+        "method": null,
+        "draft_valid": false,
+        "confirmed_current": false,
+        "confirmation_refused": false,
+        "last_failure": null,
+        "remaining_questions": 12,
+        "remaining_resource": 11,
+        "turn": 4,
+        "asked": {
+          "unit": 1,
+          "provenance": 1
+        },
+        "errors": [],
+        "mask": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          true,
+          true
+        ]
+      },
+      "action": "choose:welch",
+      "reward": -0.05,
+      "next_observation": {
+        "version": "g2_2_decisions_v2",
+        "facts": {
+          "intent": "run",
+          "goal": "compare_means",
+          "unit_structure": "independent_rows",
+          "response": "response",
+          "sample_basis": "available_exploratory",
+          "factor": "condition",
+          "levels": [
+            "control",
+            "treatment"
+          ],
+          "unit": "unit_id",
+          "provenance": "synthetic"
+        },
+        "unknown": [],
+        "permissions": {
+          "read": true,
+          "execute": true
+        },
+        "profile": {
+          "schema_version": "mock_csv_profile_v1",
+          "columns": [
+            "unit_id",
+            "condition",
+            "response",
+            "x1",
+            "x2"
+          ],
+          "rows": 60,
+          "rows_per_unit": 1,
+          "missing_fraction": 0,
+          "estimated_execution_cost": 3,
+          "data_identity": "5b1b282a4dbb6bada03a4bacabac59670ad16c845a398bcdaf9c922536bfad56",
+          "simulated": true
+        },
+        "conflicts": {},
+        "method": "welch",
+        "draft_valid": false,
+        "confirmed_current": false,
+        "confirmation_refused": false,
+        "last_failure": null,
+        "remaining_questions": 12,
+        "remaining_resource": 11,
+        "turn": 5,
+        "asked": {
+          "unit": 1,
+          "provenance": 1
+        },
+        "errors": [],
+        "mask": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          false,
+          false,
+          true,
+          true
+        ]
+      },
+      "terminal": false,
+      "info": {
+        "simulated": true,
+        "real_tools_connected": false,
+        "real_model_calls": 0
+      }
+    },
+    {
+      "observation": {
+        "version": "g2_2_decisions_v2",
+        "facts": {
+          "intent": "run",
+          "goal": "compare_means",
+          "unit_structure": "independent_rows",
+          "response": "response",
+          "sample_basis": "available_exploratory",
+          "factor": "condition",
+          "levels": [
+            "control",
+            "treatment"
+          ],
+          "unit": "unit_id",
+          "provenance": "synthetic"
+        },
+        "unknown": [],
+        "permissions": {
+          "read": true,
+          "execute": true
+        },
+        "profile": {
+          "schema_version": "mock_csv_profile_v1",
+          "columns": [
+            "unit_id",
+            "condition",
+            "response",
+            "x1",
+            "x2"
+          ],
+          "rows": 60,
+          "rows_per_unit": 1,
+          "missing_fraction": 0,
+          "estimated_execution_cost": 3,
+          "data_identity": "5b1b282a4dbb6bada03a4bacabac59670ad16c845a398bcdaf9c922536bfad56",
+          "simulated": true
+        },
+        "conflicts": {},
+        "method": "welch",
+        "draft_valid": false,
+        "confirmed_current": false,
+        "confirmation_refused": false,
+        "last_failure": null,
+        "remaining_questions": 12,
+        "remaining_resource": 11,
+        "turn": 5,
+        "asked": {
+          "unit": 1,
+          "provenance": 1
+        },
+        "errors": [],
+        "mask": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          false,
+          false,
+          true,
+          true
+        ]
+      },
+      "action": "draft",
+      "reward": -0.05,
+      "next_observation": {
+        "version": "g2_2_decisions_v2",
+        "facts": {
+          "intent": "run",
+          "goal": "compare_means",
+          "unit_structure": "independent_rows",
+          "response": "response",
+          "sample_basis": "available_exploratory",
+          "factor": "condition",
+          "levels": [
+            "control",
+            "treatment"
+          ],
+          "unit": "unit_id",
+          "provenance": "synthetic"
+        },
+        "unknown": [],
+        "permissions": {
+          "read": true,
+          "execute": true
+        },
+        "profile": {
+          "schema_version": "mock_csv_profile_v1",
+          "columns": [
+            "unit_id",
+            "condition",
+            "response",
+            "x1",
+            "x2"
+          ],
+          "rows": 60,
+          "rows_per_unit": 1,
+          "missing_fraction": 0,
+          "estimated_execution_cost": 3,
+          "data_identity": "5b1b282a4dbb6bada03a4bacabac59670ad16c845a398bcdaf9c922536bfad56",
+          "simulated": true
+        },
+        "conflicts": {},
+        "method": "welch",
+        "draft_valid": true,
+        "confirmed_current": false,
+        "confirmation_refused": false,
+        "last_failure": null,
+        "remaining_questions": 12,
+        "remaining_resource": 11,
+        "turn": 6,
+        "asked": {
+          "unit": 1,
+          "provenance": 1
+        },
+        "errors": [],
+        "mask": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          true,
+          true
+        ]
+      },
+      "terminal": false,
+      "info": {
+        "simulated": true,
+        "real_tools_connected": false,
+        "real_model_calls": 0
+      }
+    },
+    {
+      "observation": {
+        "version": "g2_2_decisions_v2",
+        "facts": {
+          "intent": "run",
+          "goal": "compare_means",
+          "unit_structure": "independent_rows",
+          "response": "response",
+          "sample_basis": "available_exploratory",
+          "factor": "condition",
+          "levels": [
+            "control",
+            "treatment"
+          ],
+          "unit": "unit_id",
+          "provenance": "synthetic"
+        },
+        "unknown": [],
+        "permissions": {
+          "read": true,
+          "execute": true
+        },
+        "profile": {
+          "schema_version": "mock_csv_profile_v1",
+          "columns": [
+            "unit_id",
+            "condition",
+            "response",
+            "x1",
+            "x2"
+          ],
+          "rows": 60,
+          "rows_per_unit": 1,
+          "missing_fraction": 0,
+          "estimated_execution_cost": 3,
+          "data_identity": "5b1b282a4dbb6bada03a4bacabac59670ad16c845a398bcdaf9c922536bfad56",
+          "simulated": true
+        },
+        "conflicts": {},
+        "method": "welch",
+        "draft_valid": true,
+        "confirmed_current": false,
+        "confirmation_refused": false,
+        "last_failure": null,
+        "remaining_questions": 12,
+        "remaining_resource": 11,
+        "turn": 6,
+        "asked": {
+          "unit": 1,
+          "provenance": 1
+        },
+        "errors": [],
+        "mask": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          true,
+          true
+        ]
+      },
+      "action": "request_confirmation",
+      "reward": -0.05,
+      "next_observation": {
+        "version": "g2_2_decisions_v2",
+        "facts": {
+          "intent": "run",
+          "goal": "compare_means",
+          "unit_structure": "independent_rows",
+          "response": "response",
+          "sample_basis": "available_exploratory",
+          "factor": "condition",
+          "levels": [
+            "control",
+            "treatment"
+          ],
+          "unit": "unit_id",
+          "provenance": "synthetic"
+        },
+        "unknown": [],
+        "permissions": {
+          "read": true,
+          "execute": true
+        },
+        "profile": {
+          "schema_version": "mock_csv_profile_v1",
+          "columns": [
+            "unit_id",
+            "condition",
+            "response",
+            "x1",
+            "x2"
+          ],
+          "rows": 60,
+          "rows_per_unit": 1,
+          "missing_fraction": 0,
+          "estimated_execution_cost": 3,
+          "data_identity": "5b1b282a4dbb6bada03a4bacabac59670ad16c845a398bcdaf9c922536bfad56",
+          "simulated": true
+        },
+        "conflicts": {},
+        "method": "welch",
+        "draft_valid": true,
+        "confirmed_current": true,
+        "confirmation_refused": false,
+        "last_failure": null,
+        "remaining_questions": 12,
+        "remaining_resource": 11,
+        "turn": 7,
+        "asked": {
+          "unit": 1,
+          "provenance": 1
+        },
+        "errors": [],
+        "mask": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      "terminal": false,
+      "info": {
+        "simulated": true,
+        "real_tools_connected": false,
+        "real_model_calls": 0
+      }
+    },
+    {
+      "observation": {
+        "version": "g2_2_decisions_v2",
+        "facts": {
+          "intent": "run",
+          "goal": "compare_means",
+          "unit_structure": "independent_rows",
+          "response": "response",
+          "sample_basis": "available_exploratory",
+          "factor": "condition",
+          "levels": [
+            "control",
+            "treatment"
+          ],
+          "unit": "unit_id",
+          "provenance": "synthetic"
+        },
+        "unknown": [],
+        "permissions": {
+          "read": true,
+          "execute": true
+        },
+        "profile": {
+          "schema_version": "mock_csv_profile_v1",
+          "columns": [
+            "unit_id",
+            "condition",
+            "response",
+            "x1",
+            "x2"
+          ],
+          "rows": 60,
+          "rows_per_unit": 1,
+          "missing_fraction": 0,
+          "estimated_execution_cost": 3,
+          "data_identity": "5b1b282a4dbb6bada03a4bacabac59670ad16c845a398bcdaf9c922536bfad56",
+          "simulated": true
+        },
+        "conflicts": {},
+        "method": "welch",
+        "draft_valid": true,
+        "confirmed_current": true,
+        "confirmation_refused": false,
+        "last_failure": null,
+        "remaining_questions": 12,
+        "remaining_resource": 11,
+        "turn": 7,
+        "asked": {
+          "unit": 1,
+          "provenance": 1
+        },
+        "errors": [],
+        "mask": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      "action": "execute_mock",
+      "reward": 2.95,
+      "next_observation": {
+        "version": "g2_2_decisions_v2",
+        "facts": {
+          "intent": "run",
+          "goal": "compare_means",
+          "unit_structure": "independent_rows",
+          "response": "response",
+          "sample_basis": "available_exploratory",
+          "factor": "condition",
+          "levels": [
+            "control",
+            "treatment"
+          ],
+          "unit": "unit_id",
+          "provenance": "synthetic"
+        },
+        "unknown": [],
+        "permissions": {
+          "read": true,
+          "execute": true
+        },
+        "profile": {
+          "schema_version": "mock_csv_profile_v1",
+          "columns": [
+            "unit_id",
+            "condition",
+            "response",
+            "x1",
+            "x2"
+          ],
+          "rows": 60,
+          "rows_per_unit": 1,
+          "missing_fraction": 0,
+          "estimated_execution_cost": 3,
+          "data_identity": "5b1b282a4dbb6bada03a4bacabac59670ad16c845a398bcdaf9c922536bfad56",
+          "simulated": true
+        },
+        "conflicts": {},
+        "method": "welch",
+        "draft_valid": true,
+        "confirmed_current": true,
+        "confirmation_refused": false,
+        "last_failure": null,
+        "remaining_questions": 12,
+        "remaining_resource": 8,
+        "turn": 8,
+        "asked": {
+          "unit": 1,
+          "provenance": 1
+        },
+        "errors": [],
+        "mask": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      "terminal": true,
+      "info": {
+        "simulated": true,
+        "real_tools_connected": false,
+        "real_model_calls": 0,
+        "success": true,
+        "design_correct": true,
+        "should_stop": false,
+        "appropriate_stop": false,
+        "missed_execution": false,
+        "execution_attempts_blocked": 0,
+        "simulated_executions": 1,
+        "real_executions": 0,
+        "rubric_version": "g2_2_frozen_rubric_v1"
+      }
+    }
+  ]
+}

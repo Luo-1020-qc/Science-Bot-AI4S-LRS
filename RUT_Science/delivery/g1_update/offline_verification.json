@@ -1,0 +1,64 @@
+{
+  "fresh_no_numeric_environment": true,
+  "route_cases": {
+    "什么是区组设计？": {
+      "intent": "chat",
+      "no_numeric_environment": true
+    },
+    "未知任务abc": {
+      "intent": "clarify",
+      "no_numeric_environment": true
+    },
+    "运行 Darcy 预测温度场": {
+      "intent": "unsupported",
+      "no_numeric_environment": true
+    },
+    "在 generated 做分类实验": {
+      "intent": "unsupported",
+      "no_numeric_environment": true
+    },
+    "运行 generated 实验，预算6.5": {
+      "intent": "clarify",
+      "no_numeric_environment": true
+    },
+    "运行 Darcy，门槛-0.2": {
+      "intent": "clarify",
+      "no_numeric_environment": true
+    },
+    "用 CViT 训练当前模型": {
+      "intent": "unsupported",
+      "no_numeric_environment": true
+    },
+    "运行 Darcy 实验，alpha=0.1": {
+      "intent": "clarify",
+      "no_numeric_environment": true
+    },
+    "设计一个新实验": {
+      "intent": "design",
+      "no_numeric_environment": true
+    }
+  },
+  "offline_file_reference": "model.py:L1-L9#fca44705e94b",
+  "file_reference_matches_sha": true,
+  "model_requests_for_routing_and_local_read": 0,
+  "numeric": {
+    "generated": {
+      "session": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\delivery\\g1_update\\offline_sessions\\8106c2ffd4a04b399b35537785895df7",
+      "attempts_at_pause": 1,
+      "success": true,
+      "evaluation_reads": 1,
+      "repeat_run_did_not_repeat_experiment": true,
+      "model_requests": 0
+    },
+    "darcy": {
+      "session": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\delivery\\g1_update\\offline_sessions\\9ac87ba29bce4c9580bc54f9e450d8f1",
+      "attempts_at_pause": 1,
+      "success": true,
+      "evaluation_reads": 1,
+      "repeat_run_did_not_repeat_experiment": true,
+      "model_requests": 0
+    }
+  },
+  "legacy_snapshot_restores": true,
+  "legacy_snapshot_unchanged": true
+}

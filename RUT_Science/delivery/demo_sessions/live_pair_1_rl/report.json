@@ -1,0 +1,34 @@
+{
+  "schema_version": "budgeted_report_v1",
+  "termination": "explicit_submit",
+  "selected": "ridge_full_5_10",
+  "complete": true,
+  "valid": true,
+  "quality_pass": false,
+  "scientific_success": false,
+  "sealed_error": 0.2087539174071732,
+  "threshold": 0.2,
+  "data_identity": "b5abbc93e0aaa11dcc92dbe1619d719f81e2e7eedc38c85bc656df5128948eee",
+  "provenance": {
+    "source": "controlled_generated_regression",
+    "root_group": 30001,
+    "split": "demo",
+    "instance": 11
+  },
+  "strict_execution": true,
+  "retries": 0,
+  "fixture_faults": false,
+  "search_validation_error": 0.19977902746757026,
+  "model_hash": "42bcac82108875104decab4d2863acdd23d249c6bcf9b98933512c5d742c1ff3",
+  "resources": {
+    "search_cu": 4.0,
+    "finalization_cu": 2,
+    "tool_attempts": 1,
+    "finalization_tools": 2,
+    "decisions": 2,
+    "llm_requests": 2,
+    "llm_tokens": 3724,
+    "active_seconds": 8.071960799999943
+  },
+  "evaluation_reads": 1
+}

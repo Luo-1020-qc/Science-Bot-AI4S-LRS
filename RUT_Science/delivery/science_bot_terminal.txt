@@ -1,0 +1,28 @@
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                                                                              │
+│   science Bot                                                                │
+│   research, with evidence.                                                   │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+  offline · rl · deepseek-flash · session 106660ec
+  /help commands   /status budget   /pause safe pause   Ctrl+D save & exit
+
+┌───────────────────────────── research workspace ─────────────────────────────┐
+│ Phase                  completed                                             │
+│ Dataset                generated                                             │
+│ Metric                 mean_relative_l2                                      │
+│ Engineering threshold  0.2                                                   │
+│ Search CU              6 / 10 remaining                                      │
+│ Finalization reserve   2 CU + 2 tool operations + 1 model request            │
+│ Policy                 bb9ab7212bd86bd8                                      │
+│ Draft hash             64071c58fa5cd3a0cf2d0c86fe069d2ea241a5da1b9c4e22770e… │
+│ Confirmed              True                                                  │
+└──────────────────────────────────────────────────────────────────────────────┘
+Defaults: full registered mean/ridge catalog; threshold from pilot 
+configuration. Review before /confirm.
+┌─────────────────┬───────────┬───────────────┬──────────┐
+│ Experiment      │ State     │ Validation L2 │ Attempts │
+├─────────────────┼───────────┼───────────────┼──────────┤
+│ ridge_full_5_10 │ succeeded │ 0.046593      │ 1        │
+└─────────────────┴───────────┴───────────────┴──────────┘

@@ -1,0 +1,24 @@
+{
+  "ref": "e9a0d5b5be5470fb9013537d5cc5939a455d847f0c8146c098116e0a5abb02d4",
+  "kind": "claim",
+  "data": {
+    "project_ref": "ceead2eb79a8d0f7da2b76ec527251a295aaaf116681585817a1c2a81d1835e5",
+    "statement": "Candidate has lower mean relative L2 than baseline within the declared protocol",
+    "response": "relative_l2",
+    "primary_term": "predictor",
+    "direction": "lower",
+    "practical_margin": 0.01,
+    "population_scope": "declared_dataset_and_training_protocol",
+    "factor_levels": [
+      {
+        "factor": "predictor",
+        "baseline": "mean_field",
+        "candidate": "ridge_field"
+      }
+    ],
+    "expected_unit_definition": "One predictor application within an independently drawn data-realization block",
+    "type": "directional_difference",
+    "decision_rule": "prespecified_two_sided_ci",
+    "real_world_verified": false
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "state": {
+    "version": 2,
+    "phase": "completed",
+    "experiments": {
+      "mean": {
+        "status": "succeeded",
+        "attempts": 1,
+        "model": {
+          "kind": "mean",
+          "y_mean": [
+            0.9496499637076822,
+            1.0004499150449522,
+            0.9920290562508832,
+            1.0846397064910558
+          ],
+          "n_fit": 96
+        },
+        "validation_mean": 0.2361158964908156,
+        "validation_std": 0.08348837920905393,
+        "prediction_hash": "c11b5ce87cc2ff3a012863012af3d6842d8df37dcef6b5301b9d4cd95dc65dca",
+        "tool_version": "budgeted_numpy_ridge_v1"
+      }
+    },
+    "diagnostics": {},
+    "residuals": {},
+    "jobs": {
+      "d49f7423eaf5a83d35badf07": {
+        "candidate": {
+          "id": "mean",
+          "kind": "fit_mean",
+          "parameters": {},
+          "cost": 1
+        },
+        "status": "succeeded",
+        "reserved_cu": 0,
+        "attempt": 1,
+        "retried": false,
+        "atomic": false,
+        "outcome_hash": "434ca10505675210e6868385c5504dfec25ceab1609457476f8f88d98a2feb4a",
+        "fixture": false,
+        "error": null
+      }
+    },
+    "pending_job": null,
+    "latest_failure": null,
+    "retries": 0,
+    "cu": 1.0,
+    "attempts": 1,
+    "decisions": 2,
+    "tokens": 3579,
+    "requests": 2,
+    "active_seconds": 7.537665699999707,
+    "history": [
+      {
+        "action_id": "mean",
+        "kind": "fit_mean",
+        "cost_cu": 1.0,
+        "quoted_cost_cu": 1,
+        "incumbent": "mean",
+        "version": 1
+      },
+      {
+        "action_id": "submit_best",
+        "kind": "submit_best",
+        "cost_cu": 0.0,
+        "quoted_cost_cu": 0,
+        "incumbent": "mean",
+        "version": 2
+      }
+    ],
+    "requests_done": {
+      "23888c0648154da4bb6d47a273e41112_obs_000000_mean": {
+        "request_hash": "3800ebbeb45bd369f4f89862cc64bc064ded40baf95949be89b8c84edadc4a7b",
+        "result": {
+          "reward": -0.004910714285714286,
+          "terminated": false,
+          "truncated": false,
+          "observation_ref": "obs_000001",
+          "action_id": "mean"
+        }
+      },
+      "23888c0648154da4bb6d47a273e41112_obs_000001_submit_best": {
+        "request_hash": "3c4c2ebd15d70f75478a45f559366b88e69df0312ed630698dcf8cffc2d791d2",
+        "result": {
+          "reward": -0.00982142857142857,
+          "terminated": true,
+          "truncated": false,
+          "observation_ref": "obs_000002",
+          "action_id": "submit_best"
+        }
+      }
+    },
+    "report": {
+      "schema_version": "budgeted_report_v1",
+      "termination": "explicit_submit",
+      "selected": "mean",
+      "complete": true,
+      "valid": true,
+      "quality_pass": false,
+      "scientific_success": false,
+      "sealed_error": 0.23988749425226746,
+      "threshold": 0.2,
+      "data_identity": "926a58301a00649094af2c4d5c5ff771624ab8a104f022fc5e0211c9c04b7400",
+      "provenance": {
+        "source": "controlled_generated_regression",
+        "root_group": 30000,
+        "split": "demo",
+        "instance": 11
+      },
+      "strict_execution": true,
+      "retries": 0,
+      "fixture_faults": false,
+      "search_validation_error": 0.2361158964908156,
+      "model_hash": "cded4a036be60d405746997ee0e77ee423bf2fc180323129c3b65a676b51f813",
+      "resources": {
+        "search_cu": 1.0,
+        "finalization_cu": 2,
+        "tool_attempts": 1,
+        "finalization_tools": 2,
+        "decisions": 2,
+        "llm_requests": 2,
+        "llm_tokens": 3579,
+        "active_seconds": 7.537665699999707
+      },
+      "evaluation_reads": 1
+    },
+    "candidate_ids": [
+      "mean",
+      "ridge_half_3_0.1",
+      "ridge_half_3_1",
+      "ridge_half_3_10",
+      "ridge_half_5_0.1",
+      "ridge_half_5_1",
+      "ridge_half_5_10",
+      "ridge_full_3_0.1",
+      "ridge_full_3_1",
+      "ridge_full_3_10",
+      "ridge_full_5_0.1",
+      "ridge_full_5_1",
+      "ridge_full_5_10"
+    ],
+    "finalization_tools": 2,
+    "finalization_cu": 2,
+    "evaluation_reads": 1,
+    "selected": "mean"
+  },
+  "hash": "455f2f26212331f2d38741363aa4d48be571b9b6e273488ff64e94f01ed8a850",
+  "data_identity": "926a58301a00649094af2c4d5c5ff771624ab8a104f022fc5e0211c9c04b7400"
+}

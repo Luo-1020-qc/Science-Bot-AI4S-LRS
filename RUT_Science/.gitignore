@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.egg-info/
+outputs/live*/
+data/darcy*/
+outputs/darcy*/
+outputs/plan*/
+outputs/chat*/
+outputs/p1p2_dev*/

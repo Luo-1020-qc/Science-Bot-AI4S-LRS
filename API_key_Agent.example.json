@@ -1,0 +1,5 @@
+{
+  "endpoint": "https://api.deepseek.com",
+  "API": "REPLACE_WITH_YOUR_OWN_API_KEY",
+  "model": "REPLACE_WITH_AVAILABLE_MODEL_ID"
+}

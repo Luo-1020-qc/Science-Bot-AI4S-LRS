@@ -1,0 +1,19 @@
+{
+  "version": "observed_feedback_kl_ppo_v2",
+  "seeds": [
+    21,
+    37,
+    59
+  ],
+  "initial_bc_epochs": 600,
+  "aggregation_rounds": 2,
+  "aggregation_fit_epochs": 250,
+  "aggregation_train_tasks": 80,
+  "ppo_updates": 24,
+  "rollout_steps": 512,
+  "ppo_lr": 0.0001,
+  "ppo_epochs": 4,
+  "kl_reference_weight": 0.05,
+  "entropy_weight": 0.005,
+  "selection": "development success then fewer blocked attempts then fewer decisions"
+}

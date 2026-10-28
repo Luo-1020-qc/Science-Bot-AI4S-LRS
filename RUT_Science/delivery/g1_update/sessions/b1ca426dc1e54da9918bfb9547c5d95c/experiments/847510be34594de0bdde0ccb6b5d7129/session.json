@@ -1,0 +1,36 @@
+{
+  "id": "847510be34594de0bdde0ccb6b5d7129",
+  "backend": "api",
+  "planner": "rl",
+  "checkpoint": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\models\\planner\\v1\\selected",
+  "model": "deepseek-flash",
+  "spec": {
+    "dataset": "generated",
+    "task_seed": 11,
+    "group": 0,
+    "split": "demo",
+    "quality_threshold": 0.2,
+    "compute_units": 6,
+    "tool_attempts": 12,
+    "decision_steps": 16,
+    "llm_requests": 8,
+    "llm_tokens": 60000,
+    "active_seconds": 600,
+    "fault_rate": 0.0,
+    "schema_version": "budgeted_research_v1"
+  },
+  "confirmed": "c9b56fbf9945aeaeb9de6ced20e7f8efa754a4d79175e5dc28666212b6ff2cb2",
+  "candidates_ready": true,
+  "messages": [],
+  "command_results": {},
+  "phase": "completed",
+  "error": null,
+  "workspace": {
+    "schema_version": "science_workspace_v1",
+    "workspace_id": "42b0c0b09f3a4329b6c73636b86ffc5c",
+    "root": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\delivery\\g1_update\\fixture_project",
+    "read_policy": "project_text_v1"
+  },
+  "policy_identity": "bb9ab7212bd86bd8a8b5393a9f5ac9f88414ea6b927607128d13bda1bb24780e",
+  "explanation_attempted": true
+}

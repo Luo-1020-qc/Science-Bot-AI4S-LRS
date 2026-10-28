@@ -1,0 +1,128 @@
+[
+  {
+    "id": "mean",
+    "kind": "fit_mean",
+    "parameters": {},
+    "cost": 1
+  },
+  {
+    "id": "ridge_half_3_0.1",
+    "kind": "fit_ridge",
+    "parameters": {
+      "fidelity": "half",
+      "feature_grid": 3,
+      "alpha": 0.1
+    },
+    "cost": 2
+  },
+  {
+    "id": "ridge_half_3_1",
+    "kind": "fit_ridge",
+    "parameters": {
+      "fidelity": "half",
+      "feature_grid": 3,
+      "alpha": 1.0
+    },
+    "cost": 2
+  },
+  {
+    "id": "ridge_half_3_10",
+    "kind": "fit_ridge",
+    "parameters": {
+      "fidelity": "half",
+      "feature_grid": 3,
+      "alpha": 10.0
+    },
+    "cost": 2
+  },
+  {
+    "id": "ridge_half_5_0.1",
+    "kind": "fit_ridge",
+    "parameters": {
+      "fidelity": "half",
+      "feature_grid": 5,
+      "alpha": 0.1
+    },
+    "cost": 2
+  },
+  {
+    "id": "ridge_half_5_1",
+    "kind": "fit_ridge",
+    "parameters": {
+      "fidelity": "half",
+      "feature_grid": 5,
+      "alpha": 1.0
+    },
+    "cost": 2
+  },
+  {
+    "id": "ridge_half_5_10",
+    "kind": "fit_ridge",
+    "parameters": {
+      "fidelity": "half",
+      "feature_grid": 5,
+      "alpha": 10.0
+    },
+    "cost": 2
+  },
+  {
+    "id": "ridge_full_3_0.1",
+    "kind": "fit_ridge",
+    "parameters": {
+      "fidelity": "full",
+      "feature_grid": 3,
+      "alpha": 0.1
+    },
+    "cost": 4
+  },
+  {
+    "id": "ridge_full_3_1",
+    "kind": "fit_ridge",
+    "parameters": {
+      "fidelity": "full",
+      "feature_grid": 3,
+      "alpha": 1.0
+    },
+    "cost": 4
+  },
+  {
+    "id": "ridge_full_3_10",
+    "kind": "fit_ridge",
+    "parameters": {
+      "fidelity": "full",
+      "feature_grid": 3,
+      "alpha": 10.0
+    },
+    "cost": 4
+  },
+  {
+    "id": "ridge_full_5_0.1",
+    "kind": "fit_ridge",
+    "parameters": {
+      "fidelity": "full",
+      "feature_grid": 5,
+      "alpha": 0.1
+    },
+    "cost": 4
+  },
+  {
+    "id": "ridge_full_5_1",
+    "kind": "fit_ridge",
+    "parameters": {
+      "fidelity": "full",
+      "feature_grid": 5,
+      "alpha": 1.0
+    },
+    "cost": 4
+  },
+  {
+    "id": "ridge_full_5_10",
+    "kind": "fit_ridge",
+    "parameters": {
+      "fidelity": "full",
+      "feature_grid": 5,
+      "alpha": 10.0
+    },
+    "cost": 4
+  }
+]

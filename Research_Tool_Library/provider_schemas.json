@@ -1,0 +1,564 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "tool_catalog",
+      "description": "查看工具输入输出、状态、权限与后续步骤",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "project_create",
+      "description": "建立项目目标与本地模拟工作区身份",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "objective": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          }
+        },
+        "required": [
+          "title",
+          "objective"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "claim_define",
+      "description": "将研究结论写成可检查的响应、对比、单位、方向和范围",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "project_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "statement": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "response": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "primary_term": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "direction": {
+            "type": "string",
+            "enum": [
+              "lower",
+              "higher"
+            ]
+          },
+          "practical_margin": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1000000.0
+          },
+          "population_scope": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "factor_levels": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "factor": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 2000
+                },
+                "baseline": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 2000
+                },
+                "candidate": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 2000
+                }
+              },
+              "required": [
+                "factor",
+                "baseline",
+                "candidate"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1,
+            "maxItems": 2
+          },
+          "expected_unit_definition": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          }
+        },
+        "required": [
+          "project_ref",
+          "statement",
+          "response",
+          "primary_term",
+          "direction",
+          "practical_margin",
+          "population_scope",
+          "factor_levels",
+          "expected_unit_definition"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "plan_create",
+      "description": "从受限DOE家族建立可修改方案及其需求证据",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "project_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "family": {
+            "type": "string",
+            "enum": [
+              "crd_two_arm",
+              "rcbd_two_arm",
+              "factorial_2x2"
+            ]
+          }
+        },
+        "required": [
+          "project_ref",
+          "family"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "plan_patch",
+      "description": "基于预期哈希修改具体字段，保留父版本和原因",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "plan_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "expected_contract_hash": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "changes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 2000
+                },
+                "value": {}
+              },
+              "required": [
+                "path",
+                "value"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1,
+            "maxItems": 20
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          }
+        },
+        "required": [
+          "plan_ref",
+          "expected_contract_hash",
+          "changes",
+          "reason"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "plan_diff",
+      "description": "比较两版方案，明确科学与执行协议变化",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "old_plan_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "new_plan_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          }
+        },
+        "required": [
+          "old_plan_ref",
+          "new_plan_ref"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "artifact_read",
+      "description": "读取已登记且哈希正确的类型化制品",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "artifact_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          }
+        },
+        "required": [
+          "artifact_ref"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "plan_review",
+      "description": "固定verifier独立检查设计、来源、预算、矩阵和条件功效",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "plan_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          }
+        },
+        "required": [
+          "plan_ref"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "claim_check_plan",
+      "description": "检查方案能否条件性地检验指定结论；不判断结果是否支持",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "claim_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "plan_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          }
+        },
+        "required": [
+          "claim_ref",
+          "plan_ref"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "review_resolve",
+      "description": "以新版本的实际复核结果关闭旧问题，不能自行标记已解决",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "old_review_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "new_review_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          }
+        },
+        "required": [
+          "old_review_ref",
+          "new_review_ref"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "plan_freeze",
+      "description": "冻结当前方案、主要对比和复核身份，仅用于模拟",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "plan_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "review_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "alignment_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          }
+        },
+        "required": [
+          "plan_ref",
+          "review_ref",
+          "alignment_ref"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "workflow_compile",
+      "description": "为冻结方案生成带工具、依赖与每步验收的DAG",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "freeze_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          }
+        },
+        "required": [
+          "freeze_ref"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "workflow_verify",
+      "description": "验证步骤引用、工具可用性和DAG拓扑",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "workflow_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          }
+        },
+        "required": [
+          "workflow_ref"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "job_reconcile_mock",
+      "description": "按冻结方案身份查询已有模拟作业",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "freeze_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          }
+        },
+        "required": [
+          "freeze_ref"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "job_run_mock",
+      "description": "创建或复用本地合成观测作业，没有真实Darcy或CViT训练",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "freeze_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "scenario": {
+            "type": "string",
+            "enum": [
+              "benefit",
+              "null",
+              "harm"
+            ]
+          }
+        },
+        "required": [
+          "freeze_ref",
+          "scenario"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "job_poll_mock",
+      "description": "核对模拟作业状态和实验单位数",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "job_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          }
+        },
+        "required": [
+          "job_ref"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "result_analyze",
+      "description": "按冻结全模型和主要对比分析合成单位级观测，计算效应与t区间",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "job_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          }
+        },
+        "required": [
+          "job_ref"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "claim_assess",
+      "description": "判断已有合成证据是否条件支持方向与实际重要性",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "claim_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "analysis_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          }
+        },
+        "required": [
+          "claim_ref",
+          "analysis_ref"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "loop_next_action",
+      "description": "根据证据选择报告或另行预注册后续研究",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "assessment_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          }
+        },
+        "required": [
+          "assessment_ref"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "report_build",
+      "description": "把设计、模拟完成、证据范围与限制编为可追溯报告",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "assessment_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "workflow_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          }
+        },
+        "required": [
+          "assessment_ref",
+          "workflow_ref"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+]

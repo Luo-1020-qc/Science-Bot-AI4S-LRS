@@ -1,0 +1,70 @@
+{
+  "limits": {
+    "max_requests": 24,
+    "max_tokens": 160000,
+    "max_context_bytes": 50000
+  },
+  "requests": 3,
+  "reported_prompt_tokens": 2439,
+  "reported_completion_tokens": 1718,
+  "unresolved_token_reservations": 0,
+  "accounted_tokens": 4157,
+  "monetary_cost": null,
+  "calls": [
+    {
+      "request_index": 1,
+      "reservation": 3737,
+      "context_bytes": 1809,
+      "status": "ok",
+      "episode_id": "a10f5141fe614e9a840ef4023f89d611",
+      "model": "deepseek-flash",
+      "submitted_utc": "2026-10-20T11:34:49.882196+00:00",
+      "request_body_hash": "6fdd1b7bba0ab4ac4918821daa7fe3a922d7aff336dc51a720676673cb78630d",
+      "actual_model": "deepseek-flash",
+      "latency_ms": 1250.0,
+      "response_id": "29cc22dc-9bdd-47d4-97a0-9c9375c6328e",
+      "usage_known": true,
+      "prompt_tokens": 407,
+      "completion_tokens": 66,
+      "total_tokens": 473,
+      "cached_tokens": 256
+    },
+    {
+      "request_index": 2,
+      "reservation": 4833,
+      "context_bytes": 2905,
+      "status": "ok",
+      "episode_id": "a10f5141fe614e9a840ef4023f89d611",
+      "model": "deepseek-flash",
+      "submitted_utc": "2026-10-20T11:34:51.222134+00:00",
+      "request_body_hash": "40c8babde8adb47070cba6d55d97cb6fb3f73cce6894dd8498d9d03dde9b5dae",
+      "actual_model": "deepseek-flash",
+      "latency_ms": 4000.0,
+      "response_id": "e637a47b-9112-44dc-b9c7-851ee5e35aef",
+      "usage_known": true,
+      "prompt_tokens": 723,
+      "completion_tokens": 947,
+      "total_tokens": 1670,
+      "cached_tokens": 384
+    },
+    {
+      "request_index": 3,
+      "reservation": 6978,
+      "context_bytes": 5050,
+      "status": "ok",
+      "episode_id": "a10f5141fe614e9a840ef4023f89d611",
+      "model": "deepseek-flash",
+      "submitted_utc": "2026-10-20T11:34:55.361182+00:00",
+      "request_body_hash": "ea45d670492b349fe9c5940a110b5a610d3f91c2bfdcccfca11f810e84c775f5",
+      "actual_model": "deepseek-flash",
+      "latency_ms": 3546.9999999995707,
+      "response_id": "c933b995-4bf2-4b5b-a7fb-c3ee641d3fc1",
+      "usage_known": true,
+      "prompt_tokens": 1309,
+      "completion_tokens": 705,
+      "total_tokens": 2014,
+      "cached_tokens": 0
+    }
+  ],
+  "token_policy": "UTF-8 bytes plus message overhead used for admission; actual usage replaces estimate; unknown usage retains reservation"
+}

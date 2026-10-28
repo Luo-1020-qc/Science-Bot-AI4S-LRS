@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "ppo_transition_v2"
+    },
+    "source": {
+      "const": "fresh_on_policy_cpu_smoke"
+    },
+    "policy_split": {
+      "const": "train"
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "episode_index": {
+      "type": "integer"
+    },
+    "sampling_index": {
+      "type": "integer"
+    },
+    "environment_version": {
+      "const": "tool_harness_rl_v2"
+    },
+    "reward_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tool_catalog_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "behavior_policy_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "observation": {
+      "type": "object"
+    },
+    "observation_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 32
+    },
+    "action_mask": {
+      "type": "array",
+      "items": {
+        "type": "boolean"
+      },
+      "minItems": 23
+    },
+    "action_index": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 22
+    },
+    "action": {
+      "type": "object"
+    },
+    "behavior_log_probability": {
+      "type": "number"
+    },
+    "value_estimate": {
+      "type": "number"
+    },
+    "reward": {
+      "type": "number"
+    },
+    "next_observation": {
+      "type": "object"
+    },
+    "next_observation_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "next_features": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 32
+    },
+    "next_value_estimate": {
+      "type": "number"
+    },
+    "terminated": {
+      "type": "boolean"
+    },
+    "truncated": {
+      "type": "boolean"
+    },
+    "classification": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "source",
+    "policy_split",
+    "task_id",
+    "task_hash",
+    "episode_index",
+    "sampling_index",
+    "environment_version",
+    "reward_version",
+    "tool_catalog_hash",
+    "behavior_policy_hash",
+    "observation",
+    "observation_hash",
+    "features",
+    "action_mask",
+    "action_index",
+    "action",
+    "behavior_log_probability",
+    "value_estimate",
+    "reward",
+    "next_observation",
+    "next_observation_hash",
+    "next_features",
+    "next_value_estimate",
+    "terminated",
+    "truncated",
+    "classification"
+  ],
+  "additionalProperties": false
+}

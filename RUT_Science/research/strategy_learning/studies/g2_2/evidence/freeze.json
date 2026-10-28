@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-26",
+  "stage": "models_selected_before_final_heldout_loading",
+  "seeds_fixed_in_advance": [
+    21,
+    37,
+    59
+  ],
+  "bank_seal_hash": "2a8f47430b482e218a88e23381d853e8c673a66596156039abc983f6f2257415",
+  "control_files": {
+    "lab/verifier.py": "f213e256029daef5835da9f216fd26417806b99ea1acdbc0d070b260712fcb59",
+    "lab/environment.py": "c3c88340cf62fda1b74deab91d011433ee36cfe4ad5b57ec7e5eb59f65ee4871",
+    "lab/contracts.py": "db401d09c18d9b9cbeb45baf7f2d656aeb2017987140d203b2c8b658786d197e",
+    "lab/tasks.py": "5cb67cba6612174d0c4e16a29a503989f3fb8dfbd2c526dd108fab50fde68712",
+    "lab/policies.py": "a6115b240abdd68ca73455f265597e2a33cb3305f76d0b1c3c448b919d399bc9",
+    "lab/benchmark.py": "9f043b82133dc19ead3737824f7542efa5541f01c247354224ce90c29e3b604f"
+  },
+  "policy_hashes": {
+    "21": "413efbb34176535dc4ed0cfa4171d0ac4c46dbff02a6d251e702bbf5cbb6ab55",
+    "37": "20c28ff2a6738511bb216a7d9154f02089979fe851ec6fe0be8b6c8ac4d96741",
+    "59": "ed011674fae0af25c3ab4abf6397526a7a34402d83634a64b1a21f2ba7245bae"
+  }
+}

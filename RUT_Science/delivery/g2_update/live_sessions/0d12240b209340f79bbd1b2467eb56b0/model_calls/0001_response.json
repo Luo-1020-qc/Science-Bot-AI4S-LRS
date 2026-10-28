@@ -1,0 +1,19 @@
+{
+  "request_index": 1,
+  "role": "tabular_planner",
+  "model": "deepseek-flash",
+  "response": {
+    "content": "I'll start by inspecting the CSV, then prepare the draft.",
+    "tool_calls": [
+      {
+        "id": "call_00_0fRss8qD6lljVxpU4Vji6132",
+        "name": "csv_inspect",
+        "arguments": {
+          "path": "two_groups.csv"
+        }
+      }
+    ],
+    "actual_model": "deepseek-flash"
+  },
+  "response_hash": "60675596b924fa5501d5b294afbdce6f6cdad64f55af7106f54991c03941b16f"
+}

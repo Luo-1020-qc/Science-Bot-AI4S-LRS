@@ -1,0 +1,280 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "tool_harness_rl_v2"
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "policy_split": {
+      "enum": [
+        "train",
+        "development",
+        "evaluation_example"
+      ]
+    },
+    "root_group": {
+      "type": "string",
+      "minLength": 1
+    },
+    "data_lineage": {
+      "type": "object",
+      "properties": {
+        "source_ancestor_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "scientific_partitions": {
+          "type": "object",
+          "properties": {
+            "train": {
+              "type": "string",
+              "minLength": 1
+            },
+            "validation": {
+              "type": "string",
+              "minLength": 1
+            },
+            "test": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "train",
+            "validation",
+            "test"
+          ],
+          "additionalProperties": false
+        },
+        "source_kind": {
+          "enum": [
+            "synthetic_reference_only",
+            "expert_authored_metadata_no_raw_arrays"
+          ]
+        }
+      },
+      "required": [
+        "source_ancestor_ids",
+        "scientific_partitions",
+        "source_kind"
+      ],
+      "additionalProperties": false
+    },
+    "public": {
+      "type": "object",
+      "properties": {
+        "domain": {
+          "enum": [
+            "darcy",
+            "cvit"
+          ]
+        },
+        "user_request": {
+          "type": "string",
+          "minLength": 1
+        },
+        "family": {
+          "enum": [
+            "crd_two_arm",
+            "rcbd_two_arm",
+            "factorial_2x2"
+          ]
+        },
+        "factors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "levels": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 2,
+                "maxItems": 2
+              }
+            },
+            "required": [
+              "name",
+              "levels"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        },
+        "unit_definition": {
+          "type": "string",
+          "minLength": 1
+        },
+        "response": {
+          "type": "string",
+          "minLength": 1
+        },
+        "primary_term": {
+          "type": "string",
+          "minLength": 1
+        },
+        "direction": {
+          "enum": [
+            "lower",
+            "higher"
+          ]
+        },
+        "practical_margin": {
+          "type": "number",
+          "minimum": 0
+        },
+        "minimum_effect": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "sigma": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "variance_source": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "target_power": {
+          "type": "number",
+          "minimum": 0.5,
+          "maximum": 0.9999
+        },
+        "resource_budget": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "max_decisions": {
+          "type": "integer",
+          "minimum": 8,
+          "maximum": 80
+        }
+      },
+      "required": [
+        "domain",
+        "user_request",
+        "family",
+        "factors",
+        "unit_definition",
+        "response",
+        "primary_term",
+        "direction",
+        "practical_margin",
+        "minimum_effect",
+        "sigma",
+        "variance_source",
+        "target_power",
+        "resource_budget",
+        "max_decisions"
+      ],
+      "additionalProperties": false
+    },
+    "simulator": {
+      "type": "object",
+      "properties": {
+        "initial_fault": {
+          "enum": [
+            "none",
+            "wrong_model",
+            "wrong_response",
+            "low_budget",
+            "stale_review"
+          ]
+        },
+        "outcome_scenario": {
+          "enum": [
+            "benefit",
+            "null",
+            "harm"
+          ]
+        },
+        "user_variance_answer": {
+          "type": "null"
+        },
+        "existing_job": {
+          "type": "boolean"
+        },
+        "job_failure": {
+          "enum": [
+            null,
+            "mock_oom"
+          ]
+        }
+      },
+      "required": [
+        "initial_fault",
+        "outcome_scenario",
+        "user_variance_answer",
+        "existing_job",
+        "job_failure"
+      ],
+      "additionalProperties": false
+    },
+    "expert_review": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "enum": [
+            "pending",
+            "approved",
+            "rejected"
+          ]
+        },
+        "reviewer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reviewed_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "status",
+        "reviewer",
+        "reason",
+        "reviewed_at"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "task_id",
+    "policy_split",
+    "root_group",
+    "data_lineage",
+    "public",
+    "simulator",
+    "expert_review"
+  ],
+  "additionalProperties": false
+}

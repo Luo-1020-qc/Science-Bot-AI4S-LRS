@@ -1,0 +1,108 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000,
+      "enum": [
+        "doe_request_v1"
+      ]
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000,
+      "enum": [
+        "design_only"
+      ]
+    },
+    "requested_family": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "execution_permission": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000,
+      "enum": [
+        "denied"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000,
+            "enum": [
+              "/question",
+              "/factors",
+              "/response",
+              "/experimental_unit",
+              "/blocks",
+              "/assumptions",
+              "/analysis",
+              "/resources",
+              "/family"
+            ]
+          },
+          "value": {},
+          "status": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000,
+            "enum": [
+              "provided",
+              "unanswered",
+              "unavailable"
+            ]
+          },
+          "source": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000,
+            "enum": [
+              "synthetic_fixture",
+              "user_declaration",
+              "pilot_estimate"
+            ]
+          },
+          "reference": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          }
+        },
+        "required": [
+          "id",
+          "path",
+          "value",
+          "status",
+          "source",
+          "reference"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 9,
+      "maxItems": 9
+    }
+  },
+  "required": [
+    "schema_version",
+    "scope",
+    "requested_family",
+    "execution_permission",
+    "evidence"
+  ],
+  "additionalProperties": false
+}
