@@ -1,0 +1,62 @@
+{
+  "schema_version": "tool_harness_rl_v2",
+  "task_id": "sample001_cvit_variance_unavailable_v1",
+  "policy_split": "train",
+  "root_group": "synthetic_darcy_family_source_A",
+  "data_lineage": {
+    "source_ancestor_ids": [
+      "synthetic_darcy_source_A"
+    ],
+    "scientific_partitions": {
+      "train": "mock://source_A/train",
+      "validation": "mock://source_A/validation",
+      "test": "mock://source_A/test"
+    },
+    "source_kind": "synthetic_reference_only"
+  },
+  "public": {
+    "domain": "cvit",
+    "user_request": "为相同CViT架构×学习率研究规划功效并给出可复核方案。目前没有sigma和方差来源；先询问依据。此示例用户无法补充，禁止把模板默认值当成先导证据；在当前有界环境中有依据地停止并记录缺失信息。不得虚构样本量已经充分。",
+    "family": "factorial_2x2",
+    "factors": [
+      {
+        "name": "architecture",
+        "levels": [
+          "baseline_small",
+          "candidate_small"
+        ]
+      },
+      {
+        "name": "learning_rate",
+        "levels": [
+          "0.0001",
+          "0.0003"
+        ]
+      }
+    ],
+    "unit_definition": "One independently seeded training run within a data-realization block",
+    "response": "relative_l2",
+    "primary_term": "architecture",
+    "direction": "lower",
+    "practical_margin": 0.01,
+    "minimum_effect": 0.02,
+    "sigma": null,
+    "variance_source": null,
+    "target_power": 0.8,
+    "resource_budget": 256,
+    "max_decisions": 40
+  },
+  "simulator": {
+    "initial_fault": "none",
+    "outcome_scenario": "null",
+    "user_variance_answer": null,
+    "existing_job": false,
+    "job_failure": null
+  },
+  "expert_review": {
+    "status": "approved",
+    "reviewer": "automated_synthetic_fixture_author_NOT_A_HUMAN_EXPERT",
+    "reason": "Approved only as an explicitly synthetic protocol/training fixture. No human scientific approval; sigma/effect/budget are illustrative assumptions. Reuses source_A template lineage; no independent scientific dataset added.",
+    "reviewed_at": "2026-10-28T06:24:41.047269+00:00"
+  }
+}

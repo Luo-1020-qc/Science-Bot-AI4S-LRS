@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "tasks": 3,
+  "reference_decisions": 30,
+  "bc_scripted_labels": 30,
+  "human_expert_labels": 0,
+  "ppo": {
+    "records": 96,
+    "all_behavior_log_probs_recomputed": true,
+    "all_values_recomputed": true,
+    "training_task_hashes_verified": true,
+    "public_masks_verified": true,
+    "state_chains_verified": true
+  },
+  "parameters_changed": true,
+  "base_v2_dataset_still_valid": true,
+  "default_policy_promoted": false,
+  "local_links_checked": 16
+}

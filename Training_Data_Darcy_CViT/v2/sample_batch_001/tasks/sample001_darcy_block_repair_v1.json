@@ -1,0 +1,55 @@
+{
+  "schema_version": "tool_harness_rl_v2",
+  "task_id": "sample001_darcy_block_repair_v1",
+  "policy_split": "train",
+  "root_group": "synthetic_darcy_family_source_A",
+  "data_lineage": {
+    "source_ancestor_ids": [
+      "synthetic_darcy_source_A"
+    ],
+    "scientific_partitions": {
+      "train": "mock://source_A/train",
+      "validation": "mock://source_A/validation",
+      "test": "mock://source_A/test"
+    },
+    "source_kind": "synthetic_reference_only"
+  },
+  "public": {
+    "domain": "darcy",
+    "user_request": "在同一批声明为独立的数据实现区组内，比较mean_field与ridge_field的测试relative_l2；候选减基线，越低越好。预设实际意义阈值0.01，规划效应0.02，合成标准差0.02。检查草案是否遗漏区组，修订后重新复核、冻结，再运行模拟并评估证据。只使用离线工具；不宣称真实Darcy实验或跨来源泛化。",
+    "family": "rcbd_two_arm",
+    "factors": [
+      {
+        "name": "predictor",
+        "levels": [
+          "mean_field",
+          "ridge_field"
+        ]
+      }
+    ],
+    "unit_definition": "One predictor application within an independent data-realization block",
+    "response": "relative_l2",
+    "primary_term": "predictor",
+    "direction": "lower",
+    "practical_margin": 0.01,
+    "minimum_effect": 0.02,
+    "sigma": 0.02,
+    "variance_source": "synthetic pilot declaration; not real evidence",
+    "target_power": 0.8,
+    "resource_budget": 256,
+    "max_decisions": 40
+  },
+  "simulator": {
+    "initial_fault": "wrong_model",
+    "outcome_scenario": "harm",
+    "user_variance_answer": null,
+    "existing_job": false,
+    "job_failure": null
+  },
+  "expert_review": {
+    "status": "approved",
+    "reviewer": "automated_synthetic_fixture_author_NOT_A_HUMAN_EXPERT",
+    "reason": "Approved only as an explicitly synthetic protocol/training fixture. No human scientific approval; sigma/effect/budget are illustrative assumptions. Reuses source_A template lineage; no independent scientific dataset added.",
+    "reviewed_at": "2026-10-28T06:24:41.047269+00:00"
+  }
+}

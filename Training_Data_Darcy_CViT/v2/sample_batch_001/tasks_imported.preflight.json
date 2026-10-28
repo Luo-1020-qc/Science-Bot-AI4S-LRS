@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "records_hash": "4605218da19d64812963e49745c66b17af5e0becf2361ee72bb96e348e34beb3",
+  "catalog_hash": "60b008e967a4ea98c61ad1e20560ac3362f2d3ca13a8b583dae2438a59f6c63e",
+  "environment_hash": "3f5ffcdb83b1e789f6d050b5f1632e5f5296eaa3b7b7d4656c57987d0f06b32e",
+  "reward_protocol_hash": "a6752c742109b7ccd8026a810a72d69ba30e6f161db94834441f03c08891a276",
+  "reports": [
+    {
+      "task_id": "sample001_darcy_block_repair_v1",
+      "passed": true,
+      "steps": 14,
+      "classification": "completed_mock_research_loop"
+    },
+    {
+      "task_id": "sample001_cvit_interaction_repair_v1",
+      "passed": true,
+      "steps": 14,
+      "classification": "completed_mock_research_loop"
+    },
+    {
+      "task_id": "sample001_cvit_variance_unavailable_v1",
+      "passed": true,
+      "steps": 2,
+      "classification": "justified_stop"
+    }
+  ],
+  "scope": "Tool/schema/reward mechanical compatibility; expert correctness and generalization not established"
+}

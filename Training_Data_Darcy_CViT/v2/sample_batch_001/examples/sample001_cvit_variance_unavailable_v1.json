@@ -1,0 +1,3772 @@
+{
+  "task": {
+    "schema_version": "tool_harness_rl_v2",
+    "task_id": "sample001_cvit_variance_unavailable_v1",
+    "policy_split": "train",
+    "root_group": "synthetic_darcy_family_source_A",
+    "data_lineage": {
+      "source_ancestor_ids": [
+        "synthetic_darcy_source_A"
+      ],
+      "scientific_partitions": {
+        "train": "mock://source_A/train",
+        "validation": "mock://source_A/validation",
+        "test": "mock://source_A/test"
+      },
+      "source_kind": "synthetic_reference_only"
+    },
+    "public": {
+      "domain": "cvit",
+      "user_request": "为相同CViT架构×学习率研究规划功效并给出可复核方案。目前没有sigma和方差来源；先询问依据。此示例用户无法补充，禁止把模板默认值当成先导证据；在当前有界环境中有依据地停止并记录缺失信息。不得虚构样本量已经充分。",
+      "family": "factorial_2x2",
+      "factors": [
+        {
+          "name": "architecture",
+          "levels": [
+            "baseline_small",
+            "candidate_small"
+          ]
+        },
+        {
+          "name": "learning_rate",
+          "levels": [
+            "0.0001",
+            "0.0003"
+          ]
+        }
+      ],
+      "unit_definition": "One independently seeded training run within a data-realization block",
+      "response": "relative_l2",
+      "primary_term": "architecture",
+      "direction": "lower",
+      "practical_margin": 0.01,
+      "minimum_effect": 0.02,
+      "sigma": null,
+      "variance_source": null,
+      "target_power": 0.8,
+      "resource_budget": 256,
+      "max_decisions": 40
+    },
+    "simulator": {
+      "initial_fault": "none",
+      "outcome_scenario": "null",
+      "user_variance_answer": null,
+      "existing_job": false,
+      "job_failure": null
+    },
+    "expert_review": {
+      "status": "approved",
+      "reviewer": "automated_synthetic_fixture_author_NOT_A_HUMAN_EXPERT",
+      "reason": "Approved only as an explicitly synthetic protocol/training fixture. No human scientific approval; sigma/effect/budget are illustrative assumptions. Reuses source_A template lineage; no independent scientific dataset added.",
+      "reviewed_at": "2026-10-28T06:24:41.047269+00:00"
+    }
+  },
+  "episode": {
+    "schema_version": "tool_harness_rl_v2",
+    "episode_id": "reference_sample001_cvit_variance_unavailable_v1",
+    "task_id": "sample001_cvit_variance_unavailable_v1",
+    "policy_split": "train",
+    "source": "scripted_reference_not_expert",
+    "ppo_eligible": false,
+    "reward_version": "public_evidence_completion_v2",
+    "tool_catalog_hash": "60b008e967a4ea98c61ad1e20560ac3362f2d3ca13a8b583dae2438a59f6c63e",
+    "classification": "justified_stop",
+    "steps": [
+      {
+        "decision_index": 0,
+        "observation": {
+          "schema_version": "tool_harness_rl_v2",
+          "goal": {
+            "domain": "cvit",
+            "user_request": "为相同CViT架构×学习率研究规划功效并给出可复核方案。目前没有sigma和方差来源；先询问依据。此示例用户无法补充，禁止把模板默认值当成先导证据；在当前有界环境中有依据地停止并记录缺失信息。不得虚构样本量已经充分。",
+            "family": "factorial_2x2",
+            "factors": [
+              {
+                "name": "architecture",
+                "levels": [
+                  "baseline_small",
+                  "candidate_small"
+                ]
+              },
+              {
+                "name": "learning_rate",
+                "levels": [
+                  "0.0001",
+                  "0.0003"
+                ]
+              }
+            ],
+            "unit_definition": "One independently seeded training run within a data-realization block",
+            "response": "relative_l2",
+            "primary_term": "architecture",
+            "direction": "lower",
+            "practical_margin": 0.01,
+            "minimum_effect": 0.02,
+            "sigma": null,
+            "variance_source": null,
+            "target_power": 0.8,
+            "resource_budget": 256,
+            "max_decisions": 40
+          },
+          "current_contract": {
+            "schema_version": "doe_contract_v1",
+            "request_hash": "3d056fb3217d0a7d70c71434499dc9f2b9cb847cba6920dae1a0483322a30902",
+            "revision": 2,
+            "question": "为相同CViT架构×学习率研究规划功效并给出可复核方案。目前没有sigma和方差来源；先询问依据。此示例用户无法补充，禁止把模板默认值当成先导证据；在当前有界环境中有依据地停止并记录缺失信息。不得虚构样本量已经充分。",
+            "family": "factorial_2x2",
+            "factors": [
+              {
+                "name": "architecture",
+                "levels": [
+                  "baseline_small",
+                  "candidate_small"
+                ]
+              },
+              {
+                "name": "learning_rate",
+                "levels": [
+                  "0.0001",
+                  "0.0003"
+                ]
+              }
+            ],
+            "response": {
+              "name": "relative_l2",
+              "unit": "dimensionless",
+              "direction": "lower"
+            },
+            "experimental_unit": {
+              "definition": "One independently seeded training run within a data-realization block",
+              "independence_basis": "Declared independent units and independent Gaussian residuals; not established by table structure",
+              "measurement_repeats": 1
+            },
+            "blocks": [
+              "b1",
+              "b2",
+              "b3",
+              "b4",
+              "b5",
+              "b6"
+            ],
+            "replicates": 2,
+            "assumptions": [
+              "normal_iid_errors",
+              "constant_error_variance",
+              "no_treatment_block_interaction"
+            ],
+            "randomization": {
+              "seed": 73,
+              "algorithm": "shuffle_v1"
+            },
+            "analysis": {
+              "model": "blocked_full_factorial",
+              "primary_term": "architecture",
+              "alpha": 0.05,
+              "minimum_effect": 0.02,
+              "sigma": 0.02,
+              "target_power": 0.8,
+              "multiplicity": "single_primary",
+              "missing_policy": "stop_and_review",
+              "decision_rule": "two_sided_t_ci_practical_relevance_separate"
+            },
+            "resources": {
+              "per_run": 1.0,
+              "budget": 256
+            },
+            "provenance": [
+              {
+                "path": "/question",
+                "evidence_id": "e00"
+              },
+              {
+                "path": "/factors",
+                "evidence_id": "e01"
+              },
+              {
+                "path": "/response",
+                "evidence_id": "e02"
+              },
+              {
+                "path": "/experimental_unit",
+                "evidence_id": "e03"
+              },
+              {
+                "path": "/blocks",
+                "evidence_id": "e04"
+              },
+              {
+                "path": "/assumptions",
+                "evidence_id": "e05"
+              },
+              {
+                "path": "/analysis",
+                "evidence_id": "e06"
+              },
+              {
+                "path": "/resources",
+                "evidence_id": "e07"
+              }
+            ],
+            "run_plan": [
+              {
+                "run": 1,
+                "unit_id": "planned_b1_u2",
+                "block": "b1",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 2,
+                "unit_id": "planned_b1_u7",
+                "block": "b1",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 3,
+                "unit_id": "planned_b1_u3",
+                "block": "b1",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 4,
+                "unit_id": "planned_b1_u1",
+                "block": "b1",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 5,
+                "unit_id": "planned_b1_u6",
+                "block": "b1",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 6,
+                "unit_id": "planned_b1_u8",
+                "block": "b1",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 7,
+                "unit_id": "planned_b1_u5",
+                "block": "b1",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 8,
+                "unit_id": "planned_b1_u4",
+                "block": "b1",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 9,
+                "unit_id": "planned_b2_u3",
+                "block": "b2",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 10,
+                "unit_id": "planned_b2_u6",
+                "block": "b2",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 11,
+                "unit_id": "planned_b2_u1",
+                "block": "b2",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 12,
+                "unit_id": "planned_b2_u4",
+                "block": "b2",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 13,
+                "unit_id": "planned_b2_u5",
+                "block": "b2",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 14,
+                "unit_id": "planned_b2_u2",
+                "block": "b2",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 15,
+                "unit_id": "planned_b2_u8",
+                "block": "b2",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 16,
+                "unit_id": "planned_b2_u7",
+                "block": "b2",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 17,
+                "unit_id": "planned_b3_u6",
+                "block": "b3",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 18,
+                "unit_id": "planned_b3_u5",
+                "block": "b3",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 19,
+                "unit_id": "planned_b3_u4",
+                "block": "b3",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 20,
+                "unit_id": "planned_b3_u3",
+                "block": "b3",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 21,
+                "unit_id": "planned_b3_u1",
+                "block": "b3",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 22,
+                "unit_id": "planned_b3_u8",
+                "block": "b3",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 23,
+                "unit_id": "planned_b3_u2",
+                "block": "b3",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 24,
+                "unit_id": "planned_b3_u7",
+                "block": "b3",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 25,
+                "unit_id": "planned_b4_u5",
+                "block": "b4",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 26,
+                "unit_id": "planned_b4_u3",
+                "block": "b4",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 27,
+                "unit_id": "planned_b4_u8",
+                "block": "b4",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 28,
+                "unit_id": "planned_b4_u7",
+                "block": "b4",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 29,
+                "unit_id": "planned_b4_u6",
+                "block": "b4",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 30,
+                "unit_id": "planned_b4_u4",
+                "block": "b4",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 31,
+                "unit_id": "planned_b4_u2",
+                "block": "b4",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 32,
+                "unit_id": "planned_b4_u1",
+                "block": "b4",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 33,
+                "unit_id": "planned_b5_u4",
+                "block": "b5",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 34,
+                "unit_id": "planned_b5_u7",
+                "block": "b5",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 35,
+                "unit_id": "planned_b5_u5",
+                "block": "b5",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 36,
+                "unit_id": "planned_b5_u1",
+                "block": "b5",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 37,
+                "unit_id": "planned_b5_u2",
+                "block": "b5",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 38,
+                "unit_id": "planned_b5_u8",
+                "block": "b5",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 39,
+                "unit_id": "planned_b5_u6",
+                "block": "b5",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 40,
+                "unit_id": "planned_b5_u3",
+                "block": "b5",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 41,
+                "unit_id": "planned_b6_u3",
+                "block": "b6",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 42,
+                "unit_id": "planned_b6_u4",
+                "block": "b6",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 43,
+                "unit_id": "planned_b6_u8",
+                "block": "b6",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 44,
+                "unit_id": "planned_b6_u2",
+                "block": "b6",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 45,
+                "unit_id": "planned_b6_u1",
+                "block": "b6",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 46,
+                "unit_id": "planned_b6_u7",
+                "block": "b6",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 47,
+                "unit_id": "planned_b6_u5",
+                "block": "b6",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 48,
+                "unit_id": "planned_b6_u6",
+                "block": "b6",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              }
+            ]
+          },
+          "artifact_refs": {
+            "project": "04f4d38a4c913cfc48b405aac1e18829675e016b66205ed2b7b774f0ad04cf1d",
+            "plan": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+            "claim": "78ec1e1b5c2036a23c5c713b26f3ef8b61c1672d1c3a0940538c2e1cd03b3f5d"
+          },
+          "flags": {
+            "review_current": false,
+            "review_passed": false,
+            "alignment_current": false,
+            "alignment_passed": false,
+            "workflow_checked": false,
+            "job_queried": false,
+            "variance_available": false,
+            "public_unavailable": false,
+            "public_tool_failure": false
+          },
+          "evidence": [
+            {
+              "id": "d5dbcd76cffbcbd7",
+              "kind": "initial_request",
+              "value": {
+                "user_request": "为相同CViT架构×学习率研究规划功效并给出可复核方案。目前没有sigma和方差来源；先询问依据。此示例用户无法补充，禁止把模板默认值当成先导证据；在当前有界环境中有依据地停止并记录缺失信息。不得虚构样本量已经充分。"
+              },
+              "source": "offline_tool_or_scripted_user"
+            }
+          ],
+          "history": [],
+          "turn": 0,
+          "last_call_failed": false,
+          "candidates": [
+            {
+              "action_id": "review",
+              "tool": "plan_review",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7"
+              },
+              "available": true
+            },
+            {
+              "action_id": "align_claim",
+              "tool": "claim_check_plan",
+              "arguments": {
+                "claim_ref": "78ec1e1b5c2036a23c5c713b26f3ef8b61c1672d1c3a0940538c2e1cd03b3f5d",
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7"
+              },
+              "available": true
+            },
+            {
+              "action_id": "diff",
+              "tool": "plan_diff",
+              "arguments": {
+                "old_plan_ref": null,
+                "new_plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7"
+              },
+              "available": false
+            },
+            {
+              "action_id": "model_two_arm",
+              "tool": "plan_patch",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+                "expected_contract_hash": "fa61e637b4fc504a0f675c62881fbfa8a8ea034c1f931d015e7a3fd36ee96355",
+                "changes": [
+                  {
+                    "path": "/analysis/model",
+                    "value": "two_arm"
+                  }
+                ],
+                "reason": "Agent selected a bounded public candidate amendment"
+              },
+              "available": true
+            },
+            {
+              "action_id": "model_additive_blocks",
+              "tool": "plan_patch",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+                "expected_contract_hash": "fa61e637b4fc504a0f675c62881fbfa8a8ea034c1f931d015e7a3fd36ee96355",
+                "changes": [
+                  {
+                    "path": "/analysis/model",
+                    "value": "additive_blocks"
+                  }
+                ],
+                "reason": "Agent selected a bounded public candidate amendment"
+              },
+              "available": true
+            },
+            {
+              "action_id": "model_full_factorial",
+              "tool": "plan_patch",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+                "expected_contract_hash": "fa61e637b4fc504a0f675c62881fbfa8a8ea034c1f931d015e7a3fd36ee96355",
+                "changes": [
+                  {
+                    "path": "/analysis/model",
+                    "value": "full_factorial"
+                  }
+                ],
+                "reason": "Agent selected a bounded public candidate amendment"
+              },
+              "available": true
+            },
+            {
+              "action_id": "model_blocked_full_factorial",
+              "tool": "plan_patch",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+                "expected_contract_hash": "fa61e637b4fc504a0f675c62881fbfa8a8ea034c1f931d015e7a3fd36ee96355",
+                "changes": [
+                  {
+                    "path": "/analysis/model",
+                    "value": "blocked_full_factorial"
+                  }
+                ],
+                "reason": "Agent selected a bounded public candidate amendment"
+              },
+              "available": true
+            },
+            {
+              "action_id": "repair_response",
+              "tool": "plan_patch",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+                "expected_contract_hash": "fa61e637b4fc504a0f675c62881fbfa8a8ea034c1f931d015e7a3fd36ee96355",
+                "changes": [
+                  {
+                    "path": "/response/name",
+                    "value": "relative_l2"
+                  }
+                ],
+                "reason": "Agent selected a bounded public candidate amendment"
+              },
+              "available": true
+            },
+            {
+              "action_id": "repair_budget",
+              "tool": "plan_patch",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+                "expected_contract_hash": "fa61e637b4fc504a0f675c62881fbfa8a8ea034c1f931d015e7a3fd36ee96355",
+                "changes": [
+                  {
+                    "path": "/resources/budget",
+                    "value": 256
+                  }
+                ],
+                "reason": "Agent selected a bounded public candidate amendment"
+              },
+              "available": true
+            },
+            {
+              "action_id": "resolve",
+              "tool": "review_resolve",
+              "arguments": {
+                "old_review_ref": null,
+                "new_review_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "freeze",
+              "tool": "plan_freeze",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+                "review_ref": null,
+                "alignment_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "workflow",
+              "tool": "workflow_compile",
+              "arguments": {
+                "freeze_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "verify_workflow",
+              "tool": "workflow_verify",
+              "arguments": {
+                "workflow_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "reconcile",
+              "tool": "job_reconcile_mock",
+              "arguments": {
+                "freeze_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "run_mock",
+              "tool": "job_run_mock",
+              "arguments": {
+                "freeze_ref": null,
+                "scenario": {
+                  "$host": "private_mock_fixture"
+                }
+              },
+              "available": false
+            },
+            {
+              "action_id": "poll",
+              "tool": "job_poll_mock",
+              "arguments": {
+                "job_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "analyze",
+              "tool": "result_analyze",
+              "arguments": {
+                "job_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "assess",
+              "tool": "claim_assess",
+              "arguments": {
+                "claim_ref": "78ec1e1b5c2036a23c5c713b26f3ef8b61c1672d1c3a0940538c2e1cd03b3f5d",
+                "analysis_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "next",
+              "tool": "loop_next_action",
+              "arguments": {
+                "assessment_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "report",
+              "tool": "report_build",
+              "arguments": {
+                "assessment_ref": null,
+                "workflow_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "read_plan",
+              "tool": "artifact_read",
+              "arguments": {
+                "artifact_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7"
+              },
+              "available": true
+            },
+            {
+              "action_id": "ask_variance",
+              "tool": "host.ask_user",
+              "arguments": {
+                "field": "variance_source"
+              },
+              "available": true
+            },
+            {
+              "action_id": "stop",
+              "tool": "host.stop_with_evidence",
+              "arguments": {
+                "evidence_ids": []
+              },
+              "available": true
+            }
+          ],
+          "real_execution_allowed": false
+        },
+        "observation_hash": "dfbf074712154fc90ba13b19fd60483d77b40140fb7997708f7968ddb526166c",
+        "features": [
+          1.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          1.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "action_mask": [
+          true,
+          true,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true
+        ],
+        "action_index": 21,
+        "action": {
+          "action_id": "ask_variance",
+          "tool": "host.ask_user",
+          "arguments": {
+            "field": "variance_source"
+          },
+          "available": true
+        },
+        "feedback": {
+          "tool": "host.ask_user",
+          "result": {
+            "status": "explicitly_unavailable",
+            "evidence_id": "e44b7ef910983962"
+          },
+          "error": null,
+          "real_execution": false
+        },
+        "reward": 0.08,
+        "next_observation": {
+          "schema_version": "tool_harness_rl_v2",
+          "goal": {
+            "domain": "cvit",
+            "user_request": "为相同CViT架构×学习率研究规划功效并给出可复核方案。目前没有sigma和方差来源；先询问依据。此示例用户无法补充，禁止把模板默认值当成先导证据；在当前有界环境中有依据地停止并记录缺失信息。不得虚构样本量已经充分。",
+            "family": "factorial_2x2",
+            "factors": [
+              {
+                "name": "architecture",
+                "levels": [
+                  "baseline_small",
+                  "candidate_small"
+                ]
+              },
+              {
+                "name": "learning_rate",
+                "levels": [
+                  "0.0001",
+                  "0.0003"
+                ]
+              }
+            ],
+            "unit_definition": "One independently seeded training run within a data-realization block",
+            "response": "relative_l2",
+            "primary_term": "architecture",
+            "direction": "lower",
+            "practical_margin": 0.01,
+            "minimum_effect": 0.02,
+            "sigma": null,
+            "variance_source": null,
+            "target_power": 0.8,
+            "resource_budget": 256,
+            "max_decisions": 40
+          },
+          "current_contract": {
+            "schema_version": "doe_contract_v1",
+            "request_hash": "3d056fb3217d0a7d70c71434499dc9f2b9cb847cba6920dae1a0483322a30902",
+            "revision": 2,
+            "question": "为相同CViT架构×学习率研究规划功效并给出可复核方案。目前没有sigma和方差来源；先询问依据。此示例用户无法补充，禁止把模板默认值当成先导证据；在当前有界环境中有依据地停止并记录缺失信息。不得虚构样本量已经充分。",
+            "family": "factorial_2x2",
+            "factors": [
+              {
+                "name": "architecture",
+                "levels": [
+                  "baseline_small",
+                  "candidate_small"
+                ]
+              },
+              {
+                "name": "learning_rate",
+                "levels": [
+                  "0.0001",
+                  "0.0003"
+                ]
+              }
+            ],
+            "response": {
+              "name": "relative_l2",
+              "unit": "dimensionless",
+              "direction": "lower"
+            },
+            "experimental_unit": {
+              "definition": "One independently seeded training run within a data-realization block",
+              "independence_basis": "Declared independent units and independent Gaussian residuals; not established by table structure",
+              "measurement_repeats": 1
+            },
+            "blocks": [
+              "b1",
+              "b2",
+              "b3",
+              "b4",
+              "b5",
+              "b6"
+            ],
+            "replicates": 2,
+            "assumptions": [
+              "normal_iid_errors",
+              "constant_error_variance",
+              "no_treatment_block_interaction"
+            ],
+            "randomization": {
+              "seed": 73,
+              "algorithm": "shuffle_v1"
+            },
+            "analysis": {
+              "model": "blocked_full_factorial",
+              "primary_term": "architecture",
+              "alpha": 0.05,
+              "minimum_effect": 0.02,
+              "sigma": 0.02,
+              "target_power": 0.8,
+              "multiplicity": "single_primary",
+              "missing_policy": "stop_and_review",
+              "decision_rule": "two_sided_t_ci_practical_relevance_separate"
+            },
+            "resources": {
+              "per_run": 1.0,
+              "budget": 256
+            },
+            "provenance": [
+              {
+                "path": "/question",
+                "evidence_id": "e00"
+              },
+              {
+                "path": "/factors",
+                "evidence_id": "e01"
+              },
+              {
+                "path": "/response",
+                "evidence_id": "e02"
+              },
+              {
+                "path": "/experimental_unit",
+                "evidence_id": "e03"
+              },
+              {
+                "path": "/blocks",
+                "evidence_id": "e04"
+              },
+              {
+                "path": "/assumptions",
+                "evidence_id": "e05"
+              },
+              {
+                "path": "/analysis",
+                "evidence_id": "e06"
+              },
+              {
+                "path": "/resources",
+                "evidence_id": "e07"
+              }
+            ],
+            "run_plan": [
+              {
+                "run": 1,
+                "unit_id": "planned_b1_u2",
+                "block": "b1",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 2,
+                "unit_id": "planned_b1_u7",
+                "block": "b1",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 3,
+                "unit_id": "planned_b1_u3",
+                "block": "b1",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 4,
+                "unit_id": "planned_b1_u1",
+                "block": "b1",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 5,
+                "unit_id": "planned_b1_u6",
+                "block": "b1",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 6,
+                "unit_id": "planned_b1_u8",
+                "block": "b1",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 7,
+                "unit_id": "planned_b1_u5",
+                "block": "b1",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 8,
+                "unit_id": "planned_b1_u4",
+                "block": "b1",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 9,
+                "unit_id": "planned_b2_u3",
+                "block": "b2",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 10,
+                "unit_id": "planned_b2_u6",
+                "block": "b2",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 11,
+                "unit_id": "planned_b2_u1",
+                "block": "b2",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 12,
+                "unit_id": "planned_b2_u4",
+                "block": "b2",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 13,
+                "unit_id": "planned_b2_u5",
+                "block": "b2",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 14,
+                "unit_id": "planned_b2_u2",
+                "block": "b2",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 15,
+                "unit_id": "planned_b2_u8",
+                "block": "b2",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 16,
+                "unit_id": "planned_b2_u7",
+                "block": "b2",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 17,
+                "unit_id": "planned_b3_u6",
+                "block": "b3",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 18,
+                "unit_id": "planned_b3_u5",
+                "block": "b3",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 19,
+                "unit_id": "planned_b3_u4",
+                "block": "b3",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 20,
+                "unit_id": "planned_b3_u3",
+                "block": "b3",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 21,
+                "unit_id": "planned_b3_u1",
+                "block": "b3",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 22,
+                "unit_id": "planned_b3_u8",
+                "block": "b3",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 23,
+                "unit_id": "planned_b3_u2",
+                "block": "b3",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 24,
+                "unit_id": "planned_b3_u7",
+                "block": "b3",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 25,
+                "unit_id": "planned_b4_u5",
+                "block": "b4",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 26,
+                "unit_id": "planned_b4_u3",
+                "block": "b4",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 27,
+                "unit_id": "planned_b4_u8",
+                "block": "b4",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 28,
+                "unit_id": "planned_b4_u7",
+                "block": "b4",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 29,
+                "unit_id": "planned_b4_u6",
+                "block": "b4",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 30,
+                "unit_id": "planned_b4_u4",
+                "block": "b4",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 31,
+                "unit_id": "planned_b4_u2",
+                "block": "b4",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 32,
+                "unit_id": "planned_b4_u1",
+                "block": "b4",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 33,
+                "unit_id": "planned_b5_u4",
+                "block": "b5",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 34,
+                "unit_id": "planned_b5_u7",
+                "block": "b5",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 35,
+                "unit_id": "planned_b5_u5",
+                "block": "b5",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 36,
+                "unit_id": "planned_b5_u1",
+                "block": "b5",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 37,
+                "unit_id": "planned_b5_u2",
+                "block": "b5",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 38,
+                "unit_id": "planned_b5_u8",
+                "block": "b5",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 39,
+                "unit_id": "planned_b5_u6",
+                "block": "b5",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 40,
+                "unit_id": "planned_b5_u3",
+                "block": "b5",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 41,
+                "unit_id": "planned_b6_u3",
+                "block": "b6",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 42,
+                "unit_id": "planned_b6_u4",
+                "block": "b6",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 43,
+                "unit_id": "planned_b6_u8",
+                "block": "b6",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 44,
+                "unit_id": "planned_b6_u2",
+                "block": "b6",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 45,
+                "unit_id": "planned_b6_u1",
+                "block": "b6",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 46,
+                "unit_id": "planned_b6_u7",
+                "block": "b6",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 47,
+                "unit_id": "planned_b6_u5",
+                "block": "b6",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 48,
+                "unit_id": "planned_b6_u6",
+                "block": "b6",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              }
+            ]
+          },
+          "artifact_refs": {
+            "project": "04f4d38a4c913cfc48b405aac1e18829675e016b66205ed2b7b774f0ad04cf1d",
+            "plan": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+            "claim": "78ec1e1b5c2036a23c5c713b26f3ef8b61c1672d1c3a0940538c2e1cd03b3f5d"
+          },
+          "flags": {
+            "review_current": false,
+            "review_passed": false,
+            "alignment_current": false,
+            "alignment_passed": false,
+            "workflow_checked": false,
+            "job_queried": false,
+            "variance_available": false,
+            "public_unavailable": true,
+            "public_tool_failure": false
+          },
+          "evidence": [
+            {
+              "id": "d5dbcd76cffbcbd7",
+              "kind": "initial_request",
+              "value": {
+                "user_request": "为相同CViT架构×学习率研究规划功效并给出可复核方案。目前没有sigma和方差来源；先询问依据。此示例用户无法补充，禁止把模板默认值当成先导证据；在当前有界环境中有依据地停止并记录缺失信息。不得虚构样本量已经充分。"
+              },
+              "source": "offline_tool_or_scripted_user"
+            },
+            {
+              "id": "e44b7ef910983962",
+              "kind": "user_unavailable",
+              "value": {
+                "field": "variance_source",
+                "answer": "User cannot provide a variance basis for this powered-design request"
+              },
+              "source": "offline_tool_or_scripted_user"
+            }
+          ],
+          "history": [
+            {
+              "action_id": "ask_variance",
+              "tool": "host.ask_user",
+              "error": null,
+              "result_keys": [
+                "status",
+                "evidence_id"
+              ]
+            }
+          ],
+          "turn": 1,
+          "last_call_failed": false,
+          "candidates": [
+            {
+              "action_id": "review",
+              "tool": "plan_review",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7"
+              },
+              "available": true
+            },
+            {
+              "action_id": "align_claim",
+              "tool": "claim_check_plan",
+              "arguments": {
+                "claim_ref": "78ec1e1b5c2036a23c5c713b26f3ef8b61c1672d1c3a0940538c2e1cd03b3f5d",
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7"
+              },
+              "available": true
+            },
+            {
+              "action_id": "diff",
+              "tool": "plan_diff",
+              "arguments": {
+                "old_plan_ref": null,
+                "new_plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7"
+              },
+              "available": false
+            },
+            {
+              "action_id": "model_two_arm",
+              "tool": "plan_patch",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+                "expected_contract_hash": "fa61e637b4fc504a0f675c62881fbfa8a8ea034c1f931d015e7a3fd36ee96355",
+                "changes": [
+                  {
+                    "path": "/analysis/model",
+                    "value": "two_arm"
+                  }
+                ],
+                "reason": "Agent selected a bounded public candidate amendment"
+              },
+              "available": true
+            },
+            {
+              "action_id": "model_additive_blocks",
+              "tool": "plan_patch",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+                "expected_contract_hash": "fa61e637b4fc504a0f675c62881fbfa8a8ea034c1f931d015e7a3fd36ee96355",
+                "changes": [
+                  {
+                    "path": "/analysis/model",
+                    "value": "additive_blocks"
+                  }
+                ],
+                "reason": "Agent selected a bounded public candidate amendment"
+              },
+              "available": true
+            },
+            {
+              "action_id": "model_full_factorial",
+              "tool": "plan_patch",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+                "expected_contract_hash": "fa61e637b4fc504a0f675c62881fbfa8a8ea034c1f931d015e7a3fd36ee96355",
+                "changes": [
+                  {
+                    "path": "/analysis/model",
+                    "value": "full_factorial"
+                  }
+                ],
+                "reason": "Agent selected a bounded public candidate amendment"
+              },
+              "available": true
+            },
+            {
+              "action_id": "model_blocked_full_factorial",
+              "tool": "plan_patch",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+                "expected_contract_hash": "fa61e637b4fc504a0f675c62881fbfa8a8ea034c1f931d015e7a3fd36ee96355",
+                "changes": [
+                  {
+                    "path": "/analysis/model",
+                    "value": "blocked_full_factorial"
+                  }
+                ],
+                "reason": "Agent selected a bounded public candidate amendment"
+              },
+              "available": true
+            },
+            {
+              "action_id": "repair_response",
+              "tool": "plan_patch",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+                "expected_contract_hash": "fa61e637b4fc504a0f675c62881fbfa8a8ea034c1f931d015e7a3fd36ee96355",
+                "changes": [
+                  {
+                    "path": "/response/name",
+                    "value": "relative_l2"
+                  }
+                ],
+                "reason": "Agent selected a bounded public candidate amendment"
+              },
+              "available": true
+            },
+            {
+              "action_id": "repair_budget",
+              "tool": "plan_patch",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+                "expected_contract_hash": "fa61e637b4fc504a0f675c62881fbfa8a8ea034c1f931d015e7a3fd36ee96355",
+                "changes": [
+                  {
+                    "path": "/resources/budget",
+                    "value": 256
+                  }
+                ],
+                "reason": "Agent selected a bounded public candidate amendment"
+              },
+              "available": true
+            },
+            {
+              "action_id": "resolve",
+              "tool": "review_resolve",
+              "arguments": {
+                "old_review_ref": null,
+                "new_review_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "freeze",
+              "tool": "plan_freeze",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+                "review_ref": null,
+                "alignment_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "workflow",
+              "tool": "workflow_compile",
+              "arguments": {
+                "freeze_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "verify_workflow",
+              "tool": "workflow_verify",
+              "arguments": {
+                "workflow_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "reconcile",
+              "tool": "job_reconcile_mock",
+              "arguments": {
+                "freeze_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "run_mock",
+              "tool": "job_run_mock",
+              "arguments": {
+                "freeze_ref": null,
+                "scenario": {
+                  "$host": "private_mock_fixture"
+                }
+              },
+              "available": false
+            },
+            {
+              "action_id": "poll",
+              "tool": "job_poll_mock",
+              "arguments": {
+                "job_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "analyze",
+              "tool": "result_analyze",
+              "arguments": {
+                "job_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "assess",
+              "tool": "claim_assess",
+              "arguments": {
+                "claim_ref": "78ec1e1b5c2036a23c5c713b26f3ef8b61c1672d1c3a0940538c2e1cd03b3f5d",
+                "analysis_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "next",
+              "tool": "loop_next_action",
+              "arguments": {
+                "assessment_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "report",
+              "tool": "report_build",
+              "arguments": {
+                "assessment_ref": null,
+                "workflow_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "read_plan",
+              "tool": "artifact_read",
+              "arguments": {
+                "artifact_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7"
+              },
+              "available": true
+            },
+            {
+              "action_id": "ask_variance",
+              "tool": "host.ask_user",
+              "arguments": {
+                "field": "variance_source"
+              },
+              "available": true
+            },
+            {
+              "action_id": "stop",
+              "tool": "host.stop_with_evidence",
+              "arguments": {
+                "evidence_ids": [
+                  "e44b7ef910983962"
+                ]
+              },
+              "available": true
+            }
+          ],
+          "real_execution_allowed": false
+        },
+        "next_observation_hash": "638e2d7396bb37c327bcedf1ba2f69e74c39b6fe8fe5630b60e9028c7df6df85",
+        "next_features": [
+          1.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          1.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.025,
+          0.0,
+          1.0
+        ],
+        "terminated": false,
+        "truncated": false,
+        "classification": "in_progress",
+        "behavior_log_probability": null,
+        "value_estimate": null,
+        "source": "scripted_reference_not_expert"
+      },
+      {
+        "decision_index": 1,
+        "observation": {
+          "schema_version": "tool_harness_rl_v2",
+          "goal": {
+            "domain": "cvit",
+            "user_request": "为相同CViT架构×学习率研究规划功效并给出可复核方案。目前没有sigma和方差来源；先询问依据。此示例用户无法补充，禁止把模板默认值当成先导证据；在当前有界环境中有依据地停止并记录缺失信息。不得虚构样本量已经充分。",
+            "family": "factorial_2x2",
+            "factors": [
+              {
+                "name": "architecture",
+                "levels": [
+                  "baseline_small",
+                  "candidate_small"
+                ]
+              },
+              {
+                "name": "learning_rate",
+                "levels": [
+                  "0.0001",
+                  "0.0003"
+                ]
+              }
+            ],
+            "unit_definition": "One independently seeded training run within a data-realization block",
+            "response": "relative_l2",
+            "primary_term": "architecture",
+            "direction": "lower",
+            "practical_margin": 0.01,
+            "minimum_effect": 0.02,
+            "sigma": null,
+            "variance_source": null,
+            "target_power": 0.8,
+            "resource_budget": 256,
+            "max_decisions": 40
+          },
+          "current_contract": {
+            "schema_version": "doe_contract_v1",
+            "request_hash": "3d056fb3217d0a7d70c71434499dc9f2b9cb847cba6920dae1a0483322a30902",
+            "revision": 2,
+            "question": "为相同CViT架构×学习率研究规划功效并给出可复核方案。目前没有sigma和方差来源；先询问依据。此示例用户无法补充，禁止把模板默认值当成先导证据；在当前有界环境中有依据地停止并记录缺失信息。不得虚构样本量已经充分。",
+            "family": "factorial_2x2",
+            "factors": [
+              {
+                "name": "architecture",
+                "levels": [
+                  "baseline_small",
+                  "candidate_small"
+                ]
+              },
+              {
+                "name": "learning_rate",
+                "levels": [
+                  "0.0001",
+                  "0.0003"
+                ]
+              }
+            ],
+            "response": {
+              "name": "relative_l2",
+              "unit": "dimensionless",
+              "direction": "lower"
+            },
+            "experimental_unit": {
+              "definition": "One independently seeded training run within a data-realization block",
+              "independence_basis": "Declared independent units and independent Gaussian residuals; not established by table structure",
+              "measurement_repeats": 1
+            },
+            "blocks": [
+              "b1",
+              "b2",
+              "b3",
+              "b4",
+              "b5",
+              "b6"
+            ],
+            "replicates": 2,
+            "assumptions": [
+              "normal_iid_errors",
+              "constant_error_variance",
+              "no_treatment_block_interaction"
+            ],
+            "randomization": {
+              "seed": 73,
+              "algorithm": "shuffle_v1"
+            },
+            "analysis": {
+              "model": "blocked_full_factorial",
+              "primary_term": "architecture",
+              "alpha": 0.05,
+              "minimum_effect": 0.02,
+              "sigma": 0.02,
+              "target_power": 0.8,
+              "multiplicity": "single_primary",
+              "missing_policy": "stop_and_review",
+              "decision_rule": "two_sided_t_ci_practical_relevance_separate"
+            },
+            "resources": {
+              "per_run": 1.0,
+              "budget": 256
+            },
+            "provenance": [
+              {
+                "path": "/question",
+                "evidence_id": "e00"
+              },
+              {
+                "path": "/factors",
+                "evidence_id": "e01"
+              },
+              {
+                "path": "/response",
+                "evidence_id": "e02"
+              },
+              {
+                "path": "/experimental_unit",
+                "evidence_id": "e03"
+              },
+              {
+                "path": "/blocks",
+                "evidence_id": "e04"
+              },
+              {
+                "path": "/assumptions",
+                "evidence_id": "e05"
+              },
+              {
+                "path": "/analysis",
+                "evidence_id": "e06"
+              },
+              {
+                "path": "/resources",
+                "evidence_id": "e07"
+              }
+            ],
+            "run_plan": [
+              {
+                "run": 1,
+                "unit_id": "planned_b1_u2",
+                "block": "b1",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 2,
+                "unit_id": "planned_b1_u7",
+                "block": "b1",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 3,
+                "unit_id": "planned_b1_u3",
+                "block": "b1",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 4,
+                "unit_id": "planned_b1_u1",
+                "block": "b1",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 5,
+                "unit_id": "planned_b1_u6",
+                "block": "b1",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 6,
+                "unit_id": "planned_b1_u8",
+                "block": "b1",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 7,
+                "unit_id": "planned_b1_u5",
+                "block": "b1",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 8,
+                "unit_id": "planned_b1_u4",
+                "block": "b1",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 9,
+                "unit_id": "planned_b2_u3",
+                "block": "b2",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 10,
+                "unit_id": "planned_b2_u6",
+                "block": "b2",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 11,
+                "unit_id": "planned_b2_u1",
+                "block": "b2",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 12,
+                "unit_id": "planned_b2_u4",
+                "block": "b2",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 13,
+                "unit_id": "planned_b2_u5",
+                "block": "b2",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 14,
+                "unit_id": "planned_b2_u2",
+                "block": "b2",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 15,
+                "unit_id": "planned_b2_u8",
+                "block": "b2",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 16,
+                "unit_id": "planned_b2_u7",
+                "block": "b2",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 17,
+                "unit_id": "planned_b3_u6",
+                "block": "b3",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 18,
+                "unit_id": "planned_b3_u5",
+                "block": "b3",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 19,
+                "unit_id": "planned_b3_u4",
+                "block": "b3",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 20,
+                "unit_id": "planned_b3_u3",
+                "block": "b3",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 21,
+                "unit_id": "planned_b3_u1",
+                "block": "b3",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 22,
+                "unit_id": "planned_b3_u8",
+                "block": "b3",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 23,
+                "unit_id": "planned_b3_u2",
+                "block": "b3",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 24,
+                "unit_id": "planned_b3_u7",
+                "block": "b3",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 25,
+                "unit_id": "planned_b4_u5",
+                "block": "b4",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 26,
+                "unit_id": "planned_b4_u3",
+                "block": "b4",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 27,
+                "unit_id": "planned_b4_u8",
+                "block": "b4",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 28,
+                "unit_id": "planned_b4_u7",
+                "block": "b4",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 29,
+                "unit_id": "planned_b4_u6",
+                "block": "b4",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 30,
+                "unit_id": "planned_b4_u4",
+                "block": "b4",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 31,
+                "unit_id": "planned_b4_u2",
+                "block": "b4",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 32,
+                "unit_id": "planned_b4_u1",
+                "block": "b4",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 33,
+                "unit_id": "planned_b5_u4",
+                "block": "b5",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 34,
+                "unit_id": "planned_b5_u7",
+                "block": "b5",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 35,
+                "unit_id": "planned_b5_u5",
+                "block": "b5",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 36,
+                "unit_id": "planned_b5_u1",
+                "block": "b5",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 37,
+                "unit_id": "planned_b5_u2",
+                "block": "b5",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 38,
+                "unit_id": "planned_b5_u8",
+                "block": "b5",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 39,
+                "unit_id": "planned_b5_u6",
+                "block": "b5",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 40,
+                "unit_id": "planned_b5_u3",
+                "block": "b5",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 41,
+                "unit_id": "planned_b6_u3",
+                "block": "b6",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 42,
+                "unit_id": "planned_b6_u4",
+                "block": "b6",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 43,
+                "unit_id": "planned_b6_u8",
+                "block": "b6",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 44,
+                "unit_id": "planned_b6_u2",
+                "block": "b6",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 45,
+                "unit_id": "planned_b6_u1",
+                "block": "b6",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 46,
+                "unit_id": "planned_b6_u7",
+                "block": "b6",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 47,
+                "unit_id": "planned_b6_u5",
+                "block": "b6",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 48,
+                "unit_id": "planned_b6_u6",
+                "block": "b6",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              }
+            ]
+          },
+          "artifact_refs": {
+            "project": "04f4d38a4c913cfc48b405aac1e18829675e016b66205ed2b7b774f0ad04cf1d",
+            "plan": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+            "claim": "78ec1e1b5c2036a23c5c713b26f3ef8b61c1672d1c3a0940538c2e1cd03b3f5d"
+          },
+          "flags": {
+            "review_current": false,
+            "review_passed": false,
+            "alignment_current": false,
+            "alignment_passed": false,
+            "workflow_checked": false,
+            "job_queried": false,
+            "variance_available": false,
+            "public_unavailable": true,
+            "public_tool_failure": false
+          },
+          "evidence": [
+            {
+              "id": "d5dbcd76cffbcbd7",
+              "kind": "initial_request",
+              "value": {
+                "user_request": "为相同CViT架构×学习率研究规划功效并给出可复核方案。目前没有sigma和方差来源；先询问依据。此示例用户无法补充，禁止把模板默认值当成先导证据；在当前有界环境中有依据地停止并记录缺失信息。不得虚构样本量已经充分。"
+              },
+              "source": "offline_tool_or_scripted_user"
+            },
+            {
+              "id": "e44b7ef910983962",
+              "kind": "user_unavailable",
+              "value": {
+                "field": "variance_source",
+                "answer": "User cannot provide a variance basis for this powered-design request"
+              },
+              "source": "offline_tool_or_scripted_user"
+            }
+          ],
+          "history": [
+            {
+              "action_id": "ask_variance",
+              "tool": "host.ask_user",
+              "error": null,
+              "result_keys": [
+                "status",
+                "evidence_id"
+              ]
+            }
+          ],
+          "turn": 1,
+          "last_call_failed": false,
+          "candidates": [
+            {
+              "action_id": "review",
+              "tool": "plan_review",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7"
+              },
+              "available": true
+            },
+            {
+              "action_id": "align_claim",
+              "tool": "claim_check_plan",
+              "arguments": {
+                "claim_ref": "78ec1e1b5c2036a23c5c713b26f3ef8b61c1672d1c3a0940538c2e1cd03b3f5d",
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7"
+              },
+              "available": true
+            },
+            {
+              "action_id": "diff",
+              "tool": "plan_diff",
+              "arguments": {
+                "old_plan_ref": null,
+                "new_plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7"
+              },
+              "available": false
+            },
+            {
+              "action_id": "model_two_arm",
+              "tool": "plan_patch",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+                "expected_contract_hash": "fa61e637b4fc504a0f675c62881fbfa8a8ea034c1f931d015e7a3fd36ee96355",
+                "changes": [
+                  {
+                    "path": "/analysis/model",
+                    "value": "two_arm"
+                  }
+                ],
+                "reason": "Agent selected a bounded public candidate amendment"
+              },
+              "available": true
+            },
+            {
+              "action_id": "model_additive_blocks",
+              "tool": "plan_patch",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+                "expected_contract_hash": "fa61e637b4fc504a0f675c62881fbfa8a8ea034c1f931d015e7a3fd36ee96355",
+                "changes": [
+                  {
+                    "path": "/analysis/model",
+                    "value": "additive_blocks"
+                  }
+                ],
+                "reason": "Agent selected a bounded public candidate amendment"
+              },
+              "available": true
+            },
+            {
+              "action_id": "model_full_factorial",
+              "tool": "plan_patch",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+                "expected_contract_hash": "fa61e637b4fc504a0f675c62881fbfa8a8ea034c1f931d015e7a3fd36ee96355",
+                "changes": [
+                  {
+                    "path": "/analysis/model",
+                    "value": "full_factorial"
+                  }
+                ],
+                "reason": "Agent selected a bounded public candidate amendment"
+              },
+              "available": true
+            },
+            {
+              "action_id": "model_blocked_full_factorial",
+              "tool": "plan_patch",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+                "expected_contract_hash": "fa61e637b4fc504a0f675c62881fbfa8a8ea034c1f931d015e7a3fd36ee96355",
+                "changes": [
+                  {
+                    "path": "/analysis/model",
+                    "value": "blocked_full_factorial"
+                  }
+                ],
+                "reason": "Agent selected a bounded public candidate amendment"
+              },
+              "available": true
+            },
+            {
+              "action_id": "repair_response",
+              "tool": "plan_patch",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+                "expected_contract_hash": "fa61e637b4fc504a0f675c62881fbfa8a8ea034c1f931d015e7a3fd36ee96355",
+                "changes": [
+                  {
+                    "path": "/response/name",
+                    "value": "relative_l2"
+                  }
+                ],
+                "reason": "Agent selected a bounded public candidate amendment"
+              },
+              "available": true
+            },
+            {
+              "action_id": "repair_budget",
+              "tool": "plan_patch",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+                "expected_contract_hash": "fa61e637b4fc504a0f675c62881fbfa8a8ea034c1f931d015e7a3fd36ee96355",
+                "changes": [
+                  {
+                    "path": "/resources/budget",
+                    "value": 256
+                  }
+                ],
+                "reason": "Agent selected a bounded public candidate amendment"
+              },
+              "available": true
+            },
+            {
+              "action_id": "resolve",
+              "tool": "review_resolve",
+              "arguments": {
+                "old_review_ref": null,
+                "new_review_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "freeze",
+              "tool": "plan_freeze",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+                "review_ref": null,
+                "alignment_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "workflow",
+              "tool": "workflow_compile",
+              "arguments": {
+                "freeze_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "verify_workflow",
+              "tool": "workflow_verify",
+              "arguments": {
+                "workflow_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "reconcile",
+              "tool": "job_reconcile_mock",
+              "arguments": {
+                "freeze_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "run_mock",
+              "tool": "job_run_mock",
+              "arguments": {
+                "freeze_ref": null,
+                "scenario": {
+                  "$host": "private_mock_fixture"
+                }
+              },
+              "available": false
+            },
+            {
+              "action_id": "poll",
+              "tool": "job_poll_mock",
+              "arguments": {
+                "job_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "analyze",
+              "tool": "result_analyze",
+              "arguments": {
+                "job_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "assess",
+              "tool": "claim_assess",
+              "arguments": {
+                "claim_ref": "78ec1e1b5c2036a23c5c713b26f3ef8b61c1672d1c3a0940538c2e1cd03b3f5d",
+                "analysis_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "next",
+              "tool": "loop_next_action",
+              "arguments": {
+                "assessment_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "report",
+              "tool": "report_build",
+              "arguments": {
+                "assessment_ref": null,
+                "workflow_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "read_plan",
+              "tool": "artifact_read",
+              "arguments": {
+                "artifact_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7"
+              },
+              "available": true
+            },
+            {
+              "action_id": "ask_variance",
+              "tool": "host.ask_user",
+              "arguments": {
+                "field": "variance_source"
+              },
+              "available": true
+            },
+            {
+              "action_id": "stop",
+              "tool": "host.stop_with_evidence",
+              "arguments": {
+                "evidence_ids": [
+                  "e44b7ef910983962"
+                ]
+              },
+              "available": true
+            }
+          ],
+          "real_execution_allowed": false
+        },
+        "observation_hash": "638e2d7396bb37c327bcedf1ba2f69e74c39b6fe8fe5630b60e9028c7df6df85",
+        "features": [
+          1.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          1.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.025,
+          0.0,
+          1.0
+        ],
+        "action_mask": [
+          true,
+          true,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true
+        ],
+        "action_index": 22,
+        "action": {
+          "action_id": "stop",
+          "tool": "host.stop_with_evidence",
+          "arguments": {
+            "evidence_ids": [
+              "e44b7ef910983962"
+            ]
+          },
+          "available": true
+        },
+        "feedback": {
+          "tool": "host.stop_with_evidence",
+          "result": {
+            "justified": true,
+            "public_evidence_ids": [
+              "e44b7ef910983962"
+            ]
+          },
+          "error": null,
+          "real_execution": false
+        },
+        "reward": 9.98,
+        "next_observation": {
+          "schema_version": "tool_harness_rl_v2",
+          "goal": {
+            "domain": "cvit",
+            "user_request": "为相同CViT架构×学习率研究规划功效并给出可复核方案。目前没有sigma和方差来源；先询问依据。此示例用户无法补充，禁止把模板默认值当成先导证据；在当前有界环境中有依据地停止并记录缺失信息。不得虚构样本量已经充分。",
+            "family": "factorial_2x2",
+            "factors": [
+              {
+                "name": "architecture",
+                "levels": [
+                  "baseline_small",
+                  "candidate_small"
+                ]
+              },
+              {
+                "name": "learning_rate",
+                "levels": [
+                  "0.0001",
+                  "0.0003"
+                ]
+              }
+            ],
+            "unit_definition": "One independently seeded training run within a data-realization block",
+            "response": "relative_l2",
+            "primary_term": "architecture",
+            "direction": "lower",
+            "practical_margin": 0.01,
+            "minimum_effect": 0.02,
+            "sigma": null,
+            "variance_source": null,
+            "target_power": 0.8,
+            "resource_budget": 256,
+            "max_decisions": 40
+          },
+          "current_contract": {
+            "schema_version": "doe_contract_v1",
+            "request_hash": "3d056fb3217d0a7d70c71434499dc9f2b9cb847cba6920dae1a0483322a30902",
+            "revision": 2,
+            "question": "为相同CViT架构×学习率研究规划功效并给出可复核方案。目前没有sigma和方差来源；先询问依据。此示例用户无法补充，禁止把模板默认值当成先导证据；在当前有界环境中有依据地停止并记录缺失信息。不得虚构样本量已经充分。",
+            "family": "factorial_2x2",
+            "factors": [
+              {
+                "name": "architecture",
+                "levels": [
+                  "baseline_small",
+                  "candidate_small"
+                ]
+              },
+              {
+                "name": "learning_rate",
+                "levels": [
+                  "0.0001",
+                  "0.0003"
+                ]
+              }
+            ],
+            "response": {
+              "name": "relative_l2",
+              "unit": "dimensionless",
+              "direction": "lower"
+            },
+            "experimental_unit": {
+              "definition": "One independently seeded training run within a data-realization block",
+              "independence_basis": "Declared independent units and independent Gaussian residuals; not established by table structure",
+              "measurement_repeats": 1
+            },
+            "blocks": [
+              "b1",
+              "b2",
+              "b3",
+              "b4",
+              "b5",
+              "b6"
+            ],
+            "replicates": 2,
+            "assumptions": [
+              "normal_iid_errors",
+              "constant_error_variance",
+              "no_treatment_block_interaction"
+            ],
+            "randomization": {
+              "seed": 73,
+              "algorithm": "shuffle_v1"
+            },
+            "analysis": {
+              "model": "blocked_full_factorial",
+              "primary_term": "architecture",
+              "alpha": 0.05,
+              "minimum_effect": 0.02,
+              "sigma": 0.02,
+              "target_power": 0.8,
+              "multiplicity": "single_primary",
+              "missing_policy": "stop_and_review",
+              "decision_rule": "two_sided_t_ci_practical_relevance_separate"
+            },
+            "resources": {
+              "per_run": 1.0,
+              "budget": 256
+            },
+            "provenance": [
+              {
+                "path": "/question",
+                "evidence_id": "e00"
+              },
+              {
+                "path": "/factors",
+                "evidence_id": "e01"
+              },
+              {
+                "path": "/response",
+                "evidence_id": "e02"
+              },
+              {
+                "path": "/experimental_unit",
+                "evidence_id": "e03"
+              },
+              {
+                "path": "/blocks",
+                "evidence_id": "e04"
+              },
+              {
+                "path": "/assumptions",
+                "evidence_id": "e05"
+              },
+              {
+                "path": "/analysis",
+                "evidence_id": "e06"
+              },
+              {
+                "path": "/resources",
+                "evidence_id": "e07"
+              }
+            ],
+            "run_plan": [
+              {
+                "run": 1,
+                "unit_id": "planned_b1_u2",
+                "block": "b1",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 2,
+                "unit_id": "planned_b1_u7",
+                "block": "b1",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 3,
+                "unit_id": "planned_b1_u3",
+                "block": "b1",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 4,
+                "unit_id": "planned_b1_u1",
+                "block": "b1",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 5,
+                "unit_id": "planned_b1_u6",
+                "block": "b1",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 6,
+                "unit_id": "planned_b1_u8",
+                "block": "b1",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 7,
+                "unit_id": "planned_b1_u5",
+                "block": "b1",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 8,
+                "unit_id": "planned_b1_u4",
+                "block": "b1",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 9,
+                "unit_id": "planned_b2_u3",
+                "block": "b2",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 10,
+                "unit_id": "planned_b2_u6",
+                "block": "b2",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 11,
+                "unit_id": "planned_b2_u1",
+                "block": "b2",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 12,
+                "unit_id": "planned_b2_u4",
+                "block": "b2",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 13,
+                "unit_id": "planned_b2_u5",
+                "block": "b2",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 14,
+                "unit_id": "planned_b2_u2",
+                "block": "b2",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 15,
+                "unit_id": "planned_b2_u8",
+                "block": "b2",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 16,
+                "unit_id": "planned_b2_u7",
+                "block": "b2",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 17,
+                "unit_id": "planned_b3_u6",
+                "block": "b3",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 18,
+                "unit_id": "planned_b3_u5",
+                "block": "b3",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 19,
+                "unit_id": "planned_b3_u4",
+                "block": "b3",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 20,
+                "unit_id": "planned_b3_u3",
+                "block": "b3",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 21,
+                "unit_id": "planned_b3_u1",
+                "block": "b3",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 22,
+                "unit_id": "planned_b3_u8",
+                "block": "b3",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 23,
+                "unit_id": "planned_b3_u2",
+                "block": "b3",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 24,
+                "unit_id": "planned_b3_u7",
+                "block": "b3",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 25,
+                "unit_id": "planned_b4_u5",
+                "block": "b4",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 26,
+                "unit_id": "planned_b4_u3",
+                "block": "b4",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 27,
+                "unit_id": "planned_b4_u8",
+                "block": "b4",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 28,
+                "unit_id": "planned_b4_u7",
+                "block": "b4",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 29,
+                "unit_id": "planned_b4_u6",
+                "block": "b4",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 30,
+                "unit_id": "planned_b4_u4",
+                "block": "b4",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 31,
+                "unit_id": "planned_b4_u2",
+                "block": "b4",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 32,
+                "unit_id": "planned_b4_u1",
+                "block": "b4",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 33,
+                "unit_id": "planned_b5_u4",
+                "block": "b5",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 34,
+                "unit_id": "planned_b5_u7",
+                "block": "b5",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 35,
+                "unit_id": "planned_b5_u5",
+                "block": "b5",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 36,
+                "unit_id": "planned_b5_u1",
+                "block": "b5",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 37,
+                "unit_id": "planned_b5_u2",
+                "block": "b5",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 38,
+                "unit_id": "planned_b5_u8",
+                "block": "b5",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 39,
+                "unit_id": "planned_b5_u6",
+                "block": "b5",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 40,
+                "unit_id": "planned_b5_u3",
+                "block": "b5",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 41,
+                "unit_id": "planned_b6_u3",
+                "block": "b6",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 42,
+                "unit_id": "planned_b6_u4",
+                "block": "b6",
+                "levels": [
+                  "baseline_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 43,
+                "unit_id": "planned_b6_u8",
+                "block": "b6",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 44,
+                "unit_id": "planned_b6_u2",
+                "block": "b6",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 45,
+                "unit_id": "planned_b6_u1",
+                "block": "b6",
+                "levels": [
+                  "candidate_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 46,
+                "unit_id": "planned_b6_u7",
+                "block": "b6",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              },
+              {
+                "run": 47,
+                "unit_id": "planned_b6_u5",
+                "block": "b6",
+                "levels": [
+                  "baseline_small",
+                  "0.0001"
+                ]
+              },
+              {
+                "run": 48,
+                "unit_id": "planned_b6_u6",
+                "block": "b6",
+                "levels": [
+                  "candidate_small",
+                  "0.0003"
+                ]
+              }
+            ]
+          },
+          "artifact_refs": {
+            "project": "04f4d38a4c913cfc48b405aac1e18829675e016b66205ed2b7b774f0ad04cf1d",
+            "plan": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+            "claim": "78ec1e1b5c2036a23c5c713b26f3ef8b61c1672d1c3a0940538c2e1cd03b3f5d"
+          },
+          "flags": {
+            "review_current": false,
+            "review_passed": false,
+            "alignment_current": false,
+            "alignment_passed": false,
+            "workflow_checked": false,
+            "job_queried": false,
+            "variance_available": false,
+            "public_unavailable": true,
+            "public_tool_failure": false
+          },
+          "evidence": [
+            {
+              "id": "d5dbcd76cffbcbd7",
+              "kind": "initial_request",
+              "value": {
+                "user_request": "为相同CViT架构×学习率研究规划功效并给出可复核方案。目前没有sigma和方差来源；先询问依据。此示例用户无法补充，禁止把模板默认值当成先导证据；在当前有界环境中有依据地停止并记录缺失信息。不得虚构样本量已经充分。"
+              },
+              "source": "offline_tool_or_scripted_user"
+            },
+            {
+              "id": "e44b7ef910983962",
+              "kind": "user_unavailable",
+              "value": {
+                "field": "variance_source",
+                "answer": "User cannot provide a variance basis for this powered-design request"
+              },
+              "source": "offline_tool_or_scripted_user"
+            }
+          ],
+          "history": [
+            {
+              "action_id": "ask_variance",
+              "tool": "host.ask_user",
+              "error": null,
+              "result_keys": [
+                "status",
+                "evidence_id"
+              ]
+            },
+            {
+              "action_id": "stop",
+              "tool": "host.stop_with_evidence",
+              "error": null,
+              "result_keys": [
+                "justified",
+                "public_evidence_ids"
+              ]
+            }
+          ],
+          "turn": 2,
+          "last_call_failed": false,
+          "candidates": [
+            {
+              "action_id": "review",
+              "tool": "plan_review",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7"
+              },
+              "available": false
+            },
+            {
+              "action_id": "align_claim",
+              "tool": "claim_check_plan",
+              "arguments": {
+                "claim_ref": "78ec1e1b5c2036a23c5c713b26f3ef8b61c1672d1c3a0940538c2e1cd03b3f5d",
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7"
+              },
+              "available": false
+            },
+            {
+              "action_id": "diff",
+              "tool": "plan_diff",
+              "arguments": {
+                "old_plan_ref": null,
+                "new_plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7"
+              },
+              "available": false
+            },
+            {
+              "action_id": "model_two_arm",
+              "tool": "plan_patch",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+                "expected_contract_hash": "fa61e637b4fc504a0f675c62881fbfa8a8ea034c1f931d015e7a3fd36ee96355",
+                "changes": [
+                  {
+                    "path": "/analysis/model",
+                    "value": "two_arm"
+                  }
+                ],
+                "reason": "Agent selected a bounded public candidate amendment"
+              },
+              "available": false
+            },
+            {
+              "action_id": "model_additive_blocks",
+              "tool": "plan_patch",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+                "expected_contract_hash": "fa61e637b4fc504a0f675c62881fbfa8a8ea034c1f931d015e7a3fd36ee96355",
+                "changes": [
+                  {
+                    "path": "/analysis/model",
+                    "value": "additive_blocks"
+                  }
+                ],
+                "reason": "Agent selected a bounded public candidate amendment"
+              },
+              "available": false
+            },
+            {
+              "action_id": "model_full_factorial",
+              "tool": "plan_patch",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+                "expected_contract_hash": "fa61e637b4fc504a0f675c62881fbfa8a8ea034c1f931d015e7a3fd36ee96355",
+                "changes": [
+                  {
+                    "path": "/analysis/model",
+                    "value": "full_factorial"
+                  }
+                ],
+                "reason": "Agent selected a bounded public candidate amendment"
+              },
+              "available": false
+            },
+            {
+              "action_id": "model_blocked_full_factorial",
+              "tool": "plan_patch",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+                "expected_contract_hash": "fa61e637b4fc504a0f675c62881fbfa8a8ea034c1f931d015e7a3fd36ee96355",
+                "changes": [
+                  {
+                    "path": "/analysis/model",
+                    "value": "blocked_full_factorial"
+                  }
+                ],
+                "reason": "Agent selected a bounded public candidate amendment"
+              },
+              "available": false
+            },
+            {
+              "action_id": "repair_response",
+              "tool": "plan_patch",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+                "expected_contract_hash": "fa61e637b4fc504a0f675c62881fbfa8a8ea034c1f931d015e7a3fd36ee96355",
+                "changes": [
+                  {
+                    "path": "/response/name",
+                    "value": "relative_l2"
+                  }
+                ],
+                "reason": "Agent selected a bounded public candidate amendment"
+              },
+              "available": false
+            },
+            {
+              "action_id": "repair_budget",
+              "tool": "plan_patch",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+                "expected_contract_hash": "fa61e637b4fc504a0f675c62881fbfa8a8ea034c1f931d015e7a3fd36ee96355",
+                "changes": [
+                  {
+                    "path": "/resources/budget",
+                    "value": 256
+                  }
+                ],
+                "reason": "Agent selected a bounded public candidate amendment"
+              },
+              "available": false
+            },
+            {
+              "action_id": "resolve",
+              "tool": "review_resolve",
+              "arguments": {
+                "old_review_ref": null,
+                "new_review_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "freeze",
+              "tool": "plan_freeze",
+              "arguments": {
+                "plan_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7",
+                "review_ref": null,
+                "alignment_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "workflow",
+              "tool": "workflow_compile",
+              "arguments": {
+                "freeze_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "verify_workflow",
+              "tool": "workflow_verify",
+              "arguments": {
+                "workflow_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "reconcile",
+              "tool": "job_reconcile_mock",
+              "arguments": {
+                "freeze_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "run_mock",
+              "tool": "job_run_mock",
+              "arguments": {
+                "freeze_ref": null,
+                "scenario": {
+                  "$host": "private_mock_fixture"
+                }
+              },
+              "available": false
+            },
+            {
+              "action_id": "poll",
+              "tool": "job_poll_mock",
+              "arguments": {
+                "job_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "analyze",
+              "tool": "result_analyze",
+              "arguments": {
+                "job_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "assess",
+              "tool": "claim_assess",
+              "arguments": {
+                "claim_ref": "78ec1e1b5c2036a23c5c713b26f3ef8b61c1672d1c3a0940538c2e1cd03b3f5d",
+                "analysis_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "next",
+              "tool": "loop_next_action",
+              "arguments": {
+                "assessment_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "report",
+              "tool": "report_build",
+              "arguments": {
+                "assessment_ref": null,
+                "workflow_ref": null
+              },
+              "available": false
+            },
+            {
+              "action_id": "read_plan",
+              "tool": "artifact_read",
+              "arguments": {
+                "artifact_ref": "90c68bf16aaf7bbe2afebfc9a30270c512fb3b8bae1db3c1935bcc3f08b44fa7"
+              },
+              "available": false
+            },
+            {
+              "action_id": "ask_variance",
+              "tool": "host.ask_user",
+              "arguments": {
+                "field": "variance_source"
+              },
+              "available": false
+            },
+            {
+              "action_id": "stop",
+              "tool": "host.stop_with_evidence",
+              "arguments": {
+                "evidence_ids": [
+                  "e44b7ef910983962"
+                ]
+              },
+              "available": false
+            }
+          ],
+          "real_execution_allowed": false
+        },
+        "next_observation_hash": "884eb9752c47432547ef6388e32ec70c13d4a82f25f321d675239fd4be333bbc",
+        "next_features": [
+          1.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          1.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.05,
+          0.0,
+          1.0
+        ],
+        "terminated": true,
+        "truncated": false,
+        "classification": "justified_stop",
+        "behavior_log_probability": null,
+        "value_estimate": null,
+        "source": "scripted_reference_not_expert"
+      }
+    ],
+    "scientific_claim_verified": false
+  }
+}

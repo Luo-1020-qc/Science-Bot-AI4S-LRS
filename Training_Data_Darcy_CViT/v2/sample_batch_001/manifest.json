@@ -1,0 +1,36 @@
+{
+  "version": "tool_harness_rl_v2",
+  "batch_id": "sample_batch_001",
+  "tasks": 3,
+  "reference_decisions": 30,
+  "bc_scripted_labels": 30,
+  "human_expert_labels": 0,
+  "task_approval_scope": "automated_synthetic_fixture_compatibility_only",
+  "real_scientific_data_added": false,
+  "independent_source_count_added": 0,
+  "shared_lineage": "synthetic_darcy_source_A; intentionally shares the existing training template ancestry",
+  "blind_test_tasks_added": 0,
+  "all_examples_public": true,
+  "reference_traces_are_ppo_rollouts": false,
+  "decisions_pending_import_status": "Batch-local new states: current global decision importer does not register these IDs; requires explicit queue extension before human label import",
+  "import_result": {
+    "accepted_task_records": 3,
+    "automatic_training": false,
+    "preflight_required": true
+  },
+  "preflight_passed": true,
+  "artifact_sha256": {
+    "bc_reference.jsonl": "8f12f0440b964fd1926cdae39cde707a84861b5ceba4ba31ada6398302c79bdc",
+    "decisions_pending.jsonl": "bc31af9cbafdc8b0e72e13bac821a57b7b684ad943aa86f61f6addb7ea430ad7",
+    "reference_episodes.jsonl": "0f63923fda9d3f0ed1e94e403fe29ca992351580f1d2e51ee1621b4beb22be01",
+    "tasks.jsonl": "40d57fbcdce21add1e1f3f5ac42726a8c92c3c78fc0828f065357233a41a8ba4",
+    "tasks_imported.json": "ffbd80547e0619302a6be9da246e37605d502973aef94837cc77f2a62d5dfda6",
+    "tasks_imported.preflight.json": "3beb5f90acb18e40ed232eda2135bb4a18a6c2ea1c95c49342939b92d2a511b1",
+    "examples/sample001_cvit_interaction_repair_v1.json": "3ccccc1a92198c3cdef0d12ee49d1189a1f75895af2594ff89e9faf3562a3707",
+    "examples/sample001_cvit_variance_unavailable_v1.json": "c83d782c1b5a927dfb002fb89f7d5576dfb5f1b0d563607a67be998f31cb4377",
+    "examples/sample001_darcy_block_repair_v1.json": "440212c64e3c93d16bced63f4913d597ed913e672328784f58dc6fc5c8c110e1",
+    "tasks/sample001_cvit_interaction_repair_v1.json": "0b2036df258637eee68c31cc2c7cad59a3899b3a15e73baa4278b386b06a7e41",
+    "tasks/sample001_cvit_variance_unavailable_v1.json": "13de03c3d06c3359d0e6fa9fb210ed35df3327dddd2312e87465fbfa00719e8c",
+    "tasks/sample001_darcy_block_repair_v1.json": "06ca2698a3f0642b93990b806e5e2ab674b69307f82052d8ceb2dd4cab92c6af"
+  }
+}

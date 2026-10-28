@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "task_sample_counts": {
+    "sample001_cvit_variance_unavailable_v1": 32,
+    "sample001_darcy_block_repair_v1": 32,
+    "sample001_cvit_interaction_repair_v1": 32
+  },
+  "sampled_transitions": 96,
+  "ppo_batch_updates": 1,
+  "gradient_steps": 6,
+  "losses": [
+    7.733442306518555,
+    7.410560607910156,
+    8.862144470214844,
+    7.011103630065918,
+    9.689278602600098,
+    6.995063781738281
+  ],
+  "behavior_policy_hash": "f40cade17d967367f60dbe35f2fe23274ec4271fefc180a107d1c5855442c3ec",
+  "updated_policy_hash": "cd10bef006216ebe067bddbf0472b37f2dddaa8d2ba308582d44b976c5b445eb",
+  "probabilities_and_values": {
+    "records": 96,
+    "all_behavior_log_probs_recomputed": true,
+    "all_values_recomputed": true,
+    "training_task_hashes_verified": true,
+    "public_masks_verified": true,
+    "state_chains_verified": true
+  },
+  "terminal_transitions": 7,
+  "external_truncations": 3,
+  "human_expert_labels": 0,
+  "real_scientific_executions": 0,
+  "model_api_requests": 0,
+  "default_policy_promoted": false,
+  "scope": "Synthetic bounded candidate-policy training compatibility only; no efficacy or generalization claim"
+}

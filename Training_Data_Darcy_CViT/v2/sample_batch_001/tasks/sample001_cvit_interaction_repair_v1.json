@@ -1,0 +1,62 @@
+{
+  "schema_version": "tool_harness_rl_v2",
+  "task_id": "sample001_cvit_interaction_repair_v1",
+  "policy_split": "train",
+  "root_group": "synthetic_darcy_family_source_A",
+  "data_lineage": {
+    "source_ancestor_ids": [
+      "synthetic_darcy_source_A"
+    ],
+    "scientific_partitions": {
+      "train": "mock://source_A/train",
+      "validation": "mock://source_A/validation",
+      "test": "mock://source_A/test"
+    },
+    "source_kind": "synthetic_reference_only"
+  },
+  "public": {
+    "domain": "cvit",
+    "user_request": "设计CViT架构baseline_small/candidate_small与学习率0.0001/0.0003的2×2区组实验，保留交互项，主要检验架构效应；以独立训练运行为单位，数据实现为区组，主要响应为测试relative_l2。检查错误模型，修订、复核并完成模拟闭环；阴性结果也应如实报告。不执行真实CViT训练。",
+    "family": "factorial_2x2",
+    "factors": [
+      {
+        "name": "architecture",
+        "levels": [
+          "baseline_small",
+          "candidate_small"
+        ]
+      },
+      {
+        "name": "learning_rate",
+        "levels": [
+          "0.0001",
+          "0.0003"
+        ]
+      }
+    ],
+    "unit_definition": "One independently seeded training run within a data-realization block",
+    "response": "relative_l2",
+    "primary_term": "architecture",
+    "direction": "lower",
+    "practical_margin": 0.01,
+    "minimum_effect": 0.02,
+    "sigma": 0.02,
+    "variance_source": "synthetic pilot declaration; not real evidence",
+    "target_power": 0.8,
+    "resource_budget": 256,
+    "max_decisions": 40
+  },
+  "simulator": {
+    "initial_fault": "wrong_model",
+    "outcome_scenario": "benefit",
+    "user_variance_answer": null,
+    "existing_job": false,
+    "job_failure": null
+  },
+  "expert_review": {
+    "status": "approved",
+    "reviewer": "automated_synthetic_fixture_author_NOT_A_HUMAN_EXPERT",
+    "reason": "Approved only as an explicitly synthetic protocol/training fixture. No human scientific approval; sigma/effect/budget are illustrative assumptions. Reuses source_A template lineage; no independent scientific dataset added.",
+    "reviewed_at": "2026-10-28T06:24:41.047269+00:00"
+  }
+}
