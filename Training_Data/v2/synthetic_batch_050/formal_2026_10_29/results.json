@@ -1,0 +1,188 @@
+{
+  "completed_at": "2026-10-29T00:20:52.828403+08:00",
+  "elapsed_seconds": 443.9369999999999,
+  "training": {
+    "passed": true,
+    "training_tasks": 50,
+    "bc_epochs": 300,
+    "ppo_iterations": 5,
+    "transitions": 8000,
+    "gradient_steps": 500,
+    "steps_per_task_per_iteration": 32,
+    "seed": 20261029,
+    "training_task_successes": 38,
+    "human_expert_labels": 0,
+    "new_independent_sources": 0,
+    "real_scientific_executions": 0,
+    "model_api_requests": 0,
+    "default_policy_promoted": false,
+    "frozen_environment_and_reward_unchanged": true,
+    "rollout_source_note": "fresh_on_policy_cpu_smoke is the pinned v2 schema tag; this is bounded synthetic candidate-policy training, not a proven production strategy",
+    "efficacy_claim": "No independent held-out evaluation; no claimed improvement over rules or generalization"
+  },
+  "summaries": {
+    "rule": {
+      "train": {
+        "successes": 50,
+        "tasks": 50,
+        "success_rate": 1.0,
+        "mean_decisions": 10.04,
+        "mean_return": 10.8752,
+        "total_errors": 6,
+        "terminal_counts": {
+          "completed_mock_research_loop": 38,
+          "justified_stop": 12
+        }
+      },
+      "development": {
+        "successes": 2,
+        "tasks": 2,
+        "success_rate": 1.0,
+        "mean_decisions": 11.0,
+        "mean_return": 10.48,
+        "total_errors": 1,
+        "terminal_counts": {
+          "completed_mock_research_loop": 1,
+          "justified_stop": 1
+        }
+      },
+      "evaluation_example": {
+        "successes": 2,
+        "tasks": 2,
+        "success_rate": 1.0,
+        "mean_decisions": 13.0,
+        "mean_return": 11.14,
+        "total_errors": 0,
+        "terminal_counts": {
+          "completed_mock_research_loop": 2
+        }
+      }
+    },
+    "bc": {
+      "train": {
+        "successes": 50,
+        "tasks": 50,
+        "success_rate": 1.0,
+        "mean_decisions": 10.04,
+        "mean_return": 10.8752,
+        "total_errors": 6,
+        "terminal_counts": {
+          "completed_mock_research_loop": 38,
+          "justified_stop": 12
+        }
+      },
+      "development": {
+        "successes": 2,
+        "tasks": 2,
+        "success_rate": 1.0,
+        "mean_decisions": 11.0,
+        "mean_return": 10.48,
+        "total_errors": 1,
+        "terminal_counts": {
+          "completed_mock_research_loop": 1,
+          "justified_stop": 1
+        }
+      },
+      "evaluation_example": {
+        "successes": 2,
+        "tasks": 2,
+        "success_rate": 1.0,
+        "mean_decisions": 13.0,
+        "mean_return": 11.14,
+        "total_errors": 0,
+        "terminal_counts": {
+          "completed_mock_research_loop": 2
+        }
+      }
+    },
+    "ppo": {
+      "train": {
+        "successes": 38,
+        "tasks": 50,
+        "success_rate": 0.76,
+        "mean_decisions": 26.56,
+        "mean_return": 7.6648000000000005,
+        "total_errors": 6,
+        "terminal_counts": {
+          "decision_budget_exhausted": 12,
+          "completed_mock_research_loop": 26,
+          "justified_stop": 12
+        }
+      },
+      "development": {
+        "successes": 2,
+        "tasks": 2,
+        "success_rate": 1.0,
+        "mean_decisions": 21.0,
+        "mean_return": 10.280000000000001,
+        "total_errors": 1,
+        "terminal_counts": {
+          "completed_mock_research_loop": 1,
+          "justified_stop": 1
+        }
+      },
+      "evaluation_example": {
+        "successes": 2,
+        "tasks": 2,
+        "success_rate": 1.0,
+        "mean_decisions": 29.5,
+        "mean_return": 10.81,
+        "total_errors": 0,
+        "terminal_counts": {
+          "completed_mock_research_loop": 2
+        }
+      }
+    }
+  },
+  "iterations": [
+    {
+      "batch": 1,
+      "transitions": 1600,
+      "gradient_steps": 100,
+      "successful_episode_ends": 198,
+      "external_truncations": 39,
+      "behavior_hash": "1af3c36dcf757a4b3a3f061e64dbfdc99c967180193ec9de567fe794bc1303db",
+      "updated_hash": "71fdf953f3df49c801e3ac98659e404e7f6ebf76d892b55f1881faf3ddf8c34a"
+    },
+    {
+      "batch": 2,
+      "transitions": 1600,
+      "gradient_steps": 100,
+      "successful_episode_ends": 81,
+      "external_truncations": 47,
+      "behavior_hash": "71fdf953f3df49c801e3ac98659e404e7f6ebf76d892b55f1881faf3ddf8c34a",
+      "updated_hash": "69a298c46a412501618b01e0ef85c75d6972fa077122dfe8eba7978d910da0e7"
+    },
+    {
+      "batch": 3,
+      "transitions": 1600,
+      "gradient_steps": 100,
+      "successful_episode_ends": 117,
+      "external_truncations": 44,
+      "behavior_hash": "69a298c46a412501618b01e0ef85c75d6972fa077122dfe8eba7978d910da0e7",
+      "updated_hash": "30a5fe7f09c0e7a60561568a418d8899258c315bdfd588fa33c13f173045f94c"
+    },
+    {
+      "batch": 4,
+      "transitions": 1600,
+      "gradient_steps": 100,
+      "successful_episode_ends": 109,
+      "external_truncations": 48,
+      "behavior_hash": "30a5fe7f09c0e7a60561568a418d8899258c315bdfd588fa33c13f173045f94c",
+      "updated_hash": "aeb61f55d810a90aa9639003214f753f1e3b58dad832813198189c4d17681840"
+    },
+    {
+      "batch": 5,
+      "transitions": 1600,
+      "gradient_steps": 100,
+      "successful_episode_ends": 117,
+      "external_truncations": 46,
+      "behavior_hash": "aeb61f55d810a90aa9639003214f753f1e3b58dad832813198189c4d17681840",
+      "updated_hash": "de9ef67178c31a7e157dd76e0e17ed938ad14714e9b61f3c0f786fd9adfe50ae"
+    }
+  ],
+  "human_expert_labels": 0,
+  "default_policy_promoted": false,
+  "rule_train_evidence": "Previously executed sealed reference_episodes.jsonl; not re-generated or claimed as a fresh benchmark",
+  "interpretation": "Single-seed bounded candidate-policy training; comparison is descriptive, not a test of generalization or PPO superiority"
+}

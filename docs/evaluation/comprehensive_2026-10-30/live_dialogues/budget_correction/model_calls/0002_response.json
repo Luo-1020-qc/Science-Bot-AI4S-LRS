@@ -1,0 +1,61 @@
+{
+  "request_index": 2,
+  "role": "planning_clarification",
+  "model": "deepseek-flash",
+  "response": {
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_00_kAZ4H4FzzdIk1ZXKrkoJ9113",
+        "name": "propose_clarification_questions",
+        "arguments": {
+          "questions": [
+            {
+              "field": "factors",
+              "kind": "missing",
+              "question": "两个模型具体是哪两个、各自代表什么方法，主要比较它们在合成二维场上的哪一方面（例如重建/预测精度、稳定性还是计算开销）？",
+              "rationale": "当前只登记了“两个模型的比较”和范围“合成二维场”，没有指明模型身份与对比维度；不先确定因素与对比，后续设计、指标和验收都无从落地，且六次运行的上限需要据此分配。",
+              "references": [
+                {
+                  "source": "fact",
+                  "key": "research_question",
+                  "quote": "两个模型的比较"
+                },
+                {
+                  "source": "fact",
+                  "key": "scope",
+                  "quote": "合成二维场"
+                },
+                {
+                  "source": "answer",
+                  "key": "current",
+                  "quote": "帮我设计两个模型的比较，范围是合成二维场，本轮只规划。"
+                }
+              ]
+            },
+            {
+              "field": "outcomes",
+              "kind": "missing",
+              "question": "主要响应指标是什么、哪个方向算更好，以及如何在实验单位上汇总（例如每个合成场一个汇总值）？",
+              "rationale": "在六次运行、两小时上限的约束下，必须先确定主要指标与汇总方式，才能判断比较是否公平、是否需要配对设计，以及验收规则怎么写；目前该字段完全空缺。",
+              "references": [
+                {
+                  "source": "fact",
+                  "key": "resources",
+                  "quote": "后续最多六次运行、两小时上限"
+                },
+                {
+                  "source": "fact",
+                  "key": "objective_type",
+                  "quote": "comparison"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "actual_model": "deepseek-flash"
+  },
+  "response_hash": "0f78666af8929ea4244ed3a312f8f40adee73a28044b3f5adf3905ff0c4c2830"
+}

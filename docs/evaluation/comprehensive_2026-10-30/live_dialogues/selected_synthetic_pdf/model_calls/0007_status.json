@@ -1,0 +1,8 @@
+{
+  "request_index": 7,
+  "role": "experiment_planning",
+  "status": "rejected",
+  "model": "deepseek-flash",
+  "error_type": "ValueError",
+  "response_hash": "fce57b41935e4a4fdd76fa99c14ceeb78123d2f7d09356adefb81cdb84e86494"
+}

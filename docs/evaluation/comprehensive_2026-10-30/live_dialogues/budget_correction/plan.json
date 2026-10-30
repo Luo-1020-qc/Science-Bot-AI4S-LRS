@@ -1,0 +1,555 @@
+{
+  "version": "research_blueprint_v1",
+  "plan_id": "5c62a83652c248e29b94a2c6d0ba3e13",
+  "revision": 2,
+  "evidence": [],
+  "evidence_actions": {},
+  "status": "draft_with_open_questions",
+  "facts": {
+    "research_question": "两个模型的比较",
+    "objective_type": "comparison",
+    "scope": "合成二维场",
+    "exclusions": "预算不能由Agent增加",
+    "resources": "后续最多六次运行、两小时上限",
+    "deliverable": "本轮只做规划，不执行"
+  },
+  "fact_sources": {
+    "research_question": {
+      "value": "两个模型的比较",
+      "quote": "帮我设计两个模型的比较",
+      "status": "declared",
+      "turn": 1
+    },
+    "objective_type": {
+      "value": "comparison",
+      "quote": "帮我设计两个模型的比较",
+      "status": "declared",
+      "turn": 1
+    },
+    "scope": {
+      "value": "合成二维场",
+      "quote": "范围是合成二维场",
+      "status": "declared",
+      "turn": 1
+    },
+    "resources": {
+      "value": "后续最多六次运行、两小时上限",
+      "quote": "后续最多六次运行、两小时上限",
+      "status": "declared",
+      "turn": 1
+    },
+    "exclusions": {
+      "value": "预算不能由Agent增加",
+      "quote": "预算不能由Agent增加",
+      "status": "declared",
+      "turn": 1
+    },
+    "deliverable": {
+      "value": "本轮只做规划，不执行",
+      "quote": "本轮只规划",
+      "status": "proposed",
+      "turn": 1
+    }
+  },
+  "nodes": [
+    {
+      "id": "boundaries",
+      "purpose": "明确要回答的问题和不能外推的边界",
+      "dependencies": [],
+      "inputs": [
+        "research_question",
+        "objective_type",
+        "scope",
+        "exclusions"
+      ],
+      "outputs": [
+        "问题与边界契约"
+      ],
+      "acceptance": "研究者用自己的话确认问题、范围和排除项；模型建议保持待确认身份。",
+      "owner": "研究者与Agent协作",
+      "capability": "implemented",
+      "suggested_tools": [],
+      "executed": false
+    },
+    {
+      "id": "evidence_inventory",
+      "purpose": "区分已知声明、实际证据和未决信息",
+      "dependencies": [
+        "boundaries"
+      ],
+      "inputs": [
+        "data_source",
+        "experimental_unit",
+        "risks"
+      ],
+      "outputs": [
+        "证据来源清单",
+        "未决问题清单"
+      ],
+      "acceptance": "每项关键事实有来源或明确未知；真实单位独立性与测量质量需外部核实。",
+      "owner": "研究者提供与核实，Agent整理",
+      "capability": "manual",
+      "suggested_tools": [],
+      "executed": false
+    },
+    {
+      "id": "design",
+      "purpose": "选择能检验命题的设计并说明合理替代方案",
+      "dependencies": [
+        "evidence_inventory"
+      ],
+      "inputs": [
+        "hypothesis",
+        "factors",
+        "design",
+        "baseline",
+        "sampling",
+        "randomization"
+      ],
+      "outputs": [
+        "实验分配与分析单位说明",
+        "样本/先导依据",
+        "方案候选与取舍"
+      ],
+      "acceptance": "对比可估计；单位、重复、区组和随机化关系明确；未知功效条件不能被默认值替代。",
+      "owner": "研究者选择，方法专家复核",
+      "capability": "manual",
+      "suggested_tools": [],
+      "executed": false
+    },
+    {
+      "id": "acceptance",
+      "purpose": "预先锁定分析、验收和停止规则",
+      "dependencies": [
+        "design"
+      ],
+      "inputs": [
+        "outcomes",
+        "analysis",
+        "acceptance",
+        "resources"
+      ],
+      "outputs": [
+        "主要指标与对比",
+        "分析及不确定性规则",
+        "验收/停止检查表"
+      ],
+      "acceptance": "区分能否检验命题与证据是否支持；预设阴性和不确定结果处理，禁止按结果改阈值。",
+      "owner": "研究者确认，Agent检查声明完整性",
+      "capability": "implemented",
+      "suggested_tools": [],
+      "executed": false
+    },
+    {
+      "id": "human_review",
+      "purpose": "在执行前复核假设、可行性与责任",
+      "dependencies": [
+        "acceptance"
+      ],
+      "inputs": [
+        "human_roles",
+        "risks",
+        "reproducibility"
+      ],
+      "outputs": [
+        "人工复核记录",
+        "批准版本或修订理由"
+      ],
+      "acceptance": "逐项检查来源、统计/领域假设、资源及工具能力；修订关键事实后原确认失效。",
+      "owner": "指定的人类复核者",
+      "capability": "manual",
+      "suggested_tools": [],
+      "executed": false
+    },
+    {
+      "id": "preregister",
+      "purpose": "冻结当前计划及其验收规则",
+      "dependencies": [
+        "human_review"
+      ],
+      "inputs": [
+        "完整计划",
+        "人工确认记录"
+      ],
+      "outputs": [
+        "带版本和来源的计划快照"
+      ],
+      "acceptance": "确认绑定当前版本，计划变更重新复核；计划确认不等于真实工具执行授权。",
+      "owner": "研究者确认，宿主保存",
+      "capability": "implemented",
+      "suggested_tools": [],
+      "executed": false
+    },
+    {
+      "id": "mock_rehearsal",
+      "purpose": "可选：演练受支持工具闭环，不制造实测证据",
+      "dependencies": [
+        "preregister"
+      ],
+      "inputs": [
+        "明确受支持的设计映射"
+      ],
+      "outputs": [
+        "模拟工具轨迹",
+        "能力缺口清单"
+      ],
+      "acceptance": "仅显式进入详细工具库后运行；模拟输出明确标记，不能当作真实实验结论。",
+      "owner": "Agent在宿主约束内",
+      "capability": "mock",
+      "suggested_tools": [
+        "plan_review",
+        "claim_check_plan",
+        "workflow_verify",
+        "job_run_mock"
+      ],
+      "executed": false
+    },
+    {
+      "id": "execute",
+      "purpose": "按锁定计划采集数据或执行研究步骤",
+      "dependencies": [
+        "preregister"
+      ],
+      "inputs": [
+        "人工授权",
+        "真实环境与数据",
+        "冻结计划"
+      ],
+      "outputs": [
+        "原始观测",
+        "实际分配与偏离记录",
+        "失败和资源记录"
+      ],
+      "acceptance": "真实任务由人类或另行接入的受限执行器完成；不能因已有工具契约而宣称已经执行。",
+      "owner": "人类研究者/单独授权的执行器",
+      "capability": "manual",
+      "suggested_tools": [],
+      "executed": false
+    },
+    {
+      "id": "analyze",
+      "purpose": "依据预先声明的方法分析结果并检查偏离",
+      "dependencies": [
+        "execute"
+      ],
+      "inputs": [
+        "真实观测与版本",
+        "冻结分析规则"
+      ],
+      "outputs": [
+        "估计量与不确定性",
+        "诊断和偏离说明"
+      ],
+      "acceptance": "不把技术重复当独立样本；不反复选方法直到显著；自动分析须先核对具体工具支持范围。",
+      "owner": "研究者负责，Agent可辅助解释",
+      "capability": "manual",
+      "suggested_tools": [],
+      "executed": false
+    },
+    {
+      "id": "claim_review",
+      "purpose": "判断证据支持什么，以及仍不能判断什么",
+      "dependencies": [
+        "analyze"
+      ],
+      "inputs": [
+        "命题",
+        "分析输出",
+        "假设与外推限制"
+      ],
+      "outputs": [
+        "支持/不支持/不确定的结论",
+        "限制与替代解释"
+      ],
+      "acceptance": "设计可检验不等于结果支持；阴性、反向及不确定结果同样记录，因果与泛化不超出证据。",
+      "owner": "人类研究者作最终判断",
+      "capability": "manual",
+      "suggested_tools": [],
+      "executed": false
+    },
+    {
+      "id": "report",
+      "purpose": "交付可追踪报告并选择下一步",
+      "dependencies": [
+        "claim_review"
+      ],
+      "inputs": [
+        "deliverable",
+        "reproducibility",
+        "全程决策与偏离记录"
+      ],
+      "outputs": [
+        "研究报告与复现清单",
+        "下一步或停止理由"
+      ],
+      "acceptance": "交付包含边界、设计选择、关键证据、局限、负结果和人类职责；新问题另开版本，不事后重写原验收。",
+      "owner": "研究者签署，Agent整理",
+      "capability": "manual",
+      "suggested_tools": [],
+      "executed": false
+    }
+  ],
+  "review": {
+    "ready": false,
+    "checks": [
+      {
+        "field": "research_question",
+        "code": "declaration_present",
+        "status": "passed",
+        "detail": "已记录用户声明；这不等于外部事实验证。"
+      },
+      {
+        "field": "objective_type",
+        "code": "declaration_present",
+        "status": "passed",
+        "detail": "已记录用户声明；这不等于外部事实验证。"
+      },
+      {
+        "field": "hypothesis",
+        "code": "missing_declaration",
+        "status": "blocked",
+        "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+      },
+      {
+        "field": "scope",
+        "code": "declaration_present",
+        "status": "passed",
+        "detail": "已记录用户声明；这不等于外部事实验证。"
+      },
+      {
+        "field": "exclusions",
+        "code": "declaration_present",
+        "status": "passed",
+        "detail": "已记录用户声明；这不等于外部事实验证。"
+      },
+      {
+        "field": "experimental_unit",
+        "code": "missing_declaration",
+        "status": "blocked",
+        "detail": "一次独立分配或观察是什么？哪些测量来自同一对象？"
+      },
+      {
+        "field": "factors",
+        "code": "missing_declaration",
+        "status": "blocked",
+        "detail": "改变哪些因素和水平，主要比较谁与谁？"
+      },
+      {
+        "field": "design",
+        "code": "missing_declaration",
+        "status": "blocked",
+        "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+      },
+      {
+        "field": "outcomes",
+        "code": "missing_declaration",
+        "status": "blocked",
+        "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+      },
+      {
+        "field": "baseline",
+        "code": "missing_declaration",
+        "status": "blocked",
+        "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+      },
+      {
+        "field": "data_source",
+        "code": "missing_declaration",
+        "status": "blocked",
+        "detail": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。"
+      },
+      {
+        "field": "sampling",
+        "code": "missing_declaration",
+        "status": "blocked",
+        "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+      },
+      {
+        "field": "analysis",
+        "code": "missing_declaration",
+        "status": "blocked",
+        "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+      },
+      {
+        "field": "acceptance",
+        "code": "missing_declaration",
+        "status": "blocked",
+        "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+      },
+      {
+        "field": "resources",
+        "code": "declaration_present",
+        "status": "passed",
+        "detail": "已记录用户声明；这不等于外部事实验证。"
+      },
+      {
+        "field": "risks",
+        "code": "missing_declaration",
+        "status": "blocked",
+        "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+      },
+      {
+        "field": "reproducibility",
+        "code": "missing_declaration",
+        "status": "blocked",
+        "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+      },
+      {
+        "field": "human_roles",
+        "code": "missing_declaration",
+        "status": "blocked",
+        "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+      },
+      {
+        "field": "deliverable",
+        "code": "declaration_present",
+        "status": "passed",
+        "detail": "已记录用户声明；这不等于外部事实验证。"
+      },
+      {
+        "field": "deliverable",
+        "code": "unconfirmed_proposal",
+        "status": "blocked",
+        "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+      },
+      {
+        "field": "objective_type",
+        "code": "objective_classified",
+        "status": "passed",
+        "detail": "需要明确比较、预测、因果、探索或复现目的。"
+      },
+      {
+        "field": "resources",
+        "code": "resource_bound",
+        "status": "passed",
+        "detail": "声明可核对的资源数量、期限或硬上限。"
+      }
+    ],
+    "blockers": [
+      {
+        "field": "hypothesis",
+        "code": "missing_declaration",
+        "status": "blocked",
+        "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+      },
+      {
+        "field": "experimental_unit",
+        "code": "missing_declaration",
+        "status": "blocked",
+        "detail": "一次独立分配或观察是什么？哪些测量来自同一对象？"
+      },
+      {
+        "field": "factors",
+        "code": "missing_declaration",
+        "status": "blocked",
+        "detail": "改变哪些因素和水平，主要比较谁与谁？"
+      },
+      {
+        "field": "design",
+        "code": "missing_declaration",
+        "status": "blocked",
+        "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+      },
+      {
+        "field": "outcomes",
+        "code": "missing_declaration",
+        "status": "blocked",
+        "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+      },
+      {
+        "field": "baseline",
+        "code": "missing_declaration",
+        "status": "blocked",
+        "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+      },
+      {
+        "field": "data_source",
+        "code": "missing_declaration",
+        "status": "blocked",
+        "detail": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。"
+      },
+      {
+        "field": "sampling",
+        "code": "missing_declaration",
+        "status": "blocked",
+        "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+      },
+      {
+        "field": "analysis",
+        "code": "missing_declaration",
+        "status": "blocked",
+        "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+      },
+      {
+        "field": "acceptance",
+        "code": "missing_declaration",
+        "status": "blocked",
+        "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+      },
+      {
+        "field": "risks",
+        "code": "missing_declaration",
+        "status": "blocked",
+        "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+      },
+      {
+        "field": "reproducibility",
+        "code": "missing_declaration",
+        "status": "blocked",
+        "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+      },
+      {
+        "field": "human_roles",
+        "code": "missing_declaration",
+        "status": "blocked",
+        "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+      },
+      {
+        "field": "deliverable",
+        "code": "unconfirmed_proposal",
+        "status": "blocked",
+        "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+      }
+    ],
+    "required_fields": [
+      "research_question",
+      "objective_type",
+      "hypothesis",
+      "scope",
+      "exclusions",
+      "experimental_unit",
+      "factors",
+      "design",
+      "outcomes",
+      "baseline",
+      "data_source",
+      "sampling",
+      "analysis",
+      "acceptance",
+      "resources",
+      "risks",
+      "reproducibility",
+      "human_roles",
+      "deliverable"
+    ],
+    "scope": "planning_only",
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "readiness_meaning": "用户声明已足够形成待人类复核的计划；不表示假设、数据、功效或结论已被验证。"
+  },
+  "risks": [
+    "风险尚未声明"
+  ],
+  "out_of_scope": [
+    "预算不能由Agent增加"
+  ],
+  "scientific_claim_verified": false,
+  "execution_authorized": false,
+  "capability_legend": {
+    "implemented": "当前Harness可保存、检查或展示的规划操作，不代表步骤已执行",
+    "mock": "受支持详细工具库的显式模拟演练",
+    "manual": "需人类或另行授权/接入工具完成"
+  },
+  "approval": null,
+  "contract_hash": "d531ffda224c39c598bea137de2d3b9de3433fb7e64b95bc2ebb3950ef522426"
+}

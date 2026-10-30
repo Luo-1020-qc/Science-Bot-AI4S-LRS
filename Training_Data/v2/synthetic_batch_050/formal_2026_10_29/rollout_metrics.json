@@ -1,0 +1,62 @@
+[
+  {
+    "iteration": 1,
+    "samples": 1600,
+    "classifications": {
+      "in_progress": 1400,
+      "completed_mock_research_loop": 81,
+      "justified_stop": 117,
+      "unjustified_stop": 2
+    },
+    "external_truncations": 39,
+    "mean_step_reward": 1.2972500000000156
+  },
+  {
+    "iteration": 2,
+    "samples": 1600,
+    "classifications": {
+      "in_progress": 1515,
+      "justified_stop": 47,
+      "unjustified_stop": 4,
+      "completed_mock_research_loop": 34
+    },
+    "external_truncations": 47,
+    "mean_step_reward": 0.3720000000000062
+  },
+  {
+    "iteration": 3,
+    "samples": 1600,
+    "classifications": {
+      "in_progress": 1481,
+      "completed_mock_research_loop": 40,
+      "justified_stop": 77,
+      "unjustified_stop": 2
+    },
+    "external_truncations": 44,
+    "mean_step_reward": 0.7114375000000023
+  },
+  {
+    "iteration": 4,
+    "samples": 1600,
+    "classifications": {
+      "in_progress": 1490,
+      "completed_mock_research_loop": 44,
+      "justified_stop": 65,
+      "unjustified_stop": 1
+    },
+    "external_truncations": 48,
+    "mean_step_reward": 0.6348125000000018
+  },
+  {
+    "iteration": 5,
+    "samples": 1600,
+    "classifications": {
+      "in_progress": 1480,
+      "completed_mock_research_loop": 48,
+      "justified_stop": 69,
+      "unjustified_stop": 3
+    },
+    "external_truncations": 46,
+    "mean_step_reward": 0.6898750000000021
+  }
+]

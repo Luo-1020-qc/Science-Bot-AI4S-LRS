@@ -85,18 +85,18 @@ def check(root, git):
     key_ignored = None
     if git:
         prefix = [git, "-c", "core.excludesFile=NUL", "-c", "core.quotePath=false"]
-        for path in ("API_key_Agent.json", "RUT_Science/.venv/", "Training_Data_Darcy_CViT/v2/tool_runtime/sessions/"):
+        for path in ("API_key_Agent.json", "RUT_Science/.venv/", "Training_Data/v2/tool_runtime/sessions/", "Training_Data/v2/expert/imports/"):
             run(prefix+["check-ignore", "--no-index", path], cwd=root)
         if run(prefix+["ls-files", "--", "API_key_Agent.json"], cwd=root).strip():
             raise ValueError("Local credential file is tracked")
         key_ignored = True
     import runpy
     protected = runpy.run_path(str(root/"scripts/integrity.py"))["check_project"](root)
-    dataset = root/"Training_Data_Darcy_CViT/v2"
+    dataset = root/"Training_Data/v2"
     manifest = json.loads((dataset/"manifest.json").read_text(encoding="utf-8"))
     for path, checksum in manifest["artifact_sha256"].items():
         if sha(dataset/path) != checksum: raise ValueError("Current v2 dataset changed: "+path)
-    runtime = root/"Training_Data_Darcy_CViT/v2/tool_runtime"
+    runtime = root/"Training_Data/v2/tool_runtime"
     for record in json.loads((runtime/"source_manifest.json").read_text(encoding="utf-8")):
         if sha(runtime/record["copy"]) != record["copy_sha256"] or sha(root/"Research_Tool_Library"/record["copy"]) != record["source_sha256"]:
             raise ValueError("Original/copied detailed tool source changed")

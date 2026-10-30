@@ -1,0 +1,29 @@
+{
+  "files": {
+    "RUT_Science/rut_science/science_bot/presentation.py": {
+      "before_sha256": "a41b1b67a359273a533a83c05c96db4f4df618dc9f97d8f37e25bc3f34e41a06",
+      "sha256": "d593537082f345da3512800205e138071bd9ff58067df22bf4a592fae4cdfb2a",
+      "reason": "User requested a CityU-inspired red theme, OpenCode-style original wordmark and robot icon; presentation only"
+    },
+    "RUT_Science/rut_science/science_bot/workbench_assets/dist/index.html": {
+      "before_sha256": "e09e1414b85a5a417badabf3989c73c3b9dffdf8f0fa6de18087d81157f7d235",
+      "sha256": "af8033a982f398d8d4f4e3f1ade730a9a07afe387c1807c54f834b99b3047e27",
+      "reason": "User requested a CityU-inspired red theme, OpenCode-style original wordmark and robot icon; presentation only"
+    },
+    "RUT_Science/rut_science/science_bot/workbench_assets/dist/styles.css": {
+      "before_sha256": "ea5591effed198a1f652465be5642bb4f6c9a07eb3978d4f4306fad95997292e",
+      "sha256": "1074bd63e0ecfcbffab4538ac15bbb9787345ae3b4f7bb4333176e6c70c39da8",
+      "reason": "User requested a CityU-inspired red theme, OpenCode-style original wordmark and robot icon; presentation only"
+    },
+    "examples/interfaces/browser.html": {
+      "before_sha256": "319c98c39bf9e83d92f69a0d27b733029c5794bb2a5ac9cc7a86c0469988177a",
+      "sha256": "2c6b1e72182f64f0c3a5677d5eb4285e268b2800965ef9bd9d81c6e914e01cb5",
+      "reason": "User requested a CityU-inspired red theme, OpenCode-style original wordmark and robot icon; presentation only"
+    },
+    "examples/interfaces/delivery.html": {
+      "before_sha256": "6e7b76df6b56f52fcb53a5b174e29f8832fd7f581d99744952fea1f82aaa9e80",
+      "sha256": "bc038ff9ae1a7e69f7e178488b33848de828320ca0e9572504eacc47b8c00c28",
+      "reason": "User requested a CityU-inspired red theme, OpenCode-style original wordmark and robot icon; presentation only"
+    }
+  }
+}

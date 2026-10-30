@@ -1,0 +1,6 @@
+{
+  "version": "planning_history_privacy_before_v1",
+  "file": "RUT_Science/rut_science/science_bot/general/conversation.py",
+  "before_sha256": "b7b3db664572d257e7624aaa0854d5882e684ac686bd4da36af459833b96a5d0",
+  "dynamic_runtime_manifest_sha256": "ad148edea96fba09ce6721f98daf24595e4d7825e4f81c4aa4101e18ec442052"
+}

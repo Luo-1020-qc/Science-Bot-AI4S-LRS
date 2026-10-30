@@ -1,0 +1,838 @@
+[
+  {
+    "turn": 1,
+    "actor": "scripted_respondent",
+    "input": "我想预测新合金样品的室温屈服强度，帮我设计评估，先厘清适用范围和数据划分。",
+    "answer": "正在澄清\n\n这次研究主要想达到什么目的？\n1. 预测未见样本\n2. 比较方案或处理\n3. 估计因果效应\n4. 探索问题或机制\n5. 复现既有结论\n6. 暂不确定\n7. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+    "question": {
+      "field": "objective_type",
+      "kind": "missing",
+      "question": "这次研究主要想达到什么目的？",
+      "rationale": "不同目的需要不同证据，预测准确不能自动证明因果。",
+      "options": [
+        {
+          "label": "预测未见样本",
+          "value": "prediction",
+          "action": "declare",
+          "id": "f6c91fd3e579"
+        },
+        {
+          "label": "比较方案或处理",
+          "value": "comparison",
+          "action": "declare",
+          "id": "3ee21547a4e9"
+        },
+        {
+          "label": "估计因果效应",
+          "value": "causal",
+          "action": "declare",
+          "id": "de52e8929a44"
+        },
+        {
+          "label": "探索问题或机制",
+          "value": "exploration",
+          "action": "declare",
+          "id": "5bc5b5195816"
+        },
+        {
+          "label": "复现既有结论",
+          "value": "replication",
+          "action": "declare",
+          "id": "d5dc769a0570"
+        },
+        {
+          "label": "暂不确定",
+          "value": "未知",
+          "action": "unknown",
+          "id": "2c3af7fa609c"
+        },
+        {
+          "label": "其他，我来补充",
+          "value": "",
+          "action": "custom",
+          "id": "47de6eddb129"
+        }
+      ],
+      "origin": "template",
+      "allow_accept": false,
+      "choice_policy": {
+        "intent": "prediction",
+        "origin": "trained_context_match",
+        "policy_hash": "6b7d865a492eaba9c5db239e5f5eaa833184d3b21fe3496f358d525504207ded"
+      },
+      "choice_id": "6728e8547e49ddb5",
+      "choice_plan_hash": "6dd2aeadc035b4f8196fa3cdfc1552a4312352b20bbfea4a18b5cca81ac11b30"
+    },
+    "question_unnecessary": false,
+    "error": false,
+    "before_hash": null,
+    "after_hash": "6dd2aeadc035b4f8196fa3cdfc1552a4312352b20bbfea4a18b5cca81ac11b30",
+    "changed_field_count": 1,
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "resources": {
+      "llm_requests": 0,
+      "llm_tokens": 0,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 12,
+        "llm_tokens": 60000,
+        "tool_calls": 40,
+        "read_bytes": 18000
+      }
+    }
+  },
+  {
+    "turn": 2,
+    "actor": "scripted_respondent",
+    "input": "研究目的：prediction\n研究边界：仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺。\n本轮不回答的问题：不将预测相关性解释为成分因果作用，不外推新工艺或真实材料性能。",
+    "answer": "正在澄清\n\n你希望按什么单位比较或汇总？\n1. 按独立对象汇总\n2. 按同一对象配对比较\n3. 按来源或批次分组处理\n4. 暂不确定\n5. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+    "question": {
+      "field": "experimental_unit",
+      "kind": "missing",
+      "question": "你希望按什么单位比较或汇总？",
+      "rationale": "数据行、网格点和随机种子不能自动当作独立重复。",
+      "options": [
+        {
+          "label": "按独立对象汇总",
+          "value": "每个独立研究对象作为推断单位，同一对象的多次测量先在对象内汇总。",
+          "action": "declare",
+          "id": "7f4f77dbe821"
+        },
+        {
+          "label": "按同一对象配对比较",
+          "value": "同一研究对象在候选条件间配对，技术重复不作为额外独立单位。",
+          "action": "declare",
+          "id": "984a513ece30"
+        },
+        {
+          "label": "按来源或批次分组处理",
+          "value": "明确来源或批次的共享关系，按对象或区组处理相关测量，不把数据行直接当作独立重复。",
+          "action": "declare",
+          "id": "1da38a7a20d9"
+        },
+        {
+          "label": "暂不确定",
+          "value": "未知",
+          "action": "unknown",
+          "id": "2c3af7fa609c"
+        },
+        {
+          "label": "其他，我来补充",
+          "value": "",
+          "action": "custom",
+          "id": "47de6eddb129"
+        }
+      ],
+      "origin": "template",
+      "allow_accept": false,
+      "choice_policy": {
+        "intent": "prediction",
+        "origin": "user_declared",
+        "policy_hash": null
+      },
+      "choice_id": "2ca8680bb9aa5847",
+      "choice_plan_hash": "e8a795837ed0f7f40cbeb78e2a4c3d06d949daf04bd14bb299b841b2353a2309"
+    },
+    "question_unnecessary": false,
+    "error": false,
+    "before_hash": "6dd2aeadc035b4f8196fa3cdfc1552a4312352b20bbfea4a18b5cca81ac11b30",
+    "after_hash": "e8a795837ed0f7f40cbeb78e2a4c3d06d949daf04bd14bb299b841b2353a2309",
+    "changed_field_count": 3,
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "resources": {
+      "llm_requests": 0,
+      "llm_tokens": 0,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 12,
+        "llm_tokens": 60000,
+        "tool_calls": 40,
+        "read_bytes": 18000
+      }
+    }
+  },
+  {
+    "turn": 3,
+    "actor": "scripted_respondent",
+    "input": "实验与推断单位：同一合金批次内测量相关；以完整批次为隔离、重采样与推断单位，技术重复先按样品汇总。\n设计结构：prediction\n基线与公平比较：均值预测与线性回归为基线，候选树模型共享相同批次划分、特征和调参预算。",
+    "answer": "正在澄清\n\n主要指标是什么、哪个方向更好、怎样在实验单位上汇总？\n1. 以预测误差为主\n2. 以任务成功比例为主\n3. 以资源成本为主\n4. 暂不确定\n5. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+    "question": {
+      "field": "outcomes",
+      "kind": "missing",
+      "question": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？",
+      "rationale": "训练损失、测试指标、统计显著和实际重要性不能混用。",
+      "options": [
+        {
+          "label": "以预测误差为主",
+          "value": "按独立单位汇总预测误差均值，越低越好；成本作为辅助指标。",
+          "action": "declare",
+          "id": "3db0c93bfca3"
+        },
+        {
+          "label": "以任务成功比例为主",
+          "value": "按独立单位汇总任务成功比例，越高越好，失败和不确定结果同样记录。",
+          "action": "declare",
+          "id": "db8d5f4eb927"
+        },
+        {
+          "label": "以资源成本为主",
+          "value": "按独立单位汇总运行时间或资源成本，越低越好，同时报告质量变化。",
+          "action": "declare",
+          "id": "076da5faf0ed"
+        },
+        {
+          "label": "暂不确定",
+          "value": "未知",
+          "action": "unknown",
+          "id": "2c3af7fa609c"
+        },
+        {
+          "label": "其他，我来补充",
+          "value": "",
+          "action": "custom",
+          "id": "47de6eddb129"
+        }
+      ],
+      "origin": "template",
+      "allow_accept": false,
+      "choice_policy": {
+        "intent": "prediction",
+        "origin": "user_declared",
+        "policy_hash": null
+      },
+      "choice_id": "a36599244bca6c8d",
+      "choice_plan_hash": "618247ffc33116081ed766154ed4cdc86e2128b430a239d71b333239406e4eed"
+    },
+    "question_unnecessary": false,
+    "error": false,
+    "before_hash": "e8a795837ed0f7f40cbeb78e2a4c3d06d949daf04bd14bb299b841b2353a2309",
+    "after_hash": "618247ffc33116081ed766154ed4cdc86e2128b430a239d71b333239406e4eed",
+    "changed_field_count": 3,
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "resources": {
+      "llm_requests": 0,
+      "llm_tokens": 0,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 12,
+        "llm_tokens": 60000,
+        "tool_calls": 40,
+        "read_bytes": 18000
+      }
+    }
+  },
+  {
+    "turn": 4,
+    "actor": "scripted_respondent",
+    "input": "主要响应与测量：先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa。\n分析与不确定性：验证集仅选择超参数，冻结后只评一次最终测试；以批次为单位 bootstrap 报告 MAE 差与不确定区间。\n验收和停止规则：逐项交付最终测试误差、批次区间、基线和失败日志；阴性或不确定结果照样报告；批次无法隔离或4小时上限即停止。",
+    "answer": "正在澄清\n\n使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。\n1. 使用已有数据并登记版本\n2. 使用明确选择的公开数据\n3. 先用合成数据验证流程\n4. 暂不确定\n5. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+    "question": {
+      "field": "data_source",
+      "kind": "missing",
+      "question": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。",
+      "rationale": "用户声明与实测证据分开记录，不凭空补造先导数据。",
+      "options": [
+        {
+          "label": "使用已有数据并登记版本",
+          "value": "由研究者明确选择已有数据，登记来源与版本；训练、验证和最终测试分别使用，按对象隔离以防泄漏。",
+          "action": "declare",
+          "id": "032ed53fff82"
+        },
+        {
+          "label": "使用明确选择的公开数据",
+          "value": "由研究者明确选择公开数据及版本，记录获取方式，按对象划分训练、验证和最终测试以防泄漏。",
+          "action": "declare",
+          "id": "f34e61fe0b83"
+        },
+        {
+          "label": "先用合成数据验证流程",
+          "value": "本轮使用显式标记的合成数据检查流程，不能据此代替真实应用结论。",
+          "action": "declare",
+          "id": "dd099ed4c277"
+        },
+        {
+          "label": "暂不确定",
+          "value": "未知",
+          "action": "unknown",
+          "id": "2c3af7fa609c"
+        },
+        {
+          "label": "其他，我来补充",
+          "value": "",
+          "action": "custom",
+          "id": "47de6eddb129"
+        }
+      ],
+      "origin": "template",
+      "allow_accept": false,
+      "choice_policy": {
+        "intent": "prediction",
+        "origin": "user_declared",
+        "policy_hash": null
+      },
+      "choice_id": "02a4c3aa2c122305",
+      "choice_plan_hash": "0cbf870b543cc2a1f8f434765c56efdeb7b7439943f8d3fd609b2b5c8cd1edb5"
+    },
+    "question_unnecessary": false,
+    "error": false,
+    "before_hash": "618247ffc33116081ed766154ed4cdc86e2128b430a239d71b333239406e4eed",
+    "after_hash": "0cbf870b543cc2a1f8f434765c56efdeb7b7439943f8d3fd609b2b5c8cd1edb5",
+    "changed_field_count": 3,
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "resources": {
+      "llm_requests": 0,
+      "llm_tokens": 0,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 12,
+        "llm_tokens": 60000,
+        "tool_calls": 40,
+        "read_bytes": 18000
+      }
+    }
+  },
+  {
+    "turn": 5,
+    "actor": "scripted_respondent",
+    "input": "数据与证据来源：工程诊断用 synthetic_alloy_v1；按合金批次分组隔离训练、验证和最终测试，防止技术重复泄漏。\n样本与重复依据：固定预算先导，先核查批次标识和可行划分，不宣称统计功效保证。",
+    "answer": "正在澄清\n\n可用多少时间、计算、实验次数或经费？哪些上限不可突破？\n1. 先由我确认硬上限\n2. 沿用已声明的预算\n3. 先缩小目标再核算\n4. 暂不确定\n5. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+    "question": {
+      "field": "resources",
+      "kind": "missing",
+      "question": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？",
+      "rationale": "预算是计划前提，不能由 Agent 为过检而擅自提高。",
+      "options": [
+        {
+          "label": "先由我确认硬上限",
+          "value": "未知",
+          "action": "unknown",
+          "id": "8dbd69479c29"
+        },
+        {
+          "label": "沿用已声明的预算",
+          "value": "沿用研究者此前明确声明的硬预算，达到上限停止，不为追求正结果增加运行。",
+          "action": "declare",
+          "id": "a703a3761a0c"
+        },
+        {
+          "label": "先缩小目标再核算",
+          "value": "先把研究收缩到可行的先导目标，核算资源后由研究者确认硬上限。",
+          "action": "declare",
+          "id": "644d67e34a74"
+        },
+        {
+          "label": "暂不确定",
+          "value": "未知",
+          "action": "unknown",
+          "id": "2c3af7fa609c"
+        },
+        {
+          "label": "其他，我来补充",
+          "value": "",
+          "action": "custom",
+          "id": "47de6eddb129"
+        }
+      ],
+      "origin": "template",
+      "allow_accept": false,
+      "choice_policy": {
+        "intent": "prediction",
+        "origin": "user_declared",
+        "policy_hash": null
+      },
+      "choice_id": "fecbcc21fff0e3d5",
+      "choice_plan_hash": "762e3599445621bb0e8a7de5441b911afa7ba18cc980ab952ba5c97aba84eb23"
+    },
+    "question_unnecessary": false,
+    "error": false,
+    "before_hash": "0cbf870b543cc2a1f8f434765c56efdeb7b7439943f8d3fd609b2b5c8cd1edb5",
+    "after_hash": "762e3599445621bb0e8a7de5441b911afa7ba18cc980ab952ba5c97aba84eb23",
+    "changed_field_count": 2,
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "resources": {
+      "llm_requests": 0,
+      "llm_tokens": 0,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 12,
+        "llm_tokens": 60000,
+        "tool_calls": 40,
+        "read_bytes": 18000
+      }
+    }
+  },
+  {
+    "turn": 6,
+    "actor": "scripted_respondent",
+    "input": "资源边界：仅规划，后续先导最多8次拟合、4小时上限；本轮不执行实验。\n风险与未决条件：缺失批次标识、量纲不一致或样本跨划分泄漏时停止交还研究者核实。\n复现记录：保存批次划分、数据版本、代码版本、种子、配置和全部失败记录。\n人类职责：学生确认预测范围，材料负责人复核批次和量纲，研究者负责结论与执行授权。\n交付物：预测评估设计、防泄漏清单、基线对照与验收表、复现记录模板。",
+    "answer": "规划可复核\n\n实验设计草案（规划，尚未执行）\n\n问题与结论边界\n- 研究问题：我想预测新合金样品的室温屈服强度，帮我设计评估，先厘清适用范围和数据划分。\n- 研究目的：预测\n- 研究边界：仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺\n- 本轮不回答的问题：不将预测相关性解释为成分因果作用，不外推新工艺或真实材料性能\n\n实验设计与主要对比\n- 设计结构：预测评估\n- 实验与推断单位：同一合金批次内测量相关；以完整批次为隔离、重采样与推断单位，技术重复先按样品汇总\n- 基线与公平比较：均值预测与线性回归为基线，候选树模型共享相同批次划分、特征和调参预算\n\n数据、样本与分配\n- 数据与证据来源：工程诊断用 synthetic_alloy_v1；按合金批次分组隔离训练、验证和最终测试，防止技术重复泄漏\n- 样本与重复依据：固定预算先导，先核查批次标识和可行划分，不宣称统计功效保证\n\n指标与分析\n- 主要响应与测量：先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa\n- 分析与不确定性：验证集仅选择超参数，冻结后只评一次最终测试；以批次为单位 bootstrap 报告 MAE 差与不确定区间\n\n验收、阴性结果与停止\n- 验收和停止规则：逐项交付最终测试误差、批次区间、基线和失败日志；阴性或不确定结果照样报告；批次无法隔离或4小时上限即停止\n- 资源边界：仅规划，后续先导最多8次拟合、4小时上限；本轮不执行实验\n- 风险与未决条件：缺失批次标识、量纲不一致或样本跨划分泄漏时停止交还研究者核实\n\n复现、交付与责任\n- 复现记录：保存批次划分、数据版本、代码版本、种子、配置和全部失败记录\n- 交付物：预测评估设计、防泄漏清单、基线对照与验收表、复现记录模板\n- 人类职责：学生确认预测范围，材料负责人复核批次和量纲，研究者负责结论与执行授权\n\n待核对事项\n- 样本与重复依据：本计划不自动计算或证明功效；参数来源和计算须单独复核。\n\n已显式选择 0 个来源片段；声明和出处仍需核实。\n核对下列设计、方法假设与责任，再决定是否确认当前版本。\n\n确认上述规划用 /plan approve 0c655dca459a505716570c20eedd80c05640d654a8420d91662692a2f0fc7545。确认只保存规划版本。",
+    "question": null,
+    "question_unnecessary": false,
+    "error": false,
+    "before_hash": "762e3599445621bb0e8a7de5441b911afa7ba18cc980ab952ba5c97aba84eb23",
+    "after_hash": "0c655dca459a505716570c20eedd80c05640d654a8420d91662692a2f0fc7545",
+    "changed_field_count": 5,
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "resources": {
+      "llm_requests": 0,
+      "llm_tokens": 0,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 12,
+        "llm_tokens": 60000,
+        "tool_calls": 40,
+        "read_bytes": 18000
+      }
+    }
+  },
+  {
+    "turn": 7,
+    "actor": "scripted_respondent",
+    "input": "/plan revise 研究问题：改为比较线性回归与树模型在相同合金批次上的预测误差，不声称因果。\n研究目的：comparison\n设计结构：paired",
+    "answer": "正在澄清\n\n关于研究边界，是否按当前理解继续？\n1. 按这个理解继续：仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺\n2. 暂不确定\n3. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+    "question": {
+      "field": "scope",
+      "kind": "stale",
+      "question": "关于研究边界，是否按当前理解继续？",
+      "rationale": "把对象范围写清楚，避免从一个数据集推广到所有场景。",
+      "options": [
+        {
+          "label": "按这个理解继续：仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺",
+          "value": "仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺",
+          "action": "accept",
+          "id": "202169a4926b"
+        },
+        {
+          "label": "暂不确定",
+          "value": "未知",
+          "action": "unknown",
+          "id": "2c3af7fa609c"
+        },
+        {
+          "label": "其他，我来补充",
+          "value": "",
+          "action": "custom",
+          "id": "47de6eddb129"
+        }
+      ],
+      "origin": "template",
+      "allow_accept": false,
+      "choice_policy": {
+        "intent": "comparison",
+        "origin": "user_declared",
+        "policy_hash": null
+      },
+      "choice_id": "1c5af2186a3c0288",
+      "choice_plan_hash": "1fea5c2d15d287395b358abe87b9593d5332f470ab2935ea5c2567a8a1395e8f"
+    },
+    "question_unnecessary": false,
+    "error": false,
+    "before_hash": "0c655dca459a505716570c20eedd80c05640d654a8420d91662692a2f0fc7545",
+    "after_hash": "1fea5c2d15d287395b358abe87b9593d5332f470ab2935ea5c2567a8a1395e8f",
+    "changed_field_count": 3,
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "resources": {
+      "llm_requests": 0,
+      "llm_tokens": 0,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 12,
+        "llm_tokens": 60000,
+        "tool_calls": 40,
+        "read_bytes": 18000
+      }
+    }
+  },
+  {
+    "turn": 8,
+    "actor": "scripted_respondent",
+    "input": "/plan revise 待检验命题：树模型能否在限定批次范围内降低相对线性回归的平均预测误差？\n研究边界：仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺。",
+    "answer": "正在澄清\n\n关于主要响应与测量，是否按当前理解继续？\n1. 按这个理解继续：先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa\n2. 暂不确定\n3. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+    "question": {
+      "field": "outcomes",
+      "kind": "stale",
+      "question": "关于主要响应与测量，是否按当前理解继续？",
+      "rationale": "训练损失、测试指标、统计显著和实际重要性不能混用。",
+      "options": [
+        {
+          "label": "按这个理解继续：先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa",
+          "value": "先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa",
+          "action": "accept",
+          "id": "82fb8ef04e0c"
+        },
+        {
+          "label": "暂不确定",
+          "value": "未知",
+          "action": "unknown",
+          "id": "2c3af7fa609c"
+        },
+        {
+          "label": "其他，我来补充",
+          "value": "",
+          "action": "custom",
+          "id": "47de6eddb129"
+        }
+      ],
+      "origin": "template",
+      "allow_accept": false,
+      "choice_policy": {
+        "intent": "comparison",
+        "origin": "user_declared",
+        "policy_hash": null
+      },
+      "choice_id": "c3e14252d7a5faea",
+      "choice_plan_hash": "6ce0bf3e9478446187759463eeccc99c056562f7443be36d826f559fe893b3b3"
+    },
+    "question_unnecessary": false,
+    "error": false,
+    "before_hash": "1fea5c2d15d287395b358abe87b9593d5332f470ab2935ea5c2567a8a1395e8f",
+    "after_hash": "6ce0bf3e9478446187759463eeccc99c056562f7443be36d826f559fe893b3b3",
+    "changed_field_count": 2,
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "resources": {
+      "llm_requests": 0,
+      "llm_tokens": 0,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 12,
+        "llm_tokens": 60000,
+        "tool_calls": 40,
+        "read_bytes": 18000
+      }
+    }
+  },
+  {
+    "turn": 9,
+    "actor": "scripted_respondent",
+    "input": "/plan revise 主要响应与测量：先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa。\n分析与不确定性：估计同批次树模型减线性回归的 MAE 均值差，按完整批次 bootstrap 报告不确定区间。\n验收和停止规则：逐项交付最终测试误差、批次区间、基线和失败日志；阴性或不确定结果照样报告；批次无法隔离或4小时上限即停止。",
+    "answer": "正在澄清\n\n关于实验与推断单位，是否按当前理解继续？\n1. 按这个理解继续：同一合金批次内测量相关；以完整批次为隔离、重采样与推断单位，技术重复先按样品汇总\n2. 暂不确定\n3. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+    "question": {
+      "field": "experimental_unit",
+      "kind": "stale",
+      "question": "关于实验与推断单位，是否按当前理解继续？",
+      "rationale": "数据行、网格点和随机种子不能自动当作独立重复。",
+      "options": [
+        {
+          "label": "按这个理解继续：同一合金批次内测量相关；以完整批次为隔离、重采样与推断单位，技术重复先按样品汇总",
+          "value": "同一合金批次内测量相关；以完整批次为隔离、重采样与推断单位，技术重复先按样品汇总",
+          "action": "accept",
+          "id": "a912d1ce92da"
+        },
+        {
+          "label": "暂不确定",
+          "value": "未知",
+          "action": "unknown",
+          "id": "2c3af7fa609c"
+        },
+        {
+          "label": "其他，我来补充",
+          "value": "",
+          "action": "custom",
+          "id": "47de6eddb129"
+        }
+      ],
+      "origin": "template",
+      "allow_accept": false,
+      "choice_policy": {
+        "intent": "comparison",
+        "origin": "user_declared",
+        "policy_hash": null
+      },
+      "choice_id": "d71be9509d625c01",
+      "choice_plan_hash": "61430407c98b9f6c19b030b47901f4b1c8d823d0e471beefe038fd1cccd44c71"
+    },
+    "question_unnecessary": false,
+    "error": false,
+    "before_hash": "6ce0bf3e9478446187759463eeccc99c056562f7443be36d826f559fe893b3b3",
+    "after_hash": "61430407c98b9f6c19b030b47901f4b1c8d823d0e471beefe038fd1cccd44c71",
+    "changed_field_count": 3,
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "resources": {
+      "llm_requests": 0,
+      "llm_tokens": 0,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 12,
+        "llm_tokens": 60000,
+        "tool_calls": 40,
+        "read_bytes": 18000
+      }
+    }
+  },
+  {
+    "turn": 10,
+    "actor": "scripted_respondent",
+    "input": "/plan revise 实验与推断单位：完整合金批次为推断单位，同一批次两模型配对；批次内样品不视为独立批次。\n因素与对比：线性回归与树模型两个水平，主要比较树模型减线性回归。\n基线与公平比较：均值预测与线性回归为基线，候选树模型共享相同批次划分、特征和调参预算。",
+    "answer": "正在澄清\n\n关于样本与重复依据，是否按当前理解继续？\n1. 按这个理解继续：固定预算先导，先核查批次标识和可行划分，不宣称统计功效保证\n2. 暂不确定\n3. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+    "question": {
+      "field": "sampling",
+      "kind": "stale",
+      "question": "关于样本与重复依据，是否按当前理解继续？",
+      "rationale": "可以先规划先导阶段，不能用模板默认方差保证功效。",
+      "options": [
+        {
+          "label": "按这个理解继续：固定预算先导，先核查批次标识和可行划分，不宣称统计功效保证",
+          "value": "固定预算先导，先核查批次标识和可行划分，不宣称统计功效保证",
+          "action": "accept",
+          "id": "dc50e5821769"
+        },
+        {
+          "label": "暂不确定",
+          "value": "未知",
+          "action": "unknown",
+          "id": "2c3af7fa609c"
+        },
+        {
+          "label": "其他，我来补充",
+          "value": "",
+          "action": "custom",
+          "id": "47de6eddb129"
+        }
+      ],
+      "origin": "template",
+      "allow_accept": false,
+      "choice_policy": {
+        "intent": "comparison",
+        "origin": "user_declared",
+        "policy_hash": null
+      },
+      "choice_id": "4e1c7b22e686ab5d",
+      "choice_plan_hash": "a9c5b163aa753e387bde6c260e3063c831d4c3fda7e89e57ecf3edd4d2c53bcb"
+    },
+    "question_unnecessary": false,
+    "error": false,
+    "before_hash": "61430407c98b9f6c19b030b47901f4b1c8d823d0e471beefe038fd1cccd44c71",
+    "after_hash": "a9c5b163aa753e387bde6c260e3063c831d4c3fda7e89e57ecf3edd4d2c53bcb",
+    "changed_field_count": 3,
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "resources": {
+      "llm_requests": 0,
+      "llm_tokens": 0,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 12,
+        "llm_tokens": 60000,
+        "tool_calls": 40,
+        "read_bytes": 18000
+      }
+    }
+  },
+  {
+    "turn": 11,
+    "actor": "scripted_respondent",
+    "input": "/plan revise 样本与重复依据：固定预算先导，先核查批次标识和可行划分，不宣称统计功效保证。\n分配与偏差控制：在每个批次内配对评估两模型，随机排列运行顺序，保留种子和实际记录。",
+    "answer": "正在澄清\n\n关于设计结构，是否按当前理解继续？\n1. 按这个理解继续：paired\n2. 暂不确定\n3. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+    "question": {
+      "field": "design",
+      "kind": "stale",
+      "question": "关于设计结构，是否按当前理解继续？",
+      "rationale": "设计要与单位关系匹配；工具不支持的设计可以形成待人工实现的计划。",
+      "options": [
+        {
+          "label": "按这个理解继续：paired",
+          "value": "paired",
+          "action": "accept",
+          "id": "99a12c443f0d"
+        },
+        {
+          "label": "暂不确定",
+          "value": "未知",
+          "action": "unknown",
+          "id": "2c3af7fa609c"
+        },
+        {
+          "label": "其他，我来补充",
+          "value": "",
+          "action": "custom",
+          "id": "47de6eddb129"
+        }
+      ],
+      "origin": "template",
+      "allow_accept": false,
+      "choice_policy": {
+        "intent": "comparison",
+        "origin": "user_declared",
+        "policy_hash": null
+      },
+      "choice_id": "e32e3d4978387976",
+      "choice_plan_hash": "083b964a12f18f25c7f2a84e5de263aa0f2a5e96d7001b498ebc15f4550396bd"
+    },
+    "question_unnecessary": false,
+    "error": false,
+    "before_hash": "a9c5b163aa753e387bde6c260e3063c831d4c3fda7e89e57ecf3edd4d2c53bcb",
+    "after_hash": "083b964a12f18f25c7f2a84e5de263aa0f2a5e96d7001b498ebc15f4550396bd",
+    "changed_field_count": 2,
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "resources": {
+      "llm_requests": 0,
+      "llm_tokens": 0,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 12,
+        "llm_tokens": 60000,
+        "tool_calls": 40,
+        "read_bytes": 18000
+      }
+    }
+  },
+  {
+    "turn": 12,
+    "actor": "scripted_respondent",
+    "input": "/plan revise 设计结构：paired",
+    "answer": "正在澄清\n\n关于分析与不确定性，是否按当前理解继续？\n1. 按这个理解继续：估计同批次树模型减线性回归的 MAE 均值差，按完整批次 bootstrap 报告不确定区间\n2. 暂不确定\n3. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+    "question": {
+      "field": "analysis",
+      "kind": "stale",
+      "question": "关于分析与不确定性，是否按当前理解继续？",
+      "rationale": "按预先声明的模型分析，不反复改方法直到显著。",
+      "options": [
+        {
+          "label": "按这个理解继续：估计同批次树模型减线性回归的 MAE 均值差，按完整批次 bootstrap 报告不确定区间",
+          "value": "估计同批次树模型减线性回归的 MAE 均值差，按完整批次 bootstrap 报告不确定区间",
+          "action": "accept",
+          "id": "b4207d626d75"
+        },
+        {
+          "label": "暂不确定",
+          "value": "未知",
+          "action": "unknown",
+          "id": "2c3af7fa609c"
+        },
+        {
+          "label": "其他，我来补充",
+          "value": "",
+          "action": "custom",
+          "id": "47de6eddb129"
+        }
+      ],
+      "origin": "template",
+      "allow_accept": false,
+      "choice_policy": {
+        "intent": "comparison",
+        "origin": "user_declared",
+        "policy_hash": null
+      },
+      "choice_id": "a418a52991363801",
+      "choice_plan_hash": "62fdf500bc146d0b44ab05fa373785cbad13874232690ffbb7a64c0e86f9880f"
+    },
+    "question_unnecessary": false,
+    "error": false,
+    "before_hash": "083b964a12f18f25c7f2a84e5de263aa0f2a5e96d7001b498ebc15f4550396bd",
+    "after_hash": "62fdf500bc146d0b44ab05fa373785cbad13874232690ffbb7a64c0e86f9880f",
+    "changed_field_count": 1,
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "resources": {
+      "llm_requests": 0,
+      "llm_tokens": 0,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 12,
+        "llm_tokens": 60000,
+        "tool_calls": 40,
+        "read_bytes": 18000
+      }
+    }
+  },
+  {
+    "turn": 13,
+    "actor": "scripted_respondent",
+    "input": "/plan revise 分析与不确定性：估计同批次树模型减线性回归的 MAE 均值差，按完整批次 bootstrap 报告不确定区间。\n验收和停止规则：逐项交付最终测试误差、批次区间、基线和失败日志；阴性或不确定结果照样报告；批次无法隔离或4小时上限即停止。",
+    "answer": "规划可复核\n\n实验设计草案（规划，尚未执行）\n\n问题与结论边界\n- 研究问题：改为比较线性回归与树模型在相同合金批次上的预测误差，不声称因果\n- 研究目的：比较\n- 待检验命题：树模型能否在限定批次范围内降低相对线性回归的平均预测误差？\n- 研究边界：仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺\n- 本轮不回答的问题：不将预测相关性解释为成分因果作用，不外推新工艺或真实材料性能\n\n实验设计与主要对比\n- 设计结构：配对\n- 实验与推断单位：完整合金批次为推断单位，同一批次两模型配对；批次内样品不视为独立批次\n- 因素与对比：线性回归与树模型两个水平，主要比较树模型减线性回归\n- 基线与公平比较：均值预测与线性回归为基线，候选树模型共享相同批次划分、特征和调参预算\n\n数据、样本与分配\n- 数据与证据来源：工程诊断用 synthetic_alloy_v1；按合金批次分组隔离训练、验证和最终测试，防止技术重复泄漏\n- 样本与重复依据：固定预算先导，先核查批次标识和可行划分，不宣称统计功效保证\n- 分配与偏差控制：在每个批次内配对评估两模型，随机排列运行顺序，保留种子和实际记录\n\n指标与分析\n- 主要响应与测量：先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa\n- 分析与不确定性：估计同批次树模型减线性回归的 MAE 均值差，按完整批次 bootstrap 报告不确定区间\n\n验收、阴性结果与停止\n- 验收和停止规则：逐项交付最终测试误差、批次区间、基线和失败日志；阴性或不确定结果照样报告；批次无法隔离或4小时上限即停止\n- 资源边界：仅规划，后续先导最多8次拟合、4小时上限；本轮不执行实验\n- 风险与未决条件：缺失批次标识、量纲不一致或样本跨划分泄漏时停止交还研究者核实\n\n复现、交付与责任\n- 复现记录：保存批次划分、数据版本、代码版本、种子、配置和全部失败记录\n- 交付物：预测评估设计、防泄漏清单、基线对照与验收表、复现记录模板\n- 人类职责：学生确认预测范围，材料负责人复核批次和量纲，研究者负责结论与执行授权\n\n待核对事项\n- 样本与重复依据：本计划不自动计算或证明功效；参数来源和计算须单独复核。\n\n已显式选择 0 个来源片段；声明和出处仍需核实。\n核对下列设计、方法假设与责任，再决定是否确认当前版本。\n\n确认上述规划用 /plan approve 9e357c993b6ffa66f2de4f42642449c2921c97d044f00d729529a40817328554。确认只保存规划版本。",
+    "question": null,
+    "question_unnecessary": false,
+    "error": false,
+    "before_hash": "62fdf500bc146d0b44ab05fa373785cbad13874232690ffbb7a64c0e86f9880f",
+    "after_hash": "9e357c993b6ffa66f2de4f42642449c2921c97d044f00d729529a40817328554",
+    "changed_field_count": 2,
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "resources": {
+      "llm_requests": 0,
+      "llm_tokens": 0,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 12,
+        "llm_tokens": 60000,
+        "tool_calls": 40,
+        "read_bytes": 18000
+      }
+    }
+  }
+]

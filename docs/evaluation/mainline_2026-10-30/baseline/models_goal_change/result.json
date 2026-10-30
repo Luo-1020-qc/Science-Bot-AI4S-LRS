@@ -1,0 +1,43 @@
+{
+  "id": "models_goal_change",
+  "root_group": "implementer_synthetic_models_v1",
+  "mechanism": "goal_change",
+  "metrics": {
+    "outcome": "reviewable_design",
+    "expected_outcome_met": true,
+    "critical_missing": [],
+    "answer_mismatches": [],
+    "question_count": 9,
+    "unnecessary_question_turns": [],
+    "no_progress_question_turns": [],
+    "multi_field_answer_turns": 10,
+    "host_violation_turns": [],
+    "ready": true,
+    "blocker_fields": [],
+    "all_steps_unexecuted": true,
+    "automatic_design_readout": true,
+    "semantic_quality_human_rated": false,
+    "researcher_understanding_measured": false
+  },
+  "resources": {
+    "llm_requests": 0,
+    "llm_tokens": 0,
+    "tool_attempts": 0,
+    "limits": {
+      "llm_requests": 12,
+      "llm_tokens": 60000,
+      "tool_calls": 40,
+      "read_bytes": 18000
+    }
+  },
+  "remaining_events": [],
+  "selected_evidence_count": 0,
+  "artifacts": {
+    "delivery.html": "a139285bb9e06824e4036fc2779059633703394769a744a7cbbb4bdd39158fb2",
+    "delivery.md": "9ae40a138cc19936dd3ec48e2c8f23c67ecf831e550305cad4f4d839453c13e5",
+    "final_state.json": "a17618d30fb5c0d0077fb8aa3d0a92002ad78de0d5b20c916ec95f3ce3118c3b",
+    "plan.json": "e30577f540cf7f522ed67ea08c9468f09ba4dc52f02d6acc0484e21edc5f99d9",
+    "plan.md": "489e7ddb9a163ee41ae2e759389216020d1bb1e2c68965c0cdd16db7c8ce08cc",
+    "trajectory.json": "ce6885fbc00eb993c6559ece9fcdb117e94d4dad2af32056ecd7681469f2c371"
+  }
+}

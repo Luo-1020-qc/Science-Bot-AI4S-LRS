@@ -1,0 +1,95 @@
+{
+  "schema_version": "clarification_evaluation_v1",
+  "provenance": "New implementer-authored synthetic scenarios, separate from source_A/RL data and development examples; not independent expert labels or blinded human evaluation.",
+  "cases": [
+    {
+      "id": "river_forecast_holdout",
+      "answer": "洪水预测要服务未见流域，历史水位来自同一测站的连续时间记录。",
+      "facts": {"research_question": "比较洪水预测器在未见流域上的误差。", "objective_type": "prediction", "scope": "仅限声明测站的历史记录。", "experimental_unit": "测站内连续时间记录共享来源，不假定逐行独立。", "design": "prediction", "data_source": "同一测站的连续历史水位，随机按行划分训练与测试。", "analysis": "估计测试误差均值及不确定区间。"},
+      "unknown": [],
+      "evidence": "合成来源：同一测站相邻时间窗口共享原始水位；研究尚未指定验证集，也未确认如何隔离流域。",
+      "expected_fields": ["data_source", "sampling", "scope"],
+      "expected_blocker_codes": ["prediction_holdout", "prediction_leakage"],
+      "relevance_terms": ["测站", "流域", "时间", "泄漏", "验证"],
+      "reflection": "目标是预测未见流域，因为时间窗口共享来源，随机按行划分可能泄漏；这一点仍未知，负责人需复核，并在资源上限停止。"
+    },
+    {
+      "id": "algae_variance_unknown",
+      "answer": "海藻培养的产率方差还不知道，先不猜重复数。",
+      "facts": {"research_question": "探索光照与海藻产率的关系，为后续比较选择可测指标。", "objective_type": "exploration", "scope": "仅限室内培养的海藻。", "experimental_unit": "每个独立培养容器是观察单位。", "resources": "本周最多8个容器，不增加预算。"},
+      "unknown": ["sampling"],
+      "evidence": "合成培养记录：产率测量方法尚未固定，没有可用方差先导数据。",
+      "expected_fields": ["sampling", "outcomes", "data_source"],
+      "expected_blocker_codes": ["explicit_unknown"],
+      "relevance_terms": ["海藻", "方差", "先导", "产率", "容器"],
+      "reflection": "范围仅限室内海藻，我不知道方差；应先导而不保证功效，团队负责核实指标，容器预算耗尽停止。"
+    },
+    {
+      "id": "school_observational_claim",
+      "answer": "学校自主选择教学方式，成绩相关性不能直接说明教学方式造成提升。",
+      "facts": {"research_question": "估计教学方式对成绩的因果效应。", "objective_type": "causal", "scope": "仅限参与观察的学校。", "design": "observational", "experimental_unit": "学校作为推断单位，同校学生存在共享环境。", "analysis": "估计学校均值差和不确定区间。", "randomization": "学校自主选择教学方式，未分配处理。", "risks": "学校之间存在尚未核实的差异。"},
+      "unknown": [],
+      "evidence": "合成调查说明：教学方式由学校决定，没有随机分配或自然实验的记录。",
+      "expected_fields": ["analysis", "risks", "randomization"],
+      "expected_blocker_codes": ["causal_identification"],
+      "relevance_terms": ["学校", "选择", "识别", "混杂", "因果"],
+      "reflection": "问题是因果效应；学校自主选择可能混杂，相关性尚不能证明因果，需要研究者复核识别假设，证据不足时停止因果声称。"
+    },
+    {
+      "id": "creep_replication_unit",
+      "answer": "我想复现材料蠕变论文，但同一试件被反复测量，尚未选定原文命题。",
+      "facts": {"research_question": "复现材料蠕变论文中的结论。", "objective_type": "replication", "scope": "仅限原文给定材料与温度。", "experimental_unit": "同一试件重复测量，观测共享试件。", "design": "crd"},
+      "unknown": ["hypothesis"],
+      "evidence": "合成论文片段：蠕变曲线由同一试件的多次观测构成；本文没有提供独立试件数量的证明。",
+      "expected_fields": ["hypothesis", "design", "experimental_unit"],
+      "expected_blocker_codes": ["unit_design_mismatch", "explicit_unknown"],
+      "relevance_terms": ["试件", "蠕变", "命题", "配对", "重复测量"],
+      "reflection": "范围限于论文材料，命题仍未知；因为同一试件重复测量，独立设计需要复核，导师负责选定命题并决定停止条件。"
+    },
+    {
+      "id": "remote_sensing_budget_conflict",
+      "answer": "遥感比较出现两份资源声明，请先核实可用时长。",
+      "facts": {"research_question": "比较两种遥感分类方法并决定是否后续验证。", "objective_type": "comparison", "resources": "最多3小时"},
+      "unknown": [],
+      "conflict": {"field": "resources", "values": ["最多3小时", "最多9小时"]},
+      "evidence": "合成排期说明：当前可用时长需要负责人核实，不可默认选择较大预算。",
+      "expected_fields": ["resources"],
+      "expected_blocker_codes": ["unresolved_conflict"],
+      "relevance_terms": ["资源", "时长", "小时", "预算", "上限"],
+      "reflection": "目标是比较遥感方法，目前资源上限冲突尚未解决，负责人先复核，不能因为需要更多实验而提高预算。"
+    },
+    {
+      "id": "fermentation_negative_stopping",
+      "answer": "发酵产率比较不能一直追加批次试到显著；完成与结论支持需要分开。",
+      "facts": {"research_question": "比较发酵工艺产率并决定后续验证。", "objective_type": "comparison", "experimental_unit": "每个独立发酵批次为分配和推断单位。", "design": "crd", "outcomes": "每个批次产率均值，越高越好。", "acceptance": "p<0.05就算成功", "resources": "最多12个批次，不追加，预算耗尽停止。"},
+      "unknown": [],
+      "evidence": "合成方法说明：应同时报告实际产率差和不确定区间；未支持改进也需要交付记录。",
+      "expected_fields": ["acceptance", "analysis", "hypothesis"],
+      "expected_blocker_codes": ["negative_outcomes", "practical_vs_statistical"],
+      "relevance_terms": ["发酵", "产率", "阴性", "不支持", "停止", "显著"],
+      "reflection": "问题是产率比较，独立批次用于设计；未知实际差异时不保证改进，阴性结果照样交付，团队在预算上限停止并复核结论。"
+    }
+  ],
+  "ready_plan": {
+    "research_question": "在声明的独立发酵批次中比较工艺甲乙的产率差，决定是否后续验证。",
+    "objective_type": "comparison",
+    "hypothesis": "工艺乙减甲的产率差可能为正，也可能不支持改进。",
+    "scope": "仅限同一原料版本及室内温控条件，不外推到其他原料。",
+    "exclusions": "不声称机制因果或工业规模泛化。",
+    "experimental_unit": "每个独立发酵批次为处理分配和推断单位，不用同批次技术测量代替重复。",
+    "factors": "工艺甲与工艺乙两个水平，主要对比乙减甲。",
+    "design": "crd",
+    "outcomes": "每个独立批次产率的均值，越高越好。",
+    "baseline": "工艺甲为基线，采用相同原料版本、测量与预算。",
+    "data_source": "拟采集的独立发酵批次记录，尚无实测结论。",
+    "sampling": "固定预算先导，每组6个批次，不宣称功效保证。",
+    "randomization": "对独立批次抽签分配工艺，保留实际分配顺序。",
+    "analysis": "估计工艺乙减甲的批次均值差及不确定区间，预先检查独立性。",
+    "acceptance": "逐项交付产率差与区间，阴性及不确定结果同样报告；预算耗尽停止，不按结果改阈值。",
+    "resources": "最多12个批次，本周截止，达到上限停止。",
+    "risks": "批次独立性或测量异常时由研究者停止并核实。",
+    "reproducibility": "保存数据版本、配置与测量日志、实际分配记录。",
+    "human_roles": "实验员负责执行，研究者确认边界，方法负责人复核分析和结论。",
+    "deliverable": "计划、原始记录、差异区间表及局限报告。"
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "version": "scientific_dialogue_curriculum_v1",
+  "seed": 20261030,
+  "clarification": {
+    "train": {
+      "question_bm25": {
+        "evaluated": 162,
+        "hit_at_1": 0.88271605,
+        "recall_at_3": 0.19622966,
+        "recall_at_5": 0.31372443,
+        "mrr": 0.91446217
+      },
+      "question_trained": {
+        "evaluated": 162,
+        "hit_at_1": 0.86419753,
+        "recall_at_3": 0.19413489,
+        "recall_at_5": 0.30852698,
+        "mrr": 0.90242087
+      },
+      "need_topics": 187,
+      "need_accuracy": 0.81818182,
+      "need_majority_accuracy": 0.39572193
+    },
+    "dev": {
+      "question_bm25": {
+        "evaluated": 46,
+        "hit_at_1": 0.93478261,
+        "recall_at_3": 0.22026868,
+        "recall_at_5": 0.35384875,
+        "mrr": 0.94682266
+      },
+      "question_trained": {
+        "evaluated": 46,
+        "hit_at_1": 0.93478261,
+        "recall_at_3": 0.21186766,
+        "recall_at_5": 0.33756729,
+        "mrr": 0.94341079
+      },
+      "need_topics": 50,
+      "need_accuracy": 0.38,
+      "need_majority_accuracy": 0.42
+    },
+    "test": {
+      "question_bm25": {
+        "evaluated": 54,
+        "hit_at_1": 0.88888889,
+        "recall_at_3": 0.18501398,
+        "recall_at_5": 0.30377898,
+        "mrr": 0.93165785
+      },
+      "question_trained": {
+        "evaluated": 54,
+        "hit_at_1": 0.90740741,
+        "recall_at_3": 0.18153996,
+        "recall_at_5": 0.30409284,
+        "mrr": 0.9404321
+      },
+      "need_topics": 62,
+      "need_accuracy": 0.37096774,
+      "need_majority_accuracy": 0.51612903
+    }
+  },
+  "evidence": {
+    "train": {
+      "bm25": {
+        "evaluated": 2172,
+        "hit_at_1": 0.14825046,
+        "recall_at_3": 0.27222445,
+        "recall_at_5": 0.38898653,
+        "mrr": 0.30619448
+      },
+      "trained": {
+        "evaluated": 2172,
+        "hit_at_1": 0.10957643,
+        "recall_at_3": 0.15965991,
+        "recall_at_5": 0.21394645,
+        "mrr": 0.20346799
+      },
+      "all_questions": 2593,
+      "all_annotators_unanswerable": 271,
+      "questions_with_unmatched_evidence": 74
+    },
+    "dev": {
+      "bm25": {
+        "evaluated": 901,
+        "hit_at_1": 0.18312986,
+        "recall_at_3": 0.33180337,
+        "recall_at_5": 0.44941783,
+        "mrr": 0.35145179
+      },
+      "trained": {
+        "evaluated": 901,
+        "hit_at_1": 0.12208657,
+        "recall_at_3": 0.1907987,
+        "recall_at_5": 0.25035695,
+        "mrr": 0.23081406
+      },
+      "all_questions": 1005,
+      "all_annotators_unanswerable": 60,
+      "questions_with_unmatched_evidence": 45
+    },
+    "test": {
+      "bm25": {
+        "evaluated": 1337,
+        "hit_at_1": 0.19970082,
+        "recall_at_3": 0.35428874,
+        "recall_at_5": 0.48318188,
+        "mrr": 0.36867736
+      },
+      "trained": {
+        "evaluated": 1337,
+        "hit_at_1": 0.13612565,
+        "recall_at_3": 0.20604584,
+        "recall_at_5": 0.28353402,
+        "mrr": 0.24288042
+      },
+      "all_questions": 1451,
+      "all_annotators_unanswerable": 79,
+      "questions_with_unmatched_evidence": 89
+    }
+  },
+  "training_ids_sha256": {
+    "clariq": "0f4488abafaef1fa159f5bcde32e7568bed9db6e132077e9a6c326b36c3073b8",
+    "qasper": "8d3c935eabfcb7734395674230481213c4139e618ed0ae6c665d408d231ec89c"
+  },
+  "limits": [
+    "English public-data diagnostics, not Chinese scientific dialogue evaluation",
+    "ClariQ official question bank is known during training and evaluation; no claim of unseen-question generation",
+    "Independent task heads; not sequential updates to a shared LLM",
+    "No LLM weights, existing planner weights, online policies or PPO rewards changed",
+    "QASPER ranking reports only questions with at least one fully aligned answerable annotation",
+    "No measured researcher understanding or question-option preference improvement"
+  ],
+  "human_reviewed_scientific_dialogues": 0,
+  "online_deployment": false,
+  "llm_parameter_updates": 0,
+  "model_api_calls": 0,
+  "real_scientific_executions": 0
+}

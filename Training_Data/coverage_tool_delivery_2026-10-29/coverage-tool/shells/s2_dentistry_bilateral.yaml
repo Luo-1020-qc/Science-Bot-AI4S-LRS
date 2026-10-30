@@ -1,0 +1,32 @@
+scenario_name: 同一患者两侧牙齿指标比较
+domain: 口腔医学
+skeleton: S2
+executable: true
+summary: 同一患者患侧与健侧（或两种处理侧）牙周指标的配对比较
+vocabulary:
+  treatment_name: 侧别
+  outcome_name: 探诊深度
+  unit: mm
+  comparison: 患侧 vs 健侧（同一患者）
+survey_questions:
+- 配对选择标准是什么？
+- 测量者是谁？是否盲法？
+- 每颗牙测量几个位点？
+- 患者数量与纳入标准？
+- 测量者一致性如何评估？
+rubric:
+- 配对标准已声明
+- 测量者一致性与盲法已报告
+- 测量位点数与汇总方式
+- 配对完整性检查
+- 患者层面聚类处理
+- 效应阈值（临床意义）
+proposal_template:
+- 研究目标
+- 患者与配对
+- 测量方案
+- 统计方法
+- 验收标准
+- 局限
+source: 骨架聚类表 v1 · S2 · 口腔/医学器件行
+notes: 同一患者多颗牙需考虑患者内聚类

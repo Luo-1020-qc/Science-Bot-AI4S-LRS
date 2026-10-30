@@ -1,6 +1,6 @@
 # 协作约定
 
-先阅读[根README](README.md)和[专家交接文档](Training_Data_Darcy_CViT/RL训练数据_专家交接文档.md)。
+先阅读[根README](README.md)和[专家交接文档](Training_Data/RL训练数据_专家交接文档.md)。
 
 1. 使用独立分支，通过小范围提交说明问题、改动与验证结果。
 2. 应用代码位于`RUT_Science/rut_science/`；研究位于`RUT_Science/research/strategy_learning/`；独立工具库与训练数据分别位于各自根目录。

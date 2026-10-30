@@ -1,0 +1,104 @@
+{
+  "passed": true,
+  "checked_utc": "2026-10-30T05:29:47.136267+00:00",
+  "integrity": {
+    "passed": true,
+    "protected_files_checked": 1745,
+    "authorized_host_changes": 5,
+    "integration_runtime_files_checked": 10,
+    "planning_authorized_host_changes": 4,
+    "planning_runtime_files_checked": 11,
+    "dynamic_runtime_files_checked": 6,
+    "planning_history_privacy_files_checked": 1,
+    "interface_runtime_files_checked": 11,
+    "question_tool_runtime_files_checked": 6,
+    "question_tool_training_files_checked": 7,
+    "branding_files_checked": 5,
+    "context_choices_runtime_files_checked": 11,
+    "context_choices_training_files_checked": 7,
+    "mainline_runtime_files_checked": 10,
+    "session_history_runtime_files_checked": 6,
+    "pdf_runtime_files_checked": 13,
+    "changed": []
+  },
+  "tests": {
+    "application": {
+      "run": 495,
+      "passed": true,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 2
+    },
+    "integrity_and_evaluation": {
+      "run": 43,
+      "passed": true,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "mock_dom": {
+      "passed": true,
+      "result": {
+        "passed": true,
+        "checks": 7,
+        "mode": "mock_dom_actual_shipped_script_not_browser_visual_qa"
+      }
+    }
+  },
+  "authorized_changed_files": [
+    "RUT_Science/rut_science/science_bot/presentation.py",
+    "RUT_Science/rut_science/science_bot/general/planning/blueprint.py",
+    "RUT_Science/rut_science/science_bot/general/planning/evidence.py",
+    "RUT_Science/rut_science/science_bot/general/planning/runtime.py",
+    "RUT_Science/rut_science/science_bot/workbench_assets/dist/app.js",
+    "RUT_Science/rut_science/science_bot/workbench_assets/dist/index.html",
+    "scripts/integrity.py",
+    "scripts/test_integrity.py",
+    "scripts/test_session_history_ui.cjs",
+    "scripts/verify_session_history.py",
+    "examples/interfaces/browser.html",
+    "RUT_Science/pyproject.toml"
+  ],
+  "prior_files_unchanged": 175,
+  "all_prior_integration_json_unchanged": true,
+  "examples": {
+    "examples/interfaces/terminal.html": "445b43793d87061618b5a60a6aeb9e1f6e27b0c16bb7000c28fecf0bba3c201f",
+    "examples/interfaces/browser.html": "039e522ab044f89e3e4fa9729b30b8c2a4eefa70581aec192a1bfedde9116b1c",
+    "examples/interfaces/delivery.html": "bc038ff9ae1a7e69f7e178488b33848de828320ca0e9572504eacc47b8c00c28"
+  },
+  "assets": {
+    "javascript_bindings_checked": 54,
+    "text_contrast_ratios": {
+      "primary_button": 8.276,
+      "body": 13.669,
+      "muted": 5.601,
+      "secondary_text": 4.648,
+      "sidebar_text": 4.893,
+      "selected_navigation": 8.545
+    },
+    "minimum_checked_text_contrast": 4.648
+  },
+  "pdf_parser_version": "6.21.4",
+  "live_synthetic_diagnostic": {
+    "requests_including_failed_trials": 3,
+    "final_trial_requests": 1,
+    "accepted_points": 8,
+    "rejected_points": 0,
+    "physical_pages": [
+      1,
+      2
+    ],
+    "quotes_revalidated": true,
+    "expert_semantics_reviewed": false
+  },
+  "this_verification_model_requests": 0,
+  "real_scientific_executions": 0,
+  "training_runs": 0,
+  "pdf_fixture_pages_visually_inspected": 2,
+  "browser_visual_qa": false,
+  "limitations": [
+    "Text-layer PDF parsing only; scanned/image pages require OCR.",
+    "Grounding checks do not prove semantic correctness or scientific validity.",
+    "Synthetic fixture was used during development, not an independent benchmark."
+  ]
+}

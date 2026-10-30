@@ -1,0 +1,4485 @@
+[
+  {
+    "turn": 1,
+    "input": "请帮我评估一个合成论文示例能否支持模型A与B的比较实验。现在只规划，不声称已经复现论文。",
+    "seconds": 5.485,
+    "recovered_persisted_response_without_replay": false,
+    "exception": null,
+    "result": {
+      "intent": "planning",
+      "answer": "正在澄清\n\n关于研究目的，是否按当前理解继续？\n1. 按这个理解继续：comparison\n2. 暂不确定\n3. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+      "planning": {
+        "id": "ac9833026c764f00971c4d0b6f5ce7e8",
+        "revision": 1,
+        "active": true,
+        "facts": {
+          "research_question": {
+            "value": "评估一个合成论文示例能否支持模型A与B的比较实验",
+            "quote": "请帮我评估一个合成论文示例能否支持模型A与B的比较实验",
+            "status": "declared",
+            "turn": 1
+          },
+          "objective_type": {
+            "value": "comparison",
+            "quote": "模型A与B的比较实验",
+            "status": "proposed",
+            "turn": 1
+          },
+          "scope": {
+            "value": "仅做规划，不声称已经复现论文",
+            "quote": "现在只规划，不声称已经复现论文",
+            "status": "proposed",
+            "turn": 1
+          },
+          "exclusions": {
+            "value": "不声称已经复现论文",
+            "quote": "不声称已经复现论文",
+            "status": "declared",
+            "turn": 1
+          }
+        },
+        "unknown": [],
+        "conflicts": {},
+        "stale": {},
+        "pending": {
+          "field": "objective_type",
+          "kind": "proposal",
+          "question": "关于研究目的，是否按当前理解继续？",
+          "rationale": "objective_type 目前只是待确认的建议值，而它决定后续设计、基线与验收的走向；先确认目的类型，才能判断“能否支持比较实验”该按比较、复现还是探索来规划。",
+          "references": [
+            {
+              "source": "fact",
+              "key": "objective_type",
+              "quote": "comparison"
+            },
+            {
+              "source": "answer",
+              "key": "current",
+              "quote": "请帮我评估一个合成论文示例能否支持模型A与B的比较实验。现在只规划，不声称已经复现论文。"
+            }
+          ],
+          "options": [
+            {
+              "label": "按这个理解继续：comparison",
+              "value": "comparison",
+              "action": "accept",
+              "id": "a77ba349a78e"
+            },
+            {
+              "label": "暂不确定",
+              "value": "未知",
+              "action": "unknown",
+              "id": "2c3af7fa609c"
+            },
+            {
+              "label": "其他，我来补充",
+              "value": "",
+              "action": "custom",
+              "id": "47de6eddb129"
+            }
+          ],
+          "origin": "model",
+          "suggested_options": [],
+          "allow_accept": false,
+          "choice_policy": {
+            "intent": "replication",
+            "origin": "trained_context_match",
+            "policy_hash": "6b7d865a492eaba9c5db239e5f5eaa833184d3b21fe3496f358d525504207ded"
+          },
+          "choice_id": "992f35a107945c9a",
+          "choice_plan_hash": "8625956a23f229c8266ad40f5b708efb3b2aa595cfcc70eaf18de70e2d0b0337"
+        },
+        "review": {
+          "ready": false,
+          "checks": [
+            {
+              "field": "research_question",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "objective_type",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "hypothesis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+            },
+            {
+              "field": "scope",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "exclusions",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "experimental_unit",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "一次独立分配或观察是什么？哪些测量来自同一对象？"
+            },
+            {
+              "field": "factors",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "改变哪些因素和水平，主要比较谁与谁？"
+            },
+            {
+              "field": "design",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+            },
+            {
+              "field": "outcomes",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+            },
+            {
+              "field": "baseline",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+            },
+            {
+              "field": "data_source",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。"
+            },
+            {
+              "field": "sampling",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+            },
+            {
+              "field": "analysis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+            },
+            {
+              "field": "acceptance",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+            },
+            {
+              "field": "resources",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？"
+            },
+            {
+              "field": "risks",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+            },
+            {
+              "field": "reproducibility",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+            },
+            {
+              "field": "human_roles",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+            },
+            {
+              "field": "deliverable",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "最后交付什么：方案、脚本、表格、报告或可复现实验记录？"
+            },
+            {
+              "field": "objective_type",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "scope",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "objective_type",
+              "code": "objective_classified",
+              "status": "passed",
+              "detail": "需要明确比较、预测、因果、探索或复现目的。"
+            }
+          ],
+          "blockers": [
+            {
+              "field": "hypothesis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+            },
+            {
+              "field": "experimental_unit",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "一次独立分配或观察是什么？哪些测量来自同一对象？"
+            },
+            {
+              "field": "factors",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "改变哪些因素和水平，主要比较谁与谁？"
+            },
+            {
+              "field": "design",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+            },
+            {
+              "field": "outcomes",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+            },
+            {
+              "field": "baseline",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+            },
+            {
+              "field": "data_source",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。"
+            },
+            {
+              "field": "sampling",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+            },
+            {
+              "field": "analysis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+            },
+            {
+              "field": "acceptance",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+            },
+            {
+              "field": "resources",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？"
+            },
+            {
+              "field": "risks",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+            },
+            {
+              "field": "reproducibility",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+            },
+            {
+              "field": "human_roles",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+            },
+            {
+              "field": "deliverable",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "最后交付什么：方案、脚本、表格、报告或可复现实验记录？"
+            },
+            {
+              "field": "objective_type",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "scope",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            }
+          ],
+          "required_fields": [
+            "research_question",
+            "objective_type",
+            "hypothesis",
+            "scope",
+            "exclusions",
+            "experimental_unit",
+            "factors",
+            "design",
+            "outcomes",
+            "baseline",
+            "data_source",
+            "sampling",
+            "analysis",
+            "acceptance",
+            "resources",
+            "risks",
+            "reproducibility",
+            "human_roles",
+            "deliverable"
+          ],
+          "scope": "planning_only",
+          "execution_authorized": false,
+          "scientific_claim_verified": false,
+          "readiness_meaning": "用户声明已足够形成待人类复核的计划；不表示假设、数据、功效或结论已被验证。"
+        },
+        "contract_hash": "8625956a23f229c8266ad40f5b708efb3b2aa595cfcc70eaf18de70e2d0b0337",
+        "approved": false,
+        "decisions_count": 1,
+        "reflections_count": 0,
+        "evidence": [],
+        "evidence_actions": {},
+        "clarification": {
+          "mode": "dynamic",
+          "reason": "validated",
+          "rejected_questions": [],
+          "model_used": true
+        },
+        "last_export": null,
+        "execution_authorized": false
+      },
+      "questions": [
+        {
+          "field": "objective_type",
+          "kind": "proposal",
+          "question": "关于研究目的，是否按当前理解继续？",
+          "rationale": "objective_type 目前只是待确认的建议值，而它决定后续设计、基线与验收的走向；先确认目的类型，才能判断“能否支持比较实验”该按比较、复现还是探索来规划。",
+          "references": [
+            {
+              "source": "fact",
+              "key": "objective_type",
+              "quote": "comparison"
+            },
+            {
+              "source": "answer",
+              "key": "current",
+              "quote": "请帮我评估一个合成论文示例能否支持模型A与B的比较实验。现在只规划，不声称已经复现论文。"
+            }
+          ],
+          "options": [
+            {
+              "label": "按这个理解继续：comparison",
+              "value": "comparison",
+              "action": "accept",
+              "id": "a77ba349a78e"
+            },
+            {
+              "label": "暂不确定",
+              "value": "未知",
+              "action": "unknown",
+              "id": "2c3af7fa609c"
+            },
+            {
+              "label": "其他，我来补充",
+              "value": "",
+              "action": "custom",
+              "id": "47de6eddb129"
+            }
+          ],
+          "origin": "model",
+          "suggested_options": [],
+          "allow_accept": false,
+          "choice_policy": {
+            "intent": "replication",
+            "origin": "trained_context_match",
+            "policy_hash": "6b7d865a492eaba9c5db239e5f5eaa833184d3b21fe3496f358d525504207ded"
+          },
+          "choice_id": "992f35a107945c9a",
+          "choice_plan_hash": "8625956a23f229c8266ad40f5b708efb3b2aa595cfcc70eaf18de70e2d0b0337"
+        }
+      ],
+      "execution_authorized": false,
+      "scientific_claim_verified": false,
+      "model_used": true,
+      "clarification": {
+        "mode": "dynamic",
+        "reason": "validated",
+        "rejected_questions": [],
+        "model_used": true
+      },
+      "question_form": true
+    },
+    "before": null,
+    "after": {
+      "schema_version": "research_planning_v1",
+      "id": "ac9833026c764f00971c4d0b6f5ce7e8",
+      "revision": 1,
+      "active": true,
+      "facts": {
+        "research_question": {
+          "value": "评估一个合成论文示例能否支持模型A与B的比较实验",
+          "quote": "请帮我评估一个合成论文示例能否支持模型A与B的比较实验",
+          "status": "declared",
+          "turn": 1
+        },
+        "objective_type": {
+          "value": "comparison",
+          "quote": "模型A与B的比较实验",
+          "status": "proposed",
+          "turn": 1
+        },
+        "scope": {
+          "value": "仅做规划，不声称已经复现论文",
+          "quote": "现在只规划，不声称已经复现论文",
+          "status": "proposed",
+          "turn": 1
+        },
+        "exclusions": {
+          "value": "不声称已经复现论文",
+          "quote": "不声称已经复现论文",
+          "status": "declared",
+          "turn": 1
+        }
+      },
+      "unknown": [],
+      "conflicts": {},
+      "decisions": [
+        {
+          "turn": 1,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "research_question",
+              "kind": "added",
+              "before": null,
+              "after": "评估一个合成论文示例能否支持模型A与B的比较实验"
+            },
+            {
+              "field": "objective_type",
+              "kind": "added",
+              "before": null,
+              "after": "comparison"
+            },
+            {
+              "field": "scope",
+              "kind": "added",
+              "before": null,
+              "after": "仅做规划，不声称已经复现论文"
+            },
+            {
+              "field": "exclusions",
+              "kind": "added",
+              "before": null,
+              "after": "不声称已经复现论文"
+            }
+          ]
+        }
+      ],
+      "approval": null,
+      "pending": {
+        "field": "objective_type",
+        "kind": "proposal",
+        "question": "关于研究目的，是否按当前理解继续？",
+        "rationale": "objective_type 目前只是待确认的建议值，而它决定后续设计、基线与验收的走向；先确认目的类型，才能判断“能否支持比较实验”该按比较、复现还是探索来规划。",
+        "references": [
+          {
+            "source": "fact",
+            "key": "objective_type",
+            "quote": "comparison"
+          },
+          {
+            "source": "answer",
+            "key": "current",
+            "quote": "请帮我评估一个合成论文示例能否支持模型A与B的比较实验。现在只规划，不声称已经复现论文。"
+          }
+        ],
+        "options": [
+          {
+            "label": "按这个理解继续：comparison",
+            "value": "comparison",
+            "action": "accept",
+            "id": "a77ba349a78e"
+          },
+          {
+            "label": "暂不确定",
+            "value": "未知",
+            "action": "unknown",
+            "id": "2c3af7fa609c"
+          },
+          {
+            "label": "其他，我来补充",
+            "value": "",
+            "action": "custom",
+            "id": "47de6eddb129"
+          }
+        ],
+        "origin": "model",
+        "suggested_options": [],
+        "allow_accept": false,
+        "choice_policy": {
+          "intent": "replication",
+          "origin": "trained_context_match",
+          "policy_hash": "6b7d865a492eaba9c5db239e5f5eaa833184d3b21fe3496f358d525504207ded"
+        },
+        "choice_id": "992f35a107945c9a",
+        "choice_plan_hash": "8625956a23f229c8266ad40f5b708efb3b2aa595cfcc70eaf18de70e2d0b0337"
+      },
+      "reflections": [],
+      "changes": [
+        {
+          "field": "research_question",
+          "kind": "added",
+          "before": null,
+          "after": "评估一个合成论文示例能否支持模型A与B的比较实验"
+        },
+        {
+          "field": "objective_type",
+          "kind": "added",
+          "before": null,
+          "after": "comparison"
+        },
+        {
+          "field": "scope",
+          "kind": "added",
+          "before": null,
+          "after": "仅做规划，不声称已经复现论文"
+        },
+        {
+          "field": "exclusions",
+          "kind": "added",
+          "before": null,
+          "after": "不声称已经复现论文"
+        }
+      ],
+      "stale": {},
+      "turns": 1,
+      "audience": "researcher_student",
+      "last_notes": [
+        "语义改写和推断仅作为待确认提议展示，不会自动成为已确认边界。"
+      ],
+      "last_export": null,
+      "clarification": {
+        "mode": "dynamic",
+        "reason": "validated",
+        "rejected_questions": [],
+        "model_used": true
+      },
+      "question_history": [
+        {
+          "turn": 1,
+          "field": "objective_type",
+          "kind": "proposal",
+          "question": "关于研究目的，是否按当前理解继续？",
+          "origin": "model",
+          "basis_hash": "da2930ab5b13ba5e3c102870384bc07a9c8675ad662406b330a14a48f4b4b7cc"
+        }
+      ]
+    },
+    "known_field_missing_questions": [],
+    "state_changed": true,
+    "resources": {
+      "llm_requests": 2,
+      "llm_tokens": 3848,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 8,
+        "llm_tokens": 30000,
+        "tool_calls": 40,
+        "read_bytes": 24000
+      }
+    }
+  },
+  {
+    "turn": 2,
+    "input": "/plan evidence add {\"path\": \"synthetic_paper.pdf\", \"start_page\": 1, \"end_page\": 2, \"share_with_model\": true}",
+    "seconds": 3.969,
+    "recovered_persisted_response_without_replay": false,
+    "exception": null,
+    "result": {
+      "intent": "planning",
+      "answer": "正在澄清\n\n关于研究边界，是否按当前理解继续？\n1. 按这个理解继续：仅做规划，不声称已经复现论文\n2. 暂不确定\n3. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+      "planning": {
+        "id": "ac9833026c764f00971c4d0b6f5ce7e8",
+        "revision": 2,
+        "active": true,
+        "facts": {
+          "research_question": {
+            "value": "评估一个合成论文示例能否支持模型A与B的比较实验",
+            "quote": "请帮我评估一个合成论文示例能否支持模型A与B的比较实验",
+            "status": "declared",
+            "turn": 1
+          },
+          "objective_type": {
+            "value": "comparison",
+            "quote": "模型A与B的比较实验",
+            "status": "proposed",
+            "turn": 1
+          },
+          "scope": {
+            "value": "仅做规划，不声称已经复现论文",
+            "quote": "现在只规划，不声称已经复现论文",
+            "status": "proposed",
+            "turn": 1
+          },
+          "exclusions": {
+            "value": "不声称已经复现论文",
+            "quote": "不声称已经复现论文",
+            "status": "declared",
+            "turn": 1
+          }
+        },
+        "unknown": [],
+        "conflicts": {},
+        "stale": {
+          "scope": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+        },
+        "pending": {
+          "field": "scope",
+          "kind": "stale",
+          "question": "关于研究边界，是否按当前理解继续？",
+          "rationale": "scope 已被标记为过期，且片段与用户声明的关系需要核对；片段本身不能覆盖用户声明，只能作为核对依据。同时片段明确限定范围，需确认规划是否沿用该限定。",
+          "references": [
+            {
+              "source": "stale",
+              "key": "scope",
+              "quote": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+            },
+            {
+              "source": "fact",
+              "key": "scope",
+              "quote": "仅做规划，不声称已经复现论文"
+            },
+            {
+              "source": "evidence",
+              "key": "61db77a462e0c1a2",
+              "quote": "SYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.",
+              "citation": "synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b"
+            },
+            {
+              "source": "evidence",
+              "key": "61db77a462e0c1a2",
+              "quote": "The scope is restricted to this\nsynthetic field distribution.",
+              "citation": "synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b"
+            }
+          ],
+          "options": [
+            {
+              "label": "按这个理解继续：仅做规划，不声称已经复现论文",
+              "value": "仅做规划，不声称已经复现论文",
+              "action": "accept",
+              "id": "509f1dadf9fa"
+            },
+            {
+              "label": "暂不确定",
+              "value": "未知",
+              "action": "unknown",
+              "id": "2c3af7fa609c"
+            },
+            {
+              "label": "其他，我来补充",
+              "value": "",
+              "action": "custom",
+              "id": "47de6eddb129"
+            }
+          ],
+          "origin": "model",
+          "allow_accept": false,
+          "choice_policy": {
+            "intent": "replication",
+            "origin": "trained_context_match",
+            "policy_hash": "6b7d865a492eaba9c5db239e5f5eaa833184d3b21fe3496f358d525504207ded"
+          },
+          "choice_id": "29f48be9ff4c0239",
+          "choice_plan_hash": "520b936a84b5a3fc86bce35fe7a142abd68ed6c01723d1637d46f605ed2060fb"
+        },
+        "review": {
+          "ready": false,
+          "checks": [
+            {
+              "field": "research_question",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "objective_type",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "hypothesis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+            },
+            {
+              "field": "scope",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "exclusions",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "experimental_unit",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "一次独立分配或观察是什么？哪些测量来自同一对象？"
+            },
+            {
+              "field": "factors",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "改变哪些因素和水平，主要比较谁与谁？"
+            },
+            {
+              "field": "design",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+            },
+            {
+              "field": "outcomes",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+            },
+            {
+              "field": "baseline",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+            },
+            {
+              "field": "data_source",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。"
+            },
+            {
+              "field": "sampling",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+            },
+            {
+              "field": "analysis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+            },
+            {
+              "field": "acceptance",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+            },
+            {
+              "field": "resources",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？"
+            },
+            {
+              "field": "risks",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+            },
+            {
+              "field": "reproducibility",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+            },
+            {
+              "field": "human_roles",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+            },
+            {
+              "field": "deliverable",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "最后交付什么：方案、脚本、表格、报告或可复现实验记录？"
+            },
+            {
+              "field": "objective_type",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "scope",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "scope",
+              "code": "dependent_declaration_stale",
+              "status": "blocked",
+              "detail": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+            },
+            {
+              "field": "objective_type",
+              "code": "objective_classified",
+              "status": "passed",
+              "detail": "需要明确比较、预测、因果、探索或复现目的。"
+            }
+          ],
+          "blockers": [
+            {
+              "field": "hypothesis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+            },
+            {
+              "field": "experimental_unit",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "一次独立分配或观察是什么？哪些测量来自同一对象？"
+            },
+            {
+              "field": "factors",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "改变哪些因素和水平，主要比较谁与谁？"
+            },
+            {
+              "field": "design",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+            },
+            {
+              "field": "outcomes",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+            },
+            {
+              "field": "baseline",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+            },
+            {
+              "field": "data_source",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。"
+            },
+            {
+              "field": "sampling",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+            },
+            {
+              "field": "analysis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+            },
+            {
+              "field": "acceptance",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+            },
+            {
+              "field": "resources",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？"
+            },
+            {
+              "field": "risks",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+            },
+            {
+              "field": "reproducibility",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+            },
+            {
+              "field": "human_roles",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+            },
+            {
+              "field": "deliverable",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "最后交付什么：方案、脚本、表格、报告或可复现实验记录？"
+            },
+            {
+              "field": "objective_type",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "scope",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "scope",
+              "code": "dependent_declaration_stale",
+              "status": "blocked",
+              "detail": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+            }
+          ],
+          "required_fields": [
+            "research_question",
+            "objective_type",
+            "hypothesis",
+            "scope",
+            "exclusions",
+            "experimental_unit",
+            "factors",
+            "design",
+            "outcomes",
+            "baseline",
+            "data_source",
+            "sampling",
+            "analysis",
+            "acceptance",
+            "resources",
+            "risks",
+            "reproducibility",
+            "human_roles",
+            "deliverable"
+          ],
+          "scope": "planning_only",
+          "execution_authorized": false,
+          "scientific_claim_verified": false,
+          "readiness_meaning": "用户声明已足够形成待人类复核的计划；不表示假设、数据、功效或结论已被验证。"
+        },
+        "contract_hash": "520b936a84b5a3fc86bce35fe7a142abd68ed6c01723d1637d46f605ed2060fb",
+        "approved": false,
+        "decisions_count": 2,
+        "reflections_count": 0,
+        "evidence": [
+          {
+            "path": "synthetic_paper.pdf",
+            "sha256": "8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b",
+            "start_line": 1,
+            "end_line": 30,
+            "format": "pdf",
+            "start_page": 1,
+            "end_page": 2,
+            "page_count": 2,
+            "extractor": "pypdf-6.21.4",
+            "workspace_id": "bddbb242dbb14b9c96f6dc77109b7453",
+            "workspace_root": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\.local\\comprehensive_20261030\\live_dialogues\\selected_synthetic_pdf\\workspace",
+            "excerpt_sha256": "660fae681da8279a07618a24c55a787e5cabe5fc94ee313d1fd2a6deb83bacd4",
+            "share_with_model": true,
+            "turn": 2,
+            "status": "selected_excerpt_not_verified",
+            "id": "61db77a462e0c1a2"
+          }
+        ],
+        "evidence_actions": {},
+        "clarification": {
+          "mode": "dynamic",
+          "reason": "validated_partial",
+          "rejected_questions": [
+            {
+              "field": "experimental_unit",
+              "reason": "QuestionDoesNotRelateToReferences"
+            }
+          ],
+          "model_used": true
+        },
+        "last_export": null,
+        "execution_authorized": false
+      },
+      "questions": [
+        {
+          "field": "scope",
+          "kind": "stale",
+          "question": "关于研究边界，是否按当前理解继续？",
+          "rationale": "scope 已被标记为过期，且片段与用户声明的关系需要核对；片段本身不能覆盖用户声明，只能作为核对依据。同时片段明确限定范围，需确认规划是否沿用该限定。",
+          "references": [
+            {
+              "source": "stale",
+              "key": "scope",
+              "quote": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+            },
+            {
+              "source": "fact",
+              "key": "scope",
+              "quote": "仅做规划，不声称已经复现论文"
+            },
+            {
+              "source": "evidence",
+              "key": "61db77a462e0c1a2",
+              "quote": "SYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.",
+              "citation": "synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b"
+            },
+            {
+              "source": "evidence",
+              "key": "61db77a462e0c1a2",
+              "quote": "The scope is restricted to this\nsynthetic field distribution.",
+              "citation": "synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b"
+            }
+          ],
+          "options": [
+            {
+              "label": "按这个理解继续：仅做规划，不声称已经复现论文",
+              "value": "仅做规划，不声称已经复现论文",
+              "action": "accept",
+              "id": "509f1dadf9fa"
+            },
+            {
+              "label": "暂不确定",
+              "value": "未知",
+              "action": "unknown",
+              "id": "2c3af7fa609c"
+            },
+            {
+              "label": "其他，我来补充",
+              "value": "",
+              "action": "custom",
+              "id": "47de6eddb129"
+            }
+          ],
+          "origin": "model",
+          "allow_accept": false,
+          "choice_policy": {
+            "intent": "replication",
+            "origin": "trained_context_match",
+            "policy_hash": "6b7d865a492eaba9c5db239e5f5eaa833184d3b21fe3496f358d525504207ded"
+          },
+          "choice_id": "29f48be9ff4c0239",
+          "choice_plan_hash": "520b936a84b5a3fc86bce35fe7a142abd68ed6c01723d1637d46f605ed2060fb"
+        }
+      ],
+      "execution_authorized": false,
+      "scientific_claim_verified": false,
+      "evidence": [
+        {
+          "path": "synthetic_paper.pdf",
+          "sha256": "8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b",
+          "text": "[PDF page 1]\nEngineering fixture - synthetic paper\nSYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.\n1. Research question\nThis fixture asks whether model A has lower prediction error than model B on\nsynthetic two-dimensional fields.\n2. Methods and data\nBoth models evaluate the same 8 independent synthetic fields, with paired\ncomparisons by field. Grid points within a field are technical measurements,\nnot independent experimental units.\nTraining, validation and final test fields are separated by source. Both\nmodels use the same splits and tuning budget. The scope is restricted to this\nsynthetic field distribution.\nSYNTHETIC / engineering fixture - PDF page 1\n\n[PDF page 2]\n3. Illustrative results\nIllustrative mean relative errors are 0.12 for model A and 0.15 for model B.\nThese numbers are authored fixture values, not observed scientific evidence.\n4. Limitations\nNo observed variance or confidence interval is provided. No scientific\nexperiment was executed. This fixture does not establish a causal effect or\nout-of-distribution performance.\n5. Reproduction information still needed\nA real study needs a traceable dataset version, code and configuration,\nindependent-unit verification and pilot variability. A sample-size or power\nguarantee cannot be inferred from this fixture.\nThis fixture tests PDF extraction and grounded interpretation, not scientific\nvalidity.\nSYNTHETIC / engineering fixture - PDF page 2",
+          "start_line": 1,
+          "end_line": 30,
+          "format": "pdf",
+          "start_page": 1,
+          "end_page": 2,
+          "page_count": 2,
+          "pages": [
+            {
+              "page": 1,
+              "text": "Engineering fixture - synthetic paper\nSYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.\n1. Research question\nThis fixture asks whether model A has lower prediction error than model B on\nsynthetic two-dimensional fields.\n2. Methods and data\nBoth models evaluate the same 8 independent synthetic fields, with paired\ncomparisons by field. Grid points within a field are technical measurements,\nnot independent experimental units.\nTraining, validation and final test fields are separated by source. Both\nmodels use the same splits and tuning budget. The scope is restricted to this\nsynthetic field distribution.\nSYNTHETIC / engineering fixture - PDF page 1"
+            },
+            {
+              "page": 2,
+              "text": "3. Illustrative results\nIllustrative mean relative errors are 0.12 for model A and 0.15 for model B.\nThese numbers are authored fixture values, not observed scientific evidence.\n4. Limitations\nNo observed variance or confidence interval is provided. No scientific\nexperiment was executed. This fixture does not establish a causal effect or\nout-of-distribution performance.\n5. Reproduction information still needed\nA real study needs a traceable dataset version, code and configuration,\nindependent-unit verification and pilot variability. A sample-size or power\nguarantee cannot be inferred from this fixture.\nThis fixture tests PDF extraction and grounded interpretation, not scientific\nvalidity.\nSYNTHETIC / engineering fixture - PDF page 2"
+            }
+          ],
+          "extractor": "pypdf-6.21.4",
+          "workspace_id": "bddbb242dbb14b9c96f6dc77109b7453",
+          "workspace_root": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\.local\\comprehensive_20261030\\live_dialogues\\selected_synthetic_pdf\\workspace",
+          "excerpt_sha256": "660fae681da8279a07618a24c55a787e5cabe5fc94ee313d1fd2a6deb83bacd4",
+          "share_with_model": true,
+          "turn": 2,
+          "status": "selected_excerpt_not_verified",
+          "id": "61db77a462e0c1a2"
+        }
+      ],
+      "clarification": {
+        "mode": "dynamic",
+        "reason": "validated_partial",
+        "rejected_questions": [
+          {
+            "field": "experimental_unit",
+            "reason": "QuestionDoesNotRelateToReferences"
+          }
+        ],
+        "model_used": true
+      },
+      "question_form": true
+    },
+    "before": {
+      "schema_version": "research_planning_v1",
+      "id": "ac9833026c764f00971c4d0b6f5ce7e8",
+      "revision": 1,
+      "active": true,
+      "facts": {
+        "research_question": {
+          "value": "评估一个合成论文示例能否支持模型A与B的比较实验",
+          "quote": "请帮我评估一个合成论文示例能否支持模型A与B的比较实验",
+          "status": "declared",
+          "turn": 1
+        },
+        "objective_type": {
+          "value": "comparison",
+          "quote": "模型A与B的比较实验",
+          "status": "proposed",
+          "turn": 1
+        },
+        "scope": {
+          "value": "仅做规划，不声称已经复现论文",
+          "quote": "现在只规划，不声称已经复现论文",
+          "status": "proposed",
+          "turn": 1
+        },
+        "exclusions": {
+          "value": "不声称已经复现论文",
+          "quote": "不声称已经复现论文",
+          "status": "declared",
+          "turn": 1
+        }
+      },
+      "unknown": [],
+      "conflicts": {},
+      "decisions": [
+        {
+          "turn": 1,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "research_question",
+              "kind": "added",
+              "before": null,
+              "after": "评估一个合成论文示例能否支持模型A与B的比较实验"
+            },
+            {
+              "field": "objective_type",
+              "kind": "added",
+              "before": null,
+              "after": "comparison"
+            },
+            {
+              "field": "scope",
+              "kind": "added",
+              "before": null,
+              "after": "仅做规划，不声称已经复现论文"
+            },
+            {
+              "field": "exclusions",
+              "kind": "added",
+              "before": null,
+              "after": "不声称已经复现论文"
+            }
+          ]
+        }
+      ],
+      "approval": null,
+      "pending": {
+        "field": "objective_type",
+        "kind": "proposal",
+        "question": "关于研究目的，是否按当前理解继续？",
+        "rationale": "objective_type 目前只是待确认的建议值，而它决定后续设计、基线与验收的走向；先确认目的类型，才能判断“能否支持比较实验”该按比较、复现还是探索来规划。",
+        "references": [
+          {
+            "source": "fact",
+            "key": "objective_type",
+            "quote": "comparison"
+          },
+          {
+            "source": "answer",
+            "key": "current",
+            "quote": "请帮我评估一个合成论文示例能否支持模型A与B的比较实验。现在只规划，不声称已经复现论文。"
+          }
+        ],
+        "options": [
+          {
+            "label": "按这个理解继续：comparison",
+            "value": "comparison",
+            "action": "accept",
+            "id": "a77ba349a78e"
+          },
+          {
+            "label": "暂不确定",
+            "value": "未知",
+            "action": "unknown",
+            "id": "2c3af7fa609c"
+          },
+          {
+            "label": "其他，我来补充",
+            "value": "",
+            "action": "custom",
+            "id": "47de6eddb129"
+          }
+        ],
+        "origin": "model",
+        "suggested_options": [],
+        "allow_accept": false,
+        "choice_policy": {
+          "intent": "replication",
+          "origin": "trained_context_match",
+          "policy_hash": "6b7d865a492eaba9c5db239e5f5eaa833184d3b21fe3496f358d525504207ded"
+        },
+        "choice_id": "992f35a107945c9a",
+        "choice_plan_hash": "8625956a23f229c8266ad40f5b708efb3b2aa595cfcc70eaf18de70e2d0b0337"
+      },
+      "reflections": [],
+      "changes": [
+        {
+          "field": "research_question",
+          "kind": "added",
+          "before": null,
+          "after": "评估一个合成论文示例能否支持模型A与B的比较实验"
+        },
+        {
+          "field": "objective_type",
+          "kind": "added",
+          "before": null,
+          "after": "comparison"
+        },
+        {
+          "field": "scope",
+          "kind": "added",
+          "before": null,
+          "after": "仅做规划，不声称已经复现论文"
+        },
+        {
+          "field": "exclusions",
+          "kind": "added",
+          "before": null,
+          "after": "不声称已经复现论文"
+        }
+      ],
+      "stale": {},
+      "turns": 1,
+      "audience": "researcher_student",
+      "last_notes": [
+        "语义改写和推断仅作为待确认提议展示，不会自动成为已确认边界。"
+      ],
+      "last_export": null,
+      "clarification": {
+        "mode": "dynamic",
+        "reason": "validated",
+        "rejected_questions": [],
+        "model_used": true
+      },
+      "question_history": [
+        {
+          "turn": 1,
+          "field": "objective_type",
+          "kind": "proposal",
+          "question": "关于研究目的，是否按当前理解继续？",
+          "origin": "model",
+          "basis_hash": "da2930ab5b13ba5e3c102870384bc07a9c8675ad662406b330a14a48f4b4b7cc"
+        }
+      ]
+    },
+    "after": {
+      "schema_version": "research_planning_v1",
+      "id": "ac9833026c764f00971c4d0b6f5ce7e8",
+      "revision": 2,
+      "active": true,
+      "facts": {
+        "research_question": {
+          "value": "评估一个合成论文示例能否支持模型A与B的比较实验",
+          "quote": "请帮我评估一个合成论文示例能否支持模型A与B的比较实验",
+          "status": "declared",
+          "turn": 1
+        },
+        "objective_type": {
+          "value": "comparison",
+          "quote": "模型A与B的比较实验",
+          "status": "proposed",
+          "turn": 1
+        },
+        "scope": {
+          "value": "仅做规划，不声称已经复现论文",
+          "quote": "现在只规划，不声称已经复现论文",
+          "status": "proposed",
+          "turn": 1
+        },
+        "exclusions": {
+          "value": "不声称已经复现论文",
+          "quote": "不声称已经复现论文",
+          "status": "declared",
+          "turn": 1
+        }
+      },
+      "unknown": [],
+      "conflicts": {},
+      "decisions": [
+        {
+          "turn": 1,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "research_question",
+              "kind": "added",
+              "before": null,
+              "after": "评估一个合成论文示例能否支持模型A与B的比较实验"
+            },
+            {
+              "field": "objective_type",
+              "kind": "added",
+              "before": null,
+              "after": "comparison"
+            },
+            {
+              "field": "scope",
+              "kind": "added",
+              "before": null,
+              "after": "仅做规划，不声称已经复现论文"
+            },
+            {
+              "field": "exclusions",
+              "kind": "added",
+              "before": null,
+              "after": "不声称已经复现论文"
+            }
+          ]
+        },
+        {
+          "turn": 2,
+          "type": "explicit_evidence_selection",
+          "summary": "已选论文片段：synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b"
+        }
+      ],
+      "approval": null,
+      "pending": {
+        "field": "scope",
+        "kind": "stale",
+        "question": "关于研究边界，是否按当前理解继续？",
+        "rationale": "scope 已被标记为过期，且片段与用户声明的关系需要核对；片段本身不能覆盖用户声明，只能作为核对依据。同时片段明确限定范围，需确认规划是否沿用该限定。",
+        "references": [
+          {
+            "source": "stale",
+            "key": "scope",
+            "quote": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+          },
+          {
+            "source": "fact",
+            "key": "scope",
+            "quote": "仅做规划，不声称已经复现论文"
+          },
+          {
+            "source": "evidence",
+            "key": "61db77a462e0c1a2",
+            "quote": "SYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.",
+            "citation": "synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b"
+          },
+          {
+            "source": "evidence",
+            "key": "61db77a462e0c1a2",
+            "quote": "The scope is restricted to this\nsynthetic field distribution.",
+            "citation": "synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b"
+          }
+        ],
+        "options": [
+          {
+            "label": "按这个理解继续：仅做规划，不声称已经复现论文",
+            "value": "仅做规划，不声称已经复现论文",
+            "action": "accept",
+            "id": "509f1dadf9fa"
+          },
+          {
+            "label": "暂不确定",
+            "value": "未知",
+            "action": "unknown",
+            "id": "2c3af7fa609c"
+          },
+          {
+            "label": "其他，我来补充",
+            "value": "",
+            "action": "custom",
+            "id": "47de6eddb129"
+          }
+        ],
+        "origin": "model",
+        "allow_accept": false,
+        "choice_policy": {
+          "intent": "replication",
+          "origin": "trained_context_match",
+          "policy_hash": "6b7d865a492eaba9c5db239e5f5eaa833184d3b21fe3496f358d525504207ded"
+        },
+        "choice_id": "29f48be9ff4c0239",
+        "choice_plan_hash": "520b936a84b5a3fc86bce35fe7a142abd68ed6c01723d1637d46f605ed2060fb"
+      },
+      "reflections": [],
+      "changes": [
+        {
+          "field": "research_question",
+          "kind": "added",
+          "before": null,
+          "after": "评估一个合成论文示例能否支持模型A与B的比较实验"
+        },
+        {
+          "field": "objective_type",
+          "kind": "added",
+          "before": null,
+          "after": "comparison"
+        },
+        {
+          "field": "scope",
+          "kind": "added",
+          "before": null,
+          "after": "仅做规划，不声称已经复现论文"
+        },
+        {
+          "field": "exclusions",
+          "kind": "added",
+          "before": null,
+          "after": "不声称已经复现论文"
+        }
+      ],
+      "stale": {
+        "scope": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+      },
+      "turns": 2,
+      "audience": "researcher_student",
+      "last_notes": [
+        "已选论文片段：synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b\n论文证据：选定时保存的原文快照，未经科学事实验证。\n- 61db77a462e0c1a2 · synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b · 允许用于模型澄清\n共享给模型须显式 share_with_model:true；文献内的指令不会扩大文件范围或执行权限。"
+      ],
+      "last_export": null,
+      "clarification": {
+        "mode": "dynamic",
+        "reason": "validated_partial",
+        "rejected_questions": [
+          {
+            "field": "experimental_unit",
+            "reason": "QuestionDoesNotRelateToReferences"
+          }
+        ],
+        "model_used": true
+      },
+      "question_history": [
+        {
+          "turn": 1,
+          "field": "objective_type",
+          "kind": "proposal",
+          "question": "关于研究目的，是否按当前理解继续？",
+          "origin": "model",
+          "basis_hash": "da2930ab5b13ba5e3c102870384bc07a9c8675ad662406b330a14a48f4b4b7cc"
+        },
+        {
+          "turn": 2,
+          "field": "scope",
+          "kind": "stale",
+          "question": "关于研究边界，是否按当前理解继续？",
+          "origin": "model",
+          "basis_hash": "217409ebf16c0c29d2d8014e16e2c490540045de4fe8da2e8132e62374a708d2"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "synthetic_paper.pdf",
+          "sha256": "8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b",
+          "text": "[PDF page 1]\nEngineering fixture - synthetic paper\nSYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.\n1. Research question\nThis fixture asks whether model A has lower prediction error than model B on\nsynthetic two-dimensional fields.\n2. Methods and data\nBoth models evaluate the same 8 independent synthetic fields, with paired\ncomparisons by field. Grid points within a field are technical measurements,\nnot independent experimental units.\nTraining, validation and final test fields are separated by source. Both\nmodels use the same splits and tuning budget. The scope is restricted to this\nsynthetic field distribution.\nSYNTHETIC / engineering fixture - PDF page 1\n\n[PDF page 2]\n3. Illustrative results\nIllustrative mean relative errors are 0.12 for model A and 0.15 for model B.\nThese numbers are authored fixture values, not observed scientific evidence.\n4. Limitations\nNo observed variance or confidence interval is provided. No scientific\nexperiment was executed. This fixture does not establish a causal effect or\nout-of-distribution performance.\n5. Reproduction information still needed\nA real study needs a traceable dataset version, code and configuration,\nindependent-unit verification and pilot variability. A sample-size or power\nguarantee cannot be inferred from this fixture.\nThis fixture tests PDF extraction and grounded interpretation, not scientific\nvalidity.\nSYNTHETIC / engineering fixture - PDF page 2",
+          "start_line": 1,
+          "end_line": 30,
+          "format": "pdf",
+          "start_page": 1,
+          "end_page": 2,
+          "page_count": 2,
+          "pages": [
+            {
+              "page": 1,
+              "text": "Engineering fixture - synthetic paper\nSYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.\n1. Research question\nThis fixture asks whether model A has lower prediction error than model B on\nsynthetic two-dimensional fields.\n2. Methods and data\nBoth models evaluate the same 8 independent synthetic fields, with paired\ncomparisons by field. Grid points within a field are technical measurements,\nnot independent experimental units.\nTraining, validation and final test fields are separated by source. Both\nmodels use the same splits and tuning budget. The scope is restricted to this\nsynthetic field distribution.\nSYNTHETIC / engineering fixture - PDF page 1"
+            },
+            {
+              "page": 2,
+              "text": "3. Illustrative results\nIllustrative mean relative errors are 0.12 for model A and 0.15 for model B.\nThese numbers are authored fixture values, not observed scientific evidence.\n4. Limitations\nNo observed variance or confidence interval is provided. No scientific\nexperiment was executed. This fixture does not establish a causal effect or\nout-of-distribution performance.\n5. Reproduction information still needed\nA real study needs a traceable dataset version, code and configuration,\nindependent-unit verification and pilot variability. A sample-size or power\nguarantee cannot be inferred from this fixture.\nThis fixture tests PDF extraction and grounded interpretation, not scientific\nvalidity.\nSYNTHETIC / engineering fixture - PDF page 2"
+            }
+          ],
+          "extractor": "pypdf-6.21.4",
+          "workspace_id": "bddbb242dbb14b9c96f6dc77109b7453",
+          "workspace_root": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\.local\\comprehensive_20261030\\live_dialogues\\selected_synthetic_pdf\\workspace",
+          "excerpt_sha256": "660fae681da8279a07618a24c55a787e5cabe5fc94ee313d1fd2a6deb83bacd4",
+          "share_with_model": true,
+          "turn": 2,
+          "status": "selected_excerpt_not_verified",
+          "id": "61db77a462e0c1a2"
+        }
+      ]
+    },
+    "known_field_missing_questions": [],
+    "state_changed": true,
+    "resources": {
+      "llm_requests": 3,
+      "llm_tokens": 6946,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 8,
+        "llm_tokens": 30000,
+        "tool_calls": 40,
+        "read_bytes": 24000
+      }
+    }
+  },
+  {
+    "turn": 3,
+    "input": "/plan evidence understand 61db77a462e0c1a2",
+    "seconds": 3.328,
+    "recovered_persisted_response_without_replay": false,
+    "exception": null,
+    "result": {
+      "intent": "planning",
+      "answer": "论文理解暂未通过校验或模型不可用；已选原文保留，可检查模型输出后重试。",
+      "planning_error": true,
+      "execution_authorized": false
+    },
+    "before": {
+      "schema_version": "research_planning_v1",
+      "id": "ac9833026c764f00971c4d0b6f5ce7e8",
+      "revision": 2,
+      "active": true,
+      "facts": {
+        "research_question": {
+          "value": "评估一个合成论文示例能否支持模型A与B的比较实验",
+          "quote": "请帮我评估一个合成论文示例能否支持模型A与B的比较实验",
+          "status": "declared",
+          "turn": 1
+        },
+        "objective_type": {
+          "value": "comparison",
+          "quote": "模型A与B的比较实验",
+          "status": "proposed",
+          "turn": 1
+        },
+        "scope": {
+          "value": "仅做规划，不声称已经复现论文",
+          "quote": "现在只规划，不声称已经复现论文",
+          "status": "proposed",
+          "turn": 1
+        },
+        "exclusions": {
+          "value": "不声称已经复现论文",
+          "quote": "不声称已经复现论文",
+          "status": "declared",
+          "turn": 1
+        }
+      },
+      "unknown": [],
+      "conflicts": {},
+      "decisions": [
+        {
+          "turn": 1,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "research_question",
+              "kind": "added",
+              "before": null,
+              "after": "评估一个合成论文示例能否支持模型A与B的比较实验"
+            },
+            {
+              "field": "objective_type",
+              "kind": "added",
+              "before": null,
+              "after": "comparison"
+            },
+            {
+              "field": "scope",
+              "kind": "added",
+              "before": null,
+              "after": "仅做规划，不声称已经复现论文"
+            },
+            {
+              "field": "exclusions",
+              "kind": "added",
+              "before": null,
+              "after": "不声称已经复现论文"
+            }
+          ]
+        },
+        {
+          "turn": 2,
+          "type": "explicit_evidence_selection",
+          "summary": "已选论文片段：synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b"
+        }
+      ],
+      "approval": null,
+      "pending": {
+        "field": "scope",
+        "kind": "stale",
+        "question": "关于研究边界，是否按当前理解继续？",
+        "rationale": "scope 已被标记为过期，且片段与用户声明的关系需要核对；片段本身不能覆盖用户声明，只能作为核对依据。同时片段明确限定范围，需确认规划是否沿用该限定。",
+        "references": [
+          {
+            "source": "stale",
+            "key": "scope",
+            "quote": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+          },
+          {
+            "source": "fact",
+            "key": "scope",
+            "quote": "仅做规划，不声称已经复现论文"
+          },
+          {
+            "source": "evidence",
+            "key": "61db77a462e0c1a2",
+            "quote": "SYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.",
+            "citation": "synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b"
+          },
+          {
+            "source": "evidence",
+            "key": "61db77a462e0c1a2",
+            "quote": "The scope is restricted to this\nsynthetic field distribution.",
+            "citation": "synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b"
+          }
+        ],
+        "options": [
+          {
+            "label": "按这个理解继续：仅做规划，不声称已经复现论文",
+            "value": "仅做规划，不声称已经复现论文",
+            "action": "accept",
+            "id": "509f1dadf9fa"
+          },
+          {
+            "label": "暂不确定",
+            "value": "未知",
+            "action": "unknown",
+            "id": "2c3af7fa609c"
+          },
+          {
+            "label": "其他，我来补充",
+            "value": "",
+            "action": "custom",
+            "id": "47de6eddb129"
+          }
+        ],
+        "origin": "model",
+        "allow_accept": false,
+        "choice_policy": {
+          "intent": "replication",
+          "origin": "trained_context_match",
+          "policy_hash": "6b7d865a492eaba9c5db239e5f5eaa833184d3b21fe3496f358d525504207ded"
+        },
+        "choice_id": "29f48be9ff4c0239",
+        "choice_plan_hash": "520b936a84b5a3fc86bce35fe7a142abd68ed6c01723d1637d46f605ed2060fb"
+      },
+      "reflections": [],
+      "changes": [
+        {
+          "field": "research_question",
+          "kind": "added",
+          "before": null,
+          "after": "评估一个合成论文示例能否支持模型A与B的比较实验"
+        },
+        {
+          "field": "objective_type",
+          "kind": "added",
+          "before": null,
+          "after": "comparison"
+        },
+        {
+          "field": "scope",
+          "kind": "added",
+          "before": null,
+          "after": "仅做规划，不声称已经复现论文"
+        },
+        {
+          "field": "exclusions",
+          "kind": "added",
+          "before": null,
+          "after": "不声称已经复现论文"
+        }
+      ],
+      "stale": {
+        "scope": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+      },
+      "turns": 2,
+      "audience": "researcher_student",
+      "last_notes": [
+        "已选论文片段：synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b\n论文证据：选定时保存的原文快照，未经科学事实验证。\n- 61db77a462e0c1a2 · synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b · 允许用于模型澄清\n共享给模型须显式 share_with_model:true；文献内的指令不会扩大文件范围或执行权限。"
+      ],
+      "last_export": null,
+      "clarification": {
+        "mode": "dynamic",
+        "reason": "validated_partial",
+        "rejected_questions": [
+          {
+            "field": "experimental_unit",
+            "reason": "QuestionDoesNotRelateToReferences"
+          }
+        ],
+        "model_used": true
+      },
+      "question_history": [
+        {
+          "turn": 1,
+          "field": "objective_type",
+          "kind": "proposal",
+          "question": "关于研究目的，是否按当前理解继续？",
+          "origin": "model",
+          "basis_hash": "da2930ab5b13ba5e3c102870384bc07a9c8675ad662406b330a14a48f4b4b7cc"
+        },
+        {
+          "turn": 2,
+          "field": "scope",
+          "kind": "stale",
+          "question": "关于研究边界，是否按当前理解继续？",
+          "origin": "model",
+          "basis_hash": "217409ebf16c0c29d2d8014e16e2c490540045de4fe8da2e8132e62374a708d2"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "synthetic_paper.pdf",
+          "sha256": "8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b",
+          "text": "[PDF page 1]\nEngineering fixture - synthetic paper\nSYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.\n1. Research question\nThis fixture asks whether model A has lower prediction error than model B on\nsynthetic two-dimensional fields.\n2. Methods and data\nBoth models evaluate the same 8 independent synthetic fields, with paired\ncomparisons by field. Grid points within a field are technical measurements,\nnot independent experimental units.\nTraining, validation and final test fields are separated by source. Both\nmodels use the same splits and tuning budget. The scope is restricted to this\nsynthetic field distribution.\nSYNTHETIC / engineering fixture - PDF page 1\n\n[PDF page 2]\n3. Illustrative results\nIllustrative mean relative errors are 0.12 for model A and 0.15 for model B.\nThese numbers are authored fixture values, not observed scientific evidence.\n4. Limitations\nNo observed variance or confidence interval is provided. No scientific\nexperiment was executed. This fixture does not establish a causal effect or\nout-of-distribution performance.\n5. Reproduction information still needed\nA real study needs a traceable dataset version, code and configuration,\nindependent-unit verification and pilot variability. A sample-size or power\nguarantee cannot be inferred from this fixture.\nThis fixture tests PDF extraction and grounded interpretation, not scientific\nvalidity.\nSYNTHETIC / engineering fixture - PDF page 2",
+          "start_line": 1,
+          "end_line": 30,
+          "format": "pdf",
+          "start_page": 1,
+          "end_page": 2,
+          "page_count": 2,
+          "pages": [
+            {
+              "page": 1,
+              "text": "Engineering fixture - synthetic paper\nSYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.\n1. Research question\nThis fixture asks whether model A has lower prediction error than model B on\nsynthetic two-dimensional fields.\n2. Methods and data\nBoth models evaluate the same 8 independent synthetic fields, with paired\ncomparisons by field. Grid points within a field are technical measurements,\nnot independent experimental units.\nTraining, validation and final test fields are separated by source. Both\nmodels use the same splits and tuning budget. The scope is restricted to this\nsynthetic field distribution.\nSYNTHETIC / engineering fixture - PDF page 1"
+            },
+            {
+              "page": 2,
+              "text": "3. Illustrative results\nIllustrative mean relative errors are 0.12 for model A and 0.15 for model B.\nThese numbers are authored fixture values, not observed scientific evidence.\n4. Limitations\nNo observed variance or confidence interval is provided. No scientific\nexperiment was executed. This fixture does not establish a causal effect or\nout-of-distribution performance.\n5. Reproduction information still needed\nA real study needs a traceable dataset version, code and configuration,\nindependent-unit verification and pilot variability. A sample-size or power\nguarantee cannot be inferred from this fixture.\nThis fixture tests PDF extraction and grounded interpretation, not scientific\nvalidity.\nSYNTHETIC / engineering fixture - PDF page 2"
+            }
+          ],
+          "extractor": "pypdf-6.21.4",
+          "workspace_id": "bddbb242dbb14b9c96f6dc77109b7453",
+          "workspace_root": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\.local\\comprehensive_20261030\\live_dialogues\\selected_synthetic_pdf\\workspace",
+          "excerpt_sha256": "660fae681da8279a07618a24c55a787e5cabe5fc94ee313d1fd2a6deb83bacd4",
+          "share_with_model": true,
+          "turn": 2,
+          "status": "selected_excerpt_not_verified",
+          "id": "61db77a462e0c1a2"
+        }
+      ]
+    },
+    "after": {
+      "schema_version": "research_planning_v1",
+      "id": "ac9833026c764f00971c4d0b6f5ce7e8",
+      "revision": 2,
+      "active": true,
+      "facts": {
+        "research_question": {
+          "value": "评估一个合成论文示例能否支持模型A与B的比较实验",
+          "quote": "请帮我评估一个合成论文示例能否支持模型A与B的比较实验",
+          "status": "declared",
+          "turn": 1
+        },
+        "objective_type": {
+          "value": "comparison",
+          "quote": "模型A与B的比较实验",
+          "status": "proposed",
+          "turn": 1
+        },
+        "scope": {
+          "value": "仅做规划，不声称已经复现论文",
+          "quote": "现在只规划，不声称已经复现论文",
+          "status": "proposed",
+          "turn": 1
+        },
+        "exclusions": {
+          "value": "不声称已经复现论文",
+          "quote": "不声称已经复现论文",
+          "status": "declared",
+          "turn": 1
+        }
+      },
+      "unknown": [],
+      "conflicts": {},
+      "decisions": [
+        {
+          "turn": 1,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "research_question",
+              "kind": "added",
+              "before": null,
+              "after": "评估一个合成论文示例能否支持模型A与B的比较实验"
+            },
+            {
+              "field": "objective_type",
+              "kind": "added",
+              "before": null,
+              "after": "comparison"
+            },
+            {
+              "field": "scope",
+              "kind": "added",
+              "before": null,
+              "after": "仅做规划，不声称已经复现论文"
+            },
+            {
+              "field": "exclusions",
+              "kind": "added",
+              "before": null,
+              "after": "不声称已经复现论文"
+            }
+          ]
+        },
+        {
+          "turn": 2,
+          "type": "explicit_evidence_selection",
+          "summary": "已选论文片段：synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b"
+        }
+      ],
+      "approval": null,
+      "pending": {
+        "field": "scope",
+        "kind": "stale",
+        "question": "关于研究边界，是否按当前理解继续？",
+        "rationale": "scope 已被标记为过期，且片段与用户声明的关系需要核对；片段本身不能覆盖用户声明，只能作为核对依据。同时片段明确限定范围，需确认规划是否沿用该限定。",
+        "references": [
+          {
+            "source": "stale",
+            "key": "scope",
+            "quote": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+          },
+          {
+            "source": "fact",
+            "key": "scope",
+            "quote": "仅做规划，不声称已经复现论文"
+          },
+          {
+            "source": "evidence",
+            "key": "61db77a462e0c1a2",
+            "quote": "SYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.",
+            "citation": "synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b"
+          },
+          {
+            "source": "evidence",
+            "key": "61db77a462e0c1a2",
+            "quote": "The scope is restricted to this\nsynthetic field distribution.",
+            "citation": "synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b"
+          }
+        ],
+        "options": [
+          {
+            "label": "按这个理解继续：仅做规划，不声称已经复现论文",
+            "value": "仅做规划，不声称已经复现论文",
+            "action": "accept",
+            "id": "509f1dadf9fa"
+          },
+          {
+            "label": "暂不确定",
+            "value": "未知",
+            "action": "unknown",
+            "id": "2c3af7fa609c"
+          },
+          {
+            "label": "其他，我来补充",
+            "value": "",
+            "action": "custom",
+            "id": "47de6eddb129"
+          }
+        ],
+        "origin": "model",
+        "allow_accept": false,
+        "choice_policy": {
+          "intent": "replication",
+          "origin": "trained_context_match",
+          "policy_hash": "6b7d865a492eaba9c5db239e5f5eaa833184d3b21fe3496f358d525504207ded"
+        },
+        "choice_id": "29f48be9ff4c0239",
+        "choice_plan_hash": "520b936a84b5a3fc86bce35fe7a142abd68ed6c01723d1637d46f605ed2060fb"
+      },
+      "reflections": [],
+      "changes": [
+        {
+          "field": "research_question",
+          "kind": "added",
+          "before": null,
+          "after": "评估一个合成论文示例能否支持模型A与B的比较实验"
+        },
+        {
+          "field": "objective_type",
+          "kind": "added",
+          "before": null,
+          "after": "comparison"
+        },
+        {
+          "field": "scope",
+          "kind": "added",
+          "before": null,
+          "after": "仅做规划，不声称已经复现论文"
+        },
+        {
+          "field": "exclusions",
+          "kind": "added",
+          "before": null,
+          "after": "不声称已经复现论文"
+        }
+      ],
+      "stale": {
+        "scope": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+      },
+      "turns": 2,
+      "audience": "researcher_student",
+      "last_notes": [
+        "已选论文片段：synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b\n论文证据：选定时保存的原文快照，未经科学事实验证。\n- 61db77a462e0c1a2 · synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b · 允许用于模型澄清\n共享给模型须显式 share_with_model:true；文献内的指令不会扩大文件范围或执行权限。"
+      ],
+      "last_export": null,
+      "clarification": {
+        "mode": "dynamic",
+        "reason": "validated_partial",
+        "rejected_questions": [
+          {
+            "field": "experimental_unit",
+            "reason": "QuestionDoesNotRelateToReferences"
+          }
+        ],
+        "model_used": true
+      },
+      "question_history": [
+        {
+          "turn": 1,
+          "field": "objective_type",
+          "kind": "proposal",
+          "question": "关于研究目的，是否按当前理解继续？",
+          "origin": "model",
+          "basis_hash": "da2930ab5b13ba5e3c102870384bc07a9c8675ad662406b330a14a48f4b4b7cc"
+        },
+        {
+          "turn": 2,
+          "field": "scope",
+          "kind": "stale",
+          "question": "关于研究边界，是否按当前理解继续？",
+          "origin": "model",
+          "basis_hash": "217409ebf16c0c29d2d8014e16e2c490540045de4fe8da2e8132e62374a708d2"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "synthetic_paper.pdf",
+          "sha256": "8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b",
+          "text": "[PDF page 1]\nEngineering fixture - synthetic paper\nSYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.\n1. Research question\nThis fixture asks whether model A has lower prediction error than model B on\nsynthetic two-dimensional fields.\n2. Methods and data\nBoth models evaluate the same 8 independent synthetic fields, with paired\ncomparisons by field. Grid points within a field are technical measurements,\nnot independent experimental units.\nTraining, validation and final test fields are separated by source. Both\nmodels use the same splits and tuning budget. The scope is restricted to this\nsynthetic field distribution.\nSYNTHETIC / engineering fixture - PDF page 1\n\n[PDF page 2]\n3. Illustrative results\nIllustrative mean relative errors are 0.12 for model A and 0.15 for model B.\nThese numbers are authored fixture values, not observed scientific evidence.\n4. Limitations\nNo observed variance or confidence interval is provided. No scientific\nexperiment was executed. This fixture does not establish a causal effect or\nout-of-distribution performance.\n5. Reproduction information still needed\nA real study needs a traceable dataset version, code and configuration,\nindependent-unit verification and pilot variability. A sample-size or power\nguarantee cannot be inferred from this fixture.\nThis fixture tests PDF extraction and grounded interpretation, not scientific\nvalidity.\nSYNTHETIC / engineering fixture - PDF page 2",
+          "start_line": 1,
+          "end_line": 30,
+          "format": "pdf",
+          "start_page": 1,
+          "end_page": 2,
+          "page_count": 2,
+          "pages": [
+            {
+              "page": 1,
+              "text": "Engineering fixture - synthetic paper\nSYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.\n1. Research question\nThis fixture asks whether model A has lower prediction error than model B on\nsynthetic two-dimensional fields.\n2. Methods and data\nBoth models evaluate the same 8 independent synthetic fields, with paired\ncomparisons by field. Grid points within a field are technical measurements,\nnot independent experimental units.\nTraining, validation and final test fields are separated by source. Both\nmodels use the same splits and tuning budget. The scope is restricted to this\nsynthetic field distribution.\nSYNTHETIC / engineering fixture - PDF page 1"
+            },
+            {
+              "page": 2,
+              "text": "3. Illustrative results\nIllustrative mean relative errors are 0.12 for model A and 0.15 for model B.\nThese numbers are authored fixture values, not observed scientific evidence.\n4. Limitations\nNo observed variance or confidence interval is provided. No scientific\nexperiment was executed. This fixture does not establish a causal effect or\nout-of-distribution performance.\n5. Reproduction information still needed\nA real study needs a traceable dataset version, code and configuration,\nindependent-unit verification and pilot variability. A sample-size or power\nguarantee cannot be inferred from this fixture.\nThis fixture tests PDF extraction and grounded interpretation, not scientific\nvalidity.\nSYNTHETIC / engineering fixture - PDF page 2"
+            }
+          ],
+          "extractor": "pypdf-6.21.4",
+          "workspace_id": "bddbb242dbb14b9c96f6dc77109b7453",
+          "workspace_root": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\.local\\comprehensive_20261030\\live_dialogues\\selected_synthetic_pdf\\workspace",
+          "excerpt_sha256": "660fae681da8279a07618a24c55a787e5cabe5fc94ee313d1fd2a6deb83bacd4",
+          "share_with_model": true,
+          "turn": 2,
+          "status": "selected_excerpt_not_verified",
+          "id": "61db77a462e0c1a2"
+        }
+      ]
+    },
+    "known_field_missing_questions": [],
+    "state_changed": false,
+    "resources": {
+      "llm_requests": 4,
+      "llm_tokens": 8652,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 8,
+        "llm_tokens": 30000,
+        "tool_calls": 40,
+        "read_bytes": 24000
+      }
+    }
+  },
+  {
+    "turn": 4,
+    "input": "所选示例没有真实观测方差，我不知道正式研究所需的独立样本数，请保持未知，先规划取得先导记录和核对独立场来源，不能把示例数字当成实测结果。",
+    "seconds": 6.812,
+    "recovered_persisted_response_without_replay": false,
+    "exception": null,
+    "result": {
+      "intent": "planning",
+      "answer": "正在澄清\n\n关于研究边界，你希望保留哪一项？\n1. 仅做规划，不声称已经复现论文\n2. 先规划取得先导记录和核对独立场来源；不把示例数字当成实测结果\n3. 暂不确定\n4. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+      "planning": {
+        "id": "ac9833026c764f00971c4d0b6f5ce7e8",
+        "revision": 3,
+        "active": true,
+        "facts": {
+          "research_question": {
+            "value": "评估一个合成论文示例能否支持模型A与B的比较实验",
+            "quote": "请帮我评估一个合成论文示例能否支持模型A与B的比较实验",
+            "status": "declared",
+            "turn": 1
+          },
+          "objective_type": {
+            "value": "comparison",
+            "quote": "模型A与B的比较实验",
+            "status": "proposed",
+            "turn": 1
+          },
+          "scope": {
+            "value": "仅做规划，不声称已经复现论文",
+            "quote": "现在只规划，不声称已经复现论文",
+            "status": "proposed",
+            "turn": 1
+          },
+          "exclusions": {
+            "value": "不声称已经复现论文",
+            "quote": "不声称已经复现论文",
+            "status": "declared",
+            "turn": 1
+          },
+          "baseline": {
+            "value": "先导记录（作为后续正式研究的前期依据）",
+            "quote": "先规划取得先导记录",
+            "status": "proposed",
+            "turn": 4
+          },
+          "data_source": {
+            "value": "需核对独立场来源",
+            "quote": "核对独立场来源",
+            "status": "proposed",
+            "turn": 4
+          }
+        },
+        "unknown": [
+          "sampling"
+        ],
+        "conflicts": {
+          "scope": [
+            {
+              "value": "仅做规划，不声称已经复现论文",
+              "quote": "现在只规划，不声称已经复现论文",
+              "status": "proposed",
+              "turn": 1
+            },
+            {
+              "value": "先规划取得先导记录和核对独立场来源；不把示例数字当成实测结果",
+              "quote": "先规划取得先导记录和核对独立场来源，不能把示例数字当成实测结果",
+              "status": "proposed",
+              "turn": 4
+            }
+          ],
+          "exclusions": [
+            {
+              "value": "不声称已经复现论文",
+              "quote": "不声称已经复现论文",
+              "status": "declared",
+              "turn": 1
+            },
+            {
+              "value": "不把示例数字当成实测结果",
+              "quote": "不能把示例数字当成实测结果",
+              "status": "proposed",
+              "turn": 4
+            }
+          ]
+        },
+        "stale": {
+          "scope": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+        },
+        "pending": {
+          "field": "scope",
+          "kind": "conflict",
+          "question": "关于研究边界，你希望保留哪一项？",
+          "rationale": "scope 同时被标记为冲突与过期，且论文片段只说明这是合成示例、未执行科学实验，不能据此改写你的声明；先确定保留哪一版边界，后续设计、验收与交付物才有统一前提。",
+          "references": [
+            {
+              "source": "conflict",
+              "key": "scope:0",
+              "quote": "仅做规划，不声称已经复现论文"
+            },
+            {
+              "source": "conflict",
+              "key": "scope:1",
+              "quote": "先规划取得先导记录和核对独立场来源；不把示例数字当成实测结果"
+            },
+            {
+              "source": "stale",
+              "key": "scope",
+              "quote": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+            },
+            {
+              "source": "evidence",
+              "key": "61db77a462e0c1a2",
+              "quote": "SYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.",
+              "citation": "synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b"
+            }
+          ],
+          "options": [
+            {
+              "label": "仅做规划，不声称已经复现论文",
+              "value": "仅做规划，不声称已经复现论文",
+              "action": "revise",
+              "id": "7ced5e00619d"
+            },
+            {
+              "label": "先规划取得先导记录和核对独立场来源；不把示例数字当成实测结果",
+              "value": "先规划取得先导记录和核对独立场来源；不把示例数字当成实测结果",
+              "action": "revise",
+              "id": "0e159ee82431"
+            },
+            {
+              "label": "暂不确定",
+              "value": "未知",
+              "action": "unknown",
+              "id": "2c3af7fa609c"
+            },
+            {
+              "label": "其他，我来补充",
+              "value": "",
+              "action": "custom",
+              "id": "47de6eddb129"
+            }
+          ],
+          "origin": "model",
+          "suggested_options": [],
+          "allow_accept": false,
+          "choice_policy": {
+            "intent": "replication",
+            "origin": "trained_context_match",
+            "policy_hash": "6b7d865a492eaba9c5db239e5f5eaa833184d3b21fe3496f358d525504207ded"
+          },
+          "choice_id": "22931781621d2cf0",
+          "choice_plan_hash": "39aa5b763331c28d97c069e1b8542f00dc8e0222ad050563371528aed29246a9"
+        },
+        "review": {
+          "ready": false,
+          "checks": [
+            {
+              "field": "research_question",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "objective_type",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "hypothesis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+            },
+            {
+              "field": "experimental_unit",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "一次独立分配或观察是什么？哪些测量来自同一对象？"
+            },
+            {
+              "field": "factors",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "改变哪些因素和水平，主要比较谁与谁？"
+            },
+            {
+              "field": "design",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+            },
+            {
+              "field": "outcomes",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+            },
+            {
+              "field": "baseline",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "data_source",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "sampling",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+            },
+            {
+              "field": "analysis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+            },
+            {
+              "field": "acceptance",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+            },
+            {
+              "field": "resources",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？"
+            },
+            {
+              "field": "risks",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+            },
+            {
+              "field": "reproducibility",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+            },
+            {
+              "field": "human_roles",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+            },
+            {
+              "field": "deliverable",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "最后交付什么：方案、脚本、表格、报告或可复现实验记录？"
+            },
+            {
+              "field": "objective_type",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "scope",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "scope",
+              "code": "unresolved_conflict",
+              "status": "blocked",
+              "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+            },
+            {
+              "field": "scope",
+              "code": "dependent_declaration_stale",
+              "status": "blocked",
+              "detail": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+            },
+            {
+              "field": "exclusions",
+              "code": "unresolved_conflict",
+              "status": "blocked",
+              "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+            },
+            {
+              "field": "baseline",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "data_source",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "sampling",
+              "code": "explicit_unknown",
+              "status": "blocked",
+              "detail": "用户明确尚不知道；应先规划获取证据的步骤。"
+            },
+            {
+              "field": "objective_type",
+              "code": "objective_classified",
+              "status": "passed",
+              "detail": "需要明确比较、预测、因果、探索或复现目的。"
+            }
+          ],
+          "blockers": [
+            {
+              "field": "hypothesis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+            },
+            {
+              "field": "experimental_unit",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "一次独立分配或观察是什么？哪些测量来自同一对象？"
+            },
+            {
+              "field": "factors",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "改变哪些因素和水平，主要比较谁与谁？"
+            },
+            {
+              "field": "design",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+            },
+            {
+              "field": "outcomes",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+            },
+            {
+              "field": "sampling",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+            },
+            {
+              "field": "analysis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+            },
+            {
+              "field": "acceptance",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+            },
+            {
+              "field": "resources",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？"
+            },
+            {
+              "field": "risks",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+            },
+            {
+              "field": "reproducibility",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+            },
+            {
+              "field": "human_roles",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+            },
+            {
+              "field": "deliverable",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "最后交付什么：方案、脚本、表格、报告或可复现实验记录？"
+            },
+            {
+              "field": "objective_type",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "scope",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "scope",
+              "code": "unresolved_conflict",
+              "status": "blocked",
+              "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+            },
+            {
+              "field": "scope",
+              "code": "dependent_declaration_stale",
+              "status": "blocked",
+              "detail": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+            },
+            {
+              "field": "exclusions",
+              "code": "unresolved_conflict",
+              "status": "blocked",
+              "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+            },
+            {
+              "field": "baseline",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "data_source",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "sampling",
+              "code": "explicit_unknown",
+              "status": "blocked",
+              "detail": "用户明确尚不知道；应先规划获取证据的步骤。"
+            }
+          ],
+          "required_fields": [
+            "research_question",
+            "objective_type",
+            "hypothesis",
+            "scope",
+            "exclusions",
+            "experimental_unit",
+            "factors",
+            "design",
+            "outcomes",
+            "baseline",
+            "data_source",
+            "sampling",
+            "analysis",
+            "acceptance",
+            "resources",
+            "risks",
+            "reproducibility",
+            "human_roles",
+            "deliverable"
+          ],
+          "scope": "planning_only",
+          "execution_authorized": false,
+          "scientific_claim_verified": false,
+          "readiness_meaning": "用户声明已足够形成待人类复核的计划；不表示假设、数据、功效或结论已被验证。"
+        },
+        "contract_hash": "39aa5b763331c28d97c069e1b8542f00dc8e0222ad050563371528aed29246a9",
+        "approved": false,
+        "decisions_count": 3,
+        "reflections_count": 0,
+        "evidence": [
+          {
+            "path": "synthetic_paper.pdf",
+            "sha256": "8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b",
+            "start_line": 1,
+            "end_line": 30,
+            "format": "pdf",
+            "start_page": 1,
+            "end_page": 2,
+            "page_count": 2,
+            "extractor": "pypdf-6.21.4",
+            "workspace_id": "bddbb242dbb14b9c96f6dc77109b7453",
+            "workspace_root": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\.local\\comprehensive_20261030\\live_dialogues\\selected_synthetic_pdf\\workspace",
+            "excerpt_sha256": "660fae681da8279a07618a24c55a787e5cabe5fc94ee313d1fd2a6deb83bacd4",
+            "share_with_model": true,
+            "turn": 2,
+            "status": "selected_excerpt_not_verified",
+            "id": "61db77a462e0c1a2"
+          }
+        ],
+        "evidence_actions": {},
+        "clarification": {
+          "mode": "dynamic",
+          "reason": "validated_partial",
+          "rejected_questions": [
+            {
+              "field": "sampling",
+              "reason": "UngroundedQuestionReference"
+            }
+          ],
+          "model_used": true
+        },
+        "last_export": null,
+        "execution_authorized": false
+      },
+      "questions": [
+        {
+          "field": "scope",
+          "kind": "conflict",
+          "question": "关于研究边界，你希望保留哪一项？",
+          "rationale": "scope 同时被标记为冲突与过期，且论文片段只说明这是合成示例、未执行科学实验，不能据此改写你的声明；先确定保留哪一版边界，后续设计、验收与交付物才有统一前提。",
+          "references": [
+            {
+              "source": "conflict",
+              "key": "scope:0",
+              "quote": "仅做规划，不声称已经复现论文"
+            },
+            {
+              "source": "conflict",
+              "key": "scope:1",
+              "quote": "先规划取得先导记录和核对独立场来源；不把示例数字当成实测结果"
+            },
+            {
+              "source": "stale",
+              "key": "scope",
+              "quote": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+            },
+            {
+              "source": "evidence",
+              "key": "61db77a462e0c1a2",
+              "quote": "SYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.",
+              "citation": "synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b"
+            }
+          ],
+          "options": [
+            {
+              "label": "仅做规划，不声称已经复现论文",
+              "value": "仅做规划，不声称已经复现论文",
+              "action": "revise",
+              "id": "7ced5e00619d"
+            },
+            {
+              "label": "先规划取得先导记录和核对独立场来源；不把示例数字当成实测结果",
+              "value": "先规划取得先导记录和核对独立场来源；不把示例数字当成实测结果",
+              "action": "revise",
+              "id": "0e159ee82431"
+            },
+            {
+              "label": "暂不确定",
+              "value": "未知",
+              "action": "unknown",
+              "id": "2c3af7fa609c"
+            },
+            {
+              "label": "其他，我来补充",
+              "value": "",
+              "action": "custom",
+              "id": "47de6eddb129"
+            }
+          ],
+          "origin": "model",
+          "suggested_options": [],
+          "allow_accept": false,
+          "choice_policy": {
+            "intent": "replication",
+            "origin": "trained_context_match",
+            "policy_hash": "6b7d865a492eaba9c5db239e5f5eaa833184d3b21fe3496f358d525504207ded"
+          },
+          "choice_id": "22931781621d2cf0",
+          "choice_plan_hash": "39aa5b763331c28d97c069e1b8542f00dc8e0222ad050563371528aed29246a9"
+        }
+      ],
+      "execution_authorized": false,
+      "scientific_claim_verified": false,
+      "model_used": true,
+      "clarification": {
+        "mode": "dynamic",
+        "reason": "validated_partial",
+        "rejected_questions": [
+          {
+            "field": "sampling",
+            "reason": "UngroundedQuestionReference"
+          }
+        ],
+        "model_used": true
+      },
+      "question_form": true
+    },
+    "before": {
+      "schema_version": "research_planning_v1",
+      "id": "ac9833026c764f00971c4d0b6f5ce7e8",
+      "revision": 2,
+      "active": true,
+      "facts": {
+        "research_question": {
+          "value": "评估一个合成论文示例能否支持模型A与B的比较实验",
+          "quote": "请帮我评估一个合成论文示例能否支持模型A与B的比较实验",
+          "status": "declared",
+          "turn": 1
+        },
+        "objective_type": {
+          "value": "comparison",
+          "quote": "模型A与B的比较实验",
+          "status": "proposed",
+          "turn": 1
+        },
+        "scope": {
+          "value": "仅做规划，不声称已经复现论文",
+          "quote": "现在只规划，不声称已经复现论文",
+          "status": "proposed",
+          "turn": 1
+        },
+        "exclusions": {
+          "value": "不声称已经复现论文",
+          "quote": "不声称已经复现论文",
+          "status": "declared",
+          "turn": 1
+        }
+      },
+      "unknown": [],
+      "conflicts": {},
+      "decisions": [
+        {
+          "turn": 1,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "research_question",
+              "kind": "added",
+              "before": null,
+              "after": "评估一个合成论文示例能否支持模型A与B的比较实验"
+            },
+            {
+              "field": "objective_type",
+              "kind": "added",
+              "before": null,
+              "after": "comparison"
+            },
+            {
+              "field": "scope",
+              "kind": "added",
+              "before": null,
+              "after": "仅做规划，不声称已经复现论文"
+            },
+            {
+              "field": "exclusions",
+              "kind": "added",
+              "before": null,
+              "after": "不声称已经复现论文"
+            }
+          ]
+        },
+        {
+          "turn": 2,
+          "type": "explicit_evidence_selection",
+          "summary": "已选论文片段：synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b"
+        }
+      ],
+      "approval": null,
+      "pending": {
+        "field": "scope",
+        "kind": "stale",
+        "question": "关于研究边界，是否按当前理解继续？",
+        "rationale": "scope 已被标记为过期，且片段与用户声明的关系需要核对；片段本身不能覆盖用户声明，只能作为核对依据。同时片段明确限定范围，需确认规划是否沿用该限定。",
+        "references": [
+          {
+            "source": "stale",
+            "key": "scope",
+            "quote": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+          },
+          {
+            "source": "fact",
+            "key": "scope",
+            "quote": "仅做规划，不声称已经复现论文"
+          },
+          {
+            "source": "evidence",
+            "key": "61db77a462e0c1a2",
+            "quote": "SYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.",
+            "citation": "synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b"
+          },
+          {
+            "source": "evidence",
+            "key": "61db77a462e0c1a2",
+            "quote": "The scope is restricted to this\nsynthetic field distribution.",
+            "citation": "synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b"
+          }
+        ],
+        "options": [
+          {
+            "label": "按这个理解继续：仅做规划，不声称已经复现论文",
+            "value": "仅做规划，不声称已经复现论文",
+            "action": "accept",
+            "id": "509f1dadf9fa"
+          },
+          {
+            "label": "暂不确定",
+            "value": "未知",
+            "action": "unknown",
+            "id": "2c3af7fa609c"
+          },
+          {
+            "label": "其他，我来补充",
+            "value": "",
+            "action": "custom",
+            "id": "47de6eddb129"
+          }
+        ],
+        "origin": "model",
+        "allow_accept": false,
+        "choice_policy": {
+          "intent": "replication",
+          "origin": "trained_context_match",
+          "policy_hash": "6b7d865a492eaba9c5db239e5f5eaa833184d3b21fe3496f358d525504207ded"
+        },
+        "choice_id": "29f48be9ff4c0239",
+        "choice_plan_hash": "520b936a84b5a3fc86bce35fe7a142abd68ed6c01723d1637d46f605ed2060fb"
+      },
+      "reflections": [],
+      "changes": [
+        {
+          "field": "research_question",
+          "kind": "added",
+          "before": null,
+          "after": "评估一个合成论文示例能否支持模型A与B的比较实验"
+        },
+        {
+          "field": "objective_type",
+          "kind": "added",
+          "before": null,
+          "after": "comparison"
+        },
+        {
+          "field": "scope",
+          "kind": "added",
+          "before": null,
+          "after": "仅做规划，不声称已经复现论文"
+        },
+        {
+          "field": "exclusions",
+          "kind": "added",
+          "before": null,
+          "after": "不声称已经复现论文"
+        }
+      ],
+      "stale": {
+        "scope": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+      },
+      "turns": 2,
+      "audience": "researcher_student",
+      "last_notes": [
+        "已选论文片段：synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b\n论文证据：选定时保存的原文快照，未经科学事实验证。\n- 61db77a462e0c1a2 · synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b · 允许用于模型澄清\n共享给模型须显式 share_with_model:true；文献内的指令不会扩大文件范围或执行权限。"
+      ],
+      "last_export": null,
+      "clarification": {
+        "mode": "dynamic",
+        "reason": "validated_partial",
+        "rejected_questions": [
+          {
+            "field": "experimental_unit",
+            "reason": "QuestionDoesNotRelateToReferences"
+          }
+        ],
+        "model_used": true
+      },
+      "question_history": [
+        {
+          "turn": 1,
+          "field": "objective_type",
+          "kind": "proposal",
+          "question": "关于研究目的，是否按当前理解继续？",
+          "origin": "model",
+          "basis_hash": "da2930ab5b13ba5e3c102870384bc07a9c8675ad662406b330a14a48f4b4b7cc"
+        },
+        {
+          "turn": 2,
+          "field": "scope",
+          "kind": "stale",
+          "question": "关于研究边界，是否按当前理解继续？",
+          "origin": "model",
+          "basis_hash": "217409ebf16c0c29d2d8014e16e2c490540045de4fe8da2e8132e62374a708d2"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "synthetic_paper.pdf",
+          "sha256": "8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b",
+          "text": "[PDF page 1]\nEngineering fixture - synthetic paper\nSYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.\n1. Research question\nThis fixture asks whether model A has lower prediction error than model B on\nsynthetic two-dimensional fields.\n2. Methods and data\nBoth models evaluate the same 8 independent synthetic fields, with paired\ncomparisons by field. Grid points within a field are technical measurements,\nnot independent experimental units.\nTraining, validation and final test fields are separated by source. Both\nmodels use the same splits and tuning budget. The scope is restricted to this\nsynthetic field distribution.\nSYNTHETIC / engineering fixture - PDF page 1\n\n[PDF page 2]\n3. Illustrative results\nIllustrative mean relative errors are 0.12 for model A and 0.15 for model B.\nThese numbers are authored fixture values, not observed scientific evidence.\n4. Limitations\nNo observed variance or confidence interval is provided. No scientific\nexperiment was executed. This fixture does not establish a causal effect or\nout-of-distribution performance.\n5. Reproduction information still needed\nA real study needs a traceable dataset version, code and configuration,\nindependent-unit verification and pilot variability. A sample-size or power\nguarantee cannot be inferred from this fixture.\nThis fixture tests PDF extraction and grounded interpretation, not scientific\nvalidity.\nSYNTHETIC / engineering fixture - PDF page 2",
+          "start_line": 1,
+          "end_line": 30,
+          "format": "pdf",
+          "start_page": 1,
+          "end_page": 2,
+          "page_count": 2,
+          "pages": [
+            {
+              "page": 1,
+              "text": "Engineering fixture - synthetic paper\nSYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.\n1. Research question\nThis fixture asks whether model A has lower prediction error than model B on\nsynthetic two-dimensional fields.\n2. Methods and data\nBoth models evaluate the same 8 independent synthetic fields, with paired\ncomparisons by field. Grid points within a field are technical measurements,\nnot independent experimental units.\nTraining, validation and final test fields are separated by source. Both\nmodels use the same splits and tuning budget. The scope is restricted to this\nsynthetic field distribution.\nSYNTHETIC / engineering fixture - PDF page 1"
+            },
+            {
+              "page": 2,
+              "text": "3. Illustrative results\nIllustrative mean relative errors are 0.12 for model A and 0.15 for model B.\nThese numbers are authored fixture values, not observed scientific evidence.\n4. Limitations\nNo observed variance or confidence interval is provided. No scientific\nexperiment was executed. This fixture does not establish a causal effect or\nout-of-distribution performance.\n5. Reproduction information still needed\nA real study needs a traceable dataset version, code and configuration,\nindependent-unit verification and pilot variability. A sample-size or power\nguarantee cannot be inferred from this fixture.\nThis fixture tests PDF extraction and grounded interpretation, not scientific\nvalidity.\nSYNTHETIC / engineering fixture - PDF page 2"
+            }
+          ],
+          "extractor": "pypdf-6.21.4",
+          "workspace_id": "bddbb242dbb14b9c96f6dc77109b7453",
+          "workspace_root": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\.local\\comprehensive_20261030\\live_dialogues\\selected_synthetic_pdf\\workspace",
+          "excerpt_sha256": "660fae681da8279a07618a24c55a787e5cabe5fc94ee313d1fd2a6deb83bacd4",
+          "share_with_model": true,
+          "turn": 2,
+          "status": "selected_excerpt_not_verified",
+          "id": "61db77a462e0c1a2"
+        }
+      ]
+    },
+    "after": {
+      "schema_version": "research_planning_v1",
+      "id": "ac9833026c764f00971c4d0b6f5ce7e8",
+      "revision": 3,
+      "active": true,
+      "facts": {
+        "research_question": {
+          "value": "评估一个合成论文示例能否支持模型A与B的比较实验",
+          "quote": "请帮我评估一个合成论文示例能否支持模型A与B的比较实验",
+          "status": "declared",
+          "turn": 1
+        },
+        "objective_type": {
+          "value": "comparison",
+          "quote": "模型A与B的比较实验",
+          "status": "proposed",
+          "turn": 1
+        },
+        "scope": {
+          "value": "仅做规划，不声称已经复现论文",
+          "quote": "现在只规划，不声称已经复现论文",
+          "status": "proposed",
+          "turn": 1
+        },
+        "exclusions": {
+          "value": "不声称已经复现论文",
+          "quote": "不声称已经复现论文",
+          "status": "declared",
+          "turn": 1
+        },
+        "baseline": {
+          "value": "先导记录（作为后续正式研究的前期依据）",
+          "quote": "先规划取得先导记录",
+          "status": "proposed",
+          "turn": 4
+        },
+        "data_source": {
+          "value": "需核对独立场来源",
+          "quote": "核对独立场来源",
+          "status": "proposed",
+          "turn": 4
+        }
+      },
+      "unknown": [
+        "sampling"
+      ],
+      "conflicts": {
+        "scope": [
+          {
+            "value": "仅做规划，不声称已经复现论文",
+            "quote": "现在只规划，不声称已经复现论文",
+            "status": "proposed",
+            "turn": 1
+          },
+          {
+            "value": "先规划取得先导记录和核对独立场来源；不把示例数字当成实测结果",
+            "quote": "先规划取得先导记录和核对独立场来源，不能把示例数字当成实测结果",
+            "status": "proposed",
+            "turn": 4
+          }
+        ],
+        "exclusions": [
+          {
+            "value": "不声称已经复现论文",
+            "quote": "不声称已经复现论文",
+            "status": "declared",
+            "turn": 1
+          },
+          {
+            "value": "不把示例数字当成实测结果",
+            "quote": "不能把示例数字当成实测结果",
+            "status": "proposed",
+            "turn": 4
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "turn": 1,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "research_question",
+              "kind": "added",
+              "before": null,
+              "after": "评估一个合成论文示例能否支持模型A与B的比较实验"
+            },
+            {
+              "field": "objective_type",
+              "kind": "added",
+              "before": null,
+              "after": "comparison"
+            },
+            {
+              "field": "scope",
+              "kind": "added",
+              "before": null,
+              "after": "仅做规划，不声称已经复现论文"
+            },
+            {
+              "field": "exclusions",
+              "kind": "added",
+              "before": null,
+              "after": "不声称已经复现论文"
+            }
+          ]
+        },
+        {
+          "turn": 2,
+          "type": "explicit_evidence_selection",
+          "summary": "已选论文片段：synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b"
+        },
+        {
+          "turn": 4,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "scope",
+              "kind": "conflict",
+              "before": "仅做规划，不声称已经复现论文",
+              "after": "先规划取得先导记录和核对独立场来源；不把示例数字当成实测结果"
+            },
+            {
+              "field": "exclusions",
+              "kind": "conflict",
+              "before": "不声称已经复现论文",
+              "after": "不把示例数字当成实测结果"
+            },
+            {
+              "field": "baseline",
+              "kind": "added",
+              "before": null,
+              "after": "先导记录（作为后续正式研究的前期依据）"
+            },
+            {
+              "field": "data_source",
+              "kind": "added",
+              "before": null,
+              "after": "需核对独立场来源"
+            },
+            {
+              "field": "sampling",
+              "kind": "unknown",
+              "before": null,
+              "after": null
+            }
+          ]
+        }
+      ],
+      "approval": null,
+      "pending": {
+        "field": "scope",
+        "kind": "conflict",
+        "question": "关于研究边界，你希望保留哪一项？",
+        "rationale": "scope 同时被标记为冲突与过期，且论文片段只说明这是合成示例、未执行科学实验，不能据此改写你的声明；先确定保留哪一版边界，后续设计、验收与交付物才有统一前提。",
+        "references": [
+          {
+            "source": "conflict",
+            "key": "scope:0",
+            "quote": "仅做规划，不声称已经复现论文"
+          },
+          {
+            "source": "conflict",
+            "key": "scope:1",
+            "quote": "先规划取得先导记录和核对独立场来源；不把示例数字当成实测结果"
+          },
+          {
+            "source": "stale",
+            "key": "scope",
+            "quote": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+          },
+          {
+            "source": "evidence",
+            "key": "61db77a462e0c1a2",
+            "quote": "SYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.",
+            "citation": "synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b"
+          }
+        ],
+        "options": [
+          {
+            "label": "仅做规划，不声称已经复现论文",
+            "value": "仅做规划，不声称已经复现论文",
+            "action": "revise",
+            "id": "7ced5e00619d"
+          },
+          {
+            "label": "先规划取得先导记录和核对独立场来源；不把示例数字当成实测结果",
+            "value": "先规划取得先导记录和核对独立场来源；不把示例数字当成实测结果",
+            "action": "revise",
+            "id": "0e159ee82431"
+          },
+          {
+            "label": "暂不确定",
+            "value": "未知",
+            "action": "unknown",
+            "id": "2c3af7fa609c"
+          },
+          {
+            "label": "其他，我来补充",
+            "value": "",
+            "action": "custom",
+            "id": "47de6eddb129"
+          }
+        ],
+        "origin": "model",
+        "suggested_options": [],
+        "allow_accept": false,
+        "choice_policy": {
+          "intent": "replication",
+          "origin": "trained_context_match",
+          "policy_hash": "6b7d865a492eaba9c5db239e5f5eaa833184d3b21fe3496f358d525504207ded"
+        },
+        "choice_id": "22931781621d2cf0",
+        "choice_plan_hash": "39aa5b763331c28d97c069e1b8542f00dc8e0222ad050563371528aed29246a9"
+      },
+      "reflections": [],
+      "changes": [
+        {
+          "field": "research_question",
+          "kind": "added",
+          "before": null,
+          "after": "评估一个合成论文示例能否支持模型A与B的比较实验"
+        },
+        {
+          "field": "objective_type",
+          "kind": "added",
+          "before": null,
+          "after": "comparison"
+        },
+        {
+          "field": "scope",
+          "kind": "added",
+          "before": null,
+          "after": "仅做规划，不声称已经复现论文"
+        },
+        {
+          "field": "exclusions",
+          "kind": "added",
+          "before": null,
+          "after": "不声称已经复现论文"
+        },
+        {
+          "field": "scope",
+          "kind": "conflict",
+          "before": "仅做规划，不声称已经复现论文",
+          "after": "先规划取得先导记录和核对独立场来源；不把示例数字当成实测结果"
+        },
+        {
+          "field": "exclusions",
+          "kind": "conflict",
+          "before": "不声称已经复现论文",
+          "after": "不把示例数字当成实测结果"
+        },
+        {
+          "field": "baseline",
+          "kind": "added",
+          "before": null,
+          "after": "先导记录（作为后续正式研究的前期依据）"
+        },
+        {
+          "field": "data_source",
+          "kind": "added",
+          "before": null,
+          "after": "需核对独立场来源"
+        },
+        {
+          "field": "sampling",
+          "kind": "unknown",
+          "before": null,
+          "after": null
+        }
+      ],
+      "stale": {
+        "scope": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+      },
+      "turns": 3,
+      "audience": "researcher_student",
+      "last_notes": [
+        "未把模型推测的“数据与证据来源未知”写成用户声明；该字段仍待澄清。",
+        "语义改写和推断仅作为待确认提议展示，不会自动成为已确认边界。"
+      ],
+      "last_export": null,
+      "clarification": {
+        "mode": "dynamic",
+        "reason": "validated_partial",
+        "rejected_questions": [
+          {
+            "field": "sampling",
+            "reason": "UngroundedQuestionReference"
+          }
+        ],
+        "model_used": true
+      },
+      "question_history": [
+        {
+          "turn": 1,
+          "field": "objective_type",
+          "kind": "proposal",
+          "question": "关于研究目的，是否按当前理解继续？",
+          "origin": "model",
+          "basis_hash": "da2930ab5b13ba5e3c102870384bc07a9c8675ad662406b330a14a48f4b4b7cc"
+        },
+        {
+          "turn": 2,
+          "field": "scope",
+          "kind": "stale",
+          "question": "关于研究边界，是否按当前理解继续？",
+          "origin": "model",
+          "basis_hash": "217409ebf16c0c29d2d8014e16e2c490540045de4fe8da2e8132e62374a708d2"
+        },
+        {
+          "turn": 4,
+          "field": "scope",
+          "kind": "conflict",
+          "question": "关于研究边界，你希望保留哪一项？",
+          "origin": "model",
+          "basis_hash": "4ca7f026767dcd4fb34383cdf188206643a1719328ce2e4d1e0d03bba4db9343"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "synthetic_paper.pdf",
+          "sha256": "8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b",
+          "text": "[PDF page 1]\nEngineering fixture - synthetic paper\nSYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.\n1. Research question\nThis fixture asks whether model A has lower prediction error than model B on\nsynthetic two-dimensional fields.\n2. Methods and data\nBoth models evaluate the same 8 independent synthetic fields, with paired\ncomparisons by field. Grid points within a field are technical measurements,\nnot independent experimental units.\nTraining, validation and final test fields are separated by source. Both\nmodels use the same splits and tuning budget. The scope is restricted to this\nsynthetic field distribution.\nSYNTHETIC / engineering fixture - PDF page 1\n\n[PDF page 2]\n3. Illustrative results\nIllustrative mean relative errors are 0.12 for model A and 0.15 for model B.\nThese numbers are authored fixture values, not observed scientific evidence.\n4. Limitations\nNo observed variance or confidence interval is provided. No scientific\nexperiment was executed. This fixture does not establish a causal effect or\nout-of-distribution performance.\n5. Reproduction information still needed\nA real study needs a traceable dataset version, code and configuration,\nindependent-unit verification and pilot variability. A sample-size or power\nguarantee cannot be inferred from this fixture.\nThis fixture tests PDF extraction and grounded interpretation, not scientific\nvalidity.\nSYNTHETIC / engineering fixture - PDF page 2",
+          "start_line": 1,
+          "end_line": 30,
+          "format": "pdf",
+          "start_page": 1,
+          "end_page": 2,
+          "page_count": 2,
+          "pages": [
+            {
+              "page": 1,
+              "text": "Engineering fixture - synthetic paper\nSYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.\n1. Research question\nThis fixture asks whether model A has lower prediction error than model B on\nsynthetic two-dimensional fields.\n2. Methods and data\nBoth models evaluate the same 8 independent synthetic fields, with paired\ncomparisons by field. Grid points within a field are technical measurements,\nnot independent experimental units.\nTraining, validation and final test fields are separated by source. Both\nmodels use the same splits and tuning budget. The scope is restricted to this\nsynthetic field distribution.\nSYNTHETIC / engineering fixture - PDF page 1"
+            },
+            {
+              "page": 2,
+              "text": "3. Illustrative results\nIllustrative mean relative errors are 0.12 for model A and 0.15 for model B.\nThese numbers are authored fixture values, not observed scientific evidence.\n4. Limitations\nNo observed variance or confidence interval is provided. No scientific\nexperiment was executed. This fixture does not establish a causal effect or\nout-of-distribution performance.\n5. Reproduction information still needed\nA real study needs a traceable dataset version, code and configuration,\nindependent-unit verification and pilot variability. A sample-size or power\nguarantee cannot be inferred from this fixture.\nThis fixture tests PDF extraction and grounded interpretation, not scientific\nvalidity.\nSYNTHETIC / engineering fixture - PDF page 2"
+            }
+          ],
+          "extractor": "pypdf-6.21.4",
+          "workspace_id": "bddbb242dbb14b9c96f6dc77109b7453",
+          "workspace_root": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\.local\\comprehensive_20261030\\live_dialogues\\selected_synthetic_pdf\\workspace",
+          "excerpt_sha256": "660fae681da8279a07618a24c55a787e5cabe5fc94ee313d1fd2a6deb83bacd4",
+          "share_with_model": true,
+          "turn": 2,
+          "status": "selected_excerpt_not_verified",
+          "id": "61db77a462e0c1a2"
+        }
+      ]
+    },
+    "known_field_missing_questions": [],
+    "state_changed": true,
+    "resources": {
+      "llm_requests": 6,
+      "llm_tokens": 13761,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 8,
+        "llm_tokens": 30000,
+        "tool_calls": 40,
+        "read_bytes": 24000
+      }
+    }
+  },
+  {
+    "turn": 5,
+    "input": "只在同一合成场分布比较A与B，每个独立完整场是配对单位，网格点不是重复。以后最多两小时用于先导，本轮不执行，先给我仍缺哪些证据的设计草案。",
+    "seconds": 6.266,
+    "recovered_persisted_response_without_replay": false,
+    "exception": null,
+    "result": {
+      "intent": "planning",
+      "answer": "正在澄清\n\n关于本轮不回答的问题，你希望保留哪一项？\n1. 不声称已经复现论文\n2. 不把示例数字当成实测结果\n3. 暂不确定\n4. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+      "planning": {
+        "id": "ac9833026c764f00971c4d0b6f5ce7e8",
+        "revision": 4,
+        "active": true,
+        "facts": {
+          "research_question": {
+            "value": "评估一个合成论文示例能否支持模型A与B的比较实验",
+            "quote": "请帮我评估一个合成论文示例能否支持模型A与B的比较实验",
+            "status": "declared",
+            "turn": 1
+          },
+          "objective_type": {
+            "value": "comparison",
+            "quote": "模型A与B的比较实验",
+            "status": "proposed",
+            "turn": 1
+          },
+          "scope": {
+            "value": "仅做规划，不声称已经复现论文",
+            "quote": "现在只规划，不声称已经复现论文",
+            "status": "proposed",
+            "turn": 1
+          },
+          "exclusions": {
+            "value": "不声称已经复现论文",
+            "quote": "不声称已经复现论文",
+            "status": "declared",
+            "turn": 1
+          },
+          "baseline": {
+            "value": "先导记录（作为后续正式研究的前期依据）",
+            "quote": "先规划取得先导记录",
+            "status": "proposed",
+            "turn": 4
+          },
+          "data_source": {
+            "value": "需核对独立场来源",
+            "quote": "核对独立场来源",
+            "status": "proposed",
+            "turn": 4
+          }
+        },
+        "unknown": [
+          "sampling"
+        ],
+        "conflicts": {
+          "scope": [
+            {
+              "value": "仅做规划，不声称已经复现论文",
+              "quote": "现在只规划，不声称已经复现论文",
+              "status": "proposed",
+              "turn": 1
+            },
+            {
+              "value": "先规划取得先导记录和核对独立场来源；不把示例数字当成实测结果",
+              "quote": "先规划取得先导记录和核对独立场来源，不能把示例数字当成实测结果",
+              "status": "proposed",
+              "turn": 4
+            }
+          ],
+          "exclusions": [
+            {
+              "value": "不声称已经复现论文",
+              "quote": "不声称已经复现论文",
+              "status": "declared",
+              "turn": 1
+            },
+            {
+              "value": "不把示例数字当成实测结果",
+              "quote": "不能把示例数字当成实测结果",
+              "status": "proposed",
+              "turn": 4
+            }
+          ]
+        },
+        "stale": {
+          "scope": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+        },
+        "pending": {
+          "field": "exclusions",
+          "kind": "conflict",
+          "question": "关于本轮不回答的问题，你希望保留哪一项？",
+          "rationale": "该字段已登记冲突，且论文片段中的 0.12/0.15 明确是作者编写的示例值而非观测证据，两条排除项指向不同风险，需要你确认保留哪一版。",
+          "references": [
+            {
+              "source": "conflict",
+              "key": "exclusions:0",
+              "quote": "不声称已经复现论文"
+            },
+            {
+              "source": "conflict",
+              "key": "exclusions:1",
+              "quote": "不把示例数字当成实测结果"
+            },
+            {
+              "source": "evidence",
+              "key": "61db77a462e0c1a2",
+              "quote": "Illustrative mean relative errors are 0.12 for model A and 0.15 for model B.\nThese numbers are authored fixture values, not observed scientific evidence.",
+              "citation": "synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b"
+            }
+          ],
+          "options": [
+            {
+              "label": "不声称已经复现论文",
+              "value": "不声称已经复现论文",
+              "action": "revise",
+              "id": "ba925dd443ae"
+            },
+            {
+              "label": "不把示例数字当成实测结果",
+              "value": "不把示例数字当成实测结果",
+              "action": "revise",
+              "id": "072c34674d6f"
+            },
+            {
+              "label": "暂不确定",
+              "value": "未知",
+              "action": "unknown",
+              "id": "2c3af7fa609c"
+            },
+            {
+              "label": "其他，我来补充",
+              "value": "",
+              "action": "custom",
+              "id": "47de6eddb129"
+            }
+          ],
+          "origin": "model",
+          "allow_accept": false,
+          "choice_policy": {
+            "intent": "replication",
+            "origin": "trained_context_match",
+            "policy_hash": "6b7d865a492eaba9c5db239e5f5eaa833184d3b21fe3496f358d525504207ded"
+          },
+          "choice_id": "a8a038c803e9b6db",
+          "choice_plan_hash": "39aa5b763331c28d97c069e1b8542f00dc8e0222ad050563371528aed29246a9"
+        },
+        "review": {
+          "ready": false,
+          "checks": [
+            {
+              "field": "research_question",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "objective_type",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "hypothesis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+            },
+            {
+              "field": "experimental_unit",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "一次独立分配或观察是什么？哪些测量来自同一对象？"
+            },
+            {
+              "field": "factors",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "改变哪些因素和水平，主要比较谁与谁？"
+            },
+            {
+              "field": "design",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+            },
+            {
+              "field": "outcomes",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+            },
+            {
+              "field": "baseline",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "data_source",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "sampling",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+            },
+            {
+              "field": "analysis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+            },
+            {
+              "field": "acceptance",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+            },
+            {
+              "field": "resources",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？"
+            },
+            {
+              "field": "risks",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+            },
+            {
+              "field": "reproducibility",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+            },
+            {
+              "field": "human_roles",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+            },
+            {
+              "field": "deliverable",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "最后交付什么：方案、脚本、表格、报告或可复现实验记录？"
+            },
+            {
+              "field": "objective_type",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "scope",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "scope",
+              "code": "unresolved_conflict",
+              "status": "blocked",
+              "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+            },
+            {
+              "field": "scope",
+              "code": "dependent_declaration_stale",
+              "status": "blocked",
+              "detail": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+            },
+            {
+              "field": "exclusions",
+              "code": "unresolved_conflict",
+              "status": "blocked",
+              "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+            },
+            {
+              "field": "baseline",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "data_source",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "sampling",
+              "code": "explicit_unknown",
+              "status": "blocked",
+              "detail": "用户明确尚不知道；应先规划获取证据的步骤。"
+            },
+            {
+              "field": "objective_type",
+              "code": "objective_classified",
+              "status": "passed",
+              "detail": "需要明确比较、预测、因果、探索或复现目的。"
+            }
+          ],
+          "blockers": [
+            {
+              "field": "hypothesis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+            },
+            {
+              "field": "experimental_unit",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "一次独立分配或观察是什么？哪些测量来自同一对象？"
+            },
+            {
+              "field": "factors",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "改变哪些因素和水平，主要比较谁与谁？"
+            },
+            {
+              "field": "design",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+            },
+            {
+              "field": "outcomes",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+            },
+            {
+              "field": "sampling",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+            },
+            {
+              "field": "analysis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+            },
+            {
+              "field": "acceptance",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+            },
+            {
+              "field": "resources",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？"
+            },
+            {
+              "field": "risks",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+            },
+            {
+              "field": "reproducibility",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+            },
+            {
+              "field": "human_roles",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+            },
+            {
+              "field": "deliverable",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "最后交付什么：方案、脚本、表格、报告或可复现实验记录？"
+            },
+            {
+              "field": "objective_type",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "scope",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "scope",
+              "code": "unresolved_conflict",
+              "status": "blocked",
+              "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+            },
+            {
+              "field": "scope",
+              "code": "dependent_declaration_stale",
+              "status": "blocked",
+              "detail": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+            },
+            {
+              "field": "exclusions",
+              "code": "unresolved_conflict",
+              "status": "blocked",
+              "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+            },
+            {
+              "field": "baseline",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "data_source",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "sampling",
+              "code": "explicit_unknown",
+              "status": "blocked",
+              "detail": "用户明确尚不知道；应先规划获取证据的步骤。"
+            }
+          ],
+          "required_fields": [
+            "research_question",
+            "objective_type",
+            "hypothesis",
+            "scope",
+            "exclusions",
+            "experimental_unit",
+            "factors",
+            "design",
+            "outcomes",
+            "baseline",
+            "data_source",
+            "sampling",
+            "analysis",
+            "acceptance",
+            "resources",
+            "risks",
+            "reproducibility",
+            "human_roles",
+            "deliverable"
+          ],
+          "scope": "planning_only",
+          "execution_authorized": false,
+          "scientific_claim_verified": false,
+          "readiness_meaning": "用户声明已足够形成待人类复核的计划；不表示假设、数据、功效或结论已被验证。"
+        },
+        "contract_hash": "39aa5b763331c28d97c069e1b8542f00dc8e0222ad050563371528aed29246a9",
+        "approved": false,
+        "decisions_count": 3,
+        "reflections_count": 0,
+        "evidence": [
+          {
+            "path": "synthetic_paper.pdf",
+            "sha256": "8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b",
+            "start_line": 1,
+            "end_line": 30,
+            "format": "pdf",
+            "start_page": 1,
+            "end_page": 2,
+            "page_count": 2,
+            "extractor": "pypdf-6.21.4",
+            "workspace_id": "bddbb242dbb14b9c96f6dc77109b7453",
+            "workspace_root": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\.local\\comprehensive_20261030\\live_dialogues\\selected_synthetic_pdf\\workspace",
+            "excerpt_sha256": "660fae681da8279a07618a24c55a787e5cabe5fc94ee313d1fd2a6deb83bacd4",
+            "share_with_model": true,
+            "turn": 2,
+            "status": "selected_excerpt_not_verified",
+            "id": "61db77a462e0c1a2"
+          }
+        ],
+        "evidence_actions": {},
+        "clarification": {
+          "mode": "dynamic",
+          "reason": "validated",
+          "rejected_questions": [],
+          "model_used": true
+        },
+        "last_export": null,
+        "execution_authorized": false
+      },
+      "questions": [
+        {
+          "field": "exclusions",
+          "kind": "conflict",
+          "question": "关于本轮不回答的问题，你希望保留哪一项？",
+          "rationale": "该字段已登记冲突，且论文片段中的 0.12/0.15 明确是作者编写的示例值而非观测证据，两条排除项指向不同风险，需要你确认保留哪一版。",
+          "references": [
+            {
+              "source": "conflict",
+              "key": "exclusions:0",
+              "quote": "不声称已经复现论文"
+            },
+            {
+              "source": "conflict",
+              "key": "exclusions:1",
+              "quote": "不把示例数字当成实测结果"
+            },
+            {
+              "source": "evidence",
+              "key": "61db77a462e0c1a2",
+              "quote": "Illustrative mean relative errors are 0.12 for model A and 0.15 for model B.\nThese numbers are authored fixture values, not observed scientific evidence.",
+              "citation": "synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b"
+            }
+          ],
+          "options": [
+            {
+              "label": "不声称已经复现论文",
+              "value": "不声称已经复现论文",
+              "action": "revise",
+              "id": "ba925dd443ae"
+            },
+            {
+              "label": "不把示例数字当成实测结果",
+              "value": "不把示例数字当成实测结果",
+              "action": "revise",
+              "id": "072c34674d6f"
+            },
+            {
+              "label": "暂不确定",
+              "value": "未知",
+              "action": "unknown",
+              "id": "2c3af7fa609c"
+            },
+            {
+              "label": "其他，我来补充",
+              "value": "",
+              "action": "custom",
+              "id": "47de6eddb129"
+            }
+          ],
+          "origin": "model",
+          "allow_accept": false,
+          "choice_policy": {
+            "intent": "replication",
+            "origin": "trained_context_match",
+            "policy_hash": "6b7d865a492eaba9c5db239e5f5eaa833184d3b21fe3496f358d525504207ded"
+          },
+          "choice_id": "a8a038c803e9b6db",
+          "choice_plan_hash": "39aa5b763331c28d97c069e1b8542f00dc8e0222ad050563371528aed29246a9"
+        }
+      ],
+      "execution_authorized": false,
+      "scientific_claim_verified": false,
+      "model_used": true,
+      "clarification": {
+        "mode": "dynamic",
+        "reason": "validated",
+        "rejected_questions": [],
+        "model_used": true
+      },
+      "question_form": true
+    },
+    "before": {
+      "schema_version": "research_planning_v1",
+      "id": "ac9833026c764f00971c4d0b6f5ce7e8",
+      "revision": 3,
+      "active": true,
+      "facts": {
+        "research_question": {
+          "value": "评估一个合成论文示例能否支持模型A与B的比较实验",
+          "quote": "请帮我评估一个合成论文示例能否支持模型A与B的比较实验",
+          "status": "declared",
+          "turn": 1
+        },
+        "objective_type": {
+          "value": "comparison",
+          "quote": "模型A与B的比较实验",
+          "status": "proposed",
+          "turn": 1
+        },
+        "scope": {
+          "value": "仅做规划，不声称已经复现论文",
+          "quote": "现在只规划，不声称已经复现论文",
+          "status": "proposed",
+          "turn": 1
+        },
+        "exclusions": {
+          "value": "不声称已经复现论文",
+          "quote": "不声称已经复现论文",
+          "status": "declared",
+          "turn": 1
+        },
+        "baseline": {
+          "value": "先导记录（作为后续正式研究的前期依据）",
+          "quote": "先规划取得先导记录",
+          "status": "proposed",
+          "turn": 4
+        },
+        "data_source": {
+          "value": "需核对独立场来源",
+          "quote": "核对独立场来源",
+          "status": "proposed",
+          "turn": 4
+        }
+      },
+      "unknown": [
+        "sampling"
+      ],
+      "conflicts": {
+        "scope": [
+          {
+            "value": "仅做规划，不声称已经复现论文",
+            "quote": "现在只规划，不声称已经复现论文",
+            "status": "proposed",
+            "turn": 1
+          },
+          {
+            "value": "先规划取得先导记录和核对独立场来源；不把示例数字当成实测结果",
+            "quote": "先规划取得先导记录和核对独立场来源，不能把示例数字当成实测结果",
+            "status": "proposed",
+            "turn": 4
+          }
+        ],
+        "exclusions": [
+          {
+            "value": "不声称已经复现论文",
+            "quote": "不声称已经复现论文",
+            "status": "declared",
+            "turn": 1
+          },
+          {
+            "value": "不把示例数字当成实测结果",
+            "quote": "不能把示例数字当成实测结果",
+            "status": "proposed",
+            "turn": 4
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "turn": 1,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "research_question",
+              "kind": "added",
+              "before": null,
+              "after": "评估一个合成论文示例能否支持模型A与B的比较实验"
+            },
+            {
+              "field": "objective_type",
+              "kind": "added",
+              "before": null,
+              "after": "comparison"
+            },
+            {
+              "field": "scope",
+              "kind": "added",
+              "before": null,
+              "after": "仅做规划，不声称已经复现论文"
+            },
+            {
+              "field": "exclusions",
+              "kind": "added",
+              "before": null,
+              "after": "不声称已经复现论文"
+            }
+          ]
+        },
+        {
+          "turn": 2,
+          "type": "explicit_evidence_selection",
+          "summary": "已选论文片段：synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b"
+        },
+        {
+          "turn": 4,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "scope",
+              "kind": "conflict",
+              "before": "仅做规划，不声称已经复现论文",
+              "after": "先规划取得先导记录和核对独立场来源；不把示例数字当成实测结果"
+            },
+            {
+              "field": "exclusions",
+              "kind": "conflict",
+              "before": "不声称已经复现论文",
+              "after": "不把示例数字当成实测结果"
+            },
+            {
+              "field": "baseline",
+              "kind": "added",
+              "before": null,
+              "after": "先导记录（作为后续正式研究的前期依据）"
+            },
+            {
+              "field": "data_source",
+              "kind": "added",
+              "before": null,
+              "after": "需核对独立场来源"
+            },
+            {
+              "field": "sampling",
+              "kind": "unknown",
+              "before": null,
+              "after": null
+            }
+          ]
+        }
+      ],
+      "approval": null,
+      "pending": {
+        "field": "scope",
+        "kind": "conflict",
+        "question": "关于研究边界，你希望保留哪一项？",
+        "rationale": "scope 同时被标记为冲突与过期，且论文片段只说明这是合成示例、未执行科学实验，不能据此改写你的声明；先确定保留哪一版边界，后续设计、验收与交付物才有统一前提。",
+        "references": [
+          {
+            "source": "conflict",
+            "key": "scope:0",
+            "quote": "仅做规划，不声称已经复现论文"
+          },
+          {
+            "source": "conflict",
+            "key": "scope:1",
+            "quote": "先规划取得先导记录和核对独立场来源；不把示例数字当成实测结果"
+          },
+          {
+            "source": "stale",
+            "key": "scope",
+            "quote": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+          },
+          {
+            "source": "evidence",
+            "key": "61db77a462e0c1a2",
+            "quote": "SYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.",
+            "citation": "synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b"
+          }
+        ],
+        "options": [
+          {
+            "label": "仅做规划，不声称已经复现论文",
+            "value": "仅做规划，不声称已经复现论文",
+            "action": "revise",
+            "id": "7ced5e00619d"
+          },
+          {
+            "label": "先规划取得先导记录和核对独立场来源；不把示例数字当成实测结果",
+            "value": "先规划取得先导记录和核对独立场来源；不把示例数字当成实测结果",
+            "action": "revise",
+            "id": "0e159ee82431"
+          },
+          {
+            "label": "暂不确定",
+            "value": "未知",
+            "action": "unknown",
+            "id": "2c3af7fa609c"
+          },
+          {
+            "label": "其他，我来补充",
+            "value": "",
+            "action": "custom",
+            "id": "47de6eddb129"
+          }
+        ],
+        "origin": "model",
+        "suggested_options": [],
+        "allow_accept": false,
+        "choice_policy": {
+          "intent": "replication",
+          "origin": "trained_context_match",
+          "policy_hash": "6b7d865a492eaba9c5db239e5f5eaa833184d3b21fe3496f358d525504207ded"
+        },
+        "choice_id": "22931781621d2cf0",
+        "choice_plan_hash": "39aa5b763331c28d97c069e1b8542f00dc8e0222ad050563371528aed29246a9"
+      },
+      "reflections": [],
+      "changes": [
+        {
+          "field": "research_question",
+          "kind": "added",
+          "before": null,
+          "after": "评估一个合成论文示例能否支持模型A与B的比较实验"
+        },
+        {
+          "field": "objective_type",
+          "kind": "added",
+          "before": null,
+          "after": "comparison"
+        },
+        {
+          "field": "scope",
+          "kind": "added",
+          "before": null,
+          "after": "仅做规划，不声称已经复现论文"
+        },
+        {
+          "field": "exclusions",
+          "kind": "added",
+          "before": null,
+          "after": "不声称已经复现论文"
+        },
+        {
+          "field": "scope",
+          "kind": "conflict",
+          "before": "仅做规划，不声称已经复现论文",
+          "after": "先规划取得先导记录和核对独立场来源；不把示例数字当成实测结果"
+        },
+        {
+          "field": "exclusions",
+          "kind": "conflict",
+          "before": "不声称已经复现论文",
+          "after": "不把示例数字当成实测结果"
+        },
+        {
+          "field": "baseline",
+          "kind": "added",
+          "before": null,
+          "after": "先导记录（作为后续正式研究的前期依据）"
+        },
+        {
+          "field": "data_source",
+          "kind": "added",
+          "before": null,
+          "after": "需核对独立场来源"
+        },
+        {
+          "field": "sampling",
+          "kind": "unknown",
+          "before": null,
+          "after": null
+        }
+      ],
+      "stale": {
+        "scope": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+      },
+      "turns": 3,
+      "audience": "researcher_student",
+      "last_notes": [
+        "未把模型推测的“数据与证据来源未知”写成用户声明；该字段仍待澄清。",
+        "语义改写和推断仅作为待确认提议展示，不会自动成为已确认边界。"
+      ],
+      "last_export": null,
+      "clarification": {
+        "mode": "dynamic",
+        "reason": "validated_partial",
+        "rejected_questions": [
+          {
+            "field": "sampling",
+            "reason": "UngroundedQuestionReference"
+          }
+        ],
+        "model_used": true
+      },
+      "question_history": [
+        {
+          "turn": 1,
+          "field": "objective_type",
+          "kind": "proposal",
+          "question": "关于研究目的，是否按当前理解继续？",
+          "origin": "model",
+          "basis_hash": "da2930ab5b13ba5e3c102870384bc07a9c8675ad662406b330a14a48f4b4b7cc"
+        },
+        {
+          "turn": 2,
+          "field": "scope",
+          "kind": "stale",
+          "question": "关于研究边界，是否按当前理解继续？",
+          "origin": "model",
+          "basis_hash": "217409ebf16c0c29d2d8014e16e2c490540045de4fe8da2e8132e62374a708d2"
+        },
+        {
+          "turn": 4,
+          "field": "scope",
+          "kind": "conflict",
+          "question": "关于研究边界，你希望保留哪一项？",
+          "origin": "model",
+          "basis_hash": "4ca7f026767dcd4fb34383cdf188206643a1719328ce2e4d1e0d03bba4db9343"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "synthetic_paper.pdf",
+          "sha256": "8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b",
+          "text": "[PDF page 1]\nEngineering fixture - synthetic paper\nSYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.\n1. Research question\nThis fixture asks whether model A has lower prediction error than model B on\nsynthetic two-dimensional fields.\n2. Methods and data\nBoth models evaluate the same 8 independent synthetic fields, with paired\ncomparisons by field. Grid points within a field are technical measurements,\nnot independent experimental units.\nTraining, validation and final test fields are separated by source. Both\nmodels use the same splits and tuning budget. The scope is restricted to this\nsynthetic field distribution.\nSYNTHETIC / engineering fixture - PDF page 1\n\n[PDF page 2]\n3. Illustrative results\nIllustrative mean relative errors are 0.12 for model A and 0.15 for model B.\nThese numbers are authored fixture values, not observed scientific evidence.\n4. Limitations\nNo observed variance or confidence interval is provided. No scientific\nexperiment was executed. This fixture does not establish a causal effect or\nout-of-distribution performance.\n5. Reproduction information still needed\nA real study needs a traceable dataset version, code and configuration,\nindependent-unit verification and pilot variability. A sample-size or power\nguarantee cannot be inferred from this fixture.\nThis fixture tests PDF extraction and grounded interpretation, not scientific\nvalidity.\nSYNTHETIC / engineering fixture - PDF page 2",
+          "start_line": 1,
+          "end_line": 30,
+          "format": "pdf",
+          "start_page": 1,
+          "end_page": 2,
+          "page_count": 2,
+          "pages": [
+            {
+              "page": 1,
+              "text": "Engineering fixture - synthetic paper\nSYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.\n1. Research question\nThis fixture asks whether model A has lower prediction error than model B on\nsynthetic two-dimensional fields.\n2. Methods and data\nBoth models evaluate the same 8 independent synthetic fields, with paired\ncomparisons by field. Grid points within a field are technical measurements,\nnot independent experimental units.\nTraining, validation and final test fields are separated by source. Both\nmodels use the same splits and tuning budget. The scope is restricted to this\nsynthetic field distribution.\nSYNTHETIC / engineering fixture - PDF page 1"
+            },
+            {
+              "page": 2,
+              "text": "3. Illustrative results\nIllustrative mean relative errors are 0.12 for model A and 0.15 for model B.\nThese numbers are authored fixture values, not observed scientific evidence.\n4. Limitations\nNo observed variance or confidence interval is provided. No scientific\nexperiment was executed. This fixture does not establish a causal effect or\nout-of-distribution performance.\n5. Reproduction information still needed\nA real study needs a traceable dataset version, code and configuration,\nindependent-unit verification and pilot variability. A sample-size or power\nguarantee cannot be inferred from this fixture.\nThis fixture tests PDF extraction and grounded interpretation, not scientific\nvalidity.\nSYNTHETIC / engineering fixture - PDF page 2"
+            }
+          ],
+          "extractor": "pypdf-6.21.4",
+          "workspace_id": "bddbb242dbb14b9c96f6dc77109b7453",
+          "workspace_root": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\.local\\comprehensive_20261030\\live_dialogues\\selected_synthetic_pdf\\workspace",
+          "excerpt_sha256": "660fae681da8279a07618a24c55a787e5cabe5fc94ee313d1fd2a6deb83bacd4",
+          "share_with_model": true,
+          "turn": 2,
+          "status": "selected_excerpt_not_verified",
+          "id": "61db77a462e0c1a2"
+        }
+      ]
+    },
+    "after": {
+      "schema_version": "research_planning_v1",
+      "id": "ac9833026c764f00971c4d0b6f5ce7e8",
+      "revision": 4,
+      "active": true,
+      "facts": {
+        "research_question": {
+          "value": "评估一个合成论文示例能否支持模型A与B的比较实验",
+          "quote": "请帮我评估一个合成论文示例能否支持模型A与B的比较实验",
+          "status": "declared",
+          "turn": 1
+        },
+        "objective_type": {
+          "value": "comparison",
+          "quote": "模型A与B的比较实验",
+          "status": "proposed",
+          "turn": 1
+        },
+        "scope": {
+          "value": "仅做规划，不声称已经复现论文",
+          "quote": "现在只规划，不声称已经复现论文",
+          "status": "proposed",
+          "turn": 1
+        },
+        "exclusions": {
+          "value": "不声称已经复现论文",
+          "quote": "不声称已经复现论文",
+          "status": "declared",
+          "turn": 1
+        },
+        "baseline": {
+          "value": "先导记录（作为后续正式研究的前期依据）",
+          "quote": "先规划取得先导记录",
+          "status": "proposed",
+          "turn": 4
+        },
+        "data_source": {
+          "value": "需核对独立场来源",
+          "quote": "核对独立场来源",
+          "status": "proposed",
+          "turn": 4
+        }
+      },
+      "unknown": [
+        "sampling"
+      ],
+      "conflicts": {
+        "scope": [
+          {
+            "value": "仅做规划，不声称已经复现论文",
+            "quote": "现在只规划，不声称已经复现论文",
+            "status": "proposed",
+            "turn": 1
+          },
+          {
+            "value": "先规划取得先导记录和核对独立场来源；不把示例数字当成实测结果",
+            "quote": "先规划取得先导记录和核对独立场来源，不能把示例数字当成实测结果",
+            "status": "proposed",
+            "turn": 4
+          }
+        ],
+        "exclusions": [
+          {
+            "value": "不声称已经复现论文",
+            "quote": "不声称已经复现论文",
+            "status": "declared",
+            "turn": 1
+          },
+          {
+            "value": "不把示例数字当成实测结果",
+            "quote": "不能把示例数字当成实测结果",
+            "status": "proposed",
+            "turn": 4
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "turn": 1,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "research_question",
+              "kind": "added",
+              "before": null,
+              "after": "评估一个合成论文示例能否支持模型A与B的比较实验"
+            },
+            {
+              "field": "objective_type",
+              "kind": "added",
+              "before": null,
+              "after": "comparison"
+            },
+            {
+              "field": "scope",
+              "kind": "added",
+              "before": null,
+              "after": "仅做规划，不声称已经复现论文"
+            },
+            {
+              "field": "exclusions",
+              "kind": "added",
+              "before": null,
+              "after": "不声称已经复现论文"
+            }
+          ]
+        },
+        {
+          "turn": 2,
+          "type": "explicit_evidence_selection",
+          "summary": "已选论文片段：synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b"
+        },
+        {
+          "turn": 4,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "scope",
+              "kind": "conflict",
+              "before": "仅做规划，不声称已经复现论文",
+              "after": "先规划取得先导记录和核对独立场来源；不把示例数字当成实测结果"
+            },
+            {
+              "field": "exclusions",
+              "kind": "conflict",
+              "before": "不声称已经复现论文",
+              "after": "不把示例数字当成实测结果"
+            },
+            {
+              "field": "baseline",
+              "kind": "added",
+              "before": null,
+              "after": "先导记录（作为后续正式研究的前期依据）"
+            },
+            {
+              "field": "data_source",
+              "kind": "added",
+              "before": null,
+              "after": "需核对独立场来源"
+            },
+            {
+              "field": "sampling",
+              "kind": "unknown",
+              "before": null,
+              "after": null
+            }
+          ]
+        }
+      ],
+      "approval": null,
+      "pending": {
+        "field": "exclusions",
+        "kind": "conflict",
+        "question": "关于本轮不回答的问题，你希望保留哪一项？",
+        "rationale": "该字段已登记冲突，且论文片段中的 0.12/0.15 明确是作者编写的示例值而非观测证据，两条排除项指向不同风险，需要你确认保留哪一版。",
+        "references": [
+          {
+            "source": "conflict",
+            "key": "exclusions:0",
+            "quote": "不声称已经复现论文"
+          },
+          {
+            "source": "conflict",
+            "key": "exclusions:1",
+            "quote": "不把示例数字当成实测结果"
+          },
+          {
+            "source": "evidence",
+            "key": "61db77a462e0c1a2",
+            "quote": "Illustrative mean relative errors are 0.12 for model A and 0.15 for model B.\nThese numbers are authored fixture values, not observed scientific evidence.",
+            "citation": "synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b"
+          }
+        ],
+        "options": [
+          {
+            "label": "不声称已经复现论文",
+            "value": "不声称已经复现论文",
+            "action": "revise",
+            "id": "ba925dd443ae"
+          },
+          {
+            "label": "不把示例数字当成实测结果",
+            "value": "不把示例数字当成实测结果",
+            "action": "revise",
+            "id": "072c34674d6f"
+          },
+          {
+            "label": "暂不确定",
+            "value": "未知",
+            "action": "unknown",
+            "id": "2c3af7fa609c"
+          },
+          {
+            "label": "其他，我来补充",
+            "value": "",
+            "action": "custom",
+            "id": "47de6eddb129"
+          }
+        ],
+        "origin": "model",
+        "allow_accept": false,
+        "choice_policy": {
+          "intent": "replication",
+          "origin": "trained_context_match",
+          "policy_hash": "6b7d865a492eaba9c5db239e5f5eaa833184d3b21fe3496f358d525504207ded"
+        },
+        "choice_id": "a8a038c803e9b6db",
+        "choice_plan_hash": "39aa5b763331c28d97c069e1b8542f00dc8e0222ad050563371528aed29246a9"
+      },
+      "reflections": [],
+      "changes": [
+        {
+          "field": "research_question",
+          "kind": "added",
+          "before": null,
+          "after": "评估一个合成论文示例能否支持模型A与B的比较实验"
+        },
+        {
+          "field": "objective_type",
+          "kind": "added",
+          "before": null,
+          "after": "comparison"
+        },
+        {
+          "field": "scope",
+          "kind": "added",
+          "before": null,
+          "after": "仅做规划，不声称已经复现论文"
+        },
+        {
+          "field": "exclusions",
+          "kind": "added",
+          "before": null,
+          "after": "不声称已经复现论文"
+        },
+        {
+          "field": "scope",
+          "kind": "conflict",
+          "before": "仅做规划，不声称已经复现论文",
+          "after": "先规划取得先导记录和核对独立场来源；不把示例数字当成实测结果"
+        },
+        {
+          "field": "exclusions",
+          "kind": "conflict",
+          "before": "不声称已经复现论文",
+          "after": "不把示例数字当成实测结果"
+        },
+        {
+          "field": "baseline",
+          "kind": "added",
+          "before": null,
+          "after": "先导记录（作为后续正式研究的前期依据）"
+        },
+        {
+          "field": "data_source",
+          "kind": "added",
+          "before": null,
+          "after": "需核对独立场来源"
+        },
+        {
+          "field": "sampling",
+          "kind": "unknown",
+          "before": null,
+          "after": null
+        }
+      ],
+      "stale": {
+        "scope": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+      },
+      "turns": 4,
+      "audience": "researcher_student",
+      "last_notes": [
+        "本轮语义整理未被采纳；请使用 scope: 你的回答，或选择当前问题的编号。"
+      ],
+      "last_export": null,
+      "clarification": {
+        "mode": "dynamic",
+        "reason": "validated",
+        "rejected_questions": [],
+        "model_used": true
+      },
+      "question_history": [
+        {
+          "turn": 1,
+          "field": "objective_type",
+          "kind": "proposal",
+          "question": "关于研究目的，是否按当前理解继续？",
+          "origin": "model",
+          "basis_hash": "da2930ab5b13ba5e3c102870384bc07a9c8675ad662406b330a14a48f4b4b7cc"
+        },
+        {
+          "turn": 2,
+          "field": "scope",
+          "kind": "stale",
+          "question": "关于研究边界，是否按当前理解继续？",
+          "origin": "model",
+          "basis_hash": "217409ebf16c0c29d2d8014e16e2c490540045de4fe8da2e8132e62374a708d2"
+        },
+        {
+          "turn": 4,
+          "field": "scope",
+          "kind": "conflict",
+          "question": "关于研究边界，你希望保留哪一项？",
+          "origin": "model",
+          "basis_hash": "4ca7f026767dcd4fb34383cdf188206643a1719328ce2e4d1e0d03bba4db9343"
+        },
+        {
+          "turn": 5,
+          "field": "exclusions",
+          "kind": "conflict",
+          "question": "关于本轮不回答的问题，你希望保留哪一项？",
+          "origin": "model",
+          "basis_hash": "4ca7f026767dcd4fb34383cdf188206643a1719328ce2e4d1e0d03bba4db9343"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "synthetic_paper.pdf",
+          "sha256": "8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b",
+          "text": "[PDF page 1]\nEngineering fixture - synthetic paper\nSYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.\n1. Research question\nThis fixture asks whether model A has lower prediction error than model B on\nsynthetic two-dimensional fields.\n2. Methods and data\nBoth models evaluate the same 8 independent synthetic fields, with paired\ncomparisons by field. Grid points within a field are technical measurements,\nnot independent experimental units.\nTraining, validation and final test fields are separated by source. Both\nmodels use the same splits and tuning budget. The scope is restricted to this\nsynthetic field distribution.\nSYNTHETIC / engineering fixture - PDF page 1\n\n[PDF page 2]\n3. Illustrative results\nIllustrative mean relative errors are 0.12 for model A and 0.15 for model B.\nThese numbers are authored fixture values, not observed scientific evidence.\n4. Limitations\nNo observed variance or confidence interval is provided. No scientific\nexperiment was executed. This fixture does not establish a causal effect or\nout-of-distribution performance.\n5. Reproduction information still needed\nA real study needs a traceable dataset version, code and configuration,\nindependent-unit verification and pilot variability. A sample-size or power\nguarantee cannot be inferred from this fixture.\nThis fixture tests PDF extraction and grounded interpretation, not scientific\nvalidity.\nSYNTHETIC / engineering fixture - PDF page 2",
+          "start_line": 1,
+          "end_line": 30,
+          "format": "pdf",
+          "start_page": 1,
+          "end_page": 2,
+          "page_count": 2,
+          "pages": [
+            {
+              "page": 1,
+              "text": "Engineering fixture - synthetic paper\nSYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.\n1. Research question\nThis fixture asks whether model A has lower prediction error than model B on\nsynthetic two-dimensional fields.\n2. Methods and data\nBoth models evaluate the same 8 independent synthetic fields, with paired\ncomparisons by field. Grid points within a field are technical measurements,\nnot independent experimental units.\nTraining, validation and final test fields are separated by source. Both\nmodels use the same splits and tuning budget. The scope is restricted to this\nsynthetic field distribution.\nSYNTHETIC / engineering fixture - PDF page 1"
+            },
+            {
+              "page": 2,
+              "text": "3. Illustrative results\nIllustrative mean relative errors are 0.12 for model A and 0.15 for model B.\nThese numbers are authored fixture values, not observed scientific evidence.\n4. Limitations\nNo observed variance or confidence interval is provided. No scientific\nexperiment was executed. This fixture does not establish a causal effect or\nout-of-distribution performance.\n5. Reproduction information still needed\nA real study needs a traceable dataset version, code and configuration,\nindependent-unit verification and pilot variability. A sample-size or power\nguarantee cannot be inferred from this fixture.\nThis fixture tests PDF extraction and grounded interpretation, not scientific\nvalidity.\nSYNTHETIC / engineering fixture - PDF page 2"
+            }
+          ],
+          "extractor": "pypdf-6.21.4",
+          "workspace_id": "bddbb242dbb14b9c96f6dc77109b7453",
+          "workspace_root": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\.local\\comprehensive_20261030\\live_dialogues\\selected_synthetic_pdf\\workspace",
+          "excerpt_sha256": "660fae681da8279a07618a24c55a787e5cabe5fc94ee313d1fd2a6deb83bacd4",
+          "share_with_model": true,
+          "turn": 2,
+          "status": "selected_excerpt_not_verified",
+          "id": "61db77a462e0c1a2"
+        }
+      ]
+    },
+    "known_field_missing_questions": [],
+    "state_changed": false,
+    "resources": {
+      "llm_requests": 8,
+      "llm_tokens": 18810,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 8,
+        "llm_tokens": 30000,
+        "tool_calls": 40,
+        "read_bytes": 24000
+      }
+    }
+  }
+]

@@ -1,0 +1,605 @@
+{
+  "version": "research_blueprint_v1",
+  "plan_id": "3096b9ddd92643e19c951632616c13b6",
+  "revision": 8,
+  "evidence": [],
+  "evidence_actions": {},
+  "status": "reviewable_plan",
+  "facts": {
+    "research_question": "我想预测新合金样品的室温屈服强度，帮我设计评估，先厘清适用范围和数据划分。",
+    "objective_type": "prediction",
+    "scope": "仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺",
+    "exclusions": "不将预测相关性解释为成分因果作用，不外推新工艺或真实材料性能",
+    "experimental_unit": "同一合金批次内测量相关；以完整批次为隔离、重采样与推断单位，技术重复先按样品汇总",
+    "design": "prediction",
+    "outcomes": "先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa",
+    "baseline": "均值预测与线性回归为基线，候选树模型共享相同批次划分、特征和调参预算",
+    "data_source": "工程诊断用 synthetic_alloy_v1；按合金批次分组隔离训练、验证和最终测试，防止技术重复泄漏",
+    "sampling": "固定预算先导，先核查批次标识和可行划分，不宣称统计功效保证",
+    "analysis": "验证集仅选择超参数，冻结后只评一次最终测试；以批次为单位 bootstrap 报告 MAE 差与不确定区间",
+    "acceptance": "逐项交付最终测试误差、批次区间、基线和失败日志；阴性或不确定结果照样报告；批次无法隔离或4小时上限即停止",
+    "resources": "仅规划，后续先导最多8次拟合、4小时上限；本轮不执行实验",
+    "risks": "缺失批次标识、量纲不一致或样本跨划分泄漏时停止交还研究者核实",
+    "reproducibility": "保存批次划分、数据版本、代码版本、种子、配置和全部失败记录",
+    "human_roles": "学生确认预测范围，材料负责人复核批次和量纲，研究者负责结论与执行授权",
+    "deliverable": "预测评估设计、防泄漏清单、基线对照与验收表、复现记录模板"
+  },
+  "fact_sources": {
+    "research_question": {
+      "value": "我想预测新合金样品的室温屈服强度，帮我设计评估，先厘清适用范围和数据划分。",
+      "quote": "我想预测新合金样品的室温屈服强度，帮我设计评估，先厘清适用范围和数据划分。",
+      "status": "declared",
+      "turn": 1
+    },
+    "objective_type": {
+      "value": "prediction",
+      "quote": "研究目的：prediction",
+      "status": "declared",
+      "turn": 2
+    },
+    "scope": {
+      "value": "仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺",
+      "quote": "研究边界：仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺。",
+      "status": "declared",
+      "turn": 2
+    },
+    "exclusions": {
+      "value": "不将预测相关性解释为成分因果作用，不外推新工艺或真实材料性能",
+      "quote": "本轮不回答的问题：不将预测相关性解释为成分因果作用，不外推新工艺或真实材料性能。",
+      "status": "declared",
+      "turn": 2
+    },
+    "experimental_unit": {
+      "value": "同一合金批次内测量相关；以完整批次为隔离、重采样与推断单位，技术重复先按样品汇总",
+      "quote": "experimental_unit: 同一合金批次内测量相关；以完整批次为隔离、重采样与推断单位，技术重复先按样品汇总。",
+      "status": "declared",
+      "turn": 4
+    },
+    "design": {
+      "value": "prediction",
+      "quote": "设计结构：prediction",
+      "status": "declared",
+      "turn": 5
+    },
+    "baseline": {
+      "value": "均值预测与线性回归为基线，候选树模型共享相同批次划分、特征和调参预算",
+      "quote": "基线与公平比较：均值预测与线性回归为基线，候选树模型共享相同批次划分、特征和调参预算。",
+      "status": "declared",
+      "turn": 3
+    },
+    "outcomes": {
+      "value": "先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa",
+      "quote": "主要响应与测量：先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa。",
+      "status": "declared",
+      "turn": 6
+    },
+    "analysis": {
+      "value": "验证集仅选择超参数，冻结后只评一次最终测试；以批次为单位 bootstrap 报告 MAE 差与不确定区间",
+      "quote": "分析与不确定性：验证集仅选择超参数，冻结后只评一次最终测试；以批次为单位 bootstrap 报告 MAE 差与不确定区间。",
+      "status": "declared",
+      "turn": 6
+    },
+    "acceptance": {
+      "value": "逐项交付最终测试误差、批次区间、基线和失败日志；阴性或不确定结果照样报告；批次无法隔离或4小时上限即停止",
+      "quote": "验收和停止规则：逐项交付最终测试误差、批次区间、基线和失败日志；阴性或不确定结果照样报告；批次无法隔离或4小时上限即停止。",
+      "status": "declared",
+      "turn": 6
+    },
+    "data_source": {
+      "value": "工程诊断用 synthetic_alloy_v1；按合金批次分组隔离训练、验证和最终测试，防止技术重复泄漏",
+      "quote": "数据与证据来源：工程诊断用 synthetic_alloy_v1；按合金批次分组隔离训练、验证和最终测试，防止技术重复泄漏。",
+      "status": "declared",
+      "turn": 7
+    },
+    "sampling": {
+      "value": "固定预算先导，先核查批次标识和可行划分，不宣称统计功效保证",
+      "quote": "样本与重复依据：固定预算先导，先核查批次标识和可行划分，不宣称统计功效保证。",
+      "status": "declared",
+      "turn": 7
+    },
+    "resources": {
+      "value": "仅规划，后续先导最多8次拟合、4小时上限；本轮不执行实验",
+      "quote": "资源边界：仅规划，后续先导最多8次拟合、4小时上限；本轮不执行实验。",
+      "status": "declared",
+      "turn": 8
+    },
+    "risks": {
+      "value": "缺失批次标识、量纲不一致或样本跨划分泄漏时停止交还研究者核实",
+      "quote": "风险与未决条件：缺失批次标识、量纲不一致或样本跨划分泄漏时停止交还研究者核实。",
+      "status": "declared",
+      "turn": 8
+    },
+    "reproducibility": {
+      "value": "保存批次划分、数据版本、代码版本、种子、配置和全部失败记录",
+      "quote": "复现记录：保存批次划分、数据版本、代码版本、种子、配置和全部失败记录。",
+      "status": "declared",
+      "turn": 8
+    },
+    "human_roles": {
+      "value": "学生确认预测范围，材料负责人复核批次和量纲，研究者负责结论与执行授权",
+      "quote": "人类职责：学生确认预测范围，材料负责人复核批次和量纲，研究者负责结论与执行授权。",
+      "status": "declared",
+      "turn": 8
+    },
+    "deliverable": {
+      "value": "预测评估设计、防泄漏清单、基线对照与验收表、复现记录模板",
+      "quote": "交付物：预测评估设计、防泄漏清单、基线对照与验收表、复现记录模板。",
+      "status": "declared",
+      "turn": 8
+    }
+  },
+  "nodes": [
+    {
+      "id": "boundaries",
+      "purpose": "明确要回答的问题和不能外推的边界",
+      "dependencies": [],
+      "inputs": [
+        "research_question",
+        "objective_type",
+        "scope",
+        "exclusions"
+      ],
+      "outputs": [
+        "问题与边界契约"
+      ],
+      "acceptance": "研究者用自己的话确认问题、范围和排除项；模型建议保持待确认身份。",
+      "owner": "研究者与Agent协作",
+      "capability": "implemented",
+      "suggested_tools": [],
+      "executed": false
+    },
+    {
+      "id": "evidence_inventory",
+      "purpose": "区分已知声明、实际证据和未决信息",
+      "dependencies": [
+        "boundaries"
+      ],
+      "inputs": [
+        "data_source",
+        "experimental_unit",
+        "risks"
+      ],
+      "outputs": [
+        "证据来源清单",
+        "未决问题清单"
+      ],
+      "acceptance": "每项关键事实有来源或明确未知；真实单位独立性与测量质量需外部核实。",
+      "owner": "研究者提供与核实，Agent整理",
+      "capability": "manual",
+      "suggested_tools": [],
+      "executed": false
+    },
+    {
+      "id": "design",
+      "purpose": "选择能检验命题的设计并说明合理替代方案",
+      "dependencies": [
+        "evidence_inventory"
+      ],
+      "inputs": [
+        "hypothesis",
+        "factors",
+        "design",
+        "baseline",
+        "sampling",
+        "randomization"
+      ],
+      "outputs": [
+        "实验分配与分析单位说明",
+        "样本/先导依据",
+        "方案候选与取舍"
+      ],
+      "acceptance": "对比可估计；单位、重复、区组和随机化关系明确；未知功效条件不能被默认值替代。",
+      "owner": "研究者选择，方法专家复核",
+      "capability": "manual",
+      "suggested_tools": [],
+      "executed": false
+    },
+    {
+      "id": "acceptance",
+      "purpose": "预先锁定分析、验收和停止规则",
+      "dependencies": [
+        "design"
+      ],
+      "inputs": [
+        "outcomes",
+        "analysis",
+        "acceptance",
+        "resources"
+      ],
+      "outputs": [
+        "主要指标与对比",
+        "分析及不确定性规则",
+        "验收/停止检查表"
+      ],
+      "acceptance": "区分能否检验命题与证据是否支持；预设阴性和不确定结果处理，禁止按结果改阈值。",
+      "owner": "研究者确认，Agent检查声明完整性",
+      "capability": "implemented",
+      "suggested_tools": [],
+      "executed": false
+    },
+    {
+      "id": "human_review",
+      "purpose": "在执行前复核假设、可行性与责任",
+      "dependencies": [
+        "acceptance"
+      ],
+      "inputs": [
+        "human_roles",
+        "risks",
+        "reproducibility"
+      ],
+      "outputs": [
+        "人工复核记录",
+        "批准版本或修订理由"
+      ],
+      "acceptance": "逐项检查来源、统计/领域假设、资源及工具能力；修订关键事实后原确认失效。",
+      "owner": "指定的人类复核者",
+      "capability": "manual",
+      "suggested_tools": [],
+      "executed": false
+    },
+    {
+      "id": "preregister",
+      "purpose": "冻结当前计划及其验收规则",
+      "dependencies": [
+        "human_review"
+      ],
+      "inputs": [
+        "完整计划",
+        "人工确认记录"
+      ],
+      "outputs": [
+        "带版本和来源的计划快照"
+      ],
+      "acceptance": "确认绑定当前版本，计划变更重新复核；计划确认不等于真实工具执行授权。",
+      "owner": "研究者确认，宿主保存",
+      "capability": "implemented",
+      "suggested_tools": [],
+      "executed": false
+    },
+    {
+      "id": "mock_rehearsal",
+      "purpose": "可选：演练受支持工具闭环，不制造实测证据",
+      "dependencies": [
+        "preregister"
+      ],
+      "inputs": [
+        "明确受支持的设计映射"
+      ],
+      "outputs": [
+        "模拟工具轨迹",
+        "能力缺口清单"
+      ],
+      "acceptance": "仅显式进入详细工具库后运行；模拟输出明确标记，不能当作真实实验结论。",
+      "owner": "Agent在宿主约束内",
+      "capability": "mock",
+      "suggested_tools": [
+        "plan_review",
+        "claim_check_plan",
+        "workflow_verify",
+        "job_run_mock"
+      ],
+      "executed": false
+    },
+    {
+      "id": "execute",
+      "purpose": "按锁定计划采集数据或执行研究步骤",
+      "dependencies": [
+        "preregister"
+      ],
+      "inputs": [
+        "人工授权",
+        "真实环境与数据",
+        "冻结计划"
+      ],
+      "outputs": [
+        "原始观测",
+        "实际分配与偏离记录",
+        "失败和资源记录"
+      ],
+      "acceptance": "真实任务由人类或另行接入的受限执行器完成；不能因已有工具契约而宣称已经执行。",
+      "owner": "人类研究者/单独授权的执行器",
+      "capability": "manual",
+      "suggested_tools": [],
+      "executed": false
+    },
+    {
+      "id": "analyze",
+      "purpose": "依据预先声明的方法分析结果并检查偏离",
+      "dependencies": [
+        "execute"
+      ],
+      "inputs": [
+        "真实观测与版本",
+        "冻结分析规则"
+      ],
+      "outputs": [
+        "估计量与不确定性",
+        "诊断和偏离说明"
+      ],
+      "acceptance": "不把技术重复当独立样本；不反复选方法直到显著；自动分析须先核对具体工具支持范围。",
+      "owner": "研究者负责，Agent可辅助解释",
+      "capability": "manual",
+      "suggested_tools": [],
+      "executed": false
+    },
+    {
+      "id": "claim_review",
+      "purpose": "判断证据支持什么，以及仍不能判断什么",
+      "dependencies": [
+        "analyze"
+      ],
+      "inputs": [
+        "命题",
+        "分析输出",
+        "假设与外推限制"
+      ],
+      "outputs": [
+        "支持/不支持/不确定的结论",
+        "限制与替代解释"
+      ],
+      "acceptance": "设计可检验不等于结果支持；阴性、反向及不确定结果同样记录，因果与泛化不超出证据。",
+      "owner": "人类研究者作最终判断",
+      "capability": "manual",
+      "suggested_tools": [],
+      "executed": false
+    },
+    {
+      "id": "report",
+      "purpose": "交付可追踪报告并选择下一步",
+      "dependencies": [
+        "claim_review"
+      ],
+      "inputs": [
+        "deliverable",
+        "reproducibility",
+        "全程决策与偏离记录"
+      ],
+      "outputs": [
+        "研究报告与复现清单",
+        "下一步或停止理由"
+      ],
+      "acceptance": "交付包含边界、设计选择、关键证据、局限、负结果和人类职责；新问题另开版本，不事后重写原验收。",
+      "owner": "研究者签署，Agent整理",
+      "capability": "manual",
+      "suggested_tools": [],
+      "executed": false
+    }
+  ],
+  "review": {
+    "ready": true,
+    "checks": [
+      {
+        "field": "research_question",
+        "code": "declaration_present",
+        "status": "passed",
+        "detail": "已记录用户声明；这不等于外部事实验证。"
+      },
+      {
+        "field": "objective_type",
+        "code": "declaration_present",
+        "status": "passed",
+        "detail": "已记录用户声明；这不等于外部事实验证。"
+      },
+      {
+        "field": "scope",
+        "code": "declaration_present",
+        "status": "passed",
+        "detail": "已记录用户声明；这不等于外部事实验证。"
+      },
+      {
+        "field": "exclusions",
+        "code": "declaration_present",
+        "status": "passed",
+        "detail": "已记录用户声明；这不等于外部事实验证。"
+      },
+      {
+        "field": "experimental_unit",
+        "code": "declaration_present",
+        "status": "passed",
+        "detail": "已记录用户声明；这不等于外部事实验证。"
+      },
+      {
+        "field": "design",
+        "code": "declaration_present",
+        "status": "passed",
+        "detail": "已记录用户声明；这不等于外部事实验证。"
+      },
+      {
+        "field": "outcomes",
+        "code": "declaration_present",
+        "status": "passed",
+        "detail": "已记录用户声明；这不等于外部事实验证。"
+      },
+      {
+        "field": "baseline",
+        "code": "declaration_present",
+        "status": "passed",
+        "detail": "已记录用户声明；这不等于外部事实验证。"
+      },
+      {
+        "field": "data_source",
+        "code": "declaration_present",
+        "status": "passed",
+        "detail": "已记录用户声明；这不等于外部事实验证。"
+      },
+      {
+        "field": "sampling",
+        "code": "declaration_present",
+        "status": "passed",
+        "detail": "已记录用户声明；这不等于外部事实验证。"
+      },
+      {
+        "field": "analysis",
+        "code": "declaration_present",
+        "status": "passed",
+        "detail": "已记录用户声明；这不等于外部事实验证。"
+      },
+      {
+        "field": "acceptance",
+        "code": "declaration_present",
+        "status": "passed",
+        "detail": "已记录用户声明；这不等于外部事实验证。"
+      },
+      {
+        "field": "resources",
+        "code": "declaration_present",
+        "status": "passed",
+        "detail": "已记录用户声明；这不等于外部事实验证。"
+      },
+      {
+        "field": "risks",
+        "code": "declaration_present",
+        "status": "passed",
+        "detail": "已记录用户声明；这不等于外部事实验证。"
+      },
+      {
+        "field": "reproducibility",
+        "code": "declaration_present",
+        "status": "passed",
+        "detail": "已记录用户声明；这不等于外部事实验证。"
+      },
+      {
+        "field": "human_roles",
+        "code": "declaration_present",
+        "status": "passed",
+        "detail": "已记录用户声明；这不等于外部事实验证。"
+      },
+      {
+        "field": "deliverable",
+        "code": "declaration_present",
+        "status": "passed",
+        "detail": "已记录用户声明；这不等于外部事实验证。"
+      },
+      {
+        "field": "objective_type",
+        "code": "objective_classified",
+        "status": "passed",
+        "detail": "需要明确比较、预测、因果、探索或复现目的。"
+      },
+      {
+        "field": "design",
+        "code": "design_classified",
+        "status": "passed",
+        "detail": "选择一个设计家族；自定义设计需由人类进一步复核。"
+      },
+      {
+        "field": "outcomes",
+        "code": "outcome_direction",
+        "status": "passed",
+        "detail": "明确主要响应及方向，或明确无预设方向的探索性分析。"
+      },
+      {
+        "field": "outcomes",
+        "code": "unit_aggregation",
+        "status": "passed",
+        "detail": "说明怎样按实验/推断单位汇总测量，不能用大量技术重复扩大样本量。"
+      },
+      {
+        "field": "data_source",
+        "code": "prediction_holdout",
+        "status": "passed",
+        "detail": "声明训练、验证与最终测试的职责，不能用测试结果反复选模型。"
+      },
+      {
+        "field": "data_source",
+        "code": "prediction_leakage",
+        "status": "passed",
+        "detail": "说明按对象、区组或时间隔离数据及防泄漏办法。"
+      },
+      {
+        "field": "analysis",
+        "code": "prediction_uncertainty",
+        "status": "passed",
+        "detail": "预测比较也要说明误差或不确定性，单个最佳分数不够。"
+      },
+      {
+        "field": "sampling",
+        "code": "power_basis",
+        "status": "passed",
+        "detail": "功效需要效应、方差和布局依据；缺少时先安排先导，不能默认保证功效。"
+      },
+      {
+        "field": "sampling",
+        "code": "power_external_review",
+        "status": "needs_review",
+        "detail": "本计划不自动计算或证明功效；参数来源和计算须单独复核。"
+      },
+      {
+        "field": "acceptance",
+        "code": "measurable_acceptance",
+        "status": "passed",
+        "detail": "验收应有可测阈值或可逐项核对的产物，不只写结果更好。"
+      },
+      {
+        "field": "acceptance",
+        "code": "negative_outcomes",
+        "status": "passed",
+        "detail": "明确阴性、不确定或反向结果也应如实报告，不能继续试到显著。"
+      },
+      {
+        "field": "acceptance",
+        "code": "stopping_rule",
+        "status": "passed",
+        "detail": "预先声明预算、信息不足或失败时的停止/升级条件。"
+      },
+      {
+        "field": "resources",
+        "code": "resource_bound",
+        "status": "passed",
+        "detail": "声明可核对的资源数量、期限或硬上限。"
+      },
+      {
+        "field": "human_roles",
+        "code": "human_accountability",
+        "status": "passed",
+        "detail": "明确由谁确认边界、复核方法和批准结论，不把责任隐含交给模型。"
+      },
+      {
+        "field": "reproducibility",
+        "code": "reproducibility_records",
+        "status": "passed",
+        "detail": "至少明确数据/代码版本、种子、配置或日志中的两类复现记录。"
+      }
+    ],
+    "blockers": [],
+    "required_fields": [
+      "research_question",
+      "objective_type",
+      "scope",
+      "exclusions",
+      "experimental_unit",
+      "design",
+      "outcomes",
+      "baseline",
+      "data_source",
+      "sampling",
+      "analysis",
+      "acceptance",
+      "resources",
+      "risks",
+      "reproducibility",
+      "human_roles",
+      "deliverable"
+    ],
+    "scope": "planning_only",
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "readiness_meaning": "用户声明已足够形成待人类复核的计划；不表示假设、数据、功效或结论已被验证。"
+  },
+  "risks": [
+    "缺失批次标识、量纲不一致或样本跨划分泄漏时停止交还研究者核实"
+  ],
+  "out_of_scope": [
+    "不将预测相关性解释为成分因果作用，不外推新工艺或真实材料性能"
+  ],
+  "scientific_claim_verified": false,
+  "execution_authorized": false,
+  "capability_legend": {
+    "implemented": "当前Harness可保存、检查或展示的规划操作，不代表步骤已执行",
+    "mock": "受支持详细工具库的显式模拟演练",
+    "manual": "需人类或另行授权/接入工具完成"
+  },
+  "approval": null,
+  "contract_hash": "36472cf216f3417a60899d2071cf94b67033d360d7ee5badb0f11ee622c9f1b3"
+}

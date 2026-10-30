@@ -1,0 +1,24 @@
+{
+  "files": {
+    "RUT_Science/rut_science/science_bot/general/conversation.py": {
+      "before_sha256": "db2b393df200f1e0a0f9eaf0538f167b22560ce73b7c589b5d6be87b747769b5",
+      "sha256": "b7b3db664572d257e7624aaa0854d5882e684ac686bd4da36af459833b96a5d0",
+      "reason": "User authorized a persistent general experimental-planning Harness upgrade; DeepSeek transport, frozen mathematical tools and retained policy weights remain unchanged"
+    },
+    "RUT_Science/rut_science/science_bot/general/graph.py": {
+      "before_sha256": "579839825dcfbb1eb4bd01eed602bdd70d25a242d6625f43617dd905270e3d77",
+      "sha256": "96ee489393ecc7079b220947c74a432332ff3835e30ab65e6d7c16c89c1ed61f",
+      "reason": "User authorized a persistent general experimental-planning Harness upgrade; DeepSeek transport, frozen mathematical tools and retained policy weights remain unchanged"
+    },
+    "RUT_Science/rut_science/science_bot/general/router.py": {
+      "before_sha256": "3f0dff1388216505bdc38a530bd22b2b3caaca613af16121b0655f375a667ddf",
+      "sha256": "e7de71a3d65f8d4d07f47d50b1ec5ee247e3e30503c64d86d3c75f2035e38745",
+      "reason": "User authorized a persistent general experimental-planning Harness upgrade; DeepSeek transport, frozen mathematical tools and retained policy weights remain unchanged"
+    },
+    "RUT_Science/rut_science/science_bot/terminal.py": {
+      "before_sha256": "3ec78cc38145783a1eb8845f9f1b90d9185ee735baeb38bbbbab0cf480f243ee",
+      "sha256": "96742572fe586b71bb93f2320c027d60adc4e2b9c9a35c36b8e4fa12937909ad",
+      "reason": "User authorized a persistent general experimental-planning Harness upgrade; DeepSeek transport, frozen mathematical tools and retained policy weights remain unchanged"
+    }
+  }
+}

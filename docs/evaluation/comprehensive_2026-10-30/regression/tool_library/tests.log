@@ -1,0 +1,25 @@
+test_actual_demo_performs_review_repair_and_preserves_mock_scope (test_library.ToolLibraryTests.test_actual_demo_performs_review_repair_and_preserves_mock_scope) ... ok
+test_artifact_type_and_hash_tampering_detected (test_library.ToolLibraryTests.test_artifact_type_and_hash_tampering_detected) ... ok
+test_authorization_and_review_status_cannot_be_patched (test_library.ToolLibraryTests.test_authorization_and_review_status_cannot_be_patched) ... ok
+test_catalog_identifies_implemented_and_disabled_tools_with_closed_inputs (test_library.ToolLibraryTests.test_catalog_identifies_implemented_and_disabled_tools_with_closed_inputs) ... ok
+test_effect_direction_and_practical_margin_are_separate (test_library.ToolLibraryTests.test_effect_direction_and_practical_margin_are_separate) ... ok
+test_findings_cannot_be_self_marked_resolved (test_library.ToolLibraryTests.test_findings_cannot_be_self_marked_resolved) ... ok
+test_incomplete_unit_outcomes_are_not_analyzed (test_library.ToolLibraryTests.test_incomplete_unit_outcomes_are_not_analyzed) ... ok
+test_inconclusive_evidence_is_not_equivalence_or_automatic_retest (test_library.ToolLibraryTests.test_inconclusive_evidence_is_not_equivalence_or_automatic_retest) ... ok
+test_interval_in_opposite_direction_is_reported (test_library.ToolLibraryTests.test_interval_in_opposite_direction_is_reported) ... ok
+test_mock_job_is_idempotent_and_cannot_shop_for_outcome (test_library.ToolLibraryTests.test_mock_job_is_idempotent_and_cannot_shop_for_outcome) ... ok
+test_no_arbitrary_workspace_or_path_read (test_library.ToolLibraryTests.test_no_arbitrary_workspace_or_path_read) ... ok
+test_passing_plan_alignment_is_not_result_support (test_library.ToolLibraryTests.test_passing_plan_alignment_is_not_result_support) ... ok
+test_plan_change_cannot_reuse_old_review_or_freeze (test_library.ToolLibraryTests.test_plan_change_cannot_reuse_old_review_or_freeze) ... ok
+test_plan_check_detects_wrong_response_scope_unit_and_treatment_mapping (test_library.ToolLibraryTests.test_plan_check_detects_wrong_response_scope_unit_and_treatment_mapping) ... ok
+test_posthoc_claim_or_practical_threshold_change_cannot_assess_locked_results (test_library.ToolLibraryTests.test_posthoc_claim_or_practical_threshold_change_cannot_assess_locked_results) ... ok
+test_stale_modification_hash_is_rejected (test_library.ToolLibraryTests.test_stale_modification_hash_is_rejected) ... ok
+test_strict_schema_rejects_extra_keys_bool_as_number_and_nonfinite (test_library.ToolLibraryTests.test_strict_schema_rejects_extra_keys_bool_as_number_and_nonfinite) ... ok
+test_unimplemented_and_real_tools_cannot_execute (test_library.ToolLibraryTests.test_unimplemented_and_real_tools_cannot_execute) ... ok
+test_workflow_cycle_or_bad_output_reference_is_rejected (test_library.ToolLibraryTests.test_workflow_cycle_or_bad_output_reference_is_rejected) ... ok
+test_workflow_is_ordered_with_tool_parameter_bindings (test_library.ToolLibraryTests.test_workflow_is_ordered_with_tool_parameter_bindings) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 17.655s
+
+OK

@@ -1,0 +1,9 @@
+{
+  "files": {
+    "RUT_Science/rut_science/science_bot/general/conversation.py": {
+      "before_sha256": "b7b3db664572d257e7624aaa0854d5882e684ac686bd4da36af459833b96a5d0",
+      "sha256": "03176f3eecb8e37c5cbe8918f56af4d5d5d967aae791d1990229175835bd4f56",
+      "reason": "User-authorized explicit paper sharing requires local-only planning displays to stay out of later general-chat history"
+    }
+  }
+}

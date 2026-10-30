@@ -1,0 +1,17 @@
+{
+  "sha256": {
+    "RUT_Science/pyproject.toml": "e138af9cf50145022819d507a7beef24444bf6ef420c69188a6ca019a9c12116",
+    "RUT_Science/rut_science/science_bot/general/planning/blueprint.py": "f076b194c875af2a815f7f5578c7d62e16b20c269cde8723db73e53cd18f99d5",
+    "RUT_Science/rut_science/science_bot/general/planning/evidence.py": "b3d122f8db834eff305402c0ae206265d7bd82a9c162280f08486addbc5bd84f",
+    "RUT_Science/rut_science/science_bot/general/planning/paper_reading.py": "e2db3f8174255da65c0cd80f5302f6267bfe86cb1fa3096f33a54b7c3c6ae0bb",
+    "RUT_Science/rut_science/science_bot/general/planning/pdf_document.py": "5d1fbe08ffee6cf0f8b05af1acb2e72ba64cca59fb2a813b7a49307868aaf357",
+    "RUT_Science/rut_science/science_bot/general/planning/pdf_worker.py": "4feb811ea03d9c9e34612640199dca17650e4059aa10a08fcab438499c3c0a75",
+    "RUT_Science/rut_science/science_bot/general/planning/runtime.py": "222f27c2a49943d8fde2cb08801918eb4d69d4ea45aabd6e64eab2d835ba20ab",
+    "RUT_Science/rut_science/science_bot/presentation.py": "5cea33a7afb34d0384b51ed49f6811f7ccd801f21a863f497a3cc1bcdf4b848a",
+    "RUT_Science/rut_science/science_bot/workbench_assets/dist/app.js": "94242e2cda5c0e966864f24ac03045aeac357ea78e84f828c7a96fd79c7cf52a",
+    "RUT_Science/rut_science/science_bot/workbench_assets/dist/index.html": "80d1a4433a4aeb730f0ffb09ca4269f29dfcc300182cad86c4b56f9370d62995",
+    "examples/interfaces/browser.html": "039e522ab044f89e3e4fa9729b30b8c2a4eefa70581aec192a1bfedde9116b1c",
+    "examples/papers/synthetic_paper.pdf": "8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b",
+    "requirements-science-bot.lock.txt": "f89eba501ddbca18d0e343b660e751ad62a6bc2d8a5c8e58b0613845dd231cef"
+  }
+}

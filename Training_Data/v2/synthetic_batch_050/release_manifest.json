@@ -1,0 +1,32 @@
+{
+  "sha256": {
+    "50场景清单.md": "cc8f5a136082e98a382d6c8636631ee48b82132efea795a17e0fc26111d23420",
+    "bc_reference.jsonl": "e879a7b33cfd5f6d57b36f5ad1867a19f3136507fc5484a3e935502f114e94f0",
+    "manifest.json": "d7f6e0596585063b2464b70755441b33585c19e2502c3b9e0a42fb7469512807",
+    "prepare.py": "f9b8877c64e0420728c4ec6c1b50c934a092b8275622567fad2555bdab99d0e3",
+    "provenance.json": "016147c01134cca239fbf9429896766ec2f88427733a901f8b88663a92bb64cb",
+    "README.md": "1c104b022e0fbff4d26bb4ee5872eabe39d840758f288a723e10ae4e35b0c56d",
+    "reference_episodes.jsonl": "946ecd599f7e09292b2c0303b2154f53dc7b9e427b38e9236e6a63c591ddfc15",
+    "scenarios.json": "c19fadaf245e21d82e77ff2e6c1ecf381279f01b634f4779d893fb4dda2a3729",
+    "tasks.jsonl": "3c8637c9ddb1b02a64f2cea6d4561b3bf5c60876c54a10b8ae32bf8f634b57d4",
+    "tasks_imported.json": "f2176d475ab0df3cf250c8cb59c329b8dacf81ea2581fe39372c8a7d048d185a",
+    "tasks_imported.preflight.json": "11343003ab615c4c80808af409ddf0c71108e42de43f42ea52ceea60e53f2cbc",
+    "tasks_展开注释.jsonc": "bb675fb6b586cc6af44c5ebc9c3b3899dc32e896e00da69321fe4369620e30a0",
+    "train.py": "60a0f0584e068f98a1abe5cae12043ba86de0f9c75e1021f3f4af63007d28db8",
+    "verification.json": "b8f02aaa09348a911f6d54f76ef56005005ed298e1a9a60ac9e03a52b9215072",
+    "verify.py": "e815aaf6b90fa761dab9c5dbd9ff94af3c7ce3ea8b75a26d4480cebb60e49067",
+    "依据与争议.md": "40300768db9858e01882090de1df653a5bf28b42203602843af08b756e4d0763",
+    "training_run_001/bc_policy.json": "af2f290c62b8fcbeb17c27189fcb20f4a169ecb4c0be06384116f228f987d398",
+    "training_run_001/bc_verification.json": "234b2cc502508f6deca1f1a6276c7f9cb5a2902c0d5022aca80bb31f5431caae",
+    "training_run_001/independent_verification.json": "b8f02aaa09348a911f6d54f76ef56005005ed298e1a9a60ac9e03a52b9215072",
+    "training_run_001/initial_policy.json": "b578dfaf94f6d12027af165939c1c62814af3182b8013f8cfc9e70a5d3a0bd02",
+    "training_run_001/training_task_evaluation.json": "05ae214e0175f3bd28eaf9d191d86811e8c07815041c54fa5eb1a649cef74bd5",
+    "training_run_001/updated_policy.json": "2760640615b1ade608b4bdc3f7f602095323bace9709989cee5bdaa6766c85fd",
+    "training_run_001/verification.json": "13459810db0ab83384a84f6aef6b862a5f2ae8a01e294697b062ce5bbcc4afd2",
+    "training_run_001/iteration_001/behavior_policy.json": "af2f290c62b8fcbeb17c27189fcb20f4a169ecb4c0be06384116f228f987d398",
+    "training_run_001/iteration_001/rollout.jsonl": "10ea30adeabf5e7f9b0ba1e0a15e27e7601223f622bdddf76943aa4073c9e2bb",
+    "training_run_001/iteration_001/updated_policy.json": "2760640615b1ade608b4bdc3f7f602095323bace9709989cee5bdaa6766c85fd",
+    "training_run_001/iteration_001/verification.json": "20be0394b297883995686f1b41562f5f6fc8927080716d25db75c627466c66c9"
+  },
+  "scope": "Synthetic batch and its bounded training evidence; future runs do not rewrite this seal"
+}

@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "turns": 16,
+  "initial_semantic_smoke": {
+    "live_provider_requested": true,
+    "initial_fields": [
+      "research_question",
+      "objective_type",
+      "factors",
+      "data_source",
+      "reproducibility"
+    ],
+    "model_requests": 1,
+    "notes": [
+      "语义改写和推断仅作为待确认提议展示，不会自动成为已确认边界。"
+    ]
+  },
+  "approval_invalidated_after_budget_change": true,
+  "planning_only": true,
+  "real_scientific_executions": 0,
+  "actual_tool_attempts": 0,
+  "session_ref": ".local\\planning_demo\\e1f4dff641f744fb82a1e8151fc15d82",
+  "scope": "Programmatic synthetic user actions; not independent expert review or task-success benchmark"
+}

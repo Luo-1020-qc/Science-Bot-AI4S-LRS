@@ -1,0 +1,32 @@
+scenario_name: 两种反馈方式对学习成绩的影响
+domain: 心理学
+skeleton: S1
+executable: true
+summary: 两种反馈方式下学习任务成绩的组间比较
+vocabulary:
+  treatment_name: 反馈方式
+  outcome_name: 任务成绩
+  unit: 分
+  comparison: 反馈 A vs 反馈 B
+survey_questions:
+- 被试是否随机分配？
+- 任务难度是否等值？
+- 反馈时机与内容是否标准化？
+- 是否有前测？
+- 样本量与效应依据？
+rubric:
+- 随机分配声明
+- 任务等值性
+- 反馈标准化
+- 前测或基线
+- 样本量依据
+- 效应阈值
+proposal_template:
+- 研究目标
+- 被试与分配
+- 任务与反馈
+- 统计方法
+- 验收标准
+- 局限
+source: 骨架聚类表 v1 扩展 · S1 · 心理学
+notes: 与干预壳同构，重点在任务等值性

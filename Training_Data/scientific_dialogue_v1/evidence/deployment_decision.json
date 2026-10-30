@@ -1,0 +1,16 @@
+{
+  "online_deployment": false,
+  "review_basis": "Development metrics; no post-test tuning or new selection claim",
+  "question_ranker": "Research candidate only; dev hit@1 ties BM25 and recall@5 is lower",
+  "clarification_need": "Not adopted: dev accuracy 0.38 versus train-majority baseline 0.42",
+  "evidence_ranker": "Not adopted: dev recall@5 0.25035695 versus BM25 0.44941783",
+  "question_option_quality": "Not evaluated by ClariQ; requires reviewed contextual choices",
+  "human_understanding": "Not assessed; no reviewed scientific dialogues yet",
+  "llm_fine_tuning": "SFT data exported; no base LLM parameter updates",
+  "failed_attempts": [
+    {
+      "directory": ".local/scientific_dialogue_v1/run_001",
+      "reason": "Incomplete first attempt: null QASPER section name; no final results or completed-run receipt. Preserved locally."
+    }
+  ]
+}

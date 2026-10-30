@@ -1,0 +1,42 @@
+{
+  "id": "objective_change",
+  "purpose": "Natural goal change should trigger dependent reconsideration",
+  "scripted_turns": 2,
+  "ready": false,
+  "declarations": 0,
+  "proposals": 0,
+  "unknown_fields": [],
+  "conflict_fields": [],
+  "stale_fields": [],
+  "blockers": [],
+  "known_field_missing_questions": 0,
+  "questions": 2,
+  "clarification": [
+    null,
+    null
+  ],
+  "exceptions": [],
+  "fact_quote_not_literal_in_inputs": [],
+  "session_restore_exact": true,
+  "resources": {
+    "llm_requests": 0,
+    "llm_tokens": 0,
+    "tool_attempts": 0,
+    "limits": {
+      "llm_requests": 4,
+      "llm_tokens": 16000,
+      "tool_calls": 40,
+      "read_bytes": 24000
+    }
+  },
+  "turn_seconds": [
+    0.031,
+    0.047
+  ],
+  "recovered_turns_without_latency": 0,
+  "approval": null,
+  "scientific_claim_verified": false,
+  "execution_authorized": false,
+  "human_quality_scores": null,
+  "researcher_understanding_measured": false
+}

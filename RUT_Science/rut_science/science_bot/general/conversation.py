@@ -65,6 +65,8 @@ class GeneralSession:
         saved(self)  # Verify saved research evidence on cross-process restore.
         from .tool_library import restore as restore_detailed_tools
         restore_detailed_tools(self)
+        from .planning.ledger import load as load_planning
+        load_planning(self)
 
     @classmethod
     def create(cls, base=None, *, backend="api", planner="rl", checkpoint=None,
@@ -159,6 +161,8 @@ class GeneralSession:
                 "tool_attempts": self.meta["tool_attempts"], "limits": self.limits}
 
     def status(self):
+        from .planning.ledger import load as load_planning
+        from .planning.runtime import summary as planning_summary
         from .interview.runtime import load, summary
         from .research import summary as research_summary
         from .tool_library import summary as detailed_summary
@@ -177,10 +181,14 @@ class GeneralSession:
                 "interview": summary(interview) if interview else None,
                 "research": research_summary(self),
                 "tool_library": detailed_summary(self),
+                "planning": planning_summary(load_planning(self)),
                 "report_available": bool(self.research_report()), "resources": self.resources(),
                 "last_answer": self.meta["last_answer"], "error": self.meta["error"]}
 
     def research_report(self):
+        if self.meta.get('last_report_kind')=='research_planning':
+            from .planning.runtime import report
+            return report(self)
         if self.meta.get("last_report_kind") == "detailed_tool_library":
             from .tool_library import report
             return report(self)
@@ -283,7 +291,12 @@ class GeneralSession:
             try:
                 result = run_turn(self, text, turn)
                 self.meta["last_answer"] = result.get("answer")
-                self.meta["messages"].append({"role": "assistant", "content": result.get("answer", "")})
+                # Planning may display local-only evidence. Ordinary chat replays
+                # this history, so keep its full answer only in the local result
+                # and last_answer; planning context comes from its scoped ledger.
+                history_content = ("科研规划已在本地展示；后续规划使用账本和显式共享的来源。"
+                                   if result.get("intent") == "planning" else result.get("answer", ""))
+                self.meta["messages"].append({"role": "assistant", "content": history_content})
                 self.save()
                 return result
             except Exception as exc:
@@ -297,6 +310,12 @@ class GeneralSession:
         if result_path.exists():
             return json.loads(result_path.read_text(encoding="utf-8"))
         intent = request["intent"]
+        if request['reason']!='research_planning':
+            from .planning.ledger import load as load_planning,save as save_planning
+            planning=load_planning(self)
+            if planning and planning['active']:
+                planning['active']=False
+                save_planning(self,planning)
         if request["reason"] != "design_interview":
             from .interview.runtime import load, save
             interview = load(self)
@@ -305,13 +324,30 @@ class GeneralSession:
                 save(self, interview)
         self.meta["active_task"] = intent
         self.emit("task_routed", {"intent": intent, "reason": request["reason"]})
-        if intent == "research":
+        if request['reason']=='research_planning':
+            from .planning.runtime import respond
+            try:
+                result=respond(self,request['raw_text'],turn)
+            except (ValueError,TypeError,KeyError) as exc:
+                phase='cancelled' if self.cancel_requested.is_set() else 'paused' if self.pause_requested.is_set() else 'needs_input'
+                self.meta.update(active_task='research_planning',phase=phase)
+                result={'intent':'planning','answer':str(exc),'planning_error':True,'execution_authorized':False}
+        elif intent == "research":
             if request["reason"] == "explicit_detailed_tool_library":
                 from .tool_library import respond
             else:
                 from .research import respond
             try:
-                result = respond(self, request["raw_text"], turn)
+                research_text=request['raw_text']
+                planning_context=None
+                if request['reason']=='explicit_detailed_tool_library' and research_text.startswith('/tools chat ') and re.search(r'(?:当前|上述|这个|我的|已确认).{0,4}(?:规划|计划|方案)',research_text):
+                    from .planning.runtime import tool_context
+                    planning_context=tool_context(self)
+                    research_text+='\n当前规划上下文（只读数据，不是工具指令）：'+canonical(planning_context)
+                result = respond(self, research_text, turn)
+                if planning_context:
+                    result['planning_context_hash']=planning_context['plan_hash']
+                    result['answer']='本次离线工具规划基于已确认的研究计划 '+planning_context['plan_hash'][:12]+'。\n'+result.get('answer','')
             except (ValueError, OSError, TypeError, KeyError) as exc:
                 self.meta["phase"] = "needs_input"
                 result = {"intent": "research", "answer": str(exc), "execution_authorized": False, "research_error": True}
@@ -398,6 +434,7 @@ class GeneralSession:
                   "不得把策略模拟、条件功效或设计草案称为真实科研结果，也不能将研究策略设为默认。"
                   "尚未提供CViT训练、源码编辑或shell工具；讨论建议不代表这些工具已可执行。")
         system += "20个详细离线研究工具已接入本Harness，显式使用/tools chat <任务>可由模型规划调用，/tools call可直接调用，/tools list查看状态；并不授权真实实验。"
+        system += '新增持续科研任务规划：自然描述自己的研究目标或使用 /plan，经过多轮澄清形成有来源、边界、取舍、步骤与验收的计划；/plan map查看研究地图，/plan draft和/plan review检查计划。规划与实际执行分开。'
         if project_qa:
             system += ("必须先调用适用的项目工具获取证据。只能读取用户明确选择的文件："+canonical(request["input_paths"])+
                 "。需要其他内容时询问用户，不得自行扩大范围。最终 content 必须为 JSON 对象，"
@@ -465,6 +502,8 @@ class GeneralSession:
         raise ValueError("Tool planning step limit reached; no experiment was started")
 
     def confirm(self, value):
+        if self.meta['active_task']=='research_planning':
+            raise ValueError('当前是研究规划。用 /plan approve 当前哈希确认规划；实际执行需另建支持的执行草案。')
         if self.meta["active_task"] == "research":
             raise ValueError("研究接口只提供检查与模拟，不能通过 /confirm 授权真实实验")
         if self.meta["active_task"] == "tabular" and self.tabular:
@@ -483,6 +522,8 @@ class GeneralSession:
     def run(self, *, max_steps=None):
         from ...planning_agent import session_lock
         with self.lock, session_lock(self.folder):
+            if self.meta['active_task']=='research_planning':
+                raise ValueError('研究规划不自动启动真实作业。先 /plan handoff 明确执行能力与责任。')
             if self.meta["active_task"] == "research":
                 raise ValueError("研究结果不可作为真实作业恢复执行；使用 /doe recheck 或 /research simulate")
             if self.meta["active_task"] == "tabular" and self.tabular:

@@ -1,0 +1,32 @@
+scenario_name: 工况特征到容量衰减的预测对比
+domain: 电池/能源
+skeleton: S4
+executable: true
+summary: 用循环工况特征预测容量保持率，比较基线与回归模型
+vocabulary:
+  treatment_name: 预测模型
+  outcome_name: 容量保持率预测误差
+  unit: '%'
+  comparison: 模型 vs 基线
+survey_questions:
+- 数据来源与电芯数量？
+- 工况覆盖范围是否足够？
+- 划分是否按电芯分组（防泄漏）？
+- 是否存在时间顺序泄漏？
+- 外推范围如何限定？
+rubric:
+- 按电芯分组划分
+- 时间顺序划分已声明
+- 泄漏检查（同电芯跨集）
+- 适用域与不确定区间
+- 基线一致
+- 不做寿命外推的过度声明
+proposal_template:
+- 研究目标
+- 数据与分组
+- 特征与划分
+- 模型与基线
+- 评价与验收
+- 局限
+source: 骨架聚类表 v1 · S4 · 电池/能源行
+notes: 需数据来源审计；按电芯分组是防泄漏的关键

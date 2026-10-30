@@ -1,0 +1,529 @@
+{
+  "schema_version": "planning_mainline_evaluation_v1",
+  "checked_utc": "2026-10-30T05:43:52.903766+00:00",
+  "mode": "offline_explicit_answer_rule_baseline",
+  "provenance": {
+    "source_kind": "implementer_authored_synthetic_engineering_diagnostic",
+    "human_participants": 0,
+    "expert_approved": false,
+    "split": "development_only",
+    "independent_root_groups": 2,
+    "limitations": [
+      "Ten mechanism cases share two authored families; no blind generalization claim.",
+      "Offline answers use explicit field syntax; they do not measure free-text LLM extraction.",
+      "Private answers and expected values are evaluator-only, never injected into the agent state or provider context."
+    ]
+  },
+  "case_count": 10,
+  "expected_outcomes_met": 10,
+  "reviewable_designs": 8,
+  "justified_blocked_drafts": 2,
+  "unnecessary_questions": 0,
+  "no_progress_question_turns": 0,
+  "host_violations": 0,
+  "automatic_design_readouts": 10,
+  "model_requests": 0,
+  "human_participants": 0,
+  "human_quality_scores": null,
+  "understanding_improvement_measured": false,
+  "real_scientific_executions": 0,
+  "source_sha256": {
+    "RUT_Science/rut_science/science_bot/api.py": "04f2b13f9f7e8aef4cd256766ae7b70ef2531d552787f7a6b308adaaccc15a63",
+    "RUT_Science/rut_science/science_bot/cache.py": "8b3d66f15a2c551c280db559ec1380947976d47580ea99d74cc5de904400345e",
+    "RUT_Science/rut_science/science_bot/contracts.py": "a02e467f926377a3c156543537846bd5bd576ef88a86e282be868d01d7198765",
+    "RUT_Science/rut_science/science_bot/environment.py": "d57c77584d2ad78100b194936cf70c47a46338de226a8e37e50554a23090c4f4",
+    "RUT_Science/rut_science/science_bot/evaluation.py": "7af37515969085ef5eee2aef6b718ec1c87e8b26b89eb9e5f637445d6e30bd3d",
+    "RUT_Science/rut_science/science_bot/graph.py": "d50f337744bac2090e516f63395b7cca50cabeb2dbb9cfb43e2988093a6f24cd",
+    "RUT_Science/rut_science/science_bot/gym_adapter.py": "b9eab718de4f6ce792c81175a2c17c054793a86e48d8eab649718a06779df05f",
+    "RUT_Science/rut_science/science_bot/interface_demo.py": "215058c4e1dee1022519abec592483d99798ca7ae46d6e646766ec6bd464f5e7",
+    "RUT_Science/rut_science/science_bot/llm.py": "a807b8b9dc10b4e7c000ba375a7aa393f3f926dd82755a2de9dac17987ba49c4",
+    "RUT_Science/rut_science/science_bot/model_output.py": "1fae502a6755e5c1e6d305fb8e598f002b8caece78a5672455c486e2b3e38b03",
+    "RUT_Science/rut_science/science_bot/numerics.py": "a6f8e527b5209f5292fbc20fd9e74169351dad0507f24c0b624c63acf3a258a0",
+    "RUT_Science/rut_science/science_bot/policies.py": "426fb3fd7dcae69d9e691b637816952e7bf5759689eb3b8b4225c09095d60e6b",
+    "RUT_Science/rut_science/science_bot/presentation.py": "5cea33a7afb34d0384b51ed49f6811f7ccd801f21a863f497a3cc1bcdf4b848a",
+    "RUT_Science/rut_science/science_bot/session.py": "d8ed0be7f41176fd18d2d9d35b5650f20513413958c70823bbccb20592f11619",
+    "RUT_Science/rut_science/science_bot/session_history.py": "45f9501e595186cbf15ab9358e9e04e5d9a4acea92976d25315a8adba2a3307f",
+    "RUT_Science/rut_science/science_bot/terminal.py": "80f7923a1fcc6fea2752207de91d48677a85d92d084f845663daf5851e2bf7c4",
+    "RUT_Science/rut_science/science_bot/training.py": "46f0813e7a7d056f2854e388eb2380d2cdfd620901a8e0fee98deb03f62c407e",
+    "RUT_Science/rut_science/science_bot/workbench.py": "0ff7a79f7b23dc48d16f596bef1179c75e9047aaee12ec482f506e3005ba93bb",
+    "RUT_Science/rut_science/science_bot/workspace.py": "fb9f8a4291c4e028edb49e7dc9b6b64ca529a38c7ecf25008ebaac5495ddea90",
+    "RUT_Science/rut_science/science_bot/__init__.py": "b9ab46276409bb4a986a7617463e1004aec326b6fa9e8d77374fddb45e99d47d",
+    "RUT_Science/rut_science/science_bot/general/contracts.py": "95567b828dcb3837d37085c53d8b15c05be83bbe26be59a6c06981648740ffa3",
+    "RUT_Science/rut_science/science_bot/general/conversation.py": "03176f3eecb8e37c5cbe8918f56af4d5d5d967aae791d1990229175835bd4f56",
+    "RUT_Science/rut_science/science_bot/general/executor.py": "b49b87880bb95a85f54eba4e9b6ba8ee92ad3b1f5001cacf523708653f08bf67",
+    "RUT_Science/rut_science/science_bot/general/experiment.py": "2e2a676b7a26bc94f91d702d4dfffb0a6d828a0bd304ed20ab288df184c57d79",
+    "RUT_Science/rut_science/science_bot/general/graph.py": "96ee489393ecc7079b220947c74a432332ff3835e30ab65e6d7c16c89c1ed61f",
+    "RUT_Science/rut_science/science_bot/general/planner.py": "25dbfdadee014ad3e9d7f9085a2b5b722120636522f0b890becb07e53a2b9a31",
+    "RUT_Science/rut_science/science_bot/general/provider.py": "5cfaed544844ff7174c08acfbe42595c10528b099da16231a80201ac88c27755",
+    "RUT_Science/rut_science/science_bot/general/registry.py": "edf8ba6ffe109087b18c256bddf4359674abb43bd4c29123cbf332ba6fa2a2a1",
+    "RUT_Science/rut_science/science_bot/general/research.py": "052f88c6c945dd5e91e8ff4424599c3dd15c2782622d167b9c1756fb1d3b0c80",
+    "RUT_Science/rut_science/science_bot/general/router.py": "e7de71a3d65f8d4d07f47d50b1ec5ee247e3e30503c64d86d3c75f2035e38745",
+    "RUT_Science/rut_science/science_bot/general/tool_library.py": "7bb8f33af0329ed0e8052e3fd00980b4e7da737cf9b9608d7055630bca8e2378",
+    "RUT_Science/rut_science/science_bot/general/__init__.py": "5e24adc2e8b007d77a39b5801e246b4adf469de7c1339c9c8e6a15a6f50ca295",
+    "RUT_Science/rut_science/science_bot/general/adapters/legacy_numeric.py": "327292c32a37b35914e413a739c20268743745fde74afa2b4adada5c3555bcca",
+    "RUT_Science/rut_science/science_bot/general/adapters/tabular.py": "70fb659e78a284d3defb99b2f92647dc24d5ed38790b845c7cb568fe994b9333",
+    "RUT_Science/rut_science/science_bot/general/adapters/__init__.py": "12564d557c142632817bb6bb7a740a6d94891d71b9d05c88c01fd33224a42566",
+    "RUT_Science/rut_science/science_bot/general/interview/intake.py": "2e280d56d616fdb13594448a100d90f2ac8ff18a6ee50af94ca90023f0597b85",
+    "RUT_Science/rut_science/science_bot/general/interview/learning.py": "b80d61a8962f2fcd5da2f69de0126f7d5206e7319063908c096003a6b6cd54cf",
+    "RUT_Science/rut_science/science_bot/general/interview/policy.py": "d38ac43889797d1c1f864e3e396e034495db30cc306de66c0676822043a279fe",
+    "RUT_Science/rut_science/science_bot/general/interview/runtime.py": "58931ef67320f4170e58fb7cc811c6a327d9cee367f3b9efccabe4e2a4bcd3f2",
+    "RUT_Science/rut_science/science_bot/general/interview/state.py": "3746c244dc8f80732c6de91d697f0ddd46caa0bc163869caa5943089ed72d86f",
+    "RUT_Science/rut_science/science_bot/general/interview/validation.py": "c1993841cd74e30e40e8efcde6bd9cea57c0d4791ce4120134a78143f10a9d13",
+    "RUT_Science/rut_science/science_bot/general/interview/__init__.py": "9663efbb1616a5cc86975ef2613d4121738146f1f298d630b8a76475ca023f0d",
+    "RUT_Science/rut_science/science_bot/general/planning/blueprint.py": "f076b194c875af2a815f7f5578c7d62e16b20c269cde8723db73e53cd18f99d5",
+    "RUT_Science/rut_science/science_bot/general/planning/choices.py": "19937ab2de25123d71005191e12efe849364c8a56e8e5ab15846dfe53942b45c",
+    "RUT_Science/rut_science/science_bot/general/planning/choice_policy.json": "948f159914c5800c268eddf20fe1689352148ac2a685cd7dc0a410638aff909b",
+    "RUT_Science/rut_science/science_bot/general/planning/clarification.py": "cb775fa45a94fb097d69ff0e373f7ebbecaf48f0f2f8c8b831f7e7158c673b3f",
+    "RUT_Science/rut_science/science_bot/general/planning/delivery.py": "eea63dff7fcae6071fb035d441cef0abdabf89172e4853d85a5f406a053e0b5d",
+    "RUT_Science/rut_science/science_bot/general/planning/evidence.py": "b3d122f8db834eff305402c0ae206265d7bd82a9c162280f08486addbc5bd84f",
+    "RUT_Science/rut_science/science_bot/general/planning/intake.py": "db1797dc5870634b3bbdd875a7f7ce007c1f4b7541318cb21bf9bd258c5c253d",
+    "RUT_Science/rut_science/science_bot/general/planning/ledger.py": "e5bf3a1b688d73aaf2ba46faaae5a00b2a89fbcf38363a6ba1c0e59e261b4c8a",
+    "RUT_Science/rut_science/science_bot/general/planning/paper_reading.py": "e2db3f8174255da65c0cd80f5302f6267bfe86cb1fa3096f33a54b7c3c6ae0bb",
+    "RUT_Science/rut_science/science_bot/general/planning/pdf_document.py": "5d1fbe08ffee6cf0f8b05af1acb2e72ba64cca59fb2a813b7a49307868aaf357",
+    "RUT_Science/rut_science/science_bot/general/planning/pdf_worker.py": "4feb811ea03d9c9e34612640199dca17650e4059aa10a08fcab438499c3c0a75",
+    "RUT_Science/rut_science/science_bot/general/planning/question_policy.json": "46215bf6e7de4f421bb2a629ae612eeaae7fcb3e5d8d36ec3c427aa698fda5c9",
+    "RUT_Science/rut_science/science_bot/general/planning/question_ranker.py": "0b3b0765a8209e0a4e78f9810c0798ae86d41ec1f0520fd15a4b417c0b155b28",
+    "RUT_Science/rut_science/science_bot/general/planning/question_tool.py": "d8836a2d7e7897811627b1c5c697a6653f7edf1119ad8c0503dd008574818504",
+    "RUT_Science/rut_science/science_bot/general/planning/runtime.py": "222f27c2a49943d8fde2cb08801918eb4d69d4ea45aabd6e64eab2d835ba20ab",
+    "RUT_Science/rut_science/science_bot/general/planning/understanding.py": "5fffde0a44d5bcdca2aff2fa681f3e0666f4708e739541d3926a86ce48e4ead8",
+    "RUT_Science/rut_science/science_bot/general/planning/__init__.py": "a2bbb405ab46564e671816d5dc72cc7dccbd47406ac9210674396ecb5c8db6e7",
+    "scripts/evaluate_planning_mainline.py": "4595250e9b127ad8cd312dba0a22235114df77a319eae817effae77e0f169a8a",
+    "docs/evaluation/mainline_2026-10-30/tasks.json": "cb9a553e5346c90d9fde8d24f9258210dbfafd160b9b91ca715b39b93de6e5f3"
+  },
+  "cases": [
+    {
+      "id": "models_multi_answer",
+      "root_group": "implementer_synthetic_models_v1",
+      "mechanism": "multi_answer",
+      "metrics": {
+        "outcome": "reviewable_design",
+        "expected_outcome_met": true,
+        "critical_missing": [],
+        "answer_mismatches": [],
+        "question_count": 6,
+        "unnecessary_question_turns": [],
+        "no_progress_question_turns": [],
+        "multi_field_answer_turns": 5,
+        "host_violation_turns": [],
+        "ready": true,
+        "blocker_fields": [],
+        "all_steps_unexecuted": true,
+        "automatic_design_readout": true,
+        "semantic_quality_human_rated": false,
+        "researcher_understanding_measured": false
+      },
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 18000
+        }
+      },
+      "remaining_events": [],
+      "selected_evidence_count": 0,
+      "artifacts": {
+        "delivery.html": "0b97335bbdaaa8b3534b5bdb08eb77b3d467598609427ca1ae0df770f9f6c4a9",
+        "delivery.md": "cd781903dc5f8f6b32dd3a292431047d7f5a41b5a00134e32855e9e7a7fb271d",
+        "final_state.json": "037ac7c8f26ee6c5e3b87a42c908b4d1b9206fb59c3c855f9beb7fe820ed3af1",
+        "plan.json": "77e9b8c470f36bb7021079e4abc95998cf6009f6895005562c2443eaf731031b",
+        "plan.md": "6d0f3fc5d94d8704412d62b875d749d825724490c8656b6cbbbb48da8ad03f3f",
+        "trajectory.json": "13fc625e28e5f79d8395c9d75f56ac37ae4d184ea16ce849bc27cc4b1c38c553"
+      }
+    },
+    {
+      "id": "models_correction",
+      "root_group": "implementer_synthetic_models_v1",
+      "mechanism": "correction",
+      "metrics": {
+        "outcome": "reviewable_design",
+        "expected_outcome_met": true,
+        "critical_missing": [],
+        "answer_mismatches": [],
+        "question_count": 7,
+        "unnecessary_question_turns": [],
+        "no_progress_question_turns": [],
+        "multi_field_answer_turns": 5,
+        "host_violation_turns": [],
+        "ready": true,
+        "blocker_fields": [],
+        "all_steps_unexecuted": true,
+        "automatic_design_readout": true,
+        "semantic_quality_human_rated": false,
+        "researcher_understanding_measured": false
+      },
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 18000
+        }
+      },
+      "remaining_events": [],
+      "selected_evidence_count": 0,
+      "artifacts": {
+        "delivery.html": "defef5f4ed2cb2cef020c468aa9ceb503e0aa66317434c8d1c6c45c99509d332",
+        "delivery.md": "17ab815bd20033ac17457850f940b34467b9fbe0dcee9a65db8a36470bcddb2d",
+        "final_state.json": "0e79d364dab8cc1239bffd3b345d1dce41595b6791666d2abbf18453d943795a",
+        "plan.json": "be3f37dfbb4ed2a346de90443c59ece22e5a4f060074a5d9ce9e0d90dbfd8348",
+        "plan.md": "f42e500462f772b6562b98097cab013a04cf58441f77b861bcfa759aeb594796",
+        "trajectory.json": "87483b173b6b4c71ce59687420d63bdd26605c0f4d3fa7afff8eec399358c827"
+      }
+    },
+    {
+      "id": "models_unknown",
+      "root_group": "implementer_synthetic_models_v1",
+      "mechanism": "unknown",
+      "metrics": {
+        "outcome": "blocked_with_evidence_step",
+        "expected_outcome_met": true,
+        "critical_missing": [],
+        "answer_mismatches": [],
+        "question_count": 10,
+        "unnecessary_question_turns": [],
+        "no_progress_question_turns": [],
+        "multi_field_answer_turns": 7,
+        "host_violation_turns": [],
+        "ready": false,
+        "blocker_fields": [
+          "sampling"
+        ],
+        "all_steps_unexecuted": true,
+        "automatic_design_readout": true,
+        "semantic_quality_human_rated": false,
+        "researcher_understanding_measured": false
+      },
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 18000
+        }
+      },
+      "remaining_events": [],
+      "selected_evidence_count": 1,
+      "artifacts": {
+        "delivery.html": "15f809d0f879acdb7c663ded104ddc3bdd56a2f6daa88ccad94348f23a2df1e3",
+        "delivery.md": "739e4fba409c77df083217e5e89cf7c530c30384d46cbc7fb93b7cd1094e49a5",
+        "final_state.json": "9a047f29da8aacc94ecb917e52064730603650690a15c4ca861ef45c8ecbe53e",
+        "plan.json": "0f1c1899b38402fd7dcac97cbdb5182dfe50703bfe381d5ecdef9ddf37c7b021",
+        "plan.md": "61ae893a7c5823ad1dd592288e9e0354043f4f2b58264cf78a21e5d20b5da1b3",
+        "trajectory.json": "13eae724ec205fc796f26cc90c33b1223b7547f0cd33e626f8e0ef9e30ff9659"
+      }
+    },
+    {
+      "id": "models_goal_change",
+      "root_group": "implementer_synthetic_models_v1",
+      "mechanism": "goal_change",
+      "metrics": {
+        "outcome": "reviewable_design",
+        "expected_outcome_met": true,
+        "critical_missing": [],
+        "answer_mismatches": [],
+        "question_count": 9,
+        "unnecessary_question_turns": [],
+        "no_progress_question_turns": [],
+        "multi_field_answer_turns": 10,
+        "host_violation_turns": [],
+        "ready": true,
+        "blocker_fields": [],
+        "all_steps_unexecuted": true,
+        "automatic_design_readout": true,
+        "semantic_quality_human_rated": false,
+        "researcher_understanding_measured": false
+      },
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 18000
+        }
+      },
+      "remaining_events": [],
+      "selected_evidence_count": 0,
+      "artifacts": {
+        "delivery.html": "fd38f635f4aa30fb575132a8d6e676be67bb5b88f39c71c60122760845dced4a",
+        "delivery.md": "9ae40a138cc19936dd3ec48e2c8f23c67ecf831e550305cad4f4d839453c13e5",
+        "final_state.json": "ca9bf8f6f17304d636ae930c92d03a7bb1c3bc68e387fad2f9a467d76613b48d",
+        "plan.json": "a949df738488a02a3d9a8ebbb0a9944185b6f455033d39a2b11cc39b961a249d",
+        "plan.md": "42a48aa26d976c6c7877304e73bf7dd58e2930b7ba61989e29e3da8c2479607c",
+        "trajectory.json": "2d1bf35d91d84bdab33b37b5c7418ea36205af4b8f36d9d92167a4e761031f1b"
+      }
+    },
+    {
+      "id": "models_complete_input",
+      "root_group": "implementer_synthetic_models_v1",
+      "mechanism": "complete_input",
+      "metrics": {
+        "outcome": "reviewable_design",
+        "expected_outcome_met": true,
+        "critical_missing": [],
+        "answer_mismatches": [],
+        "question_count": 0,
+        "unnecessary_question_turns": [],
+        "no_progress_question_turns": [],
+        "multi_field_answer_turns": 1,
+        "host_violation_turns": [],
+        "ready": true,
+        "blocker_fields": [],
+        "all_steps_unexecuted": true,
+        "automatic_design_readout": true,
+        "semantic_quality_human_rated": false,
+        "researcher_understanding_measured": false
+      },
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 18000
+        }
+      },
+      "remaining_events": [],
+      "selected_evidence_count": 0,
+      "artifacts": {
+        "delivery.html": "d2425c5d993718227bf79ff844d66299c8d48425ae55e94d88ff5f8c1917a558",
+        "delivery.md": "36218307f2451c2e0c5083ddc5003ea357ebe5438a0907718fc936b36c05939b",
+        "final_state.json": "7993355d4c08c4c351f39cf9cac7b94c2f1ab7efa0d04d0587f3d87143a47fc5",
+        "plan.json": "9f95abb8fe36d922b63b245e1a4c808bfbaca432cd19a7626f202165c013024b",
+        "plan.md": "093cc484f0f472f82c483cbb8cbed1b17c1a5af4ad19b4e8f37989712d1df24b",
+        "trajectory.json": "7562dc43f924436a1e967f79d2838343170c24e690541e7726bfd3e5f7659b91"
+      }
+    },
+    {
+      "id": "materials_multi_answer",
+      "root_group": "implementer_synthetic_materials_v1",
+      "mechanism": "multi_answer",
+      "metrics": {
+        "outcome": "reviewable_design",
+        "expected_outcome_met": true,
+        "critical_missing": [],
+        "answer_mismatches": [],
+        "question_count": 6,
+        "unnecessary_question_turns": [],
+        "no_progress_question_turns": [],
+        "multi_field_answer_turns": 5,
+        "host_violation_turns": [],
+        "ready": true,
+        "blocker_fields": [],
+        "all_steps_unexecuted": true,
+        "automatic_design_readout": true,
+        "semantic_quality_human_rated": false,
+        "researcher_understanding_measured": false
+      },
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 18000
+        }
+      },
+      "remaining_events": [],
+      "selected_evidence_count": 0,
+      "artifacts": {
+        "delivery.html": "b2282b59db6b146d0ea6616708faba4cbd3c465d42da7613a4f11ff0c58b7c6d",
+        "delivery.md": "c8602ebbc7dcf26996e7f1f20b45ece63e940164fb52241f305ade8b6badef71",
+        "final_state.json": "7b9b8b7b4162902751cdfd7e86a8cf85e7ce06f5ca9f4f9244b3635d65c7b4a0",
+        "plan.json": "d1f3ed0ca4d7541d595ecc3b4eba18fc20f9a48777b82f09c44deffa215b756d",
+        "plan.md": "a90c0beaf1f60e2446eded7e730f437e3e292872eb53429c0fca499b9d981dfa",
+        "trajectory.json": "5a17c33762894af054b7eb38a56b077cf11896ed5255a5d0a8d41f63d20100ba"
+      }
+    },
+    {
+      "id": "materials_correction",
+      "root_group": "implementer_synthetic_materials_v1",
+      "mechanism": "correction",
+      "metrics": {
+        "outcome": "reviewable_design",
+        "expected_outcome_met": true,
+        "critical_missing": [],
+        "answer_mismatches": [],
+        "question_count": 7,
+        "unnecessary_question_turns": [],
+        "no_progress_question_turns": [],
+        "multi_field_answer_turns": 5,
+        "host_violation_turns": [],
+        "ready": true,
+        "blocker_fields": [],
+        "all_steps_unexecuted": true,
+        "automatic_design_readout": true,
+        "semantic_quality_human_rated": false,
+        "researcher_understanding_measured": false
+      },
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 18000
+        }
+      },
+      "remaining_events": [],
+      "selected_evidence_count": 0,
+      "artifacts": {
+        "delivery.html": "c57a58b123e400bbe7208e084e963d1509d9c20c8f864e24924e1bf6815b1f16",
+        "delivery.md": "d992e0c600e7eac20dc6122959ce3751abd02b5498a1e9ef044f604737f370ee",
+        "final_state.json": "485707d9dd188a2548362a91570755bfcbe25bf1c82af4d1a58c24168e9cf5da",
+        "plan.json": "047b604f93ec83035deae8f55afd81ac90abd709cc357ab644cee9fcbf9a6ea3",
+        "plan.md": "adad2fd4560622531c5a362088dc76e32d4cbb12a2e0826bb5abd8cc26bc1a46",
+        "trajectory.json": "9444adb84d7af4190a6e692f4cfe487bfc0e2ed147e1c3bef641076271098fa4"
+      }
+    },
+    {
+      "id": "materials_unknown",
+      "root_group": "implementer_synthetic_materials_v1",
+      "mechanism": "unknown",
+      "metrics": {
+        "outcome": "blocked_with_evidence_step",
+        "expected_outcome_met": true,
+        "critical_missing": [],
+        "answer_mismatches": [],
+        "question_count": 10,
+        "unnecessary_question_turns": [],
+        "no_progress_question_turns": [],
+        "multi_field_answer_turns": 5,
+        "host_violation_turns": [],
+        "ready": false,
+        "blocker_fields": [
+          "sampling"
+        ],
+        "all_steps_unexecuted": true,
+        "automatic_design_readout": true,
+        "semantic_quality_human_rated": false,
+        "researcher_understanding_measured": false
+      },
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 18000
+        }
+      },
+      "remaining_events": [],
+      "selected_evidence_count": 1,
+      "artifacts": {
+        "delivery.html": "8d435e77b0463fd9b9e3feb1698c8b7dd667573490316e90c16b495246d5d929",
+        "delivery.md": "306f3257a83ae1239bfe7151ce4cca4e5de3c50c9da2561435172178161348c8",
+        "final_state.json": "362aec6582a52160b8beaffeafbc99ae3768b0a160ce3c64c3e4e73f123c9ff6",
+        "plan.json": "a4200f621c84f2f0a966a439b7351f2428006f4ff42d923018de35c0a4b9fc8d",
+        "plan.md": "0087e20ddd4589fe853e01146a2213ab89e36b518ef29f501922977eaa7ae32a",
+        "trajectory.json": "e33c41877abb8435a6e71b6babaa39c6fd7ae1e999e09c74eafe58d425ec60eb"
+      }
+    },
+    {
+      "id": "materials_goal_change",
+      "root_group": "implementer_synthetic_materials_v1",
+      "mechanism": "goal_change",
+      "metrics": {
+        "outcome": "reviewable_design",
+        "expected_outcome_met": true,
+        "critical_missing": [],
+        "answer_mismatches": [],
+        "question_count": 11,
+        "unnecessary_question_turns": [],
+        "no_progress_question_turns": [],
+        "multi_field_answer_turns": 11,
+        "host_violation_turns": [],
+        "ready": true,
+        "blocker_fields": [],
+        "all_steps_unexecuted": true,
+        "automatic_design_readout": true,
+        "semantic_quality_human_rated": false,
+        "researcher_understanding_measured": false
+      },
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 18000
+        }
+      },
+      "remaining_events": [],
+      "selected_evidence_count": 0,
+      "artifacts": {
+        "delivery.html": "635208f28dc7639fbabaf7b9687ee5a17c69095c1b3f0f8e1484182f5171b6cc",
+        "delivery.md": "2d36f309d5e08af41897512e1d32843aa6fb4c8ad684829c2b998a6db906b8c4",
+        "final_state.json": "cd365450bb47c3af348ce9c20eb26c6aedc0c44dfc531b515196bd4c4d9c5184",
+        "plan.json": "062796c51cb3eb602c6013a3050f70a9762f96a368d50dad153c6c0914e63898",
+        "plan.md": "fa184582c8ee2f02ee747e9f51a1f88c1443c81c22b98a4bce3cbed4376be8b9",
+        "trajectory.json": "2333133d86948879b2e29aefb93d0cc21e908be29b740d983823e1962c7bba5f"
+      }
+    },
+    {
+      "id": "materials_complete_input",
+      "root_group": "implementer_synthetic_materials_v1",
+      "mechanism": "complete_input",
+      "metrics": {
+        "outcome": "reviewable_design",
+        "expected_outcome_met": true,
+        "critical_missing": [],
+        "answer_mismatches": [],
+        "question_count": 0,
+        "unnecessary_question_turns": [],
+        "no_progress_question_turns": [],
+        "multi_field_answer_turns": 1,
+        "host_violation_turns": [],
+        "ready": true,
+        "blocker_fields": [],
+        "all_steps_unexecuted": true,
+        "automatic_design_readout": true,
+        "semantic_quality_human_rated": false,
+        "researcher_understanding_measured": false
+      },
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 18000
+        }
+      },
+      "remaining_events": [],
+      "selected_evidence_count": 0,
+      "artifacts": {
+        "delivery.html": "e7dadb24bfa400492215035b101b229efb1a6bed03fd11349e46f7c9ae51d7e2",
+        "delivery.md": "649e0a367e214cd46e717c037c3fdcd40c161b5b95386249467656ce91cca951",
+        "final_state.json": "15f61aafa1c621a901720a5f197e278daf2b197cdec31771fc8cb5e7351f447d",
+        "plan.json": "2dc27c73c7b1113339c2ad738bf037e7ef7b381e2ae03ce83e620bc3fbab2f6f",
+        "plan.md": "dc5367989e074036575f299ad5a061446576cf7112a8d40eacb9b5505669b336",
+        "trajectory.json": "ca8a9f26e3a11a514b234a8a97b9da88c1053b1cc665fc90940ce353f9058455"
+      }
+    }
+  ]
+}

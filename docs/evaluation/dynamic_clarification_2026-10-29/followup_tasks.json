@@ -1,0 +1,95 @@
+{
+  "schema_version": "clarification_evaluation_v1",
+  "provenance": "Follow-up implementer-authored synthetic cases, frozen after initial diagnostic fixes and before the first follow-up run. New inputs separate from initial cases and RL training, covering related mechanisms; not blinded expert or human evaluation.",
+  "cases": [
+    {
+      "id": "turbine_sensor_prediction",
+      "answer": "风机振动预测要用于未见设备，同一设备的连续传感窗口不能当独立样本。",
+      "facts": {"research_question": "评估风机振动预测在未见设备上的误差。", "objective_type": "prediction", "scope": "仅限声明型号与工况。", "experimental_unit": "设备内连续传感窗口共享运行记录。", "design": "prediction", "data_source": "同一设备连续窗口，随机按行分为训练与测试。", "analysis": "报告测试误差均值与不确定区间。"},
+      "unknown": [],
+      "evidence": "合成方法片段：相邻传感窗口存在重叠；尚未规定验证集和按设备隔离规则。",
+      "expected_fields": ["data_source", "sampling", "scope"],
+      "expected_blocker_codes": ["prediction_holdout", "prediction_leakage"],
+      "relevance_terms": ["风机", "设备", "窗口", "泄漏", "验证"],
+      "reflection": "目标是未见设备预测，范围有限；因为窗口重叠可能泄漏，仍需研究者复核划分，资源上限时停止。"
+    },
+    {
+      "id": "ceramic_pilot_uncertainty",
+      "answer": "陶瓷烧结的强度波动尚不清楚，不能现在声称重复数足够。",
+      "facts": {"research_question": "探索烧结条件与陶瓷强度的关系，选择后续可检验命题。", "objective_type": "exploration", "scope": "仅限同一原料版本的试制陶瓷。", "experimental_unit": "每个独立窑次作为观察单位，不以同窑多件代替独立重复。", "resources": "本月最多5个窑次，不增加预算。"},
+      "unknown": ["sampling"],
+      "evidence": "合成实验记录：尚无独立窑次间的强度方差，测量流程也需要先核实。",
+      "expected_fields": ["sampling", "outcomes", "data_source"],
+      "expected_blocker_codes": ["explicit_unknown"],
+      "relevance_terms": ["陶瓷", "窑次", "强度", "方差", "先导"],
+      "reflection": "目标限于试制陶瓷；同窑多件不等于独立重复，方差未知需先导，负责人复核测量并在窑次上限停止。"
+    },
+    {
+      "id": "street_lighting_causal",
+      "answer": "街区自行选择是否改造照明，能耗差异可能有其他解释。",
+      "facts": {"research_question": "估计照明改造对街区能耗的因果效应。", "objective_type": "causal", "scope": "仅限观察到的街区与时期。", "experimental_unit": "街区作为推断单位，月度记录共享街区。", "design": "observational", "analysis": "估计街区能耗均值差与不确定区间。", "randomization": "街区自行选择是否改造，未随机分配。", "risks": "同期管理与天气差异未核实。"},
+      "unknown": [],
+      "evidence": "合成调查片段：改造由街区自行决定，没有随机分配证据。",
+      "expected_fields": ["analysis", "risks", "randomization"],
+      "expected_blocker_codes": ["causal_identification"],
+      "relevance_terms": ["街区", "照明", "识别", "混杂", "选择"],
+      "reflection": "问题是照明因果效应，因为街区自主选择，混杂尚未排除；研究者负责复核，证据不足就停止因果声称。"
+    },
+    {
+      "id": "museum_humidity_replication",
+      "answer": "我想复现藏品湿度研究，但同一藏品在多个时点重复测量，原文具体命题还没选。",
+      "facts": {"research_question": "复现藏品湿度研究的主要结论。", "objective_type": "replication", "scope": "仅限原文材料类别和保存环境。", "experimental_unit": "同一藏品重复测量，不同时点共享藏品。", "design": "crd"},
+      "unknown": ["hypothesis"],
+      "evidence": "合成论文片段：湿度响应来自同一藏品的多时点观测，不能据此确定独立藏品数量。",
+      "expected_fields": ["hypothesis", "design", "experimental_unit"],
+      "expected_blocker_codes": ["unit_design_mismatch", "explicit_unknown"],
+      "relevance_terms": ["藏品", "湿度", "命题", "时点", "重复测量"],
+      "reflection": "范围仅限原文环境，命题未知；因为同一藏品重复测量，独立设计需要修订，导师负责核实来源与停止条件。"
+    },
+    {
+      "id": "watershed_compute_conflict",
+      "answer": "流域模型比较的可用计算时长有两份说法，先核实硬上限。",
+      "facts": {"research_question": "比较流域模型误差并决定后续投入。", "objective_type": "comparison", "resources": "最多4小时"},
+      "unknown": [],
+      "conflict": {"field": "resources", "values": ["最多4小时", "最多10小时"]},
+      "evidence": "合成资源说明：尚未确认排期，不能自动采用较大的计算上限。",
+      "expected_fields": ["resources"],
+      "expected_blocker_codes": ["unresolved_conflict"],
+      "relevance_terms": ["时长", "上限", "小时", "资源", "计算"],
+      "reflection": "目标是模型比较，资源上限仍有冲突；负责人复核，不能自行扩大预算，也不能在未核实条件下执行。"
+    },
+    {
+      "id": "acoustic_negative_result",
+      "answer": "声学算法比较不能只报告显著结果，固定录音批次用完就应停止。",
+      "facts": {"research_question": "比较声学算法识别率并决定是否继续验证。", "objective_type": "comparison", "experimental_unit": "每个独立录音批次为分配和推断单位。", "design": "crd", "outcomes": "每个录音批次识别率均值，越高越好。", "acceptance": "p<0.01即成功", "resources": "最多16个录音批次，不追加，预算耗尽停止。"},
+      "unknown": [],
+      "evidence": "合成评估要求：报告识别率差和不确定区间；未支持提升或反向结果也需要交付。",
+      "expected_fields": ["acceptance", "analysis", "hypothesis"],
+      "expected_blocker_codes": ["negative_outcomes", "practical_vs_statistical"],
+      "relevance_terms": ["录音", "识别率", "声学", "显著", "停止", "不支持"],
+      "reflection": "问题是识别率比较，独立录音批次用于设计；效应仍未知，阴性结果也要报告，团队负责在预算上限停止。"
+    }
+  ],
+  "ready_plan": {
+    "research_question": "比较两种陶瓷烧结工艺在独立窑次上的强度差，决定是否继续验证。",
+    "objective_type": "comparison",
+    "hypothesis": "候选工艺减基线的强度差可能为正，也可能不支持提升。",
+    "scope": "仅限声明原料版本与窑炉条件。",
+    "exclusions": "不宣称工业泛化或微观机制因果。",
+    "experimental_unit": "每个独立窑次为处理分配与推断单位，不以同窑多件代替独立重复。",
+    "factors": "烧结工艺甲与乙两个水平，主要对比乙减甲。",
+    "design": "crd",
+    "outcomes": "每个窑次强度均值，越高越好。",
+    "baseline": "工艺甲，使用相同原料、测量条件与预算。",
+    "data_source": "拟采集的独立窑次记录，尚无实测结论。",
+    "sampling": "固定预算先导，不宣称功效保证。",
+    "randomization": "按独立窑次抽签分配工艺并保存实际顺序。",
+    "analysis": "估计候选减基线强度均值差与不确定区间，核查单位独立性。",
+    "acceptance": "逐项交付强度差及区间，阴性和不确定结果也记录；达到资源上限停止。",
+    "resources": "最多5个窑次，本月截止；不追加预算。",
+    "risks": "原料或测量异常时由研究者停止并复核。",
+    "reproducibility": "保留原料数据版本、配置日志和实际分配记录。",
+    "human_roles": "实验员负责执行，研究者确认边界，负责人复核方法与结论。",
+    "deliverable": "计划、原始记录、强度差区间和局限报告。"
+  }
+}

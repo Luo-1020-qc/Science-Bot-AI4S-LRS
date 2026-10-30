@@ -1,0 +1,31 @@
+scenario_name: 两种信号配时方案的通行量比较
+domain: 交通
+skeleton: S1
+executable: true
+summary: 同一路口两种信号配时方案下的单位时间通行量对比
+vocabulary:
+  treatment_name: 配时方案
+  outcome_name: 通行量
+  unit: 辆/小时
+  comparison: 方案 A vs 方案 B
+survey_questions:
+- 观测时段与星期是否匹配？
+- 交通需求（流量）是否可比？
+- 天气与事件干扰？
+- 观测天数与计数方法？
+- 是否有排队溢出？
+rubric:
+- 时段与日期匹配
+- 需求流量可比
+- 天气与事件记录
+- 观测天数 >= 3
+- 计数方法一致
+- 不做长期效益结论的声明
+proposal_template:
+- 研究目标
+- 观测设计
+- 计数与统计
+- 验收标准
+- 局限
+source: 骨架聚类表 v1 扩展 · S1 · 交通
+notes: 交通需求波动是最大混杂

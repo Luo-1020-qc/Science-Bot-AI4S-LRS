@@ -1,0 +1,32 @@
+scenario_name: 涂层厚度与固化温度对附着力的影响
+domain: 材料科学
+skeleton: S3
+executable: true
+summary: 涂层厚度与固化温度两因子对附着力的因子试验
+vocabulary:
+  treatment_name: 厚度×固化温度
+  outcome_name: 附着力
+  unit: 级/MPa
+  comparison: 厚度/温度组合
+survey_questions:
+- 基材与预处理是否一致？
+- 厚度如何控制与测量？
+- 固化时间与升温速率？
+- 每组几个试样？
+- 附着力测试标准？
+rubric:
+- 基材与预处理一致
+- 厚度测量方法
+- 固化曲线记录
+- 每组试样 >= 2
+- 测试标准一致
+- 主效应与交互估计能力匹配
+proposal_template:
+- 研究目标
+- 基材与涂层
+- 固化与测试
+- 统计方法
+- 验收标准
+- 局限
+source: 骨架聚类表 v1 扩展 · S3 · 材料科学
+notes: 厚度作为因子时需独立测量验证

@@ -1,0 +1,83 @@
+{
+  "suites": {
+    "application": {
+      "passed": true,
+      "run": 495,
+      "passed_tests": 493,
+      "failures": [],
+      "errors": [],
+      "skipped": [
+        {
+          "id": "test_link_target_cannot_escape_workspace (test_general_tools.GeneralToolTests.test_link_target_cannot_escape_workspace)",
+          "reason": "Windows account cannot create symlinks"
+        },
+        {
+          "id": "test_symlink_escape_and_excluded_alias_rejected (test_science_workspace.WorkspaceTests.test_symlink_escape_and_excluded_alias_rejected)",
+          "reason": "Windows account cannot create symlinks"
+        }
+      ],
+      "seconds": 237.969,
+      "folder": "RUT_Science/tests",
+      "pattern": "test*.py"
+    },
+    "integrity": {
+      "passed": true,
+      "run": 39,
+      "passed_tests": 39,
+      "failures": [],
+      "errors": [],
+      "skipped": [],
+      "seconds": 38.813,
+      "folder": "scripts",
+      "pattern": "test_integrity.py"
+    },
+    "scoring": {
+      "passed": true,
+      "run": 4,
+      "passed_tests": 4,
+      "failures": [],
+      "errors": [],
+      "skipped": [],
+      "seconds": 2.172,
+      "folder": "scripts",
+      "pattern": "test_mainline_evaluation.py"
+    },
+    "tool_library": {
+      "passed": true,
+      "run": 20,
+      "passed_tests": 20,
+      "failures": [],
+      "errors": [],
+      "skipped": [],
+      "seconds": 17.703,
+      "folder": "Research_Tool_Library/tests",
+      "pattern": "test*.py"
+    },
+    "v2_protocol": {
+      "passed": true,
+      "run": 22,
+      "passed_tests": 22,
+      "failures": [],
+      "errors": [],
+      "skipped": [],
+      "seconds": 9.625,
+      "folder": "Training_Data/v2/tests",
+      "pattern": "test*.py"
+    },
+    "curriculum": {
+      "passed": true,
+      "run": 28,
+      "passed_tests": 28,
+      "failures": [],
+      "errors": [],
+      "skipped": [],
+      "seconds": 0.938,
+      "folder": "Training_Data/scientific_dialogue_v1/tests",
+      "pattern": "test*.py"
+    }
+  },
+  "run": 608,
+  "passed": 606,
+  "skipped": 2,
+  "failed": 0
+}

@@ -1,0 +1,49 @@
+{
+  "files": {
+    "RUT_Science/pyproject.toml": {
+      "before_sha256": "bd9e74a07c4d2df062a26e46cc57621897ac0e14640e1534ed9f75f20aa53884",
+      "sha256": "5dc1ff2f29601e541987c535ecc124858f88af47efe95cbe59ecb15cdde67686",
+      "reason": "User requested contextual choice questions instead of visible rationale/citations, and authorized training the choice matching process"
+    },
+    "RUT_Science/rut_science/science_bot/general/planning/blueprint.py": {
+      "before_sha256": "c1d988615d7b3b23843fdd044c078a545c1e63f9743f4a239c9f93203dc0c73a",
+      "sha256": "af6f57c4da3955ebb276001fab977d8f7c4441580bf984bce55f5a3d970c3639",
+      "reason": "User requested contextual choice questions instead of visible rationale/citations, and authorized training the choice matching process"
+    },
+    "RUT_Science/rut_science/science_bot/general/planning/clarification.py": {
+      "before_sha256": "590b014a2f6677bc71df8be9e8a0982da11d00963de2a282977a8586d8aeb457",
+      "sha256": "cb775fa45a94fb097d69ff0e373f7ebbecaf48f0f2f8c8b831f7e7158c673b3f",
+      "reason": "User requested contextual choice questions instead of visible rationale/citations, and authorized training the choice matching process"
+    },
+    "RUT_Science/rut_science/science_bot/general/planning/intake.py": {
+      "before_sha256": "5ad58cc67d96a2e924e43b7c2e0002e8c323e407a7828bac68729afbf3ace21c",
+      "sha256": "db1797dc5870634b3bbdd875a7f7ce007c1f4b7541318cb21bf9bd258c5c253d",
+      "reason": "User requested contextual choice questions instead of visible rationale/citations, and authorized training the choice matching process"
+    },
+    "RUT_Science/rut_science/science_bot/general/planning/runtime.py": {
+      "before_sha256": "0fc39a346b2bf19e013ad9cef71a1eac87a30f7783fe2a7c4948f266448c45d3",
+      "sha256": "2f4c11efc38136c88e23c72fa7589bd7d2023beb06c1bcdaa1635d41728b6b03",
+      "reason": "User requested contextual choice questions instead of visible rationale/citations, and authorized training the choice matching process"
+    },
+    "RUT_Science/rut_science/science_bot/presentation.py": {
+      "before_sha256": "d593537082f345da3512800205e138071bd9ff58067df22bf4a592fae4cdfb2a",
+      "sha256": "c084cd1d2383420fa5793c4e48ae8f1ad5a9b7807e27278e992b0ab03b0ebfcb",
+      "reason": "User requested contextual choice questions instead of visible rationale/citations, and authorized training the choice matching process"
+    },
+    "RUT_Science/rut_science/science_bot/terminal.py": {
+      "before_sha256": "0f4a22f0a81b110768e15e72fd81a681358c85a6329c0e80a2d4907409abc3a0",
+      "sha256": "80f7923a1fcc6fea2752207de91d48677a85d92d084f845663daf5851e2bf7c4",
+      "reason": "User requested contextual choice questions instead of visible rationale/citations, and authorized training the choice matching process"
+    },
+    "RUT_Science/rut_science/science_bot/workbench_assets/dist/app.js": {
+      "before_sha256": "84c428cb3633c31bdbe282a895f5aa15aa978803c0b6c3cb5ca5faa1bc3709c2",
+      "sha256": "bcefac07319a70fcc2ae2a198e403cd756329d781099f40588c513ee93960426",
+      "reason": "User requested contextual choice questions instead of visible rationale/citations, and authorized training the choice matching process"
+    },
+    "examples/interfaces/browser.html": {
+      "before_sha256": "2c6b1e72182f64f0c3a5677d5eb4285e268b2800965ef9bd9d81c6e914e01cb5",
+      "sha256": "dacfea796e60c431a3f5522184b25936083be763dca558114cbc160a4d999cf4",
+      "reason": "User requested contextual choice questions instead of visible rationale/citations, and authorized training the choice matching process"
+    }
+  }
+}

@@ -15,9 +15,12 @@ class TurnState(TypedDict, total=False):
 def run_turn(session, text, turn):
     def route(state):
         from .interview.runtime import route_override
+        from .planning.runtime import route_override as planning_override
         request = route_request(state["text"], session.workspace)
         value = request.to_dict()
-        if request.intent != "research" and route_override(session, state["text"], request):
+        if request.intent != 'research' and planning_override(session,state['text'],request):
+            value.update(intent='design',reason='research_planning')
+        elif request.intent != "research" and route_override(session, state["text"], request):
             value.update(intent="design", reason="design_interview")
         return {"request": value}
 

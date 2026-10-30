@@ -1,0 +1,33 @@
+test_sft_export_excludes_private_facet_and_preserves_unanswerable (test_curriculum.ExportTests.test_sft_export_excludes_private_facet_and_preserves_unanswerable) ... ok
+test_consent_required (test_curriculum.HumanReviewTests.test_consent_required) ... ok
+test_credential_pattern_rejected (test_curriculum.HumanReviewTests.test_credential_pattern_rejected) ... ok
+test_declared_fact_needs_user_grounding (test_curriculum.HumanReviewTests.test_declared_fact_needs_user_grounding) ... ok
+test_duplicate_paper_cannot_cross_partitions (test_curriculum.HumanReviewTests.test_duplicate_paper_cannot_cross_partitions) ... ok
+test_future_user_answer_not_available_to_prior_question (test_curriculum.HumanReviewTests.test_future_user_answer_not_available_to_prior_question) ... ok
+test_import_retains_provenance_without_review_labels_in_model_input (test_curriculum.HumanReviewTests.test_import_retains_provenance_without_review_labels_in_model_input) ... ok
+test_missing_unknown_choice_rejected (test_curriculum.HumanReviewTests.test_missing_unknown_choice_rejected) ... ok
+test_nonexistent_citation_rejected (test_curriculum.HumanReviewTests.test_nonexistent_citation_rejected) ... ok
+test_pending_template_is_rejected (test_curriculum.HumanReviewTests.test_pending_template_is_rejected) ... ok
+test_review_gate_required (test_curriculum.HumanReviewTests.test_review_gate_required) ... ok
+test_shells_seed_pending_queue_without_invented_dialogue (test_curriculum.HumanReviewTests.test_shells_seed_pending_queue_without_invented_dialogue) ... ok
+test_timezone_required (test_curriculum.HumanReviewTests.test_timezone_required) ... ok
+test_unknown_cannot_be_filled_as_fact (test_curriculum.HumanReviewTests.test_unknown_cannot_be_filled_as_fact) ... ok
+test_unmeasured_understanding_not_scored (test_curriculum.HumanReviewTests.test_unmeasured_understanding_not_scored) ... ok
+test_valid_fixture_is_accepted (test_curriculum.HumanReviewTests.test_valid_fixture_is_accepted) ... ok
+test_archive_never_extracts_traversal_member (test_curriculum.NativeAdapterTests.test_archive_never_extracts_traversal_member) ... ok
+test_clarq_original_answer_is_never_clarification_reply (test_curriculum.NativeAdapterTests.test_clarq_original_answer_is_never_clarification_reply) ... ok
+test_clarq_train_test_overlap_rejects_before_output (test_curriculum.NativeAdapterTests.test_clarq_train_test_overlap_rejects_before_output) ... ok
+test_false_yes_no_and_unmatched_evidence_survive (test_curriculum.NativeAdapterTests.test_false_yes_no_and_unmatched_evidence_survive) ... ok
+test_relabeling_id_does_not_hide_duplicate_request (test_curriculum.NativeAdapterTests.test_relabeling_id_does_not_hide_duplicate_request) ... ok
+test_source_group_leakage_rejected (test_curriculum.NativeAdapterTests.test_source_group_leakage_rejected) ... ok
+test_topic_request_variants_preserve_common_group (test_curriculum.NativeAdapterTests.test_topic_request_variants_preserve_common_group) ... ok
+test_artifact_manifest_cannot_escape_directory (test_curriculum.TrainingIsolationTests.test_artifact_manifest_cannot_escape_directory) ... ok
+test_dev_test_labels_do_not_change_need_training (test_curriculum.TrainingIsolationTests.test_dev_test_labels_do_not_change_need_training) ... ok
+test_existing_artifacts_are_not_overwritten (test_curriculum.TrainingIsolationTests.test_existing_artifacts_are_not_overwritten) ... ok
+test_missing_native_section_name_is_not_a_failure (test_curriculum.TrainingIsolationTests.test_missing_native_section_name_is_not_a_failure) ... ok
+test_ranking_learns_actual_parameter_updates (test_curriculum.TrainingIsolationTests.test_ranking_learns_actual_parameter_updates) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.613s
+
+OK

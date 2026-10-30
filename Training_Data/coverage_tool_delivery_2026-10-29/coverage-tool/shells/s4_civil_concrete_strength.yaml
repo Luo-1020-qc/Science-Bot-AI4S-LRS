@@ -1,0 +1,32 @@
+scenario_name: 混凝土配比到抗压强度的预测对比
+domain: 土木工程
+skeleton: S4
+executable: true
+summary: 用配比与龄期特征预测抗压强度，比较基线与回归模型
+vocabulary:
+  treatment_name: 预测模型（mean 基线 vs OLS/ridge）
+  outcome_name: 抗压强度预测误差
+  unit: MPa
+  comparison: 模型 vs 基线
+survey_questions:
+- 数据来源与许可？是否包含养护条件与龄期？
+- 配比变量有哪些（水灰比、骨料、掺合料）？
+- 划分方式与随机种子？
+- 强度测定标准与试件尺寸？
+- 是否存在不同实验室/批次的系统差异？
+rubric:
+- 数据来源与许可已声明
+- 龄期与养护条件作为特征或分层变量处理
+- 划分固定，测试集只用一次
+- 预处理无泄漏
+- 单位与试件尺寸一致
+- 适用域与不做配合比因果推断的声明
+proposal_template:
+- 研究目标与假设
+- 数据与特征
+- 划分与预处理
+- 模型与基线
+- 评价与验收
+- 局限（实验室间差异、适用域）
+source: 骨架聚类表 v1 · S4 · 土木工程行
+notes: 公开数据多、易获取，适合作为 S4 的第二个示范

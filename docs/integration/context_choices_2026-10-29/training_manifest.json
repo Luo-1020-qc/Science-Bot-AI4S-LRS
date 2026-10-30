@@ -1,0 +1,11 @@
+{
+  "sha256": {
+    "RUT_Science/research/context_choices_v1/dataset.json": "29680e1a576af97b679c5d383a1609d6f2916cb2639737026ef4635701b17539",
+    "RUT_Science/research/context_choices_v1/dataset_manifest.json": "1c33d0d67f80d70f390776e767c3993f6f837384808462784d0a84370b5bd15b",
+    "RUT_Science/research/context_choices_v1/run_001/examples.json": "29ce1a2ba4f53d57620c0f0f563139b97c0e666a4f409f92dab9d33c3ee11dfc",
+    "RUT_Science/research/context_choices_v1/run_001/manifest.json": "bed1da1cb70f13d2b3f15cc429a303c8bcd85756e6bdf74670d250d8bc1cb719",
+    "RUT_Science/research/context_choices_v1/run_001/policy.json": "948f159914c5800c268eddf20fe1689352148ac2a685cd7dc0a410638aff909b",
+    "RUT_Science/research/context_choices_v1/run_001/results.json": "b015904797b7121882d2f8c4ffa61cfd8dcfca786f60b457281def5fb437ad7d",
+    "RUT_Science/research/context_choices_v1/train.py": "e6e70352dcaf5359163cfb39cb63d58c53092a61a66b9e7504ea7a8d56c992d4"
+  }
+}

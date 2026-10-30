@@ -1,0 +1,16 @@
+{
+  "file": "runtime.py",
+  "evaluated_sha256": "4d9e44d25a8647642c944b90bd3774f5026ad04b81fa3a37169459b74016e039",
+  "current_sha256": "cb2121da91626c828e52b1be1eb573ebe43b20e7337c5d2058470726c60e8d34",
+  "patches": [
+    {
+      "old_block": "        if evidence_changed:clarify_text=''",
+      "new_block": "        if evidence_changed:\n            clarify_text='';notes.append(answer);answer=None"
+    },
+    {
+      "old_block": "    if command in {'map','draft','review','status','decisions','options','explain','export','understanding','reflect','help'} and state.get('pending'):",
+      "new_block": "    read_only_view = (concept is not None or command in {'map','draft','review','status','decisions','options','explain','export','understanding','reflect','help'}\n                      or command=='evidence' and not evidence_changed)\n    if read_only_view and state.get('pending'):"
+    }
+  ],
+  "scope": "Post-evaluation UI fixes: evidence-add answer displays generated questions; evidence list/show and natural concept explanations preserve pending question mapping. No evaluated _questions or model generation/validation logic changed. Original online results remain unchanged."
+}

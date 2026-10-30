@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "run": 22,
+  "passed_tests": 22,
+  "failures": [],
+  "errors": [],
+  "skipped": [],
+  "seconds": 9.625,
+  "folder": "Training_Data/v2/tests",
+  "pattern": "test*.py"
+}

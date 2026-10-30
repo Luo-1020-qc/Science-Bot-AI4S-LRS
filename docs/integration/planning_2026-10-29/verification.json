@@ -1,0 +1,70 @@
+{
+  "passed": true,
+  "date": "2026-10-29",
+  "full_regression": {
+    "run": 376,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 2,
+    "passed": true,
+    "seconds": 212.375
+  },
+  "final_planning_tests": {
+    "run": 66,
+    "passed": true,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 7.936999999998079,
+    "runtime_manifest_sha256": "7a6575e20b20fd3a411473cbee24597302de250b09d6821266c5449ec4dbe398"
+  },
+  "live_semantic_evidence": "docs/planning_2026-10-29/live_semantic_evidence.json",
+  "integrity": {
+    "passed": true,
+    "protected_files_checked": 1745,
+    "authorized_host_changes": 5,
+    "integration_runtime_files_checked": 10,
+    "planning_authorized_host_changes": 4,
+    "planning_runtime_files_checked": 11,
+    "changed": []
+  },
+  "old_training_evidence_artifacts_checked": 64,
+  "deepseek_provider_and_configuration_unchanged": true,
+  "existing_terminal_and_http_entry_reused": true,
+  "planning_fields": 20,
+  "dependency_nodes": 11,
+  "immutable_snapshots": true,
+  "explicit_unknown_preserved": true,
+  "proposals_require_confirmation": true,
+  "revision_invalidates_approval": true,
+  "planning_scope": "reviewable declarations, not scientific validity or actual execution",
+  "demo": {
+    "passed": true,
+    "turns": 16,
+    "initial_semantic_smoke": {
+      "live_provider_requested": true,
+      "initial_fields": [
+        "research_question",
+        "objective_type",
+        "factors",
+        "data_source",
+        "reproducibility"
+      ],
+      "model_requests": 1,
+      "notes": [
+        "语义改写和推断仅作为待确认提议展示，不会自动成为已确认边界。"
+      ]
+    },
+    "approval_invalidated_after_budget_change": true,
+    "planning_only": true,
+    "real_scientific_executions": 0,
+    "actual_tool_attempts": 0,
+    "session_ref": ".local\\planning_demo\\e1f4dff641f744fb82a1e8151fc15d82",
+    "scope": "Programmatic synthetic user actions; not independent expert review or task-success benchmark"
+  },
+  "documentation_links_checked": 32,
+  "rl_weights_promoted": false,
+  "new_training": false,
+  "real_scientific_executions": 0,
+  "committed_or_pushed": false
+}

@@ -1,0 +1,139 @@
+{
+  "id": "budget_correction",
+  "purpose": "Natural conflicting budget or explicit correction must not silently preserve old authorization",
+  "scripted_turns": 2,
+  "ready": false,
+  "declarations": 5,
+  "proposals": 1,
+  "unknown_fields": [],
+  "conflict_fields": [],
+  "stale_fields": [],
+  "blockers": [
+    {
+      "field": "hypothesis",
+      "code": "missing_declaration",
+      "status": "blocked",
+      "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+    },
+    {
+      "field": "experimental_unit",
+      "code": "missing_declaration",
+      "status": "blocked",
+      "detail": "一次独立分配或观察是什么？哪些测量来自同一对象？"
+    },
+    {
+      "field": "factors",
+      "code": "missing_declaration",
+      "status": "blocked",
+      "detail": "改变哪些因素和水平，主要比较谁与谁？"
+    },
+    {
+      "field": "design",
+      "code": "missing_declaration",
+      "status": "blocked",
+      "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+    },
+    {
+      "field": "outcomes",
+      "code": "missing_declaration",
+      "status": "blocked",
+      "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+    },
+    {
+      "field": "baseline",
+      "code": "missing_declaration",
+      "status": "blocked",
+      "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+    },
+    {
+      "field": "data_source",
+      "code": "missing_declaration",
+      "status": "blocked",
+      "detail": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。"
+    },
+    {
+      "field": "sampling",
+      "code": "missing_declaration",
+      "status": "blocked",
+      "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+    },
+    {
+      "field": "analysis",
+      "code": "missing_declaration",
+      "status": "blocked",
+      "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+    },
+    {
+      "field": "acceptance",
+      "code": "missing_declaration",
+      "status": "blocked",
+      "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+    },
+    {
+      "field": "risks",
+      "code": "missing_declaration",
+      "status": "blocked",
+      "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+    },
+    {
+      "field": "reproducibility",
+      "code": "missing_declaration",
+      "status": "blocked",
+      "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+    },
+    {
+      "field": "human_roles",
+      "code": "missing_declaration",
+      "status": "blocked",
+      "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+    },
+    {
+      "field": "deliverable",
+      "code": "unconfirmed_proposal",
+      "status": "blocked",
+      "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+    }
+  ],
+  "known_field_missing_questions": 0,
+  "questions": 2,
+  "clarification": [
+    {
+      "mode": "template",
+      "reason": "model_unavailable_or_rejected",
+      "model_used": true,
+      "error_type": "ValueError",
+      "validation_error": "NoValidPriorityQuestions: [{\"field\": \"factors\", \"reason\": \"InventedQuestionNumericAssumption\"}, {\"field\": \"outcomes\", \"reason\": \"InventedQuestionNumericAssumption\"}]"
+    },
+    {
+      "mode": "template",
+      "reason": "model_unavailable_or_rejected",
+      "model_used": true,
+      "error_type": "ValueError",
+      "validation_error": "NoValidPriorityQuestions: [{\"field\": \"resources\", \"reason\": \"QuestionFieldAlreadyAnswered\"}, {\"field\": \"sampling\", \"reason\": \"InventedQuestionNumericAssumption\"}]"
+    }
+  ],
+  "exceptions": [],
+  "fact_quote_not_literal_in_inputs": [],
+  "session_restore_exact": true,
+  "resources": {
+    "llm_requests": 3,
+    "llm_tokens": 6218,
+    "tool_attempts": 0,
+    "limits": {
+      "llm_requests": 4,
+      "llm_tokens": 16000,
+      "tool_calls": 40,
+      "read_bytes": 24000
+    }
+  },
+  "turn_seconds": [
+    4.938,
+    3.578
+  ],
+  "recovered_turns_without_latency": 0,
+  "approval": null,
+  "scientific_claim_verified": false,
+  "execution_authorized": false,
+  "human_quality_scores": null,
+  "researcher_understanding_measured": false
+}

@@ -1,0 +1,95 @@
+{
+  "passed": true,
+  "integrity": {
+    "passed": true,
+    "protected_files_checked": 1745,
+    "authorized_host_changes": 5,
+    "integration_runtime_files_checked": 10,
+    "planning_authorized_host_changes": 4,
+    "planning_runtime_files_checked": 11,
+    "dynamic_runtime_files_checked": 6,
+    "planning_history_privacy_files_checked": 1,
+    "interface_runtime_files_checked": 11,
+    "question_tool_runtime_files_checked": 6,
+    "question_tool_training_files_checked": 7,
+    "changed": []
+  },
+  "full_regression": {
+    "application": {
+      "run": 444,
+      "passed": true,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 2,
+      "seconds": 239.687
+    },
+    "integrity": {
+      "run": 22,
+      "passed": true,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 6.922
+    }
+  },
+  "training": {
+    "evaluation": {
+      "train": {
+        "cases": 96,
+        "scripted_teacher_agreement": {
+          "rule": 62,
+          "trained": 94
+        }
+      },
+      "dev": {
+        "cases": 32,
+        "scripted_teacher_agreement": {
+          "rule": 21,
+          "trained": 30
+        }
+      },
+      "test": {
+        "cases": 64,
+        "scripted_teacher_agreement": {
+          "rule": 39,
+          "trained": 57
+        }
+      },
+      "test_rollouts": {
+        "rule": {
+          "cases": 64,
+          "total_questions": 416,
+          "unknown_overwrites": 0,
+          "budget_exhausted": 0,
+          "ready_for_review": 40
+        },
+        "trained": {
+          "cases": 64,
+          "total_questions": 416,
+          "unknown_overwrites": 0,
+          "budget_exhausted": 0,
+          "ready_for_review": 40
+        }
+      }
+    },
+    "actual_tool_test_cases_checked": 64,
+    "weights_and_rollouts_recomputed": true,
+    "human_expert_labels": 0,
+    "language_model_weights_changed": false,
+    "default_candidate_enabled": false,
+    "question_count_improvement_observed": false,
+    "understanding_improvement_measured": false
+  },
+  "example_sha256": {
+    "examples/interfaces/terminal.html": "445b43793d87061618b5a60a6aeb9e1f6e27b0c16bb7000c28fecf0bba3c201f",
+    "examples/interfaces/browser.html": "319c98c39bf9e83d92f69a0d27b733029c5794bb2a5ac9cc7a86c0469988177a",
+    "examples/interfaces/delivery.html": "6e7b76df6b56f52fcb53a5b174e29f8832fd7f581d99744952fea1f82aaa9e80"
+  },
+  "previous_receipts_unchanged": 21,
+  "retained_original_training_artifacts_checked": 64,
+  "model_requests": 0,
+  "real_scientific_executions": 0,
+  "committed_or_pushed": false,
+  "browser_visual_qa_repeated": false,
+  "frontend_assets_changed": false
+}

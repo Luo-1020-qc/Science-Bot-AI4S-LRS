@@ -1,0 +1,33 @@
+scenario_name: 多家供应商材料质量比较
+domain: 制造/工业
+skeleton: S5
+executable: false
+summary: 三家及以上供应商同规格材料的关键质量指标比较
+vocabulary:
+  treatment_name: 供应商
+  outcome_name: 关键质量指标
+  unit: 依指标而定
+  comparison: 供应商 A / B / C
+survey_questions:
+- 供应商数量与选择依据？
+- 抽检批次与时间窗是否匹配？
+- 测量系统一致性（GR&R）是否评估？
+- 测量人员与设备是否一致？
+- 每家抽样多少件？
+- 异常件如何处理？
+rubric:
+- 批次与时间窗匹配
+- 测量系统一致性（GR&R）
+- 抽样数量与功效
+- 公差/规格定义一致
+- 方差齐性或非参备选
+- 多重性校正声明
+- 不做过程能力过度声明
+proposal_template:
+- 研究目标
+- 抽样与测量
+- 统计方法（ANOVA + 事后）
+- 验收标准
+- 局限
+source: 骨架聚类表 v1 · S5 · 制造行
+notes: 不可执行：S5 待开发

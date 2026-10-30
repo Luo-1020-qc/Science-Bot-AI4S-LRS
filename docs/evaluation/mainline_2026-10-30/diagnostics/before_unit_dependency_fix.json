@@ -1,0 +1,474 @@
+{
+  "schema_version": "planning_mainline_evaluation_v1",
+  "checked_utc": "2026-10-30T03:03:29.292592+00:00",
+  "mode": "offline_explicit_answer_rule_baseline",
+  "provenance": {
+    "source_kind": "implementer_authored_synthetic_engineering_diagnostic",
+    "human_participants": 0,
+    "expert_approved": false,
+    "split": "development_only",
+    "independent_root_groups": 2,
+    "limitations": [
+      "Ten mechanism cases share two authored families; no blind generalization claim.",
+      "Offline answers use explicit field syntax; they do not measure free-text LLM extraction.",
+      "Private answers and expected values are evaluator-only, never injected into the agent state or provider context."
+    ]
+  },
+  "case_count": 10,
+  "expected_outcomes_met": 9,
+  "reviewable_designs": 8,
+  "justified_blocked_drafts": 2,
+  "unnecessary_questions": 0,
+  "host_violations": 0,
+  "automatic_design_readouts": 10,
+  "model_requests": 0,
+  "human_participants": 0,
+  "human_quality_scores": null,
+  "understanding_improvement_measured": false,
+  "real_scientific_executions": 0,
+  "source_sha256": {
+    "RUT_Science/rut_science/science_bot/general/planning/blueprint.py": "af6f57c4da3955ebb276001fab977d8f7c4441580bf984bce55f5a3d970c3639",
+    "RUT_Science/rut_science/science_bot/general/planning/choices.py": "19937ab2de25123d71005191e12efe849364c8a56e8e5ab15846dfe53942b45c",
+    "RUT_Science/rut_science/science_bot/general/planning/clarification.py": "cb775fa45a94fb097d69ff0e373f7ebbecaf48f0f2f8c8b831f7e7158c673b3f",
+    "RUT_Science/rut_science/science_bot/general/planning/delivery.py": "eea63dff7fcae6071fb035d441cef0abdabf89172e4853d85a5f406a053e0b5d",
+    "RUT_Science/rut_science/science_bot/general/planning/evidence.py": "51e801640bb7ee4964169469dc0abb1c34367ad9567cda12bf17aecf9b951269",
+    "RUT_Science/rut_science/science_bot/general/planning/intake.py": "db1797dc5870634b3bbdd875a7f7ce007c1f4b7541318cb21bf9bd258c5c253d",
+    "RUT_Science/rut_science/science_bot/general/planning/ledger.py": "37601d4a3fd9ee03dd3f110a0f7f3e31b6d8c8cf534876614c42114cb4f2a916",
+    "RUT_Science/rut_science/science_bot/general/planning/question_ranker.py": "0b3b0765a8209e0a4e78f9810c0798ae86d41ec1f0520fd15a4b417c0b155b28",
+    "RUT_Science/rut_science/science_bot/general/planning/question_tool.py": "d8836a2d7e7897811627b1c5c697a6653f7edf1119ad8c0503dd008574818504",
+    "RUT_Science/rut_science/science_bot/general/planning/runtime.py": "32da1f6d3067ed038c7c448688048bf34a2d74c56377bd1f6475a8521878a8a3",
+    "RUT_Science/rut_science/science_bot/general/planning/understanding.py": "5fffde0a44d5bcdca2aff2fa681f3e0666f4708e739541d3926a86ce48e4ead8",
+    "RUT_Science/rut_science/science_bot/general/planning/__init__.py": "a2bbb405ab46564e671816d5dc72cc7dccbd47406ac9210674396ecb5c8db6e7",
+    "scripts/evaluate_planning_mainline.py": "500e657b6a8bc79c6868190d9e5c3b4973b0a0cc64af0e5b0721f1ba3d8e370f",
+    "RUT_Science/rut_science/science_bot/presentation.py": "6618a892ee6ec4c39c0dcb45193b308ed648123702a6e843f1b7073dcba7b86d",
+    "docs/evaluation/mainline_2026-10-30/tasks.json": "cb9a553e5346c90d9fde8d24f9258210dbfafd160b9b91ca715b39b93de6e5f3"
+  },
+  "cases": [
+    {
+      "id": "models_multi_answer",
+      "root_group": "implementer_synthetic_models_v1",
+      "mechanism": "multi_answer",
+      "metrics": {
+        "outcome": "reviewable_design",
+        "expected_outcome_met": true,
+        "critical_missing": [],
+        "answer_mismatches": [],
+        "question_count": 6,
+        "unnecessary_question_turns": [],
+        "multi_field_answer_turns": 5,
+        "host_violation_turns": [],
+        "ready": true,
+        "blocker_fields": [],
+        "all_steps_unexecuted": true,
+        "automatic_design_readout": true,
+        "semantic_quality_human_rated": false,
+        "researcher_understanding_measured": false
+      },
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 18000
+        }
+      },
+      "remaining_events": [],
+      "selected_evidence_count": 0,
+      "artifacts": {
+        "delivery.html": "688f6067357bc4502791b8e5420b235cd9f694a3bb03a2b3821a5d116cd4a780",
+        "delivery.md": "d6a6b8ae7aba86f3f5e6509cc89eca98bbb3926639200696786b64799e610b90",
+        "final_state.json": "3c435296e944edd7f93552a6438d1edd4cd8aef261129aa146291eb8ccd46ac8",
+        "plan.json": "488614ebd2715e06e6eade80936224b39c84bd169df90e40a27a53cf90d5c73f",
+        "plan.md": "2f20fc05aeb4fa27d5601ca460a5afb8e1defd74dd45146eb9adbf97689eb58c",
+        "trajectory.json": "e0cef2eb4d0a65e0490bf5d2fec81b1b987550dea049cfdeae485c46beec16de"
+      }
+    },
+    {
+      "id": "models_correction",
+      "root_group": "implementer_synthetic_models_v1",
+      "mechanism": "correction",
+      "metrics": {
+        "outcome": "reviewable_design",
+        "expected_outcome_met": true,
+        "critical_missing": [],
+        "answer_mismatches": [],
+        "question_count": 7,
+        "unnecessary_question_turns": [],
+        "multi_field_answer_turns": 5,
+        "host_violation_turns": [],
+        "ready": true,
+        "blocker_fields": [],
+        "all_steps_unexecuted": true,
+        "automatic_design_readout": true,
+        "semantic_quality_human_rated": false,
+        "researcher_understanding_measured": false
+      },
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 18000
+        }
+      },
+      "remaining_events": [],
+      "selected_evidence_count": 0,
+      "artifacts": {
+        "delivery.html": "a3d1a8057ad58bb070edf29172e6583918d60234cee017714f8ec7a8c71001f4",
+        "delivery.md": "17ab815bd20033ac17457850f940b34467b9fbe0dcee9a65db8a36470bcddb2d",
+        "final_state.json": "1b171f742b308a8a2a5eef901e3015ecef44a30a7c5b9d7603064ffdc010de46",
+        "plan.json": "56ce60c610fc9223382d4c8ea1c1a886a471cc1e77997a3a8a92805762a923c1",
+        "plan.md": "c7c87ac24c230e628b273f94f74aab6f46fed90ade59790f1dc7a04d4f718362",
+        "trajectory.json": "ab8f34795b8ccbb5bd0691a595cb4ba66acd8f25b3bc31d6322cd13d51aa386c"
+      }
+    },
+    {
+      "id": "models_unknown",
+      "root_group": "implementer_synthetic_models_v1",
+      "mechanism": "unknown",
+      "metrics": {
+        "outcome": "blocked_with_evidence_step",
+        "expected_outcome_met": true,
+        "critical_missing": [],
+        "answer_mismatches": [],
+        "question_count": 10,
+        "unnecessary_question_turns": [],
+        "multi_field_answer_turns": 7,
+        "host_violation_turns": [],
+        "ready": false,
+        "blocker_fields": [
+          "sampling"
+        ],
+        "all_steps_unexecuted": true,
+        "automatic_design_readout": true,
+        "semantic_quality_human_rated": false,
+        "researcher_understanding_measured": false
+      },
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 18000
+        }
+      },
+      "remaining_events": [],
+      "selected_evidence_count": 1,
+      "artifacts": {
+        "delivery.html": "62967ecb00190a73231ba80e872636e609bf12599b942074a633e25887809caf",
+        "delivery.md": "b4cfe0f929ca70178b50a7ccec6681968569e88e0626f819e3300eca2dc70cd7",
+        "final_state.json": "84eda30f667b955e93ef1e24a9412b11c947fc45d5ae251fb8528a71651df173",
+        "plan.json": "be9cf9681bd38a4be836c9f9175c8c6867882d747ccc4575144af5be4185ac2f",
+        "plan.md": "2320a8458660fd8142f02ef9f2862984b05f4246c969de7119dc4e4c29dc7d4d",
+        "trajectory.json": "60dfe560827017307812388641d70cb62b4466ec822e65bffcb32f86f5f0beb0"
+      }
+    },
+    {
+      "id": "models_goal_change",
+      "root_group": "implementer_synthetic_models_v1",
+      "mechanism": "goal_change",
+      "metrics": {
+        "outcome": "reviewable_design",
+        "expected_outcome_met": true,
+        "critical_missing": [],
+        "answer_mismatches": [],
+        "question_count": 8,
+        "unnecessary_question_turns": [],
+        "multi_field_answer_turns": 9,
+        "host_violation_turns": [],
+        "ready": true,
+        "blocker_fields": [],
+        "all_steps_unexecuted": true,
+        "automatic_design_readout": true,
+        "semantic_quality_human_rated": false,
+        "researcher_understanding_measured": false
+      },
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 18000
+        }
+      },
+      "remaining_events": [],
+      "selected_evidence_count": 0,
+      "artifacts": {
+        "delivery.html": "8552b26a1eab25df5074a370e54c06fdfe9d903ee35d2bf7d5e3c8a129ecb436",
+        "delivery.md": "e6134e54c09802373122c5effb9b662f9876d067229e1cde2b7f0ecd2331078d",
+        "final_state.json": "2aa6edf994ff2497acd69dbd640fceb45f5c5f8395dab3d22c58e25ee866930e",
+        "plan.json": "fadbaabe197c885ed7452faec95cd8ceeca45e33cb4980b4c175cced96203cb1",
+        "plan.md": "a43fb8a9ee5823c47e7b1a6f5c45f29377d9c1dc349bcd4ed6dca9f818b2e792",
+        "trajectory.json": "0f5a73666c857ec0c0fc775c923f8747aef2012fe69f4f725b73477148992c5c"
+      }
+    },
+    {
+      "id": "models_complete_input",
+      "root_group": "implementer_synthetic_models_v1",
+      "mechanism": "complete_input",
+      "metrics": {
+        "outcome": "reviewable_design",
+        "expected_outcome_met": true,
+        "critical_missing": [],
+        "answer_mismatches": [],
+        "question_count": 0,
+        "unnecessary_question_turns": [],
+        "multi_field_answer_turns": 1,
+        "host_violation_turns": [],
+        "ready": true,
+        "blocker_fields": [],
+        "all_steps_unexecuted": true,
+        "automatic_design_readout": true,
+        "semantic_quality_human_rated": false,
+        "researcher_understanding_measured": false
+      },
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 18000
+        }
+      },
+      "remaining_events": [],
+      "selected_evidence_count": 0,
+      "artifacts": {
+        "delivery.html": "b8fc08c93603b8ca8957a5505ad5e29fcef2ee13d6ec5f29f789f309c93c1225",
+        "delivery.md": "36218307f2451c2e0c5083ddc5003ea357ebe5438a0907718fc936b36c05939b",
+        "final_state.json": "a19db7c9ed218a53140f6816ce5e8b28712532f938d4b86fa98056085445ea8d",
+        "plan.json": "e7fae7b5b1eb27affe524a812da535aea0c08939679959738d312763630ab56d",
+        "plan.md": "f9caa9371b5108b7d20848a46a4b09ed07f029b173fcd8d24d056801b4283ce6",
+        "trajectory.json": "3ba6c1c790cefad3f9c0d791cb1bba1e3345e8142fa223167a46511160c31620"
+      }
+    },
+    {
+      "id": "materials_multi_answer",
+      "root_group": "implementer_synthetic_materials_v1",
+      "mechanism": "multi_answer",
+      "metrics": {
+        "outcome": "reviewable_design",
+        "expected_outcome_met": true,
+        "critical_missing": [],
+        "answer_mismatches": [],
+        "question_count": 6,
+        "unnecessary_question_turns": [],
+        "multi_field_answer_turns": 5,
+        "host_violation_turns": [],
+        "ready": true,
+        "blocker_fields": [],
+        "all_steps_unexecuted": true,
+        "automatic_design_readout": true,
+        "semantic_quality_human_rated": false,
+        "researcher_understanding_measured": false
+      },
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 18000
+        }
+      },
+      "remaining_events": [],
+      "selected_evidence_count": 0,
+      "artifacts": {
+        "delivery.html": "1a8f6901062838294a1b94df27806907f9b128fa7cdc247530932f3464eb33e1",
+        "delivery.md": "e9b8149bb58e5370ee895d6d99162df5ce4ed0f4254b7328e19c9e811dee5090",
+        "final_state.json": "3775ed5f9787a6e5fc73c07e0225e805c280724e1178cd20dd8dd211823b8957",
+        "plan.json": "99f25c1ef5b3c09cdc72e1140fcd293ead64f368e38957d60a686501be031f71",
+        "plan.md": "eee55078d6bfeebc322e5ff1c7112aa3007fe3fd29117dd786ddae481d80f039",
+        "trajectory.json": "99ac55fe59badd4aea50bebe863b8f933781835490bbd24fc513778e3e305d6a"
+      }
+    },
+    {
+      "id": "materials_correction",
+      "root_group": "implementer_synthetic_materials_v1",
+      "mechanism": "correction",
+      "metrics": {
+        "outcome": "reviewable_design",
+        "expected_outcome_met": true,
+        "critical_missing": [],
+        "answer_mismatches": [],
+        "question_count": 7,
+        "unnecessary_question_turns": [],
+        "multi_field_answer_turns": 5,
+        "host_violation_turns": [],
+        "ready": true,
+        "blocker_fields": [],
+        "all_steps_unexecuted": true,
+        "automatic_design_readout": true,
+        "semantic_quality_human_rated": false,
+        "researcher_understanding_measured": false
+      },
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 18000
+        }
+      },
+      "remaining_events": [],
+      "selected_evidence_count": 0,
+      "artifacts": {
+        "delivery.html": "a1fbdc3f7a423a32c14d494a393cea2876c97d56dd189274aa7ab3f8cac74f22",
+        "delivery.md": "d992e0c600e7eac20dc6122959ce3751abd02b5498a1e9ef044f604737f370ee",
+        "final_state.json": "43f211e99753a91a3a675bd89aaa35ff28749971c57d81216315324de058f8c2",
+        "plan.json": "e811476923de91c212f194b53d9436438ca2f8e08de165f8258890497aeb0662",
+        "plan.md": "4eb50200228080dac026267a7539626fb81beca76fa9fd2fcec17292a1116ac1",
+        "trajectory.json": "2ac4e11a063e89e174d46ad99e756e9457a5f8271d091ebca342f4a00396316b"
+      }
+    },
+    {
+      "id": "materials_unknown",
+      "root_group": "implementer_synthetic_materials_v1",
+      "mechanism": "unknown",
+      "metrics": {
+        "outcome": "blocked_with_evidence_step",
+        "expected_outcome_met": true,
+        "critical_missing": [],
+        "answer_mismatches": [],
+        "question_count": 10,
+        "unnecessary_question_turns": [],
+        "multi_field_answer_turns": 5,
+        "host_violation_turns": [],
+        "ready": false,
+        "blocker_fields": [
+          "sampling"
+        ],
+        "all_steps_unexecuted": true,
+        "automatic_design_readout": true,
+        "semantic_quality_human_rated": false,
+        "researcher_understanding_measured": false
+      },
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 18000
+        }
+      },
+      "remaining_events": [],
+      "selected_evidence_count": 1,
+      "artifacts": {
+        "delivery.html": "46806e3f9d6f63c3149c00e5f043500532bd0738cca9052898fb10823ab2ed59",
+        "delivery.md": "8f3b3cecef9f713c9d2ee2d1047abbe3845463783e137e0edd6b92686d49b6cb",
+        "final_state.json": "212f230f75216c15f650fd6b8246c1194a11b66d383053977756a4ab85778de8",
+        "plan.json": "5528e5f75e3d3b97728c4f1ff6c5c6a2fa811c046b4b6dc267b58784e75a505e",
+        "plan.md": "e80cccafbadabc03513444619bff4424005d68f8da034c911fb1a387e593890a",
+        "trajectory.json": "a5c5b9b93c2ceb5e80d6f79f0f2cb3fa8d94fd496b194874d37efac56793c822"
+      }
+    },
+    {
+      "id": "materials_goal_change",
+      "root_group": "implementer_synthetic_materials_v1",
+      "mechanism": "goal_change",
+      "metrics": {
+        "outcome": "reviewable_design",
+        "expected_outcome_met": false,
+        "critical_missing": [],
+        "answer_mismatches": [
+          "experimental_unit"
+        ],
+        "question_count": 9,
+        "unnecessary_question_turns": [],
+        "multi_field_answer_turns": 9,
+        "host_violation_turns": [],
+        "ready": true,
+        "blocker_fields": [],
+        "all_steps_unexecuted": true,
+        "automatic_design_readout": true,
+        "semantic_quality_human_rated": false,
+        "researcher_understanding_measured": false
+      },
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 18000
+        }
+      },
+      "remaining_events": [],
+      "selected_evidence_count": 0,
+      "artifacts": {
+        "delivery.html": "bbe994b04602c283adfb6d0546909fe6a5944691cf9d48d555aebb498ae00f52",
+        "delivery.md": "1cfe9fda8507ae482beaca2125b3a1ed662b212131d577fe0b6d43277fb66fb6",
+        "final_state.json": "3007b092cdaed1f60aef812f1e4895519c0e5a56a2c1a14e60699073334bd157",
+        "plan.json": "52504da017a00943e0ae56901baff4a1fae63acf65d6796d6b5aea5f2670a2bd",
+        "plan.md": "0cd71c003c1ee77b932a0c66d5d30b212f8ac29d5db93c87ff0a03bfcadb2e44",
+        "trajectory.json": "7c8f75af595f30f6fe2a100966079e7808838b77b237917c1b00a83cb2e8e4b9"
+      }
+    },
+    {
+      "id": "materials_complete_input",
+      "root_group": "implementer_synthetic_materials_v1",
+      "mechanism": "complete_input",
+      "metrics": {
+        "outcome": "reviewable_design",
+        "expected_outcome_met": true,
+        "critical_missing": [],
+        "answer_mismatches": [],
+        "question_count": 0,
+        "unnecessary_question_turns": [],
+        "multi_field_answer_turns": 1,
+        "host_violation_turns": [],
+        "ready": true,
+        "blocker_fields": [],
+        "all_steps_unexecuted": true,
+        "automatic_design_readout": true,
+        "semantic_quality_human_rated": false,
+        "researcher_understanding_measured": false
+      },
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 18000
+        }
+      },
+      "remaining_events": [],
+      "selected_evidence_count": 0,
+      "artifacts": {
+        "delivery.html": "8960a91541e94e12c6e2038c89dd00056ff0d3799cd6c8dfd4c9728a62e95c9c",
+        "delivery.md": "649e0a367e214cd46e717c037c3fdcd40c161b5b95386249467656ce91cca951",
+        "final_state.json": "981dcbc13524a4ec1141d33dda121fbb5c5bd1a59a60458e199dff9fbf77da31",
+        "plan.json": "d020fbf62c0daa171a9fefb388069267cec78d9966534dbd1f733dbe04b4c98c",
+        "plan.md": "9c5a98368aaafd323bc62a58c93f1983929bff356330f3cd76d28c12b097aa95",
+        "trajectory.json": "c36bbfcb7c1124385246d3584764b30a0e67d766dba93fe6435723d19af76475"
+      }
+    }
+  ]
+}

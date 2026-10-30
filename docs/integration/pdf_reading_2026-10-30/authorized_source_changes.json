@@ -1,0 +1,44 @@
+{
+  "files": {
+    "RUT_Science/pyproject.toml": {
+      "before_sha256": "5dc1ff2f29601e541987c535ecc124858f88af47efe95cbe59ecb15cdde67686",
+      "sha256": "e138af9cf50145022819d507a7beef24444bf6ef420c69188a6ca019a9c12116",
+      "reason": "User requested explicit PDF reading and LLM meaning extraction through the existing Harness."
+    },
+    "RUT_Science/rut_science/science_bot/general/planning/blueprint.py": {
+      "before_sha256": "af6f57c4da3955ebb276001fab977d8f7c4441580bf984bce55f5a3d970c3639",
+      "sha256": "f076b194c875af2a815f7f5578c7d62e16b20c269cde8723db73e53cd18f99d5",
+      "reason": "User requested explicit PDF reading and LLM meaning extraction through the existing Harness."
+    },
+    "RUT_Science/rut_science/science_bot/general/planning/evidence.py": {
+      "before_sha256": "51e801640bb7ee4964169469dc0abb1c34367ad9567cda12bf17aecf9b951269",
+      "sha256": "b3d122f8db834eff305402c0ae206265d7bd82a9c162280f08486addbc5bd84f",
+      "reason": "User requested explicit PDF reading and LLM meaning extraction through the existing Harness."
+    },
+    "RUT_Science/rut_science/science_bot/general/planning/runtime.py": {
+      "before_sha256": "32da1f6d3067ed038c7c448688048bf34a2d74c56377bd1f6475a8521878a8a3",
+      "sha256": "222f27c2a49943d8fde2cb08801918eb4d69d4ea45aabd6e64eab2d835ba20ab",
+      "reason": "User requested explicit PDF reading and LLM meaning extraction through the existing Harness."
+    },
+    "RUT_Science/rut_science/science_bot/presentation.py": {
+      "before_sha256": "6618a892ee6ec4c39c0dcb45193b308ed648123702a6e843f1b7073dcba7b86d",
+      "sha256": "5cea33a7afb34d0384b51ed49f6811f7ccd801f21a863f497a3cc1bcdf4b848a",
+      "reason": "User requested explicit PDF reading and LLM meaning extraction through the existing Harness."
+    },
+    "RUT_Science/rut_science/science_bot/workbench_assets/dist/app.js": {
+      "before_sha256": "193bb7b38bb75ed65d6cfe746d5bcd6a32df62f2e30111637a22203202816679",
+      "sha256": "94242e2cda5c0e966864f24ac03045aeac357ea78e84f828c7a96fd79c7cf52a",
+      "reason": "User requested explicit PDF reading and LLM meaning extraction through the existing Harness."
+    },
+    "RUT_Science/rut_science/science_bot/workbench_assets/dist/index.html": {
+      "before_sha256": "1d122609177cec166718c0d51648b10767c6d3f7408e8a6ea470ec1a48eee308",
+      "sha256": "80d1a4433a4aeb730f0ffb09ca4269f29dfcc300182cad86c4b56f9370d62995",
+      "reason": "User requested explicit PDF reading and LLM meaning extraction through the existing Harness."
+    },
+    "examples/interfaces/browser.html": {
+      "before_sha256": "1175366e6426dc82c001b9ee29a02dd13f60d999f36c582db9e277b01b0deae3",
+      "sha256": "039e522ab044f89e3e4fa9729b30b8c2a4eefa70581aec192a1bfedde9116b1c",
+      "reason": "User requested explicit PDF reading and LLM meaning extraction through the existing Harness."
+    }
+  }
+}

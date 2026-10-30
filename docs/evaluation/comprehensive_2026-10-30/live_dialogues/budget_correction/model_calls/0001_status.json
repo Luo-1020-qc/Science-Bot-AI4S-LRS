@@ -1,0 +1,7 @@
+{
+  "request_index": 1,
+  "role": "experiment_planning",
+  "status": "accepted",
+  "model": "deepseek-flash",
+  "response_hash": "ccd66bc1f9ddce133214e934db9bbdd511ed712911ac6fc586c477d9e6ba3d56"
+}

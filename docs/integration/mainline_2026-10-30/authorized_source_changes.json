@@ -1,0 +1,49 @@
+{
+  "files": {
+    ".gitignore": {
+      "before_sha256": "b61fbb95345993651c4958101eee5a9dbe9ce64071509fbbfc0c4ad8f6e4e10b",
+      "sha256": "bb8ee5aa878dde3fdded97be761a71d839505f06274e4909329d0638ec0710aa",
+      "reason": "User authorized the agreed mainline package: full conversation acceptance cases, rule baseline, direct experimental-design delivery and targeted directory migration."
+    },
+    "RUT_Science/rut_science/science_bot/general/planning/ledger.py": {
+      "before_sha256": "37601d4a3fd9ee03dd3f110a0f7f3e31b6d8c8cf534876614c42114cb4f2a916",
+      "sha256": "e5bf3a1b688d73aaf2ba46faaae5a00b2a89fbcf38363a6ba1c0e59e261b4c8a",
+      "reason": "User authorized the agreed mainline package: full conversation acceptance cases, rule baseline, direct experimental-design delivery and targeted directory migration."
+    },
+    "RUT_Science/rut_science/science_bot/general/planning/runtime.py": {
+      "before_sha256": "2f4c11efc38136c88e23c72fa7589bd7d2023beb06c1bcdaa1635d41728b6b03",
+      "sha256": "32da1f6d3067ed038c7c448688048bf34a2d74c56377bd1f6475a8521878a8a3",
+      "reason": "User authorized the agreed mainline package: full conversation acceptance cases, rule baseline, direct experimental-design delivery and targeted directory migration."
+    },
+    "RUT_Science/rut_science/science_bot/presentation.py": {
+      "before_sha256": "c084cd1d2383420fa5793c4e48ae8f1ad5a9b7807e27278e992b0ab03b0ebfcb",
+      "sha256": "6618a892ee6ec4c39c0dcb45193b308ed648123702a6e843f1b7073dcba7b86d",
+      "reason": "User authorized the agreed mainline package: full conversation acceptance cases, rule baseline, direct experimental-design delivery and targeted directory migration."
+    },
+    "RUT_Science/rut_science/science_bot/workbench_assets/dist/app.js": {
+      "before_sha256": "bcefac07319a70fcc2ae2a198e403cd756329d781099f40588c513ee93960426",
+      "sha256": "ff45fc1ce6996d83fed5daab6727a5a4d561fc0dd719f7ee9a06434528f5d6c0",
+      "reason": "User authorized the agreed mainline package: full conversation acceptance cases, rule baseline, direct experimental-design delivery and targeted directory migration."
+    },
+    "RUT_Science/rut_science/science_bot/workbench_assets/dist/index.html": {
+      "before_sha256": "af8033a982f398d8d4f4e3f1ade730a9a07afe387c1807c54f834b99b3047e27",
+      "sha256": "1d122609177cec166718c0d51648b10767c6d3f7408e8a6ea470ec1a48eee308",
+      "reason": "User authorized the agreed mainline package: full conversation acceptance cases, rule baseline, direct experimental-design delivery and targeted directory migration."
+    },
+    "examples/interfaces/browser.html": {
+      "before_sha256": "dacfea796e60c431a3f5522184b25936083be763dca558114cbc160a4d999cf4",
+      "sha256": "c215ecf57febaaaddddd1a441bf957cf8a87942c980f376e90601a426d39422c",
+      "reason": "User authorized the agreed mainline package: full conversation acceptance cases, rule baseline, direct experimental-design delivery and targeted directory migration."
+    },
+    "examples/interfaces/delivery.html": {
+      "before_sha256": "bc038ff9ae1a7e69f7e178488b33848de828320ca0e9572504eacc47b8c00c28",
+      "sha256": "bc038ff9ae1a7e69f7e178488b33848de828320ca0e9572504eacc47b8c00c28",
+      "reason": "User authorized the agreed mainline package: full conversation acceptance cases, rule baseline, direct experimental-design delivery and targeted directory migration."
+    },
+    "examples/interfaces/terminal.html": {
+      "before_sha256": "445b43793d87061618b5a60a6aeb9e1f6e27b0c16bb7000c28fecf0bba3c201f",
+      "sha256": "445b43793d87061618b5a60a6aeb9e1f6e27b0c16bb7000c28fecf0bba3c201f",
+      "reason": "User authorized the agreed mainline package: full conversation acceptance cases, rule baseline, direct experimental-design delivery and targeted directory migration."
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "passed": true,
+  "checked_utc": "2026-10-30T03:20:04.666981+00:00",
+  "integrity": {
+    "passed": true,
+    "protected_files_checked": 1745,
+    "authorized_host_changes": 5,
+    "integration_runtime_files_checked": 10,
+    "planning_authorized_host_changes": 4,
+    "planning_runtime_files_checked": 11,
+    "dynamic_runtime_files_checked": 6,
+    "planning_history_privacy_files_checked": 1,
+    "interface_runtime_files_checked": 11,
+    "question_tool_runtime_files_checked": 6,
+    "question_tool_training_files_checked": 7,
+    "branding_files_checked": 5,
+    "context_choices_runtime_files_checked": 11,
+    "context_choices_training_files_checked": 7,
+    "mainline_runtime_files_checked": 10,
+    "changed": []
+  },
+  "regression": {
+    "application": {
+      "run": 468,
+      "passed": true,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 2,
+      "seconds": 228.984
+    },
+    "integrity_and_evaluation": {
+      "run": 37,
+      "passed": true,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 20.469
+    }
+  },
+  "prior_files_checked": 945,
+  "prior_files_unchanged": 926,
+  "authorized_changed_files": [
+    "RUT_Science/rut_science/science_bot/presentation.py",
+    "RUT_Science/rut_science/science_bot/general/planning/ledger.py",
+    "RUT_Science/rut_science/science_bot/general/planning/runtime.py",
+    "RUT_Science/rut_science/science_bot/workbench_assets/dist/app.js",
+    "RUT_Science/rut_science/science_bot/workbench_assets/dist/index.html",
+    "RUT_Science/tests/test_workbench_http.py",
+    "scripts/check_repository.py",
+    "scripts/integrity.py",
+    "scripts/test_integrity.py",
+    "scripts/verify_context_choices.py",
+    "docs/ARCHITECTURE.md",
+    "docs/HARNESS_PLANNING.md",
+    "docs/REPRODUCIBILITY.md",
+    "docs/USAGE.md",
+    "examples/interfaces/browser.html",
+    "README.md",
+    "CONTRIBUTING.md",
+    "CHANGELOG.md",
+    ".gitignore"
+  ],
+  "migrated_protected_files": 12,
+  "all_prior_integration_json_unchanged": true,
+  "retained_weights_changed": false,
+  "examples": {
+    "examples/interfaces/terminal.html": "445b43793d87061618b5a60a6aeb9e1f6e27b0c16bb7000c28fecf0bba3c201f",
+    "examples/interfaces/browser.html": "c215ecf57febaaaddddd1a441bf957cf8a87942c980f376e90601a426d39422c",
+    "examples/interfaces/delivery.html": "bc038ff9ae1a7e69f7e178488b33848de828320ca0e9572504eacc47b8c00c28"
+  },
+  "assets": {
+    "javascript_bindings_checked": 52,
+    "text_contrast_ratios": {
+      "primary_button": 8.276,
+      "body": 13.669,
+      "muted": 5.601,
+      "secondary_text": 4.648,
+      "sidebar_text": 4.893,
+      "selected_navigation": 8.545
+    },
+    "minimum_checked_text_contrast": 4.648
+  },
+  "javascript_syntax": true,
+  "offline_baseline": {
+    "case_count": 10,
+    "expected_outcomes_met": 10,
+    "reviewable_designs": 8,
+    "justified_blocked_drafts": 2,
+    "automatic_design_readouts": 10,
+    "unnecessary_questions": 0,
+    "host_violations": 0
+  },
+  "browser_visual_qa": false,
+  "browser_visual_qa_reason": "Computer Use native pipe and browser access host were unavailable; no UI action performed.",
+  "human_participants": 0,
+  "human_quality_ratings": null,
+  "understanding_improvement_measured": false,
+  "model_requests": 0,
+  "real_scientific_executions": 0,
+  "new_training_runs": 0,
+  "committed_or_pushed": false
+}

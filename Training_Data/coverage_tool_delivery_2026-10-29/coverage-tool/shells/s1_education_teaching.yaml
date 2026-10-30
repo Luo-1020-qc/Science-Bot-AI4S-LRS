@@ -1,0 +1,32 @@
+scenario_name: 两种教学法的学生成绩比较
+domain: 教育学
+skeleton: S1
+executable: true
+summary: 两种教学法下学生测验成绩的组间比较，需明确分析单位
+vocabulary:
+  treatment_name: 教学法
+  outcome_name: 测验成绩
+  unit: 分
+  comparison: 方法 A vs 方法 B
+survey_questions:
+- 独立单位是学生还是班级？
+- 随机分配还是自然班？
+- 是否有前测或基线成绩？
+- 教师、教材与课时是否一致？
+- 测验的信度与评分规则是什么？
+rubric:
+- 分析单位（学生/班级）已声明
+- 分配方式已说明
+- 基线或前测已报告
+- 教师与教材等混杂已控制或记录
+- 测验信效度与评分规则已声明
+- 效应阈值有来源
+proposal_template:
+- 研究目标与假设
+- 分析单位与分配
+- 测量工具
+- 统计方法（含聚类调整）
+- 验收标准
+- 局限
+source: 骨架聚类表 v1 · S1 · 教育学行
+notes: 班级整群分配时需聚类稳健标准误，壳中必须强制询问

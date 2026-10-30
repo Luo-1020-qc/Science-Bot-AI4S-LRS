@@ -4,7 +4,7 @@
 
 共 **45个工具契约**：20个在本目录可运行的离线工具，4个复用现有受限入口/数学能力的条目，15个待实现契约，2个人工流程，4个禁用的真实执行工具。工具有了schema不等于已实现；运行器会拒绝待实现、人工授权和真实执行条目。
 
-20个已实现离线工具现已注册到science Bot同一Harness；原独立CLI、`/research`与`/doe`继续可用。在线使用`/tools call`手动调用，或API模式`/tools chat`由模型规划调用，详见[接入说明](../docs/TOOL_LIBRARY.md)。真实Darcy/CViT训练和GPU执行仍禁用。
+20个已实现离线工具现已注册到science Bot同一Harness；原独立CLI、`/research`与`/doe`继续可用。在线使用`/tools call`手动调用，或API模式`/tools chat`由模型规划调用，详见[接入说明](../docs/USAGE.md)。真实Darcy/CViT训练和GPU执行仍禁用。
 
 ## 1. 三个判断必须分开
 

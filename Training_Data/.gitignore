@@ -1,0 +1,9 @@
+# The training directory was moved; keep generated tool sessions private here too.
+/v2/tool_runtime/sessions/
+/v2/expert/inbox/
+/v2/expert/imports/
+
+# Public corpora and reviewed conversations should use the root .local workspace.
+/scientific_dialogue_v1/raw/
+/scientific_dialogue_v1/prepared/
+/scientific_dialogue_v1/annotation/inbox/

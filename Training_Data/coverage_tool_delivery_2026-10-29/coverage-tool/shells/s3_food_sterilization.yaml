@@ -1,0 +1,31 @@
+scenario_name: 灭菌温度与时间对营养保留的影响
+domain: 食品科学
+skeleton: S3
+executable: true
+summary: 灭菌温度与时间两因子对关键营养指标的影响
+vocabulary:
+  treatment_name: 温度×时间
+  outcome_name: 营养保留率
+  unit: '%'
+  comparison: 组合
+survey_questions:
+- 样品批次与初始营养含量？
+- 灭菌设备与升温曲线？
+- 冷却方式？
+- 每组几个样品？
+- 检测方法？
+rubric:
+- 批次与初始值一致
+- 升温/冷却曲线记录
+- 每组样品 >= 2
+- 检测方法一致
+- 微生物安全指标同时记录
+- 效应与工艺优化目标匹配
+proposal_template:
+- 研究目标
+- 样品与灭菌
+- 检测与统计
+- 验收标准
+- 局限
+source: 骨架聚类表 v1 扩展 · S3 · 食品
+notes: 营养与安全指标需同时评估

@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "checked_utc": "2026-10-30T06:02:31.065370+00:00",
+  "report_links_checked": 34,
+  "missing_links": [],
+  "original_cases_unchanged": true,
+  "v1_runner_preserved": true,
+  "numeric_evidence_crosschecked": true,
+  "pending_human_scores_not_fabricated": true,
+  "reports": {
+    "docs/reports/HARNESS_EVALUATION_2026-10-30.md": "64c470d2d3fb0704f4a1cf3736928d7382979c3243a3d3668733079cc32ce1bf",
+    "docs/reports/PROJECT_REPORT_2026-10-30.md": "cd51889357fcff26e7e040e4c1a50ef75a39cfdf9d1f22f65fb917e6e4a0758b"
+  }
+}

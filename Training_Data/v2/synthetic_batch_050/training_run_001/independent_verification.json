@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "tasks": 50,
+  "structurally_distinct_tasks": 50,
+  "reference_decisions": 502,
+  "public_request_private_hint_checks": 50,
+  "counterfactual_hidden_fixture_tests": 3,
+  "reference_terminal_counts": {
+    "completed_mock_research_loop": 38,
+    "justified_stop": 12
+  },
+  "scripted_bc_labels": 502,
+  "ppo_transitions": 800,
+  "all_50_tasks_sampled": true,
+  "ppo_rewards_independently_recomputed": 800,
+  "behavior_probabilities_and_values_recomputed": true,
+  "baseline_v2_valid": true,
+  "protected_previous_files": {
+    "passed": true,
+    "protected_files_checked": 1745,
+    "authorized_host_changes": 4,
+    "integration_runtime_files_checked": 10,
+    "changed": []
+  },
+  "human_expert_labels": 0,
+  "new_independent_sources": 0,
+  "real_scientific_executions": 0,
+  "default_policy_promoted": false,
+  "runtime_hashes": {
+    "environment.py": "3f5ffcdb83b1e789f6d050b5f1632e5f5296eaa3b7b7d4656c57987d0f06b32e",
+    "protocol.py": "a6752c742109b7ccd8026a810a72d69ba30e6f161db94834441f03c08891a276",
+    "ppo_smoke.py": "3339151e3a683602617cd1dfb7ffe78cc6c02f702ac414cf00a1c5d4d26e98fd"
+  }
+}

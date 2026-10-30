@@ -10,4 +10,4 @@
 
 原清理保护基线保持不动。`authorized_source_changes.json`记录用户授权的四处宿主接线改动及原／新哈希，`runtime_manifest.json`固定本轮执行器源码，当前完整性检查叠加这些记录；不将改动伪装成原文件未变。
 
-使用方法见[TOOL_LIBRARY](../../TOOL_LIBRARY.md)，最终结果见[verification.json](verification.json)。原始清理验收说明的是接入前版本，不等于今天整个宿主源码一字未改。
+使用方法现统一见[使用说明](../../USAGE.md)，最终结果见[verification.json](verification.json)。原始清理验收说明的是接入前版本，不等于今天整个宿主源码一字未改。

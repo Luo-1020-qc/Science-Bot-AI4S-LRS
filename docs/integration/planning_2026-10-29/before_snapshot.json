@@ -1,0 +1,25 @@
+{
+  "version": "planning_upgrade_before_v1",
+  "captured_at": "2026-10-28T16:37:25.514057+00:00",
+  "files": {
+    "RUT_Science/rut_science/science_bot/general/graph.py": {
+      "before_sha256": "579839825dcfbb1eb4bd01eed602bdd70d25a242d6625f43617dd905270e3d77"
+    },
+    "RUT_Science/rut_science/science_bot/general/conversation.py": {
+      "before_sha256": "db2b393df200f1e0a0f9eaf0538f167b22560ce73b7c589b5d6be87b747769b5"
+    },
+    "RUT_Science/rut_science/science_bot/general/router.py": {
+      "before_sha256": "3f0dff1388216505bdc38a530bd22b2b3caaca613af16121b0655f375a667ddf"
+    },
+    "RUT_Science/rut_science/science_bot/terminal.py": {
+      "before_sha256": "3ec78cc38145783a1eb8845f9f1b90d9185ee735baeb38bbbbab0cf480f243ee"
+    }
+  },
+  "unchanged_history_and_provider": {
+    "docs/cleanup/2026-10-28/protected_current.json": "df076b3734595cf1a91d2d7f1d5874ae1ee7b9761d58fead539f50b642e051be",
+    "docs/integration/tool_library_2026-10-28/authorized_source_changes.json": "65eb2bb34f021a65481ff3b5e2fbf3f737a17ca5232e8e8e535b8c2a05db5343",
+    "docs/integration/tool_library_2026-10-28/runtime_manifest.json": "4123111580c7e3286c81b8d400ee303046d0c074d015f0c1e0196bf60fd1eb08",
+    "RUT_Science/rut_science/science_bot/general/provider.py": "5cfaed544844ff7174c08acfbe42595c10528b099da16231a80201ac88c27755",
+    "RUT_Science/rut_science/configuration.py": "8d09463310d5419d614c137f68fc4bad3be491e47f7ccdb8ae8b28cc7771b194"
+  }
+}

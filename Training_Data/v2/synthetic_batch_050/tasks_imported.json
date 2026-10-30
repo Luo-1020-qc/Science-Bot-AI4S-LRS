@@ -1,0 +1,2871 @@
+{
+  "version": "expert_task_extension_v2",
+  "records": [
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_001_darcy_crd_two_arm_valid_null_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "darcy",
+        "user_request": "仅使用离线模拟工具。研究 darcy/crd_two_arm，主要对比为 predictor；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "crd_two_arm",
+        "factors": [
+          {
+            "name": "predictor",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently randomized synthetic predictor application on a distinct data realization",
+        "response": "relative_l2",
+        "primary_term": "predictor",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "none",
+        "outcome_scenario": "null",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_002_darcy_crd_two_arm_repair_model_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "darcy",
+        "user_request": "仅使用离线模拟工具。研究 darcy/crd_two_arm，主要对比为 predictor；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "crd_two_arm",
+        "factors": [
+          {
+            "name": "predictor",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently randomized synthetic predictor application on a distinct data realization",
+        "response": "relative_l2",
+        "primary_term": "predictor",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "wrong_model",
+        "outcome_scenario": "benefit",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_003_darcy_crd_two_arm_repair_response_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "darcy",
+        "user_request": "仅使用离线模拟工具。研究 darcy/crd_two_arm，主要对比为 predictor；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "crd_two_arm",
+        "factors": [
+          {
+            "name": "predictor",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently randomized synthetic predictor application on a distinct data realization",
+        "response": "relative_l2",
+        "primary_term": "predictor",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "wrong_response",
+        "outcome_scenario": "harm",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_004_darcy_crd_two_arm_repair_draft_budget_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "darcy",
+        "user_request": "仅使用离线模拟工具。研究 darcy/crd_two_arm，主要对比为 predictor；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "crd_two_arm",
+        "factors": [
+          {
+            "name": "predictor",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently randomized synthetic predictor application on a distinct data realization",
+        "response": "relative_l2",
+        "primary_term": "predictor",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 96,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "low_budget",
+        "outcome_scenario": "null",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_005_darcy_crd_two_arm_resolve_stale_review_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "darcy",
+        "user_request": "仅使用离线模拟工具。研究 darcy/crd_two_arm，主要对比为 predictor；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "crd_two_arm",
+        "factors": [
+          {
+            "name": "predictor",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently randomized synthetic predictor application on a distinct data realization",
+        "response": "relative_l2",
+        "primary_term": "predictor",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "stale_review",
+        "outcome_scenario": "benefit",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_006_darcy_crd_two_arm_variance_unavailable_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "darcy",
+        "user_request": "仅使用离线模拟工具。研究 darcy/crd_two_arm，主要对比为 predictor；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=None，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "crd_two_arm",
+        "factors": [
+          {
+            "name": "predictor",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently randomized synthetic predictor application on a distinct data realization",
+        "response": "relative_l2",
+        "primary_term": "predictor",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": null,
+        "variance_source": null,
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "none",
+        "outcome_scenario": "null",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_007_darcy_crd_two_arm_new_job_oom_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "darcy",
+        "user_request": "仅使用离线模拟工具。研究 darcy/crd_two_arm，主要对比为 predictor；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "crd_two_arm",
+        "factors": [
+          {
+            "name": "predictor",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently randomized synthetic predictor application on a distinct data realization",
+        "response": "relative_l2",
+        "primary_term": "predictor",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "none",
+        "outcome_scenario": "harm",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": "mock_oom"
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_008_darcy_crd_two_arm_reuse_job_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "darcy",
+        "user_request": "仅使用离线模拟工具。研究 darcy/crd_two_arm，主要对比为 predictor；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "crd_two_arm",
+        "factors": [
+          {
+            "name": "predictor",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently randomized synthetic predictor application on a distinct data realization",
+        "response": "relative_l2",
+        "primary_term": "predictor",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "none",
+        "outcome_scenario": "null",
+        "user_variance_answer": null,
+        "existing_job": true,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_009_darcy_crd_two_arm_higher_score_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "darcy",
+        "user_request": "仅使用离线模拟工具。研究 darcy/crd_two_arm，主要对比为 predictor；响应 negative_relative_l2，方向 higher，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "crd_two_arm",
+        "factors": [
+          {
+            "name": "predictor",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently randomized synthetic predictor application on a distinct data realization",
+        "response": "negative_relative_l2",
+        "primary_term": "predictor",
+        "direction": "higher",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "none",
+        "outcome_scenario": "harm",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_010_darcy_rcbd_two_arm_valid_null_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "darcy",
+        "user_request": "仅使用离线模拟工具。研究 darcy/rcbd_two_arm，主要对比为 predictor；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "rcbd_two_arm",
+        "factors": [
+          {
+            "name": "predictor",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently randomized synthetic predictor application on a distinct data realization; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "predictor",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "none",
+        "outcome_scenario": "null",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_011_darcy_rcbd_two_arm_repair_model_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "darcy",
+        "user_request": "仅使用离线模拟工具。研究 darcy/rcbd_two_arm，主要对比为 predictor；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "rcbd_two_arm",
+        "factors": [
+          {
+            "name": "predictor",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently randomized synthetic predictor application on a distinct data realization; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "predictor",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "wrong_model",
+        "outcome_scenario": "benefit",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_012_darcy_rcbd_two_arm_repair_response_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "darcy",
+        "user_request": "仅使用离线模拟工具。研究 darcy/rcbd_two_arm，主要对比为 predictor；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "rcbd_two_arm",
+        "factors": [
+          {
+            "name": "predictor",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently randomized synthetic predictor application on a distinct data realization; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "predictor",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "wrong_response",
+        "outcome_scenario": "harm",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_013_darcy_rcbd_two_arm_repair_draft_budget_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "darcy",
+        "user_request": "仅使用离线模拟工具。研究 darcy/rcbd_two_arm，主要对比为 predictor；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "rcbd_two_arm",
+        "factors": [
+          {
+            "name": "predictor",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently randomized synthetic predictor application on a distinct data realization; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "predictor",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 96,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "low_budget",
+        "outcome_scenario": "null",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_014_darcy_rcbd_two_arm_resolve_stale_review_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "darcy",
+        "user_request": "仅使用离线模拟工具。研究 darcy/rcbd_two_arm，主要对比为 predictor；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "rcbd_two_arm",
+        "factors": [
+          {
+            "name": "predictor",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently randomized synthetic predictor application on a distinct data realization; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "predictor",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "stale_review",
+        "outcome_scenario": "benefit",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_015_darcy_rcbd_two_arm_variance_unavailable_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "darcy",
+        "user_request": "仅使用离线模拟工具。研究 darcy/rcbd_two_arm，主要对比为 predictor；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=None，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "rcbd_two_arm",
+        "factors": [
+          {
+            "name": "predictor",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently randomized synthetic predictor application on a distinct data realization; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "predictor",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": null,
+        "variance_source": null,
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "none",
+        "outcome_scenario": "null",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_016_darcy_rcbd_two_arm_new_job_oom_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "darcy",
+        "user_request": "仅使用离线模拟工具。研究 darcy/rcbd_two_arm，主要对比为 predictor；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "rcbd_two_arm",
+        "factors": [
+          {
+            "name": "predictor",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently randomized synthetic predictor application on a distinct data realization; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "predictor",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "none",
+        "outcome_scenario": "harm",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": "mock_oom"
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_017_darcy_rcbd_two_arm_reuse_job_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "darcy",
+        "user_request": "仅使用离线模拟工具。研究 darcy/rcbd_two_arm，主要对比为 predictor；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "rcbd_two_arm",
+        "factors": [
+          {
+            "name": "predictor",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently randomized synthetic predictor application on a distinct data realization; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "predictor",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "none",
+        "outcome_scenario": "null",
+        "user_variance_answer": null,
+        "existing_job": true,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_018_darcy_rcbd_two_arm_power_090_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "darcy",
+        "user_request": "仅使用离线模拟工具。研究 darcy/rcbd_two_arm，主要对比为 predictor；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.9，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "rcbd_two_arm",
+        "factors": [
+          {
+            "name": "predictor",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently randomized synthetic predictor application on a distinct data realization; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "predictor",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.9,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "none",
+        "outcome_scenario": "benefit",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_019_darcy_factorial_2x2_valid_null_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "darcy",
+        "user_request": "仅使用离线模拟工具。研究 darcy/factorial_2x2，主要对比为 predictor；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "factorial_2x2",
+        "factors": [
+          {
+            "name": "predictor",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          },
+          {
+            "name": "resolution",
+            "levels": [
+              "32",
+              "64"
+            ]
+          }
+        ],
+        "unit_definition": "One independently randomized synthetic predictor application on a distinct data realization; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "predictor",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "none",
+        "outcome_scenario": "null",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_020_darcy_factorial_2x2_repair_model_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "darcy",
+        "user_request": "仅使用离线模拟工具。研究 darcy/factorial_2x2，主要对比为 predictor；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "factorial_2x2",
+        "factors": [
+          {
+            "name": "predictor",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          },
+          {
+            "name": "resolution",
+            "levels": [
+              "32",
+              "64"
+            ]
+          }
+        ],
+        "unit_definition": "One independently randomized synthetic predictor application on a distinct data realization; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "predictor",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "wrong_model",
+        "outcome_scenario": "benefit",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_021_darcy_factorial_2x2_repair_response_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "darcy",
+        "user_request": "仅使用离线模拟工具。研究 darcy/factorial_2x2，主要对比为 resolution；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "factorial_2x2",
+        "factors": [
+          {
+            "name": "predictor",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          },
+          {
+            "name": "resolution",
+            "levels": [
+              "32",
+              "64"
+            ]
+          }
+        ],
+        "unit_definition": "One independently randomized synthetic predictor application on a distinct data realization; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "resolution",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "wrong_response",
+        "outcome_scenario": "harm",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_022_darcy_factorial_2x2_repair_draft_budget_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "darcy",
+        "user_request": "仅使用离线模拟工具。研究 darcy/factorial_2x2，主要对比为 predictor:resolution；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.05，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "factorial_2x2",
+        "factors": [
+          {
+            "name": "predictor",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          },
+          {
+            "name": "resolution",
+            "levels": [
+              "32",
+              "64"
+            ]
+          }
+        ],
+        "unit_definition": "One independently randomized synthetic predictor application on a distinct data realization; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "predictor:resolution",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.05,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 96,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "low_budget",
+        "outcome_scenario": "null",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_023_darcy_factorial_2x2_resolve_stale_review_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "darcy",
+        "user_request": "仅使用离线模拟工具。研究 darcy/factorial_2x2，主要对比为 predictor:resolution；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.05，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "factorial_2x2",
+        "factors": [
+          {
+            "name": "predictor",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          },
+          {
+            "name": "resolution",
+            "levels": [
+              "32",
+              "64"
+            ]
+          }
+        ],
+        "unit_definition": "One independently randomized synthetic predictor application on a distinct data realization; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "predictor:resolution",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.05,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "stale_review",
+        "outcome_scenario": "benefit",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_024_darcy_factorial_2x2_variance_unavailable_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "darcy",
+        "user_request": "仅使用离线模拟工具。研究 darcy/factorial_2x2，主要对比为 predictor；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=None，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "factorial_2x2",
+        "factors": [
+          {
+            "name": "predictor",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          },
+          {
+            "name": "resolution",
+            "levels": [
+              "32",
+              "64"
+            ]
+          }
+        ],
+        "unit_definition": "One independently randomized synthetic predictor application on a distinct data realization; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "predictor",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": null,
+        "variance_source": null,
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "none",
+        "outcome_scenario": "null",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_025_darcy_factorial_2x2_new_job_oom_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "darcy",
+        "user_request": "仅使用离线模拟工具。研究 darcy/factorial_2x2，主要对比为 predictor:resolution；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.05，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "factorial_2x2",
+        "factors": [
+          {
+            "name": "predictor",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          },
+          {
+            "name": "resolution",
+            "levels": [
+              "32",
+              "64"
+            ]
+          }
+        ],
+        "unit_definition": "One independently randomized synthetic predictor application on a distinct data realization; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "predictor:resolution",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.05,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "none",
+        "outcome_scenario": "harm",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": "mock_oom"
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_026_darcy_factorial_2x2_reuse_job_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "darcy",
+        "user_request": "仅使用离线模拟工具。研究 darcy/factorial_2x2，主要对比为 resolution；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "factorial_2x2",
+        "factors": [
+          {
+            "name": "predictor",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          },
+          {
+            "name": "resolution",
+            "levels": [
+              "32",
+              "64"
+            ]
+          }
+        ],
+        "unit_definition": "One independently randomized synthetic predictor application on a distinct data realization; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "resolution",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "none",
+        "outcome_scenario": "null",
+        "user_variance_answer": null,
+        "existing_job": true,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_027_cvit_crd_two_arm_valid_null_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "cvit",
+        "user_request": "仅使用离线模拟工具。研究 cvit/crd_two_arm，主要对比为 architecture；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "crd_two_arm",
+        "factors": [
+          {
+            "name": "architecture",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently seeded synthetic training run assigned to one treatment combination",
+        "response": "relative_l2",
+        "primary_term": "architecture",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "none",
+        "outcome_scenario": "null",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_028_cvit_crd_two_arm_repair_model_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "cvit",
+        "user_request": "仅使用离线模拟工具。研究 cvit/crd_two_arm，主要对比为 architecture；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "crd_two_arm",
+        "factors": [
+          {
+            "name": "architecture",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently seeded synthetic training run assigned to one treatment combination",
+        "response": "relative_l2",
+        "primary_term": "architecture",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "wrong_model",
+        "outcome_scenario": "benefit",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_029_cvit_crd_two_arm_repair_response_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "cvit",
+        "user_request": "仅使用离线模拟工具。研究 cvit/crd_two_arm，主要对比为 architecture；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "crd_two_arm",
+        "factors": [
+          {
+            "name": "architecture",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently seeded synthetic training run assigned to one treatment combination",
+        "response": "relative_l2",
+        "primary_term": "architecture",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "wrong_response",
+        "outcome_scenario": "harm",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_030_cvit_crd_two_arm_repair_draft_budget_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "cvit",
+        "user_request": "仅使用离线模拟工具。研究 cvit/crd_two_arm，主要对比为 architecture；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "crd_two_arm",
+        "factors": [
+          {
+            "name": "architecture",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently seeded synthetic training run assigned to one treatment combination",
+        "response": "relative_l2",
+        "primary_term": "architecture",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 96,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "low_budget",
+        "outcome_scenario": "null",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_031_cvit_crd_two_arm_resolve_stale_review_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "cvit",
+        "user_request": "仅使用离线模拟工具。研究 cvit/crd_two_arm，主要对比为 architecture；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "crd_two_arm",
+        "factors": [
+          {
+            "name": "architecture",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently seeded synthetic training run assigned to one treatment combination",
+        "response": "relative_l2",
+        "primary_term": "architecture",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "stale_review",
+        "outcome_scenario": "benefit",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_032_cvit_crd_two_arm_variance_unavailable_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "cvit",
+        "user_request": "仅使用离线模拟工具。研究 cvit/crd_two_arm，主要对比为 architecture；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=None，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "crd_two_arm",
+        "factors": [
+          {
+            "name": "architecture",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently seeded synthetic training run assigned to one treatment combination",
+        "response": "relative_l2",
+        "primary_term": "architecture",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": null,
+        "variance_source": null,
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "none",
+        "outcome_scenario": "null",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_033_cvit_crd_two_arm_new_job_oom_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "cvit",
+        "user_request": "仅使用离线模拟工具。研究 cvit/crd_two_arm，主要对比为 architecture；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "crd_two_arm",
+        "factors": [
+          {
+            "name": "architecture",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently seeded synthetic training run assigned to one treatment combination",
+        "response": "relative_l2",
+        "primary_term": "architecture",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "none",
+        "outcome_scenario": "harm",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": "mock_oom"
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_034_cvit_crd_two_arm_reuse_job_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "cvit",
+        "user_request": "仅使用离线模拟工具。研究 cvit/crd_two_arm，主要对比为 architecture；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "crd_two_arm",
+        "factors": [
+          {
+            "name": "architecture",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently seeded synthetic training run assigned to one treatment combination",
+        "response": "relative_l2",
+        "primary_term": "architecture",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "none",
+        "outcome_scenario": "null",
+        "user_variance_answer": null,
+        "existing_job": true,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_035_cvit_rcbd_two_arm_valid_null_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "cvit",
+        "user_request": "仅使用离线模拟工具。研究 cvit/rcbd_two_arm，主要对比为 architecture；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "rcbd_two_arm",
+        "factors": [
+          {
+            "name": "architecture",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently seeded synthetic training run assigned to one treatment combination; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "architecture",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "none",
+        "outcome_scenario": "null",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_036_cvit_rcbd_two_arm_repair_model_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "cvit",
+        "user_request": "仅使用离线模拟工具。研究 cvit/rcbd_two_arm，主要对比为 architecture；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "rcbd_two_arm",
+        "factors": [
+          {
+            "name": "architecture",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently seeded synthetic training run assigned to one treatment combination; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "architecture",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "wrong_model",
+        "outcome_scenario": "benefit",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_037_cvit_rcbd_two_arm_repair_response_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "cvit",
+        "user_request": "仅使用离线模拟工具。研究 cvit/rcbd_two_arm，主要对比为 architecture；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "rcbd_two_arm",
+        "factors": [
+          {
+            "name": "architecture",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently seeded synthetic training run assigned to one treatment combination; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "architecture",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "wrong_response",
+        "outcome_scenario": "harm",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_038_cvit_rcbd_two_arm_repair_draft_budget_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "cvit",
+        "user_request": "仅使用离线模拟工具。研究 cvit/rcbd_two_arm，主要对比为 architecture；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "rcbd_two_arm",
+        "factors": [
+          {
+            "name": "architecture",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently seeded synthetic training run assigned to one treatment combination; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "architecture",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 96,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "low_budget",
+        "outcome_scenario": "null",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_039_cvit_rcbd_two_arm_resolve_stale_review_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "cvit",
+        "user_request": "仅使用离线模拟工具。研究 cvit/rcbd_two_arm，主要对比为 architecture；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "rcbd_two_arm",
+        "factors": [
+          {
+            "name": "architecture",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently seeded synthetic training run assigned to one treatment combination; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "architecture",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "stale_review",
+        "outcome_scenario": "benefit",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_040_cvit_rcbd_two_arm_variance_unavailable_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "cvit",
+        "user_request": "仅使用离线模拟工具。研究 cvit/rcbd_two_arm，主要对比为 architecture；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=None，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "rcbd_two_arm",
+        "factors": [
+          {
+            "name": "architecture",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently seeded synthetic training run assigned to one treatment combination; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "architecture",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": null,
+        "variance_source": null,
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "none",
+        "outcome_scenario": "null",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_041_cvit_rcbd_two_arm_new_job_oom_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "cvit",
+        "user_request": "仅使用离线模拟工具。研究 cvit/rcbd_two_arm，主要对比为 architecture；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "rcbd_two_arm",
+        "factors": [
+          {
+            "name": "architecture",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently seeded synthetic training run assigned to one treatment combination; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "architecture",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "none",
+        "outcome_scenario": "harm",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": "mock_oom"
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_042_cvit_rcbd_two_arm_reuse_job_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "cvit",
+        "user_request": "仅使用离线模拟工具。研究 cvit/rcbd_two_arm，主要对比为 architecture；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "rcbd_two_arm",
+        "factors": [
+          {
+            "name": "architecture",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          }
+        ],
+        "unit_definition": "One independently seeded synthetic training run assigned to one treatment combination; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "architecture",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "none",
+        "outcome_scenario": "null",
+        "user_variance_answer": null,
+        "existing_job": true,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_043_cvit_factorial_2x2_valid_null_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "cvit",
+        "user_request": "仅使用离线模拟工具。研究 cvit/factorial_2x2，主要对比为 architecture；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "factorial_2x2",
+        "factors": [
+          {
+            "name": "architecture",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          },
+          {
+            "name": "learning_rate",
+            "levels": [
+              "0.0001",
+              "0.0003"
+            ]
+          }
+        ],
+        "unit_definition": "One independently seeded synthetic training run assigned to one treatment combination; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "architecture",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "none",
+        "outcome_scenario": "null",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_044_cvit_factorial_2x2_repair_model_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "cvit",
+        "user_request": "仅使用离线模拟工具。研究 cvit/factorial_2x2，主要对比为 architecture；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "factorial_2x2",
+        "factors": [
+          {
+            "name": "architecture",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          },
+          {
+            "name": "learning_rate",
+            "levels": [
+              "0.0001",
+              "0.0003"
+            ]
+          }
+        ],
+        "unit_definition": "One independently seeded synthetic training run assigned to one treatment combination; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "architecture",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "wrong_model",
+        "outcome_scenario": "benefit",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_045_cvit_factorial_2x2_repair_response_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "cvit",
+        "user_request": "仅使用离线模拟工具。研究 cvit/factorial_2x2，主要对比为 learning_rate；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "factorial_2x2",
+        "factors": [
+          {
+            "name": "architecture",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          },
+          {
+            "name": "learning_rate",
+            "levels": [
+              "0.0001",
+              "0.0003"
+            ]
+          }
+        ],
+        "unit_definition": "One independently seeded synthetic training run assigned to one treatment combination; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "learning_rate",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "wrong_response",
+        "outcome_scenario": "harm",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_046_cvit_factorial_2x2_repair_draft_budget_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "cvit",
+        "user_request": "仅使用离线模拟工具。研究 cvit/factorial_2x2，主要对比为 architecture:learning_rate；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.05，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "factorial_2x2",
+        "factors": [
+          {
+            "name": "architecture",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          },
+          {
+            "name": "learning_rate",
+            "levels": [
+              "0.0001",
+              "0.0003"
+            ]
+          }
+        ],
+        "unit_definition": "One independently seeded synthetic training run assigned to one treatment combination; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "architecture:learning_rate",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.05,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 96,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "low_budget",
+        "outcome_scenario": "null",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_047_cvit_factorial_2x2_resolve_stale_review_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "cvit",
+        "user_request": "仅使用离线模拟工具。研究 cvit/factorial_2x2，主要对比为 architecture:learning_rate；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.05，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "factorial_2x2",
+        "factors": [
+          {
+            "name": "architecture",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          },
+          {
+            "name": "learning_rate",
+            "levels": [
+              "0.0001",
+              "0.0003"
+            ]
+          }
+        ],
+        "unit_definition": "One independently seeded synthetic training run assigned to one treatment combination; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "architecture:learning_rate",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.05,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "stale_review",
+        "outcome_scenario": "benefit",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_048_cvit_factorial_2x2_variance_unavailable_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "cvit",
+        "user_request": "仅使用离线模拟工具。研究 cvit/factorial_2x2，主要对比为 architecture；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=None，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "factorial_2x2",
+        "factors": [
+          {
+            "name": "architecture",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          },
+          {
+            "name": "learning_rate",
+            "levels": [
+              "0.0001",
+              "0.0003"
+            ]
+          }
+        ],
+        "unit_definition": "One independently seeded synthetic training run assigned to one treatment combination; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "architecture",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": null,
+        "variance_source": null,
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "none",
+        "outcome_scenario": "null",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_049_cvit_factorial_2x2_new_job_oom_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "cvit",
+        "user_request": "仅使用离线模拟工具。研究 cvit/factorial_2x2，主要对比为 architecture:learning_rate；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.05，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "factorial_2x2",
+        "factors": [
+          {
+            "name": "architecture",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          },
+          {
+            "name": "learning_rate",
+            "levels": [
+              "0.0001",
+              "0.0003"
+            ]
+          }
+        ],
+        "unit_definition": "One independently seeded synthetic training run assigned to one treatment combination; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "architecture:learning_rate",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.05,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "none",
+        "outcome_scenario": "harm",
+        "user_variance_answer": null,
+        "existing_job": false,
+        "job_failure": "mock_oom"
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    },
+    {
+      "schema_version": "tool_harness_rl_v2",
+      "task_id": "syn050_050_cvit_factorial_2x2_reuse_job_v2",
+      "policy_split": "train",
+      "root_group": "synthetic_darcy_family_source_A",
+      "data_lineage": {
+        "source_ancestor_ids": [
+          "synthetic_darcy_source_A"
+        ],
+        "scientific_partitions": {
+          "train": "mock://source_A/train",
+          "validation": "mock://source_A/validation",
+          "test": "mock://source_A/test"
+        },
+        "source_kind": "synthetic_reference_only"
+      },
+      "public": {
+        "domain": "cvit",
+        "user_request": "仅使用离线模拟工具。研究 cvit/factorial_2x2，主要对比为 learning_rate；响应 relative_l2，方向 lower，实际意义阈值 0.01。检查当前草案、复核版本和资源前提，必要时修正并重新复核；执行前对账，存在当前方案的作业则复用。缺少必要信息时先提问；仅在已观察到合法阻断证据时停止。分析后按预先声明的结论规则如实报告。这是前瞻声明的合成模型：sigma=0.02，minimum_effect=0.03，功效目标 0.8，不代表真实先导数据或真实实验结论；阴性或反向结果不改变完成标准。",
+        "family": "factorial_2x2",
+        "factors": [
+          {
+            "name": "architecture",
+            "levels": [
+              "baseline",
+              "candidate"
+            ]
+          },
+          {
+            "name": "learning_rate",
+            "levels": [
+              "0.0001",
+              "0.0003"
+            ]
+          }
+        ],
+        "unit_definition": "One independently seeded synthetic training run assigned to one treatment combination; distinct treatment applications are grouped within declared data-realization blocks",
+        "response": "relative_l2",
+        "primary_term": "learning_rate",
+        "direction": "lower",
+        "practical_margin": 0.01,
+        "minimum_effect": 0.03,
+        "sigma": 0.02,
+        "variance_source": "Prospectively declared synthetic Gaussian sigma=0.02; no pilot observations or empirical scientific evidence",
+        "target_power": 0.8,
+        "resource_budget": 128,
+        "max_decisions": 40
+      },
+      "simulator": {
+        "initial_fault": "none",
+        "outcome_scenario": "null",
+        "user_variance_answer": null,
+        "existing_job": true,
+        "job_failure": null
+      },
+      "expert_review": {
+        "status": "approved",
+        "reviewer": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT",
+        "reviewed_at": "2026-10-28T12:36:23.369569+00:00",
+        "reason": "Synthetic fixture compatibility permission only, not human/expert scientific approval. Reuses source_A template ancestry; parameters are declared toy assumptions, no empirical variance/effect evidence. Environment preflight is independently required."
+      }
+    }
+  ],
+  "records_hash": "c46eb7227430d0a9e8012aa6beb375e0d54b5e865c01f929a67f15728553362e",
+  "identity_status": "externally_claimed_expertise_not_independently_verified",
+  "automatic_training": false,
+  "must_pass_environment_preflight_before_training": true
+}

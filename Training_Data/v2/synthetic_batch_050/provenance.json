@@ -1,0 +1,13 @@
+{
+  "original_batch_files_sha256": {
+    "expert_batch_001.md": "ab69946c703f0f38e346e65cc90b1d02555c2e8c9aa369467ec8fae3d7076f26",
+    "expert_batch_001_tasks.jsonl": "cd00762684c7a032f3855fc1914d6d3a9a6df5b9197718f0be8e2083ca0e17db",
+    "tasks_50.jsonc": "55089da6091198a5bced87d1064dc870a9aae6894bd56988382c3bddaa995e7e",
+    "新版可训练数据入口.md": "2d7525c993339c4a5c6b4b92b3a209bb9839949d3a753035320b076218fd0844",
+    "训练要求检查报告_2026-10-28.md": "35286cedf3d86d232451844f31277de6d2c0aae154197b5977957e789af5d87b"
+  },
+  "replacement_policy": "New versioned batch; original files untouched. Fifty supported combinations replace unsupported text-only requests.",
+  "human_expert_labels": 0,
+  "new_independent_sources": 0,
+  "generator": "LLM_SYNTHETIC_CURATOR_NOT_A_HUMAN_EXPERT"
+}

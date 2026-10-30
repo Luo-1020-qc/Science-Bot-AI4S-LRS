@@ -13,6 +13,7 @@ from .session import ScienceSession, ROOT
 from .general.conversation import GeneralSession
 from .workspace import Workspace
 from ..util import canonical, digest, write_json
+from . import session_history
 
 
 class LocalService:
@@ -28,6 +29,13 @@ class LocalService:
         self.requests_path = self.folder/"http_requests.json"
         self.requests = json.loads(self.requests_path.read_text(encoding="utf-8")) if self.requests_path.exists() else {}
         self.request_locks = {}
+        session_history.initialize(self)
+
+    def session_access(self, session_id):
+        return session_history.access(self,session_id)
+
+    def delete_session(self, session_id):
+        return session_history.delete(self,session_id)
 
     def request_lock(self, key):
         with self.lock:
@@ -37,6 +45,8 @@ class LocalService:
         if not re.fullmatch(r"[a-f0-9]{32}", session_id):
             raise ValueError("Invalid session identifier")
         with self.lock:
+            if session_id in self.deleted_sessions:
+                raise ValueError('该会话已删除，请选择其他研究或新建会话。')
             if session_id not in self.sessions:
                 self.sessions[session_id] = ScienceSession.restore(self.folder/session_id,
                     workspace=self.workspace.root if self.workspace else None)
@@ -109,7 +119,7 @@ def make_server(folder=None, host="127.0.0.1", port=8765, *, workspace=None):
                     raise ValueError("Idempotency-Key required (max 200 chars)")
                 # Serialize identical POSTs without blocking event/status reads
                 # or cancellation while another request is waiting on a model.
-                with service.request_lock(key) if mutate else nullcontext():
+                with service.request_lock(key) if mutate else nullcontext(), service.session_access(parts[2] if len(parts)>=3 else None):
                     if mutate and key in service.requests:
                         previous = service.requests[key]
                         if previous["hash"] != request_hash:
@@ -119,7 +129,8 @@ def make_server(folder=None, host="127.0.0.1", port=8765, *, workspace=None):
                         self.reply(previous.get("http_status", 200), previous["result"]); return
                     if mutate:
                         with service.lock:
-                            service.requests[key] = {"hash": request_hash, "status": "submitted"}
+                            service.requests[key] = {"hash": request_hash, "status": "submitted",
+                                                     "session_id": parts[2] if len(parts)>=3 else None}
                             write_json(service.requests_path, service.requests)
                     if len(parts) == 2 and mutate:
                         if set(body)-{"backend", "planner", "model", "spec"}:
@@ -170,7 +181,8 @@ def make_server(folder=None, host="127.0.0.1", port=8765, *, workspace=None):
                         raise ValueError("Unknown route")
                     if mutate:
                         with service.lock:
-                            service.requests[key] = {"hash": request_hash, "result": result, "http_status": 200, "status": "complete"}
+                            service.requests[key] = {"hash": request_hash, "result": result, "http_status": 200,
+                                                     "status": "complete", "session_id": session.meta['id']}
                             write_json(service.requests_path, service.requests)
                 self.reply(200, result)
             except (ValueError, KeyError, FileNotFoundError, TypeError) as exc:
@@ -182,7 +194,8 @@ def make_server(folder=None, host="127.0.0.1", port=8765, *, workspace=None):
             with service.lock:
                 previous = service.requests.get(key)
                 if mutate and previous and previous["hash"] == request_hash and previous.get("status") == "submitted":
-                    service.requests[key] = {"hash": request_hash, "result": result, "http_status": status, "status": "failed"}
+                    service.requests[key] = {"hash": request_hash, "result": result, "http_status": status,
+                                             "status": "failed", "session_id": previous.get('session_id')}
                     write_json(service.requests_path, service.requests)
             self.reply(status, result)
 

@@ -1,0 +1,9 @@
+{
+  "sha256": {
+    "RUT_Science/rut_science/science_bot/presentation.py": "d593537082f345da3512800205e138071bd9ff58067df22bf4a592fae4cdfb2a",
+    "RUT_Science/rut_science/science_bot/workbench_assets/dist/index.html": "af8033a982f398d8d4f4e3f1ade730a9a07afe387c1807c54f834b99b3047e27",
+    "RUT_Science/rut_science/science_bot/workbench_assets/dist/styles.css": "1074bd63e0ecfcbffab4538ac15bbb9787345ae3b4f7bb4333176e6c70c39da8",
+    "examples/interfaces/browser.html": "2c6b1e72182f64f0c3a5677d5eb4285e268b2800965ef9bd9d81c6e914e01cb5",
+    "examples/interfaces/delivery.html": "bc038ff9ae1a7e69f7e178488b33848de828320ca0e9572504eacc47b8c00c28"
+  }
+}

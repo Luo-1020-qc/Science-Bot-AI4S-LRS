@@ -1,0 +1,1895 @@
+{
+  "registered_count": 33,
+  "registered": [
+    {
+      "name": "project_list",
+      "description": "List project file names and byte sizes only; never reads content. Use before selecting a file. Cannot list excluded credentials, dependencies or outside paths.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "pattern": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 200
+          }
+        },
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "files": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "bytes": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "path",
+                "bytes"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "truncated": {
+            "type": "boolean"
+          },
+          "scanned": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "pattern": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "files",
+          "truncated",
+          "scanned",
+          "pattern"
+        ],
+        "additionalProperties": false
+      },
+      "domain": "project",
+      "read_only": true,
+      "idempotent": true,
+      "preconditions": [
+        "workspace_selected"
+      ],
+      "resource_estimate": {
+        "max_scan_entries": 20000
+      }
+    },
+    {
+      "name": "project_read",
+      "description": "Read a UTF-8 line range from a file explicitly selected by the user; returns SHA-256 and line evidence. Listing a file does not authorize its content. Cannot read credentials, binary, outside files or run code.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "start_line": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1000000
+          },
+          "end_line": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1000000
+          }
+        },
+        "required": [
+          "path"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string",
+            "minLength": 64,
+            "maxLength": 64
+          },
+          "text": {
+            "type": "string"
+          },
+          "start_line": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "end_line": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "line_numbers": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "file_bytes": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "total_lines": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "truncated": {
+            "type": "boolean"
+          },
+          "evidence_ref": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "path",
+          "sha256",
+          "text",
+          "start_line",
+          "end_line",
+          "line_numbers",
+          "bytes",
+          "file_bytes",
+          "total_lines",
+          "truncated",
+          "evidence_ref"
+        ],
+        "additionalProperties": false
+      },
+      "domain": "project",
+      "read_only": true,
+      "idempotent": true,
+      "preconditions": [
+        "workspace_selected",
+        "user_selected_file",
+        "context_budget_available"
+      ],
+      "resource_estimate": {
+        "default_context_bytes": 32768,
+        "max_lines_per_read": 400
+      }
+    },
+    {
+      "name": "prepare_numeric_experiment",
+      "description": "Prepare the existing generated/Darcy mean-ridge experiment draft for a user's explicit numeric task. Does not run a job; execution uses the existing specification confirmation workflow. Cannot introduce new datasets or methods.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "dataset": {
+            "type": "string",
+            "enum": [
+              "generated",
+              "darcy"
+            ]
+          },
+          "budget": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100000
+          },
+          "quality_threshold": {
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "maximum": 10
+          }
+        },
+        "required": [
+          "dataset",
+          "budget",
+          "quality_threshold"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object"
+      },
+      "domain": "numeric",
+      "read_only": false,
+      "idempotent": true,
+      "preconditions": [
+        "explicit_numeric_task",
+        "numeric_adapter_available"
+      ],
+      "resource_estimate": {
+        "preparation_compute_units": 0
+      }
+    },
+    {
+      "name": "csv_inspect",
+      "description": "Inspect an explicitly selected UTF-8 comma CSV: column names, types, missing counts, small categorical levels and data hash. No raw numeric observations or summary means. Does not fit or run an experiment.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          }
+        },
+        "required": [
+          "path"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object"
+      },
+      "domain": "tabular",
+      "read_only": true,
+      "idempotent": true,
+      "preconditions": [],
+      "resource_estimate": {
+        "max_bytes": 131072,
+        "max_rows": 20000
+      }
+    },
+    {
+      "name": "prepare_tabular_experiment",
+      "description": "Prepare a reviewable G2 experiment draft from inspected CSV. Independent groups use Welch; paired groups match by unit ID; prediction compares mean/OLS on fixed 60/20/20 split. Requires explicitly declared provenance, unit and sample basis; never invent these. No execution before confirmation. No unregistered parameters, categorical predictors, causal claims or time/cluster designs.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "data_path": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "research_question": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "response": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "unit": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "sampling_note": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048,
+            "description": "Copy the sample-size/data-availability basis verbatim from the user; do not invent a power calculation."
+          },
+          "randomization_note": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048,
+            "description": "For observational/synthetic omit this field or use exactly not_applicable. For randomized data copy the user's actual randomization statement; never infer one."
+          },
+          "factor": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "design": {
+            "type": "string",
+            "enum": [
+              "independent",
+              "paired",
+              "prediction"
+            ]
+          },
+          "provenance": {
+            "type": "string",
+            "enum": [
+              "observational",
+              "randomized",
+              "synthetic"
+            ]
+          },
+          "missing_policy": {
+            "type": "string",
+            "enum": [
+              "reject",
+              "drop_complete_case"
+            ]
+          },
+          "alpha": {
+            "type": "number",
+            "minimum": 0.001,
+            "maximum": 0.2
+          },
+          "seed": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4294967295
+          },
+          "levels": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 2
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 20
+          }
+        },
+        "required": [
+          "data_path",
+          "research_question",
+          "design",
+          "response",
+          "unit",
+          "provenance",
+          "sampling_note"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object"
+      },
+      "domain": "tabular",
+      "read_only": false,
+      "idempotent": true,
+      "preconditions": [
+        "csv_inspected",
+        "explicit_scientific_declarations"
+      ],
+      "resource_estimate": {}
+    },
+    {
+      "name": "tabular_compare",
+      "description": "Execute one host-confirmed G2 plan node; unavailable to conversational tool selection.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "node_id": {
+            "type": "string",
+            "enum": [
+              "compare"
+            ]
+          }
+        },
+        "required": [
+          "node_id"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object"
+      },
+      "domain": "tabular_execution",
+      "read_only": false,
+      "idempotent": true,
+      "preconditions": [
+        "confirmed_plan",
+        "committed_dependencies"
+      ],
+      "resource_estimate": {}
+    },
+    {
+      "name": "tabular_partition",
+      "description": "Execute one host-confirmed G2 plan node; unavailable to conversational tool selection.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "node_id": {
+            "type": "string",
+            "enum": [
+              "partition"
+            ]
+          }
+        },
+        "required": [
+          "node_id"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object"
+      },
+      "domain": "tabular_execution",
+      "read_only": false,
+      "idempotent": true,
+      "preconditions": [
+        "confirmed_plan",
+        "committed_dependencies"
+      ],
+      "resource_estimate": {}
+    },
+    {
+      "name": "tabular_fit",
+      "description": "Execute one host-confirmed G2 plan node; unavailable to conversational tool selection.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "node_id": {
+            "type": "string",
+            "enum": [
+              "fit"
+            ]
+          }
+        },
+        "required": [
+          "node_id"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object"
+      },
+      "domain": "tabular_execution",
+      "read_only": false,
+      "idempotent": true,
+      "preconditions": [
+        "confirmed_plan",
+        "committed_dependencies"
+      ],
+      "resource_estimate": {}
+    },
+    {
+      "name": "tabular_select",
+      "description": "Execute one host-confirmed G2 plan node; unavailable to conversational tool selection.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "node_id": {
+            "type": "string",
+            "enum": [
+              "select"
+            ]
+          }
+        },
+        "required": [
+          "node_id"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object"
+      },
+      "domain": "tabular_execution",
+      "read_only": false,
+      "idempotent": true,
+      "preconditions": [
+        "confirmed_plan",
+        "committed_dependencies"
+      ],
+      "resource_estimate": {}
+    },
+    {
+      "name": "tabular_evaluate",
+      "description": "Execute one host-confirmed G2 plan node; unavailable to conversational tool selection.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "node_id": {
+            "type": "string",
+            "enum": [
+              "evaluate"
+            ]
+          }
+        },
+        "required": [
+          "node_id"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object"
+      },
+      "domain": "tabular_execution",
+      "read_only": false,
+      "idempotent": true,
+      "preconditions": [
+        "confirmed_plan",
+        "committed_dependencies"
+      ],
+      "resource_estimate": {}
+    },
+    {
+      "name": "tabular_report",
+      "description": "Execute one host-confirmed G2 plan node; unavailable to conversational tool selection.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "node_id": {
+            "type": "string",
+            "enum": [
+              "report"
+            ]
+          }
+        },
+        "required": [
+          "node_id"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object"
+      },
+      "domain": "tabular_execution",
+      "read_only": false,
+      "idempotent": true,
+      "preconditions": [
+        "confirmed_plan",
+        "committed_dependencies"
+      ],
+      "resource_estimate": {}
+    },
+    {
+      "name": "research_interface",
+      "description": "Explicit local research request. Frozen development simulations, results, DOE validation and review only. No live experiments or training.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "payload": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "payload"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object"
+      },
+      "domain": "research",
+      "read_only": true,
+      "idempotent": true,
+      "preconditions": [
+        "explicit_research_request"
+      ],
+      "resource_estimate": {}
+    },
+    {
+      "name": "tool_catalog",
+      "description": "查看工具输入输出、状态、权限与后续步骤。Offline simulation only; never a real scientific execution.",
+      "input_schema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "tools": {
+            "type": "array",
+            "items": {},
+            "minItems": 0,
+            "maxItems": 1000
+          },
+          "live_agent_registered": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "tools",
+          "live_agent_registered"
+        ],
+        "additionalProperties": false
+      },
+      "domain": "detailed_research",
+      "read_only": false,
+      "idempotent": true,
+      "preconditions": [
+        "explicit_detailed_tools",
+        "session_scoped_artifacts"
+      ],
+      "resource_estimate": {}
+    },
+    {
+      "name": "project_create",
+      "description": "建立项目目标与本地模拟工作区身份。Offline simulation only; never a real scientific execution.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "objective": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          }
+        },
+        "required": [
+          "title",
+          "objective"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "project_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          }
+        },
+        "required": [
+          "project_ref"
+        ],
+        "additionalProperties": false
+      },
+      "domain": "detailed_research",
+      "read_only": false,
+      "idempotent": true,
+      "preconditions": [
+        "explicit_detailed_tools",
+        "session_scoped_artifacts"
+      ],
+      "resource_estimate": {}
+    },
+    {
+      "name": "claim_define",
+      "description": "将研究结论写成可检查的响应、对比、单位、方向和范围。Offline simulation only; never a real scientific execution.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "project_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "statement": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "response": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "primary_term": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "direction": {
+            "type": "string",
+            "enum": [
+              "lower",
+              "higher"
+            ]
+          },
+          "practical_margin": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1000000.0
+          },
+          "population_scope": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "factor_levels": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "factor": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 2000
+                },
+                "baseline": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 2000
+                },
+                "candidate": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 2000
+                }
+              },
+              "required": [
+                "factor",
+                "baseline",
+                "candidate"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1,
+            "maxItems": 2
+          },
+          "expected_unit_definition": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          }
+        },
+        "required": [
+          "project_ref",
+          "statement",
+          "response",
+          "primary_term",
+          "direction",
+          "practical_margin",
+          "population_scope",
+          "factor_levels",
+          "expected_unit_definition"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "claim_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          }
+        },
+        "required": [
+          "claim_ref"
+        ],
+        "additionalProperties": false
+      },
+      "domain": "detailed_research",
+      "read_only": false,
+      "idempotent": true,
+      "preconditions": [
+        "explicit_detailed_tools",
+        "session_scoped_artifacts"
+      ],
+      "resource_estimate": {}
+    },
+    {
+      "name": "plan_create",
+      "description": "从受限DOE家族建立可修改方案及其需求证据。Offline simulation only; never a real scientific execution.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "project_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "family": {
+            "type": "string",
+            "enum": [
+              "crd_two_arm",
+              "rcbd_two_arm",
+              "factorial_2x2"
+            ]
+          }
+        },
+        "required": [
+          "project_ref",
+          "family"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "plan_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "synthetic": {
+            "type": "boolean"
+          },
+          "execution_authorized": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "plan_ref",
+          "synthetic",
+          "execution_authorized"
+        ],
+        "additionalProperties": false
+      },
+      "domain": "detailed_research",
+      "read_only": false,
+      "idempotent": true,
+      "preconditions": [
+        "explicit_detailed_tools",
+        "session_scoped_artifacts"
+      ],
+      "resource_estimate": {}
+    },
+    {
+      "name": "plan_patch",
+      "description": "基于预期哈希修改具体字段，保留父版本和原因。Offline simulation only; never a real scientific execution.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "plan_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "expected_contract_hash": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "changes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 2000
+                },
+                "value": {}
+              },
+              "required": [
+                "path",
+                "value"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1,
+            "maxItems": 20
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          }
+        },
+        "required": [
+          "plan_ref",
+          "expected_contract_hash",
+          "changes",
+          "reason"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "plan_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "prior_review_invalidated": {
+            "type": "boolean"
+          },
+          "execution_authorized": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "plan_ref",
+          "prior_review_invalidated",
+          "execution_authorized"
+        ],
+        "additionalProperties": false
+      },
+      "domain": "detailed_research",
+      "read_only": false,
+      "idempotent": true,
+      "preconditions": [
+        "explicit_detailed_tools",
+        "session_scoped_artifacts"
+      ],
+      "resource_estimate": {}
+    },
+    {
+      "name": "plan_diff",
+      "description": "比较两版方案，明确科学与执行协议变化。Offline simulation only; never a real scientific execution.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "old_plan_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "new_plan_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          }
+        },
+        "required": [
+          "old_plan_ref",
+          "new_plan_ref"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "changes": {
+            "type": "array",
+            "items": {},
+            "minItems": 0,
+            "maxItems": 1000
+          },
+          "old_plan_ref": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "new_plan_ref": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          }
+        },
+        "required": [
+          "changes",
+          "old_plan_ref",
+          "new_plan_ref"
+        ],
+        "additionalProperties": false
+      },
+      "domain": "detailed_research",
+      "read_only": false,
+      "idempotent": true,
+      "preconditions": [
+        "explicit_detailed_tools",
+        "session_scoped_artifacts"
+      ],
+      "resource_estimate": {}
+    },
+    {
+      "name": "artifact_read",
+      "description": "读取已登记且哈希正确的类型化制品。Offline simulation only; never a real scientific execution.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "artifact_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          }
+        },
+        "required": [
+          "artifact_ref"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "artifact": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "artifact"
+        ],
+        "additionalProperties": false
+      },
+      "domain": "detailed_research",
+      "read_only": true,
+      "idempotent": true,
+      "preconditions": [
+        "explicit_detailed_tools",
+        "session_scoped_artifacts"
+      ],
+      "resource_estimate": {}
+    },
+    {
+      "name": "plan_review",
+      "description": "固定verifier独立检查设计、来源、预算、矩阵和条件功效。Offline simulation only; never a real scientific execution.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "plan_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          }
+        },
+        "required": [
+          "plan_ref"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "review_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "ready_for_review": {
+            "type": "boolean"
+          },
+          "finding_codes": {
+            "type": "array",
+            "items": {},
+            "minItems": 0,
+            "maxItems": 1000
+          },
+          "expert_calibrated": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "review_ref",
+          "ready_for_review",
+          "finding_codes",
+          "expert_calibrated"
+        ],
+        "additionalProperties": false
+      },
+      "domain": "detailed_research",
+      "read_only": false,
+      "idempotent": true,
+      "preconditions": [
+        "explicit_detailed_tools",
+        "session_scoped_artifacts"
+      ],
+      "resource_estimate": {}
+    },
+    {
+      "name": "claim_check_plan",
+      "description": "检查方案能否条件性地检验指定结论；不判断结果是否支持。Offline simulation only; never a real scientific execution.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "claim_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "plan_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          }
+        },
+        "required": [
+          "claim_ref",
+          "plan_ref"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "alignment_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "claim_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "plan_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "checks": {
+            "type": "object"
+          },
+          "can_test_conditionally": {
+            "type": "boolean"
+          },
+          "claim_supported": {
+            "type": "null"
+          },
+          "real_world_assumptions_verified": {
+            "type": "boolean"
+          },
+          "note": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          }
+        },
+        "required": [
+          "alignment_ref",
+          "claim_ref",
+          "plan_ref",
+          "checks",
+          "can_test_conditionally",
+          "claim_supported",
+          "real_world_assumptions_verified",
+          "note"
+        ],
+        "additionalProperties": false
+      },
+      "domain": "detailed_research",
+      "read_only": false,
+      "idempotent": true,
+      "preconditions": [
+        "explicit_detailed_tools",
+        "session_scoped_artifacts"
+      ],
+      "resource_estimate": {}
+    },
+    {
+      "name": "review_resolve",
+      "description": "以新版本的实际复核结果关闭旧问题，不能自行标记已解决。Offline simulation only; never a real scientific execution.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "old_review_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "new_review_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          }
+        },
+        "required": [
+          "old_review_ref",
+          "new_review_ref"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "resolution_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "old_review_ref": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "new_review_ref": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "resolved": {
+            "type": "array",
+            "items": {},
+            "minItems": 0,
+            "maxItems": 1000
+          },
+          "still_blocked": {
+            "type": "array",
+            "items": {},
+            "minItems": 0,
+            "maxItems": 1000
+          },
+          "new_findings": {
+            "type": "array",
+            "items": {},
+            "minItems": 0,
+            "maxItems": 1000
+          },
+          "all_clear": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "resolution_ref",
+          "old_review_ref",
+          "new_review_ref",
+          "resolved",
+          "still_blocked",
+          "new_findings",
+          "all_clear"
+        ],
+        "additionalProperties": false
+      },
+      "domain": "detailed_research",
+      "read_only": false,
+      "idempotent": true,
+      "preconditions": [
+        "explicit_detailed_tools",
+        "session_scoped_artifacts"
+      ],
+      "resource_estimate": {}
+    },
+    {
+      "name": "plan_freeze",
+      "description": "冻结当前方案、主要对比和复核身份，仅用于模拟。Offline simulation only; never a real scientific execution.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "plan_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "review_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "alignment_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          }
+        },
+        "required": [
+          "plan_ref",
+          "review_ref",
+          "alignment_ref"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "freeze_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "real_execution_authorized": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "freeze_ref",
+          "real_execution_authorized"
+        ],
+        "additionalProperties": false
+      },
+      "domain": "detailed_research",
+      "read_only": false,
+      "idempotent": true,
+      "preconditions": [
+        "explicit_detailed_tools",
+        "session_scoped_artifacts"
+      ],
+      "resource_estimate": {}
+    },
+    {
+      "name": "workflow_compile",
+      "description": "为冻结方案生成带工具、依赖与每步验收的DAG。Offline simulation only; never a real scientific execution.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "freeze_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          }
+        },
+        "required": [
+          "freeze_ref"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "workflow_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          }
+        },
+        "required": [
+          "workflow_ref"
+        ],
+        "additionalProperties": false
+      },
+      "domain": "detailed_research",
+      "read_only": false,
+      "idempotent": true,
+      "preconditions": [
+        "explicit_detailed_tools",
+        "session_scoped_artifacts"
+      ],
+      "resource_estimate": {}
+    },
+    {
+      "name": "workflow_verify",
+      "description": "验证步骤引用、工具可用性和DAG拓扑。Offline simulation only; never a real scientific execution.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "workflow_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          }
+        },
+        "required": [
+          "workflow_ref"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "passed": {
+            "type": "boolean"
+          },
+          "topological_order": {
+            "type": "array",
+            "items": {},
+            "minItems": 0,
+            "maxItems": 1000
+          },
+          "mode": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "scientific_success": {
+            "type": "null"
+          }
+        },
+        "required": [
+          "passed",
+          "topological_order",
+          "mode",
+          "scientific_success"
+        ],
+        "additionalProperties": false
+      },
+      "domain": "detailed_research",
+      "read_only": false,
+      "idempotent": true,
+      "preconditions": [
+        "explicit_detailed_tools",
+        "session_scoped_artifacts"
+      ],
+      "resource_estimate": {}
+    },
+    {
+      "name": "job_reconcile_mock",
+      "description": "按冻结方案身份查询已有模拟作业。Offline simulation only; never a real scientific execution.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "freeze_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          }
+        },
+        "required": [
+          "freeze_ref"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "job_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "reused": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "job_ref",
+          "status",
+          "reused"
+        ],
+        "additionalProperties": false
+      },
+      "domain": "detailed_research",
+      "read_only": false,
+      "idempotent": true,
+      "preconditions": [
+        "explicit_detailed_tools",
+        "session_scoped_artifacts"
+      ],
+      "resource_estimate": {}
+    },
+    {
+      "name": "job_run_mock",
+      "description": "创建或复用本地合成观测作业，没有真实Darcy或CViT训练。Offline simulation only; never a real scientific execution.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "freeze_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "scenario": {
+            "type": "string",
+            "enum": [
+              "benefit",
+              "null",
+              "harm"
+            ]
+          }
+        },
+        "required": [
+          "freeze_ref",
+          "scenario"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "job_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "reused": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "job_ref",
+          "status",
+          "reused"
+        ],
+        "additionalProperties": false
+      },
+      "domain": "detailed_research",
+      "read_only": false,
+      "idempotent": true,
+      "preconditions": [
+        "explicit_detailed_tools",
+        "session_scoped_artifacts"
+      ],
+      "resource_estimate": {}
+    },
+    {
+      "name": "job_poll_mock",
+      "description": "核对模拟作业状态和实验单位数。Offline simulation only; never a real scientific execution.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "job_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          }
+        },
+        "required": [
+          "job_ref"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "job_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "units": {
+            "type": "number"
+          },
+          "real_training_performed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "job_ref",
+          "status",
+          "units",
+          "real_training_performed"
+        ],
+        "additionalProperties": false
+      },
+      "domain": "detailed_research",
+      "read_only": false,
+      "idempotent": true,
+      "preconditions": [
+        "explicit_detailed_tools",
+        "session_scoped_artifacts"
+      ],
+      "resource_estimate": {}
+    },
+    {
+      "name": "result_analyze",
+      "description": "按冻结全模型和主要对比分析合成单位级观测，计算效应与t区间。Offline simulation only; never a real scientific execution.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "job_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          }
+        },
+        "required": [
+          "job_ref"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "analysis_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "job_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "freeze_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "plan_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "response": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "primary_term": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "effect": {
+            "type": "number"
+          },
+          "interval": {
+            "type": "array",
+            "items": {},
+            "minItems": 0,
+            "maxItems": 1000
+          },
+          "confidence": {
+            "type": "number"
+          },
+          "df": {
+            "type": "number"
+          },
+          "model_assumptions_verified": {
+            "type": "boolean"
+          },
+          "source_kind": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "original_unit_count": {
+            "type": "number"
+          },
+          "decision_rule": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "posthoc_model_selection": {
+            "type": "boolean"
+          },
+          "scientific_success": {
+            "type": "null"
+          }
+        },
+        "required": [
+          "analysis_ref",
+          "job_ref",
+          "freeze_ref",
+          "plan_ref",
+          "response",
+          "primary_term",
+          "effect",
+          "interval",
+          "confidence",
+          "df",
+          "model_assumptions_verified",
+          "source_kind",
+          "original_unit_count",
+          "decision_rule",
+          "posthoc_model_selection",
+          "scientific_success"
+        ],
+        "additionalProperties": false
+      },
+      "domain": "detailed_research",
+      "read_only": false,
+      "idempotent": true,
+      "preconditions": [
+        "explicit_detailed_tools",
+        "session_scoped_artifacts"
+      ],
+      "resource_estimate": {}
+    },
+    {
+      "name": "claim_assess",
+      "description": "判断已有合成证据是否条件支持方向与实际重要性。Offline simulation only; never a real scientific execution.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "claim_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "analysis_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          }
+        },
+        "required": [
+          "claim_ref",
+          "analysis_ref"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "assessment_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "claim_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "analysis_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "status": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "practical_benefit_supported": {
+            "type": "boolean"
+          },
+          "interval": {
+            "type": "array",
+            "items": {},
+            "minItems": 0,
+            "maxItems": 1000
+          },
+          "evidence_scope": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "real_scientific_claim_verified": {
+            "type": "boolean"
+          },
+          "limitations": {
+            "type": "array",
+            "items": {},
+            "minItems": 0,
+            "maxItems": 1000
+          }
+        },
+        "required": [
+          "assessment_ref",
+          "claim_ref",
+          "analysis_ref",
+          "status",
+          "practical_benefit_supported",
+          "interval",
+          "evidence_scope",
+          "real_scientific_claim_verified",
+          "limitations"
+        ],
+        "additionalProperties": false
+      },
+      "domain": "detailed_research",
+      "read_only": false,
+      "idempotent": true,
+      "preconditions": [
+        "explicit_detailed_tools",
+        "session_scoped_artifacts"
+      ],
+      "resource_estimate": {}
+    },
+    {
+      "name": "loop_next_action",
+      "description": "根据证据选择报告或另行预注册后续研究。Offline simulation only; never a real scientific execution.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "assessment_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          }
+        },
+        "required": [
+          "assessment_ref"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "next_step": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "automatic_retest": {
+            "type": "boolean"
+          },
+          "change_success_threshold": {
+            "type": "boolean"
+          },
+          "required_new_version_for_followup": {
+            "type": "boolean"
+          },
+          "real_execution_authorized": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "next_step",
+          "automatic_retest",
+          "change_success_threshold",
+          "required_new_version_for_followup",
+          "real_execution_authorized"
+        ],
+        "additionalProperties": false
+      },
+      "domain": "detailed_research",
+      "read_only": false,
+      "idempotent": true,
+      "preconditions": [
+        "explicit_detailed_tools",
+        "session_scoped_artifacts"
+      ],
+      "resource_estimate": {}
+    },
+    {
+      "name": "report_build",
+      "description": "把设计、模拟完成、证据范围与限制编为可追溯报告。Offline simulation only; never a real scientific execution.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "assessment_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "workflow_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          }
+        },
+        "required": [
+          "assessment_ref",
+          "workflow_ref"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "report_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "assessment_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "workflow_ref": {
+            "type": "string",
+            "pattern": "[a-f0-9]{64}"
+          },
+          "design_status": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "execution_status": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "statistical_evidence": {
+            "type": "object"
+          },
+          "real_scientific_claim_verified": {
+            "type": "boolean"
+          },
+          "next_action": {
+            "type": "object"
+          },
+          "source": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          }
+        },
+        "required": [
+          "report_ref",
+          "assessment_ref",
+          "workflow_ref",
+          "design_status",
+          "execution_status",
+          "statistical_evidence",
+          "real_scientific_claim_verified",
+          "next_action",
+          "source"
+        ],
+        "additionalProperties": false
+      },
+      "domain": "detailed_research",
+      "read_only": false,
+      "idempotent": true,
+      "preconditions": [
+        "explicit_detailed_tools",
+        "session_scoped_artifacts"
+      ],
+      "resource_estimate": {}
+    },
+    {
+      "name": "question_tool",
+      "description": "Choose the next research-boundary question from the host ledger. Read-only. Answers must return through the original planning intake; never grants execution or fills unknown facts.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "policy": {
+            "type": "string",
+            "enum": [
+              "rule",
+              "trained"
+            ]
+          },
+          "max_questions": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 2
+          }
+        },
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object"
+      },
+      "domain": "planning",
+      "read_only": true,
+      "idempotent": true,
+      "preconditions": [
+        "host_planning_state"
+      ],
+      "resource_estimate": {
+        "model_requests": 0
+      }
+    }
+  ],
+  "catalog_count": 45,
+  "catalog_implementation_counts": {
+    "offline_implemented": 20,
+    "contract_only": 15,
+    "existing_agent_entry": 2,
+    "existing_via_plan_review": 1,
+    "existing_via_plan_create": 1,
+    "human_review_required": 2,
+    "disabled_real_execution": 4
+  },
+  "catalog_warning": "The static catalog live_agent_registered field is historical metadata, not authoritative for the current GeneralSession registry."
+}

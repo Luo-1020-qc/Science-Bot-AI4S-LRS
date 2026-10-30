@@ -1,0 +1,22 @@
+{
+  "version": "scientific_dialogue_curriculum_v1",
+  "data_manifest_sha256": "fa539918fed13a0be466522d51957cd40252aa35a334ee546ac5038855e8de65",
+  "source_code_sha256": {
+    "acquire.py": "27996b4a250136dad405377ca2ba2a7cd5fd43139791be17b694ae14dad3c784",
+    "adapters.py": "fe3cd66962cf4369917d20f76b570ee705d814a60bbb32f9fafb0d39878554a6",
+    "annotation.py": "dd6fc31664f5341506d0eaeac3e273ae2264a569c9dced2ce969453418895e59",
+    "common.py": "f3775ef8274e9f88f021fcac36555614193caf86fd3262013b8883d91f36ca52",
+    "curriculum.py": "aabe2478adf332b28c71750390058d67d1135d4e80872e0de246ee682a953758",
+    "exports.py": "6aa49d69a13ece3b88505f2298c425fa479572df4e5a6e3562536ea15263a311",
+    "models.py": "c3e9a185d1c0f74d03b83de2a4b88b2c0ac21972101a107ff4878d9351f39cdd",
+    "sources.json": "b94dfb8dc177f95ad4300038b5c1caa4ff5516237b4ac20769f865f527a92eb6"
+  },
+  "files": {
+    "clarification_need.json": "d74f9c8d5da48ade44e689a618f43dfbdf9a79f0fb38766a4c71d0db5a8df35b",
+    "evidence_ranker.json": "8b98da0986b5005a231177ec84f0322e46d0d992e37ce298b9782377c1afa267",
+    "question_ranker.json": "537d798920ded5229bcf491b6070d5456df9942c2d6d29757a2bea0d12754bbd",
+    "results.json": "d03cd03dc8712184eebe589881e39f851df52978750b4f37a188bac5e228b267"
+  },
+  "numpy_version": "2.5.4",
+  "deployment": "research_candidate_only"
+}

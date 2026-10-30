@@ -1,0 +1,559 @@
+{
+  "schema_version": "research_planning_v1",
+  "id": "ac61d619e65a4050ae475c13f7d7fd71",
+  "revision": 11,
+  "active": true,
+  "facts": {
+    "research_question": {
+      "value": "我想预测新合金样品的室温屈服强度，帮我设计评估，先厘清适用范围和数据划分。",
+      "quote": "我想预测新合金样品的室温屈服强度，帮我设计评估，先厘清适用范围和数据划分。",
+      "status": "declared",
+      "turn": 1
+    },
+    "objective_type": {
+      "value": "prediction",
+      "quote": "研究目的：prediction",
+      "status": "declared",
+      "turn": 2
+    },
+    "scope": {
+      "value": "仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺",
+      "quote": "研究边界：仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺。",
+      "status": "declared",
+      "turn": 8
+    },
+    "exclusions": {
+      "value": "不将预测相关性解释为成分因果作用，不外推新工艺或真实材料性能",
+      "quote": "本轮不回答的问题：不将预测相关性解释为成分因果作用，不外推新工艺或真实材料性能。",
+      "status": "declared",
+      "turn": 2
+    },
+    "experimental_unit": {
+      "value": "同一合金批次内测量相关；以完整批次为隔离、重采样与推断单位，技术重复先按样品汇总",
+      "quote": "实验与推断单位：同一合金批次内测量相关；以完整批次为隔离、重采样与推断单位，技术重复先按样品汇总。",
+      "status": "declared",
+      "turn": 3
+    },
+    "design": {
+      "value": "prediction",
+      "quote": "设计结构：prediction",
+      "status": "declared",
+      "turn": 3
+    },
+    "baseline": {
+      "value": "均值预测与线性回归为基线，候选树模型共享相同批次划分、特征和调参预算",
+      "quote": "基线与公平比较：均值预测与线性回归为基线，候选树模型共享相同批次划分、特征和调参预算。",
+      "status": "declared",
+      "turn": 9
+    },
+    "outcomes": {
+      "value": "先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa",
+      "quote": "主要响应与测量：先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa。",
+      "status": "declared",
+      "turn": 10
+    },
+    "analysis": {
+      "value": "验证集仅选择超参数，冻结后只评一次最终测试；以批次为单位 bootstrap 报告 MAE 差与不确定区间",
+      "quote": "分析与不确定性：验证集仅选择超参数，冻结后只评一次最终测试；以批次为单位 bootstrap 报告 MAE 差与不确定区间。",
+      "status": "declared",
+      "turn": 10
+    },
+    "acceptance": {
+      "value": "逐项交付最终测试误差、批次区间、基线和失败日志；阴性或不确定结果照样报告；批次无法隔离或4小时上限即停止",
+      "quote": "验收和停止规则：逐项交付最终测试误差、批次区间、基线和失败日志；阴性或不确定结果照样报告；批次无法隔离或4小时上限即停止。",
+      "status": "declared",
+      "turn": 10
+    },
+    "data_source": {
+      "value": "工程诊断用 synthetic_alloy_v1；按合金批次分组隔离训练、验证和最终测试，防止技术重复泄漏",
+      "quote": "数据与证据来源：工程诊断用 synthetic_alloy_v1；按合金批次分组隔离训练、验证和最终测试，防止技术重复泄漏。",
+      "status": "declared",
+      "turn": 5
+    },
+    "resources": {
+      "value": "仅规划，后续先导最多8次拟合、4小时上限；本轮不执行实验",
+      "quote": "资源边界：仅规划，后续先导最多8次拟合、4小时上限；本轮不执行实验。",
+      "status": "declared",
+      "turn": 11
+    },
+    "risks": {
+      "value": "缺失批次标识、量纲不一致或样本跨划分泄漏时停止交还研究者核实",
+      "quote": "风险与未决条件：缺失批次标识、量纲不一致或样本跨划分泄漏时停止交还研究者核实。",
+      "status": "declared",
+      "turn": 11
+    },
+    "reproducibility": {
+      "value": "保存批次划分、数据版本、代码版本、种子、配置和全部失败记录",
+      "quote": "复现记录：保存批次划分、数据版本、代码版本、种子、配置和全部失败记录。",
+      "status": "declared",
+      "turn": 11
+    },
+    "human_roles": {
+      "value": "学生确认预测范围，材料负责人复核批次和量纲，研究者负责结论与执行授权",
+      "quote": "人类职责：学生确认预测范围，材料负责人复核批次和量纲，研究者负责结论与执行授权。",
+      "status": "declared",
+      "turn": 11
+    },
+    "deliverable": {
+      "value": "预测评估设计、防泄漏清单、基线对照与验收表、复现记录模板",
+      "quote": "交付物：预测评估设计、防泄漏清单、基线对照与验收表、复现记录模板。",
+      "status": "declared",
+      "turn": 11
+    }
+  },
+  "unknown": [
+    "sampling"
+  ],
+  "conflicts": {},
+  "decisions": [
+    {
+      "turn": 1,
+      "type": "intake",
+      "changes": [
+        {
+          "field": "research_question",
+          "kind": "added",
+          "before": null,
+          "after": "我想预测新合金样品的室温屈服强度，帮我设计评估，先厘清适用范围和数据划分。"
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "type": "intake",
+      "changes": [
+        {
+          "field": "objective_type",
+          "kind": "added",
+          "before": null,
+          "after": "prediction"
+        },
+        {
+          "field": "scope",
+          "kind": "added",
+          "before": null,
+          "after": "仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺"
+        },
+        {
+          "field": "exclusions",
+          "kind": "added",
+          "before": null,
+          "after": "不将预测相关性解释为成分因果作用，不外推新工艺或真实材料性能"
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "type": "intake",
+      "changes": [
+        {
+          "field": "experimental_unit",
+          "kind": "added",
+          "before": null,
+          "after": "同一合金批次内测量相关；以完整批次为隔离、重采样与推断单位，技术重复先按样品汇总"
+        },
+        {
+          "field": "design",
+          "kind": "added",
+          "before": null,
+          "after": "prediction"
+        },
+        {
+          "field": "baseline",
+          "kind": "added",
+          "before": null,
+          "after": "均值预测与线性回归为基线，候选树模型共享相同批次划分、特征和调参预算"
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "type": "intake",
+      "changes": [
+        {
+          "field": "outcomes",
+          "kind": "added",
+          "before": null,
+          "after": "先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa"
+        },
+        {
+          "field": "analysis",
+          "kind": "added",
+          "before": null,
+          "after": "验证集仅选择超参数，冻结后只评一次最终测试；以批次为单位 bootstrap 报告 MAE 差与不确定区间"
+        },
+        {
+          "field": "acceptance",
+          "kind": "added",
+          "before": null,
+          "after": "逐项交付最终测试误差、批次区间、基线和失败日志；阴性或不确定结果照样报告；批次无法隔离或4小时上限即停止"
+        }
+      ]
+    },
+    {
+      "turn": 5,
+      "type": "intake",
+      "changes": [
+        {
+          "field": "data_source",
+          "kind": "added",
+          "before": null,
+          "after": "工程诊断用 synthetic_alloy_v1；按合金批次分组隔离训练、验证和最终测试，防止技术重复泄漏"
+        },
+        {
+          "field": "sampling",
+          "kind": "unknown",
+          "before": null,
+          "after": null
+        }
+      ]
+    },
+    {
+      "turn": 6,
+      "type": "evidence_acquisition_step",
+      "field": "sampling",
+      "text": "先查找已有先导记录，再请方法负责人核实单位与样本依据。"
+    },
+    {
+      "turn": 7,
+      "type": "explicit_evidence_selection",
+      "summary": "已选论文片段：synthetic_methods.md:L1-L1#825f61b779b2ebead7f114ab762bb29e278b1ac6a9add0ef4a8f5b5277123d3c"
+    },
+    {
+      "turn": 8,
+      "type": "revise",
+      "changes": [
+        {
+          "field": "scope",
+          "kind": "revised",
+          "before": "仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺",
+          "after": "仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺"
+        }
+      ]
+    },
+    {
+      "turn": 9,
+      "type": "revise",
+      "changes": [
+        {
+          "field": "baseline",
+          "kind": "revised",
+          "before": "均值预测与线性回归为基线，候选树模型共享相同批次划分、特征和调参预算",
+          "after": "均值预测与线性回归为基线，候选树模型共享相同批次划分、特征和调参预算"
+        }
+      ]
+    },
+    {
+      "turn": 10,
+      "type": "revise",
+      "changes": [
+        {
+          "field": "outcomes",
+          "kind": "revised",
+          "before": "先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa",
+          "after": "先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa"
+        },
+        {
+          "field": "analysis",
+          "kind": "revised",
+          "before": "验证集仅选择超参数，冻结后只评一次最终测试；以批次为单位 bootstrap 报告 MAE 差与不确定区间",
+          "after": "验证集仅选择超参数，冻结后只评一次最终测试；以批次为单位 bootstrap 报告 MAE 差与不确定区间"
+        },
+        {
+          "field": "acceptance",
+          "kind": "revised",
+          "before": "逐项交付最终测试误差、批次区间、基线和失败日志；阴性或不确定结果照样报告；批次无法隔离或4小时上限即停止",
+          "after": "逐项交付最终测试误差、批次区间、基线和失败日志；阴性或不确定结果照样报告；批次无法隔离或4小时上限即停止"
+        }
+      ]
+    },
+    {
+      "turn": 11,
+      "type": "intake",
+      "changes": [
+        {
+          "field": "resources",
+          "kind": "added",
+          "before": null,
+          "after": "仅规划，后续先导最多8次拟合、4小时上限；本轮不执行实验"
+        },
+        {
+          "field": "risks",
+          "kind": "added",
+          "before": null,
+          "after": "缺失批次标识、量纲不一致或样本跨划分泄漏时停止交还研究者核实"
+        },
+        {
+          "field": "reproducibility",
+          "kind": "added",
+          "before": null,
+          "after": "保存批次划分、数据版本、代码版本、种子、配置和全部失败记录"
+        },
+        {
+          "field": "human_roles",
+          "kind": "added",
+          "before": null,
+          "after": "学生确认预测范围，材料负责人复核批次和量纲，研究者负责结论与执行授权"
+        },
+        {
+          "field": "deliverable",
+          "kind": "added",
+          "before": null,
+          "after": "预测评估设计、防泄漏清单、基线对照与验收表、复现记录模板"
+        }
+      ]
+    }
+  ],
+  "approval": null,
+  "pending": null,
+  "reflections": [],
+  "changes": [
+    {
+      "field": "research_question",
+      "kind": "added",
+      "before": null,
+      "after": "我想预测新合金样品的室温屈服强度，帮我设计评估，先厘清适用范围和数据划分。"
+    },
+    {
+      "field": "objective_type",
+      "kind": "added",
+      "before": null,
+      "after": "prediction"
+    },
+    {
+      "field": "scope",
+      "kind": "added",
+      "before": null,
+      "after": "仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺"
+    },
+    {
+      "field": "exclusions",
+      "kind": "added",
+      "before": null,
+      "after": "不将预测相关性解释为成分因果作用，不外推新工艺或真实材料性能"
+    },
+    {
+      "field": "experimental_unit",
+      "kind": "added",
+      "before": null,
+      "after": "同一合金批次内测量相关；以完整批次为隔离、重采样与推断单位，技术重复先按样品汇总"
+    },
+    {
+      "field": "design",
+      "kind": "added",
+      "before": null,
+      "after": "prediction"
+    },
+    {
+      "field": "baseline",
+      "kind": "added",
+      "before": null,
+      "after": "均值预测与线性回归为基线，候选树模型共享相同批次划分、特征和调参预算"
+    },
+    {
+      "field": "outcomes",
+      "kind": "added",
+      "before": null,
+      "after": "先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa"
+    },
+    {
+      "field": "analysis",
+      "kind": "added",
+      "before": null,
+      "after": "验证集仅选择超参数，冻结后只评一次最终测试；以批次为单位 bootstrap 报告 MAE 差与不确定区间"
+    },
+    {
+      "field": "acceptance",
+      "kind": "added",
+      "before": null,
+      "after": "逐项交付最终测试误差、批次区间、基线和失败日志；阴性或不确定结果照样报告；批次无法隔离或4小时上限即停止"
+    },
+    {
+      "field": "data_source",
+      "kind": "added",
+      "before": null,
+      "after": "工程诊断用 synthetic_alloy_v1；按合金批次分组隔离训练、验证和最终测试，防止技术重复泄漏"
+    },
+    {
+      "field": "sampling",
+      "kind": "unknown",
+      "before": null,
+      "after": null
+    },
+    {
+      "field": "scope",
+      "kind": "revised",
+      "before": "仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺",
+      "after": "仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺"
+    },
+    {
+      "field": "baseline",
+      "kind": "revised",
+      "before": "均值预测与线性回归为基线，候选树模型共享相同批次划分、特征和调参预算",
+      "after": "均值预测与线性回归为基线，候选树模型共享相同批次划分、特征和调参预算"
+    },
+    {
+      "field": "outcomes",
+      "kind": "revised",
+      "before": "先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa",
+      "after": "先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa"
+    },
+    {
+      "field": "analysis",
+      "kind": "revised",
+      "before": "验证集仅选择超参数，冻结后只评一次最终测试；以批次为单位 bootstrap 报告 MAE 差与不确定区间",
+      "after": "验证集仅选择超参数，冻结后只评一次最终测试；以批次为单位 bootstrap 报告 MAE 差与不确定区间"
+    },
+    {
+      "field": "acceptance",
+      "kind": "revised",
+      "before": "逐项交付最终测试误差、批次区间、基线和失败日志；阴性或不确定结果照样报告；批次无法隔离或4小时上限即停止",
+      "after": "逐项交付最终测试误差、批次区间、基线和失败日志；阴性或不确定结果照样报告；批次无法隔离或4小时上限即停止"
+    },
+    {
+      "field": "resources",
+      "kind": "added",
+      "before": null,
+      "after": "仅规划，后续先导最多8次拟合、4小时上限；本轮不执行实验"
+    },
+    {
+      "field": "risks",
+      "kind": "added",
+      "before": null,
+      "after": "缺失批次标识、量纲不一致或样本跨划分泄漏时停止交还研究者核实"
+    },
+    {
+      "field": "reproducibility",
+      "kind": "added",
+      "before": null,
+      "after": "保存批次划分、数据版本、代码版本、种子、配置和全部失败记录"
+    },
+    {
+      "field": "human_roles",
+      "kind": "added",
+      "before": null,
+      "after": "学生确认预测范围，材料负责人复核批次和量纲，研究者负责结论与执行授权"
+    },
+    {
+      "field": "deliverable",
+      "kind": "added",
+      "before": null,
+      "after": "预测评估设计、防泄漏清单、基线对照与验收表、复现记录模板"
+    }
+  ],
+  "stale": {},
+  "turns": 11,
+  "audience": "researcher_student",
+  "last_notes": [],
+  "last_export": null,
+  "clarification": {
+    "mode": "template",
+    "reason": "offline",
+    "model_used": false
+  },
+  "question_history": [
+    {
+      "turn": 1,
+      "field": "objective_type",
+      "kind": "missing",
+      "question": "这次研究主要想达到什么目的？",
+      "origin": "template",
+      "basis_hash": "60c4c3f5370da16d30f10a65c70f572cb115d16e1153f398384ad602453cf0cf"
+    },
+    {
+      "turn": 2,
+      "field": "experimental_unit",
+      "kind": "missing",
+      "question": "你希望按什么单位比较或汇总？",
+      "origin": "template",
+      "basis_hash": "e54ebcd243ba95765426ca5995e9370852bf30090f4b1f878c8a260a90d148cb"
+    },
+    {
+      "turn": 3,
+      "field": "outcomes",
+      "kind": "missing",
+      "question": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？",
+      "origin": "template",
+      "basis_hash": "d8baf6a170459452d058aef9ee7446bc99591b3b3e00e26cc1a831d64b6e10aa"
+    },
+    {
+      "turn": 4,
+      "field": "data_source",
+      "kind": "missing",
+      "question": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。",
+      "origin": "template",
+      "basis_hash": "57f7c8ff6ed43ba99c9c8f125107df9f394535962e985525a6a8bcdef668d2ea"
+    },
+    {
+      "turn": 5,
+      "field": "sampling",
+      "kind": "evidence_plan",
+      "question": "这项还不确定，你希望先怎样推进？",
+      "origin": "template",
+      "basis_hash": "b30e45a331fb8ca88d1479aad070366c326b26e2a225e48f6f236907cdbc280b"
+    },
+    {
+      "turn": 6,
+      "field": "resources",
+      "kind": "missing",
+      "question": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？",
+      "origin": "template",
+      "basis_hash": "b30e45a331fb8ca88d1479aad070366c326b26e2a225e48f6f236907cdbc280b"
+    },
+    {
+      "turn": 7,
+      "field": "scope",
+      "kind": "stale",
+      "question": "关于研究边界，是否按当前理解继续？",
+      "origin": "template",
+      "basis_hash": "4b233365876a49304d8c4f0380395ed45c54219e6f21191cb03aa71e0b78d2d3"
+    },
+    {
+      "turn": 8,
+      "field": "baseline",
+      "kind": "stale",
+      "question": "关于基线与公平比较，是否按当前理解继续？",
+      "origin": "template",
+      "basis_hash": "245844071b0ff5b80dcb6117a0c8dfa16f1d531ed6f4f45a83a4fb05333c8760"
+    },
+    {
+      "turn": 9,
+      "field": "outcomes",
+      "kind": "stale",
+      "question": "关于主要响应与测量，是否按当前理解继续？",
+      "origin": "template",
+      "basis_hash": "fc67855229eaa0a4c88fac3d4e09337aaf70e8413c2d4efc0a74029b0a22d3c9"
+    },
+    {
+      "turn": 10,
+      "field": "resources",
+      "kind": "missing",
+      "question": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？",
+      "origin": "template",
+      "basis_hash": "21a9e98fcc6449dec269155893945ad48b73b935f15169ff55be96c6729fa871"
+    }
+  ],
+  "evidence_actions": {
+    "sampling": {
+      "text": "先查找已有先导记录，再请方法负责人核实单位与样本依据。",
+      "turn": 6,
+      "status": "user_proposed_step_not_evidence"
+    }
+  },
+  "evidence": [
+    {
+      "path": "synthetic_methods.md",
+      "sha256": "825f61b779b2ebead7f114ab762bb29e278b1ac6a9add0ef4a8f5b5277123d3c",
+      "text": "合成文献片段，仅工程诊断：该示例不提供方差、样本量或统计功效依据。引用此片段不能填补未知数值。\r\n",
+      "start_line": 1,
+      "end_line": 1,
+      "workspace_id": "79b7e44e08c041578aca2d13f0984d47",
+      "workspace_root": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\.local\\comprehensive_20261030\\offline_mainline\\materials_unknown\\workspace",
+      "excerpt_sha256": "825f61b779b2ebead7f114ab762bb29e278b1ac6a9add0ef4a8f5b5277123d3c",
+      "share_with_model": false,
+      "turn": 7,
+      "status": "selected_excerpt_not_verified",
+      "id": "062c540c11daf5d5"
+    }
+  ]
+}

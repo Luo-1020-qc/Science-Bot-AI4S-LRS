@@ -1,71 +1,75 @@
-# 比赛安装、使用与复现
+# 安装与复现
 
-## 1. 环境安装
+## 环境与启动
 
-推荐Windows x64和Python 3.12。项目包元数据声明Python>=3.10，但当前实测环境为3.12。终端启动脚本使用Windows路径；其他平台可自行建立venv并安装`RUT_Science[science-bot]`，尚未提供跨平台验收承诺。
-
-从项目根目录执行：
+推荐Windows x64、Python 3.12；包声明Python>=3.10。其他平台尚未完成同等验收。在项目根目录执行：
 
 ```powershell
-python --version
 powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\setup.ps1
+.\science-bot-web.cmd -Example
 ```
 
-已有Python不在PATH时，可向安装脚本传入`-Python 'C:\path\python.exe'`。安装依赖需要网络；应用、研究和权重不依赖原作者虚拟环境，`.venv`不应复制到新机器。
+已有可用虚拟环境时直接启动。Python不在PATH时向安装脚本传入 `-Python 'C:\path\python.exe'`。`-Exact`使用已导出的完整依赖版本；默认安装使用包内依赖范围。安装需要网络，记录软件源或环境差异，虚拟环境由目标机器重建。
 
-默认安装使用包元数据中的直接依赖范围。`-Exact`安装`requirements-science-bot.lock.txt`记录的完整环境版本，其中PyTorch CPU依赖使用额外CPU索引。该文件由本机已安装包导出，不包含密钥或editable绝对路径；不是带下载哈希的跨平台锁文件。软件源没有对应版本时，应保留失败记录，使用默认安装并登记新环境，再进行对照验收。
+日常入口、工作区和示例操作见[使用说明](USAGE.md)。
 
-## 2. API与模型
+## API配置
 
-将根目录`API_key_Agent.example.json`复制为`API_key_Agent.json`，填入评委自己的API key。当前已有key保留且被Git忽略；程序在请求时才读取配置。
+从根目录 `API_key_Agent.example.json` 复制为 `API_key_Agent.json`，填写自己的配置。该文件由Git忽略；模型请求发生时才读取。
 
-endpoint会补全`/chat/completions`。默认选择第一个配置profile。终端默认模型为`deepseek-flash`；配置中的model字段不自动覆盖终端模型参数。若该模型在评委服务中不可用，按根README使用`--model`显式指定可用模型。
-
-先运行离线验收，再按需测试API，以区分本地Harness问题和模型／服务问题。API产生费用，便携检查不发出模型请求。
-
-## 3. 便携验收
+endpoint会补全 `/chat/completions`，默认选第一个profile。终端默认模型为 `deepseek-flash`，显式模型参数优先；配置中的model不会覆盖此默认值：
 
 ```powershell
+.\science-bot-web.cmd -Model 'YOUR_AVAILABLE_MODEL_ID'
+```
+
+先做离线检查，再测试真实接口并单独记录费用、模型和请求预算。
+
+## 当前检查
+
+```powershell
+# 便携检查：链接、忽略规则、受保护文件、v2制品及冻结研究
 & '.\RUT_Science\.venv\Scripts\python.exe' -B scripts/check_repository.py
+
+# 核对当前完整性和已保存的测试证据
+& '.\RUT_Science\.venv\Scripts\python.exe' -B scripts/verify_pdf_reading.py
+
+# 需要实际重跑当前应用、完整性和界面状态测试时
+& '.\RUT_Science\.venv\Scripts\python.exe' -B scripts/verify_pdf_reading.py --run-tests
 ```
 
-该脚本检查文档链接、Git忽略行为、当前架构／权重保护清单、v2数据、冻结研究、终端预览、CViT冻结策略模拟和DOE演示；如有依赖或文件缺失将明确失败。它不修改冻结文件、不发起模型请求、不训练新策略。输出位于Git忽略的`.local/checks/`。
+默认检查不联网、不训练、不执行真实科研任务。当前层记录在[PDF阅读验收](integration/pdf_reading_2026-10-30/README.md)，便携检查输出在 `.local/checks/`。界面状态测试使用发布的JavaScript和模拟DOM，浏览器视觉验收仍待完成。PDF解析依赖已加入安装清单；旧环境重新运行安装脚本即可补齐。
 
-继续进行交互演示：
+`verify_dynamic_upgrade.py`、`verify_interfaces.py`、`verify_question_tool.py`、`verify_branding.py`、`verify_context_choices.py`、`verify_planning_mainline.py` 和 `verify_session_history.py` 的默认当前验收链均转入上述入口。旧回执只说明各自版本；历史训练重算按原实验说明执行。
+
+## 规划评估与示例
 
 ```powershell
-.\science-bot.cmd -Backend offline
+# 完整回合规则基线：输出目录必须是新目录
+& '.\RUT_Science\.venv\Scripts\python.exe' -B scripts/evaluate_planning_mainline.py --output .local/mainline_evaluation/new_run
+
+# 重新生成三份静态界面示例
+& '.\RUT_Science\.venv\Scripts\python.exe' -B scripts/preview_interfaces.py
 ```
 
-| 输入 | 应核对的行为 |
+基线默认离线，从自然请求进入规划，后续用显式字段和选项；结果口径见[完整回合报告](evaluation/mainline_2026-10-30/REPORT.md)。真实接口用独立 `--live` 条件并另存结果。此前动态问题诊断见[历史报告](evaluation/dynamic_clarification_2026-10-29/REPORT.md)，不与本轮样本相加。
+
+旧研究接口可用 `/research status`、`/research verify g2_4`、`/research compare g2_3 --seed 37` 核对范围与冻结模拟。科研规划命令见[规划指南](HARNESS_PLANNING.md)。
+
+## 数据与训练
+
+| 内容 | 复现入口 |
 |---|---|
-| `/research status` | 显示本地研究范围、默认规则访谈 |
-| `/doe demo` | 展示错误方案与脚本修订，输出可审阅状态及限制 |
-| `/doe report` | 返回同一会话最新DOE证据 |
-| `/research simulate g2_3 --policy bc_ppo --seed 37` | 加载冻结本地策略，运行开发场景模拟，保留成功或失败行为 |
-| `/research compare g2_3 --seed 37` | 同一场景下比较策略；不要求学习策略胜过规则 |
+| Question tool候选 | [训练说明](../RUT_Science/research/question_tool_v1/README.md) |
+| 上下文选项匹配 | [训练说明](../RUT_Science/research/context_choices_v1/README.md) |
+| ClariQ/QASPER与人工对话 | [数据课程](../Training_Data/scientific_dialogue_v1/README.md) |
+| v2工具环境与专家扩展 | [数据入口](../Training_Data/README_训练数据说明.md) |
+| 独立工具库 | [工具说明](../Research_Tool_Library/README_详细工具库.md) |
 
-API模式可再输入项目介绍或实验设计请求，用`/model-output`查看模型提议，与工具执行证据分开核对。比较在线运行时需固定模型、输入、工作区、会话起点和预算；温度0也不承诺逐字或调用顺序完全一致。
+复现使用新目录，保留原始分区、来源、参数和失败结果。当前主线不开展LLM微调，也不继续扩展旧PPO。旧审计有当轮文件哈希或原机路径约束，迁移与源码变更须通过新授权记录衔接。
 
-## 4. 研究与数据专项检查
+## 分发与迁移
 
-```powershell
-& '.\RUT_Science\.venv\Scripts\python.exe' -B 'Training_Data_Darcy_CViT/validate_current.py' --tests
-& '.\RUT_Science\.venv\Scripts\python.exe' -B 'Research_Tool_Library/run.py' test
-```
+源码、提示词、必要模型、当前数据协议和评估证据保留；本地密钥、虚拟环境、私有会话、待审输入及大型原始语料由Git忽略。手工复制目录也应遵守同一范围。
 
-第一条检查v2基础集和PPO记录，包含真实log probability／critic值重算；第二条执行离线工具库测试。两者可能更新各自报告并创建本地模拟制品，不启动真实科研计算。专家扩展另按交接文档执行import和preflight，基础集校验不能代替新增任务预检。
-
-## 5. 可复现边界
-
-在线研究worker使用相对本仓库的`online_artifacts.json`检查冻结制品，适合评委新检出路径。部分**历史迁移审计**（包括relocation清单、旧项目保护检查和v2原始工具来源记录）保存了原机绝对路径，它们是原交付证据，不是新机器启动依赖。换路径时不要批量修改冻结清单以“通过”旧审计；使用便携验收，并保留旧记录的历史性质。
-
-当前统一研究`verify`已使用清理后的保护清单，不依赖旧delivery或弃用数据v1。冻结study源码里保留的早期隔离审计具有当轮语义，不能代替当前统一入口；不要为使旧审计通过而恢复整套历史工作区。
-
-新机器的完整依赖重建和API调用尚需评委按以上步骤验证。本次整理在现有环境执行离线检查，并使用仅包含Git可提交文件的异路径副本检查研究worker，以发现被忽略的必要文件和路径依赖；不将其描述为全新机器安装测试。
-
-## 6. 上传范围
-
-源码、提示词、冻结策略、研究结果、工具库、当前v2数据和专家说明随仓库交付。弃用训练数据v1已删除，历史交付／输出移到同级归档目录，不再是运行依赖。本地key、虚拟环境、训练临时沙箱及未审专家输入由Git忽略。
-
-Git忽略规则不保护人工全目录复制；若通过其他平台直接上传文件夹，按相同规则选取文件。目标Git仓库为根README中的Science-Bot-AI4S-LRS；API key不进入提交。仓库权限与比赛材料授权由项目维护者确认。
+训练目录现为 `Training_Data/`，旧名称通过完整性层映射；原清单不改写。全新机器依赖重建和真实API仍需实际验证。公开前确认自有代码、论文和第三方数据的分发权限。

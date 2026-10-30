@@ -1,0 +1,11 @@
+{
+  "source": "scripted_reference_not_expert",
+  "human_labels": 0,
+  "epochs": 300,
+  "decisions": 502,
+  "training_action_accuracy": 1.0,
+  "first_loss": 2.80092716217041,
+  "last_loss": 0.006013480015099049,
+  "initial_hash": "e691fbc0f4850727391de1d2dff137ebc88b37d58c754750d271cd92d2d2a140",
+  "bc_hash": "1af3c36dcf757a4b3a3f061e64dbfdc99c967180193ec9de567fe794bc1303db"
+}

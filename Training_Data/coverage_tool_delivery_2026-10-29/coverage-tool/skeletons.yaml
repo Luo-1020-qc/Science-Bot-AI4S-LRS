@@ -1,0 +1,54 @@
+schema_version: skeleton_registry_v1
+# 骨架注册表：学科场景的底层任务骨架（与《骨架聚类表_65场景_v1》一致）
+# status: available = 内核已可执行 | planned = 待开发 | proposal_only = 仅建议书
+skeletons:
+  - id: S1
+    name: 两组独立比较
+    primitive: Welch t
+    status: available
+    description: 两个独立组的均值差异比较，允许方差不齐
+  - id: S2
+    name: 配对比较
+    primitive: 配对 t
+    status: available
+    description: 同一单位在两种条件下的差异比较
+  - id: S3
+    name: 因子设计
+    primitive: CRD / RCBD / 2x2 全因子
+    status: available
+    description: 多因子对响应的影响，含随机化与区组
+  - id: S4
+    name: 数值预测对比
+    primitive: mean / OLS / ridge + 独立测试
+    status: available
+    description: 预测模型与基线在冻结测试集上的误差对比
+  - id: S5
+    name: 多组比较
+    primitive: 单因素 ANOVA / Kruskal-Wallis
+    status: planned
+    description: 三组及以上均值比较
+  - id: S6
+    name: 比例与计数
+    primitive: 卡方 / 二项 / Poisson
+    status: planned
+    description: 比例、率与计数的比较
+  - id: S7
+    name: 相关与关联建模
+    primitive: 多元线性回归 / 相关系数
+    status: partial
+    description: 变量间关联建模（不声称因果）
+  - id: S8
+    name: 生存分析
+    primitive: Kaplan-Meier / Cox
+    status: planned
+    description: 时间-事件数据
+  - id: S9
+    name: 分类任务
+    primitive: 逻辑回归 / 基线分类器
+    status: planned
+    description: 类别预测与评估
+  - id: S10
+    name: 时间序列与因果推断
+    primitive: 无
+    status: proposal_only
+    description: 仅生成建议书，不承诺执行

@@ -1,0 +1,43 @@
+{
+  "id": "materials_multi_answer",
+  "root_group": "implementer_synthetic_materials_v1",
+  "mechanism": "multi_answer",
+  "metrics": {
+    "outcome": "reviewable_design",
+    "expected_outcome_met": true,
+    "critical_missing": [],
+    "answer_mismatches": [],
+    "question_count": 6,
+    "unnecessary_question_turns": [],
+    "no_progress_question_turns": [],
+    "multi_field_answer_turns": 5,
+    "host_violation_turns": [],
+    "ready": true,
+    "blocker_fields": [],
+    "all_steps_unexecuted": true,
+    "automatic_design_readout": true,
+    "semantic_quality_human_rated": false,
+    "researcher_understanding_measured": false
+  },
+  "resources": {
+    "llm_requests": 0,
+    "llm_tokens": 0,
+    "tool_attempts": 0,
+    "limits": {
+      "llm_requests": 12,
+      "llm_tokens": 60000,
+      "tool_calls": 40,
+      "read_bytes": 18000
+    }
+  },
+  "remaining_events": [],
+  "selected_evidence_count": 0,
+  "artifacts": {
+    "delivery.html": "0ce43f10cd7bfd42e720ffa2c91eb9b8348faa47641e6d6fc967d10da947f218",
+    "delivery.md": "d23a5cf07ec1aab4500c1bf7cf97a0e362ed9321634cab1ec2f5c06d65275a32",
+    "final_state.json": "47d8b7984c0e3c074683600cd5a5651ae272c8a80b59721c9fc79dec523300ce",
+    "plan.json": "c29a00ae82b45fdb81053824dc8f55069eb0de3303709a30ce85e0e78122ae40",
+    "plan.md": "de6e19cc534a3ad25d12c8daefd6440cbfd1ac8e597785e7f13228c7f6cf3411",
+    "trajectory.json": "45ac6b44a5dc188f80a9de4baa4ae52fc7fc810312470e16011f313cf132c544"
+  }
+}

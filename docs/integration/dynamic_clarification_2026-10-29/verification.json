@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "kind": "saved_evidence_and_current_integrity",
+  "integrity": {
+    "passed": true,
+    "protected_files_checked": 1745,
+    "authorized_host_changes": 5,
+    "integration_runtime_files_checked": 10,
+    "planning_authorized_host_changes": 4,
+    "planning_runtime_files_checked": 11,
+    "dynamic_runtime_files_checked": 6,
+    "planning_history_privacy_files_checked": 1,
+    "changed": []
+  },
+  "full_regression": {
+    "run": 412,
+    "passed": true,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 2,
+    "seconds": 211.90600000000268,
+    "runtime_manifest_sha256": "ad148edea96fba09ce6721f98daf24595e4d7825e4f81c4aa4101e18ec442052",
+    "history_privacy_overlay_sha256": "9ef1e9105a71122f76e6deaa6cec47a2a70f5e07930d924812c4ce260fa36310"
+  },
+  "retained_training_artifacts_checked": 64,
+  "initial_diagnostic": {
+    "dynamic": 0,
+    "fallback": 6
+  },
+  "followup_evaluation": {
+    "dynamic": 5,
+    "fallback": 1,
+    "risk_checks_passed": 9,
+    "risk_checks_total": 9,
+    "priority_field_cases": 5,
+    "state_unchanged_cases": 6
+  },
+  "understanding_improvement_measured": false,
+  "human_participants": 0,
+  "this_audit_model_requests": 0,
+  "real_scientific_executions": 0,
+  "committed_or_pushed": false
+}

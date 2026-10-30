@@ -1,0 +1,329 @@
+{
+  "schema_version": "research_planning_v1",
+  "id": "37cf90b7dffb450eb967b8cb870aa437",
+  "revision": 2,
+  "active": true,
+  "facts": {
+    "research_question": {
+      "value": "比较两种催化剂在同一温度下的产率",
+      "quote": "我想比较两种催化剂在同一温度下的产率。",
+      "status": "declared",
+      "turn": 1
+    },
+    "objective_type": {
+      "value": "comparison",
+      "quote": "我想比较两种催化剂在同一温度下的产率。",
+      "status": "declared",
+      "turn": 1
+    },
+    "factors": {
+      "value": "催化剂（两种水平）；温度固定为同一温度",
+      "quote": "两种催化剂在同一温度下的产率",
+      "status": "proposed",
+      "turn": 1
+    },
+    "outcomes": {
+      "value": "产率",
+      "quote": "两种催化剂在同一温度下的产率",
+      "status": "declared",
+      "turn": 1
+    },
+    "experimental_unit": {
+      "value": "独立反应批次（待实验负责人确认）",
+      "quote": "再由实验负责人确认独立反应批次与测量误差",
+      "status": "proposed",
+      "turn": 2
+    },
+    "data_source": {
+      "value": "历史先导记录（需先查找）",
+      "quote": "先去查找历史先导记录",
+      "status": "proposed",
+      "turn": 2
+    },
+    "human_roles": {
+      "value": "实验负责人负责确认独立反应批次与测量误差",
+      "quote": "再由实验负责人确认独立反应批次与测量误差",
+      "status": "proposed",
+      "turn": 2
+    },
+    "acceptance": {
+      "value": "取得记录前不做功效保证",
+      "quote": "取得记录前不做功效保证",
+      "status": "declared",
+      "turn": 2
+    },
+    "resources": {
+      "value": "本轮最多一小时，只整理计划",
+      "quote": "本轮最多一小时只整理计划",
+      "status": "proposed",
+      "turn": 2
+    },
+    "deliverable": {
+      "value": "本轮只整理计划",
+      "quote": "本轮最多一小时只整理计划",
+      "status": "proposed",
+      "turn": 2
+    }
+  },
+  "unknown": [
+    "sampling",
+    "analysis",
+    "randomization"
+  ],
+  "conflicts": {},
+  "decisions": [
+    {
+      "turn": 1,
+      "type": "intake",
+      "changes": [
+        {
+          "field": "research_question",
+          "kind": "added",
+          "before": null,
+          "after": "比较两种催化剂在同一温度下的产率"
+        },
+        {
+          "field": "objective_type",
+          "kind": "added",
+          "before": null,
+          "after": "comparison"
+        },
+        {
+          "field": "factors",
+          "kind": "added",
+          "before": null,
+          "after": "催化剂（两种水平）；温度固定为同一温度"
+        },
+        {
+          "field": "outcomes",
+          "kind": "added",
+          "before": null,
+          "after": "产率"
+        },
+        {
+          "field": "sampling",
+          "kind": "unknown",
+          "before": null,
+          "after": null
+        },
+        {
+          "field": "analysis",
+          "kind": "unknown",
+          "before": null,
+          "after": null
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "type": "intake",
+      "changes": [
+        {
+          "field": "experimental_unit",
+          "kind": "added",
+          "before": null,
+          "after": "独立反应批次（待实验负责人确认）"
+        },
+        {
+          "field": "data_source",
+          "kind": "added",
+          "before": null,
+          "after": "历史先导记录（需先查找）"
+        },
+        {
+          "field": "human_roles",
+          "kind": "added",
+          "before": null,
+          "after": "实验负责人负责确认独立反应批次与测量误差"
+        },
+        {
+          "field": "acceptance",
+          "kind": "added",
+          "before": null,
+          "after": "取得记录前不做功效保证"
+        },
+        {
+          "field": "resources",
+          "kind": "added",
+          "before": null,
+          "after": "本轮最多一小时，只整理计划"
+        },
+        {
+          "field": "deliverable",
+          "kind": "added",
+          "before": null,
+          "after": "本轮只整理计划"
+        },
+        {
+          "field": "sampling",
+          "kind": "unknown",
+          "before": null,
+          "after": null
+        },
+        {
+          "field": "randomization",
+          "kind": "unknown",
+          "before": null,
+          "after": null
+        }
+      ]
+    }
+  ],
+  "approval": null,
+  "pending": {
+    "field": "factors",
+    "kind": "proposal",
+    "question": "关于因素与对比，是否按当前理解继续？",
+    "rationale": "这是从你的描述整理出的理解，不是经验证的事实。",
+    "options": [
+      {
+        "label": "按这个理解继续：催化剂（两种水平）；温度固定为同一温度",
+        "value": "催化剂（两种水平）；温度固定为同一温度",
+        "action": "accept",
+        "id": "2c8851d27fd9"
+      },
+      {
+        "label": "暂不确定",
+        "value": "未知",
+        "action": "unknown",
+        "id": "2c3af7fa609c"
+      },
+      {
+        "label": "其他，我来补充",
+        "value": "",
+        "action": "custom",
+        "id": "47de6eddb129"
+      }
+    ],
+    "origin": "template",
+    "allow_accept": false,
+    "choice_policy": {
+      "intent": "comparison",
+      "origin": "user_declared",
+      "policy_hash": null
+    },
+    "choice_id": "ce1631931fa01079",
+    "choice_plan_hash": "01c86ab902d733bd588e33169e253b122c487ca4713bf8ebe2415aff2c1e31c1"
+  },
+  "reflections": [],
+  "changes": [
+    {
+      "field": "research_question",
+      "kind": "added",
+      "before": null,
+      "after": "比较两种催化剂在同一温度下的产率"
+    },
+    {
+      "field": "objective_type",
+      "kind": "added",
+      "before": null,
+      "after": "comparison"
+    },
+    {
+      "field": "factors",
+      "kind": "added",
+      "before": null,
+      "after": "催化剂（两种水平）；温度固定为同一温度"
+    },
+    {
+      "field": "outcomes",
+      "kind": "added",
+      "before": null,
+      "after": "产率"
+    },
+    {
+      "field": "sampling",
+      "kind": "unknown",
+      "before": null,
+      "after": null
+    },
+    {
+      "field": "analysis",
+      "kind": "unknown",
+      "before": null,
+      "after": null
+    },
+    {
+      "field": "experimental_unit",
+      "kind": "added",
+      "before": null,
+      "after": "独立反应批次（待实验负责人确认）"
+    },
+    {
+      "field": "data_source",
+      "kind": "added",
+      "before": null,
+      "after": "历史先导记录（需先查找）"
+    },
+    {
+      "field": "human_roles",
+      "kind": "added",
+      "before": null,
+      "after": "实验负责人负责确认独立反应批次与测量误差"
+    },
+    {
+      "field": "acceptance",
+      "kind": "added",
+      "before": null,
+      "after": "取得记录前不做功效保证"
+    },
+    {
+      "field": "resources",
+      "kind": "added",
+      "before": null,
+      "after": "本轮最多一小时，只整理计划"
+    },
+    {
+      "field": "deliverable",
+      "kind": "added",
+      "before": null,
+      "after": "本轮只整理计划"
+    },
+    {
+      "field": "sampling",
+      "kind": "unknown",
+      "before": null,
+      "after": null
+    },
+    {
+      "field": "randomization",
+      "kind": "unknown",
+      "before": null,
+      "after": null
+    }
+  ],
+  "stale": {},
+  "turns": 2,
+  "audience": "researcher_student",
+  "last_notes": [
+    "未把模型推测的“分析与不确定性未知”写成用户声明；该字段仍待澄清。",
+    "语义改写和推断仅作为待确认提议展示，不会自动成为已确认边界。",
+    "本轮动态澄清不可用或未通过校验，已使用模板继续；已有边界保留。"
+  ],
+  "last_export": null,
+  "clarification": {
+    "mode": "template",
+    "reason": "model_unavailable_or_rejected",
+    "model_used": true,
+    "error_type": "RunLimitError",
+    "validation_error": "RunLimitError"
+  },
+  "question_history": [
+    {
+      "turn": 1,
+      "field": "factors",
+      "kind": "proposal",
+      "question": "关于因素与对比，是否按当前理解继续？",
+      "origin": "template",
+      "basis_hash": "f84f7d73cd26ba9d11a9ce45b512df56b403bca3298fbfe2eb6ee26c0aa63a71"
+    },
+    {
+      "turn": 2,
+      "field": "factors",
+      "kind": "proposal",
+      "question": "关于因素与对比，是否按当前理解继续？",
+      "origin": "template",
+      "basis_hash": "5f35603a931394a4c9e4bbae37bbc50285e6dcffdeeb259c4560de51b3422ae0"
+    }
+  ]
+}

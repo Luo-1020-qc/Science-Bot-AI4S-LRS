@@ -1,0 +1,34 @@
+scenario_name: 三种催化剂的产率比较
+domain: 化学
+skeleton: S5
+executable: false
+summary: 三种催化剂在相同反应条件下的产率多组比较
+vocabulary:
+  treatment_name: 催化剂
+  outcome_name: 产率
+  unit: '%'
+  comparison: 催化剂 A / B / C
+survey_questions:
+- 三种催化剂的差异是什么？
+- 原料批次与前处理是否一致？
+- 温度、时间、溶剂等条件是否一致？
+- 每种催化剂几次独立反应？
+- 产率如何测定？误差来源？
+- 是否检查方差齐性？
+rubric:
+- 催化剂定义与批次
+- 反应条件受控
+- 每种独立反应数 >= 3
+- 产率测定方法与误差
+- 方差齐性或非参备选
+- 多重性校正（Tukey）
+- 效应阈值有来源
+proposal_template:
+- 研究目标
+- 催化剂与条件
+- 重复与测定
+- 统计方法（ANOVA + Tukey）
+- 验收标准
+- 局限
+source: 骨架聚类表 v1 · S5 · 化学行
+notes: 不可执行：S5 待开发。与 S1 催化剂壳同构，水平 2→3

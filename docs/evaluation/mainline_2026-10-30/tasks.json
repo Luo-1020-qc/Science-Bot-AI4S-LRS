@@ -1,0 +1,1170 @@
+{
+  "schema_version": "planning_mainline_cases_v1",
+  "provenance": {
+    "source_kind": "implementer_authored_synthetic_engineering_diagnostic",
+    "human_participants": 0,
+    "expert_approved": false,
+    "split": "development_only",
+    "independent_root_groups": 2,
+    "limitations": [
+      "Ten mechanism cases share two authored families; no blind generalization claim.",
+      "Offline answers use explicit field syntax; they do not measure free-text LLM extraction.",
+      "Private answers and expected values are evaluator-only, never injected into the agent state or provider context."
+    ]
+  },
+  "cases": [
+    {
+      "id": "models_multi_answer",
+      "domain": "models",
+      "mechanism": "multi_answer",
+      "root_group": "implementer_synthetic_models_v1",
+      "initial_input": "我想比较线性模型和非线性基线在合成二维场上的误差和耗时，帮我规划实验，我还没确定比较边界。",
+      "private": {
+        "answers": {
+          "objective_type": "comparison",
+          "hypothesis": "在指定合成场范围内，线性候选的单位误差能否接近非线性基线，并降低运行成本？",
+          "scope": "仅限 synthetic_field_v1 合成二维稳态场、相同分辨率和固定预算，不外推新方程。",
+          "exclusions": "不声称复现真实论文，不推断因果，不外推到不同分辨率。",
+          "experimental_unit": "以独立生成的完整场实现为推断单位；同一实现场上两模型配对，网格点不是独立重复。",
+          "factors": "线性候选与非线性基线两个模型水平；主要比较候选减基线。",
+          "design": "paired",
+          "outcomes": "每个独立场实现上相对 L2 误差的均值，越低越好；耗时作为辅助指标。",
+          "baseline": "非线性基线与线性候选共享相同训练、验证、测试划分、调参次数和硬件预算。",
+          "data_source": "工程诊断用 synthetic_field_v1；按独立场来源分组隔离训练、验证和最终测试，防止数据泄漏。",
+          "sampling": "固定预算先导，仅检查单位独立性与配对测量流程；不宣称功效保证。",
+          "randomization": "在独立场内配对比较，随机排列模型运行顺序，记录实际分配和种子。",
+          "analysis": "估计同一场上候选减基线的误差均值差，以完整场为重采样单位报告 bootstrap 区间，不把网格点作独立样本。",
+          "acceptance": "逐项交付配对差、区间、耗时与失败日志；阴性或不确定结果同样报告；最多6次运行或2小时上限即停止，不按结果加预算。",
+          "resources": "仅规划，后续先导最多6次运行、2小时上限；本轮不执行训练。",
+          "risks": "独立场来源、配对关系或单位汇总未核实时停止并交还研究者，不补造观测结果。",
+          "reproducibility": "记录数据版本、代码版本、配置、种子、实际顺序与全部偏离日志。",
+          "human_roles": "学生确认研究边界，导师复核配对与分析假设，研究者负责结论和另行执行授权。",
+          "deliverable": "实验设计、配对对比与验收清单、未知和来源清单、复现记录模板。",
+          "research_question": "我想比较线性模型和非线性基线在合成二维场上的误差和耗时，帮我规划实验，我还没确定比较边界。"
+        },
+        "bundles": [
+          [
+            "research_question",
+            "objective_type",
+            "hypothesis",
+            "scope",
+            "exclusions"
+          ],
+          [
+            "experimental_unit",
+            "factors",
+            "design",
+            "baseline"
+          ],
+          [
+            "data_source",
+            "sampling",
+            "randomization"
+          ],
+          [
+            "outcomes",
+            "analysis",
+            "acceptance"
+          ],
+          [
+            "resources",
+            "risks",
+            "reproducibility",
+            "human_roles",
+            "deliverable"
+          ]
+        ],
+        "events": [],
+        "evidence_text": "合成文献片段，仅工程诊断：该示例不提供方差、样本量或统计功效依据。引用此片段不能填补未知数值。",
+        "acquisition_step": "先核查已有先导记录与单位独立性，再请方法负责人确认样本与重复依据；取得记录前保持未知。"
+      },
+      "expected": {
+        "outcome": "reviewable_design",
+        "values": {
+          "objective_type": "comparison",
+          "hypothesis": "在指定合成场范围内，线性候选的单位误差能否接近非线性基线，并降低运行成本？",
+          "scope": "仅限 synthetic_field_v1 合成二维稳态场、相同分辨率和固定预算，不外推新方程。",
+          "exclusions": "不声称复现真实论文，不推断因果，不外推到不同分辨率。",
+          "experimental_unit": "以独立生成的完整场实现为推断单位；同一实现场上两模型配对，网格点不是独立重复。",
+          "factors": "线性候选与非线性基线两个模型水平；主要比较候选减基线。",
+          "design": "paired",
+          "outcomes": "每个独立场实现上相对 L2 误差的均值，越低越好；耗时作为辅助指标。",
+          "baseline": "非线性基线与线性候选共享相同训练、验证、测试划分、调参次数和硬件预算。",
+          "data_source": "工程诊断用 synthetic_field_v1；按独立场来源分组隔离训练、验证和最终测试，防止数据泄漏。",
+          "sampling": "固定预算先导，仅检查单位独立性与配对测量流程；不宣称功效保证。",
+          "randomization": "在独立场内配对比较，随机排列模型运行顺序，记录实际分配和种子。",
+          "analysis": "估计同一场上候选减基线的误差均值差，以完整场为重采样单位报告 bootstrap 区间，不把网格点作独立样本。",
+          "acceptance": "逐项交付配对差、区间、耗时与失败日志；阴性或不确定结果同样报告；最多6次运行或2小时上限即停止，不按结果加预算。",
+          "resources": "仅规划，后续先导最多6次运行、2小时上限；本轮不执行训练。",
+          "risks": "独立场来源、配对关系或单位汇总未核实时停止并交还研究者，不补造观测结果。",
+          "reproducibility": "记录数据版本、代码版本、配置、种子、实际顺序与全部偏离日志。",
+          "human_roles": "学生确认研究边界，导师复核配对与分析假设，研究者负责结论和另行执行授权。",
+          "deliverable": "实验设计、配对对比与验收清单、未知和来源清单、复现记录模板。",
+          "research_question": "我想比较线性模型和非线性基线在合成二维场上的误差和耗时，帮我规划实验，我还没确定比较边界。"
+        },
+        "critical_fields": [
+          "scope",
+          "experimental_unit",
+          "data_source",
+          "outcomes",
+          "analysis",
+          "acceptance",
+          "resources",
+          "human_roles"
+        ],
+        "reasonable_next_fields": [
+          "objective_type",
+          "scope",
+          "experimental_unit",
+          "data_source",
+          "outcomes",
+          "acceptance"
+        ],
+        "human_review_status": "pending_not_expert_approved"
+      },
+      "initial_input_kind": "vague_natural_request"
+    },
+    {
+      "id": "models_correction",
+      "domain": "models",
+      "mechanism": "correction",
+      "root_group": "implementer_synthetic_models_v1",
+      "initial_input": "我想比较线性模型和非线性基线在合成二维场上的误差和耗时，帮我规划实验，我还没确定比较边界。",
+      "private": {
+        "answers": {
+          "objective_type": "comparison",
+          "hypothesis": "在指定合成场范围内，线性候选的单位误差能否接近非线性基线，并降低运行成本？",
+          "scope": "仅限 synthetic_field_v1 合成二维稳态场、相同分辨率和固定预算，不外推新方程。",
+          "exclusions": "不声称复现真实论文，不推断因果，不外推到不同分辨率。",
+          "experimental_unit": "把同一对象上的重复测量当作不同独立单位，暂时没有配对或匹配依据。",
+          "factors": "线性候选与非线性基线两个模型水平；主要比较候选减基线。",
+          "design": "paired",
+          "outcomes": "每个独立场实现上相对 L2 误差的均值，越低越好；耗时作为辅助指标。",
+          "baseline": "非线性基线与线性候选共享相同训练、验证、测试划分、调参次数和硬件预算。",
+          "data_source": "工程诊断用 synthetic_field_v1；按独立场来源分组隔离训练、验证和最终测试，防止数据泄漏。",
+          "sampling": "固定预算先导，仅检查单位独立性与配对测量流程；不宣称功效保证。",
+          "randomization": "在独立场内配对比较，随机排列模型运行顺序，记录实际分配和种子。",
+          "analysis": "估计同一场上候选减基线的误差均值差，以完整场为重采样单位报告 bootstrap 区间，不把网格点作独立样本。",
+          "acceptance": "逐项交付配对差、区间、耗时与失败日志；阴性或不确定结果同样报告；最多6次运行或2小时上限即停止，不按结果加预算。",
+          "resources": "仅规划，后续先导最多6次运行、2小时上限；本轮不执行训练。",
+          "risks": "独立场来源、配对关系或单位汇总未核实时停止并交还研究者，不补造观测结果。",
+          "reproducibility": "记录数据版本、代码版本、配置、种子、实际顺序与全部偏离日志。",
+          "human_roles": "学生确认研究边界，导师复核配对与分析假设，研究者负责结论和另行执行授权。",
+          "deliverable": "实验设计、配对对比与验收清单、未知和来源清单、复现记录模板。",
+          "research_question": "我想比较线性模型和非线性基线在合成二维场上的误差和耗时，帮我规划实验，我还没确定比较边界。"
+        },
+        "bundles": [
+          [
+            "research_question",
+            "objective_type",
+            "hypothesis",
+            "scope",
+            "exclusions"
+          ],
+          [
+            "experimental_unit",
+            "factors",
+            "design",
+            "baseline"
+          ],
+          [
+            "data_source",
+            "sampling",
+            "randomization"
+          ],
+          [
+            "outcomes",
+            "analysis",
+            "acceptance"
+          ],
+          [
+            "resources",
+            "risks",
+            "reproducibility",
+            "human_roles",
+            "deliverable"
+          ]
+        ],
+        "events": [
+          {
+            "after_field": "experimental_unit",
+            "kind": "correction",
+            "text": "/plan revise experimental_unit: 以独立生成的完整场实现为推断单位；同一实现场上两模型配对，网格点不是独立重复。",
+            "field": "experimental_unit",
+            "value": "以独立生成的完整场实现为推断单位；同一实现场上两模型配对，网格点不是独立重复。"
+          }
+        ],
+        "evidence_text": "合成文献片段，仅工程诊断：该示例不提供方差、样本量或统计功效依据。引用此片段不能填补未知数值。",
+        "acquisition_step": "先核查已有先导记录与单位独立性，再请方法负责人确认样本与重复依据；取得记录前保持未知。"
+      },
+      "expected": {
+        "outcome": "reviewable_design",
+        "values": {
+          "objective_type": "comparison",
+          "hypothesis": "在指定合成场范围内，线性候选的单位误差能否接近非线性基线，并降低运行成本？",
+          "scope": "仅限 synthetic_field_v1 合成二维稳态场、相同分辨率和固定预算，不外推新方程。",
+          "exclusions": "不声称复现真实论文，不推断因果，不外推到不同分辨率。",
+          "experimental_unit": "以独立生成的完整场实现为推断单位；同一实现场上两模型配对，网格点不是独立重复。",
+          "factors": "线性候选与非线性基线两个模型水平；主要比较候选减基线。",
+          "design": "paired",
+          "outcomes": "每个独立场实现上相对 L2 误差的均值，越低越好；耗时作为辅助指标。",
+          "baseline": "非线性基线与线性候选共享相同训练、验证、测试划分、调参次数和硬件预算。",
+          "data_source": "工程诊断用 synthetic_field_v1；按独立场来源分组隔离训练、验证和最终测试，防止数据泄漏。",
+          "sampling": "固定预算先导，仅检查单位独立性与配对测量流程；不宣称功效保证。",
+          "randomization": "在独立场内配对比较，随机排列模型运行顺序，记录实际分配和种子。",
+          "analysis": "估计同一场上候选减基线的误差均值差，以完整场为重采样单位报告 bootstrap 区间，不把网格点作独立样本。",
+          "acceptance": "逐项交付配对差、区间、耗时与失败日志；阴性或不确定结果同样报告；最多6次运行或2小时上限即停止，不按结果加预算。",
+          "resources": "仅规划，后续先导最多6次运行、2小时上限；本轮不执行训练。",
+          "risks": "独立场来源、配对关系或单位汇总未核实时停止并交还研究者，不补造观测结果。",
+          "reproducibility": "记录数据版本、代码版本、配置、种子、实际顺序与全部偏离日志。",
+          "human_roles": "学生确认研究边界，导师复核配对与分析假设，研究者负责结论和另行执行授权。",
+          "deliverable": "实验设计、配对对比与验收清单、未知和来源清单、复现记录模板。",
+          "research_question": "我想比较线性模型和非线性基线在合成二维场上的误差和耗时，帮我规划实验，我还没确定比较边界。"
+        },
+        "critical_fields": [
+          "scope",
+          "experimental_unit",
+          "data_source",
+          "outcomes",
+          "analysis",
+          "acceptance",
+          "resources",
+          "human_roles"
+        ],
+        "reasonable_next_fields": [
+          "objective_type",
+          "scope",
+          "experimental_unit",
+          "data_source",
+          "outcomes",
+          "acceptance"
+        ],
+        "human_review_status": "pending_not_expert_approved"
+      },
+      "initial_input_kind": "vague_natural_request"
+    },
+    {
+      "id": "models_unknown",
+      "domain": "models",
+      "mechanism": "unknown",
+      "root_group": "implementer_synthetic_models_v1",
+      "initial_input": "我想比较线性模型和非线性基线在合成二维场上的误差和耗时，帮我规划实验，我还没确定比较边界。",
+      "private": {
+        "answers": {
+          "objective_type": "comparison",
+          "hypothesis": "在指定合成场范围内，线性候选的单位误差能否接近非线性基线，并降低运行成本？",
+          "scope": "仅限 synthetic_field_v1 合成二维稳态场、相同分辨率和固定预算，不外推新方程。",
+          "exclusions": "不声称复现真实论文，不推断因果，不外推到不同分辨率。",
+          "experimental_unit": "以独立生成的完整场实现为推断单位；同一实现场上两模型配对，网格点不是独立重复。",
+          "factors": "线性候选与非线性基线两个模型水平；主要比较候选减基线。",
+          "design": "paired",
+          "outcomes": "每个独立场实现上相对 L2 误差的均值，越低越好；耗时作为辅助指标。",
+          "baseline": "非线性基线与线性候选共享相同训练、验证、测试划分、调参次数和硬件预算。",
+          "data_source": "工程诊断用 synthetic_field_v1；按独立场来源分组隔离训练、验证和最终测试，防止数据泄漏。",
+          "sampling": "未知",
+          "randomization": "在独立场内配对比较，随机排列模型运行顺序，记录实际分配和种子。",
+          "analysis": "估计同一场上候选减基线的误差均值差，以完整场为重采样单位报告 bootstrap 区间，不把网格点作独立样本。",
+          "acceptance": "逐项交付配对差、区间、耗时与失败日志；阴性或不确定结果同样报告；最多6次运行或2小时上限即停止，不按结果加预算。",
+          "resources": "仅规划，后续先导最多6次运行、2小时上限；本轮不执行训练。",
+          "risks": "独立场来源、配对关系或单位汇总未核实时停止并交还研究者，不补造观测结果。",
+          "reproducibility": "记录数据版本、代码版本、配置、种子、实际顺序与全部偏离日志。",
+          "human_roles": "学生确认研究边界，导师复核配对与分析假设，研究者负责结论和另行执行授权。",
+          "deliverable": "实验设计、配对对比与验收清单、未知和来源清单、复现记录模板。",
+          "research_question": "我想比较线性模型和非线性基线在合成二维场上的误差和耗时，帮我规划实验，我还没确定比较边界。"
+        },
+        "bundles": [
+          [
+            "research_question",
+            "objective_type",
+            "hypothesis",
+            "scope",
+            "exclusions"
+          ],
+          [
+            "experimental_unit",
+            "factors",
+            "design",
+            "baseline"
+          ],
+          [
+            "data_source",
+            "sampling",
+            "randomization"
+          ],
+          [
+            "outcomes",
+            "analysis",
+            "acceptance"
+          ],
+          [
+            "resources",
+            "risks",
+            "reproducibility",
+            "human_roles",
+            "deliverable"
+          ]
+        ],
+        "events": [],
+        "evidence_text": "合成文献片段，仅工程诊断：该示例不提供方差、样本量或统计功效依据。引用此片段不能填补未知数值。",
+        "acquisition_step": "先核查已有先导记录与单位独立性，再请方法负责人确认样本与重复依据；取得记录前保持未知。"
+      },
+      "expected": {
+        "outcome": "blocked_with_evidence_step",
+        "values": {
+          "objective_type": "comparison",
+          "hypothesis": "在指定合成场范围内，线性候选的单位误差能否接近非线性基线，并降低运行成本？",
+          "scope": "仅限 synthetic_field_v1 合成二维稳态场、相同分辨率和固定预算，不外推新方程。",
+          "exclusions": "不声称复现真实论文，不推断因果，不外推到不同分辨率。",
+          "experimental_unit": "以独立生成的完整场实现为推断单位；同一实现场上两模型配对，网格点不是独立重复。",
+          "factors": "线性候选与非线性基线两个模型水平；主要比较候选减基线。",
+          "design": "paired",
+          "outcomes": "每个独立场实现上相对 L2 误差的均值，越低越好；耗时作为辅助指标。",
+          "baseline": "非线性基线与线性候选共享相同训练、验证、测试划分、调参次数和硬件预算。",
+          "data_source": "工程诊断用 synthetic_field_v1；按独立场来源分组隔离训练、验证和最终测试，防止数据泄漏。",
+          "sampling": "未知",
+          "randomization": "在独立场内配对比较，随机排列模型运行顺序，记录实际分配和种子。",
+          "analysis": "估计同一场上候选减基线的误差均值差，以完整场为重采样单位报告 bootstrap 区间，不把网格点作独立样本。",
+          "acceptance": "逐项交付配对差、区间、耗时与失败日志；阴性或不确定结果同样报告；最多6次运行或2小时上限即停止，不按结果加预算。",
+          "resources": "仅规划，后续先导最多6次运行、2小时上限；本轮不执行训练。",
+          "risks": "独立场来源、配对关系或单位汇总未核实时停止并交还研究者，不补造观测结果。",
+          "reproducibility": "记录数据版本、代码版本、配置、种子、实际顺序与全部偏离日志。",
+          "human_roles": "学生确认研究边界，导师复核配对与分析假设，研究者负责结论和另行执行授权。",
+          "deliverable": "实验设计、配对对比与验收清单、未知和来源清单、复现记录模板。",
+          "research_question": "我想比较线性模型和非线性基线在合成二维场上的误差和耗时，帮我规划实验，我还没确定比较边界。"
+        },
+        "critical_fields": [
+          "scope",
+          "experimental_unit",
+          "data_source",
+          "outcomes",
+          "analysis",
+          "acceptance",
+          "resources",
+          "human_roles"
+        ],
+        "reasonable_next_fields": [
+          "objective_type",
+          "scope",
+          "experimental_unit",
+          "data_source",
+          "outcomes",
+          "acceptance"
+        ],
+        "human_review_status": "pending_not_expert_approved"
+      },
+      "initial_input_kind": "vague_natural_request"
+    },
+    {
+      "id": "models_goal_change",
+      "domain": "models",
+      "mechanism": "goal_change",
+      "root_group": "implementer_synthetic_models_v1",
+      "initial_input": "我想比较线性模型和非线性基线在合成二维场上的误差和耗时，帮我规划实验，我还没确定比较边界。",
+      "private": {
+        "answers": {
+          "objective_type": "comparison",
+          "hypothesis": "在指定合成场范围内，线性候选的单位误差能否接近非线性基线，并降低运行成本？",
+          "scope": "仅限 synthetic_field_v1 合成二维稳态场、相同分辨率和固定预算，不外推新方程。",
+          "exclusions": "不声称复现真实论文，不推断因果，不外推到不同分辨率。",
+          "experimental_unit": "以独立生成的完整场实现为推断单位；同一实现场上两模型配对，网格点不是独立重复。",
+          "factors": "线性候选与非线性基线两个模型水平；主要比较候选减基线。",
+          "design": "paired",
+          "outcomes": "每个独立场实现上相对 L2 误差的均值，越低越好；耗时作为辅助指标。",
+          "baseline": "非线性基线与线性候选共享相同训练、验证、测试划分、调参次数和硬件预算。",
+          "data_source": "工程诊断用 synthetic_field_v1；按独立场来源分组隔离训练、验证和最终测试，防止数据泄漏。",
+          "sampling": "固定预算先导，仅检查单位独立性与配对测量流程；不宣称功效保证。",
+          "randomization": "在独立场内配对比较，随机排列模型运行顺序，记录实际分配和种子。",
+          "analysis": "估计同一场上候选减基线的误差均值差，以完整场为重采样单位报告 bootstrap 区间，不把网格点作独立样本。",
+          "acceptance": "逐项交付配对差、区间、耗时与失败日志；阴性或不确定结果同样报告；最多6次运行或2小时上限即停止，不按结果加预算。",
+          "resources": "仅规划，后续先导最多6次运行、2小时上限；本轮不执行训练。",
+          "risks": "独立场来源、配对关系或单位汇总未核实时停止并交还研究者，不补造观测结果。",
+          "reproducibility": "记录数据版本、代码版本、配置、种子、实际顺序与全部偏离日志。",
+          "human_roles": "学生确认研究边界，导师复核配对与分析假设，研究者负责结论和另行执行授权。",
+          "deliverable": "实验设计、配对对比与验收清单、未知和来源清单、复现记录模板。",
+          "research_question": "我想比较线性模型和非线性基线在合成二维场上的误差和耗时，帮我规划实验，我还没确定比较边界。"
+        },
+        "bundles": [
+          [
+            "research_question",
+            "objective_type",
+            "hypothesis",
+            "scope",
+            "exclusions"
+          ],
+          [
+            "experimental_unit",
+            "factors",
+            "design",
+            "baseline"
+          ],
+          [
+            "data_source",
+            "sampling",
+            "randomization"
+          ],
+          [
+            "outcomes",
+            "analysis",
+            "acceptance"
+          ],
+          [
+            "resources",
+            "risks",
+            "reproducibility",
+            "human_roles",
+            "deliverable"
+          ]
+        ],
+        "events": [
+          {
+            "after_ready": true,
+            "kind": "goal_change",
+            "values": {
+              "objective_type": "prediction",
+              "hypothesis": "在指定合成场范围内，线性候选的单位误差能否接近非线性基线，并降低运行成本？",
+              "scope": "仅限 synthetic_field_v1 合成二维稳态场、相同分辨率和固定预算，不外推新方程。",
+              "exclusions": "不声称复现真实论文，不推断因果，不外推到不同分辨率。",
+              "experimental_unit": "以独立生成的完整场实现为推断单位；同一实现场上两模型配对，网格点不是独立重复。",
+              "factors": "线性候选与非线性基线两个模型水平；主要比较候选减基线。",
+              "design": "prediction",
+              "outcomes": "每个独立场实现上相对 L2 误差的均值，越低越好；耗时作为辅助指标。",
+              "baseline": "非线性基线与线性候选共享相同训练、验证、测试划分、调参次数和硬件预算。",
+              "data_source": "工程诊断用 synthetic_field_v1；按独立场来源分组隔离训练、验证和最终测试，防止数据泄漏。",
+              "sampling": "固定预算先导，仅检查单位独立性与配对测量流程；不宣称功效保证。",
+              "randomization": "在独立场内配对比较，随机排列模型运行顺序，记录实际分配和种子。",
+              "analysis": "仅在验证集选超参数，冻结后评估最终测试；按独立场 bootstrap 报告预测误差与不确定区间。",
+              "acceptance": "逐项交付配对差、区间、耗时与失败日志；阴性或不确定结果同样报告；最多6次运行或2小时上限即停止，不按结果加预算。",
+              "resources": "仅规划，后续先导最多6次运行、2小时上限；本轮不执行训练。",
+              "risks": "独立场来源、配对关系或单位汇总未核实时停止并交还研究者，不补造观测结果。",
+              "reproducibility": "记录数据版本、代码版本、配置、种子、实际顺序与全部偏离日志。",
+              "human_roles": "学生确认研究边界，导师复核配对与分析假设，研究者负责结论和另行执行授权。",
+              "deliverable": "实验设计、配对对比与验收清单、未知和来源清单、复现记录模板。",
+              "research_question": "在同一合成场范围预测未见独立场的误差表现，不再检验哪种模型更优的命题。"
+            }
+          }
+        ],
+        "evidence_text": "合成文献片段，仅工程诊断：该示例不提供方差、样本量或统计功效依据。引用此片段不能填补未知数值。",
+        "acquisition_step": "先核查已有先导记录与单位独立性，再请方法负责人确认样本与重复依据；取得记录前保持未知。"
+      },
+      "expected": {
+        "outcome": "reviewable_design",
+        "values": {
+          "objective_type": "prediction",
+          "hypothesis": "在指定合成场范围内，线性候选的单位误差能否接近非线性基线，并降低运行成本？",
+          "scope": "仅限 synthetic_field_v1 合成二维稳态场、相同分辨率和固定预算，不外推新方程。",
+          "exclusions": "不声称复现真实论文，不推断因果，不外推到不同分辨率。",
+          "experimental_unit": "以独立生成的完整场实现为推断单位；同一实现场上两模型配对，网格点不是独立重复。",
+          "factors": "线性候选与非线性基线两个模型水平；主要比较候选减基线。",
+          "design": "prediction",
+          "outcomes": "每个独立场实现上相对 L2 误差的均值，越低越好；耗时作为辅助指标。",
+          "baseline": "非线性基线与线性候选共享相同训练、验证、测试划分、调参次数和硬件预算。",
+          "data_source": "工程诊断用 synthetic_field_v1；按独立场来源分组隔离训练、验证和最终测试，防止数据泄漏。",
+          "sampling": "固定预算先导，仅检查单位独立性与配对测量流程；不宣称功效保证。",
+          "randomization": "在独立场内配对比较，随机排列模型运行顺序，记录实际分配和种子。",
+          "analysis": "仅在验证集选超参数，冻结后评估最终测试；按独立场 bootstrap 报告预测误差与不确定区间。",
+          "acceptance": "逐项交付配对差、区间、耗时与失败日志；阴性或不确定结果同样报告；最多6次运行或2小时上限即停止，不按结果加预算。",
+          "resources": "仅规划，后续先导最多6次运行、2小时上限；本轮不执行训练。",
+          "risks": "独立场来源、配对关系或单位汇总未核实时停止并交还研究者，不补造观测结果。",
+          "reproducibility": "记录数据版本、代码版本、配置、种子、实际顺序与全部偏离日志。",
+          "human_roles": "学生确认研究边界，导师复核配对与分析假设，研究者负责结论和另行执行授权。",
+          "deliverable": "实验设计、配对对比与验收清单、未知和来源清单、复现记录模板。",
+          "research_question": "在同一合成场范围预测未见独立场的误差表现，不再检验哪种模型更优的命题。"
+        },
+        "critical_fields": [
+          "scope",
+          "experimental_unit",
+          "data_source",
+          "outcomes",
+          "analysis",
+          "acceptance",
+          "resources",
+          "human_roles"
+        ],
+        "reasonable_next_fields": [
+          "objective_type",
+          "scope",
+          "experimental_unit",
+          "data_source",
+          "outcomes",
+          "acceptance"
+        ],
+        "human_review_status": "pending_not_expert_approved"
+      },
+      "initial_input_kind": "vague_natural_request"
+    },
+    {
+      "id": "models_complete_input",
+      "domain": "models",
+      "mechanism": "complete_input",
+      "root_group": "implementer_synthetic_models_v1",
+      "initial_input": "我想比较线性模型和非线性基线在合成二维场上的误差和耗时，帮我规划实验，我还没确定比较边界。\n研究目的：comparison\n待检验命题：在指定合成场范围内，线性候选的单位误差能否接近非线性基线，并降低运行成本？\n研究边界：仅限 synthetic_field_v1 合成二维稳态场、相同分辨率和固定预算，不外推新方程。\n本轮不回答的问题：不声称复现真实论文，不推断因果，不外推到不同分辨率。\n实验与推断单位：以独立生成的完整场实现为推断单位；同一实现场上两模型配对，网格点不是独立重复。\n因素与对比：线性候选与非线性基线两个模型水平；主要比较候选减基线。\n设计结构：paired\n主要响应与测量：每个独立场实现上相对 L2 误差的均值，越低越好；耗时作为辅助指标。\n基线与公平比较：非线性基线与线性候选共享相同训练、验证、测试划分、调参次数和硬件预算。\n数据与证据来源：工程诊断用 synthetic_field_v1；按独立场来源分组隔离训练、验证和最终测试，防止数据泄漏。\n样本与重复依据：固定预算先导，仅检查单位独立性与配对测量流程；不宣称功效保证。\n分配与偏差控制：在独立场内配对比较，随机排列模型运行顺序，记录实际分配和种子。\n分析与不确定性：估计同一场上候选减基线的误差均值差，以完整场为重采样单位报告 bootstrap 区间，不把网格点作独立样本。\n验收和停止规则：逐项交付配对差、区间、耗时与失败日志；阴性或不确定结果同样报告；最多6次运行或2小时上限即停止，不按结果加预算。\n资源边界：仅规划，后续先导最多6次运行、2小时上限；本轮不执行训练。\n风险与未决条件：独立场来源、配对关系或单位汇总未核实时停止并交还研究者，不补造观测结果。\n复现记录：记录数据版本、代码版本、配置、种子、实际顺序与全部偏离日志。\n人类职责：学生确认研究边界，导师复核配对与分析假设，研究者负责结论和另行执行授权。\n交付物：实验设计、配对对比与验收清单、未知和来源清单、复现记录模板。\n研究问题：我想比较线性模型和非线性基线在合成二维场上的误差和耗时，帮我规划实验，我还没确定比较边界。",
+      "private": {
+        "answers": {
+          "objective_type": "comparison",
+          "hypothesis": "在指定合成场范围内，线性候选的单位误差能否接近非线性基线，并降低运行成本？",
+          "scope": "仅限 synthetic_field_v1 合成二维稳态场、相同分辨率和固定预算，不外推新方程。",
+          "exclusions": "不声称复现真实论文，不推断因果，不外推到不同分辨率。",
+          "experimental_unit": "以独立生成的完整场实现为推断单位；同一实现场上两模型配对，网格点不是独立重复。",
+          "factors": "线性候选与非线性基线两个模型水平；主要比较候选减基线。",
+          "design": "paired",
+          "outcomes": "每个独立场实现上相对 L2 误差的均值，越低越好；耗时作为辅助指标。",
+          "baseline": "非线性基线与线性候选共享相同训练、验证、测试划分、调参次数和硬件预算。",
+          "data_source": "工程诊断用 synthetic_field_v1；按独立场来源分组隔离训练、验证和最终测试，防止数据泄漏。",
+          "sampling": "固定预算先导，仅检查单位独立性与配对测量流程；不宣称功效保证。",
+          "randomization": "在独立场内配对比较，随机排列模型运行顺序，记录实际分配和种子。",
+          "analysis": "估计同一场上候选减基线的误差均值差，以完整场为重采样单位报告 bootstrap 区间，不把网格点作独立样本。",
+          "acceptance": "逐项交付配对差、区间、耗时与失败日志；阴性或不确定结果同样报告；最多6次运行或2小时上限即停止，不按结果加预算。",
+          "resources": "仅规划，后续先导最多6次运行、2小时上限；本轮不执行训练。",
+          "risks": "独立场来源、配对关系或单位汇总未核实时停止并交还研究者，不补造观测结果。",
+          "reproducibility": "记录数据版本、代码版本、配置、种子、实际顺序与全部偏离日志。",
+          "human_roles": "学生确认研究边界，导师复核配对与分析假设，研究者负责结论和另行执行授权。",
+          "deliverable": "实验设计、配对对比与验收清单、未知和来源清单、复现记录模板。",
+          "research_question": "我想比较线性模型和非线性基线在合成二维场上的误差和耗时，帮我规划实验，我还没确定比较边界。"
+        },
+        "bundles": [
+          [
+            "research_question",
+            "objective_type",
+            "hypothesis",
+            "scope",
+            "exclusions"
+          ],
+          [
+            "experimental_unit",
+            "factors",
+            "design",
+            "baseline"
+          ],
+          [
+            "data_source",
+            "sampling",
+            "randomization"
+          ],
+          [
+            "outcomes",
+            "analysis",
+            "acceptance"
+          ],
+          [
+            "resources",
+            "risks",
+            "reproducibility",
+            "human_roles",
+            "deliverable"
+          ]
+        ],
+        "events": [],
+        "evidence_text": "合成文献片段，仅工程诊断：该示例不提供方差、样本量或统计功效依据。引用此片段不能填补未知数值。",
+        "acquisition_step": "先核查已有先导记录与单位独立性，再请方法负责人确认样本与重复依据；取得记录前保持未知。"
+      },
+      "expected": {
+        "outcome": "reviewable_design",
+        "values": {
+          "objective_type": "comparison",
+          "hypothesis": "在指定合成场范围内，线性候选的单位误差能否接近非线性基线，并降低运行成本？",
+          "scope": "仅限 synthetic_field_v1 合成二维稳态场、相同分辨率和固定预算，不外推新方程。",
+          "exclusions": "不声称复现真实论文，不推断因果，不外推到不同分辨率。",
+          "experimental_unit": "以独立生成的完整场实现为推断单位；同一实现场上两模型配对，网格点不是独立重复。",
+          "factors": "线性候选与非线性基线两个模型水平；主要比较候选减基线。",
+          "design": "paired",
+          "outcomes": "每个独立场实现上相对 L2 误差的均值，越低越好；耗时作为辅助指标。",
+          "baseline": "非线性基线与线性候选共享相同训练、验证、测试划分、调参次数和硬件预算。",
+          "data_source": "工程诊断用 synthetic_field_v1；按独立场来源分组隔离训练、验证和最终测试，防止数据泄漏。",
+          "sampling": "固定预算先导，仅检查单位独立性与配对测量流程；不宣称功效保证。",
+          "randomization": "在独立场内配对比较，随机排列模型运行顺序，记录实际分配和种子。",
+          "analysis": "估计同一场上候选减基线的误差均值差，以完整场为重采样单位报告 bootstrap 区间，不把网格点作独立样本。",
+          "acceptance": "逐项交付配对差、区间、耗时与失败日志；阴性或不确定结果同样报告；最多6次运行或2小时上限即停止，不按结果加预算。",
+          "resources": "仅规划，后续先导最多6次运行、2小时上限；本轮不执行训练。",
+          "risks": "独立场来源、配对关系或单位汇总未核实时停止并交还研究者，不补造观测结果。",
+          "reproducibility": "记录数据版本、代码版本、配置、种子、实际顺序与全部偏离日志。",
+          "human_roles": "学生确认研究边界，导师复核配对与分析假设，研究者负责结论和另行执行授权。",
+          "deliverable": "实验设计、配对对比与验收清单、未知和来源清单、复现记录模板。",
+          "research_question": "我想比较线性模型和非线性基线在合成二维场上的误差和耗时，帮我规划实验，我还没确定比较边界。"
+        },
+        "critical_fields": [
+          "scope",
+          "experimental_unit",
+          "data_source",
+          "outcomes",
+          "analysis",
+          "acceptance",
+          "resources",
+          "human_roles"
+        ],
+        "reasonable_next_fields": [
+          "objective_type",
+          "scope",
+          "experimental_unit",
+          "data_source",
+          "outcomes",
+          "acceptance"
+        ],
+        "human_review_status": "pending_not_expert_approved"
+      },
+      "initial_input_kind": "natural_start_with_explicit_decisions_complete_control"
+    },
+    {
+      "id": "materials_multi_answer",
+      "domain": "materials",
+      "mechanism": "multi_answer",
+      "root_group": "implementer_synthetic_materials_v1",
+      "initial_input": "我想预测新合金样品的室温屈服强度，帮我设计评估，先厘清适用范围和数据划分。",
+      "private": {
+        "answers": {
+          "objective_type": "prediction",
+          "scope": "仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺。",
+          "exclusions": "不将预测相关性解释为成分因果作用，不外推新工艺或真实材料性能。",
+          "experimental_unit": "同一合金批次内测量相关；以完整批次为隔离、重采样与推断单位，技术重复先按样品汇总。",
+          "design": "prediction",
+          "outcomes": "先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa。",
+          "baseline": "均值预测与线性回归为基线，候选树模型共享相同批次划分、特征和调参预算。",
+          "data_source": "工程诊断用 synthetic_alloy_v1；按合金批次分组隔离训练、验证和最终测试，防止技术重复泄漏。",
+          "sampling": "固定预算先导，先核查批次标识和可行划分，不宣称统计功效保证。",
+          "analysis": "验证集仅选择超参数，冻结后只评一次最终测试；以批次为单位 bootstrap 报告 MAE 差与不确定区间。",
+          "acceptance": "逐项交付最终测试误差、批次区间、基线和失败日志；阴性或不确定结果照样报告；批次无法隔离或4小时上限即停止。",
+          "resources": "仅规划，后续先导最多8次拟合、4小时上限；本轮不执行实验。",
+          "risks": "缺失批次标识、量纲不一致或样本跨划分泄漏时停止交还研究者核实。",
+          "reproducibility": "保存批次划分、数据版本、代码版本、种子、配置和全部失败记录。",
+          "human_roles": "学生确认预测范围，材料负责人复核批次和量纲，研究者负责结论与执行授权。",
+          "deliverable": "预测评估设计、防泄漏清单、基线对照与验收表、复现记录模板。",
+          "research_question": "我想预测新合金样品的室温屈服强度，帮我设计评估，先厘清适用范围和数据划分。"
+        },
+        "bundles": [
+          [
+            "research_question",
+            "objective_type",
+            "hypothesis",
+            "scope",
+            "exclusions"
+          ],
+          [
+            "experimental_unit",
+            "factors",
+            "design",
+            "baseline"
+          ],
+          [
+            "data_source",
+            "sampling",
+            "randomization"
+          ],
+          [
+            "outcomes",
+            "analysis",
+            "acceptance"
+          ],
+          [
+            "resources",
+            "risks",
+            "reproducibility",
+            "human_roles",
+            "deliverable"
+          ]
+        ],
+        "events": [],
+        "evidence_text": "合成文献片段，仅工程诊断：该示例不提供方差、样本量或统计功效依据。引用此片段不能填补未知数值。",
+        "acquisition_step": "先核查已有先导记录与单位独立性，再请方法负责人确认样本与重复依据；取得记录前保持未知。"
+      },
+      "expected": {
+        "outcome": "reviewable_design",
+        "values": {
+          "objective_type": "prediction",
+          "scope": "仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺。",
+          "exclusions": "不将预测相关性解释为成分因果作用，不外推新工艺或真实材料性能。",
+          "experimental_unit": "同一合金批次内测量相关；以完整批次为隔离、重采样与推断单位，技术重复先按样品汇总。",
+          "design": "prediction",
+          "outcomes": "先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa。",
+          "baseline": "均值预测与线性回归为基线，候选树模型共享相同批次划分、特征和调参预算。",
+          "data_source": "工程诊断用 synthetic_alloy_v1；按合金批次分组隔离训练、验证和最终测试，防止技术重复泄漏。",
+          "sampling": "固定预算先导，先核查批次标识和可行划分，不宣称统计功效保证。",
+          "analysis": "验证集仅选择超参数，冻结后只评一次最终测试；以批次为单位 bootstrap 报告 MAE 差与不确定区间。",
+          "acceptance": "逐项交付最终测试误差、批次区间、基线和失败日志；阴性或不确定结果照样报告；批次无法隔离或4小时上限即停止。",
+          "resources": "仅规划，后续先导最多8次拟合、4小时上限；本轮不执行实验。",
+          "risks": "缺失批次标识、量纲不一致或样本跨划分泄漏时停止交还研究者核实。",
+          "reproducibility": "保存批次划分、数据版本、代码版本、种子、配置和全部失败记录。",
+          "human_roles": "学生确认预测范围，材料负责人复核批次和量纲，研究者负责结论与执行授权。",
+          "deliverable": "预测评估设计、防泄漏清单、基线对照与验收表、复现记录模板。",
+          "research_question": "我想预测新合金样品的室温屈服强度，帮我设计评估，先厘清适用范围和数据划分。"
+        },
+        "critical_fields": [
+          "scope",
+          "experimental_unit",
+          "data_source",
+          "outcomes",
+          "analysis",
+          "acceptance",
+          "resources",
+          "human_roles"
+        ],
+        "reasonable_next_fields": [
+          "objective_type",
+          "scope",
+          "experimental_unit",
+          "data_source",
+          "outcomes",
+          "acceptance"
+        ],
+        "human_review_status": "pending_not_expert_approved"
+      },
+      "initial_input_kind": "vague_natural_request"
+    },
+    {
+      "id": "materials_correction",
+      "domain": "materials",
+      "mechanism": "correction",
+      "root_group": "implementer_synthetic_materials_v1",
+      "initial_input": "我想预测新合金样品的室温屈服强度，帮我设计评估，先厘清适用范围和数据划分。",
+      "private": {
+        "answers": {
+          "objective_type": "prediction",
+          "scope": "仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺。",
+          "exclusions": "不将预测相关性解释为成分因果作用，不外推新工艺或真实材料性能。",
+          "experimental_unit": "把同一对象上的重复测量当作不同独立单位，暂时没有配对或匹配依据。",
+          "design": "prediction",
+          "outcomes": "先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa。",
+          "baseline": "均值预测与线性回归为基线，候选树模型共享相同批次划分、特征和调参预算。",
+          "data_source": "工程诊断用 synthetic_alloy_v1；按合金批次分组隔离训练、验证和最终测试，防止技术重复泄漏。",
+          "sampling": "固定预算先导，先核查批次标识和可行划分，不宣称统计功效保证。",
+          "analysis": "验证集仅选择超参数，冻结后只评一次最终测试；以批次为单位 bootstrap 报告 MAE 差与不确定区间。",
+          "acceptance": "逐项交付最终测试误差、批次区间、基线和失败日志；阴性或不确定结果照样报告；批次无法隔离或4小时上限即停止。",
+          "resources": "仅规划，后续先导最多8次拟合、4小时上限；本轮不执行实验。",
+          "risks": "缺失批次标识、量纲不一致或样本跨划分泄漏时停止交还研究者核实。",
+          "reproducibility": "保存批次划分、数据版本、代码版本、种子、配置和全部失败记录。",
+          "human_roles": "学生确认预测范围，材料负责人复核批次和量纲，研究者负责结论与执行授权。",
+          "deliverable": "预测评估设计、防泄漏清单、基线对照与验收表、复现记录模板。",
+          "research_question": "我想预测新合金样品的室温屈服强度，帮我设计评估，先厘清适用范围和数据划分。"
+        },
+        "bundles": [
+          [
+            "research_question",
+            "objective_type",
+            "hypothesis",
+            "scope",
+            "exclusions"
+          ],
+          [
+            "experimental_unit",
+            "factors",
+            "design",
+            "baseline"
+          ],
+          [
+            "data_source",
+            "sampling",
+            "randomization"
+          ],
+          [
+            "outcomes",
+            "analysis",
+            "acceptance"
+          ],
+          [
+            "resources",
+            "risks",
+            "reproducibility",
+            "human_roles",
+            "deliverable"
+          ]
+        ],
+        "events": [
+          {
+            "after_field": "experimental_unit",
+            "kind": "correction",
+            "text": "/plan revise experimental_unit: 同一合金批次内测量相关；以完整批次为隔离、重采样与推断单位，技术重复先按样品汇总。",
+            "field": "experimental_unit",
+            "value": "同一合金批次内测量相关；以完整批次为隔离、重采样与推断单位，技术重复先按样品汇总。"
+          }
+        ],
+        "evidence_text": "合成文献片段，仅工程诊断：该示例不提供方差、样本量或统计功效依据。引用此片段不能填补未知数值。",
+        "acquisition_step": "先核查已有先导记录与单位独立性，再请方法负责人确认样本与重复依据；取得记录前保持未知。"
+      },
+      "expected": {
+        "outcome": "reviewable_design",
+        "values": {
+          "objective_type": "prediction",
+          "scope": "仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺。",
+          "exclusions": "不将预测相关性解释为成分因果作用，不外推新工艺或真实材料性能。",
+          "experimental_unit": "同一合金批次内测量相关；以完整批次为隔离、重采样与推断单位，技术重复先按样品汇总。",
+          "design": "prediction",
+          "outcomes": "先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa。",
+          "baseline": "均值预测与线性回归为基线，候选树模型共享相同批次划分、特征和调参预算。",
+          "data_source": "工程诊断用 synthetic_alloy_v1；按合金批次分组隔离训练、验证和最终测试，防止技术重复泄漏。",
+          "sampling": "固定预算先导，先核查批次标识和可行划分，不宣称统计功效保证。",
+          "analysis": "验证集仅选择超参数，冻结后只评一次最终测试；以批次为单位 bootstrap 报告 MAE 差与不确定区间。",
+          "acceptance": "逐项交付最终测试误差、批次区间、基线和失败日志；阴性或不确定结果照样报告；批次无法隔离或4小时上限即停止。",
+          "resources": "仅规划，后续先导最多8次拟合、4小时上限；本轮不执行实验。",
+          "risks": "缺失批次标识、量纲不一致或样本跨划分泄漏时停止交还研究者核实。",
+          "reproducibility": "保存批次划分、数据版本、代码版本、种子、配置和全部失败记录。",
+          "human_roles": "学生确认预测范围，材料负责人复核批次和量纲，研究者负责结论与执行授权。",
+          "deliverable": "预测评估设计、防泄漏清单、基线对照与验收表、复现记录模板。",
+          "research_question": "我想预测新合金样品的室温屈服强度，帮我设计评估，先厘清适用范围和数据划分。"
+        },
+        "critical_fields": [
+          "scope",
+          "experimental_unit",
+          "data_source",
+          "outcomes",
+          "analysis",
+          "acceptance",
+          "resources",
+          "human_roles"
+        ],
+        "reasonable_next_fields": [
+          "objective_type",
+          "scope",
+          "experimental_unit",
+          "data_source",
+          "outcomes",
+          "acceptance"
+        ],
+        "human_review_status": "pending_not_expert_approved"
+      },
+      "initial_input_kind": "vague_natural_request"
+    },
+    {
+      "id": "materials_unknown",
+      "domain": "materials",
+      "mechanism": "unknown",
+      "root_group": "implementer_synthetic_materials_v1",
+      "initial_input": "我想预测新合金样品的室温屈服强度，帮我设计评估，先厘清适用范围和数据划分。",
+      "private": {
+        "answers": {
+          "objective_type": "prediction",
+          "scope": "仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺。",
+          "exclusions": "不将预测相关性解释为成分因果作用，不外推新工艺或真实材料性能。",
+          "experimental_unit": "同一合金批次内测量相关；以完整批次为隔离、重采样与推断单位，技术重复先按样品汇总。",
+          "design": "prediction",
+          "outcomes": "先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa。",
+          "baseline": "均值预测与线性回归为基线，候选树模型共享相同批次划分、特征和调参预算。",
+          "data_source": "工程诊断用 synthetic_alloy_v1；按合金批次分组隔离训练、验证和最终测试，防止技术重复泄漏。",
+          "sampling": "未知",
+          "analysis": "验证集仅选择超参数，冻结后只评一次最终测试；以批次为单位 bootstrap 报告 MAE 差与不确定区间。",
+          "acceptance": "逐项交付最终测试误差、批次区间、基线和失败日志；阴性或不确定结果照样报告；批次无法隔离或4小时上限即停止。",
+          "resources": "仅规划，后续先导最多8次拟合、4小时上限；本轮不执行实验。",
+          "risks": "缺失批次标识、量纲不一致或样本跨划分泄漏时停止交还研究者核实。",
+          "reproducibility": "保存批次划分、数据版本、代码版本、种子、配置和全部失败记录。",
+          "human_roles": "学生确认预测范围，材料负责人复核批次和量纲，研究者负责结论与执行授权。",
+          "deliverable": "预测评估设计、防泄漏清单、基线对照与验收表、复现记录模板。",
+          "research_question": "我想预测新合金样品的室温屈服强度，帮我设计评估，先厘清适用范围和数据划分。"
+        },
+        "bundles": [
+          [
+            "research_question",
+            "objective_type",
+            "hypothesis",
+            "scope",
+            "exclusions"
+          ],
+          [
+            "experimental_unit",
+            "factors",
+            "design",
+            "baseline"
+          ],
+          [
+            "data_source",
+            "sampling",
+            "randomization"
+          ],
+          [
+            "outcomes",
+            "analysis",
+            "acceptance"
+          ],
+          [
+            "resources",
+            "risks",
+            "reproducibility",
+            "human_roles",
+            "deliverable"
+          ]
+        ],
+        "events": [],
+        "evidence_text": "合成文献片段，仅工程诊断：该示例不提供方差、样本量或统计功效依据。引用此片段不能填补未知数值。",
+        "acquisition_step": "先核查已有先导记录与单位独立性，再请方法负责人确认样本与重复依据；取得记录前保持未知。"
+      },
+      "expected": {
+        "outcome": "blocked_with_evidence_step",
+        "values": {
+          "objective_type": "prediction",
+          "scope": "仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺。",
+          "exclusions": "不将预测相关性解释为成分因果作用，不外推新工艺或真实材料性能。",
+          "experimental_unit": "同一合金批次内测量相关；以完整批次为隔离、重采样与推断单位，技术重复先按样品汇总。",
+          "design": "prediction",
+          "outcomes": "先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa。",
+          "baseline": "均值预测与线性回归为基线，候选树模型共享相同批次划分、特征和调参预算。",
+          "data_source": "工程诊断用 synthetic_alloy_v1；按合金批次分组隔离训练、验证和最终测试，防止技术重复泄漏。",
+          "sampling": "未知",
+          "analysis": "验证集仅选择超参数，冻结后只评一次最终测试；以批次为单位 bootstrap 报告 MAE 差与不确定区间。",
+          "acceptance": "逐项交付最终测试误差、批次区间、基线和失败日志；阴性或不确定结果照样报告；批次无法隔离或4小时上限即停止。",
+          "resources": "仅规划，后续先导最多8次拟合、4小时上限；本轮不执行实验。",
+          "risks": "缺失批次标识、量纲不一致或样本跨划分泄漏时停止交还研究者核实。",
+          "reproducibility": "保存批次划分、数据版本、代码版本、种子、配置和全部失败记录。",
+          "human_roles": "学生确认预测范围，材料负责人复核批次和量纲，研究者负责结论与执行授权。",
+          "deliverable": "预测评估设计、防泄漏清单、基线对照与验收表、复现记录模板。",
+          "research_question": "我想预测新合金样品的室温屈服强度，帮我设计评估，先厘清适用范围和数据划分。"
+        },
+        "critical_fields": [
+          "scope",
+          "experimental_unit",
+          "data_source",
+          "outcomes",
+          "analysis",
+          "acceptance",
+          "resources",
+          "human_roles"
+        ],
+        "reasonable_next_fields": [
+          "objective_type",
+          "scope",
+          "experimental_unit",
+          "data_source",
+          "outcomes",
+          "acceptance"
+        ],
+        "human_review_status": "pending_not_expert_approved"
+      },
+      "initial_input_kind": "vague_natural_request"
+    },
+    {
+      "id": "materials_goal_change",
+      "domain": "materials",
+      "mechanism": "goal_change",
+      "root_group": "implementer_synthetic_materials_v1",
+      "initial_input": "我想预测新合金样品的室温屈服强度，帮我设计评估，先厘清适用范围和数据划分。",
+      "private": {
+        "answers": {
+          "objective_type": "prediction",
+          "scope": "仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺。",
+          "exclusions": "不将预测相关性解释为成分因果作用，不外推新工艺或真实材料性能。",
+          "experimental_unit": "同一合金批次内测量相关；以完整批次为隔离、重采样与推断单位，技术重复先按样品汇总。",
+          "design": "prediction",
+          "outcomes": "先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa。",
+          "baseline": "均值预测与线性回归为基线，候选树模型共享相同批次划分、特征和调参预算。",
+          "data_source": "工程诊断用 synthetic_alloy_v1；按合金批次分组隔离训练、验证和最终测试，防止技术重复泄漏。",
+          "sampling": "固定预算先导，先核查批次标识和可行划分，不宣称统计功效保证。",
+          "analysis": "验证集仅选择超参数，冻结后只评一次最终测试；以批次为单位 bootstrap 报告 MAE 差与不确定区间。",
+          "acceptance": "逐项交付最终测试误差、批次区间、基线和失败日志；阴性或不确定结果照样报告；批次无法隔离或4小时上限即停止。",
+          "resources": "仅规划，后续先导最多8次拟合、4小时上限；本轮不执行实验。",
+          "risks": "缺失批次标识、量纲不一致或样本跨划分泄漏时停止交还研究者核实。",
+          "reproducibility": "保存批次划分、数据版本、代码版本、种子、配置和全部失败记录。",
+          "human_roles": "学生确认预测范围，材料负责人复核批次和量纲，研究者负责结论与执行授权。",
+          "deliverable": "预测评估设计、防泄漏清单、基线对照与验收表、复现记录模板。",
+          "research_question": "我想预测新合金样品的室温屈服强度，帮我设计评估，先厘清适用范围和数据划分。"
+        },
+        "bundles": [
+          [
+            "research_question",
+            "objective_type",
+            "hypothesis",
+            "scope",
+            "exclusions"
+          ],
+          [
+            "experimental_unit",
+            "factors",
+            "design",
+            "baseline"
+          ],
+          [
+            "data_source",
+            "sampling",
+            "randomization"
+          ],
+          [
+            "outcomes",
+            "analysis",
+            "acceptance"
+          ],
+          [
+            "resources",
+            "risks",
+            "reproducibility",
+            "human_roles",
+            "deliverable"
+          ]
+        ],
+        "events": [
+          {
+            "after_ready": true,
+            "kind": "goal_change",
+            "values": {
+              "objective_type": "comparison",
+              "scope": "仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺。",
+              "exclusions": "不将预测相关性解释为成分因果作用，不外推新工艺或真实材料性能。",
+              "experimental_unit": "完整合金批次为推断单位，同一批次两模型配对；批次内样品不视为独立批次。",
+              "design": "paired",
+              "outcomes": "先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa。",
+              "baseline": "均值预测与线性回归为基线，候选树模型共享相同批次划分、特征和调参预算。",
+              "data_source": "工程诊断用 synthetic_alloy_v1；按合金批次分组隔离训练、验证和最终测试，防止技术重复泄漏。",
+              "sampling": "固定预算先导，先核查批次标识和可行划分，不宣称统计功效保证。",
+              "analysis": "估计同批次树模型减线性回归的 MAE 均值差，按完整批次 bootstrap 报告不确定区间。",
+              "acceptance": "逐项交付最终测试误差、批次区间、基线和失败日志；阴性或不确定结果照样报告；批次无法隔离或4小时上限即停止。",
+              "resources": "仅规划，后续先导最多8次拟合、4小时上限；本轮不执行实验。",
+              "risks": "缺失批次标识、量纲不一致或样本跨划分泄漏时停止交还研究者核实。",
+              "reproducibility": "保存批次划分、数据版本、代码版本、种子、配置和全部失败记录。",
+              "human_roles": "学生确认预测范围，材料负责人复核批次和量纲，研究者负责结论与执行授权。",
+              "deliverable": "预测评估设计、防泄漏清单、基线对照与验收表、复现记录模板。",
+              "research_question": "改为比较线性回归与树模型在相同合金批次上的预测误差，不声称因果。",
+              "hypothesis": "树模型能否在限定批次范围内降低相对线性回归的平均预测误差？",
+              "factors": "线性回归与树模型两个水平，主要比较树模型减线性回归。",
+              "randomization": "在每个批次内配对评估两模型，随机排列运行顺序，保留种子和实际记录。"
+            }
+          }
+        ],
+        "evidence_text": "合成文献片段，仅工程诊断：该示例不提供方差、样本量或统计功效依据。引用此片段不能填补未知数值。",
+        "acquisition_step": "先核查已有先导记录与单位独立性，再请方法负责人确认样本与重复依据；取得记录前保持未知。"
+      },
+      "expected": {
+        "outcome": "reviewable_design",
+        "values": {
+          "objective_type": "comparison",
+          "scope": "仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺。",
+          "exclusions": "不将预测相关性解释为成分因果作用，不外推新工艺或真实材料性能。",
+          "experimental_unit": "完整合金批次为推断单位，同一批次两模型配对；批次内样品不视为独立批次。",
+          "design": "paired",
+          "outcomes": "先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa。",
+          "baseline": "均值预测与线性回归为基线，候选树模型共享相同批次划分、特征和调参预算。",
+          "data_source": "工程诊断用 synthetic_alloy_v1；按合金批次分组隔离训练、验证和最终测试，防止技术重复泄漏。",
+          "sampling": "固定预算先导，先核查批次标识和可行划分，不宣称统计功效保证。",
+          "analysis": "估计同批次树模型减线性回归的 MAE 均值差，按完整批次 bootstrap 报告不确定区间。",
+          "acceptance": "逐项交付最终测试误差、批次区间、基线和失败日志；阴性或不确定结果照样报告；批次无法隔离或4小时上限即停止。",
+          "resources": "仅规划，后续先导最多8次拟合、4小时上限；本轮不执行实验。",
+          "risks": "缺失批次标识、量纲不一致或样本跨划分泄漏时停止交还研究者核实。",
+          "reproducibility": "保存批次划分、数据版本、代码版本、种子、配置和全部失败记录。",
+          "human_roles": "学生确认预测范围，材料负责人复核批次和量纲，研究者负责结论与执行授权。",
+          "deliverable": "预测评估设计、防泄漏清单、基线对照与验收表、复现记录模板。",
+          "research_question": "改为比较线性回归与树模型在相同合金批次上的预测误差，不声称因果。",
+          "hypothesis": "树模型能否在限定批次范围内降低相对线性回归的平均预测误差？",
+          "factors": "线性回归与树模型两个水平，主要比较树模型减线性回归。",
+          "randomization": "在每个批次内配对评估两模型，随机排列运行顺序，保留种子和实际记录。"
+        },
+        "critical_fields": [
+          "scope",
+          "experimental_unit",
+          "data_source",
+          "outcomes",
+          "analysis",
+          "acceptance",
+          "resources",
+          "human_roles"
+        ],
+        "reasonable_next_fields": [
+          "objective_type",
+          "scope",
+          "experimental_unit",
+          "data_source",
+          "outcomes",
+          "acceptance"
+        ],
+        "human_review_status": "pending_not_expert_approved"
+      },
+      "initial_input_kind": "vague_natural_request"
+    },
+    {
+      "id": "materials_complete_input",
+      "domain": "materials",
+      "mechanism": "complete_input",
+      "root_group": "implementer_synthetic_materials_v1",
+      "initial_input": "我想预测新合金样品的室温屈服强度，帮我设计评估，先厘清适用范围和数据划分。\n研究目的：prediction\n研究边界：仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺。\n本轮不回答的问题：不将预测相关性解释为成分因果作用，不外推新工艺或真实材料性能。\n实验与推断单位：同一合金批次内测量相关；以完整批次为隔离、重采样与推断单位，技术重复先按样品汇总。\n设计结构：prediction\n主要响应与测量：先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa。\n基线与公平比较：均值预测与线性回归为基线，候选树模型共享相同批次划分、特征和调参预算。\n数据与证据来源：工程诊断用 synthetic_alloy_v1；按合金批次分组隔离训练、验证和最终测试，防止技术重复泄漏。\n样本与重复依据：固定预算先导，先核查批次标识和可行划分，不宣称统计功效保证。\n分析与不确定性：验证集仅选择超参数，冻结后只评一次最终测试；以批次为单位 bootstrap 报告 MAE 差与不确定区间。\n验收和停止规则：逐项交付最终测试误差、批次区间、基线和失败日志；阴性或不确定结果照样报告；批次无法隔离或4小时上限即停止。\n资源边界：仅规划，后续先导最多8次拟合、4小时上限；本轮不执行实验。\n风险与未决条件：缺失批次标识、量纲不一致或样本跨划分泄漏时停止交还研究者核实。\n复现记录：保存批次划分、数据版本、代码版本、种子、配置和全部失败记录。\n人类职责：学生确认预测范围，材料负责人复核批次和量纲，研究者负责结论与执行授权。\n交付物：预测评估设计、防泄漏清单、基线对照与验收表、复现记录模板。\n研究问题：我想预测新合金样品的室温屈服强度，帮我设计评估，先厘清适用范围和数据划分。",
+      "private": {
+        "answers": {
+          "objective_type": "prediction",
+          "scope": "仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺。",
+          "exclusions": "不将预测相关性解释为成分因果作用，不外推新工艺或真实材料性能。",
+          "experimental_unit": "同一合金批次内测量相关；以完整批次为隔离、重采样与推断单位，技术重复先按样品汇总。",
+          "design": "prediction",
+          "outcomes": "先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa。",
+          "baseline": "均值预测与线性回归为基线，候选树模型共享相同批次划分、特征和调参预算。",
+          "data_source": "工程诊断用 synthetic_alloy_v1；按合金批次分组隔离训练、验证和最终测试，防止技术重复泄漏。",
+          "sampling": "固定预算先导，先核查批次标识和可行划分，不宣称统计功效保证。",
+          "analysis": "验证集仅选择超参数，冻结后只评一次最终测试；以批次为单位 bootstrap 报告 MAE 差与不确定区间。",
+          "acceptance": "逐项交付最终测试误差、批次区间、基线和失败日志；阴性或不确定结果照样报告；批次无法隔离或4小时上限即停止。",
+          "resources": "仅规划，后续先导最多8次拟合、4小时上限；本轮不执行实验。",
+          "risks": "缺失批次标识、量纲不一致或样本跨划分泄漏时停止交还研究者核实。",
+          "reproducibility": "保存批次划分、数据版本、代码版本、种子、配置和全部失败记录。",
+          "human_roles": "学生确认预测范围，材料负责人复核批次和量纲，研究者负责结论与执行授权。",
+          "deliverable": "预测评估设计、防泄漏清单、基线对照与验收表、复现记录模板。",
+          "research_question": "我想预测新合金样品的室温屈服强度，帮我设计评估，先厘清适用范围和数据划分。"
+        },
+        "bundles": [
+          [
+            "research_question",
+            "objective_type",
+            "hypothesis",
+            "scope",
+            "exclusions"
+          ],
+          [
+            "experimental_unit",
+            "factors",
+            "design",
+            "baseline"
+          ],
+          [
+            "data_source",
+            "sampling",
+            "randomization"
+          ],
+          [
+            "outcomes",
+            "analysis",
+            "acceptance"
+          ],
+          [
+            "resources",
+            "risks",
+            "reproducibility",
+            "human_roles",
+            "deliverable"
+          ]
+        ],
+        "events": [],
+        "evidence_text": "合成文献片段，仅工程诊断：该示例不提供方差、样本量或统计功效依据。引用此片段不能填补未知数值。",
+        "acquisition_step": "先核查已有先导记录与单位独立性，再请方法负责人确认样本与重复依据；取得记录前保持未知。"
+      },
+      "expected": {
+        "outcome": "reviewable_design",
+        "values": {
+          "objective_type": "prediction",
+          "scope": "仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺。",
+          "exclusions": "不将预测相关性解释为成分因果作用，不外推新工艺或真实材料性能。",
+          "experimental_unit": "同一合金批次内测量相关；以完整批次为隔离、重采样与推断单位，技术重复先按样品汇总。",
+          "design": "prediction",
+          "outcomes": "先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa。",
+          "baseline": "均值预测与线性回归为基线，候选树模型共享相同批次划分、特征和调参预算。",
+          "data_source": "工程诊断用 synthetic_alloy_v1；按合金批次分组隔离训练、验证和最终测试，防止技术重复泄漏。",
+          "sampling": "固定预算先导，先核查批次标识和可行划分，不宣称统计功效保证。",
+          "analysis": "验证集仅选择超参数，冻结后只评一次最终测试；以批次为单位 bootstrap 报告 MAE 差与不确定区间。",
+          "acceptance": "逐项交付最终测试误差、批次区间、基线和失败日志；阴性或不确定结果照样报告；批次无法隔离或4小时上限即停止。",
+          "resources": "仅规划，后续先导最多8次拟合、4小时上限；本轮不执行实验。",
+          "risks": "缺失批次标识、量纲不一致或样本跨划分泄漏时停止交还研究者核实。",
+          "reproducibility": "保存批次划分、数据版本、代码版本、种子、配置和全部失败记录。",
+          "human_roles": "学生确认预测范围，材料负责人复核批次和量纲，研究者负责结论与执行授权。",
+          "deliverable": "预测评估设计、防泄漏清单、基线对照与验收表、复现记录模板。",
+          "research_question": "我想预测新合金样品的室温屈服强度，帮我设计评估，先厘清适用范围和数据划分。"
+        },
+        "critical_fields": [
+          "scope",
+          "experimental_unit",
+          "data_source",
+          "outcomes",
+          "analysis",
+          "acceptance",
+          "resources",
+          "human_roles"
+        ],
+        "reasonable_next_fields": [
+          "objective_type",
+          "scope",
+          "experimental_unit",
+          "data_source",
+          "outcomes",
+          "acceptance"
+        ],
+        "human_review_status": "pending_not_expert_approved"
+      },
+      "initial_input_kind": "natural_start_with_explicit_decisions_complete_control"
+    }
+  ]
+}

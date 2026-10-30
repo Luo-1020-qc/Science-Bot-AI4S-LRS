@@ -1,0 +1,32 @@
+scenario_name: 两种制剂溶出度的比较
+domain: 药学
+skeleton: S1
+executable: true
+summary: 两种制剂在相同溶出条件下的溶出度对比
+vocabulary:
+  treatment_name: 制剂
+  outcome_name: 溶出度
+  unit: '%'
+  comparison: 制剂 A vs 制剂 B
+survey_questions:
+- 两种制剂的规格是否一致？
+- 溶出介质、体积与转速是什么？
+- 取样时间点如何设置？
+- 每批几个独立样品？
+- 检测方法是否经过验证？
+rubric:
+- 规格与批次已声明
+- 溶出条件一致并记录
+- 取样时间点覆盖充分
+- 独立样品 >= 3
+- 检测方法验证状态
+- 不做生物等效性结论的声明
+proposal_template:
+- 研究目标
+- 制剂与溶出条件
+- 取样与检测
+- 统计方法
+- 验收标准
+- 局限
+source: 骨架聚类表 v1 扩展 · S1 · 药学
+notes: 溶出度曲线的多点比较需预先声明汇总方式

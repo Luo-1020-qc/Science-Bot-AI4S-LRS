@@ -1,0 +1,8 @@
+{
+  "training_completed": true,
+  "mechanical_verification_passed": true,
+  "candidate_accepted_for_deployment": false,
+  "reason": "Final PPO 38/50 versus BC/rule 50/50; longer decision traces",
+  "default_policy_changed": false,
+  "posthoc_failed_tasks": 12
+}

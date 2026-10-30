@@ -1,0 +1,2866 @@
+{
+  "schema_version": "clarification_evaluation_results_v1",
+  "created_utc": "2026-10-29T05:55:58.329559+00:00",
+  "mode": "live",
+  "task_sha256": "9ad0533c4f96644a0f0ac5e203a56db9f5e12892c674ba4fb7983a3e9b82b1ac",
+  "case_count": 6,
+  "provenance": "Follow-up implementer-authored synthetic cases, frozen after initial diagnostic fixes and before the first follow-up run. New inputs separate from initial cases and RL training, covering related mechanisms; not blinded expert or human evaluation.",
+  "model_resources": {
+    "llm_requests": 6,
+    "llm_tokens": 14999,
+    "tool_attempts": 0,
+    "limits": {
+      "llm_requests": 6,
+      "llm_tokens": 60000,
+      "tool_calls": 1,
+      "read_bytes": 18000
+    }
+  },
+  "dynamic_cases": 5,
+  "fallback_cases": 1,
+  "risk_checks_passed": 9,
+  "risk_checks_total": 9,
+  "priority_field_cases": 5,
+  "topic_keyword_cases": 6,
+  "state_unchanged_cases": 6,
+  "ready_positive_control": {
+    "ready": true,
+    "review": {
+      "ready": true,
+      "checks": [
+        {
+          "field": "research_question",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "objective_type",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "hypothesis",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "scope",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "exclusions",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "experimental_unit",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "factors",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "design",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "outcomes",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "baseline",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "data_source",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "sampling",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "randomization",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "analysis",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "acceptance",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "resources",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "risks",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "reproducibility",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "human_roles",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "deliverable",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "objective_type",
+          "code": "objective_classified",
+          "status": "passed",
+          "detail": "需要明确比较、预测、因果、探索或复现目的。"
+        },
+        {
+          "field": "design",
+          "code": "design_classified",
+          "status": "passed",
+          "detail": "选择一个设计家族；自定义设计需由人类进一步复核。"
+        },
+        {
+          "field": "outcomes",
+          "code": "outcome_direction",
+          "status": "passed",
+          "detail": "明确主要响应及方向，或明确无预设方向的探索性分析。"
+        },
+        {
+          "field": "outcomes",
+          "code": "unit_aggregation",
+          "status": "passed",
+          "detail": "说明怎样按实验/推断单位汇总测量，不能用大量技术重复扩大样本量。"
+        },
+        {
+          "field": "analysis",
+          "code": "estimand_declared",
+          "status": "passed",
+          "detail": "写清估计对象或主要对比，不能只写运行统计检验。"
+        },
+        {
+          "field": "analysis",
+          "code": "uncertainty_declared",
+          "status": "passed",
+          "detail": "声明置信区间或其他不确定性表达，避免只报告显著性。"
+        },
+        {
+          "field": "randomization",
+          "code": "allocation_process",
+          "status": "passed",
+          "detail": "声明实际分配或顺序过程，不能只提供随机种子。"
+        },
+        {
+          "field": "sampling",
+          "code": "power_basis",
+          "status": "passed",
+          "detail": "功效需要效应、方差和布局依据；缺少时先安排先导，不能默认保证功效。"
+        },
+        {
+          "field": "sampling",
+          "code": "power_external_review",
+          "status": "needs_review",
+          "detail": "本计划不自动计算或证明功效；参数来源和计算须单独复核。"
+        },
+        {
+          "field": "acceptance",
+          "code": "measurable_acceptance",
+          "status": "passed",
+          "detail": "验收应有可测阈值或可逐项核对的产物，不只写结果更好。"
+        },
+        {
+          "field": "acceptance",
+          "code": "negative_outcomes",
+          "status": "passed",
+          "detail": "明确阴性、不确定或反向结果也应如实报告，不能继续试到显著。"
+        },
+        {
+          "field": "acceptance",
+          "code": "stopping_rule",
+          "status": "passed",
+          "detail": "预先声明预算、信息不足或失败时的停止/升级条件。"
+        },
+        {
+          "field": "resources",
+          "code": "resource_bound",
+          "status": "passed",
+          "detail": "声明可核对的资源数量、期限或硬上限。"
+        },
+        {
+          "field": "human_roles",
+          "code": "human_accountability",
+          "status": "passed",
+          "detail": "明确由谁确认边界、复核方法和批准结论，不把责任隐含交给模型。"
+        },
+        {
+          "field": "reproducibility",
+          "code": "reproducibility_records",
+          "status": "passed",
+          "detail": "至少明确数据/代码版本、种子、配置或日志中的两类复现记录。"
+        }
+      ],
+      "blockers": [],
+      "required_fields": [
+        "research_question",
+        "objective_type",
+        "hypothesis",
+        "scope",
+        "exclusions",
+        "experimental_unit",
+        "factors",
+        "design",
+        "outcomes",
+        "baseline",
+        "data_source",
+        "sampling",
+        "randomization",
+        "analysis",
+        "acceptance",
+        "resources",
+        "risks",
+        "reproducibility",
+        "human_roles",
+        "deliverable"
+      ],
+      "scope": "planning_only",
+      "execution_authorized": false,
+      "scientific_claim_verified": false,
+      "readiness_meaning": "用户声明已足够形成待人类复核的计划；不表示假设、数据、功效或结论已被验证。"
+    }
+  },
+  "real_scientific_executions": 0,
+  "human_participants": 0,
+  "understanding_improvement_measured": false,
+  "limitations": [
+    "Six public implementer-authored synthetic cases, no blinded independent expert labels.",
+    "Question indicators check grounding, topic keywords and priority fields, not semantic correctness or scientific validity.",
+    "Supplied ledger states isolate clarification; this is not an end-to-end semantic extraction accuracy benchmark.",
+    "Reflection cues only detect discussion coverage in scripted text; no human understanding score or improvement estimate.",
+    "Single live sample per case if enabled; no retries, checkpoint selection or prompt tuning on these results."
+  ],
+  "cases": [
+    {
+      "id": "turbine_sensor_prediction",
+      "answer": "风机振动预测要用于未见设备，同一设备的连续传感窗口不能当独立样本。",
+      "clarification": {
+        "questions": [
+          {
+            "field": "data_source",
+            "kind": "refine",
+            "question": "现有 data_source 写的是“同一设备连续窗口，随机按行分为训练与测试”，但研究问题要求评估“未见设备”上的误差，且已确认同一设备的连续传感窗口不能当独立样本。请确认：训练/验证/最终测试是否改为按设备隔离（例如测试设备完全不参与训练与选模），并明确验证集如何划分？",
+            "rationale": "按行随机划分会让同一设备的相邻窗口同时进入训练与测试，与“未见设备”的评估目标直接矛盾，属于必须先解决的冲突；不先定隔离规则，后续 outcomes、analysis 与 acceptance 都无法对齐。",
+            "references": [
+              {
+                "source": "answer",
+                "key": "current",
+                "quote": "风机振动预测要用于未见设备，同一设备的连续传感窗口不能当独立样本。"
+              },
+              {
+                "source": "fact",
+                "key": "data_source",
+                "quote": "同一设备连续窗口，随机按行分为训练与测试。"
+              },
+              {
+                "source": "fact",
+                "key": "research_question",
+                "quote": "评估风机振动预测在未见设备上的误差。"
+              },
+              {
+                "source": "evidence",
+                "key": "d2f01f3a621e5dfd",
+                "quote": "合成方法片段：相邻传感窗口存在重叠；尚未规定验证集和按设备隔离规则。",
+                "citation": "turbine_sensor_prediction.md:L1-L1#369f22f7c337121f1dde892f186c99c3e053117974720c071605e1dd9f98fe9b"
+              }
+            ],
+            "options": [],
+            "origin": "model"
+          },
+          {
+            "field": "outcomes",
+            "kind": "missing",
+            "question": "主要响应指标目前只写了“报告测试误差均值与不确定区间”，但未说明误差的具体定义、方向与在设备层面的汇总方式。能否明确：主要指标是什么（哪个误差度量、越大越好还是越小越好），以及先在窗口层计算再按设备汇总，还是直接在设备层汇总？",
+            "rationale": "experimental_unit 已声明窗口共享运行记录，若指标与汇总层级不定，不确定区间会按错误单位计算，也无法与“未见设备”的结论对应。",
+            "references": [
+              {
+                "source": "fact",
+                "key": "analysis",
+                "quote": "报告测试误差均值与不确定区间。"
+              },
+              {
+                "source": "fact",
+                "key": "experimental_unit",
+                "quote": "设备内连续传感窗口共享运行记录。"
+              }
+            ],
+            "options": [],
+            "origin": "model"
+          }
+        ],
+        "mode": "dynamic",
+        "reason": "validated",
+        "rejected_questions": [],
+        "model_used": true
+      },
+      "template_baseline": [
+        {
+          "field": "exclusions",
+          "kind": "missing",
+          "question": "本轮明确不研究什么，不准备声称什么？",
+          "rationale": "排除项帮助人保留对项目边界的控制。",
+          "options": []
+        },
+        {
+          "field": "outcomes",
+          "kind": "missing",
+          "question": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？",
+          "rationale": "训练损失、测试指标、统计显著和实际重要性不能混用。",
+          "options": []
+        }
+      ],
+      "plan_review": {
+        "ready": false,
+        "checks": [
+          {
+            "field": "research_question",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "objective_type",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "scope",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "exclusions",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "本轮明确不研究什么，不准备声称什么？"
+          },
+          {
+            "field": "experimental_unit",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "design",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "outcomes",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+          },
+          {
+            "field": "baseline",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+          },
+          {
+            "field": "data_source",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "sampling",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+          },
+          {
+            "field": "analysis",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "acceptance",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+          },
+          {
+            "field": "resources",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？"
+          },
+          {
+            "field": "risks",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+          },
+          {
+            "field": "reproducibility",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+          },
+          {
+            "field": "human_roles",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+          },
+          {
+            "field": "deliverable",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "最后交付什么：方案、脚本、表格、报告或可复现实验记录？"
+          },
+          {
+            "field": "objective_type",
+            "code": "objective_classified",
+            "status": "passed",
+            "detail": "需要明确比较、预测、因果、探索或复现目的。"
+          },
+          {
+            "field": "design",
+            "code": "design_classified",
+            "status": "passed",
+            "detail": "选择一个设计家族；自定义设计需由人类进一步复核。"
+          },
+          {
+            "field": "data_source",
+            "code": "prediction_holdout",
+            "status": "blocked",
+            "detail": "声明训练、验证与最终测试的职责，不能用测试结果反复选模型。"
+          },
+          {
+            "field": "data_source",
+            "code": "prediction_leakage",
+            "status": "blocked",
+            "detail": "说明按对象、区组或时间隔离数据及防泄漏办法。"
+          },
+          {
+            "field": "analysis",
+            "code": "prediction_uncertainty",
+            "status": "passed",
+            "detail": "预测比较也要说明误差或不确定性，单个最佳分数不够。"
+          }
+        ],
+        "blockers": [
+          {
+            "field": "exclusions",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "本轮明确不研究什么，不准备声称什么？"
+          },
+          {
+            "field": "outcomes",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+          },
+          {
+            "field": "baseline",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+          },
+          {
+            "field": "sampling",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+          },
+          {
+            "field": "acceptance",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+          },
+          {
+            "field": "resources",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？"
+          },
+          {
+            "field": "risks",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+          },
+          {
+            "field": "reproducibility",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+          },
+          {
+            "field": "human_roles",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+          },
+          {
+            "field": "deliverable",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "最后交付什么：方案、脚本、表格、报告或可复现实验记录？"
+          },
+          {
+            "field": "data_source",
+            "code": "prediction_holdout",
+            "status": "blocked",
+            "detail": "声明训练、验证与最终测试的职责，不能用测试结果反复选模型。"
+          },
+          {
+            "field": "data_source",
+            "code": "prediction_leakage",
+            "status": "blocked",
+            "detail": "说明按对象、区组或时间隔离数据及防泄漏办法。"
+          }
+        ],
+        "required_fields": [
+          "research_question",
+          "objective_type",
+          "scope",
+          "exclusions",
+          "experimental_unit",
+          "design",
+          "outcomes",
+          "baseline",
+          "data_source",
+          "sampling",
+          "analysis",
+          "acceptance",
+          "resources",
+          "risks",
+          "reproducibility",
+          "human_roles",
+          "deliverable"
+        ],
+        "scope": "planning_only",
+        "execution_authorized": false,
+        "scientific_claim_verified": false,
+        "readiness_meaning": "用户声明已足够形成待人类复核的计划；不表示假设、数据、功效或结论已被验证。"
+      },
+      "plan_expected_risk_checks": {
+        "prediction_holdout": true,
+        "prediction_leakage": true
+      },
+      "question_indicators": {
+        "within_two": true,
+        "priority_field_covered": true,
+        "topic_terms_seen": [
+          "设备",
+          "窗口",
+          "验证"
+        ],
+        "topic_keyword_indicator": true,
+        "grounded_dynamic_questions": true,
+        "semantic_quality_human_rated": false
+      },
+      "plan_indicators": {
+        "node_count": 11,
+        "every_node_has_acceptance": true,
+        "all_steps_unexecuted": true,
+        "incomplete_plan_remains_blocked": true,
+        "execution_authorized": false
+      },
+      "reflection": {
+        "text": "目标是未见设备预测，范围有限；因为窗口重叠可能泄漏，仍需研究者复核划分，资源上限时停止。",
+        "discussion_cues": {
+          "kind": "formative_discussion_cues",
+          "dimensions": [
+            {
+              "dimension": "question_boundary",
+              "label": "问题与边界",
+              "mentioned_cues": [
+                "目标",
+                "范围"
+              ],
+              "needs_discussion": false,
+              "compare_with": {
+                "research_question": "评估风机振动预测在未见设备上的误差。",
+                "scope": "仅限声明型号与工况。"
+              }
+            },
+            {
+              "dimension": "design_tradeoff",
+              "label": "设计与取舍",
+              "mentioned_cues": [
+                "因为",
+                "泄漏"
+              ],
+              "needs_discussion": false,
+              "compare_with": {
+                "experimental_unit": "设备内连续传感窗口共享运行记录。",
+                "design": "prediction",
+                "analysis": "报告测试误差均值与不确定区间。"
+              }
+            },
+            {
+              "dimension": "uncertainty",
+              "label": "未知与可能改变判断的结果",
+              "mentioned_cues": [],
+              "needs_discussion": true,
+              "compare_with": {}
+            },
+            {
+              "dimension": "responsibility_stop",
+              "label": "责任与停止条件",
+              "mentioned_cues": [
+                "复核",
+                "上限",
+                "停止"
+              ],
+              "needs_discussion": false,
+              "compare_with": {}
+            }
+          ],
+          "discussion_flags": [],
+          "human_understanding_measured": false,
+          "correctness_scored": false,
+          "limitation": "关键词只提示讨论覆盖，不能判断复述是否正确、是否理解因果关系或是否提高理解；须由研究者/评审对照计划核实。"
+        },
+        "source": "scripted_synthetic_text_not_a_person"
+      },
+      "state_unchanged": true,
+      "contract_hash": "24fdb9c5721a20bb70c7acfd98d02cd8a8cb95e271ebe6622397ba91c5997422"
+    },
+    {
+      "id": "ceramic_pilot_uncertainty",
+      "answer": "陶瓷烧结的强度波动尚不清楚，不能现在声称重复数足够。",
+      "clarification": {
+        "questions": [
+          {
+            "field": "sampling",
+            "kind": "evidence_plan",
+            "question": "样本与重复依据仍未知。你能先提供可查证的来源、安排先导，或缩小本轮范围吗？",
+            "rationale": "先规划怎样获取依据，不要求现在猜出未知值；该步骤不会自动执行。",
+            "options": [],
+            "origin": "template"
+          },
+          {
+            "field": "exclusions",
+            "kind": "missing",
+            "question": "本轮明确不研究什么，不准备声称什么？",
+            "rationale": "排除项帮助人保留对项目边界的控制。",
+            "options": [],
+            "origin": "template"
+          }
+        ],
+        "mode": "template",
+        "reason": "model_unavailable_or_rejected",
+        "model_used": true,
+        "error_type": "ValueError",
+        "validation_error": "NoValidPriorityQuestions: [{\"field\": \"sampling\", \"reason\": \"InventedQuestionNumericAssumption\"}, {\"field\": \"outcomes\", \"reason\": \"InventedQuestionNumericAssumption\"}]"
+      },
+      "template_baseline": [
+        {
+          "field": "sampling",
+          "kind": "evidence_plan",
+          "question": "样本与重复依据仍未知。你能先提供可查证的来源、安排先导，或缩小本轮范围吗？",
+          "rationale": "先规划怎样获取依据，不要求现在猜出未知值；该步骤不会自动执行。",
+          "options": []
+        },
+        {
+          "field": "exclusions",
+          "kind": "missing",
+          "question": "本轮明确不研究什么，不准备声称什么？",
+          "rationale": "排除项帮助人保留对项目边界的控制。",
+          "options": []
+        }
+      ],
+      "plan_review": {
+        "ready": false,
+        "checks": [
+          {
+            "field": "research_question",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "objective_type",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "scope",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "exclusions",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "本轮明确不研究什么，不准备声称什么？"
+          },
+          {
+            "field": "experimental_unit",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "design",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+          },
+          {
+            "field": "outcomes",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+          },
+          {
+            "field": "data_source",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。"
+          },
+          {
+            "field": "sampling",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+          },
+          {
+            "field": "analysis",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+          },
+          {
+            "field": "acceptance",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+          },
+          {
+            "field": "resources",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "risks",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+          },
+          {
+            "field": "reproducibility",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+          },
+          {
+            "field": "human_roles",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+          },
+          {
+            "field": "deliverable",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "最后交付什么：方案、脚本、表格、报告或可复现实验记录？"
+          },
+          {
+            "field": "sampling",
+            "code": "explicit_unknown",
+            "status": "blocked",
+            "detail": "用户明确尚不知道；应先规划获取证据的步骤。"
+          },
+          {
+            "field": "objective_type",
+            "code": "objective_classified",
+            "status": "passed",
+            "detail": "需要明确比较、预测、因果、探索或复现目的。"
+          },
+          {
+            "field": "resources",
+            "code": "resource_bound",
+            "status": "passed",
+            "detail": "声明可核对的资源数量、期限或硬上限。"
+          }
+        ],
+        "blockers": [
+          {
+            "field": "exclusions",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "本轮明确不研究什么，不准备声称什么？"
+          },
+          {
+            "field": "design",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+          },
+          {
+            "field": "outcomes",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+          },
+          {
+            "field": "data_source",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。"
+          },
+          {
+            "field": "sampling",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+          },
+          {
+            "field": "analysis",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+          },
+          {
+            "field": "acceptance",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+          },
+          {
+            "field": "risks",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+          },
+          {
+            "field": "reproducibility",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+          },
+          {
+            "field": "human_roles",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+          },
+          {
+            "field": "deliverable",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "最后交付什么：方案、脚本、表格、报告或可复现实验记录？"
+          },
+          {
+            "field": "sampling",
+            "code": "explicit_unknown",
+            "status": "blocked",
+            "detail": "用户明确尚不知道；应先规划获取证据的步骤。"
+          }
+        ],
+        "required_fields": [
+          "research_question",
+          "objective_type",
+          "scope",
+          "exclusions",
+          "experimental_unit",
+          "design",
+          "outcomes",
+          "data_source",
+          "sampling",
+          "analysis",
+          "acceptance",
+          "resources",
+          "risks",
+          "reproducibility",
+          "human_roles",
+          "deliverable"
+        ],
+        "scope": "planning_only",
+        "execution_authorized": false,
+        "scientific_claim_verified": false,
+        "readiness_meaning": "用户声明已足够形成待人类复核的计划；不表示假设、数据、功效或结论已被验证。"
+      },
+      "plan_expected_risk_checks": {
+        "explicit_unknown": true
+      },
+      "question_indicators": {
+        "within_two": true,
+        "priority_field_covered": true,
+        "topic_terms_seen": [
+          "先导"
+        ],
+        "topic_keyword_indicator": true,
+        "grounded_dynamic_questions": false,
+        "semantic_quality_human_rated": false
+      },
+      "plan_indicators": {
+        "node_count": 11,
+        "every_node_has_acceptance": true,
+        "all_steps_unexecuted": true,
+        "incomplete_plan_remains_blocked": true,
+        "execution_authorized": false
+      },
+      "reflection": {
+        "text": "目标限于试制陶瓷；同窑多件不等于独立重复，方差未知需先导，负责人复核测量并在窑次上限停止。",
+        "discussion_cues": {
+          "kind": "formative_discussion_cues",
+          "dimensions": [
+            {
+              "dimension": "question_boundary",
+              "label": "问题与边界",
+              "mentioned_cues": [
+                "目标"
+              ],
+              "needs_discussion": false,
+              "compare_with": {
+                "research_question": "探索烧结条件与陶瓷强度的关系，选择后续可检验命题。",
+                "scope": "仅限同一原料版本的试制陶瓷。"
+              }
+            },
+            {
+              "dimension": "design_tradeoff",
+              "label": "设计与取舍",
+              "mentioned_cues": [
+                "独立"
+              ],
+              "needs_discussion": false,
+              "compare_with": {
+                "experimental_unit": "每个独立窑次作为观察单位，不以同窑多件代替独立重复。"
+              }
+            },
+            {
+              "dimension": "uncertainty",
+              "label": "未知与可能改变判断的结果",
+              "mentioned_cues": [
+                "未知",
+                "先导"
+              ],
+              "needs_discussion": false,
+              "compare_with": {}
+            },
+            {
+              "dimension": "responsibility_stop",
+              "label": "责任与停止条件",
+              "mentioned_cues": [
+                "负责",
+                "复核",
+                "上限",
+                "停止"
+              ],
+              "needs_discussion": false,
+              "compare_with": {
+                "resources": "本月最多5个窑次，不增加预算。"
+              }
+            }
+          ],
+          "discussion_flags": [],
+          "human_understanding_measured": false,
+          "correctness_scored": false,
+          "limitation": "关键词只提示讨论覆盖，不能判断复述是否正确、是否理解因果关系或是否提高理解；须由研究者/评审对照计划核实。"
+        },
+        "source": "scripted_synthetic_text_not_a_person"
+      },
+      "state_unchanged": true,
+      "contract_hash": "25e220c39307dce34a9df1bf0f26924bfbeea0769e2cca23fbf0379fd2d8cc45"
+    },
+    {
+      "id": "street_lighting_causal",
+      "answer": "街区自行选择是否改造照明，能耗差异可能有其他解释。",
+      "clarification": {
+        "questions": [
+          {
+            "field": "data_source",
+            "kind": "missing",
+            "question": "目前只看到一条标注为“合成调查片段、未核实”的材料，说明改造由街区自行决定。请问能否查证或获取实际可用的街区能耗与改造记录（含可追踪标识与时间范围），或先做小规模先导以确认这些数据是否存在、覆盖哪些街区与时期？若都不可得，是否把本轮范围限制为基于现有材料的方案设计而非效应估计？",
+            "rationale": "数据来源字段为空，且唯一证据是未核实的合成片段；在不知道数据是否可得前，无法确定能否支撑因果估计，只能先问查证路径或限制范围。",
+            "references": [
+              {
+                "source": "evidence",
+                "key": "faad592bcd79396e",
+                "quote": "合成调查片段：改造由街区自行决定，没有随机分配证据。",
+                "citation": "street_lighting_causal.md:L1-L1#63a6030109a502952e6dd99a1c71b52aefc8dd658dc8b4e7fd89a45324906878"
+              },
+              {
+                "source": "fact",
+                "key": "scope",
+                "quote": "仅限观察到的街区与时期。"
+              }
+            ],
+            "options": [],
+            "origin": "model"
+          }
+        ],
+        "mode": "dynamic",
+        "reason": "validated_partial",
+        "rejected_questions": [
+          {
+            "field": "analysis",
+            "reason": "UngroundedQuestionReference"
+          }
+        ],
+        "model_used": true
+      },
+      "template_baseline": [
+        {
+          "field": "hypothesis",
+          "kind": "missing",
+          "question": "请给出可能被否定的命题；探索阶段也可明确不预设方向。",
+          "rationale": "命题、能否检验、证据是否支持是三个不同判断。",
+          "options": []
+        },
+        {
+          "field": "exclusions",
+          "kind": "missing",
+          "question": "本轮明确不研究什么，不准备声称什么？",
+          "rationale": "排除项帮助人保留对项目边界的控制。",
+          "options": []
+        }
+      ],
+      "plan_review": {
+        "ready": false,
+        "checks": [
+          {
+            "field": "research_question",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "objective_type",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "hypothesis",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+          },
+          {
+            "field": "scope",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "exclusions",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "本轮明确不研究什么，不准备声称什么？"
+          },
+          {
+            "field": "experimental_unit",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "factors",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "改变哪些因素和水平，主要比较谁与谁？"
+          },
+          {
+            "field": "design",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "outcomes",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+          },
+          {
+            "field": "baseline",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+          },
+          {
+            "field": "data_source",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。"
+          },
+          {
+            "field": "sampling",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+          },
+          {
+            "field": "randomization",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "analysis",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "acceptance",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+          },
+          {
+            "field": "resources",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？"
+          },
+          {
+            "field": "risks",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "reproducibility",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+          },
+          {
+            "field": "human_roles",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+          },
+          {
+            "field": "deliverable",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "最后交付什么：方案、脚本、表格、报告或可复现实验记录？"
+          },
+          {
+            "field": "objective_type",
+            "code": "objective_classified",
+            "status": "passed",
+            "detail": "需要明确比较、预测、因果、探索或复现目的。"
+          },
+          {
+            "field": "design",
+            "code": "design_classified",
+            "status": "passed",
+            "detail": "选择一个设计家族；自定义设计需由人类进一步复核。"
+          },
+          {
+            "field": "analysis",
+            "code": "estimand_declared",
+            "status": "passed",
+            "detail": "写清估计对象或主要对比，不能只写运行统计检验。"
+          },
+          {
+            "field": "analysis",
+            "code": "uncertainty_declared",
+            "status": "passed",
+            "detail": "声明置信区间或其他不确定性表达，避免只报告显著性。"
+          },
+          {
+            "field": "analysis",
+            "code": "causal_identification",
+            "status": "blocked",
+            "detail": "观察性因果结论需要明确识别假设、混杂与替代解释；相关或预测不能替代。"
+          },
+          {
+            "field": "analysis",
+            "code": "causal_assumptions_external",
+            "status": "needs_review",
+            "detail": "识别假设仍需领域专家复核，当前声明不是因果识别证明。"
+          }
+        ],
+        "blockers": [
+          {
+            "field": "hypothesis",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+          },
+          {
+            "field": "exclusions",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "本轮明确不研究什么，不准备声称什么？"
+          },
+          {
+            "field": "factors",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "改变哪些因素和水平，主要比较谁与谁？"
+          },
+          {
+            "field": "outcomes",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+          },
+          {
+            "field": "baseline",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+          },
+          {
+            "field": "data_source",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。"
+          },
+          {
+            "field": "sampling",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+          },
+          {
+            "field": "acceptance",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+          },
+          {
+            "field": "resources",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？"
+          },
+          {
+            "field": "reproducibility",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+          },
+          {
+            "field": "human_roles",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+          },
+          {
+            "field": "deliverable",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "最后交付什么：方案、脚本、表格、报告或可复现实验记录？"
+          },
+          {
+            "field": "analysis",
+            "code": "causal_identification",
+            "status": "blocked",
+            "detail": "观察性因果结论需要明确识别假设、混杂与替代解释；相关或预测不能替代。"
+          }
+        ],
+        "required_fields": [
+          "research_question",
+          "objective_type",
+          "hypothesis",
+          "scope",
+          "exclusions",
+          "experimental_unit",
+          "factors",
+          "design",
+          "outcomes",
+          "baseline",
+          "data_source",
+          "sampling",
+          "randomization",
+          "analysis",
+          "acceptance",
+          "resources",
+          "risks",
+          "reproducibility",
+          "human_roles",
+          "deliverable"
+        ],
+        "scope": "planning_only",
+        "execution_authorized": false,
+        "scientific_claim_verified": false,
+        "readiness_meaning": "用户声明已足够形成待人类复核的计划；不表示假设、数据、功效或结论已被验证。"
+      },
+      "plan_expected_risk_checks": {
+        "causal_identification": true
+      },
+      "question_indicators": {
+        "within_two": true,
+        "priority_field_covered": false,
+        "topic_terms_seen": [
+          "街区"
+        ],
+        "topic_keyword_indicator": true,
+        "grounded_dynamic_questions": true,
+        "semantic_quality_human_rated": false
+      },
+      "plan_indicators": {
+        "node_count": 11,
+        "every_node_has_acceptance": true,
+        "all_steps_unexecuted": true,
+        "incomplete_plan_remains_blocked": true,
+        "execution_authorized": false
+      },
+      "reflection": {
+        "text": "问题是照明因果效应，因为街区自主选择，混杂尚未排除；研究者负责复核，证据不足就停止因果声称。",
+        "discussion_cues": {
+          "kind": "formative_discussion_cues",
+          "dimensions": [
+            {
+              "dimension": "question_boundary",
+              "label": "问题与边界",
+              "mentioned_cues": [
+                "问题"
+              ],
+              "needs_discussion": false,
+              "compare_with": {
+                "research_question": "估计照明改造对街区能耗的因果效应。",
+                "scope": "仅限观察到的街区与时期。"
+              }
+            },
+            {
+              "dimension": "design_tradeoff",
+              "label": "设计与取舍",
+              "mentioned_cues": [
+                "因为",
+                "混杂"
+              ],
+              "needs_discussion": false,
+              "compare_with": {
+                "experimental_unit": "街区作为推断单位，月度记录共享街区。",
+                "design": "observational",
+                "analysis": "估计街区能耗均值差与不确定区间。"
+              }
+            },
+            {
+              "dimension": "uncertainty",
+              "label": "未知与可能改变判断的结果",
+              "mentioned_cues": [
+                "尚未"
+              ],
+              "needs_discussion": false,
+              "compare_with": {
+                "risks": "同期管理与天气差异未核实。"
+              }
+            },
+            {
+              "dimension": "responsibility_stop",
+              "label": "责任与停止条件",
+              "mentioned_cues": [
+                "负责",
+                "复核",
+                "停止"
+              ],
+              "needs_discussion": false,
+              "compare_with": {}
+            }
+          ],
+          "discussion_flags": [],
+          "human_understanding_measured": false,
+          "correctness_scored": false,
+          "limitation": "关键词只提示讨论覆盖，不能判断复述是否正确、是否理解因果关系或是否提高理解；须由研究者/评审对照计划核实。"
+        },
+        "source": "scripted_synthetic_text_not_a_person"
+      },
+      "state_unchanged": true,
+      "contract_hash": "c093486809753260d4f977a9dcee81805576b56f5b9e4d873d06de11b1b7e3a0"
+    },
+    {
+      "id": "museum_humidity_replication",
+      "answer": "我想复现藏品湿度研究，但同一藏品在多个时点重复测量，原文具体命题还没选。",
+      "clarification": {
+        "questions": [
+          {
+            "field": "hypothesis",
+            "kind": "evidence_plan",
+            "question": "原文具体命题尚未选定，而“待检验命题”目前是明确未知。能否先规划查证步骤：例如先获取原文全文与结果部分，确认其中关于藏品湿度响应的具体陈述及其适用条件，再据此确定要复现的命题？若暂时拿不到原文，是否可以先限定为“不预设方向、先收集证据”的探索性安排？",
+            "rationale": "复现必须先确定原文中的哪个命题与适用条件，否则后续设计、指标和验收都无从对齐；此处只询问可否查证与如何限定范围，不要求给出未知的命题内容。",
+            "references": [
+              {
+                "source": "answer",
+                "key": "current",
+                "quote": "我想复现藏品湿度研究，但同一藏品在多个时点重复测量，原文具体命题还没选。"
+              },
+              {
+                "source": "unknown",
+                "key": "hypothesis",
+                "quote": "待检验命题：明确未知"
+              },
+              {
+                "source": "evidence",
+                "key": "c719e5ecad818014",
+                "quote": "合成论文片段：湿度响应来自同一藏品的多时点观测，不能据此确定独立藏品数量。",
+                "citation": "museum_humidity_replication.md:L1-L1#17da66452c898a87a22d7652503f3840866064a3e4b7eb0ae39835765d7b25a0"
+              }
+            ],
+            "options": [],
+            "origin": "model"
+          },
+          {
+            "field": "design",
+            "kind": "refine",
+            "question": "已声明的设计是“crd”，但实验单位记录为“同一藏品重复测量，不同时点共享藏品”。请确认这一理解是否准确：即同一藏品在多个时点被重复观测，而完全随机设计通常假定观测相互独立。若是，是否考虑改为配对/区组结构，或在分析中显式建模藏品内的重复测量？",
+            "rationale": "声明的独立设计与重复测量关系不一致，会直接影响随机化、样本量依据和不确定性估计，需在方案成形前澄清。",
+            "references": [
+              {
+                "source": "fact",
+                "key": "design",
+                "quote": "crd"
+              },
+              {
+                "source": "fact",
+                "key": "experimental_unit",
+                "quote": "同一藏品重复测量，不同时点共享藏品。"
+              },
+              {
+                "source": "evidence",
+                "key": "c719e5ecad818014",
+                "quote": "合成论文片段：湿度响应来自同一藏品的多时点观测，不能据此确定独立藏品数量。",
+                "citation": "museum_humidity_replication.md:L1-L1#17da66452c898a87a22d7652503f3840866064a3e4b7eb0ae39835765d7b25a0"
+              }
+            ],
+            "options": [],
+            "origin": "model"
+          }
+        ],
+        "mode": "dynamic",
+        "reason": "validated",
+        "rejected_questions": [],
+        "model_used": true
+      },
+      "template_baseline": [
+        {
+          "field": "hypothesis",
+          "kind": "evidence_plan",
+          "question": "待检验命题仍未知。你能先提供可查证的来源、安排先导，或缩小本轮范围吗？",
+          "rationale": "先规划怎样获取依据，不要求现在猜出未知值；该步骤不会自动执行。",
+          "options": []
+        },
+        {
+          "field": "exclusions",
+          "kind": "missing",
+          "question": "本轮明确不研究什么，不准备声称什么？",
+          "rationale": "排除项帮助人保留对项目边界的控制。",
+          "options": []
+        }
+      ],
+      "plan_review": {
+        "ready": false,
+        "checks": [
+          {
+            "field": "research_question",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "objective_type",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "hypothesis",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+          },
+          {
+            "field": "scope",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "exclusions",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "本轮明确不研究什么，不准备声称什么？"
+          },
+          {
+            "field": "experimental_unit",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "factors",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "改变哪些因素和水平，主要比较谁与谁？"
+          },
+          {
+            "field": "design",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "outcomes",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+          },
+          {
+            "field": "baseline",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+          },
+          {
+            "field": "data_source",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。"
+          },
+          {
+            "field": "sampling",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+          },
+          {
+            "field": "randomization",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "怎样随机分配或控制顺序、区组和混杂；不随机时请说明原因与替代方法。"
+          },
+          {
+            "field": "analysis",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+          },
+          {
+            "field": "acceptance",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+          },
+          {
+            "field": "resources",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？"
+          },
+          {
+            "field": "risks",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+          },
+          {
+            "field": "reproducibility",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+          },
+          {
+            "field": "human_roles",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+          },
+          {
+            "field": "deliverable",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "最后交付什么：方案、脚本、表格、报告或可复现实验记录？"
+          },
+          {
+            "field": "hypothesis",
+            "code": "explicit_unknown",
+            "status": "blocked",
+            "detail": "用户明确尚不知道；应先规划获取证据的步骤。"
+          },
+          {
+            "field": "objective_type",
+            "code": "objective_classified",
+            "status": "passed",
+            "detail": "需要明确比较、预测、因果、探索或复现目的。"
+          },
+          {
+            "field": "design",
+            "code": "design_classified",
+            "status": "passed",
+            "detail": "选择一个设计家族；自定义设计需由人类进一步复核。"
+          },
+          {
+            "field": "design",
+            "code": "unit_design_mismatch",
+            "status": "blocked",
+            "detail": "声明的重复测量关系与独立设计不一致，应考虑配对、区组或另行建模。"
+          }
+        ],
+        "blockers": [
+          {
+            "field": "hypothesis",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+          },
+          {
+            "field": "exclusions",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "本轮明确不研究什么，不准备声称什么？"
+          },
+          {
+            "field": "factors",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "改变哪些因素和水平，主要比较谁与谁？"
+          },
+          {
+            "field": "outcomes",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+          },
+          {
+            "field": "baseline",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+          },
+          {
+            "field": "data_source",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。"
+          },
+          {
+            "field": "sampling",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+          },
+          {
+            "field": "randomization",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "怎样随机分配或控制顺序、区组和混杂；不随机时请说明原因与替代方法。"
+          },
+          {
+            "field": "analysis",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+          },
+          {
+            "field": "acceptance",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+          },
+          {
+            "field": "resources",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？"
+          },
+          {
+            "field": "risks",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+          },
+          {
+            "field": "reproducibility",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+          },
+          {
+            "field": "human_roles",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+          },
+          {
+            "field": "deliverable",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "最后交付什么：方案、脚本、表格、报告或可复现实验记录？"
+          },
+          {
+            "field": "hypothesis",
+            "code": "explicit_unknown",
+            "status": "blocked",
+            "detail": "用户明确尚不知道；应先规划获取证据的步骤。"
+          },
+          {
+            "field": "design",
+            "code": "unit_design_mismatch",
+            "status": "blocked",
+            "detail": "声明的重复测量关系与独立设计不一致，应考虑配对、区组或另行建模。"
+          }
+        ],
+        "required_fields": [
+          "research_question",
+          "objective_type",
+          "hypothesis",
+          "scope",
+          "exclusions",
+          "experimental_unit",
+          "factors",
+          "design",
+          "outcomes",
+          "baseline",
+          "data_source",
+          "sampling",
+          "randomization",
+          "analysis",
+          "acceptance",
+          "resources",
+          "risks",
+          "reproducibility",
+          "human_roles",
+          "deliverable"
+        ],
+        "scope": "planning_only",
+        "execution_authorized": false,
+        "scientific_claim_verified": false,
+        "readiness_meaning": "用户声明已足够形成待人类复核的计划；不表示假设、数据、功效或结论已被验证。"
+      },
+      "plan_expected_risk_checks": {
+        "unit_design_mismatch": true,
+        "explicit_unknown": true
+      },
+      "question_indicators": {
+        "within_two": true,
+        "priority_field_covered": true,
+        "topic_terms_seen": [
+          "藏品",
+          "湿度",
+          "命题",
+          "时点",
+          "重复测量"
+        ],
+        "topic_keyword_indicator": true,
+        "grounded_dynamic_questions": true,
+        "semantic_quality_human_rated": false
+      },
+      "plan_indicators": {
+        "node_count": 11,
+        "every_node_has_acceptance": true,
+        "all_steps_unexecuted": true,
+        "incomplete_plan_remains_blocked": true,
+        "execution_authorized": false
+      },
+      "reflection": {
+        "text": "范围仅限原文环境，命题未知；因为同一藏品重复测量，独立设计需要修订，导师负责核实来源与停止条件。",
+        "discussion_cues": {
+          "kind": "formative_discussion_cues",
+          "dimensions": [
+            {
+              "dimension": "question_boundary",
+              "label": "问题与边界",
+              "mentioned_cues": [
+                "范围",
+                "仅限"
+              ],
+              "needs_discussion": false,
+              "compare_with": {
+                "research_question": "复现藏品湿度研究的主要结论。",
+                "scope": "仅限原文材料类别和保存环境。"
+              }
+            },
+            {
+              "dimension": "design_tradeoff",
+              "label": "设计与取舍",
+              "mentioned_cues": [
+                "因为",
+                "独立"
+              ],
+              "needs_discussion": false,
+              "compare_with": {
+                "experimental_unit": "同一藏品重复测量，不同时点共享藏品。",
+                "design": "crd"
+              }
+            },
+            {
+              "dimension": "uncertainty",
+              "label": "未知与可能改变判断的结果",
+              "mentioned_cues": [
+                "未知"
+              ],
+              "needs_discussion": false,
+              "compare_with": {}
+            },
+            {
+              "dimension": "responsibility_stop",
+              "label": "责任与停止条件",
+              "mentioned_cues": [
+                "导师",
+                "负责",
+                "停止"
+              ],
+              "needs_discussion": false,
+              "compare_with": {}
+            }
+          ],
+          "discussion_flags": [],
+          "human_understanding_measured": false,
+          "correctness_scored": false,
+          "limitation": "关键词只提示讨论覆盖，不能判断复述是否正确、是否理解因果关系或是否提高理解；须由研究者/评审对照计划核实。"
+        },
+        "source": "scripted_synthetic_text_not_a_person"
+      },
+      "state_unchanged": true,
+      "contract_hash": "3dc286d38e20105f1bf48c3b9883872dcdcdb3c435f7d41a4bcbec8aedfba872"
+    },
+    {
+      "id": "watershed_compute_conflict",
+      "answer": "流域模型比较的可用计算时长有两份说法，先核实硬上限。",
+      "clarification": {
+        "questions": [
+          {
+            "field": "resources",
+            "kind": "conflict",
+            "question": "关于可用计算时长，现有记录同时出现“最多4小时”和“最多10小时”两种说法，而合成资源说明指出排期尚未确认、不能自动采用较大的上限。本轮规划应保留哪一项作为硬上限，修订理由是什么？",
+            "rationale": "资源边界直接决定模型比较能跑多少配置与重复，冲突未解决前无法确定设计规模；且证据明确提示不得默认采用较大值，需由你确认保留项。",
+            "references": [
+              {
+                "source": "conflict",
+                "key": "resources:0",
+                "quote": "最多4小时"
+              },
+              {
+                "source": "conflict",
+                "key": "resources:1",
+                "quote": "最多10小时"
+              },
+              {
+                "source": "evidence",
+                "key": "2a612458073fed63",
+                "quote": "合成资源说明：尚未确认排期，不能自动采用较大的计算上限。",
+                "citation": "watershed_compute_conflict.md:L1-L1#b9b8cadcecf1805d62836624bd14923c8f34e537509588fc2547b300e74627d0"
+              }
+            ],
+            "options": [
+              {
+                "value": "最多4小时",
+                "label": "最多4小时"
+              },
+              {
+                "value": "最多10小时",
+                "label": "最多10小时"
+              }
+            ],
+            "origin": "model"
+          },
+          {
+            "field": "outcomes",
+            "kind": "missing",
+            "question": "研究问题只写了“比较流域模型误差”，请明确主要响应指标是什么（例如哪类误差度量）、哪个方向更好，以及如何在实验单位上汇总；若尚未确定，可否先做小规模先导来比较候选误差指标？",
+            "rationale": "“误差”未定义具体指标与汇总方式，比较结论无法判定，也无法与资源上限匹配评估规模；这是当前最关键的缺口。",
+            "references": [
+              {
+                "source": "fact",
+                "key": "research_question",
+                "quote": "比较流域模型误差并决定后续投入。"
+              },
+              {
+                "source": "fact",
+                "key": "objective_type",
+                "quote": "comparison"
+              }
+            ],
+            "options": [],
+            "origin": "model"
+          }
+        ],
+        "mode": "dynamic",
+        "reason": "validated",
+        "rejected_questions": [],
+        "model_used": true
+      },
+      "template_baseline": [
+        {
+          "field": "resources",
+          "kind": "conflict",
+          "question": "资源边界出现两个声明，请选择保留哪一个，或说明更正：",
+          "rationale": "冲突不能由模型悄悄覆盖；改变边界会使原确认失效。",
+          "options": [
+            {
+              "value": "最多4小时",
+              "label": "最多4小时"
+            },
+            {
+              "value": "最多10小时",
+              "label": "最多10小时"
+            }
+          ]
+        },
+        {
+          "field": "hypothesis",
+          "kind": "missing",
+          "question": "请给出可能被否定的命题；探索阶段也可明确不预设方向。",
+          "rationale": "命题、能否检验、证据是否支持是三个不同判断。",
+          "options": []
+        }
+      ],
+      "plan_review": {
+        "ready": false,
+        "checks": [
+          {
+            "field": "research_question",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "objective_type",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "hypothesis",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+          },
+          {
+            "field": "scope",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "结论只适用于哪些对象、数据、条件和时间范围？"
+          },
+          {
+            "field": "exclusions",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "本轮明确不研究什么，不准备声称什么？"
+          },
+          {
+            "field": "experimental_unit",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "一次独立分配或观察是什么？哪些测量来自同一对象？"
+          },
+          {
+            "field": "factors",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "改变哪些因素和水平，主要比较谁与谁？"
+          },
+          {
+            "field": "design",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+          },
+          {
+            "field": "outcomes",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+          },
+          {
+            "field": "baseline",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+          },
+          {
+            "field": "data_source",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。"
+          },
+          {
+            "field": "sampling",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+          },
+          {
+            "field": "analysis",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+          },
+          {
+            "field": "acceptance",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+          },
+          {
+            "field": "risks",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+          },
+          {
+            "field": "reproducibility",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+          },
+          {
+            "field": "human_roles",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+          },
+          {
+            "field": "deliverable",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "最后交付什么：方案、脚本、表格、报告或可复现实验记录？"
+          },
+          {
+            "field": "resources",
+            "code": "unresolved_conflict",
+            "status": "blocked",
+            "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+          },
+          {
+            "field": "objective_type",
+            "code": "objective_classified",
+            "status": "passed",
+            "detail": "需要明确比较、预测、因果、探索或复现目的。"
+          },
+          {
+            "field": "resources",
+            "code": "resource_bound",
+            "status": "passed",
+            "detail": "声明可核对的资源数量、期限或硬上限。"
+          }
+        ],
+        "blockers": [
+          {
+            "field": "hypothesis",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+          },
+          {
+            "field": "scope",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "结论只适用于哪些对象、数据、条件和时间范围？"
+          },
+          {
+            "field": "exclusions",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "本轮明确不研究什么，不准备声称什么？"
+          },
+          {
+            "field": "experimental_unit",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "一次独立分配或观察是什么？哪些测量来自同一对象？"
+          },
+          {
+            "field": "factors",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "改变哪些因素和水平，主要比较谁与谁？"
+          },
+          {
+            "field": "design",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+          },
+          {
+            "field": "outcomes",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+          },
+          {
+            "field": "baseline",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+          },
+          {
+            "field": "data_source",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。"
+          },
+          {
+            "field": "sampling",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+          },
+          {
+            "field": "analysis",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+          },
+          {
+            "field": "acceptance",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+          },
+          {
+            "field": "risks",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+          },
+          {
+            "field": "reproducibility",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+          },
+          {
+            "field": "human_roles",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+          },
+          {
+            "field": "deliverable",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "最后交付什么：方案、脚本、表格、报告或可复现实验记录？"
+          },
+          {
+            "field": "resources",
+            "code": "unresolved_conflict",
+            "status": "blocked",
+            "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+          }
+        ],
+        "required_fields": [
+          "research_question",
+          "objective_type",
+          "hypothesis",
+          "scope",
+          "exclusions",
+          "experimental_unit",
+          "factors",
+          "design",
+          "outcomes",
+          "baseline",
+          "data_source",
+          "sampling",
+          "analysis",
+          "acceptance",
+          "resources",
+          "risks",
+          "reproducibility",
+          "human_roles",
+          "deliverable"
+        ],
+        "scope": "planning_only",
+        "execution_authorized": false,
+        "scientific_claim_verified": false,
+        "readiness_meaning": "用户声明已足够形成待人类复核的计划；不表示假设、数据、功效或结论已被验证。"
+      },
+      "plan_expected_risk_checks": {
+        "unresolved_conflict": true
+      },
+      "question_indicators": {
+        "within_two": true,
+        "priority_field_covered": true,
+        "topic_terms_seen": [
+          "时长",
+          "上限",
+          "小时",
+          "资源",
+          "计算"
+        ],
+        "topic_keyword_indicator": true,
+        "grounded_dynamic_questions": true,
+        "semantic_quality_human_rated": false
+      },
+      "plan_indicators": {
+        "node_count": 11,
+        "every_node_has_acceptance": true,
+        "all_steps_unexecuted": true,
+        "incomplete_plan_remains_blocked": true,
+        "execution_authorized": false
+      },
+      "reflection": {
+        "text": "目标是模型比较，资源上限仍有冲突；负责人复核，不能自行扩大预算，也不能在未核实条件下执行。",
+        "discussion_cues": {
+          "kind": "formative_discussion_cues",
+          "dimensions": [
+            {
+              "dimension": "question_boundary",
+              "label": "问题与边界",
+              "mentioned_cues": [
+                "目标"
+              ],
+              "needs_discussion": false,
+              "compare_with": {
+                "research_question": "比较流域模型误差并决定后续投入。"
+              }
+            },
+            {
+              "dimension": "design_tradeoff",
+              "label": "设计与取舍",
+              "mentioned_cues": [],
+              "needs_discussion": true,
+              "compare_with": {}
+            },
+            {
+              "dimension": "uncertainty",
+              "label": "未知与可能改变判断的结果",
+              "mentioned_cues": [
+                "未核实"
+              ],
+              "needs_discussion": false,
+              "compare_with": {}
+            },
+            {
+              "dimension": "responsibility_stop",
+              "label": "责任与停止条件",
+              "mentioned_cues": [
+                "上限",
+                "负责",
+                "复核"
+              ],
+              "needs_discussion": false,
+              "compare_with": {
+                "resources": "最多4小时"
+              }
+            }
+          ],
+          "discussion_flags": [],
+          "human_understanding_measured": false,
+          "correctness_scored": false,
+          "limitation": "关键词只提示讨论覆盖，不能判断复述是否正确、是否理解因果关系或是否提高理解；须由研究者/评审对照计划核实。"
+        },
+        "source": "scripted_synthetic_text_not_a_person"
+      },
+      "state_unchanged": true,
+      "contract_hash": "91973e7fa80601570633d381c78257d257684e52f6c7dbf83b20ae183aacab25"
+    },
+    {
+      "id": "acoustic_negative_result",
+      "answer": "声学算法比较不能只报告显著结果，固定录音批次用完就应停止。",
+      "clarification": {
+        "questions": [
+          {
+            "field": "acceptance",
+            "kind": "refine",
+            "question": "现有验收规则写的是“p<0.01即成功”，但您也说过“不能只报告显著结果，固定录音批次用完就应停止”，且合成评估要求报告识别率差和不确定区间、阴性或反向结果也要交付。请确认：是否把验收改为以识别率差及其不确定区间为主、p 值仅作辅助，并明确阴性/不确定/反向结果同样算完成交付？",
+            "rationale": "当前验收值只用 p 值定义成功，与“不能只报告显著结果”“阴性结果也要交付”直接不一致；不先澄清，后续分析与停止规则会自相矛盾。",
+            "references": [
+              {
+                "source": "answer",
+                "key": "current",
+                "quote": "声学算法比较不能只报告显著结果，固定录音批次用完就应停止。"
+              },
+              {
+                "source": "fact",
+                "key": "acceptance",
+                "quote": "p<0.01即成功"
+              },
+              {
+                "source": "evidence",
+                "key": "4a2e3786f13b5b17",
+                "quote": "合成评估要求：报告识别率差和不确定区间；未支持提升或反向结果也需要交付。",
+                "citation": "acoustic_negative_result.md:L1-L1#2fb6edd4de8a082a3cfa3b2d75694ecbbeec3df3c1966cfd4fc7b21b85351ac2"
+              }
+            ],
+            "options": [],
+            "origin": "model"
+          },
+          {
+            "field": "analysis",
+            "kind": "missing",
+            "question": "分析字段目前为空：您打算估计什么量（例如各算法识别率均值之差）、用什么方法给出不确定区间？在最多16个录音批次、不追加的条件下，是否接受区间较宽、可能无法判定的结果？",
+            "rationale": "验收规则要改成基于识别率差与不确定区间，就必须先确定估计量和区间方法；同时资源上限固定为16批次，需提前接受精度受限的可能。",
+            "references": [
+              {
+                "source": "fact",
+                "key": "outcomes",
+                "quote": "每个录音批次识别率均值，越高越好。"
+              },
+              {
+                "source": "fact",
+                "key": "resources",
+                "quote": "最多16个录音批次，不追加，预算耗尽停止。"
+              },
+              {
+                "source": "evidence",
+                "key": "4a2e3786f13b5b17",
+                "quote": "合成评估要求：报告识别率差和不确定区间；未支持提升或反向结果也需要交付。",
+                "citation": "acoustic_negative_result.md:L1-L1#2fb6edd4de8a082a3cfa3b2d75694ecbbeec3df3c1966cfd4fc7b21b85351ac2"
+              }
+            ],
+            "options": [],
+            "origin": "model"
+          }
+        ],
+        "mode": "dynamic",
+        "reason": "validated",
+        "rejected_questions": [],
+        "model_used": true
+      },
+      "template_baseline": [
+        {
+          "field": "hypothesis",
+          "kind": "missing",
+          "question": "请给出可能被否定的命题；探索阶段也可明确不预设方向。",
+          "rationale": "命题、能否检验、证据是否支持是三个不同判断。",
+          "options": []
+        },
+        {
+          "field": "scope",
+          "kind": "missing",
+          "question": "结论只适用于哪些对象、数据、条件和时间范围？",
+          "rationale": "把对象范围写清楚，避免从一个数据集推广到所有场景。",
+          "options": []
+        }
+      ],
+      "plan_review": {
+        "ready": false,
+        "checks": [
+          {
+            "field": "research_question",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "objective_type",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "hypothesis",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+          },
+          {
+            "field": "scope",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "结论只适用于哪些对象、数据、条件和时间范围？"
+          },
+          {
+            "field": "exclusions",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "本轮明确不研究什么，不准备声称什么？"
+          },
+          {
+            "field": "experimental_unit",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "factors",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "改变哪些因素和水平，主要比较谁与谁？"
+          },
+          {
+            "field": "design",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "outcomes",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "baseline",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+          },
+          {
+            "field": "data_source",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。"
+          },
+          {
+            "field": "sampling",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+          },
+          {
+            "field": "randomization",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "怎样随机分配或控制顺序、区组和混杂；不随机时请说明原因与替代方法。"
+          },
+          {
+            "field": "analysis",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+          },
+          {
+            "field": "acceptance",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "resources",
+            "code": "declaration_present",
+            "status": "passed",
+            "detail": "已记录用户声明；这不等于外部事实验证。"
+          },
+          {
+            "field": "risks",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+          },
+          {
+            "field": "reproducibility",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+          },
+          {
+            "field": "human_roles",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+          },
+          {
+            "field": "deliverable",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "最后交付什么：方案、脚本、表格、报告或可复现实验记录？"
+          },
+          {
+            "field": "objective_type",
+            "code": "objective_classified",
+            "status": "passed",
+            "detail": "需要明确比较、预测、因果、探索或复现目的。"
+          },
+          {
+            "field": "design",
+            "code": "design_classified",
+            "status": "passed",
+            "detail": "选择一个设计家族；自定义设计需由人类进一步复核。"
+          },
+          {
+            "field": "outcomes",
+            "code": "outcome_direction",
+            "status": "passed",
+            "detail": "明确主要响应及方向，或明确无预设方向的探索性分析。"
+          },
+          {
+            "field": "outcomes",
+            "code": "unit_aggregation",
+            "status": "passed",
+            "detail": "说明怎样按实验/推断单位汇总测量，不能用大量技术重复扩大样本量。"
+          },
+          {
+            "field": "acceptance",
+            "code": "measurable_acceptance",
+            "status": "passed",
+            "detail": "验收应有可测阈值或可逐项核对的产物，不只写结果更好。"
+          },
+          {
+            "field": "acceptance",
+            "code": "negative_outcomes",
+            "status": "blocked",
+            "detail": "明确阴性、不确定或反向结果也应如实报告，不能继续试到显著。"
+          },
+          {
+            "field": "acceptance",
+            "code": "stopping_rule",
+            "status": "passed",
+            "detail": "预先声明预算、信息不足或失败时的停止/升级条件。"
+          },
+          {
+            "field": "acceptance",
+            "code": "practical_vs_statistical",
+            "status": "blocked",
+            "detail": "统计显著与实际重要性分开，不能只用 p 值定义科学成功。"
+          },
+          {
+            "field": "resources",
+            "code": "resource_bound",
+            "status": "passed",
+            "detail": "声明可核对的资源数量、期限或硬上限。"
+          }
+        ],
+        "blockers": [
+          {
+            "field": "hypothesis",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+          },
+          {
+            "field": "scope",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "结论只适用于哪些对象、数据、条件和时间范围？"
+          },
+          {
+            "field": "exclusions",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "本轮明确不研究什么，不准备声称什么？"
+          },
+          {
+            "field": "factors",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "改变哪些因素和水平，主要比较谁与谁？"
+          },
+          {
+            "field": "baseline",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+          },
+          {
+            "field": "data_source",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。"
+          },
+          {
+            "field": "sampling",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+          },
+          {
+            "field": "randomization",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "怎样随机分配或控制顺序、区组和混杂；不随机时请说明原因与替代方法。"
+          },
+          {
+            "field": "analysis",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+          },
+          {
+            "field": "risks",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+          },
+          {
+            "field": "reproducibility",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+          },
+          {
+            "field": "human_roles",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+          },
+          {
+            "field": "deliverable",
+            "code": "missing_declaration",
+            "status": "blocked",
+            "detail": "最后交付什么：方案、脚本、表格、报告或可复现实验记录？"
+          },
+          {
+            "field": "acceptance",
+            "code": "negative_outcomes",
+            "status": "blocked",
+            "detail": "明确阴性、不确定或反向结果也应如实报告，不能继续试到显著。"
+          },
+          {
+            "field": "acceptance",
+            "code": "practical_vs_statistical",
+            "status": "blocked",
+            "detail": "统计显著与实际重要性分开，不能只用 p 值定义科学成功。"
+          }
+        ],
+        "required_fields": [
+          "research_question",
+          "objective_type",
+          "hypothesis",
+          "scope",
+          "exclusions",
+          "experimental_unit",
+          "factors",
+          "design",
+          "outcomes",
+          "baseline",
+          "data_source",
+          "sampling",
+          "randomization",
+          "analysis",
+          "acceptance",
+          "resources",
+          "risks",
+          "reproducibility",
+          "human_roles",
+          "deliverable"
+        ],
+        "scope": "planning_only",
+        "execution_authorized": false,
+        "scientific_claim_verified": false,
+        "readiness_meaning": "用户声明已足够形成待人类复核的计划；不表示假设、数据、功效或结论已被验证。"
+      },
+      "plan_expected_risk_checks": {
+        "negative_outcomes": true,
+        "practical_vs_statistical": true
+      },
+      "question_indicators": {
+        "within_two": true,
+        "priority_field_covered": true,
+        "topic_terms_seen": [
+          "录音",
+          "识别率",
+          "显著",
+          "停止"
+        ],
+        "topic_keyword_indicator": true,
+        "grounded_dynamic_questions": true,
+        "semantic_quality_human_rated": false
+      },
+      "plan_indicators": {
+        "node_count": 11,
+        "every_node_has_acceptance": true,
+        "all_steps_unexecuted": true,
+        "incomplete_plan_remains_blocked": true,
+        "execution_authorized": false
+      },
+      "reflection": {
+        "text": "问题是识别率比较，独立录音批次用于设计；效应仍未知，阴性结果也要报告，团队负责在预算上限停止。",
+        "discussion_cues": {
+          "kind": "formative_discussion_cues",
+          "dimensions": [
+            {
+              "dimension": "question_boundary",
+              "label": "问题与边界",
+              "mentioned_cues": [
+                "问题"
+              ],
+              "needs_discussion": false,
+              "compare_with": {
+                "research_question": "比较声学算法识别率并决定是否继续验证。"
+              }
+            },
+            {
+              "dimension": "design_tradeoff",
+              "label": "设计与取舍",
+              "mentioned_cues": [
+                "独立"
+              ],
+              "needs_discussion": false,
+              "compare_with": {
+                "experimental_unit": "每个独立录音批次为分配和推断单位。",
+                "design": "crd"
+              }
+            },
+            {
+              "dimension": "uncertainty",
+              "label": "未知与可能改变判断的结果",
+              "mentioned_cues": [
+                "未知",
+                "阴性"
+              ],
+              "needs_discussion": false,
+              "compare_with": {
+                "acceptance": "p<0.01即成功"
+              }
+            },
+            {
+              "dimension": "responsibility_stop",
+              "label": "责任与停止条件",
+              "mentioned_cues": [
+                "负责",
+                "上限",
+                "停止"
+              ],
+              "needs_discussion": false,
+              "compare_with": {
+                "resources": "最多16个录音批次，不追加，预算耗尽停止。",
+                "acceptance": "p<0.01即成功"
+              }
+            }
+          ],
+          "discussion_flags": [],
+          "human_understanding_measured": false,
+          "correctness_scored": false,
+          "limitation": "关键词只提示讨论覆盖，不能判断复述是否正确、是否理解因果关系或是否提高理解；须由研究者/评审对照计划核实。"
+        },
+        "source": "scripted_synthetic_text_not_a_person"
+      },
+      "state_unchanged": true,
+      "contract_hash": "627ff35b4e943e7e4c95bbfd255227ce0eef57c4e30ed18f141144e5e757e562"
+    }
+  ],
+  "reflection_controls": {
+    "empty": {
+      "kind": "formative_discussion_cues",
+      "dimensions": [
+        {
+          "dimension": "question_boundary",
+          "label": "问题与边界",
+          "mentioned_cues": [],
+          "needs_discussion": true,
+          "compare_with": {}
+        },
+        {
+          "dimension": "design_tradeoff",
+          "label": "设计与取舍",
+          "mentioned_cues": [],
+          "needs_discussion": true,
+          "compare_with": {}
+        },
+        {
+          "dimension": "uncertainty",
+          "label": "未知与可能改变判断的结果",
+          "mentioned_cues": [],
+          "needs_discussion": true,
+          "compare_with": {}
+        },
+        {
+          "dimension": "responsibility_stop",
+          "label": "责任与停止条件",
+          "mentioned_cues": [],
+          "needs_discussion": true,
+          "compare_with": {}
+        }
+      ],
+      "discussion_flags": [],
+      "human_understanding_measured": false,
+      "correctness_scored": false,
+      "limitation": "关键词只提示讨论覆盖，不能判断复述是否正确、是否理解因果关系或是否提高理解；须由研究者/评审对照计划核实。"
+    },
+    "keyword_stuffed_incorrect": {
+      "kind": "formative_discussion_cues",
+      "dimensions": [
+        {
+          "dimension": "question_boundary",
+          "label": "问题与边界",
+          "mentioned_cues": [
+            "目标",
+            "范围"
+          ],
+          "needs_discussion": false,
+          "compare_with": {}
+        },
+        {
+          "dimension": "design_tradeoff",
+          "label": "设计与取舍",
+          "mentioned_cues": [
+            "因为",
+            "所以"
+          ],
+          "needs_discussion": false,
+          "compare_with": {}
+        },
+        {
+          "dimension": "uncertainty",
+          "label": "未知与可能改变判断的结果",
+          "mentioned_cues": [
+            "不确定"
+          ],
+          "needs_discussion": false,
+          "compare_with": {}
+        },
+        {
+          "dimension": "responsibility_stop",
+          "label": "责任与停止条件",
+          "mentioned_cues": [
+            "负责",
+            "停止"
+          ],
+          "needs_discussion": false,
+          "compare_with": {}
+        }
+      ],
+      "discussion_flags": [
+        "请共同核对这句话的完整含义（含否定语境），不能仅凭关键词判断对错：证明因果",
+        "请共同核对这句话的完整含义（含否定语境），不能仅凭关键词判断对错：一直试到显著",
+        "请共同核对这句话的完整含义（含否定语境），不能仅凭关键词判断对错：模拟等于实测"
+      ],
+      "human_understanding_measured": false,
+      "correctness_scored": false,
+      "limitation": "关键词只提示讨论覆盖，不能判断复述是否正确、是否理解因果关系或是否提高理解；须由研究者/评审对照计划核实。"
+    },
+    "meaning": "Both controls remain unscored. Mentioning rubric words is not evidence of correct understanding."
+  },
+  "runtime_sha256": {
+    "ledger.py": "37601d4a3fd9ee03dd3f110a0f7f3e31b6d8c8cf534876614c42114cb4f2a916",
+    "blueprint.py": "c1d988615d7b3b23843fdd044c078a545c1e63f9743f4a239c9f93203dc0c73a",
+    "runtime.py": "4d9e44d25a8647642c944b90bd3774f5026ad04b81fa3a37169459b74016e039",
+    "clarification.py": "590b014a2f6677bc71df8be9e8a0982da11d00963de2a282977a8586d8aeb457",
+    "evidence.py": "51e801640bb7ee4964169469dc0abb1c34367ad9567cda12bf17aecf9b951269",
+    "understanding.py": "5fffde0a44d5bcdca2aff2fa681f3e0666f4708e739541d3926a86ce48e4ead8"
+  }
+}

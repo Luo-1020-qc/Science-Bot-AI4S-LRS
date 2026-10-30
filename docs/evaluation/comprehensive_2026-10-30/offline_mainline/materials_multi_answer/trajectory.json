@@ -1,0 +1,500 @@
+[
+  {
+    "turn": 1,
+    "actor": "scripted_respondent",
+    "input": "我想预测新合金样品的室温屈服强度，帮我设计评估，先厘清适用范围和数据划分。",
+    "answer": "正在澄清\n\n这次研究主要想达到什么目的？\n1. 预测未见样本\n2. 比较方案或处理\n3. 估计因果效应\n4. 探索问题或机制\n5. 复现既有结论\n6. 暂不确定\n7. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+    "question": {
+      "field": "objective_type",
+      "kind": "missing",
+      "question": "这次研究主要想达到什么目的？",
+      "rationale": "不同目的需要不同证据，预测准确不能自动证明因果。",
+      "options": [
+        {
+          "label": "预测未见样本",
+          "value": "prediction",
+          "action": "declare",
+          "id": "f6c91fd3e579"
+        },
+        {
+          "label": "比较方案或处理",
+          "value": "comparison",
+          "action": "declare",
+          "id": "3ee21547a4e9"
+        },
+        {
+          "label": "估计因果效应",
+          "value": "causal",
+          "action": "declare",
+          "id": "de52e8929a44"
+        },
+        {
+          "label": "探索问题或机制",
+          "value": "exploration",
+          "action": "declare",
+          "id": "5bc5b5195816"
+        },
+        {
+          "label": "复现既有结论",
+          "value": "replication",
+          "action": "declare",
+          "id": "d5dc769a0570"
+        },
+        {
+          "label": "暂不确定",
+          "value": "未知",
+          "action": "unknown",
+          "id": "2c3af7fa609c"
+        },
+        {
+          "label": "其他，我来补充",
+          "value": "",
+          "action": "custom",
+          "id": "47de6eddb129"
+        }
+      ],
+      "origin": "template",
+      "allow_accept": false,
+      "choice_policy": {
+        "intent": "prediction",
+        "origin": "trained_context_match",
+        "policy_hash": "6b7d865a492eaba9c5db239e5f5eaa833184d3b21fe3496f358d525504207ded"
+      },
+      "choice_id": "8279360e83bb6ef2",
+      "choice_plan_hash": "4618a5dbb2a4c84923a72920012691b98388f8513094e7a0ab55b41ee0d737b1"
+    },
+    "question_unnecessary": false,
+    "error": false,
+    "before_hash": null,
+    "after_hash": "4618a5dbb2a4c84923a72920012691b98388f8513094e7a0ab55b41ee0d737b1",
+    "changed_field_count": 1,
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "resources": {
+      "llm_requests": 0,
+      "llm_tokens": 0,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 12,
+        "llm_tokens": 60000,
+        "tool_calls": 40,
+        "read_bytes": 18000
+      }
+    }
+  },
+  {
+    "turn": 2,
+    "actor": "scripted_respondent",
+    "input": "/plan choose 8279360e83bb6ef2 f6c91fd3e579",
+    "answer": "正在澄清\n\n这次研究先覆盖哪种范围？\n1. 先看独立留出数据的预测\n2. 关注新对象上的预测\n3. 关注未来时间段的预测\n4. 暂不确定\n5. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+    "question": {
+      "field": "scope",
+      "kind": "missing",
+      "question": "这次研究先覆盖哪种范围？",
+      "rationale": "把对象范围写清楚，避免从一个数据集推广到所有场景。",
+      "options": [
+        {
+          "label": "先看独立留出数据的预测",
+          "value": "只评估明确选择的最终留出数据上的预测表现，训练与验证用于拟合和选择，最终测试不用于反复调参。",
+          "action": "declare",
+          "id": "36b4d475647f"
+        },
+        {
+          "label": "关注新对象上的预测",
+          "value": "仅评估新对象上的预测，按对象隔离训练、验证和最终测试，结论限于所选对象范围。",
+          "action": "declare",
+          "id": "34ec4a7d472c"
+        },
+        {
+          "label": "关注未来时间段的预测",
+          "value": "仅评估后续时间段的预测，按时间隔离训练、验证和最终测试，避免未来信息泄漏。",
+          "action": "declare",
+          "id": "aad711bd624e"
+        },
+        {
+          "label": "暂不确定",
+          "value": "未知",
+          "action": "unknown",
+          "id": "2c3af7fa609c"
+        },
+        {
+          "label": "其他，我来补充",
+          "value": "",
+          "action": "custom",
+          "id": "47de6eddb129"
+        }
+      ],
+      "origin": "template",
+      "allow_accept": false,
+      "choice_policy": {
+        "intent": "prediction",
+        "origin": "user_declared",
+        "policy_hash": null
+      },
+      "choice_id": "bcb4ae87edbab470",
+      "choice_plan_hash": "811dd42d72e4f76e88feb766285f69fa988bec6a036e625fa43a75240a6ca670"
+    },
+    "question_unnecessary": false,
+    "error": false,
+    "before_hash": "4618a5dbb2a4c84923a72920012691b98388f8513094e7a0ab55b41ee0d737b1",
+    "after_hash": "811dd42d72e4f76e88feb766285f69fa988bec6a036e625fa43a75240a6ca670",
+    "changed_field_count": 1,
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "resources": {
+      "llm_requests": 0,
+      "llm_tokens": 0,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 12,
+        "llm_tokens": 60000,
+        "tool_calls": 40,
+        "read_bytes": 18000
+      }
+    }
+  },
+  {
+    "turn": 3,
+    "actor": "scripted_respondent",
+    "input": "研究边界：仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺。\n本轮不回答的问题：不将预测相关性解释为成分因果作用，不外推新工艺或真实材料性能。",
+    "answer": "正在澄清\n\n你希望按什么单位比较或汇总？\n1. 按独立对象汇总\n2. 按同一对象配对比较\n3. 按来源或批次分组处理\n4. 暂不确定\n5. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+    "question": {
+      "field": "experimental_unit",
+      "kind": "missing",
+      "question": "你希望按什么单位比较或汇总？",
+      "rationale": "数据行、网格点和随机种子不能自动当作独立重复。",
+      "options": [
+        {
+          "label": "按独立对象汇总",
+          "value": "每个独立研究对象作为推断单位，同一对象的多次测量先在对象内汇总。",
+          "action": "declare",
+          "id": "7f4f77dbe821"
+        },
+        {
+          "label": "按同一对象配对比较",
+          "value": "同一研究对象在候选条件间配对，技术重复不作为额外独立单位。",
+          "action": "declare",
+          "id": "984a513ece30"
+        },
+        {
+          "label": "按来源或批次分组处理",
+          "value": "明确来源或批次的共享关系，按对象或区组处理相关测量，不把数据行直接当作独立重复。",
+          "action": "declare",
+          "id": "1da38a7a20d9"
+        },
+        {
+          "label": "暂不确定",
+          "value": "未知",
+          "action": "unknown",
+          "id": "2c3af7fa609c"
+        },
+        {
+          "label": "其他，我来补充",
+          "value": "",
+          "action": "custom",
+          "id": "47de6eddb129"
+        }
+      ],
+      "origin": "template",
+      "allow_accept": false,
+      "choice_policy": {
+        "intent": "prediction",
+        "origin": "user_declared",
+        "policy_hash": null
+      },
+      "choice_id": "0b9e2baba2254894",
+      "choice_plan_hash": "360ffc800af3e0b1ee1b20f5543a6f09b28339bb69d86e8ef7ecfeade3f2e921"
+    },
+    "question_unnecessary": false,
+    "error": false,
+    "before_hash": "811dd42d72e4f76e88feb766285f69fa988bec6a036e625fa43a75240a6ca670",
+    "after_hash": "360ffc800af3e0b1ee1b20f5543a6f09b28339bb69d86e8ef7ecfeade3f2e921",
+    "changed_field_count": 2,
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "resources": {
+      "llm_requests": 0,
+      "llm_tokens": 0,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 12,
+        "llm_tokens": 60000,
+        "tool_calls": 40,
+        "read_bytes": 18000
+      }
+    }
+  },
+  {
+    "turn": 4,
+    "actor": "scripted_respondent",
+    "input": "实验与推断单位：同一合金批次内测量相关；以完整批次为隔离、重采样与推断单位，技术重复先按样品汇总。\n设计结构：prediction\n基线与公平比较：均值预测与线性回归为基线，候选树模型共享相同批次划分、特征和调参预算。",
+    "answer": "正在澄清\n\n主要指标是什么、哪个方向更好、怎样在实验单位上汇总？\n1. 以预测误差为主\n2. 以任务成功比例为主\n3. 以资源成本为主\n4. 暂不确定\n5. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+    "question": {
+      "field": "outcomes",
+      "kind": "missing",
+      "question": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？",
+      "rationale": "训练损失、测试指标、统计显著和实际重要性不能混用。",
+      "options": [
+        {
+          "label": "以预测误差为主",
+          "value": "按独立单位汇总预测误差均值，越低越好；成本作为辅助指标。",
+          "action": "declare",
+          "id": "3db0c93bfca3"
+        },
+        {
+          "label": "以任务成功比例为主",
+          "value": "按独立单位汇总任务成功比例，越高越好，失败和不确定结果同样记录。",
+          "action": "declare",
+          "id": "db8d5f4eb927"
+        },
+        {
+          "label": "以资源成本为主",
+          "value": "按独立单位汇总运行时间或资源成本，越低越好，同时报告质量变化。",
+          "action": "declare",
+          "id": "076da5faf0ed"
+        },
+        {
+          "label": "暂不确定",
+          "value": "未知",
+          "action": "unknown",
+          "id": "2c3af7fa609c"
+        },
+        {
+          "label": "其他，我来补充",
+          "value": "",
+          "action": "custom",
+          "id": "47de6eddb129"
+        }
+      ],
+      "origin": "template",
+      "allow_accept": false,
+      "choice_policy": {
+        "intent": "prediction",
+        "origin": "user_declared",
+        "policy_hash": null
+      },
+      "choice_id": "222e742e0ffea589",
+      "choice_plan_hash": "ef789aa751e8990f49744221daf73184ce19ceb2657964e7eae3e7f4ac5d8bc6"
+    },
+    "question_unnecessary": false,
+    "error": false,
+    "before_hash": "360ffc800af3e0b1ee1b20f5543a6f09b28339bb69d86e8ef7ecfeade3f2e921",
+    "after_hash": "ef789aa751e8990f49744221daf73184ce19ceb2657964e7eae3e7f4ac5d8bc6",
+    "changed_field_count": 3,
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "resources": {
+      "llm_requests": 0,
+      "llm_tokens": 0,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 12,
+        "llm_tokens": 60000,
+        "tool_calls": 40,
+        "read_bytes": 18000
+      }
+    }
+  },
+  {
+    "turn": 5,
+    "actor": "scripted_respondent",
+    "input": "主要响应与测量：先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa。\n分析与不确定性：验证集仅选择超参数，冻结后只评一次最终测试；以批次为单位 bootstrap 报告 MAE 差与不确定区间。\n验收和停止规则：逐项交付最终测试误差、批次区间、基线和失败日志；阴性或不确定结果照样报告；批次无法隔离或4小时上限即停止。",
+    "answer": "正在澄清\n\n使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。\n1. 使用已有数据并登记版本\n2. 使用明确选择的公开数据\n3. 先用合成数据验证流程\n4. 暂不确定\n5. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+    "question": {
+      "field": "data_source",
+      "kind": "missing",
+      "question": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。",
+      "rationale": "用户声明与实测证据分开记录，不凭空补造先导数据。",
+      "options": [
+        {
+          "label": "使用已有数据并登记版本",
+          "value": "由研究者明确选择已有数据，登记来源与版本；训练、验证和最终测试分别使用，按对象隔离以防泄漏。",
+          "action": "declare",
+          "id": "032ed53fff82"
+        },
+        {
+          "label": "使用明确选择的公开数据",
+          "value": "由研究者明确选择公开数据及版本，记录获取方式，按对象划分训练、验证和最终测试以防泄漏。",
+          "action": "declare",
+          "id": "f34e61fe0b83"
+        },
+        {
+          "label": "先用合成数据验证流程",
+          "value": "本轮使用显式标记的合成数据检查流程，不能据此代替真实应用结论。",
+          "action": "declare",
+          "id": "dd099ed4c277"
+        },
+        {
+          "label": "暂不确定",
+          "value": "未知",
+          "action": "unknown",
+          "id": "2c3af7fa609c"
+        },
+        {
+          "label": "其他，我来补充",
+          "value": "",
+          "action": "custom",
+          "id": "47de6eddb129"
+        }
+      ],
+      "origin": "template",
+      "allow_accept": false,
+      "choice_policy": {
+        "intent": "prediction",
+        "origin": "user_declared",
+        "policy_hash": null
+      },
+      "choice_id": "6e7495cb5ee8cf81",
+      "choice_plan_hash": "50cc5f2d650d4cef4c4bd83b99e4a2ab630de31ba37205fc1e584a7118c16837"
+    },
+    "question_unnecessary": false,
+    "error": false,
+    "before_hash": "ef789aa751e8990f49744221daf73184ce19ceb2657964e7eae3e7f4ac5d8bc6",
+    "after_hash": "50cc5f2d650d4cef4c4bd83b99e4a2ab630de31ba37205fc1e584a7118c16837",
+    "changed_field_count": 3,
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "resources": {
+      "llm_requests": 0,
+      "llm_tokens": 0,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 12,
+        "llm_tokens": 60000,
+        "tool_calls": 40,
+        "read_bytes": 18000
+      }
+    }
+  },
+  {
+    "turn": 6,
+    "actor": "scripted_respondent",
+    "input": "数据与证据来源：工程诊断用 synthetic_alloy_v1；按合金批次分组隔离训练、验证和最终测试，防止技术重复泄漏。\n样本与重复依据：固定预算先导，先核查批次标识和可行划分，不宣称统计功效保证。",
+    "answer": "正在澄清\n\n可用多少时间、计算、实验次数或经费？哪些上限不可突破？\n1. 先由我确认硬上限\n2. 沿用已声明的预算\n3. 先缩小目标再核算\n4. 暂不确定\n5. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+    "question": {
+      "field": "resources",
+      "kind": "missing",
+      "question": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？",
+      "rationale": "预算是计划前提，不能由 Agent 为过检而擅自提高。",
+      "options": [
+        {
+          "label": "先由我确认硬上限",
+          "value": "未知",
+          "action": "unknown",
+          "id": "8dbd69479c29"
+        },
+        {
+          "label": "沿用已声明的预算",
+          "value": "沿用研究者此前明确声明的硬预算，达到上限停止，不为追求正结果增加运行。",
+          "action": "declare",
+          "id": "a703a3761a0c"
+        },
+        {
+          "label": "先缩小目标再核算",
+          "value": "先把研究收缩到可行的先导目标，核算资源后由研究者确认硬上限。",
+          "action": "declare",
+          "id": "644d67e34a74"
+        },
+        {
+          "label": "暂不确定",
+          "value": "未知",
+          "action": "unknown",
+          "id": "2c3af7fa609c"
+        },
+        {
+          "label": "其他，我来补充",
+          "value": "",
+          "action": "custom",
+          "id": "47de6eddb129"
+        }
+      ],
+      "origin": "template",
+      "allow_accept": false,
+      "choice_policy": {
+        "intent": "prediction",
+        "origin": "user_declared",
+        "policy_hash": null
+      },
+      "choice_id": "5c95446367204448",
+      "choice_plan_hash": "8572b9184dbfce25fad4577a2d5d44ad9d018257cba13ce393d1398fef21e7f6"
+    },
+    "question_unnecessary": false,
+    "error": false,
+    "before_hash": "50cc5f2d650d4cef4c4bd83b99e4a2ab630de31ba37205fc1e584a7118c16837",
+    "after_hash": "8572b9184dbfce25fad4577a2d5d44ad9d018257cba13ce393d1398fef21e7f6",
+    "changed_field_count": 2,
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "resources": {
+      "llm_requests": 0,
+      "llm_tokens": 0,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 12,
+        "llm_tokens": 60000,
+        "tool_calls": 40,
+        "read_bytes": 18000
+      }
+    }
+  },
+  {
+    "turn": 7,
+    "actor": "scripted_respondent",
+    "input": "资源边界：仅规划，后续先导最多8次拟合、4小时上限；本轮不执行实验。\n风险与未决条件：缺失批次标识、量纲不一致或样本跨划分泄漏时停止交还研究者核实。\n复现记录：保存批次划分、数据版本、代码版本、种子、配置和全部失败记录。\n人类职责：学生确认预测范围，材料负责人复核批次和量纲，研究者负责结论与执行授权。\n交付物：预测评估设计、防泄漏清单、基线对照与验收表、复现记录模板。",
+    "answer": "规划可复核\n\n实验设计草案（规划，尚未执行）\n\n问题与结论边界\n- 研究问题：我想预测新合金样品的室温屈服强度，帮我设计评估，先厘清适用范围和数据划分。\n- 研究目的：预测\n- 研究边界：仅预测 synthetic_alloy_v1 声明成分范围内的新合金样品室温屈服强度；不外推其他工艺\n- 本轮不回答的问题：不将预测相关性解释为成分因果作用，不外推新工艺或真实材料性能\n\n实验设计与主要对比\n- 设计结构：预测评估\n- 实验与推断单位：同一合金批次内测量相关；以完整批次为隔离、重采样与推断单位，技术重复先按样品汇总\n- 基线与公平比较：均值预测与线性回归为基线，候选树模型共享相同批次划分、特征和调参预算\n\n数据、样本与分配\n- 数据与证据来源：工程诊断用 synthetic_alloy_v1；按合金批次分组隔离训练、验证和最终测试，防止技术重复泄漏\n- 样本与重复依据：固定预算先导，先核查批次标识和可行划分，不宣称统计功效保证\n\n指标与分析\n- 主要响应与测量：先按样品汇总屈服强度误差，再报告各独立批次 MAE 的均值，越低越好；量纲为 MPa\n- 分析与不确定性：验证集仅选择超参数，冻结后只评一次最终测试；以批次为单位 bootstrap 报告 MAE 差与不确定区间\n\n验收、阴性结果与停止\n- 验收和停止规则：逐项交付最终测试误差、批次区间、基线和失败日志；阴性或不确定结果照样报告；批次无法隔离或4小时上限即停止\n- 资源边界：仅规划，后续先导最多8次拟合、4小时上限；本轮不执行实验\n- 风险与未决条件：缺失批次标识、量纲不一致或样本跨划分泄漏时停止交还研究者核实\n\n复现、交付与责任\n- 复现记录：保存批次划分、数据版本、代码版本、种子、配置和全部失败记录\n- 交付物：预测评估设计、防泄漏清单、基线对照与验收表、复现记录模板\n- 人类职责：学生确认预测范围，材料负责人复核批次和量纲，研究者负责结论与执行授权\n\n待核对事项\n- 样本与重复依据：本计划不自动计算或证明功效；参数来源和计算须单独复核。\n\n已显式选择 0 个来源片段；声明和出处仍需核实。\n核对下列设计、方法假设与责任，再决定是否确认当前版本。\n\n确认上述规划用 /plan approve 4c0217dc138a5f7317fd87f816af17039a361bbeef78dd93683907f8ce8e026b。确认只保存规划版本。",
+    "question": null,
+    "question_unnecessary": false,
+    "error": false,
+    "before_hash": "8572b9184dbfce25fad4577a2d5d44ad9d018257cba13ce393d1398fef21e7f6",
+    "after_hash": "4c0217dc138a5f7317fd87f816af17039a361bbeef78dd93683907f8ce8e026b",
+    "changed_field_count": 5,
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "resources": {
+      "llm_requests": 0,
+      "llm_tokens": 0,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 12,
+        "llm_tokens": 60000,
+        "tool_calls": 40,
+        "read_bytes": 18000
+      }
+    }
+  }
+]

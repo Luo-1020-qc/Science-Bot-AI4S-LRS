@@ -1,0 +1,122 @@
+[
+  {
+    "case_id": "models_multi_answer",
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "question_relevance": null,
+    "option_usefulness": null,
+    "critical_omissions": null,
+    "plan_testability": null,
+    "researcher_explanation": null,
+    "consent": null
+  },
+  {
+    "case_id": "models_correction",
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "question_relevance": null,
+    "option_usefulness": null,
+    "critical_omissions": null,
+    "plan_testability": null,
+    "researcher_explanation": null,
+    "consent": null
+  },
+  {
+    "case_id": "models_unknown",
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "question_relevance": null,
+    "option_usefulness": null,
+    "critical_omissions": null,
+    "plan_testability": null,
+    "researcher_explanation": null,
+    "consent": null
+  },
+  {
+    "case_id": "models_goal_change",
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "question_relevance": null,
+    "option_usefulness": null,
+    "critical_omissions": null,
+    "plan_testability": null,
+    "researcher_explanation": null,
+    "consent": null
+  },
+  {
+    "case_id": "models_complete_input",
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "question_relevance": null,
+    "option_usefulness": null,
+    "critical_omissions": null,
+    "plan_testability": null,
+    "researcher_explanation": null,
+    "consent": null
+  },
+  {
+    "case_id": "materials_multi_answer",
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "question_relevance": null,
+    "option_usefulness": null,
+    "critical_omissions": null,
+    "plan_testability": null,
+    "researcher_explanation": null,
+    "consent": null
+  },
+  {
+    "case_id": "materials_correction",
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "question_relevance": null,
+    "option_usefulness": null,
+    "critical_omissions": null,
+    "plan_testability": null,
+    "researcher_explanation": null,
+    "consent": null
+  },
+  {
+    "case_id": "materials_unknown",
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "question_relevance": null,
+    "option_usefulness": null,
+    "critical_omissions": null,
+    "plan_testability": null,
+    "researcher_explanation": null,
+    "consent": null
+  },
+  {
+    "case_id": "materials_goal_change",
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "question_relevance": null,
+    "option_usefulness": null,
+    "critical_omissions": null,
+    "plan_testability": null,
+    "researcher_explanation": null,
+    "consent": null
+  },
+  {
+    "case_id": "materials_complete_input",
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "question_relevance": null,
+    "option_usefulness": null,
+    "critical_omissions": null,
+    "plan_testability": null,
+    "researcher_explanation": null,
+    "consent": null
+  }
+]

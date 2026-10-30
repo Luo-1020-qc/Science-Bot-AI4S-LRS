@@ -1,0 +1,768 @@
+[
+  {
+    "turn": 1,
+    "actor": "scripted_respondent",
+    "input": "我想比较线性模型和非线性基线在合成二维场上的误差和耗时，帮我规划实验，我还没确定比较边界。",
+    "answer": "正在澄清\n\n这次研究主要想达到什么目的？\n1. 比较方案或处理\n2. 预测未见样本\n3. 估计因果效应\n4. 探索问题或机制\n5. 复现既有结论\n6. 暂不确定\n7. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+    "question": {
+      "field": "objective_type",
+      "kind": "missing",
+      "question": "这次研究主要想达到什么目的？",
+      "rationale": "不同目的需要不同证据，预测准确不能自动证明因果。",
+      "options": [
+        {
+          "label": "比较方案或处理",
+          "value": "comparison",
+          "action": "declare",
+          "id": "3ee21547a4e9"
+        },
+        {
+          "label": "预测未见样本",
+          "value": "prediction",
+          "action": "declare",
+          "id": "f6c91fd3e579"
+        },
+        {
+          "label": "估计因果效应",
+          "value": "causal",
+          "action": "declare",
+          "id": "de52e8929a44"
+        },
+        {
+          "label": "探索问题或机制",
+          "value": "exploration",
+          "action": "declare",
+          "id": "5bc5b5195816"
+        },
+        {
+          "label": "复现既有结论",
+          "value": "replication",
+          "action": "declare",
+          "id": "d5dc769a0570"
+        },
+        {
+          "label": "暂不确定",
+          "value": "未知",
+          "action": "unknown",
+          "id": "2c3af7fa609c"
+        },
+        {
+          "label": "其他，我来补充",
+          "value": "",
+          "action": "custom",
+          "id": "47de6eddb129"
+        }
+      ],
+      "origin": "template",
+      "allow_accept": false,
+      "choice_policy": {
+        "intent": "comparison",
+        "origin": "trained_context_match",
+        "policy_hash": "6b7d865a492eaba9c5db239e5f5eaa833184d3b21fe3496f358d525504207ded"
+      },
+      "choice_id": "e99316a3b8aa5bb1",
+      "choice_plan_hash": "39bffad3043f7163f7495239c1ab2b6d4f59e48f01442a8a7da0db2651fbe3ff"
+    },
+    "question_unnecessary": false,
+    "error": false,
+    "before_hash": null,
+    "after_hash": "39bffad3043f7163f7495239c1ab2b6d4f59e48f01442a8a7da0db2651fbe3ff",
+    "changed_field_count": 1,
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "resources": {
+      "llm_requests": 0,
+      "llm_tokens": 0,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 12,
+        "llm_tokens": 60000,
+        "tool_calls": 40,
+        "read_bytes": 18000
+      }
+    }
+  },
+  {
+    "turn": 2,
+    "actor": "scripted_respondent",
+    "input": "研究目的：comparison\n待检验命题：在指定合成场范围内，线性候选的单位误差能否接近非线性基线，并降低运行成本？\n研究边界：仅限 synthetic_field_v1 合成二维稳态场、相同分辨率和固定预算，不外推新方程。\n本轮不回答的问题：不声称复现真实论文，不推断因果，不外推到不同分辨率。",
+    "answer": "正在澄清\n\n你希望按什么单位比较或汇总？\n1. 按独立对象汇总\n2. 按同一对象配对比较\n3. 按来源或批次分组处理\n4. 暂不确定\n5. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+    "question": {
+      "field": "experimental_unit",
+      "kind": "missing",
+      "question": "你希望按什么单位比较或汇总？",
+      "rationale": "数据行、网格点和随机种子不能自动当作独立重复。",
+      "options": [
+        {
+          "label": "按独立对象汇总",
+          "value": "每个独立研究对象作为推断单位，同一对象的多次测量先在对象内汇总。",
+          "action": "declare",
+          "id": "7f4f77dbe821"
+        },
+        {
+          "label": "按同一对象配对比较",
+          "value": "同一研究对象在候选条件间配对，技术重复不作为额外独立单位。",
+          "action": "declare",
+          "id": "984a513ece30"
+        },
+        {
+          "label": "按来源或批次分组处理",
+          "value": "明确来源或批次的共享关系，按对象或区组处理相关测量，不把数据行直接当作独立重复。",
+          "action": "declare",
+          "id": "1da38a7a20d9"
+        },
+        {
+          "label": "暂不确定",
+          "value": "未知",
+          "action": "unknown",
+          "id": "2c3af7fa609c"
+        },
+        {
+          "label": "其他，我来补充",
+          "value": "",
+          "action": "custom",
+          "id": "47de6eddb129"
+        }
+      ],
+      "origin": "template",
+      "allow_accept": false,
+      "choice_policy": {
+        "intent": "comparison",
+        "origin": "user_declared",
+        "policy_hash": null
+      },
+      "choice_id": "cbd182868d395e88",
+      "choice_plan_hash": "37de075d7be12e5150b0eb1ac20c1b1b1115a150e08f0c124ceb07c81cb53ceb"
+    },
+    "question_unnecessary": false,
+    "error": false,
+    "before_hash": "39bffad3043f7163f7495239c1ab2b6d4f59e48f01442a8a7da0db2651fbe3ff",
+    "after_hash": "37de075d7be12e5150b0eb1ac20c1b1b1115a150e08f0c124ceb07c81cb53ceb",
+    "changed_field_count": 4,
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "resources": {
+      "llm_requests": 0,
+      "llm_tokens": 0,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 12,
+        "llm_tokens": 60000,
+        "tool_calls": 40,
+        "read_bytes": 18000
+      }
+    }
+  },
+  {
+    "turn": 3,
+    "actor": "scripted_respondent",
+    "input": "实验与推断单位：以独立生成的完整场实现为推断单位；同一实现场上两模型配对，网格点不是独立重复。\n因素与对比：线性候选与非线性基线两个模型水平；主要比较候选减基线。\n设计结构：paired\n基线与公平比较：非线性基线与线性候选共享相同训练、验证、测试划分、调参次数和硬件预算。",
+    "answer": "正在澄清\n\n主要指标是什么、哪个方向更好、怎样在实验单位上汇总？\n1. 以预测误差为主\n2. 以任务成功比例为主\n3. 以资源成本为主\n4. 暂不确定\n5. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+    "question": {
+      "field": "outcomes",
+      "kind": "missing",
+      "question": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？",
+      "rationale": "训练损失、测试指标、统计显著和实际重要性不能混用。",
+      "options": [
+        {
+          "label": "以预测误差为主",
+          "value": "按独立单位汇总预测误差均值，越低越好；成本作为辅助指标。",
+          "action": "declare",
+          "id": "3db0c93bfca3"
+        },
+        {
+          "label": "以任务成功比例为主",
+          "value": "按独立单位汇总任务成功比例，越高越好，失败和不确定结果同样记录。",
+          "action": "declare",
+          "id": "db8d5f4eb927"
+        },
+        {
+          "label": "以资源成本为主",
+          "value": "按独立单位汇总运行时间或资源成本，越低越好，同时报告质量变化。",
+          "action": "declare",
+          "id": "076da5faf0ed"
+        },
+        {
+          "label": "暂不确定",
+          "value": "未知",
+          "action": "unknown",
+          "id": "2c3af7fa609c"
+        },
+        {
+          "label": "其他，我来补充",
+          "value": "",
+          "action": "custom",
+          "id": "47de6eddb129"
+        }
+      ],
+      "origin": "template",
+      "allow_accept": false,
+      "choice_policy": {
+        "intent": "comparison",
+        "origin": "user_declared",
+        "policy_hash": null
+      },
+      "choice_id": "db97fb4bbfee2cc4",
+      "choice_plan_hash": "7a58e59dfd14fbe59e0e31524303f7b6ae667740c5162f7f6f514706c8e12fcb"
+    },
+    "question_unnecessary": false,
+    "error": false,
+    "before_hash": "37de075d7be12e5150b0eb1ac20c1b1b1115a150e08f0c124ceb07c81cb53ceb",
+    "after_hash": "7a58e59dfd14fbe59e0e31524303f7b6ae667740c5162f7f6f514706c8e12fcb",
+    "changed_field_count": 4,
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "resources": {
+      "llm_requests": 0,
+      "llm_tokens": 0,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 12,
+        "llm_tokens": 60000,
+        "tool_calls": 40,
+        "read_bytes": 18000
+      }
+    }
+  },
+  {
+    "turn": 4,
+    "actor": "scripted_respondent",
+    "input": "主要响应与测量：每个独立场实现上相对 L2 误差的均值，越低越好；耗时作为辅助指标。\n分析与不确定性：估计同一场上候选减基线的误差均值差，以完整场为重采样单位报告 bootstrap 区间，不把网格点作独立样本。\n验收和停止规则：逐项交付配对差、区间、耗时与失败日志；阴性或不确定结果同样报告；最多6次运行或2小时上限即停止，不按结果加预算。",
+    "answer": "正在澄清\n\n使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。\n1. 使用已有数据并登记版本\n2. 使用明确选择的公开数据\n3. 先用合成数据验证流程\n4. 暂不确定\n5. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+    "question": {
+      "field": "data_source",
+      "kind": "missing",
+      "question": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。",
+      "rationale": "用户声明与实测证据分开记录，不凭空补造先导数据。",
+      "options": [
+        {
+          "label": "使用已有数据并登记版本",
+          "value": "由研究者明确选择已有数据，登记来源与版本；训练、验证和最终测试分别使用，按对象隔离以防泄漏。",
+          "action": "declare",
+          "id": "032ed53fff82"
+        },
+        {
+          "label": "使用明确选择的公开数据",
+          "value": "由研究者明确选择公开数据及版本，记录获取方式，按对象划分训练、验证和最终测试以防泄漏。",
+          "action": "declare",
+          "id": "f34e61fe0b83"
+        },
+        {
+          "label": "先用合成数据验证流程",
+          "value": "本轮使用显式标记的合成数据检查流程，不能据此代替真实应用结论。",
+          "action": "declare",
+          "id": "dd099ed4c277"
+        },
+        {
+          "label": "暂不确定",
+          "value": "未知",
+          "action": "unknown",
+          "id": "2c3af7fa609c"
+        },
+        {
+          "label": "其他，我来补充",
+          "value": "",
+          "action": "custom",
+          "id": "47de6eddb129"
+        }
+      ],
+      "origin": "template",
+      "allow_accept": false,
+      "choice_policy": {
+        "intent": "comparison",
+        "origin": "user_declared",
+        "policy_hash": null
+      },
+      "choice_id": "ede8a4f4710ce14d",
+      "choice_plan_hash": "6b2b7d8c5293a3b202e4570871b510ab5411e7820f709b64da12c8633a393acf"
+    },
+    "question_unnecessary": false,
+    "error": false,
+    "before_hash": "7a58e59dfd14fbe59e0e31524303f7b6ae667740c5162f7f6f514706c8e12fcb",
+    "after_hash": "6b2b7d8c5293a3b202e4570871b510ab5411e7820f709b64da12c8633a393acf",
+    "changed_field_count": 3,
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "resources": {
+      "llm_requests": 0,
+      "llm_tokens": 0,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 12,
+        "llm_tokens": 60000,
+        "tool_calls": 40,
+        "read_bytes": 18000
+      }
+    }
+  },
+  {
+    "turn": 5,
+    "actor": "scripted_respondent",
+    "input": "数据与证据来源：工程诊断用 synthetic_field_v1；按独立场来源分组隔离训练、验证和最终测试，防止数据泄漏。\n样本与重复依据：未知\n分配与偏差控制：在独立场内配对比较，随机排列模型运行顺序，记录实际分配和种子。",
+    "answer": "正在澄清\n\n这项还不确定，你希望先怎样推进？\n1. 先查已有资料\n2. 先安排先导获取依据\n3. 先缩小研究目标\n4. 暂不确定\n5. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+    "question": {
+      "field": "sampling",
+      "kind": "evidence_plan",
+      "question": "这项还不确定，你希望先怎样推进？",
+      "rationale": "先规划怎样获取依据，不要求现在猜出未知值；该步骤不会自动执行。",
+      "options": [
+        {
+          "label": "先查已有资料",
+          "value": "先查找并核对已有资料，再由研究者确认适用性。",
+          "action": "evidence",
+          "id": "fe371686a7fd"
+        },
+        {
+          "label": "先安排先导获取依据",
+          "value": "先规划先导以核查独立性与测量流程，不填入未知数值。",
+          "action": "evidence",
+          "id": "9c81c79799a0"
+        },
+        {
+          "label": "先缩小研究目标",
+          "value": "先与研究者讨论缩小本轮目标，取得依据后再更新边界。",
+          "action": "evidence",
+          "id": "50a0acaa5c9a"
+        },
+        {
+          "label": "暂不确定",
+          "value": "未知",
+          "action": "unknown",
+          "id": "2c3af7fa609c"
+        },
+        {
+          "label": "其他，我来补充",
+          "value": "",
+          "action": "custom",
+          "id": "47de6eddb129"
+        }
+      ],
+      "origin": "template",
+      "allow_accept": false,
+      "choice_policy": {
+        "intent": "comparison",
+        "origin": "user_declared",
+        "policy_hash": null
+      },
+      "choice_id": "00c1c32b73bc9146",
+      "choice_plan_hash": "3850c82311fda57dde97feb65b69005a3454eb3bbc1530d136d8c98ccab36e3e"
+    },
+    "question_unnecessary": false,
+    "error": false,
+    "before_hash": "6b2b7d8c5293a3b202e4570871b510ab5411e7820f709b64da12c8633a393acf",
+    "after_hash": "3850c82311fda57dde97feb65b69005a3454eb3bbc1530d136d8c98ccab36e3e",
+    "changed_field_count": 2,
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "resources": {
+      "llm_requests": 0,
+      "llm_tokens": 0,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 12,
+        "llm_tokens": 60000,
+        "tool_calls": 40,
+        "read_bytes": 18000
+      }
+    }
+  },
+  {
+    "turn": 6,
+    "actor": "scripted_respondent",
+    "input": "先查找已有先导记录，再请方法负责人核实单位与样本依据。",
+    "answer": "正在澄清\n\n可用多少时间、计算、实验次数或经费？哪些上限不可突破？\n1. 先由我确认硬上限\n2. 沿用已声明的预算\n3. 先缩小目标再核算\n4. 暂不确定\n5. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+    "question": {
+      "field": "resources",
+      "kind": "missing",
+      "question": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？",
+      "rationale": "预算是计划前提，不能由 Agent 为过检而擅自提高。",
+      "options": [
+        {
+          "label": "先由我确认硬上限",
+          "value": "未知",
+          "action": "unknown",
+          "id": "8dbd69479c29"
+        },
+        {
+          "label": "沿用已声明的预算",
+          "value": "沿用研究者此前明确声明的硬预算，达到上限停止，不为追求正结果增加运行。",
+          "action": "declare",
+          "id": "a703a3761a0c"
+        },
+        {
+          "label": "先缩小目标再核算",
+          "value": "先把研究收缩到可行的先导目标，核算资源后由研究者确认硬上限。",
+          "action": "declare",
+          "id": "644d67e34a74"
+        },
+        {
+          "label": "暂不确定",
+          "value": "未知",
+          "action": "unknown",
+          "id": "2c3af7fa609c"
+        },
+        {
+          "label": "其他，我来补充",
+          "value": "",
+          "action": "custom",
+          "id": "47de6eddb129"
+        }
+      ],
+      "origin": "template",
+      "allow_accept": false,
+      "choice_policy": {
+        "intent": "comparison",
+        "origin": "user_declared",
+        "policy_hash": null
+      },
+      "choice_id": "ded5a6bdd41027e3",
+      "choice_plan_hash": "a8199e3935b4feccc1fe857187d9a09bab8b32656f62348afc2a933817731039"
+    },
+    "question_unnecessary": false,
+    "error": false,
+    "before_hash": "3850c82311fda57dde97feb65b69005a3454eb3bbc1530d136d8c98ccab36e3e",
+    "after_hash": "a8199e3935b4feccc1fe857187d9a09bab8b32656f62348afc2a933817731039",
+    "changed_field_count": 0,
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "resources": {
+      "llm_requests": 0,
+      "llm_tokens": 0,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 12,
+        "llm_tokens": 60000,
+        "tool_calls": 40,
+        "read_bytes": 18000
+      }
+    }
+  },
+  {
+    "turn": 7,
+    "actor": "scripted_respondent",
+    "input": "/plan evidence add {\"path\": \"synthetic_methods.md\", \"start_line\": 1, \"end_line\": 1, \"share_with_model\": false}",
+    "answer": "正在澄清\n\n关于待检验命题，是否按当前理解继续？\n1. 按这个理解继续：在指定合成场范围内，线性候选的单位误差能否接近非线性基线，并降低运行成本？\n2. 暂不确定\n3. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+    "question": {
+      "field": "hypothesis",
+      "kind": "stale",
+      "question": "关于待检验命题，是否按当前理解继续？",
+      "rationale": "命题、能否检验、证据是否支持是三个不同判断。",
+      "options": [
+        {
+          "label": "按这个理解继续：在指定合成场范围内，线性候选的单位误差能否接近非线性基线，并降低运行成本？",
+          "value": "在指定合成场范围内，线性候选的单位误差能否接近非线性基线，并降低运行成本？",
+          "action": "accept",
+          "id": "f02cd49d2922"
+        },
+        {
+          "label": "暂不确定",
+          "value": "未知",
+          "action": "unknown",
+          "id": "2c3af7fa609c"
+        },
+        {
+          "label": "其他，我来补充",
+          "value": "",
+          "action": "custom",
+          "id": "47de6eddb129"
+        }
+      ],
+      "origin": "template",
+      "allow_accept": false,
+      "choice_policy": {
+        "intent": "comparison",
+        "origin": "user_declared",
+        "policy_hash": null
+      },
+      "choice_id": "c7165fac0716db99",
+      "choice_plan_hash": "c3147ee141fc88697c91fb9af2dcf7ff71b98d4c9675e67af610027bba6a0048"
+    },
+    "question_unnecessary": false,
+    "error": false,
+    "before_hash": "a8199e3935b4feccc1fe857187d9a09bab8b32656f62348afc2a933817731039",
+    "after_hash": "c3147ee141fc88697c91fb9af2dcf7ff71b98d4c9675e67af610027bba6a0048",
+    "changed_field_count": 0,
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "resources": {
+      "llm_requests": 0,
+      "llm_tokens": 0,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 12,
+        "llm_tokens": 60000,
+        "tool_calls": 40,
+        "read_bytes": 18000
+      }
+    }
+  },
+  {
+    "turn": 8,
+    "actor": "scripted_respondent",
+    "input": "/plan revise 待检验命题：在指定合成场范围内，线性候选的单位误差能否接近非线性基线，并降低运行成本？\n研究边界：仅限 synthetic_field_v1 合成二维稳态场、相同分辨率和固定预算，不外推新方程。",
+    "answer": "正在澄清\n\n关于基线与公平比较，是否按当前理解继续？\n1. 按这个理解继续：非线性基线与线性候选共享相同训练、验证、测试划分、调参次数和硬件预算\n2. 暂不确定\n3. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+    "question": {
+      "field": "baseline",
+      "kind": "stale",
+      "question": "关于基线与公平比较，是否按当前理解继续？",
+      "rationale": "比较结果需要同口径基线，而不只是单个漂亮数字。",
+      "options": [
+        {
+          "label": "按这个理解继续：非线性基线与线性候选共享相同训练、验证、测试划分、调参次数和硬件预算",
+          "value": "非线性基线与线性候选共享相同训练、验证、测试划分、调参次数和硬件预算",
+          "action": "accept",
+          "id": "4c004c65e38b"
+        },
+        {
+          "label": "暂不确定",
+          "value": "未知",
+          "action": "unknown",
+          "id": "2c3af7fa609c"
+        },
+        {
+          "label": "其他，我来补充",
+          "value": "",
+          "action": "custom",
+          "id": "47de6eddb129"
+        }
+      ],
+      "origin": "template",
+      "allow_accept": false,
+      "choice_policy": {
+        "intent": "comparison",
+        "origin": "user_declared",
+        "policy_hash": null
+      },
+      "choice_id": "b76a4b31624bb20d",
+      "choice_plan_hash": "4ec4c1469bab3cd3dce87dca46ec5445a5162b10ed9a7e625ec0385f5f7539c7"
+    },
+    "question_unnecessary": false,
+    "error": false,
+    "before_hash": "c3147ee141fc88697c91fb9af2dcf7ff71b98d4c9675e67af610027bba6a0048",
+    "after_hash": "4ec4c1469bab3cd3dce87dca46ec5445a5162b10ed9a7e625ec0385f5f7539c7",
+    "changed_field_count": 2,
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "resources": {
+      "llm_requests": 0,
+      "llm_tokens": 0,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 12,
+        "llm_tokens": 60000,
+        "tool_calls": 40,
+        "read_bytes": 18000
+      }
+    }
+  },
+  {
+    "turn": 9,
+    "actor": "scripted_respondent",
+    "input": "/plan revise 基线与公平比较：非线性基线与线性候选共享相同训练、验证、测试划分、调参次数和硬件预算。",
+    "answer": "正在澄清\n\n关于主要响应与测量，是否按当前理解继续？\n1. 按这个理解继续：每个独立场实现上相对 L2 误差的均值，越低越好；耗时作为辅助指标\n2. 暂不确定\n3. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+    "question": {
+      "field": "outcomes",
+      "kind": "stale",
+      "question": "关于主要响应与测量，是否按当前理解继续？",
+      "rationale": "训练损失、测试指标、统计显著和实际重要性不能混用。",
+      "options": [
+        {
+          "label": "按这个理解继续：每个独立场实现上相对 L2 误差的均值，越低越好；耗时作为辅助指标",
+          "value": "每个独立场实现上相对 L2 误差的均值，越低越好；耗时作为辅助指标",
+          "action": "accept",
+          "id": "c65160f0b0d7"
+        },
+        {
+          "label": "暂不确定",
+          "value": "未知",
+          "action": "unknown",
+          "id": "2c3af7fa609c"
+        },
+        {
+          "label": "其他，我来补充",
+          "value": "",
+          "action": "custom",
+          "id": "47de6eddb129"
+        }
+      ],
+      "origin": "template",
+      "allow_accept": false,
+      "choice_policy": {
+        "intent": "comparison",
+        "origin": "user_declared",
+        "policy_hash": null
+      },
+      "choice_id": "e6e66a0a69d9b9a9",
+      "choice_plan_hash": "3d3c73aeb0e5eeb7556719fd52d7f3fbb35e4c92d63a8d4f98d8a0b8b6658115"
+    },
+    "question_unnecessary": false,
+    "error": false,
+    "before_hash": "4ec4c1469bab3cd3dce87dca46ec5445a5162b10ed9a7e625ec0385f5f7539c7",
+    "after_hash": "3d3c73aeb0e5eeb7556719fd52d7f3fbb35e4c92d63a8d4f98d8a0b8b6658115",
+    "changed_field_count": 1,
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "resources": {
+      "llm_requests": 0,
+      "llm_tokens": 0,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 12,
+        "llm_tokens": 60000,
+        "tool_calls": 40,
+        "read_bytes": 18000
+      }
+    }
+  },
+  {
+    "turn": 10,
+    "actor": "scripted_respondent",
+    "input": "/plan revise 主要响应与测量：每个独立场实现上相对 L2 误差的均值，越低越好；耗时作为辅助指标。\n分析与不确定性：估计同一场上候选减基线的误差均值差，以完整场为重采样单位报告 bootstrap 区间，不把网格点作独立样本。\n验收和停止规则：逐项交付配对差、区间、耗时与失败日志；阴性或不确定结果同样报告；最多6次运行或2小时上限即停止，不按结果加预算。",
+    "answer": "正在澄清\n\n可用多少时间、计算、实验次数或经费？哪些上限不可突破？\n1. 先由我确认硬上限\n2. 沿用已声明的预算\n3. 先缩小目标再核算\n4. 暂不确定\n5. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+    "question": {
+      "field": "resources",
+      "kind": "missing",
+      "question": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？",
+      "rationale": "预算是计划前提，不能由 Agent 为过检而擅自提高。",
+      "options": [
+        {
+          "label": "先由我确认硬上限",
+          "value": "未知",
+          "action": "unknown",
+          "id": "8dbd69479c29"
+        },
+        {
+          "label": "沿用已声明的预算",
+          "value": "沿用研究者此前明确声明的硬预算，达到上限停止，不为追求正结果增加运行。",
+          "action": "declare",
+          "id": "a703a3761a0c"
+        },
+        {
+          "label": "先缩小目标再核算",
+          "value": "先把研究收缩到可行的先导目标，核算资源后由研究者确认硬上限。",
+          "action": "declare",
+          "id": "644d67e34a74"
+        },
+        {
+          "label": "暂不确定",
+          "value": "未知",
+          "action": "unknown",
+          "id": "2c3af7fa609c"
+        },
+        {
+          "label": "其他，我来补充",
+          "value": "",
+          "action": "custom",
+          "id": "47de6eddb129"
+        }
+      ],
+      "origin": "template",
+      "allow_accept": false,
+      "choice_policy": {
+        "intent": "comparison",
+        "origin": "user_declared",
+        "policy_hash": null
+      },
+      "choice_id": "1d35578a4aae5278",
+      "choice_plan_hash": "bd508c2fbc9530c82e8a07b8ab47077c6e68140d4d03853f488662db715ed8d7"
+    },
+    "question_unnecessary": false,
+    "error": false,
+    "before_hash": "3d3c73aeb0e5eeb7556719fd52d7f3fbb35e4c92d63a8d4f98d8a0b8b6658115",
+    "after_hash": "bd508c2fbc9530c82e8a07b8ab47077c6e68140d4d03853f488662db715ed8d7",
+    "changed_field_count": 3,
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "resources": {
+      "llm_requests": 0,
+      "llm_tokens": 0,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 12,
+        "llm_tokens": 60000,
+        "tool_calls": 40,
+        "read_bytes": 18000
+      }
+    }
+  },
+  {
+    "turn": 11,
+    "actor": "scripted_respondent",
+    "input": "资源边界：仅规划，后续先导最多6次运行、2小时上限；本轮不执行训练。\n风险与未决条件：独立场来源、配对关系或单位汇总未核实时停止并交还研究者，不补造观测结果。\n复现记录：记录数据版本、代码版本、配置、种子、实际顺序与全部偏离日志。\n人类职责：学生确认研究边界，导师复核配对与分析假设，研究者负责结论和另行执行授权。\n交付物：实验设计、配对对比与验收清单、未知和来源清单、复现记录模板。",
+    "answer": "正在澄清\n\n实验设计草案（规划，尚未执行）\n\n问题与结论边界\n- 研究问题：我想比较线性模型和非线性基线在合成二维场上的误差和耗时，帮我规划实验，我还没确定比较边界。\n- 研究目的：比较\n- 待检验命题：在指定合成场范围内，线性候选的单位误差能否接近非线性基线，并降低运行成本？\n- 研究边界：仅限 synthetic_field_v1 合成二维稳态场、相同分辨率和固定预算，不外推新方程\n- 本轮不回答的问题：不声称复现真实论文，不推断因果，不外推到不同分辨率\n\n实验设计与主要对比\n- 设计结构：配对\n- 实验与推断单位：以独立生成的完整场实现为推断单位；同一实现场上两模型配对，网格点不是独立重复\n- 因素与对比：线性候选与非线性基线两个模型水平；主要比较候选减基线\n- 基线与公平比较：非线性基线与线性候选共享相同训练、验证、测试划分、调参次数和硬件预算\n\n数据、样本与分配\n- 数据与证据来源：工程诊断用 synthetic_field_v1；按独立场来源分组隔离训练、验证和最终测试，防止数据泄漏\n- 样本与重复依据 [未知]：明确未知，尚无依据\n- 分配与偏差控制：在独立场内配对比较，随机排列模型运行顺序，记录实际分配和种子\n\n指标与分析\n- 主要响应与测量：每个独立场实现上相对 L2 误差的均值，越低越好；耗时作为辅助指标\n- 分析与不确定性：估计同一场上候选减基线的误差均值差，以完整场为重采样单位报告 bootstrap 区间，不把网格点作独立样本\n\n验收、阴性结果与停止\n- 验收和停止规则：逐项交付配对差、区间、耗时与失败日志；阴性或不确定结果同样报告；最多6次运行或2小时上限即停止，不按结果加预算\n- 资源边界：仅规划，后续先导最多6次运行、2小时上限；本轮不执行训练\n- 风险与未决条件：独立场来源、配对关系或单位汇总未核实时停止并交还研究者，不补造观测结果\n\n复现、交付与责任\n- 复现记录：记录数据版本、代码版本、配置、种子、实际顺序与全部偏离日志\n- 交付物：实验设计、配对对比与验收清单、未知和来源清单、复现记录模板\n- 人类职责：学生确认研究边界，导师复核配对与分析假设，研究者负责结论和另行执行授权\n\n待核对事项\n- 样本与重复依据：样本量、重复数及其依据是什么？没有方差依据时是否先做先导？\n\n获取依据的拟议步骤（未执行）\n- 样本与重复依据：先查找已有先导记录，再请方法负责人核实单位与样本依据。\n\n已显式选择 1 个来源片段；声明和出处仍需核实。\n先处理阻断项；取得依据前可以导出带未决项的草案。\n\n仍有已知缺口。可以明确限制研究目标、先规划先导阶段，或补充依据后继续。/plan review 会列出阻断项。",
+    "question": null,
+    "question_unnecessary": false,
+    "error": false,
+    "before_hash": "bd508c2fbc9530c82e8a07b8ab47077c6e68140d4d03853f488662db715ed8d7",
+    "after_hash": "ee575a3ef7f74e45da79e31ee0194cb981a6d8639efabf77952ec323aa3de7b0",
+    "changed_field_count": 5,
+    "execution_authorized": false,
+    "scientific_claim_verified": false,
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "resources": {
+      "llm_requests": 0,
+      "llm_tokens": 0,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 12,
+        "llm_tokens": 60000,
+        "tool_calls": 40,
+        "read_bytes": 18000
+      }
+    }
+  }
+]

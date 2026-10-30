@@ -1,0 +1,347 @@
+{
+  "schema_version": "research_planning_v1",
+  "id": "ac9833026c764f00971c4d0b6f5ce7e8",
+  "revision": 4,
+  "active": true,
+  "facts": {
+    "research_question": {
+      "value": "评估一个合成论文示例能否支持模型A与B的比较实验",
+      "quote": "请帮我评估一个合成论文示例能否支持模型A与B的比较实验",
+      "status": "declared",
+      "turn": 1
+    },
+    "objective_type": {
+      "value": "comparison",
+      "quote": "模型A与B的比较实验",
+      "status": "proposed",
+      "turn": 1
+    },
+    "scope": {
+      "value": "仅做规划，不声称已经复现论文",
+      "quote": "现在只规划，不声称已经复现论文",
+      "status": "proposed",
+      "turn": 1
+    },
+    "exclusions": {
+      "value": "不声称已经复现论文",
+      "quote": "不声称已经复现论文",
+      "status": "declared",
+      "turn": 1
+    },
+    "baseline": {
+      "value": "先导记录（作为后续正式研究的前期依据）",
+      "quote": "先规划取得先导记录",
+      "status": "proposed",
+      "turn": 4
+    },
+    "data_source": {
+      "value": "需核对独立场来源",
+      "quote": "核对独立场来源",
+      "status": "proposed",
+      "turn": 4
+    }
+  },
+  "unknown": [
+    "sampling"
+  ],
+  "conflicts": {
+    "scope": [
+      {
+        "value": "仅做规划，不声称已经复现论文",
+        "quote": "现在只规划，不声称已经复现论文",
+        "status": "proposed",
+        "turn": 1
+      },
+      {
+        "value": "先规划取得先导记录和核对独立场来源；不把示例数字当成实测结果",
+        "quote": "先规划取得先导记录和核对独立场来源，不能把示例数字当成实测结果",
+        "status": "proposed",
+        "turn": 4
+      }
+    ],
+    "exclusions": [
+      {
+        "value": "不声称已经复现论文",
+        "quote": "不声称已经复现论文",
+        "status": "declared",
+        "turn": 1
+      },
+      {
+        "value": "不把示例数字当成实测结果",
+        "quote": "不能把示例数字当成实测结果",
+        "status": "proposed",
+        "turn": 4
+      }
+    ]
+  },
+  "decisions": [
+    {
+      "turn": 1,
+      "type": "intake",
+      "changes": [
+        {
+          "field": "research_question",
+          "kind": "added",
+          "before": null,
+          "after": "评估一个合成论文示例能否支持模型A与B的比较实验"
+        },
+        {
+          "field": "objective_type",
+          "kind": "added",
+          "before": null,
+          "after": "comparison"
+        },
+        {
+          "field": "scope",
+          "kind": "added",
+          "before": null,
+          "after": "仅做规划，不声称已经复现论文"
+        },
+        {
+          "field": "exclusions",
+          "kind": "added",
+          "before": null,
+          "after": "不声称已经复现论文"
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "type": "explicit_evidence_selection",
+      "summary": "已选论文片段：synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b"
+    },
+    {
+      "turn": 4,
+      "type": "intake",
+      "changes": [
+        {
+          "field": "scope",
+          "kind": "conflict",
+          "before": "仅做规划，不声称已经复现论文",
+          "after": "先规划取得先导记录和核对独立场来源；不把示例数字当成实测结果"
+        },
+        {
+          "field": "exclusions",
+          "kind": "conflict",
+          "before": "不声称已经复现论文",
+          "after": "不把示例数字当成实测结果"
+        },
+        {
+          "field": "baseline",
+          "kind": "added",
+          "before": null,
+          "after": "先导记录（作为后续正式研究的前期依据）"
+        },
+        {
+          "field": "data_source",
+          "kind": "added",
+          "before": null,
+          "after": "需核对独立场来源"
+        },
+        {
+          "field": "sampling",
+          "kind": "unknown",
+          "before": null,
+          "after": null
+        }
+      ]
+    }
+  ],
+  "approval": null,
+  "pending": {
+    "field": "exclusions",
+    "kind": "conflict",
+    "question": "关于本轮不回答的问题，你希望保留哪一项？",
+    "rationale": "该字段已登记冲突，且论文片段中的 0.12/0.15 明确是作者编写的示例值而非观测证据，两条排除项指向不同风险，需要你确认保留哪一版。",
+    "references": [
+      {
+        "source": "conflict",
+        "key": "exclusions:0",
+        "quote": "不声称已经复现论文"
+      },
+      {
+        "source": "conflict",
+        "key": "exclusions:1",
+        "quote": "不把示例数字当成实测结果"
+      },
+      {
+        "source": "evidence",
+        "key": "61db77a462e0c1a2",
+        "quote": "Illustrative mean relative errors are 0.12 for model A and 0.15 for model B.\nThese numbers are authored fixture values, not observed scientific evidence.",
+        "citation": "synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b"
+      }
+    ],
+    "options": [
+      {
+        "label": "不声称已经复现论文",
+        "value": "不声称已经复现论文",
+        "action": "revise",
+        "id": "ba925dd443ae"
+      },
+      {
+        "label": "不把示例数字当成实测结果",
+        "value": "不把示例数字当成实测结果",
+        "action": "revise",
+        "id": "072c34674d6f"
+      },
+      {
+        "label": "暂不确定",
+        "value": "未知",
+        "action": "unknown",
+        "id": "2c3af7fa609c"
+      },
+      {
+        "label": "其他，我来补充",
+        "value": "",
+        "action": "custom",
+        "id": "47de6eddb129"
+      }
+    ],
+    "origin": "model",
+    "allow_accept": false,
+    "choice_policy": {
+      "intent": "replication",
+      "origin": "trained_context_match",
+      "policy_hash": "6b7d865a492eaba9c5db239e5f5eaa833184d3b21fe3496f358d525504207ded"
+    },
+    "choice_id": "a8a038c803e9b6db",
+    "choice_plan_hash": "39aa5b763331c28d97c069e1b8542f00dc8e0222ad050563371528aed29246a9"
+  },
+  "reflections": [],
+  "changes": [
+    {
+      "field": "research_question",
+      "kind": "added",
+      "before": null,
+      "after": "评估一个合成论文示例能否支持模型A与B的比较实验"
+    },
+    {
+      "field": "objective_type",
+      "kind": "added",
+      "before": null,
+      "after": "comparison"
+    },
+    {
+      "field": "scope",
+      "kind": "added",
+      "before": null,
+      "after": "仅做规划，不声称已经复现论文"
+    },
+    {
+      "field": "exclusions",
+      "kind": "added",
+      "before": null,
+      "after": "不声称已经复现论文"
+    },
+    {
+      "field": "scope",
+      "kind": "conflict",
+      "before": "仅做规划，不声称已经复现论文",
+      "after": "先规划取得先导记录和核对独立场来源；不把示例数字当成实测结果"
+    },
+    {
+      "field": "exclusions",
+      "kind": "conflict",
+      "before": "不声称已经复现论文",
+      "after": "不把示例数字当成实测结果"
+    },
+    {
+      "field": "baseline",
+      "kind": "added",
+      "before": null,
+      "after": "先导记录（作为后续正式研究的前期依据）"
+    },
+    {
+      "field": "data_source",
+      "kind": "added",
+      "before": null,
+      "after": "需核对独立场来源"
+    },
+    {
+      "field": "sampling",
+      "kind": "unknown",
+      "before": null,
+      "after": null
+    }
+  ],
+  "stale": {
+    "scope": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+  },
+  "turns": 4,
+  "audience": "researcher_student",
+  "last_notes": [
+    "本轮语义整理未被采纳；请使用 scope: 你的回答，或选择当前问题的编号。"
+  ],
+  "last_export": null,
+  "clarification": {
+    "mode": "dynamic",
+    "reason": "validated",
+    "rejected_questions": [],
+    "model_used": true
+  },
+  "question_history": [
+    {
+      "turn": 1,
+      "field": "objective_type",
+      "kind": "proposal",
+      "question": "关于研究目的，是否按当前理解继续？",
+      "origin": "model",
+      "basis_hash": "da2930ab5b13ba5e3c102870384bc07a9c8675ad662406b330a14a48f4b4b7cc"
+    },
+    {
+      "turn": 2,
+      "field": "scope",
+      "kind": "stale",
+      "question": "关于研究边界，是否按当前理解继续？",
+      "origin": "model",
+      "basis_hash": "217409ebf16c0c29d2d8014e16e2c490540045de4fe8da2e8132e62374a708d2"
+    },
+    {
+      "turn": 4,
+      "field": "scope",
+      "kind": "conflict",
+      "question": "关于研究边界，你希望保留哪一项？",
+      "origin": "model",
+      "basis_hash": "4ca7f026767dcd4fb34383cdf188206643a1719328ce2e4d1e0d03bba4db9343"
+    },
+    {
+      "turn": 5,
+      "field": "exclusions",
+      "kind": "conflict",
+      "question": "关于本轮不回答的问题，你希望保留哪一项？",
+      "origin": "model",
+      "basis_hash": "4ca7f026767dcd4fb34383cdf188206643a1719328ce2e4d1e0d03bba4db9343"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "synthetic_paper.pdf",
+      "sha256": "8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b",
+      "text": "[PDF page 1]\nEngineering fixture - synthetic paper\nSYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.\n1. Research question\nThis fixture asks whether model A has lower prediction error than model B on\nsynthetic two-dimensional fields.\n2. Methods and data\nBoth models evaluate the same 8 independent synthetic fields, with paired\ncomparisons by field. Grid points within a field are technical measurements,\nnot independent experimental units.\nTraining, validation and final test fields are separated by source. Both\nmodels use the same splits and tuning budget. The scope is restricted to this\nsynthetic field distribution.\nSYNTHETIC / engineering fixture - PDF page 1\n\n[PDF page 2]\n3. Illustrative results\nIllustrative mean relative errors are 0.12 for model A and 0.15 for model B.\nThese numbers are authored fixture values, not observed scientific evidence.\n4. Limitations\nNo observed variance or confidence interval is provided. No scientific\nexperiment was executed. This fixture does not establish a causal effect or\nout-of-distribution performance.\n5. Reproduction information still needed\nA real study needs a traceable dataset version, code and configuration,\nindependent-unit verification and pilot variability. A sample-size or power\nguarantee cannot be inferred from this fixture.\nThis fixture tests PDF extraction and grounded interpretation, not scientific\nvalidity.\nSYNTHETIC / engineering fixture - PDF page 2",
+      "start_line": 1,
+      "end_line": 30,
+      "format": "pdf",
+      "start_page": 1,
+      "end_page": 2,
+      "page_count": 2,
+      "pages": [
+        {
+          "page": 1,
+          "text": "Engineering fixture - synthetic paper\nSYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.\n1. Research question\nThis fixture asks whether model A has lower prediction error than model B on\nsynthetic two-dimensional fields.\n2. Methods and data\nBoth models evaluate the same 8 independent synthetic fields, with paired\ncomparisons by field. Grid points within a field are technical measurements,\nnot independent experimental units.\nTraining, validation and final test fields are separated by source. Both\nmodels use the same splits and tuning budget. The scope is restricted to this\nsynthetic field distribution.\nSYNTHETIC / engineering fixture - PDF page 1"
+        },
+        {
+          "page": 2,
+          "text": "3. Illustrative results\nIllustrative mean relative errors are 0.12 for model A and 0.15 for model B.\nThese numbers are authored fixture values, not observed scientific evidence.\n4. Limitations\nNo observed variance or confidence interval is provided. No scientific\nexperiment was executed. This fixture does not establish a causal effect or\nout-of-distribution performance.\n5. Reproduction information still needed\nA real study needs a traceable dataset version, code and configuration,\nindependent-unit verification and pilot variability. A sample-size or power\nguarantee cannot be inferred from this fixture.\nThis fixture tests PDF extraction and grounded interpretation, not scientific\nvalidity.\nSYNTHETIC / engineering fixture - PDF page 2"
+        }
+      ],
+      "extractor": "pypdf-6.21.4",
+      "workspace_id": "bddbb242dbb14b9c96f6dc77109b7453",
+      "workspace_root": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\.local\\comprehensive_20261030\\live_dialogues\\selected_synthetic_pdf\\workspace",
+      "excerpt_sha256": "660fae681da8279a07618a24c55a787e5cabe5fc94ee313d1fd2a6deb83bacd4",
+      "share_with_model": true,
+      "turn": 2,
+      "status": "selected_excerpt_not_verified",
+      "id": "61db77a462e0c1a2"
+    }
+  ]
+}

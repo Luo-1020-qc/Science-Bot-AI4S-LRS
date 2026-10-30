@@ -1,0 +1,198 @@
+{
+  "schema_version": "research_planning_v1",
+  "id": "5c62a83652c248e29b94a2c6d0ba3e13",
+  "revision": 2,
+  "active": true,
+  "facts": {
+    "research_question": {
+      "value": "两个模型的比较",
+      "quote": "帮我设计两个模型的比较",
+      "status": "declared",
+      "turn": 1
+    },
+    "objective_type": {
+      "value": "comparison",
+      "quote": "帮我设计两个模型的比较",
+      "status": "declared",
+      "turn": 1
+    },
+    "scope": {
+      "value": "合成二维场",
+      "quote": "范围是合成二维场",
+      "status": "declared",
+      "turn": 1
+    },
+    "resources": {
+      "value": "后续最多六次运行、两小时上限",
+      "quote": "后续最多六次运行、两小时上限",
+      "status": "declared",
+      "turn": 1
+    },
+    "exclusions": {
+      "value": "预算不能由Agent增加",
+      "quote": "预算不能由Agent增加",
+      "status": "declared",
+      "turn": 1
+    },
+    "deliverable": {
+      "value": "本轮只做规划，不执行",
+      "quote": "本轮只规划",
+      "status": "proposed",
+      "turn": 1
+    }
+  },
+  "unknown": [],
+  "conflicts": {},
+  "decisions": [
+    {
+      "turn": 1,
+      "type": "intake",
+      "changes": [
+        {
+          "field": "research_question",
+          "kind": "added",
+          "before": null,
+          "after": "两个模型的比较"
+        },
+        {
+          "field": "objective_type",
+          "kind": "added",
+          "before": null,
+          "after": "comparison"
+        },
+        {
+          "field": "scope",
+          "kind": "added",
+          "before": null,
+          "after": "合成二维场"
+        },
+        {
+          "field": "resources",
+          "kind": "added",
+          "before": null,
+          "after": "后续最多六次运行、两小时上限"
+        },
+        {
+          "field": "exclusions",
+          "kind": "added",
+          "before": null,
+          "after": "预算不能由Agent增加"
+        },
+        {
+          "field": "deliverable",
+          "kind": "added",
+          "before": null,
+          "after": "本轮只做规划，不执行"
+        }
+      ]
+    }
+  ],
+  "approval": null,
+  "pending": {
+    "field": "deliverable",
+    "kind": "proposal",
+    "question": "关于交付物，是否按当前理解继续？",
+    "rationale": "这是从你的描述整理出的理解，不是经验证的事实。",
+    "options": [
+      {
+        "label": "按这个理解继续：本轮只做规划，不执行",
+        "value": "本轮只做规划，不执行",
+        "action": "accept",
+        "id": "21e64d00f149"
+      },
+      {
+        "label": "暂不确定",
+        "value": "未知",
+        "action": "unknown",
+        "id": "2c3af7fa609c"
+      },
+      {
+        "label": "其他，我来补充",
+        "value": "",
+        "action": "custom",
+        "id": "47de6eddb129"
+      }
+    ],
+    "origin": "template",
+    "allow_accept": false,
+    "choice_policy": {
+      "intent": "comparison",
+      "origin": "user_declared",
+      "policy_hash": null
+    },
+    "choice_id": "29a279813fad2b35",
+    "choice_plan_hash": "d531ffda224c39c598bea137de2d3b9de3433fb7e64b95bc2ebb3950ef522426"
+  },
+  "reflections": [],
+  "changes": [
+    {
+      "field": "research_question",
+      "kind": "added",
+      "before": null,
+      "after": "两个模型的比较"
+    },
+    {
+      "field": "objective_type",
+      "kind": "added",
+      "before": null,
+      "after": "comparison"
+    },
+    {
+      "field": "scope",
+      "kind": "added",
+      "before": null,
+      "after": "合成二维场"
+    },
+    {
+      "field": "resources",
+      "kind": "added",
+      "before": null,
+      "after": "后续最多六次运行、两小时上限"
+    },
+    {
+      "field": "exclusions",
+      "kind": "added",
+      "before": null,
+      "after": "预算不能由Agent增加"
+    },
+    {
+      "field": "deliverable",
+      "kind": "added",
+      "before": null,
+      "after": "本轮只做规划，不执行"
+    }
+  ],
+  "stale": {},
+  "turns": 2,
+  "audience": "researcher_student",
+  "last_notes": [
+    "本轮字段未采纳：输入包含未登记字段，请使用当前规划字段",
+    "本轮动态澄清不可用或未通过校验，已使用模板继续；已有边界保留。"
+  ],
+  "last_export": null,
+  "clarification": {
+    "mode": "template",
+    "reason": "model_unavailable_or_rejected",
+    "model_used": true,
+    "error_type": "ValueError",
+    "validation_error": "NoValidPriorityQuestions: [{\"field\": \"resources\", \"reason\": \"QuestionFieldAlreadyAnswered\"}, {\"field\": \"sampling\", \"reason\": \"InventedQuestionNumericAssumption\"}]"
+  },
+  "question_history": [
+    {
+      "turn": 1,
+      "field": "deliverable",
+      "kind": "proposal",
+      "question": "关于交付物，是否按当前理解继续？",
+      "origin": "template",
+      "basis_hash": "eb0f8fadd08e80865e4100ea3af31e4723fb861d84d90ea67e25f1ca8991bb53"
+    },
+    {
+      "turn": 2,
+      "field": "deliverable",
+      "kind": "proposal",
+      "question": "关于交付物，是否按当前理解继续？",
+      "origin": "template",
+      "basis_hash": "eb0f8fadd08e80865e4100ea3af31e4723fb861d84d90ea67e25f1ca8991bb53"
+    }
+  ]
+}

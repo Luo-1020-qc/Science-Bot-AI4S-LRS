@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "checked_utc": "2026-10-29T16:38:00.147546+00:00",
+  "existing_files_unchanged": 2462,
+  "public_downloads_verified": 8,
+  "independent_metrics_recomputed": true,
+  "pending_templates_rejected": 65,
+  "reviewed_scientific_dialogues": 0,
+  "model_api_calls": 0,
+  "online_deployment": false,
+  "preexisting_repository_check": {
+    "passed": false,
+    "reason": "README and other legacy paths still refer to Training_Data_Darcy_CViT after directory was renamed to Training_Data before this task"
+  },
+  "source_code_sha256": {
+    "acquire.py": "27996b4a250136dad405377ca2ba2a7cd5fd43139791be17b694ae14dad3c784",
+    "adapters.py": "fe3cd66962cf4369917d20f76b570ee705d814a60bbb32f9fafb0d39878554a6",
+    "annotation.py": "dd6fc31664f5341506d0eaeac3e273ae2264a569c9dced2ce969453418895e59",
+    "common.py": "f3775ef8274e9f88f021fcac36555614193caf86fd3262013b8883d91f36ca52",
+    "curriculum.py": "aabe2478adf332b28c71750390058d67d1135d4e80872e0de246ee682a953758",
+    "exports.py": "6aa49d69a13ece3b88505f2298c425fa479572df4e5a6e3562536ea15263a311",
+    "models.py": "c3e9a185d1c0f74d03b83de2a4b88b2c0ac21972101a107ff4878d9351f39cdd",
+    "sources.json": "b94dfb8dc177f95ad4300038b5c1caa4ff5516237b4ac20769f865f527a92eb6"
+  },
+  "verifier_sha256": "9502b9ba6b301604dd9a6f8cf62d46b13c07dbe8680ed14d39a4a09b99aaee89",
+  "test_sha256": {
+    "tests/test_curriculum.py": "a82c5010cf54be4eab18dcc91039ddf860d9e0d9c0211827575ebe41e91c8649"
+  },
+  "tests": {
+    "passed": true,
+    "output": "test_sft_export_excludes_private_facet_and_preserves_unanswerable (test_curriculum.ExportTests.test_sft_export_excludes_private_facet_and_preserves_unanswerable) ... ok\ntest_consent_required (test_curriculum.HumanReviewTests.test_consent_required) ... ok\ntest_credential_pattern_rejected (test_curriculum.HumanReviewTests.test_credential_pattern_rejected) ... ok\ntest_declared_fact_needs_user_grounding (test_curriculum.HumanReviewTests.test_declared_fact_needs_user_grounding) ... ok\ntest_duplicate_paper_cannot_cross_partitions (test_curriculum.HumanReviewTests.test_duplicate_paper_cannot_cross_partitions) ... ok\ntest_future_user_answer_not_available_to_prior_question (test_curriculum.HumanReviewTests.test_future_user_answer_not_available_to_prior_question) ... ok\ntest_import_retains_provenance_without_review_labels_in_model_input (test_curriculum.HumanReviewTests.test_import_retains_provenance_without_review_labels_in_model_input) ... ok\ntest_missing_unknown_choice_rejected (test_curriculum.HumanReviewTests.test_missing_unknown_choice_rejected) ... ok\ntest_nonexistent_citation_rejected (test_curriculum.HumanReviewTests.test_nonexistent_citation_rejected) ... ok\ntest_pending_template_is_rejected (test_curriculum.HumanReviewTests.test_pending_template_is_rejected) ... ok\ntest_review_gate_required (test_curriculum.HumanReviewTests.test_review_gate_required) ... ok\ntest_shells_seed_pending_queue_without_invented_dialogue (test_curriculum.HumanReviewTests.test_shells_seed_pending_queue_without_invented_dialogue) ... ok\ntest_timezone_required (test_curriculum.HumanReviewTests.test_timezone_required) ... ok\ntest_unknown_cannot_be_filled_as_fact (test_curriculum.HumanReviewTests.test_unknown_cannot_be_filled_as_fact) ... ok\ntest_unmeasured_understanding_not_scored (test_curriculum.HumanReviewTests.test_unmeasured_understanding_not_scored) ... ok\ntest_valid_fixture_is_accepted (test_curriculum.HumanReviewTests.test_valid_fixture_is_accepted) ... ok\ntest_archive_never_extracts_traversal_member (test_curriculum.NativeAdapterTests.test_archive_never_extracts_traversal_member) ... ok\ntest_clarq_original_answer_is_never_clarification_reply (test_curriculum.NativeAdapterTests.test_clarq_original_answer_is_never_clarification_reply) ... ok\ntest_clarq_train_test_overlap_rejects_before_output (test_curriculum.NativeAdapterTests.test_clarq_train_test_overlap_rejects_before_output) ... ok\ntest_false_yes_no_and_unmatched_evidence_survive (test_curriculum.NativeAdapterTests.test_false_yes_no_and_unmatched_evidence_survive) ... ok\ntest_relabeling_id_does_not_hide_duplicate_request (test_curriculum.NativeAdapterTests.test_relabeling_id_does_not_hide_duplicate_request) ... ok\ntest_source_group_leakage_rejected (test_curriculum.NativeAdapterTests.test_source_group_leakage_rejected) ... ok\ntest_topic_request_variants_preserve_common_group (test_curriculum.NativeAdapterTests.test_topic_request_variants_preserve_common_group) ... ok\ntest_artifact_manifest_cannot_escape_directory (test_curriculum.TrainingIsolationTests.test_artifact_manifest_cannot_escape_directory) ... ok\ntest_dev_test_labels_do_not_change_need_training (test_curriculum.TrainingIsolationTests.test_dev_test_labels_do_not_change_need_training) ... ok\ntest_existing_artifacts_are_not_overwritten (test_curriculum.TrainingIsolationTests.test_existing_artifacts_are_not_overwritten) ... ok\ntest_missing_native_section_name_is_not_a_failure (test_curriculum.TrainingIsolationTests.test_missing_native_section_name_is_not_a_failure) ... ok\ntest_ranking_learns_actual_parameter_updates (test_curriculum.TrainingIsolationTests.test_ranking_learns_actual_parameter_updates) ... ok\n\n----------------------------------------------------------------------\nRan 28 tests in 0.315s\n\nOK",
+    "command": "unittest discover -s Training_Data/scientific_dialogue_v1/tests -v"
+  }
+}

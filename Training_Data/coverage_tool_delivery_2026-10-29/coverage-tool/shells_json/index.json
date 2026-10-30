@@ -1,0 +1,555 @@
+{
+  "schema_version": "shell_index_v1",
+  "generated_at": "2026-10-29",
+  "source": "shells/*.yaml",
+  "generator": "export_shells_json.py",
+  "totals": {
+    "scenarios": 65,
+    "executable": 53,
+    "non_executable": 12,
+    "coverage_percent": 81.5
+  },
+  "by_skeleton": {
+    "S1": {
+      "name": "两组独立比较",
+      "primitive": "Welch t",
+      "status": "available",
+      "count": 19,
+      "executable": 19,
+      "scenarios": [
+        {
+          "file": "s1_agriculture_feed.json",
+          "scenario_name": "两种饲料配方的增重效果比较",
+          "domain": "农学（畜牧）",
+          "executable": true,
+          "sha256": "cf61b9b89fd91a4dd5f0280be6d654e160d42449670d497f60cdd5bdf2bda4a0"
+        },
+        {
+          "file": "s1_agronomy_irrigation.json",
+          "scenario_name": "两种灌溉方式的作物产量比较",
+          "domain": "农学",
+          "executable": true,
+          "sha256": "8c64af69362922488cdc1437217000631d8e871be9ca055ba689a4e47d483115"
+        },
+        {
+          "file": "s1_chemistry_catalyst.json",
+          "scenario_name": "两种催化剂的产率比较",
+          "domain": "化学",
+          "executable": true,
+          "sha256": "1d5026024f6e1c297cc61fd5d00f4e3903e046368eb99e8806ac30bbbc31d426"
+        },
+        {
+          "file": "s1_clinical_rct.json",
+          "scenario_name": "新药与安慰剂的疗效比较",
+          "domain": "临床医学",
+          "executable": true,
+          "sha256": "0aff96d341501b93c3e77e631cddeb7163d6d8e18025ec265e56798091203028"
+        },
+        {
+          "file": "s1_ecology_richness.json",
+          "scenario_name": "污染区与对照区的物种丰富度比较",
+          "domain": "生态学",
+          "executable": true,
+          "sha256": "53d1773c3bcf1114c9c372a005ed8dcf87470cda6c29f3ea055957f7079c8410"
+        },
+        {
+          "file": "s1_education_teaching.json",
+          "scenario_name": "两种教学法的学生成绩比较",
+          "domain": "教育学",
+          "executable": true,
+          "sha256": "b6a080e29472b2a3c5b847c4fb6ac1423592f21ee783c41c3df2573cdae389d4"
+        },
+        {
+          "file": "s1_environment_remediation.json",
+          "scenario_name": "两种修复方案的污染物去除率比较",
+          "domain": "环境科学",
+          "executable": true,
+          "sha256": "504d91b5eb2afc24dfcb5e5afd4ed35f63259ad5a977f12be13fa6942f810237"
+        },
+        {
+          "file": "s1_environment_water.json",
+          "scenario_name": "两个监测点的水质指标比较",
+          "domain": "环境科学",
+          "executable": true,
+          "sha256": "2d2a2b3f5d644825235383ed89081ca7ee7b2dffb1b58a2b7619c7958bd6e811"
+        },
+        {
+          "file": "s1_food_packaging.json",
+          "scenario_name": "两种包装方式的保质期比较",
+          "domain": "食品科学",
+          "executable": true,
+          "sha256": "634c0decbaf5c0265376c82ef28eaa163e4b9b4a79d8bc0d6f8eb41f20c5b638"
+        },
+        {
+          "file": "s1_food_preservative.json",
+          "scenario_name": "两种保鲜方案的菌落总数比较",
+          "domain": "食品科学",
+          "executable": true,
+          "sha256": "5c18b218a51cde06f336e52a753f035312cfe947144c1432ca48f525959e151e"
+        },
+        {
+          "file": "s1_manufacturing_supplier.json",
+          "scenario_name": "两家供应商零件尺寸偏差的比较",
+          "domain": "制造/工业",
+          "executable": true,
+          "sha256": "0f1c7fd85900744b743f0f866e3fc70a37218dcbd49b12332ec31035f3ead3c4"
+        },
+        {
+          "file": "s1_materials_coating_wear.json",
+          "scenario_name": "两种涂层的耐磨性比较",
+          "domain": "材料科学",
+          "executable": true,
+          "sha256": "7ae8a1b7cced7ae2f7e5cab4a08ef3b7d9f570f59fc243a004b25985a6f84a71"
+        },
+        {
+          "file": "s1_materials_tensile.json",
+          "scenario_name": "两种配方材料的抗拉强度比较",
+          "domain": "材料科学",
+          "executable": true,
+          "sha256": "c8d2fc1e7653b8824b786b53362cfcd6353f3e060c8c2fb55835d8a108f3ea3d"
+        },
+        {
+          "file": "s1_pharma_dissolution.json",
+          "scenario_name": "两种制剂溶出度的比较",
+          "domain": "药学",
+          "executable": true,
+          "sha256": "3bda748ea348284e5749feb1925fa3c816997b422f7e6d97f1d654954cbb4aea"
+        },
+        {
+          "file": "s1_psychology_feedback.json",
+          "scenario_name": "两种反馈方式对学习成绩的影响",
+          "domain": "心理学",
+          "executable": true,
+          "sha256": "ad553eb0e6d8c3556f0c0422d60b9aa46d707e4944235d20de623099a543a06d"
+        },
+        {
+          "file": "s1_psychology_intervention.json",
+          "scenario_name": "两种干预方案的情绪量表得分比较",
+          "domain": "心理学",
+          "executable": true,
+          "sha256": "d59c07fec4c251485cc120717eb6aeba0b44a6d415837b2c798267040235e685"
+        },
+        {
+          "file": "s1_sociology_survey.json",
+          "scenario_name": "两组人群的问卷均分比较",
+          "domain": "社会学",
+          "executable": true,
+          "sha256": "7a012e7cf6705d501d11a1d3837bbe0d6a01fa827e038c773c7d5821d2b00ef7"
+        },
+        {
+          "file": "s1_sports_endurance.json",
+          "scenario_name": "两种训练方案的耐力成绩比较",
+          "domain": "体育科学",
+          "executable": true,
+          "sha256": "c6b3d7267f8f5c22fcfb83485b908b77e3762e1a350fba02a70c2a4beffc7102"
+        },
+        {
+          "file": "s1_transport_signal.json",
+          "scenario_name": "两种信号配时方案的通行量比较",
+          "domain": "交通",
+          "executable": true,
+          "sha256": "dfdcf91e7d5c9553fdbef9d7c8b1193c25c6989715f5eb8d0672747f3fc1e959"
+        }
+      ]
+    },
+    "S2": {
+      "name": "配对比较",
+      "primitive": "配对 t",
+      "status": "available",
+      "count": 11,
+      "executable": 11,
+      "scenarios": [
+        {
+          "file": "s2_chemistry_method_comparison.json",
+          "scenario_name": "两种检测方法对同批样品的测定值比较",
+          "domain": "分析化学",
+          "executable": true,
+          "sha256": "f95bd57207c1ac0e70a2e124d2ee19172ec9156975ecbc73deb139227f226a45"
+        },
+        {
+          "file": "s2_clinical_paired.json",
+          "scenario_name": "受试者治疗前后的配对指标比较",
+          "domain": "临床医学",
+          "executable": true,
+          "sha256": "53eeadfdd7bf11a9031ab8a1efff2dfe7dfe8f652dcf97b13bad8aaa0f634109"
+        },
+        {
+          "file": "s2_dentistry_bilateral.json",
+          "scenario_name": "同一患者两侧牙齿指标比较",
+          "domain": "口腔医学",
+          "executable": true,
+          "sha256": "30b78507a8a0e076eb96e121f859fcf39510cfb0eaecd1b441fad44e3dbfae8d"
+        },
+        {
+          "file": "s2_education_prepost.json",
+          "scenario_name": "培训前后测验成绩的配对比较",
+          "domain": "教育学",
+          "executable": true,
+          "sha256": "78a0611bb9cfd435ed1c4b714945e92dd560fac524e3e1c0f8d9cb38ce1da04e"
+        },
+        {
+          "file": "s2_environment_before_after.json",
+          "scenario_name": "整改前后同一监测点污染物浓度比较",
+          "domain": "环境科学",
+          "executable": true,
+          "sha256": "356e9c0bc1e8ab6140006571d0cff44572ff1f9446eab1b19ae793b2d0ea40ea"
+        },
+        {
+          "file": "s2_environment_digestion.json",
+          "scenario_name": "同一水样两种消解方法的测定值比较",
+          "domain": "环境科学",
+          "executable": true,
+          "sha256": "6d28ad2d95e3883869ff4444ac21d71ac9ee4bb85512aa6200df5a13790ac178"
+        },
+        {
+          "file": "s2_materials_hardness.json",
+          "scenario_name": "同一批试样两种热处理的硬度比较",
+          "domain": "材料科学",
+          "executable": true,
+          "sha256": "5a64dbb8f82dafd9472e7115589998b8e0d412ae53b38e7fa145033b89bb4413"
+        },
+        {
+          "file": "s2_materials_surface_treatment.json",
+          "scenario_name": "同一样品两种表面处理的粗糙度比较",
+          "domain": "材料科学",
+          "executable": true,
+          "sha256": "d98ae23154d814150cb0b16ca52fa64812b44aa6719ea58a75557ad8a84da5d9"
+        },
+        {
+          "file": "s2_medical_imaging.json",
+          "scenario_name": "同一患者两种影像序列测量的一致性",
+          "domain": "医学影像",
+          "executable": true,
+          "sha256": "010b99a9bd07221bedbcb3ac7b8b8f91a5f1be721360988d3c79b35799ad92c7"
+        },
+        {
+          "file": "s2_pharma_route.json",
+          "scenario_name": "同一受试者两种给药途径的药代参数比较",
+          "domain": "药学",
+          "executable": true,
+          "sha256": "936c7a5089174dff72bd838ba3eafe97bff8f6fb71e96a557bc5f17272e1ed0d"
+        },
+        {
+          "file": "s2_psychology_rt.json",
+          "scenario_name": "同一被试两种条件下的反应时比较",
+          "domain": "心理学",
+          "executable": true,
+          "sha256": "369321e7d4e330f611c83491f69f00aca0b1fb6b2d1f6b3da890e7b5d4213536"
+        }
+      ]
+    },
+    "S3": {
+      "name": "因子设计",
+      "primitive": "CRD / RCBD / 2x2 全因子",
+      "status": "available",
+      "count": 13,
+      "executable": 12,
+      "scenarios": [
+        {
+          "file": "s3_agronomy_field_trial.json",
+          "scenario_name": "品种与密度对产量的田间因子试验",
+          "domain": "农学",
+          "executable": true,
+          "sha256": "302709b7c291c904466b8f6b6024d7bd00f778c36be1861b8dbd2e263a4a1f6b"
+        },
+        {
+          "file": "s3_battery_cycling.json",
+          "scenario_name": "充放电参数与循环次数对容量保持的影响",
+          "domain": "电池/能源",
+          "executable": true,
+          "sha256": "6580579c0c89fc4b8032a5852e290ca329d3982527415bd47ff10fa2d2a4eb31"
+        },
+        {
+          "file": "s3_battery_electrolyte.json",
+          "scenario_name": "电解液添加剂与温度对循环寿命的影响",
+          "domain": "电池/能源",
+          "executable": true,
+          "sha256": "00f1363b3e664068973598f9feefabbda35a2dfbc599ce8279cb3461ae959f8b"
+        },
+        {
+          "file": "s3_catalyst_additives.json",
+          "scenario_name": "助剂组合的析因筛选",
+          "domain": "化学（催化）",
+          "executable": true,
+          "sha256": "2ce150827686b4f3deca1def5fd9c35f14291cf7a9d6a0b466a2699ea4919e78"
+        },
+        {
+          "file": "s3_chemical_reactor_rsm.json",
+          "scenario_name": "反应器操作条件的响应面优化",
+          "domain": "化工",
+          "executable": false,
+          "sha256": "560583f116e4fbbdd3d400b979a1dafa9284fd269b08eef438772e396a26864e"
+        },
+        {
+          "file": "s3_fermentation_medium.json",
+          "scenario_name": "培养基配比对产物滴度的影响",
+          "domain": "发酵/生物工程",
+          "executable": true,
+          "sha256": "3e367dc950ce8bee86881f5eb2b6f5812f97effc0c238b35343a11faee2b3b58"
+        },
+        {
+          "file": "s3_food_baking.json",
+          "scenario_name": "配方比例与烘焙条件对感官评分的影响",
+          "domain": "食品科学",
+          "executable": true,
+          "sha256": "550ffc9abfd6a4c4f74d82f115c15a9c925d8b100400e51d4ccf90d6ecdd9279"
+        },
+        {
+          "file": "s3_food_sterilization.json",
+          "scenario_name": "灭菌温度与时间对营养保留的影响",
+          "domain": "食品科学",
+          "executable": true,
+          "sha256": "7b9b8aa1b2046f59a3716898e45e28702e9a57d4f60afb6410260e8b0e92cc27"
+        },
+        {
+          "file": "s3_manufacturing_surface.json",
+          "scenario_name": "切削参数对表面粗糙度的影响",
+          "domain": "制造/工艺",
+          "executable": true,
+          "sha256": "7c3127eab23048eca73eb3fcf3836be9c399893799baff608a6b9658235cbf79"
+        },
+        {
+          "file": "s3_manufacturing_welding.json",
+          "scenario_name": "焊接电流与速度对焊缝强度的影响",
+          "domain": "制造/工艺",
+          "executable": true,
+          "sha256": "798b08ced5f5c87d07e4977a035b554088d24dafd627e00f791492a75dcef92c"
+        },
+        {
+          "file": "s3_materials_coating_cure.json",
+          "scenario_name": "涂层厚度与固化温度对附着力的影响",
+          "domain": "材料科学",
+          "executable": true,
+          "sha256": "98df2788500a326250eafae666e5a0c935e4d964a49223bc133dbe38bc43bb98"
+        },
+        {
+          "file": "s3_materials_sintering.json",
+          "scenario_name": "烧结温度与时间对致密度的影响",
+          "domain": "材料科学",
+          "executable": true,
+          "sha256": "d1ae75a3bcc3089325f5d18098bb80212fd37dc11bf490df1d142ee92a9463c1"
+        },
+        {
+          "file": "s3_synthesis_doe.json",
+          "scenario_name": "合成参数对产率的因子设计",
+          "domain": "化学/材料",
+          "executable": true,
+          "sha256": "8bcb70854f50275da10c4d058ab28d21000fe2f1fad43ab44bb7eb9bab0f8385"
+        }
+      ]
+    },
+    "S4": {
+      "name": "数值预测对比",
+      "primitive": "mean / OLS / ridge + 独立测试",
+      "status": "available",
+      "count": 11,
+      "executable": 11,
+      "scenarios": [
+        {
+          "file": "s4_agriculture_remote_sensing.json",
+          "scenario_name": "遥感指数到作物产量的预测对比",
+          "domain": "农业遥感",
+          "executable": true,
+          "sha256": "2a93b232124592617006c41b3c76045ab4f2ddb9b156df9a31349d6885f87b9d"
+        },
+        {
+          "file": "s4_battery_fade.json",
+          "scenario_name": "工况特征到容量衰减的预测对比",
+          "domain": "电池/能源",
+          "executable": true,
+          "sha256": "f216a8b5d8a0b994fb8a10bd3766136a6aadf9dd8af120370e148c3d46f1784a"
+        },
+        {
+          "file": "s4_civil_concrete_strength.json",
+          "scenario_name": "混凝土配比到抗压强度的预测对比",
+          "domain": "土木工程",
+          "executable": true,
+          "sha256": "8bf4d4930f7f9a0b9aee84f17f63abadd2677d63ba52459bd7ffb118c76243f4"
+        },
+        {
+          "file": "s4_darcy_field.json",
+          "scenario_name": "Darcy 压力场预测",
+          "domain": "PDE/场预测",
+          "executable": true,
+          "sha256": "18f9508c7e854e44f5ea580cb342c0c6f3d2519cb310a4b81043eb63ba1b0300"
+        },
+        {
+          "file": "s4_energy_solar.json",
+          "scenario_name": "气象特征到光伏发电量的预测对比",
+          "domain": "能源",
+          "executable": true,
+          "sha256": "a7184e8a8fdc146d68b7c8861c342c93c487abffcafc2052fd8a6752abccf635"
+        },
+        {
+          "file": "s4_environment_interpolation.json",
+          "scenario_name": "气象变量到污染物浓度的预测对比",
+          "domain": "环境/地质",
+          "executable": true,
+          "sha256": "2cab0e28f501b63169c4f8cb0812d029fdcd03092b9cbe93383130cb5d0d3ecf"
+        },
+        {
+          "file": "s4_finance_returns.json",
+          "scenario_name": "特征到资产收益率的预测对比",
+          "domain": "金融",
+          "executable": true,
+          "sha256": "c07a2d52f13a448b0b79b732b4dc94a2773251e92c68f7fd2546af6805d36b3b"
+        },
+        {
+          "file": "s4_materials_fatigue.json",
+          "scenario_name": "工艺参数到疲劳寿命的预测对比",
+          "domain": "材料科学",
+          "executable": true,
+          "sha256": "fdaaeb56a26d6846a415565433ba050671e0516a0b2f4331dcbfa37051037ed9"
+        },
+        {
+          "file": "s4_materials_property_prediction.json",
+          "scenario_name": "材料成分到屈服强度的预测对比",
+          "domain": "材料信息学",
+          "executable": true,
+          "sha256": "02e68c67de910c500b268d3389321c25fc9ab37f2d82841dba4d2ba357e29a22"
+        },
+        {
+          "file": "s4_qsar.json",
+          "scenario_name": "分子描述符到活性的预测对比",
+          "domain": "化学（QSAR）",
+          "executable": true,
+          "sha256": "6edda7e0f8ca39badfda1781ca584e8b12e5c51920b825e905e74a3a2e62146b"
+        },
+        {
+          "file": "s4_transportation.json",
+          "scenario_name": "路况特征到旅行时间的预测对比",
+          "domain": "交通",
+          "executable": true,
+          "sha256": "8f70a49e29388b52562b467e9d475e7c406d49307c02c42461907c472eb246e7"
+        }
+      ]
+    },
+    "S5": {
+      "name": "多组比较",
+      "primitive": "单因素 ANOVA / Kruskal-Wallis",
+      "status": "planned",
+      "count": 10,
+      "executable": 0,
+      "scenarios": [
+        {
+          "file": "s5_agronomy_varieties.json",
+          "scenario_name": "多个品种的产量比较",
+          "domain": "农学",
+          "executable": false,
+          "sha256": "1a65991ada28657e03ca9b20837a4f200d616ef18f1186f7f6d391fcf9d90594"
+        },
+        {
+          "file": "s5_battery_protocols.json",
+          "scenario_name": "三种充电协议的容量保持比较",
+          "domain": "电池/能源",
+          "executable": false,
+          "sha256": "399e9978a8f409b6b70bfbfc9ba12b73bcdb61a53dfa686fde06cc775966827b"
+        },
+        {
+          "file": "s5_chemistry_catalysts.json",
+          "scenario_name": "三种催化剂的产率比较",
+          "domain": "化学",
+          "executable": false,
+          "sha256": "f730b9614af298c9be929362a7e6ba88298b0074182b8c10cba06462859a6610"
+        },
+        {
+          "file": "s5_clinical_dose.json",
+          "scenario_name": "三个剂量组的疗效比较",
+          "domain": "临床医学",
+          "executable": false,
+          "sha256": "50cefeaa1e295f9b0ab2248b5da72288a79158886afc665fbe25f50b6180aba1"
+        },
+        {
+          "file": "s5_ecology_sites.json",
+          "scenario_name": "多个样地的物种调查比较",
+          "domain": "生态学",
+          "executable": false,
+          "sha256": "3419b72e53532cc7a63e295a92cdb58579effc15149382928ac705de9fa6b20f"
+        },
+        {
+          "file": "s5_education_methods.json",
+          "scenario_name": "三种教学法的学生成绩比较",
+          "domain": "教育学",
+          "executable": false,
+          "sha256": "007b49f554942ff6801fc14c5f356373637040cfe27aeb50f296e0bed528b81e"
+        },
+        {
+          "file": "s5_manufacturing_suppliers.json",
+          "scenario_name": "多家供应商材料质量比较",
+          "domain": "制造/工业",
+          "executable": false,
+          "sha256": "ed0875cf08cde0f1abce227999975f64c757214bcf9c0b7527316b5935ca4c96"
+        },
+        {
+          "file": "s5_materials_heattreat.json",
+          "scenario_name": "三种热处理工艺的硬度比较",
+          "domain": "材料科学",
+          "executable": false,
+          "sha256": "35898fe4fe721f84af84bd61934a7509e87f237606c5046166f69feed0a73292"
+        },
+        {
+          "file": "s5_pharma_batches.json",
+          "scenario_name": "多批次制剂溶出度比较",
+          "domain": "药学",
+          "executable": false,
+          "sha256": "5a4b281f267aed2111ecf992d0b7259b088966cc1760d847ad268fdbdc649024"
+        },
+        {
+          "file": "s5_psychology_age.json",
+          "scenario_name": "多个年龄段的认知测试成绩比较",
+          "domain": "心理学",
+          "executable": false,
+          "sha256": "e51ffda500633a118c706548e8de6f03d3bc88a3c6b41031615ff651fcdec3f6"
+        }
+      ]
+    },
+    "S6": {
+      "name": "比例与计数",
+      "primitive": "卡方 / 二项 / Poisson",
+      "status": "planned",
+      "count": 1,
+      "executable": 0,
+      "scenarios": [
+        {
+          "file": "s1_manufacturing_yield.json",
+          "scenario_name": "两台设备良品率的比较",
+          "domain": "制造/工业",
+          "executable": false,
+          "sha256": "224a6500f14101eb47d87962a59d284428d96fc6cf373baa8e0b0b662f9396d2"
+        }
+      ]
+    },
+    "S7": {
+      "name": "相关与关联建模",
+      "primitive": "多元线性回归 / 相关系数",
+      "status": "partial",
+      "count": 0,
+      "executable": 0,
+      "scenarios": []
+    },
+    "S8": {
+      "name": "生存分析",
+      "primitive": "Kaplan-Meier / Cox",
+      "status": "planned",
+      "count": 0,
+      "executable": 0,
+      "scenarios": []
+    },
+    "S9": {
+      "name": "分类任务",
+      "primitive": "逻辑回归 / 基线分类器",
+      "status": "planned",
+      "count": 0,
+      "executable": 0,
+      "scenarios": []
+    },
+    "S10": {
+      "name": "时间序列与因果推断",
+      "primitive": "无",
+      "status": "proposal_only",
+      "count": 0,
+      "executable": 0,
+      "scenarios": []
+    }
+  }
+}

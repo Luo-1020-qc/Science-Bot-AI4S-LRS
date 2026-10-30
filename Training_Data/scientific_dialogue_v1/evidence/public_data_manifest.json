@@ -1,0 +1,116 @@
+{
+  "version": "scientific_dialogue_curriculum_v1",
+  "raw_receipt_sha256": "9683f62bbab2c345c585d2908fdbc26cb7103d8dfbea097ac58c4cb14833f3c3",
+  "source_receipt": {
+    "version": "scientific_dialogue_curriculum_v1",
+    "catalog_sha256": "b94dfb8dc177f95ad4300038b5c1caa4ff5516237b4ac20769f865f527a92eb6",
+    "acquired_utc": "2026-10-29T16:16:15.666400+00:00",
+    "files": {
+      "clariq_train.tsv": {
+        "source": "clariq",
+        "url": "https://raw.githubusercontent.com/aliannejadi/ClariQ/46885a544581a0af8aff0681d29e4971807e2912/data/train.tsv",
+        "resolved_url": "https://raw.githubusercontent.com/aliannejadi/ClariQ/46885a544581a0af8aff0681d29e4971807e2912/data/train.tsv",
+        "bytes": 2354040,
+        "sha256": "65d3da13b2d6ea77e7eaa45290894ffc162a5bd000e7640decd1b0a272a6e9d1",
+        "revision": "46885a544581a0af8aff0681d29e4971807e2912",
+        "license": "not_explicitly_specified_in_upstream_repository"
+      },
+      "clariq_dev.tsv": {
+        "source": "clariq",
+        "url": "https://raw.githubusercontent.com/aliannejadi/ClariQ/46885a544581a0af8aff0681d29e4971807e2912/data/dev.tsv",
+        "resolved_url": "https://raw.githubusercontent.com/aliannejadi/ClariQ/46885a544581a0af8aff0681d29e4971807e2912/data/dev.tsv",
+        "bytes": 585998,
+        "sha256": "68d2a5f87eab73721979b5f45f64099a9b2f080db1d0ce4b979d9daa4249906e",
+        "revision": "46885a544581a0af8aff0681d29e4971807e2912",
+        "license": "not_explicitly_specified_in_upstream_repository"
+      },
+      "clariq_test.tsv": {
+        "source": "clariq",
+        "url": "https://raw.githubusercontent.com/aliannejadi/ClariQ/46885a544581a0af8aff0681d29e4971807e2912/data/test_with_labels.tsv",
+        "resolved_url": "https://raw.githubusercontent.com/aliannejadi/ClariQ/46885a544581a0af8aff0681d29e4971807e2912/data/test_with_labels.tsv",
+        "bytes": 1146708,
+        "sha256": "792fb25a3f258e96b6957490faae13dc2ab9926a0d23345b12ab4b925eb02b58",
+        "revision": "46885a544581a0af8aff0681d29e4971807e2912",
+        "license": "not_explicitly_specified_in_upstream_repository"
+      },
+      "clariq_questions.tsv": {
+        "source": "clariq",
+        "url": "https://raw.githubusercontent.com/aliannejadi/ClariQ/46885a544581a0af8aff0681d29e4971807e2912/data/question_bank.tsv",
+        "resolved_url": "https://raw.githubusercontent.com/aliannejadi/ClariQ/46885a544581a0af8aff0681d29e4971807e2912/data/question_bank.tsv",
+        "bytes": 239064,
+        "sha256": "266f501bdc31afbc8a763685ea0de82949137a2779241b325f5ee03026f42f1b",
+        "revision": "46885a544581a0af8aff0681d29e4971807e2912",
+        "license": "not_explicitly_specified_in_upstream_repository"
+      },
+      "clariq_README.md": {
+        "source": "clariq",
+        "url": "https://raw.githubusercontent.com/aliannejadi/ClariQ/46885a544581a0af8aff0681d29e4971807e2912/README.md",
+        "resolved_url": "https://raw.githubusercontent.com/aliannejadi/ClariQ/46885a544581a0af8aff0681d29e4971807e2912/README.md",
+        "bytes": 33225,
+        "sha256": "af1a108ec0f1f4070a2540f9f5e4f832aad55933f58df75e034edb62085d0772",
+        "revision": "46885a544581a0af8aff0681d29e4971807e2912",
+        "license": "not_explicitly_specified_in_upstream_repository"
+      },
+      "clarq_README.md": {
+        "source": "clarq",
+        "url": "https://raw.githubusercontent.com/vaibhav4595/ClarQ/cb6c6ba0c76d1a6e6f2cf308b3c159bf0b7de119/README.md",
+        "resolved_url": "https://raw.githubusercontent.com/vaibhav4595/ClarQ/cb6c6ba0c76d1a6e6f2cf308b3c159bf0b7de119/README.md",
+        "bytes": 1569,
+        "sha256": "1fa4c07dcbbaf9ac527d60a5e3f63bd270f78f287e8dae5c19f797dca408fd95",
+        "revision": "cb6c6ba0c76d1a6e6f2cf308b3c159bf0b7de119",
+        "license": "CC-BY-4.0_per_dataset_author_README; preserve_original_StackExchange_attribution"
+      },
+      "qasper_train_dev.tgz": {
+        "source": "qasper",
+        "url": "https://qasper-dataset.s3.us-west-2.amazonaws.com/qasper-train-dev-v0.3.tgz",
+        "resolved_url": "https://qasper-dataset.s3.us-west-2.amazonaws.com/qasper-train-dev-v0.3.tgz",
+        "bytes": 10835856,
+        "sha256": "a28fdf966db827bcee3d873107d6b6669864fb7ca8fbf73a192f5e39191bdb5a",
+        "revision": "v0.3; acquisition receipt pins the exact bytes",
+        "license": "CC-BY-4.0_per_official_dataset_card; preserve_paper_attribution"
+      },
+      "qasper_test.tgz": {
+        "source": "qasper",
+        "url": "https://qasper-dataset.s3.us-west-2.amazonaws.com/qasper-test-and-evaluator-v0.3.tgz",
+        "resolved_url": "https://qasper-dataset.s3.us-west-2.amazonaws.com/qasper-test-and-evaluator-v0.3.tgz",
+        "bytes": 3865061,
+        "sha256": "72a52a41193e2838b8074f80ac074b94f956b84886c36a61c58a7df4171bdd72",
+        "revision": "v0.3; acquisition receipt pins the exact bytes",
+        "license": "CC-BY-4.0_per_official_dataset_card; preserve_paper_attribution"
+      }
+    },
+    "scope": "Public dataset files only; no model requests or user files"
+  },
+  "files": {
+    "clarification.jsonl": "a3d527a5a23a40fa6509be085a0a60704587d706edcbd9494763c6088366f1a5",
+    "evidence.jsonl": "5265e907f6cf83d378a7dd4323bb8f29045dc51915221c5475917345fd133b85",
+    "papers.jsonl": "dab8b89ed363d8c4df935132b744c1c50774e058a8cea0fc5ea162368048c739",
+    "question_bank.json": "3265b2ce065929820442716cdf637b94751f5fc7be6fcb710b6d3b4630286b51"
+  },
+  "counts": {
+    "clarification": {
+      "train": 9176,
+      "dev": 2313,
+      "test": 4499
+    },
+    "evidence": {
+      "train": 2593,
+      "dev": 1005,
+      "test": 1451
+    },
+    "papers": {
+      "train": 888,
+      "dev": 281,
+      "test": 416
+    }
+  },
+  "source_groups": {
+    "train": 1075,
+    "dev": 331,
+    "test": 477
+  },
+  "clariq_issues": {},
+  "clarq": "Importer available; bulk corpus not acquired or used in this run",
+  "human_scientific_dialogues": 0,
+  "model_requests": 0
+}

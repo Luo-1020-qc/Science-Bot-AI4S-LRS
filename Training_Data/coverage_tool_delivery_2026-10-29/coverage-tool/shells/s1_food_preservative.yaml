@@ -1,0 +1,32 @@
+scenario_name: 两种保鲜方案的菌落总数比较
+domain: 食品科学
+skeleton: S1
+executable: true
+summary: 两种保鲜处理下同规格食品的菌落总数对比
+vocabulary:
+  treatment_name: 保鲜方案
+  outcome_name: 菌落总数
+  unit: CFU/g
+  comparison: 方案 A vs 方案 B
+survey_questions:
+- 样品是否来自同一批次并随机分装？
+- 取样时间点是否统一？
+- 检测依据哪个标准？
+- 储存温度与湿度是否受控？
+- 每组重复几个独立样品？
+rubric:
+- 样品同质性与随机分装已声明
+- 检测标准与取样方法已记录
+- 取样时间点一致
+- 储存条件受控
+- 每组独立样品 >= 3
+- 对数变换或非参方法已声明
+proposal_template:
+- 研究目标
+- 样品与分装
+- 保鲜处理与储存
+- 检测与统计
+- 验收标准
+- 局限
+source: 骨架聚类表 v1 · S1 · 食品科学行
+notes: 微生物计数为偏态数据，统计方法选择是审阅重点

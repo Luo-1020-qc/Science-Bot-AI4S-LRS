@@ -1,0 +1,43 @@
+{
+  "id": "materials_correction",
+  "root_group": "implementer_synthetic_materials_v1",
+  "mechanism": "correction",
+  "metrics": {
+    "outcome": "reviewable_design",
+    "expected_outcome_met": true,
+    "critical_missing": [],
+    "answer_mismatches": [],
+    "question_count": 7,
+    "unnecessary_question_turns": [],
+    "no_progress_question_turns": [],
+    "multi_field_answer_turns": 5,
+    "host_violation_turns": [],
+    "ready": true,
+    "blocker_fields": [],
+    "all_steps_unexecuted": true,
+    "automatic_design_readout": true,
+    "semantic_quality_human_rated": false,
+    "researcher_understanding_measured": false
+  },
+  "resources": {
+    "llm_requests": 0,
+    "llm_tokens": 0,
+    "tool_attempts": 0,
+    "limits": {
+      "llm_requests": 12,
+      "llm_tokens": 60000,
+      "tool_calls": 40,
+      "read_bytes": 18000
+    }
+  },
+  "remaining_events": [],
+  "selected_evidence_count": 0,
+  "artifacts": {
+    "delivery.html": "df293f52a63dc656bd986ef60ebd8bf25f2f33af0d551b80a9b504daef6c437a",
+    "delivery.md": "d992e0c600e7eac20dc6122959ce3751abd02b5498a1e9ef044f604737f370ee",
+    "final_state.json": "48a0725f19f7d0a9f9d9f6f420812407eccb14bb4e75a1622ca67db1acdda210",
+    "plan.json": "de6c95fe5ca4073f3317af44e4370046f4a6ead82bdb28fdd5f6cfb3595dbe59",
+    "plan.md": "8dcb26c0ada39b0e3fa357e87c869847bca946fabe1925abf68e0e139a2aefd1",
+    "trajectory.json": "7bb101231f2086db8bb4efb3e69e69ee58fdb8f8054997959abf8c0f20b0363e"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "version": "mainline_documentation_followup_v1",
+  "prior_support_changes_sha256": "5f5a45bd66f326d1c0b29dd6de95a1a2eec676a6ce31b26f0b0e35584dcac64d",
+  "full_tests_sha256": "78ffc8a3f0c7914a1a41829900ddd40813a455e3ff8b6976aa9c64f310562b81",
+  "files": {
+    "docs/REPRODUCIBILITY.md": {
+      "before_sha256": "400a86b6e72879f783296571a1a0ef1a3752a22a4678ab9dce9aa6ac3441577b",
+      "sha256": "5dac0be1d3091f4c66192d75779fff5802e9bfcc23d64b528e6353371a58558e",
+      "reason": "Final documentation links and current mainline report after regression; no executable source changed."
+    },
+    "README.md": {
+      "before_sha256": "6c3fcad63b2fd93f8c0944c50c691338f47167e9c99f9ee794483b452363e172",
+      "sha256": "2eeddae601bb91f4e9069fffca28c703941b89f2d7179e898d8af55c6575be55",
+      "reason": "Final documentation links and current mainline report after regression; no executable source changed."
+    },
+    "CHANGELOG.md": {
+      "before_sha256": "4ec1b7e77bf2a111778e292a1263bee8cfbc295cf2f51799656a47dc3ba2481b",
+      "sha256": "3a718ba51b2a4e1c0cf73fa199be1c7001b87c49029ecd9fbd18f208412fa95f",
+      "reason": "Final documentation links and current mainline report after regression; no executable source changed."
+    }
+  }
+}

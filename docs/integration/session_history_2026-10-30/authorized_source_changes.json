@@ -1,0 +1,29 @@
+{
+  "files": {
+    "RUT_Science/rut_science/science_bot/api.py": {
+      "before_sha256": "4e037278d908b340870f7f074371976bac39e31a3cd6c96520572ac10344dec8",
+      "sha256": "04f2b13f9f7e8aef4cd256766ae7b70ef2531d552787f7a6b308adaaccc15a63",
+      "reason": "User requested deleting individual historical research/chat sessions from the interface."
+    },
+    "RUT_Science/rut_science/science_bot/workbench.py": {
+      "before_sha256": "40ceb3315fae705f918235ffd78908926021d8b5ad2343b23c9cf854086a93ad",
+      "sha256": "0ff7a79f7b23dc48d16f596bef1179c75e9047aaee12ec482f506e3005ba93bb",
+      "reason": "User requested deleting individual historical research/chat sessions from the interface."
+    },
+    "RUT_Science/rut_science/science_bot/workbench_assets/dist/app.js": {
+      "before_sha256": "ff45fc1ce6996d83fed5daab6727a5a4d561fc0dd719f7ee9a06434528f5d6c0",
+      "sha256": "193bb7b38bb75ed65d6cfe746d5bcd6a32df62f2e30111637a22203202816679",
+      "reason": "User requested deleting individual historical research/chat sessions from the interface."
+    },
+    "RUT_Science/rut_science/science_bot/workbench_assets/dist/styles.css": {
+      "before_sha256": "1074bd63e0ecfcbffab4538ac15bbb9787345ae3b4f7bb4333176e6c70c39da8",
+      "sha256": "22bb3b1265e5c029bda9ec6b459cd107fcbb073eb911326aad2766e41d5f3c0b",
+      "reason": "User requested deleting individual historical research/chat sessions from the interface."
+    },
+    "examples/interfaces/browser.html": {
+      "before_sha256": "c215ecf57febaaaddddd1a441bf957cf8a87942c980f376e90601a426d39422c",
+      "sha256": "1175366e6426dc82c001b9ee29a02dd13f60d999f36c582db9e277b01b0deae3",
+      "reason": "User requested deleting individual historical research/chat sessions from the interface."
+    }
+  }
+}

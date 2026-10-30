@@ -1,0 +1,1733 @@
+[
+  {
+    "turn": 1,
+    "input": "我想比较两种催化剂在同一温度下的产率。没有先导数据，我不知道方差、效应大小和需要多少独立反应批次。请先澄清，不能默认每组十个。",
+    "seconds": 5.625,
+    "recovered_persisted_response_without_replay": false,
+    "exception": null,
+    "result": {
+      "intent": "planning",
+      "answer": "正在澄清\n\n关于因素与对比，是否按当前理解继续？\n1. 按这个理解继续：催化剂（两种水平）；温度固定为同一温度\n2. 暂不确定\n3. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+      "planning": {
+        "id": "37cf90b7dffb450eb967b8cb870aa437",
+        "revision": 1,
+        "active": true,
+        "facts": {
+          "research_question": {
+            "value": "比较两种催化剂在同一温度下的产率",
+            "quote": "我想比较两种催化剂在同一温度下的产率。",
+            "status": "declared",
+            "turn": 1
+          },
+          "objective_type": {
+            "value": "comparison",
+            "quote": "我想比较两种催化剂在同一温度下的产率。",
+            "status": "declared",
+            "turn": 1
+          },
+          "factors": {
+            "value": "催化剂（两种水平）；温度固定为同一温度",
+            "quote": "两种催化剂在同一温度下的产率",
+            "status": "proposed",
+            "turn": 1
+          },
+          "outcomes": {
+            "value": "产率",
+            "quote": "两种催化剂在同一温度下的产率",
+            "status": "declared",
+            "turn": 1
+          }
+        },
+        "unknown": [
+          "sampling",
+          "analysis"
+        ],
+        "conflicts": {},
+        "stale": {},
+        "pending": {
+          "field": "factors",
+          "kind": "proposal",
+          "question": "关于因素与对比，是否按当前理解继续？",
+          "rationale": "这是从你的描述整理出的理解，不是经验证的事实。",
+          "options": [
+            {
+              "label": "按这个理解继续：催化剂（两种水平）；温度固定为同一温度",
+              "value": "催化剂（两种水平）；温度固定为同一温度",
+              "action": "accept",
+              "id": "2c8851d27fd9"
+            },
+            {
+              "label": "暂不确定",
+              "value": "未知",
+              "action": "unknown",
+              "id": "2c3af7fa609c"
+            },
+            {
+              "label": "其他，我来补充",
+              "value": "",
+              "action": "custom",
+              "id": "47de6eddb129"
+            }
+          ],
+          "origin": "template",
+          "allow_accept": false,
+          "choice_policy": {
+            "intent": "comparison",
+            "origin": "user_declared",
+            "policy_hash": null
+          },
+          "choice_id": "d91aada0d350f9b6",
+          "choice_plan_hash": "1a9d7de75393f19def40cee64c88981e3eb8cfaf3181c87dd7037e70cedebea0"
+        },
+        "review": {
+          "ready": false,
+          "checks": [
+            {
+              "field": "research_question",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "objective_type",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "hypothesis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+            },
+            {
+              "field": "scope",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "结论只适用于哪些对象、数据、条件和时间范围？"
+            },
+            {
+              "field": "exclusions",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "本轮明确不研究什么，不准备声称什么？"
+            },
+            {
+              "field": "experimental_unit",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "一次独立分配或观察是什么？哪些测量来自同一对象？"
+            },
+            {
+              "field": "factors",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "design",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+            },
+            {
+              "field": "outcomes",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "baseline",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+            },
+            {
+              "field": "data_source",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。"
+            },
+            {
+              "field": "sampling",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+            },
+            {
+              "field": "analysis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+            },
+            {
+              "field": "acceptance",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+            },
+            {
+              "field": "resources",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？"
+            },
+            {
+              "field": "risks",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+            },
+            {
+              "field": "reproducibility",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+            },
+            {
+              "field": "human_roles",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+            },
+            {
+              "field": "deliverable",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "最后交付什么：方案、脚本、表格、报告或可复现实验记录？"
+            },
+            {
+              "field": "factors",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "sampling",
+              "code": "explicit_unknown",
+              "status": "blocked",
+              "detail": "用户明确尚不知道；应先规划获取证据的步骤。"
+            },
+            {
+              "field": "analysis",
+              "code": "explicit_unknown",
+              "status": "blocked",
+              "detail": "用户明确尚不知道；应先规划获取证据的步骤。"
+            },
+            {
+              "field": "objective_type",
+              "code": "objective_classified",
+              "status": "passed",
+              "detail": "需要明确比较、预测、因果、探索或复现目的。"
+            },
+            {
+              "field": "outcomes",
+              "code": "outcome_direction",
+              "status": "blocked",
+              "detail": "明确主要响应及方向，或明确无预设方向的探索性分析。"
+            },
+            {
+              "field": "outcomes",
+              "code": "unit_aggregation",
+              "status": "blocked",
+              "detail": "说明怎样按实验/推断单位汇总测量，不能用大量技术重复扩大样本量。"
+            }
+          ],
+          "blockers": [
+            {
+              "field": "hypothesis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+            },
+            {
+              "field": "scope",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "结论只适用于哪些对象、数据、条件和时间范围？"
+            },
+            {
+              "field": "exclusions",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "本轮明确不研究什么，不准备声称什么？"
+            },
+            {
+              "field": "experimental_unit",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "一次独立分配或观察是什么？哪些测量来自同一对象？"
+            },
+            {
+              "field": "design",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+            },
+            {
+              "field": "baseline",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+            },
+            {
+              "field": "data_source",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。"
+            },
+            {
+              "field": "sampling",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+            },
+            {
+              "field": "analysis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+            },
+            {
+              "field": "acceptance",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+            },
+            {
+              "field": "resources",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？"
+            },
+            {
+              "field": "risks",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+            },
+            {
+              "field": "reproducibility",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+            },
+            {
+              "field": "human_roles",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+            },
+            {
+              "field": "deliverable",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "最后交付什么：方案、脚本、表格、报告或可复现实验记录？"
+            },
+            {
+              "field": "factors",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "sampling",
+              "code": "explicit_unknown",
+              "status": "blocked",
+              "detail": "用户明确尚不知道；应先规划获取证据的步骤。"
+            },
+            {
+              "field": "analysis",
+              "code": "explicit_unknown",
+              "status": "blocked",
+              "detail": "用户明确尚不知道；应先规划获取证据的步骤。"
+            },
+            {
+              "field": "outcomes",
+              "code": "outcome_direction",
+              "status": "blocked",
+              "detail": "明确主要响应及方向，或明确无预设方向的探索性分析。"
+            },
+            {
+              "field": "outcomes",
+              "code": "unit_aggregation",
+              "status": "blocked",
+              "detail": "说明怎样按实验/推断单位汇总测量，不能用大量技术重复扩大样本量。"
+            }
+          ],
+          "required_fields": [
+            "research_question",
+            "objective_type",
+            "hypothesis",
+            "scope",
+            "exclusions",
+            "experimental_unit",
+            "factors",
+            "design",
+            "outcomes",
+            "baseline",
+            "data_source",
+            "sampling",
+            "analysis",
+            "acceptance",
+            "resources",
+            "risks",
+            "reproducibility",
+            "human_roles",
+            "deliverable"
+          ],
+          "scope": "planning_only",
+          "execution_authorized": false,
+          "scientific_claim_verified": false,
+          "readiness_meaning": "用户声明已足够形成待人类复核的计划；不表示假设、数据、功效或结论已被验证。"
+        },
+        "contract_hash": "1a9d7de75393f19def40cee64c88981e3eb8cfaf3181c87dd7037e70cedebea0",
+        "approved": false,
+        "decisions_count": 1,
+        "reflections_count": 0,
+        "evidence": [],
+        "evidence_actions": {},
+        "clarification": {
+          "mode": "template",
+          "reason": "model_unavailable_or_rejected",
+          "model_used": true,
+          "error_type": "ValueError",
+          "validation_error": "NoValidPriorityQuestions: [{\"field\": \"sampling\", \"reason\": \"InventedQuestionNumericAssumption\"}, {\"field\": \"experimental_unit\", \"reason\": \"InventedQuestionNumericAssumption\"}]"
+        },
+        "last_export": null,
+        "execution_authorized": false
+      },
+      "questions": [
+        {
+          "field": "factors",
+          "kind": "proposal",
+          "question": "关于因素与对比，是否按当前理解继续？",
+          "rationale": "这是从你的描述整理出的理解，不是经验证的事实。",
+          "options": [
+            {
+              "label": "按这个理解继续：催化剂（两种水平）；温度固定为同一温度",
+              "value": "催化剂（两种水平）；温度固定为同一温度",
+              "action": "accept",
+              "id": "2c8851d27fd9"
+            },
+            {
+              "label": "暂不确定",
+              "value": "未知",
+              "action": "unknown",
+              "id": "2c3af7fa609c"
+            },
+            {
+              "label": "其他，我来补充",
+              "value": "",
+              "action": "custom",
+              "id": "47de6eddb129"
+            }
+          ],
+          "origin": "template",
+          "allow_accept": false,
+          "choice_policy": {
+            "intent": "comparison",
+            "origin": "user_declared",
+            "policy_hash": null
+          },
+          "choice_id": "d91aada0d350f9b6",
+          "choice_plan_hash": "1a9d7de75393f19def40cee64c88981e3eb8cfaf3181c87dd7037e70cedebea0"
+        }
+      ],
+      "execution_authorized": false,
+      "scientific_claim_verified": false,
+      "model_used": true,
+      "clarification": {
+        "mode": "template",
+        "reason": "model_unavailable_or_rejected",
+        "model_used": true,
+        "error_type": "ValueError",
+        "validation_error": "NoValidPriorityQuestions: [{\"field\": \"sampling\", \"reason\": \"InventedQuestionNumericAssumption\"}, {\"field\": \"experimental_unit\", \"reason\": \"InventedQuestionNumericAssumption\"}]"
+      },
+      "question_form": true
+    },
+    "before": null,
+    "after": {
+      "schema_version": "research_planning_v1",
+      "id": "37cf90b7dffb450eb967b8cb870aa437",
+      "revision": 1,
+      "active": true,
+      "facts": {
+        "research_question": {
+          "value": "比较两种催化剂在同一温度下的产率",
+          "quote": "我想比较两种催化剂在同一温度下的产率。",
+          "status": "declared",
+          "turn": 1
+        },
+        "objective_type": {
+          "value": "comparison",
+          "quote": "我想比较两种催化剂在同一温度下的产率。",
+          "status": "declared",
+          "turn": 1
+        },
+        "factors": {
+          "value": "催化剂（两种水平）；温度固定为同一温度",
+          "quote": "两种催化剂在同一温度下的产率",
+          "status": "proposed",
+          "turn": 1
+        },
+        "outcomes": {
+          "value": "产率",
+          "quote": "两种催化剂在同一温度下的产率",
+          "status": "declared",
+          "turn": 1
+        }
+      },
+      "unknown": [
+        "sampling",
+        "analysis"
+      ],
+      "conflicts": {},
+      "decisions": [
+        {
+          "turn": 1,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "research_question",
+              "kind": "added",
+              "before": null,
+              "after": "比较两种催化剂在同一温度下的产率"
+            },
+            {
+              "field": "objective_type",
+              "kind": "added",
+              "before": null,
+              "after": "comparison"
+            },
+            {
+              "field": "factors",
+              "kind": "added",
+              "before": null,
+              "after": "催化剂（两种水平）；温度固定为同一温度"
+            },
+            {
+              "field": "outcomes",
+              "kind": "added",
+              "before": null,
+              "after": "产率"
+            },
+            {
+              "field": "sampling",
+              "kind": "unknown",
+              "before": null,
+              "after": null
+            },
+            {
+              "field": "analysis",
+              "kind": "unknown",
+              "before": null,
+              "after": null
+            }
+          ]
+        }
+      ],
+      "approval": null,
+      "pending": {
+        "field": "factors",
+        "kind": "proposal",
+        "question": "关于因素与对比，是否按当前理解继续？",
+        "rationale": "这是从你的描述整理出的理解，不是经验证的事实。",
+        "options": [
+          {
+            "label": "按这个理解继续：催化剂（两种水平）；温度固定为同一温度",
+            "value": "催化剂（两种水平）；温度固定为同一温度",
+            "action": "accept",
+            "id": "2c8851d27fd9"
+          },
+          {
+            "label": "暂不确定",
+            "value": "未知",
+            "action": "unknown",
+            "id": "2c3af7fa609c"
+          },
+          {
+            "label": "其他，我来补充",
+            "value": "",
+            "action": "custom",
+            "id": "47de6eddb129"
+          }
+        ],
+        "origin": "template",
+        "allow_accept": false,
+        "choice_policy": {
+          "intent": "comparison",
+          "origin": "user_declared",
+          "policy_hash": null
+        },
+        "choice_id": "d91aada0d350f9b6",
+        "choice_plan_hash": "1a9d7de75393f19def40cee64c88981e3eb8cfaf3181c87dd7037e70cedebea0"
+      },
+      "reflections": [],
+      "changes": [
+        {
+          "field": "research_question",
+          "kind": "added",
+          "before": null,
+          "after": "比较两种催化剂在同一温度下的产率"
+        },
+        {
+          "field": "objective_type",
+          "kind": "added",
+          "before": null,
+          "after": "comparison"
+        },
+        {
+          "field": "factors",
+          "kind": "added",
+          "before": null,
+          "after": "催化剂（两种水平）；温度固定为同一温度"
+        },
+        {
+          "field": "outcomes",
+          "kind": "added",
+          "before": null,
+          "after": "产率"
+        },
+        {
+          "field": "sampling",
+          "kind": "unknown",
+          "before": null,
+          "after": null
+        },
+        {
+          "field": "analysis",
+          "kind": "unknown",
+          "before": null,
+          "after": null
+        }
+      ],
+      "stale": {},
+      "turns": 1,
+      "audience": "researcher_student",
+      "last_notes": [
+        "“样本与重复依据”同时被模型整理为声明和未知；保留原文明确的不确定性，未采纳该字段声明。",
+        "语义改写和推断仅作为待确认提议展示，不会自动成为已确认边界。",
+        "本轮动态澄清不可用或未通过校验，已使用模板继续；已有边界保留。"
+      ],
+      "last_export": null,
+      "clarification": {
+        "mode": "template",
+        "reason": "model_unavailable_or_rejected",
+        "model_used": true,
+        "error_type": "ValueError",
+        "validation_error": "NoValidPriorityQuestions: [{\"field\": \"sampling\", \"reason\": \"InventedQuestionNumericAssumption\"}, {\"field\": \"experimental_unit\", \"reason\": \"InventedQuestionNumericAssumption\"}]"
+      },
+      "question_history": [
+        {
+          "turn": 1,
+          "field": "factors",
+          "kind": "proposal",
+          "question": "关于因素与对比，是否按当前理解继续？",
+          "origin": "template",
+          "basis_hash": "f84f7d73cd26ba9d11a9ce45b512df56b403bca3298fbfe2eb6ee26c0aa63a71"
+        }
+      ]
+    },
+    "known_field_missing_questions": [],
+    "state_changed": true,
+    "resources": {
+      "llm_requests": 2,
+      "llm_tokens": 3969,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 4,
+        "llm_tokens": 16000,
+        "tool_calls": 40,
+        "read_bytes": 24000
+      }
+    }
+  },
+  {
+    "turn": 2,
+    "input": "样本与重复依据仍然未知。先去查找历史先导记录，再由实验负责人确认独立反应批次与测量误差；取得记录前不做功效保证，本轮最多一小时只整理计划。",
+    "seconds": 2.375,
+    "recovered_persisted_response_without_replay": false,
+    "exception": null,
+    "result": {
+      "intent": "planning",
+      "answer": "正在澄清\n\n关于因素与对比，是否按当前理解继续？\n1. 按这个理解继续：催化剂（两种水平）；温度固定为同一温度\n2. 暂不确定\n3. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+      "planning": {
+        "id": "37cf90b7dffb450eb967b8cb870aa437",
+        "revision": 2,
+        "active": true,
+        "facts": {
+          "research_question": {
+            "value": "比较两种催化剂在同一温度下的产率",
+            "quote": "我想比较两种催化剂在同一温度下的产率。",
+            "status": "declared",
+            "turn": 1
+          },
+          "objective_type": {
+            "value": "comparison",
+            "quote": "我想比较两种催化剂在同一温度下的产率。",
+            "status": "declared",
+            "turn": 1
+          },
+          "factors": {
+            "value": "催化剂（两种水平）；温度固定为同一温度",
+            "quote": "两种催化剂在同一温度下的产率",
+            "status": "proposed",
+            "turn": 1
+          },
+          "outcomes": {
+            "value": "产率",
+            "quote": "两种催化剂在同一温度下的产率",
+            "status": "declared",
+            "turn": 1
+          },
+          "experimental_unit": {
+            "value": "独立反应批次（待实验负责人确认）",
+            "quote": "再由实验负责人确认独立反应批次与测量误差",
+            "status": "proposed",
+            "turn": 2
+          },
+          "data_source": {
+            "value": "历史先导记录（需先查找）",
+            "quote": "先去查找历史先导记录",
+            "status": "proposed",
+            "turn": 2
+          },
+          "human_roles": {
+            "value": "实验负责人负责确认独立反应批次与测量误差",
+            "quote": "再由实验负责人确认独立反应批次与测量误差",
+            "status": "proposed",
+            "turn": 2
+          },
+          "acceptance": {
+            "value": "取得记录前不做功效保证",
+            "quote": "取得记录前不做功效保证",
+            "status": "declared",
+            "turn": 2
+          },
+          "resources": {
+            "value": "本轮最多一小时，只整理计划",
+            "quote": "本轮最多一小时只整理计划",
+            "status": "proposed",
+            "turn": 2
+          },
+          "deliverable": {
+            "value": "本轮只整理计划",
+            "quote": "本轮最多一小时只整理计划",
+            "status": "proposed",
+            "turn": 2
+          }
+        },
+        "unknown": [
+          "sampling",
+          "analysis",
+          "randomization"
+        ],
+        "conflicts": {},
+        "stale": {},
+        "pending": {
+          "field": "factors",
+          "kind": "proposal",
+          "question": "关于因素与对比，是否按当前理解继续？",
+          "rationale": "这是从你的描述整理出的理解，不是经验证的事实。",
+          "options": [
+            {
+              "label": "按这个理解继续：催化剂（两种水平）；温度固定为同一温度",
+              "value": "催化剂（两种水平）；温度固定为同一温度",
+              "action": "accept",
+              "id": "2c8851d27fd9"
+            },
+            {
+              "label": "暂不确定",
+              "value": "未知",
+              "action": "unknown",
+              "id": "2c3af7fa609c"
+            },
+            {
+              "label": "其他，我来补充",
+              "value": "",
+              "action": "custom",
+              "id": "47de6eddb129"
+            }
+          ],
+          "origin": "template",
+          "allow_accept": false,
+          "choice_policy": {
+            "intent": "comparison",
+            "origin": "user_declared",
+            "policy_hash": null
+          },
+          "choice_id": "ce1631931fa01079",
+          "choice_plan_hash": "01c86ab902d733bd588e33169e253b122c487ca4713bf8ebe2415aff2c1e31c1"
+        },
+        "review": {
+          "ready": false,
+          "checks": [
+            {
+              "field": "research_question",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "objective_type",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "hypothesis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+            },
+            {
+              "field": "scope",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "结论只适用于哪些对象、数据、条件和时间范围？"
+            },
+            {
+              "field": "exclusions",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "本轮明确不研究什么，不准备声称什么？"
+            },
+            {
+              "field": "experimental_unit",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "factors",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "design",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+            },
+            {
+              "field": "outcomes",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "baseline",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+            },
+            {
+              "field": "data_source",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "sampling",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+            },
+            {
+              "field": "analysis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+            },
+            {
+              "field": "acceptance",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "resources",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "risks",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+            },
+            {
+              "field": "reproducibility",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+            },
+            {
+              "field": "human_roles",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "deliverable",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "experimental_unit",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "factors",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "data_source",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "sampling",
+              "code": "explicit_unknown",
+              "status": "blocked",
+              "detail": "用户明确尚不知道；应先规划获取证据的步骤。"
+            },
+            {
+              "field": "randomization",
+              "code": "explicit_unknown",
+              "status": "needs_review",
+              "detail": "用户明确尚不知道；应先规划获取证据的步骤。"
+            },
+            {
+              "field": "analysis",
+              "code": "explicit_unknown",
+              "status": "blocked",
+              "detail": "用户明确尚不知道；应先规划获取证据的步骤。"
+            },
+            {
+              "field": "resources",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "human_roles",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "deliverable",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "objective_type",
+              "code": "objective_classified",
+              "status": "passed",
+              "detail": "需要明确比较、预测、因果、探索或复现目的。"
+            },
+            {
+              "field": "outcomes",
+              "code": "outcome_direction",
+              "status": "blocked",
+              "detail": "明确主要响应及方向，或明确无预设方向的探索性分析。"
+            },
+            {
+              "field": "outcomes",
+              "code": "unit_aggregation",
+              "status": "blocked",
+              "detail": "说明怎样按实验/推断单位汇总测量，不能用大量技术重复扩大样本量。"
+            },
+            {
+              "field": "acceptance",
+              "code": "measurable_acceptance",
+              "status": "blocked",
+              "detail": "验收应有可测阈值或可逐项核对的产物，不只写结果更好。"
+            },
+            {
+              "field": "acceptance",
+              "code": "negative_outcomes",
+              "status": "blocked",
+              "detail": "明确阴性、不确定或反向结果也应如实报告，不能继续试到显著。"
+            },
+            {
+              "field": "acceptance",
+              "code": "stopping_rule",
+              "status": "blocked",
+              "detail": "预先声明预算、信息不足或失败时的停止/升级条件。"
+            },
+            {
+              "field": "resources",
+              "code": "resource_bound",
+              "status": "passed",
+              "detail": "声明可核对的资源数量、期限或硬上限。"
+            },
+            {
+              "field": "human_roles",
+              "code": "human_accountability",
+              "status": "passed",
+              "detail": "明确由谁确认边界、复核方法和批准结论，不把责任隐含交给模型。"
+            }
+          ],
+          "blockers": [
+            {
+              "field": "hypothesis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+            },
+            {
+              "field": "scope",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "结论只适用于哪些对象、数据、条件和时间范围？"
+            },
+            {
+              "field": "exclusions",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "本轮明确不研究什么，不准备声称什么？"
+            },
+            {
+              "field": "design",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+            },
+            {
+              "field": "baseline",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+            },
+            {
+              "field": "sampling",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+            },
+            {
+              "field": "analysis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+            },
+            {
+              "field": "risks",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+            },
+            {
+              "field": "reproducibility",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+            },
+            {
+              "field": "experimental_unit",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "factors",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "data_source",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "sampling",
+              "code": "explicit_unknown",
+              "status": "blocked",
+              "detail": "用户明确尚不知道；应先规划获取证据的步骤。"
+            },
+            {
+              "field": "analysis",
+              "code": "explicit_unknown",
+              "status": "blocked",
+              "detail": "用户明确尚不知道；应先规划获取证据的步骤。"
+            },
+            {
+              "field": "resources",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "human_roles",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "deliverable",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "outcomes",
+              "code": "outcome_direction",
+              "status": "blocked",
+              "detail": "明确主要响应及方向，或明确无预设方向的探索性分析。"
+            },
+            {
+              "field": "outcomes",
+              "code": "unit_aggregation",
+              "status": "blocked",
+              "detail": "说明怎样按实验/推断单位汇总测量，不能用大量技术重复扩大样本量。"
+            },
+            {
+              "field": "acceptance",
+              "code": "measurable_acceptance",
+              "status": "blocked",
+              "detail": "验收应有可测阈值或可逐项核对的产物，不只写结果更好。"
+            },
+            {
+              "field": "acceptance",
+              "code": "negative_outcomes",
+              "status": "blocked",
+              "detail": "明确阴性、不确定或反向结果也应如实报告，不能继续试到显著。"
+            },
+            {
+              "field": "acceptance",
+              "code": "stopping_rule",
+              "status": "blocked",
+              "detail": "预先声明预算、信息不足或失败时的停止/升级条件。"
+            }
+          ],
+          "required_fields": [
+            "research_question",
+            "objective_type",
+            "hypothesis",
+            "scope",
+            "exclusions",
+            "experimental_unit",
+            "factors",
+            "design",
+            "outcomes",
+            "baseline",
+            "data_source",
+            "sampling",
+            "analysis",
+            "acceptance",
+            "resources",
+            "risks",
+            "reproducibility",
+            "human_roles",
+            "deliverable"
+          ],
+          "scope": "planning_only",
+          "execution_authorized": false,
+          "scientific_claim_verified": false,
+          "readiness_meaning": "用户声明已足够形成待人类复核的计划；不表示假设、数据、功效或结论已被验证。"
+        },
+        "contract_hash": "01c86ab902d733bd588e33169e253b122c487ca4713bf8ebe2415aff2c1e31c1",
+        "approved": false,
+        "decisions_count": 2,
+        "reflections_count": 0,
+        "evidence": [],
+        "evidence_actions": {},
+        "clarification": {
+          "mode": "template",
+          "reason": "model_unavailable_or_rejected",
+          "model_used": true,
+          "error_type": "RunLimitError",
+          "validation_error": "RunLimitError"
+        },
+        "last_export": null,
+        "execution_authorized": false
+      },
+      "questions": [
+        {
+          "field": "factors",
+          "kind": "proposal",
+          "question": "关于因素与对比，是否按当前理解继续？",
+          "rationale": "这是从你的描述整理出的理解，不是经验证的事实。",
+          "options": [
+            {
+              "label": "按这个理解继续：催化剂（两种水平）；温度固定为同一温度",
+              "value": "催化剂（两种水平）；温度固定为同一温度",
+              "action": "accept",
+              "id": "2c8851d27fd9"
+            },
+            {
+              "label": "暂不确定",
+              "value": "未知",
+              "action": "unknown",
+              "id": "2c3af7fa609c"
+            },
+            {
+              "label": "其他，我来补充",
+              "value": "",
+              "action": "custom",
+              "id": "47de6eddb129"
+            }
+          ],
+          "origin": "template",
+          "allow_accept": false,
+          "choice_policy": {
+            "intent": "comparison",
+            "origin": "user_declared",
+            "policy_hash": null
+          },
+          "choice_id": "ce1631931fa01079",
+          "choice_plan_hash": "01c86ab902d733bd588e33169e253b122c487ca4713bf8ebe2415aff2c1e31c1"
+        }
+      ],
+      "execution_authorized": false,
+      "scientific_claim_verified": false,
+      "model_used": true,
+      "clarification": {
+        "mode": "template",
+        "reason": "model_unavailable_or_rejected",
+        "model_used": true,
+        "error_type": "RunLimitError",
+        "validation_error": "RunLimitError"
+      },
+      "question_form": true
+    },
+    "before": {
+      "schema_version": "research_planning_v1",
+      "id": "37cf90b7dffb450eb967b8cb870aa437",
+      "revision": 1,
+      "active": true,
+      "facts": {
+        "research_question": {
+          "value": "比较两种催化剂在同一温度下的产率",
+          "quote": "我想比较两种催化剂在同一温度下的产率。",
+          "status": "declared",
+          "turn": 1
+        },
+        "objective_type": {
+          "value": "comparison",
+          "quote": "我想比较两种催化剂在同一温度下的产率。",
+          "status": "declared",
+          "turn": 1
+        },
+        "factors": {
+          "value": "催化剂（两种水平）；温度固定为同一温度",
+          "quote": "两种催化剂在同一温度下的产率",
+          "status": "proposed",
+          "turn": 1
+        },
+        "outcomes": {
+          "value": "产率",
+          "quote": "两种催化剂在同一温度下的产率",
+          "status": "declared",
+          "turn": 1
+        }
+      },
+      "unknown": [
+        "sampling",
+        "analysis"
+      ],
+      "conflicts": {},
+      "decisions": [
+        {
+          "turn": 1,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "research_question",
+              "kind": "added",
+              "before": null,
+              "after": "比较两种催化剂在同一温度下的产率"
+            },
+            {
+              "field": "objective_type",
+              "kind": "added",
+              "before": null,
+              "after": "comparison"
+            },
+            {
+              "field": "factors",
+              "kind": "added",
+              "before": null,
+              "after": "催化剂（两种水平）；温度固定为同一温度"
+            },
+            {
+              "field": "outcomes",
+              "kind": "added",
+              "before": null,
+              "after": "产率"
+            },
+            {
+              "field": "sampling",
+              "kind": "unknown",
+              "before": null,
+              "after": null
+            },
+            {
+              "field": "analysis",
+              "kind": "unknown",
+              "before": null,
+              "after": null
+            }
+          ]
+        }
+      ],
+      "approval": null,
+      "pending": {
+        "field": "factors",
+        "kind": "proposal",
+        "question": "关于因素与对比，是否按当前理解继续？",
+        "rationale": "这是从你的描述整理出的理解，不是经验证的事实。",
+        "options": [
+          {
+            "label": "按这个理解继续：催化剂（两种水平）；温度固定为同一温度",
+            "value": "催化剂（两种水平）；温度固定为同一温度",
+            "action": "accept",
+            "id": "2c8851d27fd9"
+          },
+          {
+            "label": "暂不确定",
+            "value": "未知",
+            "action": "unknown",
+            "id": "2c3af7fa609c"
+          },
+          {
+            "label": "其他，我来补充",
+            "value": "",
+            "action": "custom",
+            "id": "47de6eddb129"
+          }
+        ],
+        "origin": "template",
+        "allow_accept": false,
+        "choice_policy": {
+          "intent": "comparison",
+          "origin": "user_declared",
+          "policy_hash": null
+        },
+        "choice_id": "d91aada0d350f9b6",
+        "choice_plan_hash": "1a9d7de75393f19def40cee64c88981e3eb8cfaf3181c87dd7037e70cedebea0"
+      },
+      "reflections": [],
+      "changes": [
+        {
+          "field": "research_question",
+          "kind": "added",
+          "before": null,
+          "after": "比较两种催化剂在同一温度下的产率"
+        },
+        {
+          "field": "objective_type",
+          "kind": "added",
+          "before": null,
+          "after": "comparison"
+        },
+        {
+          "field": "factors",
+          "kind": "added",
+          "before": null,
+          "after": "催化剂（两种水平）；温度固定为同一温度"
+        },
+        {
+          "field": "outcomes",
+          "kind": "added",
+          "before": null,
+          "after": "产率"
+        },
+        {
+          "field": "sampling",
+          "kind": "unknown",
+          "before": null,
+          "after": null
+        },
+        {
+          "field": "analysis",
+          "kind": "unknown",
+          "before": null,
+          "after": null
+        }
+      ],
+      "stale": {},
+      "turns": 1,
+      "audience": "researcher_student",
+      "last_notes": [
+        "“样本与重复依据”同时被模型整理为声明和未知；保留原文明确的不确定性，未采纳该字段声明。",
+        "语义改写和推断仅作为待确认提议展示，不会自动成为已确认边界。",
+        "本轮动态澄清不可用或未通过校验，已使用模板继续；已有边界保留。"
+      ],
+      "last_export": null,
+      "clarification": {
+        "mode": "template",
+        "reason": "model_unavailable_or_rejected",
+        "model_used": true,
+        "error_type": "ValueError",
+        "validation_error": "NoValidPriorityQuestions: [{\"field\": \"sampling\", \"reason\": \"InventedQuestionNumericAssumption\"}, {\"field\": \"experimental_unit\", \"reason\": \"InventedQuestionNumericAssumption\"}]"
+      },
+      "question_history": [
+        {
+          "turn": 1,
+          "field": "factors",
+          "kind": "proposal",
+          "question": "关于因素与对比，是否按当前理解继续？",
+          "origin": "template",
+          "basis_hash": "f84f7d73cd26ba9d11a9ce45b512df56b403bca3298fbfe2eb6ee26c0aa63a71"
+        }
+      ]
+    },
+    "after": {
+      "schema_version": "research_planning_v1",
+      "id": "37cf90b7dffb450eb967b8cb870aa437",
+      "revision": 2,
+      "active": true,
+      "facts": {
+        "research_question": {
+          "value": "比较两种催化剂在同一温度下的产率",
+          "quote": "我想比较两种催化剂在同一温度下的产率。",
+          "status": "declared",
+          "turn": 1
+        },
+        "objective_type": {
+          "value": "comparison",
+          "quote": "我想比较两种催化剂在同一温度下的产率。",
+          "status": "declared",
+          "turn": 1
+        },
+        "factors": {
+          "value": "催化剂（两种水平）；温度固定为同一温度",
+          "quote": "两种催化剂在同一温度下的产率",
+          "status": "proposed",
+          "turn": 1
+        },
+        "outcomes": {
+          "value": "产率",
+          "quote": "两种催化剂在同一温度下的产率",
+          "status": "declared",
+          "turn": 1
+        },
+        "experimental_unit": {
+          "value": "独立反应批次（待实验负责人确认）",
+          "quote": "再由实验负责人确认独立反应批次与测量误差",
+          "status": "proposed",
+          "turn": 2
+        },
+        "data_source": {
+          "value": "历史先导记录（需先查找）",
+          "quote": "先去查找历史先导记录",
+          "status": "proposed",
+          "turn": 2
+        },
+        "human_roles": {
+          "value": "实验负责人负责确认独立反应批次与测量误差",
+          "quote": "再由实验负责人确认独立反应批次与测量误差",
+          "status": "proposed",
+          "turn": 2
+        },
+        "acceptance": {
+          "value": "取得记录前不做功效保证",
+          "quote": "取得记录前不做功效保证",
+          "status": "declared",
+          "turn": 2
+        },
+        "resources": {
+          "value": "本轮最多一小时，只整理计划",
+          "quote": "本轮最多一小时只整理计划",
+          "status": "proposed",
+          "turn": 2
+        },
+        "deliverable": {
+          "value": "本轮只整理计划",
+          "quote": "本轮最多一小时只整理计划",
+          "status": "proposed",
+          "turn": 2
+        }
+      },
+      "unknown": [
+        "sampling",
+        "analysis",
+        "randomization"
+      ],
+      "conflicts": {},
+      "decisions": [
+        {
+          "turn": 1,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "research_question",
+              "kind": "added",
+              "before": null,
+              "after": "比较两种催化剂在同一温度下的产率"
+            },
+            {
+              "field": "objective_type",
+              "kind": "added",
+              "before": null,
+              "after": "comparison"
+            },
+            {
+              "field": "factors",
+              "kind": "added",
+              "before": null,
+              "after": "催化剂（两种水平）；温度固定为同一温度"
+            },
+            {
+              "field": "outcomes",
+              "kind": "added",
+              "before": null,
+              "after": "产率"
+            },
+            {
+              "field": "sampling",
+              "kind": "unknown",
+              "before": null,
+              "after": null
+            },
+            {
+              "field": "analysis",
+              "kind": "unknown",
+              "before": null,
+              "after": null
+            }
+          ]
+        },
+        {
+          "turn": 2,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "experimental_unit",
+              "kind": "added",
+              "before": null,
+              "after": "独立反应批次（待实验负责人确认）"
+            },
+            {
+              "field": "data_source",
+              "kind": "added",
+              "before": null,
+              "after": "历史先导记录（需先查找）"
+            },
+            {
+              "field": "human_roles",
+              "kind": "added",
+              "before": null,
+              "after": "实验负责人负责确认独立反应批次与测量误差"
+            },
+            {
+              "field": "acceptance",
+              "kind": "added",
+              "before": null,
+              "after": "取得记录前不做功效保证"
+            },
+            {
+              "field": "resources",
+              "kind": "added",
+              "before": null,
+              "after": "本轮最多一小时，只整理计划"
+            },
+            {
+              "field": "deliverable",
+              "kind": "added",
+              "before": null,
+              "after": "本轮只整理计划"
+            },
+            {
+              "field": "sampling",
+              "kind": "unknown",
+              "before": null,
+              "after": null
+            },
+            {
+              "field": "randomization",
+              "kind": "unknown",
+              "before": null,
+              "after": null
+            }
+          ]
+        }
+      ],
+      "approval": null,
+      "pending": {
+        "field": "factors",
+        "kind": "proposal",
+        "question": "关于因素与对比，是否按当前理解继续？",
+        "rationale": "这是从你的描述整理出的理解，不是经验证的事实。",
+        "options": [
+          {
+            "label": "按这个理解继续：催化剂（两种水平）；温度固定为同一温度",
+            "value": "催化剂（两种水平）；温度固定为同一温度",
+            "action": "accept",
+            "id": "2c8851d27fd9"
+          },
+          {
+            "label": "暂不确定",
+            "value": "未知",
+            "action": "unknown",
+            "id": "2c3af7fa609c"
+          },
+          {
+            "label": "其他，我来补充",
+            "value": "",
+            "action": "custom",
+            "id": "47de6eddb129"
+          }
+        ],
+        "origin": "template",
+        "allow_accept": false,
+        "choice_policy": {
+          "intent": "comparison",
+          "origin": "user_declared",
+          "policy_hash": null
+        },
+        "choice_id": "ce1631931fa01079",
+        "choice_plan_hash": "01c86ab902d733bd588e33169e253b122c487ca4713bf8ebe2415aff2c1e31c1"
+      },
+      "reflections": [],
+      "changes": [
+        {
+          "field": "research_question",
+          "kind": "added",
+          "before": null,
+          "after": "比较两种催化剂在同一温度下的产率"
+        },
+        {
+          "field": "objective_type",
+          "kind": "added",
+          "before": null,
+          "after": "comparison"
+        },
+        {
+          "field": "factors",
+          "kind": "added",
+          "before": null,
+          "after": "催化剂（两种水平）；温度固定为同一温度"
+        },
+        {
+          "field": "outcomes",
+          "kind": "added",
+          "before": null,
+          "after": "产率"
+        },
+        {
+          "field": "sampling",
+          "kind": "unknown",
+          "before": null,
+          "after": null
+        },
+        {
+          "field": "analysis",
+          "kind": "unknown",
+          "before": null,
+          "after": null
+        },
+        {
+          "field": "experimental_unit",
+          "kind": "added",
+          "before": null,
+          "after": "独立反应批次（待实验负责人确认）"
+        },
+        {
+          "field": "data_source",
+          "kind": "added",
+          "before": null,
+          "after": "历史先导记录（需先查找）"
+        },
+        {
+          "field": "human_roles",
+          "kind": "added",
+          "before": null,
+          "after": "实验负责人负责确认独立反应批次与测量误差"
+        },
+        {
+          "field": "acceptance",
+          "kind": "added",
+          "before": null,
+          "after": "取得记录前不做功效保证"
+        },
+        {
+          "field": "resources",
+          "kind": "added",
+          "before": null,
+          "after": "本轮最多一小时，只整理计划"
+        },
+        {
+          "field": "deliverable",
+          "kind": "added",
+          "before": null,
+          "after": "本轮只整理计划"
+        },
+        {
+          "field": "sampling",
+          "kind": "unknown",
+          "before": null,
+          "after": null
+        },
+        {
+          "field": "randomization",
+          "kind": "unknown",
+          "before": null,
+          "after": null
+        }
+      ],
+      "stale": {},
+      "turns": 2,
+      "audience": "researcher_student",
+      "last_notes": [
+        "未把模型推测的“分析与不确定性未知”写成用户声明；该字段仍待澄清。",
+        "语义改写和推断仅作为待确认提议展示，不会自动成为已确认边界。",
+        "本轮动态澄清不可用或未通过校验，已使用模板继续；已有边界保留。"
+      ],
+      "last_export": null,
+      "clarification": {
+        "mode": "template",
+        "reason": "model_unavailable_or_rejected",
+        "model_used": true,
+        "error_type": "RunLimitError",
+        "validation_error": "RunLimitError"
+      },
+      "question_history": [
+        {
+          "turn": 1,
+          "field": "factors",
+          "kind": "proposal",
+          "question": "关于因素与对比，是否按当前理解继续？",
+          "origin": "template",
+          "basis_hash": "f84f7d73cd26ba9d11a9ce45b512df56b403bca3298fbfe2eb6ee26c0aa63a71"
+        },
+        {
+          "turn": 2,
+          "field": "factors",
+          "kind": "proposal",
+          "question": "关于因素与对比，是否按当前理解继续？",
+          "origin": "template",
+          "basis_hash": "5f35603a931394a4c9e4bbae37bbc50285e6dcffdeeb259c4560de51b3422ae0"
+        }
+      ]
+    },
+    "known_field_missing_questions": [],
+    "state_changed": true,
+    "resources": {
+      "llm_requests": 3,
+      "llm_tokens": 5375,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 4,
+        "llm_tokens": 16000,
+        "tool_calls": 40,
+        "read_bytes": 24000
+      }
+    }
+  }
+]

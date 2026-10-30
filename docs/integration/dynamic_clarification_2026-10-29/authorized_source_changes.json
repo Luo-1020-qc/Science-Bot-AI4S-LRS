@@ -1,0 +1,19 @@
+{
+  "files": {
+    "RUT_Science/rut_science/science_bot/general/planning/blueprint.py": {
+      "before_sha256": "bcf4b0c7ade070781e85840154d6b45d4d18216d0066b91f016e8836163b0d24",
+      "sha256": "c1d988615d7b3b23843fdd044c078a545c1e63f9743f4a239c9f93203dc0c73a",
+      "reason": "User authorized grounded dynamic clarification, explicit paper excerpts, template fallback and independent synthetic-task evaluation"
+    },
+    "RUT_Science/rut_science/science_bot/general/planning/ledger.py": {
+      "before_sha256": "4c48c705accd6dba1ab61d66d3c7804bc46c6bec4ea75b4d7af5be580b8fb2c9",
+      "sha256": "37601d4a3fd9ee03dd3f110a0f7f3e31b6d8c8cf534876614c42114cb4f2a916",
+      "reason": "User authorized grounded dynamic clarification, explicit paper excerpts, template fallback and independent synthetic-task evaluation"
+    },
+    "RUT_Science/rut_science/science_bot/general/planning/runtime.py": {
+      "before_sha256": "df5ad656842a448e07d20d9309f8035b655488d5080bbb8924baf32432eac205",
+      "sha256": "cb2121da91626c828e52b1be1eb573ebe43b20e7337c5d2058470726c60e8d34",
+      "reason": "User authorized grounded dynamic clarification, explicit paper excerpts, template fallback and independent synthetic-task evaluation"
+    }
+  }
+}

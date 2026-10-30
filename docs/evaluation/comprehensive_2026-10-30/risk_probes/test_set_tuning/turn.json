@@ -1,0 +1,379 @@
+{
+  "intent": "planning",
+  "answer": "规划可复核\n\n实验设计草案（规划，尚未执行）\n\n问题与结论边界\n- 研究问题：我想比较线性模型和非线性基线在合成二维场上的误差和耗时，帮我规划实验，我还没确定比较边界。\n- 研究目的：预测\n- 待检验命题：在指定合成场范围内，线性候选的单位误差能否接近非线性基线，并降低运行成本？\n- 研究边界：仅限 synthetic_field_v1 合成二维稳态场、相同分辨率和固定预算，不外推新方程。\n- 本轮不回答的问题：不声称复现真实论文，不推断因果，不外推到不同分辨率。\n\n实验设计与主要对比\n- 设计结构：预测评估\n- 实验与推断单位：以独立生成的完整场实现为推断单位；同一实现场上两模型配对，网格点不是独立重复。\n- 因素与对比：线性候选与非线性基线两个模型水平；主要比较候选减基线。\n- 基线与公平比较：非线性基线与线性候选共享相同训练、验证、测试划分、调参次数和硬件预算。\n\n数据、样本与分配\n- 数据与证据来源：synthetic_field_v1按来源隔离训练、验证和最终测试，防止泄漏；但每轮用最终测试误差选择超参数，直到测试最佳\n- 样本与重复依据：固定预算先导，仅检查单位独立性与配对测量流程；不宣称功效保证。\n- 分配与偏差控制：在独立场内配对比较，随机排列模型运行顺序，记录实际分配和种子。\n\n指标与分析\n- 主要响应与测量：每个独立场实现上相对 L2 误差的均值，越低越好；耗时作为辅助指标。\n- 分析与不确定性：按最终测试结果选最佳模型，再报告该测试误差和bootstrap区间\n\n验收、阴性结果与停止\n- 验收和停止规则：逐项交付配对差、区间、耗时与失败日志；阴性或不确定结果同样报告；最多6次运行或2小时上限即停止，不按结果加预算。\n- 资源边界：仅规划，后续先导最多6次运行、2小时上限；本轮不执行训练。\n- 风险与未决条件：独立场来源、配对关系或单位汇总未核实时停止并交还研究者，不补造观测结果。\n\n复现、交付与责任\n- 复现记录：记录数据版本、代码版本、配置、种子、实际顺序与全部偏离日志。\n- 交付物：实验设计、配对对比与验收清单、未知和来源清单、复现记录模板。\n- 人类职责：学生确认研究边界，导师复核配对与分析假设，研究者负责结论和另行执行授权。\n\n待核对事项\n- 样本与重复依据：本计划不自动计算或证明功效；参数来源和计算须单独复核。\n\n已显式选择 0 个来源片段；声明和出处仍需核实。\n核对下列设计、方法假设与责任，再决定是否确认当前版本。\n\n确认上述规划用 /plan approve cc8d78d89421aa4e9617cfde501e88225d9b01f7b93a6a537702bcb5d5f0a094。确认只保存规划版本。",
+  "planning": {
+    "id": "8a46b2eb6249489a9967d3c81a1e9128",
+    "revision": 1,
+    "active": true,
+    "facts": {
+      "objective_type": {
+        "value": "prediction",
+        "quote": "\"objective_type\": \"prediction\"",
+        "status": "declared",
+        "turn": 1
+      },
+      "hypothesis": {
+        "value": "在指定合成场范围内，线性候选的单位误差能否接近非线性基线，并降低运行成本？",
+        "quote": "\"hypothesis\": \"在指定合成场范围内，线性候选的单位误差能否接近非线性基线，并降低运行成本？\"",
+        "status": "declared",
+        "turn": 1
+      },
+      "scope": {
+        "value": "仅限 synthetic_field_v1 合成二维稳态场、相同分辨率和固定预算，不外推新方程。",
+        "quote": "\"scope\": \"仅限 synthetic_field_v1 合成二维稳态场、相同分辨率和固定预算，不外推新方程。\"",
+        "status": "declared",
+        "turn": 1
+      },
+      "exclusions": {
+        "value": "不声称复现真实论文，不推断因果，不外推到不同分辨率。",
+        "quote": "\"exclusions\": \"不声称复现真实论文，不推断因果，不外推到不同分辨率。\"",
+        "status": "declared",
+        "turn": 1
+      },
+      "experimental_unit": {
+        "value": "以独立生成的完整场实现为推断单位；同一实现场上两模型配对，网格点不是独立重复。",
+        "quote": "\"experimental_unit\": \"以独立生成的完整场实现为推断单位；同一实现场上两模型配对，网格点不是独立重复。\"",
+        "status": "declared",
+        "turn": 1
+      },
+      "factors": {
+        "value": "线性候选与非线性基线两个模型水平；主要比较候选减基线。",
+        "quote": "\"factors\": \"线性候选与非线性基线两个模型水平；主要比较候选减基线。\"",
+        "status": "declared",
+        "turn": 1
+      },
+      "design": {
+        "value": "prediction",
+        "quote": "\"design\": \"prediction\"",
+        "status": "declared",
+        "turn": 1
+      },
+      "outcomes": {
+        "value": "每个独立场实现上相对 L2 误差的均值，越低越好；耗时作为辅助指标。",
+        "quote": "\"outcomes\": \"每个独立场实现上相对 L2 误差的均值，越低越好；耗时作为辅助指标。\"",
+        "status": "declared",
+        "turn": 1
+      },
+      "baseline": {
+        "value": "非线性基线与线性候选共享相同训练、验证、测试划分、调参次数和硬件预算。",
+        "quote": "\"baseline\": \"非线性基线与线性候选共享相同训练、验证、测试划分、调参次数和硬件预算。\"",
+        "status": "declared",
+        "turn": 1
+      },
+      "data_source": {
+        "value": "synthetic_field_v1按来源隔离训练、验证和最终测试，防止泄漏；但每轮用最终测试误差选择超参数，直到测试最佳",
+        "quote": "\"data_source\": \"synthetic_field_v1按来源隔离训练、验证和最终测试，防止泄漏；但每轮用最终测试误差选择超参数，直到测试最佳\"",
+        "status": "declared",
+        "turn": 1
+      },
+      "sampling": {
+        "value": "固定预算先导，仅检查单位独立性与配对测量流程；不宣称功效保证。",
+        "quote": "\"sampling\": \"固定预算先导，仅检查单位独立性与配对测量流程；不宣称功效保证。\"",
+        "status": "declared",
+        "turn": 1
+      },
+      "randomization": {
+        "value": "在独立场内配对比较，随机排列模型运行顺序，记录实际分配和种子。",
+        "quote": "\"randomization\": \"在独立场内配对比较，随机排列模型运行顺序，记录实际分配和种子。\"",
+        "status": "declared",
+        "turn": 1
+      },
+      "analysis": {
+        "value": "按最终测试结果选最佳模型，再报告该测试误差和bootstrap区间",
+        "quote": "\"analysis\": \"按最终测试结果选最佳模型，再报告该测试误差和bootstrap区间\"",
+        "status": "declared",
+        "turn": 1
+      },
+      "acceptance": {
+        "value": "逐项交付配对差、区间、耗时与失败日志；阴性或不确定结果同样报告；最多6次运行或2小时上限即停止，不按结果加预算。",
+        "quote": "\"acceptance\": \"逐项交付配对差、区间、耗时与失败日志；阴性或不确定结果同样报告；最多6次运行或2小时上限即停止，不按结果加预算。\"",
+        "status": "declared",
+        "turn": 1
+      },
+      "resources": {
+        "value": "仅规划，后续先导最多6次运行、2小时上限；本轮不执行训练。",
+        "quote": "\"resources\": \"仅规划，后续先导最多6次运行、2小时上限；本轮不执行训练。\"",
+        "status": "declared",
+        "turn": 1
+      },
+      "risks": {
+        "value": "独立场来源、配对关系或单位汇总未核实时停止并交还研究者，不补造观测结果。",
+        "quote": "\"risks\": \"独立场来源、配对关系或单位汇总未核实时停止并交还研究者，不补造观测结果。\"",
+        "status": "declared",
+        "turn": 1
+      },
+      "reproducibility": {
+        "value": "记录数据版本、代码版本、配置、种子、实际顺序与全部偏离日志。",
+        "quote": "\"reproducibility\": \"记录数据版本、代码版本、配置、种子、实际顺序与全部偏离日志。\"",
+        "status": "declared",
+        "turn": 1
+      },
+      "human_roles": {
+        "value": "学生确认研究边界，导师复核配对与分析假设，研究者负责结论和另行执行授权。",
+        "quote": "\"human_roles\": \"学生确认研究边界，导师复核配对与分析假设，研究者负责结论和另行执行授权。\"",
+        "status": "declared",
+        "turn": 1
+      },
+      "deliverable": {
+        "value": "实验设计、配对对比与验收清单、未知和来源清单、复现记录模板。",
+        "quote": "\"deliverable\": \"实验设计、配对对比与验收清单、未知和来源清单、复现记录模板。\"",
+        "status": "declared",
+        "turn": 1
+      },
+      "research_question": {
+        "value": "我想比较线性模型和非线性基线在合成二维场上的误差和耗时，帮我规划实验，我还没确定比较边界。",
+        "quote": "\"research_question\": \"我想比较线性模型和非线性基线在合成二维场上的误差和耗时，帮我规划实验，我还没确定比较边界。\"",
+        "status": "declared",
+        "turn": 1
+      }
+    },
+    "unknown": [],
+    "conflicts": {},
+    "stale": {},
+    "pending": null,
+    "review": {
+      "ready": true,
+      "checks": [
+        {
+          "field": "research_question",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "objective_type",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "scope",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "exclusions",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "experimental_unit",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "design",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "outcomes",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "baseline",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "data_source",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "sampling",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "analysis",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "acceptance",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "resources",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "risks",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "reproducibility",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "human_roles",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "deliverable",
+          "code": "declaration_present",
+          "status": "passed",
+          "detail": "已记录用户声明；这不等于外部事实验证。"
+        },
+        {
+          "field": "objective_type",
+          "code": "objective_classified",
+          "status": "passed",
+          "detail": "需要明确比较、预测、因果、探索或复现目的。"
+        },
+        {
+          "field": "design",
+          "code": "design_classified",
+          "status": "passed",
+          "detail": "选择一个设计家族；自定义设计需由人类进一步复核。"
+        },
+        {
+          "field": "outcomes",
+          "code": "outcome_direction",
+          "status": "passed",
+          "detail": "明确主要响应及方向，或明确无预设方向的探索性分析。"
+        },
+        {
+          "field": "outcomes",
+          "code": "unit_aggregation",
+          "status": "passed",
+          "detail": "说明怎样按实验/推断单位汇总测量，不能用大量技术重复扩大样本量。"
+        },
+        {
+          "field": "data_source",
+          "code": "prediction_holdout",
+          "status": "passed",
+          "detail": "声明训练、验证与最终测试的职责，不能用测试结果反复选模型。"
+        },
+        {
+          "field": "data_source",
+          "code": "prediction_leakage",
+          "status": "passed",
+          "detail": "说明按对象、区组或时间隔离数据及防泄漏办法。"
+        },
+        {
+          "field": "analysis",
+          "code": "prediction_uncertainty",
+          "status": "passed",
+          "detail": "预测比较也要说明误差或不确定性，单个最佳分数不够。"
+        },
+        {
+          "field": "sampling",
+          "code": "power_basis",
+          "status": "passed",
+          "detail": "功效需要效应、方差和布局依据；缺少时先安排先导，不能默认保证功效。"
+        },
+        {
+          "field": "sampling",
+          "code": "power_external_review",
+          "status": "needs_review",
+          "detail": "本计划不自动计算或证明功效；参数来源和计算须单独复核。"
+        },
+        {
+          "field": "acceptance",
+          "code": "measurable_acceptance",
+          "status": "passed",
+          "detail": "验收应有可测阈值或可逐项核对的产物，不只写结果更好。"
+        },
+        {
+          "field": "acceptance",
+          "code": "negative_outcomes",
+          "status": "passed",
+          "detail": "明确阴性、不确定或反向结果也应如实报告，不能继续试到显著。"
+        },
+        {
+          "field": "acceptance",
+          "code": "stopping_rule",
+          "status": "passed",
+          "detail": "预先声明预算、信息不足或失败时的停止/升级条件。"
+        },
+        {
+          "field": "resources",
+          "code": "resource_bound",
+          "status": "passed",
+          "detail": "声明可核对的资源数量、期限或硬上限。"
+        },
+        {
+          "field": "human_roles",
+          "code": "human_accountability",
+          "status": "passed",
+          "detail": "明确由谁确认边界、复核方法和批准结论，不把责任隐含交给模型。"
+        },
+        {
+          "field": "reproducibility",
+          "code": "reproducibility_records",
+          "status": "passed",
+          "detail": "至少明确数据/代码版本、种子、配置或日志中的两类复现记录。"
+        }
+      ],
+      "blockers": [],
+      "required_fields": [
+        "research_question",
+        "objective_type",
+        "scope",
+        "exclusions",
+        "experimental_unit",
+        "design",
+        "outcomes",
+        "baseline",
+        "data_source",
+        "sampling",
+        "analysis",
+        "acceptance",
+        "resources",
+        "risks",
+        "reproducibility",
+        "human_roles",
+        "deliverable"
+      ],
+      "scope": "planning_only",
+      "execution_authorized": false,
+      "scientific_claim_verified": false,
+      "readiness_meaning": "用户声明已足够形成待人类复核的计划；不表示假设、数据、功效或结论已被验证。"
+    },
+    "contract_hash": "cc8d78d89421aa4e9617cfde501e88225d9b01f7b93a6a537702bcb5d5f0a094",
+    "approved": false,
+    "decisions_count": 1,
+    "reflections_count": 0,
+    "evidence": [],
+    "evidence_actions": {},
+    "clarification": {
+      "mode": "template",
+      "reason": "offline",
+      "model_used": false
+    },
+    "last_export": null,
+    "execution_authorized": false
+  },
+  "questions": [],
+  "execution_authorized": false,
+  "scientific_claim_verified": false,
+  "model_used": false,
+  "clarification": {
+    "mode": "template",
+    "reason": "offline",
+    "model_used": false
+  },
+  "question_form": false
+}

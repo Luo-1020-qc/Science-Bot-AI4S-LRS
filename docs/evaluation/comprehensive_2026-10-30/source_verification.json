@@ -1,0 +1,32 @@
+{
+  "checked_utc": "2026-10-30T06:01:57.140594+00:00",
+  "passed": true,
+  "baseline_code_files": 191,
+  "protected_files": 1798,
+  "code_changed": [],
+  "protected_changed": [],
+  "integrity_after": {
+    "passed": true,
+    "protected_files_checked": 1745,
+    "authorized_host_changes": 5,
+    "integration_runtime_files_checked": 10,
+    "planning_authorized_host_changes": 4,
+    "planning_runtime_files_checked": 11,
+    "dynamic_runtime_files_checked": 6,
+    "planning_history_privacy_files_checked": 1,
+    "interface_runtime_files_checked": 11,
+    "question_tool_runtime_files_checked": 6,
+    "question_tool_training_files_checked": 7,
+    "branding_files_checked": 5,
+    "context_choices_runtime_files_checked": 11,
+    "context_choices_training_files_checked": 7,
+    "mainline_runtime_files_checked": 10,
+    "session_history_runtime_files_checked": 6,
+    "pdf_runtime_files_checked": 13,
+    "changed": []
+  },
+  "runtime_tuned_after_cases": false,
+  "training_requested": false,
+  "llm_fine_tuned": false,
+  "real_scientific_executions": 0
+}

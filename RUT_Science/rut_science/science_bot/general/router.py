@@ -120,6 +120,8 @@ def _paths(text, workspace):
 
 
 def route_request(text, workspace=None):
+    if isinstance(text,str) and text.strip().partition(' ')[0]=='/plan':
+        return TaskRequest(text.strip(),'design',reason='research_planning')
     from .tool_library import recognizes as detailed_command, natural_command as detailed_natural
     if isinstance(text, str) and (detailed_command(text) or detailed_natural(text)):
         return TaskRequest(detailed_natural(text) or text, "research", reason="explicit_detailed_tool_library")

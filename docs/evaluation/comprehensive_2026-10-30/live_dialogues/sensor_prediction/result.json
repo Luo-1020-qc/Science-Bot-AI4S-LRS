@@ -1,0 +1,210 @@
+{
+  "id": "sensor_prediction",
+  "purpose": "Natural multi-turn prediction planning and source/time leakage boundaries",
+  "scripted_turns": 5,
+  "ready": false,
+  "declarations": 6,
+  "proposals": 8,
+  "unknown_fields": [],
+  "conflict_fields": [
+    "research_question",
+    "objective_type",
+    "deliverable",
+    "data_source"
+  ],
+  "stale_fields": [],
+  "blockers": [
+    {
+      "field": "hypothesis",
+      "code": "missing_declaration",
+      "status": "blocked",
+      "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+    },
+    {
+      "field": "design",
+      "code": "missing_declaration",
+      "status": "blocked",
+      "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+    },
+    {
+      "field": "outcomes",
+      "code": "missing_declaration",
+      "status": "blocked",
+      "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+    },
+    {
+      "field": "baseline",
+      "code": "missing_declaration",
+      "status": "blocked",
+      "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+    },
+    {
+      "field": "sampling",
+      "code": "missing_declaration",
+      "status": "blocked",
+      "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+    },
+    {
+      "field": "research_question",
+      "code": "unconfirmed_proposal",
+      "status": "blocked",
+      "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+    },
+    {
+      "field": "research_question",
+      "code": "unresolved_conflict",
+      "status": "blocked",
+      "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+    },
+    {
+      "field": "objective_type",
+      "code": "unresolved_conflict",
+      "status": "blocked",
+      "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+    },
+    {
+      "field": "scope",
+      "code": "unconfirmed_proposal",
+      "status": "blocked",
+      "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+    },
+    {
+      "field": "exclusions",
+      "code": "unconfirmed_proposal",
+      "status": "blocked",
+      "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+    },
+    {
+      "field": "factors",
+      "code": "unconfirmed_proposal",
+      "status": "blocked",
+      "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+    },
+    {
+      "field": "data_source",
+      "code": "unconfirmed_proposal",
+      "status": "blocked",
+      "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+    },
+    {
+      "field": "data_source",
+      "code": "unresolved_conflict",
+      "status": "blocked",
+      "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+    },
+    {
+      "field": "analysis",
+      "code": "unconfirmed_proposal",
+      "status": "blocked",
+      "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+    },
+    {
+      "field": "acceptance",
+      "code": "unconfirmed_proposal",
+      "status": "blocked",
+      "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+    },
+    {
+      "field": "deliverable",
+      "code": "unconfirmed_proposal",
+      "status": "blocked",
+      "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+    },
+    {
+      "field": "deliverable",
+      "code": "unresolved_conflict",
+      "status": "blocked",
+      "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+    },
+    {
+      "field": "analysis",
+      "code": "estimand_declared",
+      "status": "blocked",
+      "detail": "写清估计对象或主要对比，不能只写运行统计检验。"
+    },
+    {
+      "field": "analysis",
+      "code": "uncertainty_declared",
+      "status": "blocked",
+      "detail": "声明置信区间或其他不确定性表达，避免只报告显著性。"
+    },
+    {
+      "field": "acceptance",
+      "code": "measurable_acceptance",
+      "status": "blocked",
+      "detail": "验收应有可测阈值或可逐项核对的产物，不只写结果更好。"
+    }
+  ],
+  "known_field_missing_questions": 0,
+  "questions": 5,
+  "clarification": [
+    {
+      "mode": "dynamic",
+      "reason": "validated",
+      "rejected_questions": [],
+      "model_used": true
+    },
+    {
+      "mode": "template",
+      "reason": "model_unavailable_or_rejected",
+      "model_used": true,
+      "error_type": "ValueError",
+      "validation_error": "NoValidPriorityQuestions: [{\"field\": \"research_question\", \"reason\": \"InventedQuestionNumericAssumption\"}, {\"field\": \"objective_type\", \"reason\": \"InventedQuestionNumericAssumption\"}]"
+    },
+    {
+      "mode": "template",
+      "reason": "model_unavailable_or_rejected",
+      "model_used": true,
+      "error_type": "ValueError",
+      "validation_error": "NoValidPriorityQuestions: [{\"field\": \"objective_type\", \"reason\": \"InventedQuestionNumericAssumption\"}]"
+    },
+    {
+      "mode": "dynamic",
+      "reason": "validated_partial",
+      "rejected_questions": [
+        {
+          "field": "objective_type",
+          "reason": "InventedQuestionNumericAssumption"
+        }
+      ],
+      "model_used": true
+    },
+    {
+      "mode": "dynamic",
+      "reason": "validated_partial",
+      "rejected_questions": [
+        {
+          "field": "data_source",
+          "reason": "InventedQuestionNumericAssumption"
+        }
+      ],
+      "model_used": true
+    }
+  ],
+  "exceptions": [],
+  "fact_quote_not_literal_in_inputs": [],
+  "session_restore_exact": true,
+  "resources": {
+    "llm_requests": 9,
+    "llm_tokens": 21385,
+    "tool_attempts": 0,
+    "limits": {
+      "llm_requests": 10,
+      "llm_tokens": 35000,
+      "tool_calls": 40,
+      "read_bytes": 24000
+    }
+  },
+  "turn_seconds": [
+    5.422,
+    5.719,
+    3.219,
+    5.25,
+    5.906
+  ],
+  "approval": null,
+  "scientific_claim_verified": false,
+  "execution_authorized": false,
+  "human_quality_scores": null,
+  "researcher_understanding_measured": false
+}

@@ -1,0 +1,625 @@
+{
+  "schema_version": "research_planning_v1",
+  "id": "567b68a0b011494cbf6ce07c03b3ab6c",
+  "revision": 11,
+  "active": true,
+  "facts": {
+    "research_question": {
+      "value": "我想比较线性模型和非线性基线在合成二维场上的误差和耗时，帮我规划实验，我还没确定比较边界。",
+      "quote": "我想比较线性模型和非线性基线在合成二维场上的误差和耗时，帮我规划实验，我还没确定比较边界。",
+      "status": "declared",
+      "turn": 1
+    },
+    "objective_type": {
+      "value": "comparison",
+      "quote": "研究目的：comparison",
+      "status": "declared",
+      "turn": 2
+    },
+    "hypothesis": {
+      "value": "在指定合成场范围内，线性候选的单位误差能否接近非线性基线，并降低运行成本？",
+      "quote": "待检验命题：在指定合成场范围内，线性候选的单位误差能否接近非线性基线，并降低运行成本？",
+      "status": "declared",
+      "turn": 8
+    },
+    "scope": {
+      "value": "仅限 synthetic_field_v1 合成二维稳态场、相同分辨率和固定预算，不外推新方程",
+      "quote": "研究边界：仅限 synthetic_field_v1 合成二维稳态场、相同分辨率和固定预算，不外推新方程。",
+      "status": "declared",
+      "turn": 8
+    },
+    "exclusions": {
+      "value": "不声称复现真实论文，不推断因果，不外推到不同分辨率",
+      "quote": "本轮不回答的问题：不声称复现真实论文，不推断因果，不外推到不同分辨率。",
+      "status": "declared",
+      "turn": 2
+    },
+    "experimental_unit": {
+      "value": "以独立生成的完整场实现为推断单位；同一实现场上两模型配对，网格点不是独立重复",
+      "quote": "实验与推断单位：以独立生成的完整场实现为推断单位；同一实现场上两模型配对，网格点不是独立重复。",
+      "status": "declared",
+      "turn": 3
+    },
+    "factors": {
+      "value": "线性候选与非线性基线两个模型水平；主要比较候选减基线",
+      "quote": "因素与对比：线性候选与非线性基线两个模型水平；主要比较候选减基线。",
+      "status": "declared",
+      "turn": 3
+    },
+    "design": {
+      "value": "paired",
+      "quote": "设计结构：paired",
+      "status": "declared",
+      "turn": 3
+    },
+    "baseline": {
+      "value": "非线性基线与线性候选共享相同训练、验证、测试划分、调参次数和硬件预算",
+      "quote": "基线与公平比较：非线性基线与线性候选共享相同训练、验证、测试划分、调参次数和硬件预算。",
+      "status": "declared",
+      "turn": 9
+    },
+    "outcomes": {
+      "value": "每个独立场实现上相对 L2 误差的均值，越低越好；耗时作为辅助指标",
+      "quote": "主要响应与测量：每个独立场实现上相对 L2 误差的均值，越低越好；耗时作为辅助指标。",
+      "status": "declared",
+      "turn": 10
+    },
+    "analysis": {
+      "value": "估计同一场上候选减基线的误差均值差，以完整场为重采样单位报告 bootstrap 区间，不把网格点作独立样本",
+      "quote": "分析与不确定性：估计同一场上候选减基线的误差均值差，以完整场为重采样单位报告 bootstrap 区间，不把网格点作独立样本。",
+      "status": "declared",
+      "turn": 10
+    },
+    "acceptance": {
+      "value": "逐项交付配对差、区间、耗时与失败日志；阴性或不确定结果同样报告；最多6次运行或2小时上限即停止，不按结果加预算",
+      "quote": "验收和停止规则：逐项交付配对差、区间、耗时与失败日志；阴性或不确定结果同样报告；最多6次运行或2小时上限即停止，不按结果加预算。",
+      "status": "declared",
+      "turn": 10
+    },
+    "data_source": {
+      "value": "工程诊断用 synthetic_field_v1；按独立场来源分组隔离训练、验证和最终测试，防止数据泄漏",
+      "quote": "数据与证据来源：工程诊断用 synthetic_field_v1；按独立场来源分组隔离训练、验证和最终测试，防止数据泄漏。",
+      "status": "declared",
+      "turn": 5
+    },
+    "randomization": {
+      "value": "在独立场内配对比较，随机排列模型运行顺序，记录实际分配和种子",
+      "quote": "分配与偏差控制：在独立场内配对比较，随机排列模型运行顺序，记录实际分配和种子。",
+      "status": "declared",
+      "turn": 5
+    },
+    "resources": {
+      "value": "仅规划，后续先导最多6次运行、2小时上限；本轮不执行训练",
+      "quote": "资源边界：仅规划，后续先导最多6次运行、2小时上限；本轮不执行训练。",
+      "status": "declared",
+      "turn": 11
+    },
+    "risks": {
+      "value": "独立场来源、配对关系或单位汇总未核实时停止并交还研究者，不补造观测结果",
+      "quote": "风险与未决条件：独立场来源、配对关系或单位汇总未核实时停止并交还研究者，不补造观测结果。",
+      "status": "declared",
+      "turn": 11
+    },
+    "reproducibility": {
+      "value": "记录数据版本、代码版本、配置、种子、实际顺序与全部偏离日志",
+      "quote": "复现记录：记录数据版本、代码版本、配置、种子、实际顺序与全部偏离日志。",
+      "status": "declared",
+      "turn": 11
+    },
+    "human_roles": {
+      "value": "学生确认研究边界，导师复核配对与分析假设，研究者负责结论和另行执行授权",
+      "quote": "人类职责：学生确认研究边界，导师复核配对与分析假设，研究者负责结论和另行执行授权。",
+      "status": "declared",
+      "turn": 11
+    },
+    "deliverable": {
+      "value": "实验设计、配对对比与验收清单、未知和来源清单、复现记录模板",
+      "quote": "交付物：实验设计、配对对比与验收清单、未知和来源清单、复现记录模板。",
+      "status": "declared",
+      "turn": 11
+    }
+  },
+  "unknown": [
+    "sampling"
+  ],
+  "conflicts": {},
+  "decisions": [
+    {
+      "turn": 1,
+      "type": "intake",
+      "changes": [
+        {
+          "field": "research_question",
+          "kind": "added",
+          "before": null,
+          "after": "我想比较线性模型和非线性基线在合成二维场上的误差和耗时，帮我规划实验，我还没确定比较边界。"
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "type": "intake",
+      "changes": [
+        {
+          "field": "objective_type",
+          "kind": "added",
+          "before": null,
+          "after": "comparison"
+        },
+        {
+          "field": "hypothesis",
+          "kind": "added",
+          "before": null,
+          "after": "在指定合成场范围内，线性候选的单位误差能否接近非线性基线，并降低运行成本？"
+        },
+        {
+          "field": "scope",
+          "kind": "added",
+          "before": null,
+          "after": "仅限 synthetic_field_v1 合成二维稳态场、相同分辨率和固定预算，不外推新方程"
+        },
+        {
+          "field": "exclusions",
+          "kind": "added",
+          "before": null,
+          "after": "不声称复现真实论文，不推断因果，不外推到不同分辨率"
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "type": "intake",
+      "changes": [
+        {
+          "field": "experimental_unit",
+          "kind": "added",
+          "before": null,
+          "after": "以独立生成的完整场实现为推断单位；同一实现场上两模型配对，网格点不是独立重复"
+        },
+        {
+          "field": "factors",
+          "kind": "added",
+          "before": null,
+          "after": "线性候选与非线性基线两个模型水平；主要比较候选减基线"
+        },
+        {
+          "field": "design",
+          "kind": "added",
+          "before": null,
+          "after": "paired"
+        },
+        {
+          "field": "baseline",
+          "kind": "added",
+          "before": null,
+          "after": "非线性基线与线性候选共享相同训练、验证、测试划分、调参次数和硬件预算"
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "type": "intake",
+      "changes": [
+        {
+          "field": "outcomes",
+          "kind": "added",
+          "before": null,
+          "after": "每个独立场实现上相对 L2 误差的均值，越低越好；耗时作为辅助指标"
+        },
+        {
+          "field": "analysis",
+          "kind": "added",
+          "before": null,
+          "after": "估计同一场上候选减基线的误差均值差，以完整场为重采样单位报告 bootstrap 区间，不把网格点作独立样本"
+        },
+        {
+          "field": "acceptance",
+          "kind": "added",
+          "before": null,
+          "after": "逐项交付配对差、区间、耗时与失败日志；阴性或不确定结果同样报告；最多6次运行或2小时上限即停止，不按结果加预算"
+        }
+      ]
+    },
+    {
+      "turn": 5,
+      "type": "intake",
+      "changes": [
+        {
+          "field": "data_source",
+          "kind": "added",
+          "before": null,
+          "after": "工程诊断用 synthetic_field_v1；按独立场来源分组隔离训练、验证和最终测试，防止数据泄漏"
+        },
+        {
+          "field": "randomization",
+          "kind": "added",
+          "before": null,
+          "after": "在独立场内配对比较，随机排列模型运行顺序，记录实际分配和种子"
+        },
+        {
+          "field": "sampling",
+          "kind": "unknown",
+          "before": null,
+          "after": null
+        }
+      ]
+    },
+    {
+      "turn": 6,
+      "type": "evidence_acquisition_step",
+      "field": "sampling",
+      "text": "先查找已有先导记录，再请方法负责人核实单位与样本依据。"
+    },
+    {
+      "turn": 7,
+      "type": "explicit_evidence_selection",
+      "summary": "已选论文片段：synthetic_methods.md:L1-L1#825f61b779b2ebead7f114ab762bb29e278b1ac6a9add0ef4a8f5b5277123d3c"
+    },
+    {
+      "turn": 8,
+      "type": "revise",
+      "changes": [
+        {
+          "field": "hypothesis",
+          "kind": "revised",
+          "before": "在指定合成场范围内，线性候选的单位误差能否接近非线性基线，并降低运行成本？",
+          "after": "在指定合成场范围内，线性候选的单位误差能否接近非线性基线，并降低运行成本？"
+        },
+        {
+          "field": "scope",
+          "kind": "revised",
+          "before": "仅限 synthetic_field_v1 合成二维稳态场、相同分辨率和固定预算，不外推新方程",
+          "after": "仅限 synthetic_field_v1 合成二维稳态场、相同分辨率和固定预算，不外推新方程"
+        }
+      ]
+    },
+    {
+      "turn": 9,
+      "type": "revise",
+      "changes": [
+        {
+          "field": "baseline",
+          "kind": "revised",
+          "before": "非线性基线与线性候选共享相同训练、验证、测试划分、调参次数和硬件预算",
+          "after": "非线性基线与线性候选共享相同训练、验证、测试划分、调参次数和硬件预算"
+        }
+      ]
+    },
+    {
+      "turn": 10,
+      "type": "revise",
+      "changes": [
+        {
+          "field": "outcomes",
+          "kind": "revised",
+          "before": "每个独立场实现上相对 L2 误差的均值，越低越好；耗时作为辅助指标",
+          "after": "每个独立场实现上相对 L2 误差的均值，越低越好；耗时作为辅助指标"
+        },
+        {
+          "field": "analysis",
+          "kind": "revised",
+          "before": "估计同一场上候选减基线的误差均值差，以完整场为重采样单位报告 bootstrap 区间，不把网格点作独立样本",
+          "after": "估计同一场上候选减基线的误差均值差，以完整场为重采样单位报告 bootstrap 区间，不把网格点作独立样本"
+        },
+        {
+          "field": "acceptance",
+          "kind": "revised",
+          "before": "逐项交付配对差、区间、耗时与失败日志；阴性或不确定结果同样报告；最多6次运行或2小时上限即停止，不按结果加预算",
+          "after": "逐项交付配对差、区间、耗时与失败日志；阴性或不确定结果同样报告；最多6次运行或2小时上限即停止，不按结果加预算"
+        }
+      ]
+    },
+    {
+      "turn": 11,
+      "type": "intake",
+      "changes": [
+        {
+          "field": "resources",
+          "kind": "added",
+          "before": null,
+          "after": "仅规划，后续先导最多6次运行、2小时上限；本轮不执行训练"
+        },
+        {
+          "field": "risks",
+          "kind": "added",
+          "before": null,
+          "after": "独立场来源、配对关系或单位汇总未核实时停止并交还研究者，不补造观测结果"
+        },
+        {
+          "field": "reproducibility",
+          "kind": "added",
+          "before": null,
+          "after": "记录数据版本、代码版本、配置、种子、实际顺序与全部偏离日志"
+        },
+        {
+          "field": "human_roles",
+          "kind": "added",
+          "before": null,
+          "after": "学生确认研究边界，导师复核配对与分析假设，研究者负责结论和另行执行授权"
+        },
+        {
+          "field": "deliverable",
+          "kind": "added",
+          "before": null,
+          "after": "实验设计、配对对比与验收清单、未知和来源清单、复现记录模板"
+        }
+      ]
+    }
+  ],
+  "approval": null,
+  "pending": null,
+  "reflections": [],
+  "changes": [
+    {
+      "field": "research_question",
+      "kind": "added",
+      "before": null,
+      "after": "我想比较线性模型和非线性基线在合成二维场上的误差和耗时，帮我规划实验，我还没确定比较边界。"
+    },
+    {
+      "field": "objective_type",
+      "kind": "added",
+      "before": null,
+      "after": "comparison"
+    },
+    {
+      "field": "hypothesis",
+      "kind": "added",
+      "before": null,
+      "after": "在指定合成场范围内，线性候选的单位误差能否接近非线性基线，并降低运行成本？"
+    },
+    {
+      "field": "scope",
+      "kind": "added",
+      "before": null,
+      "after": "仅限 synthetic_field_v1 合成二维稳态场、相同分辨率和固定预算，不外推新方程"
+    },
+    {
+      "field": "exclusions",
+      "kind": "added",
+      "before": null,
+      "after": "不声称复现真实论文，不推断因果，不外推到不同分辨率"
+    },
+    {
+      "field": "experimental_unit",
+      "kind": "added",
+      "before": null,
+      "after": "以独立生成的完整场实现为推断单位；同一实现场上两模型配对，网格点不是独立重复"
+    },
+    {
+      "field": "factors",
+      "kind": "added",
+      "before": null,
+      "after": "线性候选与非线性基线两个模型水平；主要比较候选减基线"
+    },
+    {
+      "field": "design",
+      "kind": "added",
+      "before": null,
+      "after": "paired"
+    },
+    {
+      "field": "baseline",
+      "kind": "added",
+      "before": null,
+      "after": "非线性基线与线性候选共享相同训练、验证、测试划分、调参次数和硬件预算"
+    },
+    {
+      "field": "outcomes",
+      "kind": "added",
+      "before": null,
+      "after": "每个独立场实现上相对 L2 误差的均值，越低越好；耗时作为辅助指标"
+    },
+    {
+      "field": "analysis",
+      "kind": "added",
+      "before": null,
+      "after": "估计同一场上候选减基线的误差均值差，以完整场为重采样单位报告 bootstrap 区间，不把网格点作独立样本"
+    },
+    {
+      "field": "acceptance",
+      "kind": "added",
+      "before": null,
+      "after": "逐项交付配对差、区间、耗时与失败日志；阴性或不确定结果同样报告；最多6次运行或2小时上限即停止，不按结果加预算"
+    },
+    {
+      "field": "data_source",
+      "kind": "added",
+      "before": null,
+      "after": "工程诊断用 synthetic_field_v1；按独立场来源分组隔离训练、验证和最终测试，防止数据泄漏"
+    },
+    {
+      "field": "randomization",
+      "kind": "added",
+      "before": null,
+      "after": "在独立场内配对比较，随机排列模型运行顺序，记录实际分配和种子"
+    },
+    {
+      "field": "sampling",
+      "kind": "unknown",
+      "before": null,
+      "after": null
+    },
+    {
+      "field": "hypothesis",
+      "kind": "revised",
+      "before": "在指定合成场范围内，线性候选的单位误差能否接近非线性基线，并降低运行成本？",
+      "after": "在指定合成场范围内，线性候选的单位误差能否接近非线性基线，并降低运行成本？"
+    },
+    {
+      "field": "scope",
+      "kind": "revised",
+      "before": "仅限 synthetic_field_v1 合成二维稳态场、相同分辨率和固定预算，不外推新方程",
+      "after": "仅限 synthetic_field_v1 合成二维稳态场、相同分辨率和固定预算，不外推新方程"
+    },
+    {
+      "field": "baseline",
+      "kind": "revised",
+      "before": "非线性基线与线性候选共享相同训练、验证、测试划分、调参次数和硬件预算",
+      "after": "非线性基线与线性候选共享相同训练、验证、测试划分、调参次数和硬件预算"
+    },
+    {
+      "field": "outcomes",
+      "kind": "revised",
+      "before": "每个独立场实现上相对 L2 误差的均值，越低越好；耗时作为辅助指标",
+      "after": "每个独立场实现上相对 L2 误差的均值，越低越好；耗时作为辅助指标"
+    },
+    {
+      "field": "analysis",
+      "kind": "revised",
+      "before": "估计同一场上候选减基线的误差均值差，以完整场为重采样单位报告 bootstrap 区间，不把网格点作独立样本",
+      "after": "估计同一场上候选减基线的误差均值差，以完整场为重采样单位报告 bootstrap 区间，不把网格点作独立样本"
+    },
+    {
+      "field": "acceptance",
+      "kind": "revised",
+      "before": "逐项交付配对差、区间、耗时与失败日志；阴性或不确定结果同样报告；最多6次运行或2小时上限即停止，不按结果加预算",
+      "after": "逐项交付配对差、区间、耗时与失败日志；阴性或不确定结果同样报告；最多6次运行或2小时上限即停止，不按结果加预算"
+    },
+    {
+      "field": "resources",
+      "kind": "added",
+      "before": null,
+      "after": "仅规划，后续先导最多6次运行、2小时上限；本轮不执行训练"
+    },
+    {
+      "field": "risks",
+      "kind": "added",
+      "before": null,
+      "after": "独立场来源、配对关系或单位汇总未核实时停止并交还研究者，不补造观测结果"
+    },
+    {
+      "field": "reproducibility",
+      "kind": "added",
+      "before": null,
+      "after": "记录数据版本、代码版本、配置、种子、实际顺序与全部偏离日志"
+    },
+    {
+      "field": "human_roles",
+      "kind": "added",
+      "before": null,
+      "after": "学生确认研究边界，导师复核配对与分析假设，研究者负责结论和另行执行授权"
+    },
+    {
+      "field": "deliverable",
+      "kind": "added",
+      "before": null,
+      "after": "实验设计、配对对比与验收清单、未知和来源清单、复现记录模板"
+    }
+  ],
+  "stale": {},
+  "turns": 11,
+  "audience": "researcher_student",
+  "last_notes": [],
+  "last_export": null,
+  "clarification": {
+    "mode": "template",
+    "reason": "offline",
+    "model_used": false
+  },
+  "question_history": [
+    {
+      "turn": 1,
+      "field": "objective_type",
+      "kind": "missing",
+      "question": "这次研究主要想达到什么目的？",
+      "origin": "template",
+      "basis_hash": "8afca2b200faffd22fa39249d91a7c53c55f4951932e6d42701c10163477363d"
+    },
+    {
+      "turn": 2,
+      "field": "experimental_unit",
+      "kind": "missing",
+      "question": "你希望按什么单位比较或汇总？",
+      "origin": "template",
+      "basis_hash": "80e89a40aa1f1e46cb28e2d07113c4d5fcbefdd47e8f6778bc5f70e4757ee8e6"
+    },
+    {
+      "turn": 3,
+      "field": "outcomes",
+      "kind": "missing",
+      "question": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？",
+      "origin": "template",
+      "basis_hash": "a918b8adeb763435abf0cd5c70bf954981f6203693b53070341be63691bbf71d"
+    },
+    {
+      "turn": 4,
+      "field": "data_source",
+      "kind": "missing",
+      "question": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。",
+      "origin": "template",
+      "basis_hash": "04b7ac25817cb151afc0a9129f1e081055019fcfef8a430648dd6ed9a699eb81"
+    },
+    {
+      "turn": 5,
+      "field": "sampling",
+      "kind": "evidence_plan",
+      "question": "这项还不确定，你希望先怎样推进？",
+      "origin": "template",
+      "basis_hash": "99921b1ebe3c1210803485468f8cbfcddfeae4fcfbfc20dae7e3c428d14ca7b1"
+    },
+    {
+      "turn": 6,
+      "field": "resources",
+      "kind": "missing",
+      "question": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？",
+      "origin": "template",
+      "basis_hash": "99921b1ebe3c1210803485468f8cbfcddfeae4fcfbfc20dae7e3c428d14ca7b1"
+    },
+    {
+      "turn": 7,
+      "field": "hypothesis",
+      "kind": "stale",
+      "question": "关于待检验命题，是否按当前理解继续？",
+      "origin": "template",
+      "basis_hash": "f5750ea130aa725e664342c0fde2965714177b79c97c202a45e7a878b68104d6"
+    },
+    {
+      "turn": 8,
+      "field": "baseline",
+      "kind": "stale",
+      "question": "关于基线与公平比较，是否按当前理解继续？",
+      "origin": "template",
+      "basis_hash": "dfbfe0007ed8a0ee129a029a752101f436af22b1b864a028b63fec89d8b6dbee"
+    },
+    {
+      "turn": 9,
+      "field": "outcomes",
+      "kind": "stale",
+      "question": "关于主要响应与测量，是否按当前理解继续？",
+      "origin": "template",
+      "basis_hash": "0e1102de0af477f1f60384c7548fb44169c9f0afeff701cd6cb8f175778bb076"
+    },
+    {
+      "turn": 10,
+      "field": "resources",
+      "kind": "missing",
+      "question": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？",
+      "origin": "template",
+      "basis_hash": "744dbcbfff6342ac0ad11261d4d7c7cb1afc358c8fdfce52a1597128637e3588"
+    }
+  ],
+  "evidence_actions": {
+    "sampling": {
+      "text": "先查找已有先导记录，再请方法负责人核实单位与样本依据。",
+      "turn": 6,
+      "status": "user_proposed_step_not_evidence"
+    }
+  },
+  "evidence": [
+    {
+      "path": "synthetic_methods.md",
+      "sha256": "825f61b779b2ebead7f114ab762bb29e278b1ac6a9add0ef4a8f5b5277123d3c",
+      "text": "合成文献片段，仅工程诊断：该示例不提供方差、样本量或统计功效依据。引用此片段不能填补未知数值。\r\n",
+      "start_line": 1,
+      "end_line": 1,
+      "workspace_id": "3a6b659c204e45fda4c8f3ef92f9bb15",
+      "workspace_root": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\.local\\comprehensive_20261030\\offline_mainline\\models_unknown\\workspace",
+      "excerpt_sha256": "825f61b779b2ebead7f114ab762bb29e278b1ac6a9add0ef4a8f5b5277123d3c",
+      "share_with_model": false,
+      "turn": 7,
+      "status": "selected_excerpt_not_verified",
+      "id": "0f076160d10f6e95"
+    }
+  ]
+}

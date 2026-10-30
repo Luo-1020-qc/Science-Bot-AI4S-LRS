@@ -1,0 +1,5699 @@
+[
+  {
+    "turn": 1,
+    "input": "我想研究设备故障预测，比较逻辑回归和树模型。请先帮我把问题变成能检验的实验，逐步给我可选的决定。",
+    "seconds": 5.422,
+    "exception": null,
+    "result": {
+      "intent": "planning",
+      "answer": "正在澄清\n\n关于研究问题，是否按当前理解继续？\n1. 按这个理解继续：设备故障预测：比较逻辑回归与树模型的预测表现\n2. 暂不确定\n3. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+      "planning": {
+        "id": "575a1576136f48c8af8bfdc6d3302dfd",
+        "revision": 1,
+        "active": true,
+        "facts": {
+          "research_question": {
+            "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+            "quote": "我想研究设备故障预测，比较逻辑回归和树模型。",
+            "status": "proposed",
+            "turn": 1
+          },
+          "objective_type": {
+            "value": "comparison",
+            "quote": "比较逻辑回归和树模型",
+            "status": "declared",
+            "turn": 1
+          },
+          "factors": {
+            "value": "模型类型：逻辑回归 vs 树模型",
+            "quote": "比较逻辑回归和树模型",
+            "status": "proposed",
+            "turn": 1
+          },
+          "deliverable": {
+            "value": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项",
+            "quote": "请先帮我把问题变成能检验的实验，逐步给我可选的决定。",
+            "status": "proposed",
+            "turn": 1
+          }
+        },
+        "unknown": [],
+        "conflicts": {},
+        "stale": {},
+        "pending": {
+          "field": "research_question",
+          "kind": "proposal",
+          "question": "关于研究问题，是否按当前理解继续？",
+          "rationale": "这是待确认的建议而非已知事实，且后续的假设、指标与验收都要以它为锚点，先确认可避免整条规划偏离。",
+          "references": [
+            {
+              "source": "fact",
+              "key": "research_question",
+              "quote": "设备故障预测：比较逻辑回归与树模型的预测表现"
+            },
+            {
+              "source": "answer",
+              "key": "current",
+              "quote": "我想研究设备故障预测，比较逻辑回归和树模型。请先帮我把问题变成能检验的实验，逐步给我可选的决定。"
+            }
+          ],
+          "options": [
+            {
+              "label": "按这个理解继续：设备故障预测：比较逻辑回归与树模型的预测表现",
+              "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+              "action": "accept",
+              "id": "7ae5a052b11e"
+            },
+            {
+              "label": "暂不确定",
+              "value": "未知",
+              "action": "unknown",
+              "id": "2c3af7fa609c"
+            },
+            {
+              "label": "其他，我来补充",
+              "value": "",
+              "action": "custom",
+              "id": "47de6eddb129"
+            }
+          ],
+          "origin": "model",
+          "suggested_options": [],
+          "allow_accept": false,
+          "choice_policy": {
+            "intent": "comparison",
+            "origin": "user_declared",
+            "policy_hash": null
+          },
+          "choice_id": "cbe5f6564aa83ff9",
+          "choice_plan_hash": "badfdc2b6e1f75c9550e861986217ce8f4873ac586547fcb312bfdcea12e726f"
+        },
+        "review": {
+          "ready": false,
+          "checks": [
+            {
+              "field": "research_question",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "objective_type",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "hypothesis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+            },
+            {
+              "field": "scope",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "结论只适用于哪些对象、数据、条件和时间范围？"
+            },
+            {
+              "field": "exclusions",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "本轮明确不研究什么，不准备声称什么？"
+            },
+            {
+              "field": "experimental_unit",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "一次独立分配或观察是什么？哪些测量来自同一对象？"
+            },
+            {
+              "field": "factors",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "design",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+            },
+            {
+              "field": "outcomes",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+            },
+            {
+              "field": "baseline",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+            },
+            {
+              "field": "data_source",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。"
+            },
+            {
+              "field": "sampling",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+            },
+            {
+              "field": "analysis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+            },
+            {
+              "field": "acceptance",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+            },
+            {
+              "field": "resources",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？"
+            },
+            {
+              "field": "risks",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+            },
+            {
+              "field": "reproducibility",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+            },
+            {
+              "field": "human_roles",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+            },
+            {
+              "field": "deliverable",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "research_question",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "factors",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "deliverable",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "objective_type",
+              "code": "objective_classified",
+              "status": "passed",
+              "detail": "需要明确比较、预测、因果、探索或复现目的。"
+            }
+          ],
+          "blockers": [
+            {
+              "field": "hypothesis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+            },
+            {
+              "field": "scope",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "结论只适用于哪些对象、数据、条件和时间范围？"
+            },
+            {
+              "field": "exclusions",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "本轮明确不研究什么，不准备声称什么？"
+            },
+            {
+              "field": "experimental_unit",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "一次独立分配或观察是什么？哪些测量来自同一对象？"
+            },
+            {
+              "field": "design",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+            },
+            {
+              "field": "outcomes",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+            },
+            {
+              "field": "baseline",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+            },
+            {
+              "field": "data_source",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。"
+            },
+            {
+              "field": "sampling",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+            },
+            {
+              "field": "analysis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+            },
+            {
+              "field": "acceptance",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+            },
+            {
+              "field": "resources",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？"
+            },
+            {
+              "field": "risks",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+            },
+            {
+              "field": "reproducibility",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+            },
+            {
+              "field": "human_roles",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+            },
+            {
+              "field": "research_question",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "factors",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "deliverable",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            }
+          ],
+          "required_fields": [
+            "research_question",
+            "objective_type",
+            "hypothesis",
+            "scope",
+            "exclusions",
+            "experimental_unit",
+            "factors",
+            "design",
+            "outcomes",
+            "baseline",
+            "data_source",
+            "sampling",
+            "analysis",
+            "acceptance",
+            "resources",
+            "risks",
+            "reproducibility",
+            "human_roles",
+            "deliverable"
+          ],
+          "scope": "planning_only",
+          "execution_authorized": false,
+          "scientific_claim_verified": false,
+          "readiness_meaning": "用户声明已足够形成待人类复核的计划；不表示假设、数据、功效或结论已被验证。"
+        },
+        "contract_hash": "badfdc2b6e1f75c9550e861986217ce8f4873ac586547fcb312bfdcea12e726f",
+        "approved": false,
+        "decisions_count": 1,
+        "reflections_count": 0,
+        "evidence": [],
+        "evidence_actions": {},
+        "clarification": {
+          "mode": "dynamic",
+          "reason": "validated",
+          "rejected_questions": [],
+          "model_used": true
+        },
+        "last_export": null,
+        "execution_authorized": false
+      },
+      "questions": [
+        {
+          "field": "research_question",
+          "kind": "proposal",
+          "question": "关于研究问题，是否按当前理解继续？",
+          "rationale": "这是待确认的建议而非已知事实，且后续的假设、指标与验收都要以它为锚点，先确认可避免整条规划偏离。",
+          "references": [
+            {
+              "source": "fact",
+              "key": "research_question",
+              "quote": "设备故障预测：比较逻辑回归与树模型的预测表现"
+            },
+            {
+              "source": "answer",
+              "key": "current",
+              "quote": "我想研究设备故障预测，比较逻辑回归和树模型。请先帮我把问题变成能检验的实验，逐步给我可选的决定。"
+            }
+          ],
+          "options": [
+            {
+              "label": "按这个理解继续：设备故障预测：比较逻辑回归与树模型的预测表现",
+              "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+              "action": "accept",
+              "id": "7ae5a052b11e"
+            },
+            {
+              "label": "暂不确定",
+              "value": "未知",
+              "action": "unknown",
+              "id": "2c3af7fa609c"
+            },
+            {
+              "label": "其他，我来补充",
+              "value": "",
+              "action": "custom",
+              "id": "47de6eddb129"
+            }
+          ],
+          "origin": "model",
+          "suggested_options": [],
+          "allow_accept": false,
+          "choice_policy": {
+            "intent": "comparison",
+            "origin": "user_declared",
+            "policy_hash": null
+          },
+          "choice_id": "cbe5f6564aa83ff9",
+          "choice_plan_hash": "badfdc2b6e1f75c9550e861986217ce8f4873ac586547fcb312bfdcea12e726f"
+        }
+      ],
+      "execution_authorized": false,
+      "scientific_claim_verified": false,
+      "model_used": true,
+      "clarification": {
+        "mode": "dynamic",
+        "reason": "validated",
+        "rejected_questions": [],
+        "model_used": true
+      },
+      "question_form": true
+    },
+    "before": null,
+    "after": {
+      "schema_version": "research_planning_v1",
+      "id": "575a1576136f48c8af8bfdc6d3302dfd",
+      "revision": 1,
+      "active": true,
+      "facts": {
+        "research_question": {
+          "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+          "quote": "我想研究设备故障预测，比较逻辑回归和树模型。",
+          "status": "proposed",
+          "turn": 1
+        },
+        "objective_type": {
+          "value": "comparison",
+          "quote": "比较逻辑回归和树模型",
+          "status": "declared",
+          "turn": 1
+        },
+        "factors": {
+          "value": "模型类型：逻辑回归 vs 树模型",
+          "quote": "比较逻辑回归和树模型",
+          "status": "proposed",
+          "turn": 1
+        },
+        "deliverable": {
+          "value": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项",
+          "quote": "请先帮我把问题变成能检验的实验，逐步给我可选的决定。",
+          "status": "proposed",
+          "turn": 1
+        }
+      },
+      "unknown": [],
+      "conflicts": {},
+      "decisions": [
+        {
+          "turn": 1,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "research_question",
+              "kind": "added",
+              "before": null,
+              "after": "设备故障预测：比较逻辑回归与树模型的预测表现"
+            },
+            {
+              "field": "objective_type",
+              "kind": "added",
+              "before": null,
+              "after": "comparison"
+            },
+            {
+              "field": "factors",
+              "kind": "added",
+              "before": null,
+              "after": "模型类型：逻辑回归 vs 树模型"
+            },
+            {
+              "field": "deliverable",
+              "kind": "added",
+              "before": null,
+              "after": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项"
+            }
+          ]
+        }
+      ],
+      "approval": null,
+      "pending": {
+        "field": "research_question",
+        "kind": "proposal",
+        "question": "关于研究问题，是否按当前理解继续？",
+        "rationale": "这是待确认的建议而非已知事实，且后续的假设、指标与验收都要以它为锚点，先确认可避免整条规划偏离。",
+        "references": [
+          {
+            "source": "fact",
+            "key": "research_question",
+            "quote": "设备故障预测：比较逻辑回归与树模型的预测表现"
+          },
+          {
+            "source": "answer",
+            "key": "current",
+            "quote": "我想研究设备故障预测，比较逻辑回归和树模型。请先帮我把问题变成能检验的实验，逐步给我可选的决定。"
+          }
+        ],
+        "options": [
+          {
+            "label": "按这个理解继续：设备故障预测：比较逻辑回归与树模型的预测表现",
+            "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+            "action": "accept",
+            "id": "7ae5a052b11e"
+          },
+          {
+            "label": "暂不确定",
+            "value": "未知",
+            "action": "unknown",
+            "id": "2c3af7fa609c"
+          },
+          {
+            "label": "其他，我来补充",
+            "value": "",
+            "action": "custom",
+            "id": "47de6eddb129"
+          }
+        ],
+        "origin": "model",
+        "suggested_options": [],
+        "allow_accept": false,
+        "choice_policy": {
+          "intent": "comparison",
+          "origin": "user_declared",
+          "policy_hash": null
+        },
+        "choice_id": "cbe5f6564aa83ff9",
+        "choice_plan_hash": "badfdc2b6e1f75c9550e861986217ce8f4873ac586547fcb312bfdcea12e726f"
+      },
+      "reflections": [],
+      "changes": [
+        {
+          "field": "research_question",
+          "kind": "added",
+          "before": null,
+          "after": "设备故障预测：比较逻辑回归与树模型的预测表现"
+        },
+        {
+          "field": "objective_type",
+          "kind": "added",
+          "before": null,
+          "after": "comparison"
+        },
+        {
+          "field": "factors",
+          "kind": "added",
+          "before": null,
+          "after": "模型类型：逻辑回归 vs 树模型"
+        },
+        {
+          "field": "deliverable",
+          "kind": "added",
+          "before": null,
+          "after": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项"
+        }
+      ],
+      "stale": {},
+      "turns": 1,
+      "audience": "researcher_student",
+      "last_notes": [
+        "语义改写和推断仅作为待确认提议展示，不会自动成为已确认边界。"
+      ],
+      "last_export": null,
+      "clarification": {
+        "mode": "dynamic",
+        "reason": "validated",
+        "rejected_questions": [],
+        "model_used": true
+      },
+      "question_history": [
+        {
+          "turn": 1,
+          "field": "research_question",
+          "kind": "proposal",
+          "question": "关于研究问题，是否按当前理解继续？",
+          "origin": "model",
+          "basis_hash": "7a1912e70ace83cce2377664bdc5444b23e30ab9c4f2517dc5359dd59fa6f1bb"
+        }
+      ]
+    },
+    "known_field_missing_questions": [],
+    "state_changed": true,
+    "resources": {
+      "llm_requests": 2,
+      "llm_tokens": 3890,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 10,
+        "llm_tokens": 35000,
+        "tool_calls": 40,
+        "read_bytes": 24000
+      }
+    }
+  },
+  {
+    "turn": 2,
+    "input": "只讨论本校实验台的温度传感器日志，目标是预测下一次运行是否故障，不解释因果，也不推广到其他设备。以整台设备的一次运行作观察单位，同一设备的多次记录相互相关，不能当成独立重复。",
+    "seconds": 5.719,
+    "exception": null,
+    "result": {
+      "intent": "planning",
+      "answer": "正在澄清\n\n关于研究问题，你希望保留哪一项？\n1. 设备故障预测：比较逻辑回归与树模型的预测表现\n2. 基于本校实验台温度传感器日志，预测下一次运行是否故障\n3. 暂不确定\n4. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+      "planning": {
+        "id": "575a1576136f48c8af8bfdc6d3302dfd",
+        "revision": 2,
+        "active": true,
+        "facts": {
+          "research_question": {
+            "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+            "quote": "我想研究设备故障预测，比较逻辑回归和树模型。",
+            "status": "proposed",
+            "turn": 1
+          },
+          "objective_type": {
+            "value": "comparison",
+            "quote": "比较逻辑回归和树模型",
+            "status": "declared",
+            "turn": 1
+          },
+          "factors": {
+            "value": "模型类型：逻辑回归 vs 树模型",
+            "quote": "比较逻辑回归和树模型",
+            "status": "proposed",
+            "turn": 1
+          },
+          "deliverable": {
+            "value": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项",
+            "quote": "请先帮我把问题变成能检验的实验，逐步给我可选的决定。",
+            "status": "proposed",
+            "turn": 1
+          },
+          "scope": {
+            "value": "仅限本校实验台的温度传感器日志",
+            "quote": "只讨论本校实验台的温度传感器日志",
+            "status": "proposed",
+            "turn": 2
+          },
+          "exclusions": {
+            "value": "不做因果解释；不推广到其他设备",
+            "quote": "不解释因果，也不推广到其他设备",
+            "status": "proposed",
+            "turn": 2
+          },
+          "experimental_unit": {
+            "value": "整台设备的一次运行",
+            "quote": "以整台设备的一次运行作观察单位",
+            "status": "declared",
+            "turn": 2
+          },
+          "analysis": {
+            "value": "同一设备的多次记录相互相关，不能当作独立重复（需考虑设备内相关性）",
+            "quote": "同一设备的多次记录相互相关，不能当成独立重复",
+            "status": "proposed",
+            "turn": 2
+          },
+          "data_source": {
+            "value": "本校实验台温度传感器日志",
+            "quote": "只讨论本校实验台的温度传感器日志",
+            "status": "proposed",
+            "turn": 2
+          }
+        },
+        "unknown": [],
+        "conflicts": {
+          "research_question": [
+            {
+              "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+              "quote": "我想研究设备故障预测，比较逻辑回归和树模型。",
+              "status": "proposed",
+              "turn": 1
+            },
+            {
+              "value": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+              "quote": "只讨论本校实验台的温度传感器日志，目标是预测下一次运行是否故障",
+              "status": "proposed",
+              "turn": 2
+            }
+          ],
+          "objective_type": [
+            {
+              "value": "comparison",
+              "quote": "比较逻辑回归和树模型",
+              "status": "declared",
+              "turn": 1
+            },
+            {
+              "value": "prediction",
+              "quote": "目标是预测下一次运行是否故障，不解释因果",
+              "status": "proposed",
+              "turn": 2
+            }
+          ]
+        },
+        "stale": {},
+        "pending": {
+          "field": "research_question",
+          "kind": "conflict",
+          "question": "关于研究问题，你希望保留哪一项？",
+          "rationale": "冲突不能由模型悄悄覆盖；改变边界会使原确认失效。",
+          "options": [
+            {
+              "label": "设备故障预测：比较逻辑回归与树模型的预测表现",
+              "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+              "action": "revise",
+              "id": "d29dd89b22fa"
+            },
+            {
+              "label": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+              "value": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+              "action": "revise",
+              "id": "d0e6cb5fdae6"
+            },
+            {
+              "label": "暂不确定",
+              "value": "未知",
+              "action": "unknown",
+              "id": "2c3af7fa609c"
+            },
+            {
+              "label": "其他，我来补充",
+              "value": "",
+              "action": "custom",
+              "id": "47de6eddb129"
+            }
+          ],
+          "origin": "template",
+          "allow_accept": false,
+          "choice_policy": {
+            "intent": "comparison",
+            "origin": "user_declared",
+            "policy_hash": null
+          },
+          "choice_id": "8c3424d6f3b842ce",
+          "choice_plan_hash": "71dd52dc7aeb177cf2611683ee06d48f5782a4832d83548bd1e0c45e79cb6c5e"
+        },
+        "review": {
+          "ready": false,
+          "checks": [
+            {
+              "field": "hypothesis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+            },
+            {
+              "field": "scope",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "exclusions",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "experimental_unit",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "factors",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "design",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+            },
+            {
+              "field": "outcomes",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+            },
+            {
+              "field": "baseline",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+            },
+            {
+              "field": "data_source",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "sampling",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+            },
+            {
+              "field": "analysis",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "acceptance",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+            },
+            {
+              "field": "resources",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？"
+            },
+            {
+              "field": "risks",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+            },
+            {
+              "field": "reproducibility",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+            },
+            {
+              "field": "human_roles",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+            },
+            {
+              "field": "deliverable",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "research_question",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "research_question",
+              "code": "unresolved_conflict",
+              "status": "blocked",
+              "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+            },
+            {
+              "field": "objective_type",
+              "code": "unresolved_conflict",
+              "status": "blocked",
+              "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+            },
+            {
+              "field": "scope",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "exclusions",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "factors",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "data_source",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "analysis",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "deliverable",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "objective_type",
+              "code": "objective_classified",
+              "status": "passed",
+              "detail": "需要明确比较、预测、因果、探索或复现目的。"
+            },
+            {
+              "field": "analysis",
+              "code": "estimand_declared",
+              "status": "blocked",
+              "detail": "写清估计对象或主要对比，不能只写运行统计检验。"
+            },
+            {
+              "field": "analysis",
+              "code": "uncertainty_declared",
+              "status": "blocked",
+              "detail": "声明置信区间或其他不确定性表达，避免只报告显著性。"
+            }
+          ],
+          "blockers": [
+            {
+              "field": "hypothesis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+            },
+            {
+              "field": "design",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+            },
+            {
+              "field": "outcomes",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+            },
+            {
+              "field": "baseline",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+            },
+            {
+              "field": "sampling",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+            },
+            {
+              "field": "acceptance",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+            },
+            {
+              "field": "resources",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？"
+            },
+            {
+              "field": "risks",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+            },
+            {
+              "field": "reproducibility",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+            },
+            {
+              "field": "human_roles",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+            },
+            {
+              "field": "research_question",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "research_question",
+              "code": "unresolved_conflict",
+              "status": "blocked",
+              "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+            },
+            {
+              "field": "objective_type",
+              "code": "unresolved_conflict",
+              "status": "blocked",
+              "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+            },
+            {
+              "field": "scope",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "exclusions",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "factors",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "data_source",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "analysis",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "deliverable",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "analysis",
+              "code": "estimand_declared",
+              "status": "blocked",
+              "detail": "写清估计对象或主要对比，不能只写运行统计检验。"
+            },
+            {
+              "field": "analysis",
+              "code": "uncertainty_declared",
+              "status": "blocked",
+              "detail": "声明置信区间或其他不确定性表达，避免只报告显著性。"
+            }
+          ],
+          "required_fields": [
+            "research_question",
+            "objective_type",
+            "hypothesis",
+            "scope",
+            "exclusions",
+            "experimental_unit",
+            "factors",
+            "design",
+            "outcomes",
+            "baseline",
+            "data_source",
+            "sampling",
+            "analysis",
+            "acceptance",
+            "resources",
+            "risks",
+            "reproducibility",
+            "human_roles",
+            "deliverable"
+          ],
+          "scope": "planning_only",
+          "execution_authorized": false,
+          "scientific_claim_verified": false,
+          "readiness_meaning": "用户声明已足够形成待人类复核的计划；不表示假设、数据、功效或结论已被验证。"
+        },
+        "contract_hash": "71dd52dc7aeb177cf2611683ee06d48f5782a4832d83548bd1e0c45e79cb6c5e",
+        "approved": false,
+        "decisions_count": 2,
+        "reflections_count": 0,
+        "evidence": [],
+        "evidence_actions": {},
+        "clarification": {
+          "mode": "template",
+          "reason": "model_unavailable_or_rejected",
+          "model_used": true,
+          "error_type": "ValueError",
+          "validation_error": "NoValidPriorityQuestions: [{\"field\": \"research_question\", \"reason\": \"InventedQuestionNumericAssumption\"}, {\"field\": \"objective_type\", \"reason\": \"InventedQuestionNumericAssumption\"}]"
+        },
+        "last_export": null,
+        "execution_authorized": false
+      },
+      "questions": [
+        {
+          "field": "research_question",
+          "kind": "conflict",
+          "question": "关于研究问题，你希望保留哪一项？",
+          "rationale": "冲突不能由模型悄悄覆盖；改变边界会使原确认失效。",
+          "options": [
+            {
+              "label": "设备故障预测：比较逻辑回归与树模型的预测表现",
+              "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+              "action": "revise",
+              "id": "d29dd89b22fa"
+            },
+            {
+              "label": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+              "value": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+              "action": "revise",
+              "id": "d0e6cb5fdae6"
+            },
+            {
+              "label": "暂不确定",
+              "value": "未知",
+              "action": "unknown",
+              "id": "2c3af7fa609c"
+            },
+            {
+              "label": "其他，我来补充",
+              "value": "",
+              "action": "custom",
+              "id": "47de6eddb129"
+            }
+          ],
+          "origin": "template",
+          "allow_accept": false,
+          "choice_policy": {
+            "intent": "comparison",
+            "origin": "user_declared",
+            "policy_hash": null
+          },
+          "choice_id": "8c3424d6f3b842ce",
+          "choice_plan_hash": "71dd52dc7aeb177cf2611683ee06d48f5782a4832d83548bd1e0c45e79cb6c5e"
+        }
+      ],
+      "execution_authorized": false,
+      "scientific_claim_verified": false,
+      "model_used": true,
+      "clarification": {
+        "mode": "template",
+        "reason": "model_unavailable_or_rejected",
+        "model_used": true,
+        "error_type": "ValueError",
+        "validation_error": "NoValidPriorityQuestions: [{\"field\": \"research_question\", \"reason\": \"InventedQuestionNumericAssumption\"}, {\"field\": \"objective_type\", \"reason\": \"InventedQuestionNumericAssumption\"}]"
+      },
+      "question_form": true
+    },
+    "before": {
+      "schema_version": "research_planning_v1",
+      "id": "575a1576136f48c8af8bfdc6d3302dfd",
+      "revision": 1,
+      "active": true,
+      "facts": {
+        "research_question": {
+          "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+          "quote": "我想研究设备故障预测，比较逻辑回归和树模型。",
+          "status": "proposed",
+          "turn": 1
+        },
+        "objective_type": {
+          "value": "comparison",
+          "quote": "比较逻辑回归和树模型",
+          "status": "declared",
+          "turn": 1
+        },
+        "factors": {
+          "value": "模型类型：逻辑回归 vs 树模型",
+          "quote": "比较逻辑回归和树模型",
+          "status": "proposed",
+          "turn": 1
+        },
+        "deliverable": {
+          "value": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项",
+          "quote": "请先帮我把问题变成能检验的实验，逐步给我可选的决定。",
+          "status": "proposed",
+          "turn": 1
+        }
+      },
+      "unknown": [],
+      "conflicts": {},
+      "decisions": [
+        {
+          "turn": 1,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "research_question",
+              "kind": "added",
+              "before": null,
+              "after": "设备故障预测：比较逻辑回归与树模型的预测表现"
+            },
+            {
+              "field": "objective_type",
+              "kind": "added",
+              "before": null,
+              "after": "comparison"
+            },
+            {
+              "field": "factors",
+              "kind": "added",
+              "before": null,
+              "after": "模型类型：逻辑回归 vs 树模型"
+            },
+            {
+              "field": "deliverable",
+              "kind": "added",
+              "before": null,
+              "after": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项"
+            }
+          ]
+        }
+      ],
+      "approval": null,
+      "pending": {
+        "field": "research_question",
+        "kind": "proposal",
+        "question": "关于研究问题，是否按当前理解继续？",
+        "rationale": "这是待确认的建议而非已知事实，且后续的假设、指标与验收都要以它为锚点，先确认可避免整条规划偏离。",
+        "references": [
+          {
+            "source": "fact",
+            "key": "research_question",
+            "quote": "设备故障预测：比较逻辑回归与树模型的预测表现"
+          },
+          {
+            "source": "answer",
+            "key": "current",
+            "quote": "我想研究设备故障预测，比较逻辑回归和树模型。请先帮我把问题变成能检验的实验，逐步给我可选的决定。"
+          }
+        ],
+        "options": [
+          {
+            "label": "按这个理解继续：设备故障预测：比较逻辑回归与树模型的预测表现",
+            "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+            "action": "accept",
+            "id": "7ae5a052b11e"
+          },
+          {
+            "label": "暂不确定",
+            "value": "未知",
+            "action": "unknown",
+            "id": "2c3af7fa609c"
+          },
+          {
+            "label": "其他，我来补充",
+            "value": "",
+            "action": "custom",
+            "id": "47de6eddb129"
+          }
+        ],
+        "origin": "model",
+        "suggested_options": [],
+        "allow_accept": false,
+        "choice_policy": {
+          "intent": "comparison",
+          "origin": "user_declared",
+          "policy_hash": null
+        },
+        "choice_id": "cbe5f6564aa83ff9",
+        "choice_plan_hash": "badfdc2b6e1f75c9550e861986217ce8f4873ac586547fcb312bfdcea12e726f"
+      },
+      "reflections": [],
+      "changes": [
+        {
+          "field": "research_question",
+          "kind": "added",
+          "before": null,
+          "after": "设备故障预测：比较逻辑回归与树模型的预测表现"
+        },
+        {
+          "field": "objective_type",
+          "kind": "added",
+          "before": null,
+          "after": "comparison"
+        },
+        {
+          "field": "factors",
+          "kind": "added",
+          "before": null,
+          "after": "模型类型：逻辑回归 vs 树模型"
+        },
+        {
+          "field": "deliverable",
+          "kind": "added",
+          "before": null,
+          "after": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项"
+        }
+      ],
+      "stale": {},
+      "turns": 1,
+      "audience": "researcher_student",
+      "last_notes": [
+        "语义改写和推断仅作为待确认提议展示，不会自动成为已确认边界。"
+      ],
+      "last_export": null,
+      "clarification": {
+        "mode": "dynamic",
+        "reason": "validated",
+        "rejected_questions": [],
+        "model_used": true
+      },
+      "question_history": [
+        {
+          "turn": 1,
+          "field": "research_question",
+          "kind": "proposal",
+          "question": "关于研究问题，是否按当前理解继续？",
+          "origin": "model",
+          "basis_hash": "7a1912e70ace83cce2377664bdc5444b23e30ab9c4f2517dc5359dd59fa6f1bb"
+        }
+      ]
+    },
+    "after": {
+      "schema_version": "research_planning_v1",
+      "id": "575a1576136f48c8af8bfdc6d3302dfd",
+      "revision": 2,
+      "active": true,
+      "facts": {
+        "research_question": {
+          "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+          "quote": "我想研究设备故障预测，比较逻辑回归和树模型。",
+          "status": "proposed",
+          "turn": 1
+        },
+        "objective_type": {
+          "value": "comparison",
+          "quote": "比较逻辑回归和树模型",
+          "status": "declared",
+          "turn": 1
+        },
+        "factors": {
+          "value": "模型类型：逻辑回归 vs 树模型",
+          "quote": "比较逻辑回归和树模型",
+          "status": "proposed",
+          "turn": 1
+        },
+        "deliverable": {
+          "value": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项",
+          "quote": "请先帮我把问题变成能检验的实验，逐步给我可选的决定。",
+          "status": "proposed",
+          "turn": 1
+        },
+        "scope": {
+          "value": "仅限本校实验台的温度传感器日志",
+          "quote": "只讨论本校实验台的温度传感器日志",
+          "status": "proposed",
+          "turn": 2
+        },
+        "exclusions": {
+          "value": "不做因果解释；不推广到其他设备",
+          "quote": "不解释因果，也不推广到其他设备",
+          "status": "proposed",
+          "turn": 2
+        },
+        "experimental_unit": {
+          "value": "整台设备的一次运行",
+          "quote": "以整台设备的一次运行作观察单位",
+          "status": "declared",
+          "turn": 2
+        },
+        "analysis": {
+          "value": "同一设备的多次记录相互相关，不能当作独立重复（需考虑设备内相关性）",
+          "quote": "同一设备的多次记录相互相关，不能当成独立重复",
+          "status": "proposed",
+          "turn": 2
+        },
+        "data_source": {
+          "value": "本校实验台温度传感器日志",
+          "quote": "只讨论本校实验台的温度传感器日志",
+          "status": "proposed",
+          "turn": 2
+        }
+      },
+      "unknown": [],
+      "conflicts": {
+        "research_question": [
+          {
+            "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+            "quote": "我想研究设备故障预测，比较逻辑回归和树模型。",
+            "status": "proposed",
+            "turn": 1
+          },
+          {
+            "value": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+            "quote": "只讨论本校实验台的温度传感器日志，目标是预测下一次运行是否故障",
+            "status": "proposed",
+            "turn": 2
+          }
+        ],
+        "objective_type": [
+          {
+            "value": "comparison",
+            "quote": "比较逻辑回归和树模型",
+            "status": "declared",
+            "turn": 1
+          },
+          {
+            "value": "prediction",
+            "quote": "目标是预测下一次运行是否故障，不解释因果",
+            "status": "proposed",
+            "turn": 2
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "turn": 1,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "research_question",
+              "kind": "added",
+              "before": null,
+              "after": "设备故障预测：比较逻辑回归与树模型的预测表现"
+            },
+            {
+              "field": "objective_type",
+              "kind": "added",
+              "before": null,
+              "after": "comparison"
+            },
+            {
+              "field": "factors",
+              "kind": "added",
+              "before": null,
+              "after": "模型类型：逻辑回归 vs 树模型"
+            },
+            {
+              "field": "deliverable",
+              "kind": "added",
+              "before": null,
+              "after": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项"
+            }
+          ]
+        },
+        {
+          "turn": 2,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "research_question",
+              "kind": "conflict",
+              "before": "设备故障预测：比较逻辑回归与树模型的预测表现",
+              "after": "基于本校实验台温度传感器日志，预测下一次运行是否故障"
+            },
+            {
+              "field": "objective_type",
+              "kind": "conflict",
+              "before": "comparison",
+              "after": "prediction"
+            },
+            {
+              "field": "scope",
+              "kind": "added",
+              "before": null,
+              "after": "仅限本校实验台的温度传感器日志"
+            },
+            {
+              "field": "exclusions",
+              "kind": "added",
+              "before": null,
+              "after": "不做因果解释；不推广到其他设备"
+            },
+            {
+              "field": "experimental_unit",
+              "kind": "added",
+              "before": null,
+              "after": "整台设备的一次运行"
+            },
+            {
+              "field": "analysis",
+              "kind": "added",
+              "before": null,
+              "after": "同一设备的多次记录相互相关，不能当作独立重复（需考虑设备内相关性）"
+            },
+            {
+              "field": "data_source",
+              "kind": "added",
+              "before": null,
+              "after": "本校实验台温度传感器日志"
+            }
+          ]
+        }
+      ],
+      "approval": null,
+      "pending": {
+        "field": "research_question",
+        "kind": "conflict",
+        "question": "关于研究问题，你希望保留哪一项？",
+        "rationale": "冲突不能由模型悄悄覆盖；改变边界会使原确认失效。",
+        "options": [
+          {
+            "label": "设备故障预测：比较逻辑回归与树模型的预测表现",
+            "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+            "action": "revise",
+            "id": "d29dd89b22fa"
+          },
+          {
+            "label": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+            "value": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+            "action": "revise",
+            "id": "d0e6cb5fdae6"
+          },
+          {
+            "label": "暂不确定",
+            "value": "未知",
+            "action": "unknown",
+            "id": "2c3af7fa609c"
+          },
+          {
+            "label": "其他，我来补充",
+            "value": "",
+            "action": "custom",
+            "id": "47de6eddb129"
+          }
+        ],
+        "origin": "template",
+        "allow_accept": false,
+        "choice_policy": {
+          "intent": "comparison",
+          "origin": "user_declared",
+          "policy_hash": null
+        },
+        "choice_id": "8c3424d6f3b842ce",
+        "choice_plan_hash": "71dd52dc7aeb177cf2611683ee06d48f5782a4832d83548bd1e0c45e79cb6c5e"
+      },
+      "reflections": [],
+      "changes": [
+        {
+          "field": "research_question",
+          "kind": "added",
+          "before": null,
+          "after": "设备故障预测：比较逻辑回归与树模型的预测表现"
+        },
+        {
+          "field": "objective_type",
+          "kind": "added",
+          "before": null,
+          "after": "comparison"
+        },
+        {
+          "field": "factors",
+          "kind": "added",
+          "before": null,
+          "after": "模型类型：逻辑回归 vs 树模型"
+        },
+        {
+          "field": "deliverable",
+          "kind": "added",
+          "before": null,
+          "after": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项"
+        },
+        {
+          "field": "research_question",
+          "kind": "conflict",
+          "before": "设备故障预测：比较逻辑回归与树模型的预测表现",
+          "after": "基于本校实验台温度传感器日志，预测下一次运行是否故障"
+        },
+        {
+          "field": "objective_type",
+          "kind": "conflict",
+          "before": "comparison",
+          "after": "prediction"
+        },
+        {
+          "field": "scope",
+          "kind": "added",
+          "before": null,
+          "after": "仅限本校实验台的温度传感器日志"
+        },
+        {
+          "field": "exclusions",
+          "kind": "added",
+          "before": null,
+          "after": "不做因果解释；不推广到其他设备"
+        },
+        {
+          "field": "experimental_unit",
+          "kind": "added",
+          "before": null,
+          "after": "整台设备的一次运行"
+        },
+        {
+          "field": "analysis",
+          "kind": "added",
+          "before": null,
+          "after": "同一设备的多次记录相互相关，不能当作独立重复（需考虑设备内相关性）"
+        },
+        {
+          "field": "data_source",
+          "kind": "added",
+          "before": null,
+          "after": "本校实验台温度传感器日志"
+        }
+      ],
+      "stale": {},
+      "turns": 2,
+      "audience": "researcher_student",
+      "last_notes": [
+        "语义改写和推断仅作为待确认提议展示，不会自动成为已确认边界。",
+        "本轮动态澄清不可用或未通过校验，已使用模板继续；已有边界保留。"
+      ],
+      "last_export": null,
+      "clarification": {
+        "mode": "template",
+        "reason": "model_unavailable_or_rejected",
+        "model_used": true,
+        "error_type": "ValueError",
+        "validation_error": "NoValidPriorityQuestions: [{\"field\": \"research_question\", \"reason\": \"InventedQuestionNumericAssumption\"}, {\"field\": \"objective_type\", \"reason\": \"InventedQuestionNumericAssumption\"}]"
+      },
+      "question_history": [
+        {
+          "turn": 1,
+          "field": "research_question",
+          "kind": "proposal",
+          "question": "关于研究问题，是否按当前理解继续？",
+          "origin": "model",
+          "basis_hash": "7a1912e70ace83cce2377664bdc5444b23e30ab9c4f2517dc5359dd59fa6f1bb"
+        },
+        {
+          "turn": 2,
+          "field": "research_question",
+          "kind": "conflict",
+          "question": "关于研究问题，你希望保留哪一项？",
+          "origin": "template",
+          "basis_hash": "c3dc2a0a2de43b2182c27cd4d8b7cf0a3b25f58fe5a98160f2fe25a9cf4e54ef"
+        }
+      ]
+    },
+    "known_field_missing_questions": [],
+    "state_changed": true,
+    "resources": {
+      "llm_requests": 4,
+      "llm_tokens": 8503,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 10,
+        "llm_tokens": 35000,
+        "tool_calls": 40,
+        "read_bytes": 24000
+      }
+    }
+  },
+  {
+    "turn": 3,
+    "input": "把设备来源和时间一起控制：开发设备的较早记录用于训练，较晚记录用于验证，最终测试另留整台设备，测试标签只在方案锁定后揭开。逻辑回归是基线，树模型和它共享特征、划分及调参预算，防止同一设备的信息泄漏。",
+    "seconds": 3.219,
+    "exception": null,
+    "result": {
+      "intent": "planning",
+      "answer": "正在澄清\n\n关于研究问题，你希望保留哪一项？\n1. 设备故障预测：比较逻辑回归与树模型的预测表现\n2. 基于本校实验台温度传感器日志，预测下一次运行是否故障\n3. 暂不确定\n4. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+      "planning": {
+        "id": "575a1576136f48c8af8bfdc6d3302dfd",
+        "revision": 3,
+        "active": true,
+        "facts": {
+          "research_question": {
+            "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+            "quote": "我想研究设备故障预测，比较逻辑回归和树模型。",
+            "status": "proposed",
+            "turn": 1
+          },
+          "objective_type": {
+            "value": "comparison",
+            "quote": "比较逻辑回归和树模型",
+            "status": "declared",
+            "turn": 1
+          },
+          "factors": {
+            "value": "模型类型：逻辑回归 vs 树模型",
+            "quote": "比较逻辑回归和树模型",
+            "status": "proposed",
+            "turn": 1
+          },
+          "deliverable": {
+            "value": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项",
+            "quote": "请先帮我把问题变成能检验的实验，逐步给我可选的决定。",
+            "status": "proposed",
+            "turn": 1
+          },
+          "scope": {
+            "value": "仅限本校实验台的温度传感器日志",
+            "quote": "只讨论本校实验台的温度传感器日志",
+            "status": "proposed",
+            "turn": 2
+          },
+          "exclusions": {
+            "value": "不做因果解释；不推广到其他设备",
+            "quote": "不解释因果，也不推广到其他设备",
+            "status": "proposed",
+            "turn": 2
+          },
+          "experimental_unit": {
+            "value": "整台设备的一次运行",
+            "quote": "以整台设备的一次运行作观察单位",
+            "status": "declared",
+            "turn": 2
+          },
+          "analysis": {
+            "value": "同一设备的多次记录相互相关，不能当作独立重复（需考虑设备内相关性）",
+            "quote": "同一设备的多次记录相互相关，不能当成独立重复",
+            "status": "proposed",
+            "turn": 2
+          },
+          "data_source": {
+            "value": "本校实验台温度传感器日志",
+            "quote": "只讨论本校实验台的温度传感器日志",
+            "status": "proposed",
+            "turn": 2
+          }
+        },
+        "unknown": [],
+        "conflicts": {
+          "research_question": [
+            {
+              "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+              "quote": "我想研究设备故障预测，比较逻辑回归和树模型。",
+              "status": "proposed",
+              "turn": 1
+            },
+            {
+              "value": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+              "quote": "只讨论本校实验台的温度传感器日志，目标是预测下一次运行是否故障",
+              "status": "proposed",
+              "turn": 2
+            }
+          ],
+          "objective_type": [
+            {
+              "value": "comparison",
+              "quote": "比较逻辑回归和树模型",
+              "status": "declared",
+              "turn": 1
+            },
+            {
+              "value": "prediction",
+              "quote": "目标是预测下一次运行是否故障，不解释因果",
+              "status": "proposed",
+              "turn": 2
+            }
+          ]
+        },
+        "stale": {},
+        "pending": {
+          "field": "research_question",
+          "kind": "conflict",
+          "question": "关于研究问题，你希望保留哪一项？",
+          "rationale": "冲突不能由模型悄悄覆盖；改变边界会使原确认失效。",
+          "options": [
+            {
+              "label": "设备故障预测：比较逻辑回归与树模型的预测表现",
+              "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+              "action": "revise",
+              "id": "d29dd89b22fa"
+            },
+            {
+              "label": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+              "value": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+              "action": "revise",
+              "id": "d0e6cb5fdae6"
+            },
+            {
+              "label": "暂不确定",
+              "value": "未知",
+              "action": "unknown",
+              "id": "2c3af7fa609c"
+            },
+            {
+              "label": "其他，我来补充",
+              "value": "",
+              "action": "custom",
+              "id": "47de6eddb129"
+            }
+          ],
+          "origin": "template",
+          "allow_accept": false,
+          "choice_policy": {
+            "intent": "comparison",
+            "origin": "user_declared",
+            "policy_hash": null
+          },
+          "choice_id": "8c3424d6f3b842ce",
+          "choice_plan_hash": "71dd52dc7aeb177cf2611683ee06d48f5782a4832d83548bd1e0c45e79cb6c5e"
+        },
+        "review": {
+          "ready": false,
+          "checks": [
+            {
+              "field": "hypothesis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+            },
+            {
+              "field": "scope",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "exclusions",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "experimental_unit",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "factors",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "design",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+            },
+            {
+              "field": "outcomes",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+            },
+            {
+              "field": "baseline",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+            },
+            {
+              "field": "data_source",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "sampling",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+            },
+            {
+              "field": "analysis",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "acceptance",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+            },
+            {
+              "field": "resources",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？"
+            },
+            {
+              "field": "risks",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+            },
+            {
+              "field": "reproducibility",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+            },
+            {
+              "field": "human_roles",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+            },
+            {
+              "field": "deliverable",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "research_question",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "research_question",
+              "code": "unresolved_conflict",
+              "status": "blocked",
+              "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+            },
+            {
+              "field": "objective_type",
+              "code": "unresolved_conflict",
+              "status": "blocked",
+              "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+            },
+            {
+              "field": "scope",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "exclusions",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "factors",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "data_source",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "analysis",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "deliverable",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "objective_type",
+              "code": "objective_classified",
+              "status": "passed",
+              "detail": "需要明确比较、预测、因果、探索或复现目的。"
+            },
+            {
+              "field": "analysis",
+              "code": "estimand_declared",
+              "status": "blocked",
+              "detail": "写清估计对象或主要对比，不能只写运行统计检验。"
+            },
+            {
+              "field": "analysis",
+              "code": "uncertainty_declared",
+              "status": "blocked",
+              "detail": "声明置信区间或其他不确定性表达，避免只报告显著性。"
+            }
+          ],
+          "blockers": [
+            {
+              "field": "hypothesis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+            },
+            {
+              "field": "design",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+            },
+            {
+              "field": "outcomes",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+            },
+            {
+              "field": "baseline",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+            },
+            {
+              "field": "sampling",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+            },
+            {
+              "field": "acceptance",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+            },
+            {
+              "field": "resources",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？"
+            },
+            {
+              "field": "risks",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+            },
+            {
+              "field": "reproducibility",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+            },
+            {
+              "field": "human_roles",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+            },
+            {
+              "field": "research_question",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "research_question",
+              "code": "unresolved_conflict",
+              "status": "blocked",
+              "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+            },
+            {
+              "field": "objective_type",
+              "code": "unresolved_conflict",
+              "status": "blocked",
+              "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+            },
+            {
+              "field": "scope",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "exclusions",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "factors",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "data_source",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "analysis",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "deliverable",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "analysis",
+              "code": "estimand_declared",
+              "status": "blocked",
+              "detail": "写清估计对象或主要对比，不能只写运行统计检验。"
+            },
+            {
+              "field": "analysis",
+              "code": "uncertainty_declared",
+              "status": "blocked",
+              "detail": "声明置信区间或其他不确定性表达，避免只报告显著性。"
+            }
+          ],
+          "required_fields": [
+            "research_question",
+            "objective_type",
+            "hypothesis",
+            "scope",
+            "exclusions",
+            "experimental_unit",
+            "factors",
+            "design",
+            "outcomes",
+            "baseline",
+            "data_source",
+            "sampling",
+            "analysis",
+            "acceptance",
+            "resources",
+            "risks",
+            "reproducibility",
+            "human_roles",
+            "deliverable"
+          ],
+          "scope": "planning_only",
+          "execution_authorized": false,
+          "scientific_claim_verified": false,
+          "readiness_meaning": "用户声明已足够形成待人类复核的计划；不表示假设、数据、功效或结论已被验证。"
+        },
+        "contract_hash": "71dd52dc7aeb177cf2611683ee06d48f5782a4832d83548bd1e0c45e79cb6c5e",
+        "approved": false,
+        "decisions_count": 2,
+        "reflections_count": 0,
+        "evidence": [],
+        "evidence_actions": {},
+        "clarification": {
+          "mode": "template",
+          "reason": "model_unavailable_or_rejected",
+          "model_used": true,
+          "error_type": "ValueError",
+          "validation_error": "NoValidPriorityQuestions: [{\"field\": \"objective_type\", \"reason\": \"InventedQuestionNumericAssumption\"}]"
+        },
+        "last_export": null,
+        "execution_authorized": false
+      },
+      "questions": [
+        {
+          "field": "research_question",
+          "kind": "conflict",
+          "question": "关于研究问题，你希望保留哪一项？",
+          "rationale": "冲突不能由模型悄悄覆盖；改变边界会使原确认失效。",
+          "options": [
+            {
+              "label": "设备故障预测：比较逻辑回归与树模型的预测表现",
+              "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+              "action": "revise",
+              "id": "d29dd89b22fa"
+            },
+            {
+              "label": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+              "value": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+              "action": "revise",
+              "id": "d0e6cb5fdae6"
+            },
+            {
+              "label": "暂不确定",
+              "value": "未知",
+              "action": "unknown",
+              "id": "2c3af7fa609c"
+            },
+            {
+              "label": "其他，我来补充",
+              "value": "",
+              "action": "custom",
+              "id": "47de6eddb129"
+            }
+          ],
+          "origin": "template",
+          "allow_accept": false,
+          "choice_policy": {
+            "intent": "comparison",
+            "origin": "user_declared",
+            "policy_hash": null
+          },
+          "choice_id": "8c3424d6f3b842ce",
+          "choice_plan_hash": "71dd52dc7aeb177cf2611683ee06d48f5782a4832d83548bd1e0c45e79cb6c5e"
+        }
+      ],
+      "execution_authorized": false,
+      "scientific_claim_verified": false,
+      "model_used": false,
+      "clarification": {
+        "mode": "template",
+        "reason": "model_unavailable_or_rejected",
+        "model_used": true,
+        "error_type": "ValueError",
+        "validation_error": "NoValidPriorityQuestions: [{\"field\": \"objective_type\", \"reason\": \"InventedQuestionNumericAssumption\"}]"
+      },
+      "question_form": true
+    },
+    "before": {
+      "schema_version": "research_planning_v1",
+      "id": "575a1576136f48c8af8bfdc6d3302dfd",
+      "revision": 2,
+      "active": true,
+      "facts": {
+        "research_question": {
+          "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+          "quote": "我想研究设备故障预测，比较逻辑回归和树模型。",
+          "status": "proposed",
+          "turn": 1
+        },
+        "objective_type": {
+          "value": "comparison",
+          "quote": "比较逻辑回归和树模型",
+          "status": "declared",
+          "turn": 1
+        },
+        "factors": {
+          "value": "模型类型：逻辑回归 vs 树模型",
+          "quote": "比较逻辑回归和树模型",
+          "status": "proposed",
+          "turn": 1
+        },
+        "deliverable": {
+          "value": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项",
+          "quote": "请先帮我把问题变成能检验的实验，逐步给我可选的决定。",
+          "status": "proposed",
+          "turn": 1
+        },
+        "scope": {
+          "value": "仅限本校实验台的温度传感器日志",
+          "quote": "只讨论本校实验台的温度传感器日志",
+          "status": "proposed",
+          "turn": 2
+        },
+        "exclusions": {
+          "value": "不做因果解释；不推广到其他设备",
+          "quote": "不解释因果，也不推广到其他设备",
+          "status": "proposed",
+          "turn": 2
+        },
+        "experimental_unit": {
+          "value": "整台设备的一次运行",
+          "quote": "以整台设备的一次运行作观察单位",
+          "status": "declared",
+          "turn": 2
+        },
+        "analysis": {
+          "value": "同一设备的多次记录相互相关，不能当作独立重复（需考虑设备内相关性）",
+          "quote": "同一设备的多次记录相互相关，不能当成独立重复",
+          "status": "proposed",
+          "turn": 2
+        },
+        "data_source": {
+          "value": "本校实验台温度传感器日志",
+          "quote": "只讨论本校实验台的温度传感器日志",
+          "status": "proposed",
+          "turn": 2
+        }
+      },
+      "unknown": [],
+      "conflicts": {
+        "research_question": [
+          {
+            "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+            "quote": "我想研究设备故障预测，比较逻辑回归和树模型。",
+            "status": "proposed",
+            "turn": 1
+          },
+          {
+            "value": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+            "quote": "只讨论本校实验台的温度传感器日志，目标是预测下一次运行是否故障",
+            "status": "proposed",
+            "turn": 2
+          }
+        ],
+        "objective_type": [
+          {
+            "value": "comparison",
+            "quote": "比较逻辑回归和树模型",
+            "status": "declared",
+            "turn": 1
+          },
+          {
+            "value": "prediction",
+            "quote": "目标是预测下一次运行是否故障，不解释因果",
+            "status": "proposed",
+            "turn": 2
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "turn": 1,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "research_question",
+              "kind": "added",
+              "before": null,
+              "after": "设备故障预测：比较逻辑回归与树模型的预测表现"
+            },
+            {
+              "field": "objective_type",
+              "kind": "added",
+              "before": null,
+              "after": "comparison"
+            },
+            {
+              "field": "factors",
+              "kind": "added",
+              "before": null,
+              "after": "模型类型：逻辑回归 vs 树模型"
+            },
+            {
+              "field": "deliverable",
+              "kind": "added",
+              "before": null,
+              "after": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项"
+            }
+          ]
+        },
+        {
+          "turn": 2,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "research_question",
+              "kind": "conflict",
+              "before": "设备故障预测：比较逻辑回归与树模型的预测表现",
+              "after": "基于本校实验台温度传感器日志，预测下一次运行是否故障"
+            },
+            {
+              "field": "objective_type",
+              "kind": "conflict",
+              "before": "comparison",
+              "after": "prediction"
+            },
+            {
+              "field": "scope",
+              "kind": "added",
+              "before": null,
+              "after": "仅限本校实验台的温度传感器日志"
+            },
+            {
+              "field": "exclusions",
+              "kind": "added",
+              "before": null,
+              "after": "不做因果解释；不推广到其他设备"
+            },
+            {
+              "field": "experimental_unit",
+              "kind": "added",
+              "before": null,
+              "after": "整台设备的一次运行"
+            },
+            {
+              "field": "analysis",
+              "kind": "added",
+              "before": null,
+              "after": "同一设备的多次记录相互相关，不能当作独立重复（需考虑设备内相关性）"
+            },
+            {
+              "field": "data_source",
+              "kind": "added",
+              "before": null,
+              "after": "本校实验台温度传感器日志"
+            }
+          ]
+        }
+      ],
+      "approval": null,
+      "pending": {
+        "field": "research_question",
+        "kind": "conflict",
+        "question": "关于研究问题，你希望保留哪一项？",
+        "rationale": "冲突不能由模型悄悄覆盖；改变边界会使原确认失效。",
+        "options": [
+          {
+            "label": "设备故障预测：比较逻辑回归与树模型的预测表现",
+            "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+            "action": "revise",
+            "id": "d29dd89b22fa"
+          },
+          {
+            "label": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+            "value": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+            "action": "revise",
+            "id": "d0e6cb5fdae6"
+          },
+          {
+            "label": "暂不确定",
+            "value": "未知",
+            "action": "unknown",
+            "id": "2c3af7fa609c"
+          },
+          {
+            "label": "其他，我来补充",
+            "value": "",
+            "action": "custom",
+            "id": "47de6eddb129"
+          }
+        ],
+        "origin": "template",
+        "allow_accept": false,
+        "choice_policy": {
+          "intent": "comparison",
+          "origin": "user_declared",
+          "policy_hash": null
+        },
+        "choice_id": "8c3424d6f3b842ce",
+        "choice_plan_hash": "71dd52dc7aeb177cf2611683ee06d48f5782a4832d83548bd1e0c45e79cb6c5e"
+      },
+      "reflections": [],
+      "changes": [
+        {
+          "field": "research_question",
+          "kind": "added",
+          "before": null,
+          "after": "设备故障预测：比较逻辑回归与树模型的预测表现"
+        },
+        {
+          "field": "objective_type",
+          "kind": "added",
+          "before": null,
+          "after": "comparison"
+        },
+        {
+          "field": "factors",
+          "kind": "added",
+          "before": null,
+          "after": "模型类型：逻辑回归 vs 树模型"
+        },
+        {
+          "field": "deliverable",
+          "kind": "added",
+          "before": null,
+          "after": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项"
+        },
+        {
+          "field": "research_question",
+          "kind": "conflict",
+          "before": "设备故障预测：比较逻辑回归与树模型的预测表现",
+          "after": "基于本校实验台温度传感器日志，预测下一次运行是否故障"
+        },
+        {
+          "field": "objective_type",
+          "kind": "conflict",
+          "before": "comparison",
+          "after": "prediction"
+        },
+        {
+          "field": "scope",
+          "kind": "added",
+          "before": null,
+          "after": "仅限本校实验台的温度传感器日志"
+        },
+        {
+          "field": "exclusions",
+          "kind": "added",
+          "before": null,
+          "after": "不做因果解释；不推广到其他设备"
+        },
+        {
+          "field": "experimental_unit",
+          "kind": "added",
+          "before": null,
+          "after": "整台设备的一次运行"
+        },
+        {
+          "field": "analysis",
+          "kind": "added",
+          "before": null,
+          "after": "同一设备的多次记录相互相关，不能当作独立重复（需考虑设备内相关性）"
+        },
+        {
+          "field": "data_source",
+          "kind": "added",
+          "before": null,
+          "after": "本校实验台温度传感器日志"
+        }
+      ],
+      "stale": {},
+      "turns": 2,
+      "audience": "researcher_student",
+      "last_notes": [
+        "语义改写和推断仅作为待确认提议展示，不会自动成为已确认边界。",
+        "本轮动态澄清不可用或未通过校验，已使用模板继续；已有边界保留。"
+      ],
+      "last_export": null,
+      "clarification": {
+        "mode": "template",
+        "reason": "model_unavailable_or_rejected",
+        "model_used": true,
+        "error_type": "ValueError",
+        "validation_error": "NoValidPriorityQuestions: [{\"field\": \"research_question\", \"reason\": \"InventedQuestionNumericAssumption\"}, {\"field\": \"objective_type\", \"reason\": \"InventedQuestionNumericAssumption\"}]"
+      },
+      "question_history": [
+        {
+          "turn": 1,
+          "field": "research_question",
+          "kind": "proposal",
+          "question": "关于研究问题，是否按当前理解继续？",
+          "origin": "model",
+          "basis_hash": "7a1912e70ace83cce2377664bdc5444b23e30ab9c4f2517dc5359dd59fa6f1bb"
+        },
+        {
+          "turn": 2,
+          "field": "research_question",
+          "kind": "conflict",
+          "question": "关于研究问题，你希望保留哪一项？",
+          "origin": "template",
+          "basis_hash": "c3dc2a0a2de43b2182c27cd4d8b7cf0a3b25f58fe5a98160f2fe25a9cf4e54ef"
+        }
+      ]
+    },
+    "after": {
+      "schema_version": "research_planning_v1",
+      "id": "575a1576136f48c8af8bfdc6d3302dfd",
+      "revision": 3,
+      "active": true,
+      "facts": {
+        "research_question": {
+          "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+          "quote": "我想研究设备故障预测，比较逻辑回归和树模型。",
+          "status": "proposed",
+          "turn": 1
+        },
+        "objective_type": {
+          "value": "comparison",
+          "quote": "比较逻辑回归和树模型",
+          "status": "declared",
+          "turn": 1
+        },
+        "factors": {
+          "value": "模型类型：逻辑回归 vs 树模型",
+          "quote": "比较逻辑回归和树模型",
+          "status": "proposed",
+          "turn": 1
+        },
+        "deliverable": {
+          "value": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项",
+          "quote": "请先帮我把问题变成能检验的实验，逐步给我可选的决定。",
+          "status": "proposed",
+          "turn": 1
+        },
+        "scope": {
+          "value": "仅限本校实验台的温度传感器日志",
+          "quote": "只讨论本校实验台的温度传感器日志",
+          "status": "proposed",
+          "turn": 2
+        },
+        "exclusions": {
+          "value": "不做因果解释；不推广到其他设备",
+          "quote": "不解释因果，也不推广到其他设备",
+          "status": "proposed",
+          "turn": 2
+        },
+        "experimental_unit": {
+          "value": "整台设备的一次运行",
+          "quote": "以整台设备的一次运行作观察单位",
+          "status": "declared",
+          "turn": 2
+        },
+        "analysis": {
+          "value": "同一设备的多次记录相互相关，不能当作独立重复（需考虑设备内相关性）",
+          "quote": "同一设备的多次记录相互相关，不能当成独立重复",
+          "status": "proposed",
+          "turn": 2
+        },
+        "data_source": {
+          "value": "本校实验台温度传感器日志",
+          "quote": "只讨论本校实验台的温度传感器日志",
+          "status": "proposed",
+          "turn": 2
+        }
+      },
+      "unknown": [],
+      "conflicts": {
+        "research_question": [
+          {
+            "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+            "quote": "我想研究设备故障预测，比较逻辑回归和树模型。",
+            "status": "proposed",
+            "turn": 1
+          },
+          {
+            "value": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+            "quote": "只讨论本校实验台的温度传感器日志，目标是预测下一次运行是否故障",
+            "status": "proposed",
+            "turn": 2
+          }
+        ],
+        "objective_type": [
+          {
+            "value": "comparison",
+            "quote": "比较逻辑回归和树模型",
+            "status": "declared",
+            "turn": 1
+          },
+          {
+            "value": "prediction",
+            "quote": "目标是预测下一次运行是否故障，不解释因果",
+            "status": "proposed",
+            "turn": 2
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "turn": 1,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "research_question",
+              "kind": "added",
+              "before": null,
+              "after": "设备故障预测：比较逻辑回归与树模型的预测表现"
+            },
+            {
+              "field": "objective_type",
+              "kind": "added",
+              "before": null,
+              "after": "comparison"
+            },
+            {
+              "field": "factors",
+              "kind": "added",
+              "before": null,
+              "after": "模型类型：逻辑回归 vs 树模型"
+            },
+            {
+              "field": "deliverable",
+              "kind": "added",
+              "before": null,
+              "after": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项"
+            }
+          ]
+        },
+        {
+          "turn": 2,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "research_question",
+              "kind": "conflict",
+              "before": "设备故障预测：比较逻辑回归与树模型的预测表现",
+              "after": "基于本校实验台温度传感器日志，预测下一次运行是否故障"
+            },
+            {
+              "field": "objective_type",
+              "kind": "conflict",
+              "before": "comparison",
+              "after": "prediction"
+            },
+            {
+              "field": "scope",
+              "kind": "added",
+              "before": null,
+              "after": "仅限本校实验台的温度传感器日志"
+            },
+            {
+              "field": "exclusions",
+              "kind": "added",
+              "before": null,
+              "after": "不做因果解释；不推广到其他设备"
+            },
+            {
+              "field": "experimental_unit",
+              "kind": "added",
+              "before": null,
+              "after": "整台设备的一次运行"
+            },
+            {
+              "field": "analysis",
+              "kind": "added",
+              "before": null,
+              "after": "同一设备的多次记录相互相关，不能当作独立重复（需考虑设备内相关性）"
+            },
+            {
+              "field": "data_source",
+              "kind": "added",
+              "before": null,
+              "after": "本校实验台温度传感器日志"
+            }
+          ]
+        }
+      ],
+      "approval": null,
+      "pending": {
+        "field": "research_question",
+        "kind": "conflict",
+        "question": "关于研究问题，你希望保留哪一项？",
+        "rationale": "冲突不能由模型悄悄覆盖；改变边界会使原确认失效。",
+        "options": [
+          {
+            "label": "设备故障预测：比较逻辑回归与树模型的预测表现",
+            "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+            "action": "revise",
+            "id": "d29dd89b22fa"
+          },
+          {
+            "label": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+            "value": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+            "action": "revise",
+            "id": "d0e6cb5fdae6"
+          },
+          {
+            "label": "暂不确定",
+            "value": "未知",
+            "action": "unknown",
+            "id": "2c3af7fa609c"
+          },
+          {
+            "label": "其他，我来补充",
+            "value": "",
+            "action": "custom",
+            "id": "47de6eddb129"
+          }
+        ],
+        "origin": "template",
+        "allow_accept": false,
+        "choice_policy": {
+          "intent": "comparison",
+          "origin": "user_declared",
+          "policy_hash": null
+        },
+        "choice_id": "8c3424d6f3b842ce",
+        "choice_plan_hash": "71dd52dc7aeb177cf2611683ee06d48f5782a4832d83548bd1e0c45e79cb6c5e"
+      },
+      "reflections": [],
+      "changes": [
+        {
+          "field": "research_question",
+          "kind": "added",
+          "before": null,
+          "after": "设备故障预测：比较逻辑回归与树模型的预测表现"
+        },
+        {
+          "field": "objective_type",
+          "kind": "added",
+          "before": null,
+          "after": "comparison"
+        },
+        {
+          "field": "factors",
+          "kind": "added",
+          "before": null,
+          "after": "模型类型：逻辑回归 vs 树模型"
+        },
+        {
+          "field": "deliverable",
+          "kind": "added",
+          "before": null,
+          "after": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项"
+        },
+        {
+          "field": "research_question",
+          "kind": "conflict",
+          "before": "设备故障预测：比较逻辑回归与树模型的预测表现",
+          "after": "基于本校实验台温度传感器日志，预测下一次运行是否故障"
+        },
+        {
+          "field": "objective_type",
+          "kind": "conflict",
+          "before": "comparison",
+          "after": "prediction"
+        },
+        {
+          "field": "scope",
+          "kind": "added",
+          "before": null,
+          "after": "仅限本校实验台的温度传感器日志"
+        },
+        {
+          "field": "exclusions",
+          "kind": "added",
+          "before": null,
+          "after": "不做因果解释；不推广到其他设备"
+        },
+        {
+          "field": "experimental_unit",
+          "kind": "added",
+          "before": null,
+          "after": "整台设备的一次运行"
+        },
+        {
+          "field": "analysis",
+          "kind": "added",
+          "before": null,
+          "after": "同一设备的多次记录相互相关，不能当作独立重复（需考虑设备内相关性）"
+        },
+        {
+          "field": "data_source",
+          "kind": "added",
+          "before": null,
+          "after": "本校实验台温度传感器日志"
+        }
+      ],
+      "stale": {},
+      "turns": 3,
+      "audience": "researcher_student",
+      "last_notes": [
+        "本轮字段未采纳：输入包含未登记字段，请使用当前规划字段",
+        "本轮动态澄清不可用或未通过校验，已使用模板继续；已有边界保留。"
+      ],
+      "last_export": null,
+      "clarification": {
+        "mode": "template",
+        "reason": "model_unavailable_or_rejected",
+        "model_used": true,
+        "error_type": "ValueError",
+        "validation_error": "NoValidPriorityQuestions: [{\"field\": \"objective_type\", \"reason\": \"InventedQuestionNumericAssumption\"}]"
+      },
+      "question_history": [
+        {
+          "turn": 1,
+          "field": "research_question",
+          "kind": "proposal",
+          "question": "关于研究问题，是否按当前理解继续？",
+          "origin": "model",
+          "basis_hash": "7a1912e70ace83cce2377664bdc5444b23e30ab9c4f2517dc5359dd59fa6f1bb"
+        },
+        {
+          "turn": 2,
+          "field": "research_question",
+          "kind": "conflict",
+          "question": "关于研究问题，你希望保留哪一项？",
+          "origin": "template",
+          "basis_hash": "c3dc2a0a2de43b2182c27cd4d8b7cf0a3b25f58fe5a98160f2fe25a9cf4e54ef"
+        },
+        {
+          "turn": 3,
+          "field": "research_question",
+          "kind": "conflict",
+          "question": "关于研究问题，你希望保留哪一项？",
+          "origin": "template",
+          "basis_hash": "c3dc2a0a2de43b2182c27cd4d8b7cf0a3b25f58fe5a98160f2fe25a9cf4e54ef"
+        }
+      ]
+    },
+    "known_field_missing_questions": [],
+    "state_changed": false,
+    "resources": {
+      "llm_requests": 5,
+      "llm_tokens": 11569,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 10,
+        "llm_tokens": 35000,
+        "tool_calls": 40,
+        "read_bytes": 24000
+      }
+    }
+  },
+  {
+    "turn": 4,
+    "input": "我选择预测评估设计。主指标是每台设备汇总后的故障识别召回率，越高越好，同时报告误报率。估计两个模型的召回率差，以设备为重采样单位报告bootstrap区间。暂时只做固定预算先导，没有功效保证。",
+    "seconds": 5.25,
+    "exception": null,
+    "result": {
+      "intent": "planning",
+      "answer": "正在澄清\n\n关于研究问题，你希望保留哪一项？\n1. 设备故障预测：比较逻辑回归与树模型的预测表现\n2. 基于本校实验台温度传感器日志，预测下一次运行是否故障\n3. 暂不确定\n4. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+      "planning": {
+        "id": "575a1576136f48c8af8bfdc6d3302dfd",
+        "revision": 4,
+        "active": true,
+        "facts": {
+          "research_question": {
+            "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+            "quote": "我想研究设备故障预测，比较逻辑回归和树模型。",
+            "status": "proposed",
+            "turn": 1
+          },
+          "objective_type": {
+            "value": "comparison",
+            "quote": "比较逻辑回归和树模型",
+            "status": "declared",
+            "turn": 1
+          },
+          "factors": {
+            "value": "模型类型：逻辑回归 vs 树模型",
+            "quote": "比较逻辑回归和树模型",
+            "status": "proposed",
+            "turn": 1
+          },
+          "deliverable": {
+            "value": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项",
+            "quote": "请先帮我把问题变成能检验的实验，逐步给我可选的决定。",
+            "status": "proposed",
+            "turn": 1
+          },
+          "scope": {
+            "value": "仅限本校实验台的温度传感器日志",
+            "quote": "只讨论本校实验台的温度传感器日志",
+            "status": "proposed",
+            "turn": 2
+          },
+          "exclusions": {
+            "value": "不做因果解释；不推广到其他设备",
+            "quote": "不解释因果，也不推广到其他设备",
+            "status": "proposed",
+            "turn": 2
+          },
+          "experimental_unit": {
+            "value": "整台设备的一次运行",
+            "quote": "以整台设备的一次运行作观察单位",
+            "status": "declared",
+            "turn": 2
+          },
+          "analysis": {
+            "value": "同一设备的多次记录相互相关，不能当作独立重复（需考虑设备内相关性）",
+            "quote": "同一设备的多次记录相互相关，不能当成独立重复",
+            "status": "proposed",
+            "turn": 2
+          },
+          "data_source": {
+            "value": "本校实验台温度传感器日志",
+            "quote": "只讨论本校实验台的温度传感器日志",
+            "status": "proposed",
+            "turn": 2
+          }
+        },
+        "unknown": [],
+        "conflicts": {
+          "research_question": [
+            {
+              "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+              "quote": "我想研究设备故障预测，比较逻辑回归和树模型。",
+              "status": "proposed",
+              "turn": 1
+            },
+            {
+              "value": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+              "quote": "只讨论本校实验台的温度传感器日志，目标是预测下一次运行是否故障",
+              "status": "proposed",
+              "turn": 2
+            }
+          ],
+          "objective_type": [
+            {
+              "value": "comparison",
+              "quote": "比较逻辑回归和树模型",
+              "status": "declared",
+              "turn": 1
+            },
+            {
+              "value": "prediction",
+              "quote": "目标是预测下一次运行是否故障，不解释因果",
+              "status": "proposed",
+              "turn": 2
+            }
+          ]
+        },
+        "stale": {},
+        "pending": {
+          "field": "research_question",
+          "kind": "conflict",
+          "question": "关于研究问题，你希望保留哪一项？",
+          "rationale": "这是当前最高优先级的冲突项，且直接决定后续假设、基线与验收的写法；你已说明的评估设计（设备级重采样、召回率差）需要与保留的问题版本对齐，否则方案内部会不一致。",
+          "references": [
+            {
+              "source": "conflict",
+              "key": "research_question:0",
+              "quote": "设备故障预测：比较逻辑回归与树模型的预测表现"
+            },
+            {
+              "source": "conflict",
+              "key": "research_question:1",
+              "quote": "基于本校实验台温度传感器日志，预测下一次运行是否故障"
+            },
+            {
+              "source": "answer",
+              "key": "current",
+              "quote": "我选择预测评估设计。主指标是每台设备汇总后的故障识别召回率，越高越好，同时报告误报率。估计两个模型的召回率差，以设备为重采样单位报告bootstrap区间。"
+            }
+          ],
+          "options": [
+            {
+              "label": "设备故障预测：比较逻辑回归与树模型的预测表现",
+              "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+              "action": "revise",
+              "id": "d29dd89b22fa"
+            },
+            {
+              "label": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+              "value": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+              "action": "revise",
+              "id": "d0e6cb5fdae6"
+            },
+            {
+              "label": "暂不确定",
+              "value": "未知",
+              "action": "unknown",
+              "id": "2c3af7fa609c"
+            },
+            {
+              "label": "其他，我来补充",
+              "value": "",
+              "action": "custom",
+              "id": "47de6eddb129"
+            }
+          ],
+          "origin": "model",
+          "allow_accept": false,
+          "choice_policy": {
+            "intent": "comparison",
+            "origin": "user_declared",
+            "policy_hash": null
+          },
+          "choice_id": "8c3424d6f3b842ce",
+          "choice_plan_hash": "71dd52dc7aeb177cf2611683ee06d48f5782a4832d83548bd1e0c45e79cb6c5e"
+        },
+        "review": {
+          "ready": false,
+          "checks": [
+            {
+              "field": "hypothesis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+            },
+            {
+              "field": "scope",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "exclusions",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "experimental_unit",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "factors",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "design",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+            },
+            {
+              "field": "outcomes",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+            },
+            {
+              "field": "baseline",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+            },
+            {
+              "field": "data_source",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "sampling",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+            },
+            {
+              "field": "analysis",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "acceptance",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+            },
+            {
+              "field": "resources",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？"
+            },
+            {
+              "field": "risks",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+            },
+            {
+              "field": "reproducibility",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+            },
+            {
+              "field": "human_roles",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+            },
+            {
+              "field": "deliverable",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "research_question",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "research_question",
+              "code": "unresolved_conflict",
+              "status": "blocked",
+              "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+            },
+            {
+              "field": "objective_type",
+              "code": "unresolved_conflict",
+              "status": "blocked",
+              "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+            },
+            {
+              "field": "scope",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "exclusions",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "factors",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "data_source",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "analysis",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "deliverable",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "objective_type",
+              "code": "objective_classified",
+              "status": "passed",
+              "detail": "需要明确比较、预测、因果、探索或复现目的。"
+            },
+            {
+              "field": "analysis",
+              "code": "estimand_declared",
+              "status": "blocked",
+              "detail": "写清估计对象或主要对比，不能只写运行统计检验。"
+            },
+            {
+              "field": "analysis",
+              "code": "uncertainty_declared",
+              "status": "blocked",
+              "detail": "声明置信区间或其他不确定性表达，避免只报告显著性。"
+            }
+          ],
+          "blockers": [
+            {
+              "field": "hypothesis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+            },
+            {
+              "field": "design",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+            },
+            {
+              "field": "outcomes",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+            },
+            {
+              "field": "baseline",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+            },
+            {
+              "field": "sampling",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+            },
+            {
+              "field": "acceptance",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+            },
+            {
+              "field": "resources",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "可用多少时间、计算、实验次数或经费？哪些上限不可突破？"
+            },
+            {
+              "field": "risks",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+            },
+            {
+              "field": "reproducibility",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+            },
+            {
+              "field": "human_roles",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+            },
+            {
+              "field": "research_question",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "research_question",
+              "code": "unresolved_conflict",
+              "status": "blocked",
+              "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+            },
+            {
+              "field": "objective_type",
+              "code": "unresolved_conflict",
+              "status": "blocked",
+              "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+            },
+            {
+              "field": "scope",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "exclusions",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "factors",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "data_source",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "analysis",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "deliverable",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "analysis",
+              "code": "estimand_declared",
+              "status": "blocked",
+              "detail": "写清估计对象或主要对比，不能只写运行统计检验。"
+            },
+            {
+              "field": "analysis",
+              "code": "uncertainty_declared",
+              "status": "blocked",
+              "detail": "声明置信区间或其他不确定性表达，避免只报告显著性。"
+            }
+          ],
+          "required_fields": [
+            "research_question",
+            "objective_type",
+            "hypothesis",
+            "scope",
+            "exclusions",
+            "experimental_unit",
+            "factors",
+            "design",
+            "outcomes",
+            "baseline",
+            "data_source",
+            "sampling",
+            "analysis",
+            "acceptance",
+            "resources",
+            "risks",
+            "reproducibility",
+            "human_roles",
+            "deliverable"
+          ],
+          "scope": "planning_only",
+          "execution_authorized": false,
+          "scientific_claim_verified": false,
+          "readiness_meaning": "用户声明已足够形成待人类复核的计划；不表示假设、数据、功效或结论已被验证。"
+        },
+        "contract_hash": "71dd52dc7aeb177cf2611683ee06d48f5782a4832d83548bd1e0c45e79cb6c5e",
+        "approved": false,
+        "decisions_count": 2,
+        "reflections_count": 0,
+        "evidence": [],
+        "evidence_actions": {},
+        "clarification": {
+          "mode": "dynamic",
+          "reason": "validated_partial",
+          "rejected_questions": [
+            {
+              "field": "objective_type",
+              "reason": "InventedQuestionNumericAssumption"
+            }
+          ],
+          "model_used": true
+        },
+        "last_export": null,
+        "execution_authorized": false
+      },
+      "questions": [
+        {
+          "field": "research_question",
+          "kind": "conflict",
+          "question": "关于研究问题，你希望保留哪一项？",
+          "rationale": "这是当前最高优先级的冲突项，且直接决定后续假设、基线与验收的写法；你已说明的评估设计（设备级重采样、召回率差）需要与保留的问题版本对齐，否则方案内部会不一致。",
+          "references": [
+            {
+              "source": "conflict",
+              "key": "research_question:0",
+              "quote": "设备故障预测：比较逻辑回归与树模型的预测表现"
+            },
+            {
+              "source": "conflict",
+              "key": "research_question:1",
+              "quote": "基于本校实验台温度传感器日志，预测下一次运行是否故障"
+            },
+            {
+              "source": "answer",
+              "key": "current",
+              "quote": "我选择预测评估设计。主指标是每台设备汇总后的故障识别召回率，越高越好，同时报告误报率。估计两个模型的召回率差，以设备为重采样单位报告bootstrap区间。"
+            }
+          ],
+          "options": [
+            {
+              "label": "设备故障预测：比较逻辑回归与树模型的预测表现",
+              "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+              "action": "revise",
+              "id": "d29dd89b22fa"
+            },
+            {
+              "label": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+              "value": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+              "action": "revise",
+              "id": "d0e6cb5fdae6"
+            },
+            {
+              "label": "暂不确定",
+              "value": "未知",
+              "action": "unknown",
+              "id": "2c3af7fa609c"
+            },
+            {
+              "label": "其他，我来补充",
+              "value": "",
+              "action": "custom",
+              "id": "47de6eddb129"
+            }
+          ],
+          "origin": "model",
+          "allow_accept": false,
+          "choice_policy": {
+            "intent": "comparison",
+            "origin": "user_declared",
+            "policy_hash": null
+          },
+          "choice_id": "8c3424d6f3b842ce",
+          "choice_plan_hash": "71dd52dc7aeb177cf2611683ee06d48f5782a4832d83548bd1e0c45e79cb6c5e"
+        }
+      ],
+      "execution_authorized": false,
+      "scientific_claim_verified": false,
+      "model_used": true,
+      "clarification": {
+        "mode": "dynamic",
+        "reason": "validated_partial",
+        "rejected_questions": [
+          {
+            "field": "objective_type",
+            "reason": "InventedQuestionNumericAssumption"
+          }
+        ],
+        "model_used": true
+      },
+      "question_form": true
+    },
+    "before": {
+      "schema_version": "research_planning_v1",
+      "id": "575a1576136f48c8af8bfdc6d3302dfd",
+      "revision": 3,
+      "active": true,
+      "facts": {
+        "research_question": {
+          "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+          "quote": "我想研究设备故障预测，比较逻辑回归和树模型。",
+          "status": "proposed",
+          "turn": 1
+        },
+        "objective_type": {
+          "value": "comparison",
+          "quote": "比较逻辑回归和树模型",
+          "status": "declared",
+          "turn": 1
+        },
+        "factors": {
+          "value": "模型类型：逻辑回归 vs 树模型",
+          "quote": "比较逻辑回归和树模型",
+          "status": "proposed",
+          "turn": 1
+        },
+        "deliverable": {
+          "value": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项",
+          "quote": "请先帮我把问题变成能检验的实验，逐步给我可选的决定。",
+          "status": "proposed",
+          "turn": 1
+        },
+        "scope": {
+          "value": "仅限本校实验台的温度传感器日志",
+          "quote": "只讨论本校实验台的温度传感器日志",
+          "status": "proposed",
+          "turn": 2
+        },
+        "exclusions": {
+          "value": "不做因果解释；不推广到其他设备",
+          "quote": "不解释因果，也不推广到其他设备",
+          "status": "proposed",
+          "turn": 2
+        },
+        "experimental_unit": {
+          "value": "整台设备的一次运行",
+          "quote": "以整台设备的一次运行作观察单位",
+          "status": "declared",
+          "turn": 2
+        },
+        "analysis": {
+          "value": "同一设备的多次记录相互相关，不能当作独立重复（需考虑设备内相关性）",
+          "quote": "同一设备的多次记录相互相关，不能当成独立重复",
+          "status": "proposed",
+          "turn": 2
+        },
+        "data_source": {
+          "value": "本校实验台温度传感器日志",
+          "quote": "只讨论本校实验台的温度传感器日志",
+          "status": "proposed",
+          "turn": 2
+        }
+      },
+      "unknown": [],
+      "conflicts": {
+        "research_question": [
+          {
+            "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+            "quote": "我想研究设备故障预测，比较逻辑回归和树模型。",
+            "status": "proposed",
+            "turn": 1
+          },
+          {
+            "value": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+            "quote": "只讨论本校实验台的温度传感器日志，目标是预测下一次运行是否故障",
+            "status": "proposed",
+            "turn": 2
+          }
+        ],
+        "objective_type": [
+          {
+            "value": "comparison",
+            "quote": "比较逻辑回归和树模型",
+            "status": "declared",
+            "turn": 1
+          },
+          {
+            "value": "prediction",
+            "quote": "目标是预测下一次运行是否故障，不解释因果",
+            "status": "proposed",
+            "turn": 2
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "turn": 1,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "research_question",
+              "kind": "added",
+              "before": null,
+              "after": "设备故障预测：比较逻辑回归与树模型的预测表现"
+            },
+            {
+              "field": "objective_type",
+              "kind": "added",
+              "before": null,
+              "after": "comparison"
+            },
+            {
+              "field": "factors",
+              "kind": "added",
+              "before": null,
+              "after": "模型类型：逻辑回归 vs 树模型"
+            },
+            {
+              "field": "deliverable",
+              "kind": "added",
+              "before": null,
+              "after": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项"
+            }
+          ]
+        },
+        {
+          "turn": 2,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "research_question",
+              "kind": "conflict",
+              "before": "设备故障预测：比较逻辑回归与树模型的预测表现",
+              "after": "基于本校实验台温度传感器日志，预测下一次运行是否故障"
+            },
+            {
+              "field": "objective_type",
+              "kind": "conflict",
+              "before": "comparison",
+              "after": "prediction"
+            },
+            {
+              "field": "scope",
+              "kind": "added",
+              "before": null,
+              "after": "仅限本校实验台的温度传感器日志"
+            },
+            {
+              "field": "exclusions",
+              "kind": "added",
+              "before": null,
+              "after": "不做因果解释；不推广到其他设备"
+            },
+            {
+              "field": "experimental_unit",
+              "kind": "added",
+              "before": null,
+              "after": "整台设备的一次运行"
+            },
+            {
+              "field": "analysis",
+              "kind": "added",
+              "before": null,
+              "after": "同一设备的多次记录相互相关，不能当作独立重复（需考虑设备内相关性）"
+            },
+            {
+              "field": "data_source",
+              "kind": "added",
+              "before": null,
+              "after": "本校实验台温度传感器日志"
+            }
+          ]
+        }
+      ],
+      "approval": null,
+      "pending": {
+        "field": "research_question",
+        "kind": "conflict",
+        "question": "关于研究问题，你希望保留哪一项？",
+        "rationale": "冲突不能由模型悄悄覆盖；改变边界会使原确认失效。",
+        "options": [
+          {
+            "label": "设备故障预测：比较逻辑回归与树模型的预测表现",
+            "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+            "action": "revise",
+            "id": "d29dd89b22fa"
+          },
+          {
+            "label": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+            "value": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+            "action": "revise",
+            "id": "d0e6cb5fdae6"
+          },
+          {
+            "label": "暂不确定",
+            "value": "未知",
+            "action": "unknown",
+            "id": "2c3af7fa609c"
+          },
+          {
+            "label": "其他，我来补充",
+            "value": "",
+            "action": "custom",
+            "id": "47de6eddb129"
+          }
+        ],
+        "origin": "template",
+        "allow_accept": false,
+        "choice_policy": {
+          "intent": "comparison",
+          "origin": "user_declared",
+          "policy_hash": null
+        },
+        "choice_id": "8c3424d6f3b842ce",
+        "choice_plan_hash": "71dd52dc7aeb177cf2611683ee06d48f5782a4832d83548bd1e0c45e79cb6c5e"
+      },
+      "reflections": [],
+      "changes": [
+        {
+          "field": "research_question",
+          "kind": "added",
+          "before": null,
+          "after": "设备故障预测：比较逻辑回归与树模型的预测表现"
+        },
+        {
+          "field": "objective_type",
+          "kind": "added",
+          "before": null,
+          "after": "comparison"
+        },
+        {
+          "field": "factors",
+          "kind": "added",
+          "before": null,
+          "after": "模型类型：逻辑回归 vs 树模型"
+        },
+        {
+          "field": "deliverable",
+          "kind": "added",
+          "before": null,
+          "after": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项"
+        },
+        {
+          "field": "research_question",
+          "kind": "conflict",
+          "before": "设备故障预测：比较逻辑回归与树模型的预测表现",
+          "after": "基于本校实验台温度传感器日志，预测下一次运行是否故障"
+        },
+        {
+          "field": "objective_type",
+          "kind": "conflict",
+          "before": "comparison",
+          "after": "prediction"
+        },
+        {
+          "field": "scope",
+          "kind": "added",
+          "before": null,
+          "after": "仅限本校实验台的温度传感器日志"
+        },
+        {
+          "field": "exclusions",
+          "kind": "added",
+          "before": null,
+          "after": "不做因果解释；不推广到其他设备"
+        },
+        {
+          "field": "experimental_unit",
+          "kind": "added",
+          "before": null,
+          "after": "整台设备的一次运行"
+        },
+        {
+          "field": "analysis",
+          "kind": "added",
+          "before": null,
+          "after": "同一设备的多次记录相互相关，不能当作独立重复（需考虑设备内相关性）"
+        },
+        {
+          "field": "data_source",
+          "kind": "added",
+          "before": null,
+          "after": "本校实验台温度传感器日志"
+        }
+      ],
+      "stale": {},
+      "turns": 3,
+      "audience": "researcher_student",
+      "last_notes": [
+        "本轮字段未采纳：输入包含未登记字段，请使用当前规划字段",
+        "本轮动态澄清不可用或未通过校验，已使用模板继续；已有边界保留。"
+      ],
+      "last_export": null,
+      "clarification": {
+        "mode": "template",
+        "reason": "model_unavailable_or_rejected",
+        "model_used": true,
+        "error_type": "ValueError",
+        "validation_error": "NoValidPriorityQuestions: [{\"field\": \"objective_type\", \"reason\": \"InventedQuestionNumericAssumption\"}]"
+      },
+      "question_history": [
+        {
+          "turn": 1,
+          "field": "research_question",
+          "kind": "proposal",
+          "question": "关于研究问题，是否按当前理解继续？",
+          "origin": "model",
+          "basis_hash": "7a1912e70ace83cce2377664bdc5444b23e30ab9c4f2517dc5359dd59fa6f1bb"
+        },
+        {
+          "turn": 2,
+          "field": "research_question",
+          "kind": "conflict",
+          "question": "关于研究问题，你希望保留哪一项？",
+          "origin": "template",
+          "basis_hash": "c3dc2a0a2de43b2182c27cd4d8b7cf0a3b25f58fe5a98160f2fe25a9cf4e54ef"
+        },
+        {
+          "turn": 3,
+          "field": "research_question",
+          "kind": "conflict",
+          "question": "关于研究问题，你希望保留哪一项？",
+          "origin": "template",
+          "basis_hash": "c3dc2a0a2de43b2182c27cd4d8b7cf0a3b25f58fe5a98160f2fe25a9cf4e54ef"
+        }
+      ]
+    },
+    "after": {
+      "schema_version": "research_planning_v1",
+      "id": "575a1576136f48c8af8bfdc6d3302dfd",
+      "revision": 4,
+      "active": true,
+      "facts": {
+        "research_question": {
+          "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+          "quote": "我想研究设备故障预测，比较逻辑回归和树模型。",
+          "status": "proposed",
+          "turn": 1
+        },
+        "objective_type": {
+          "value": "comparison",
+          "quote": "比较逻辑回归和树模型",
+          "status": "declared",
+          "turn": 1
+        },
+        "factors": {
+          "value": "模型类型：逻辑回归 vs 树模型",
+          "quote": "比较逻辑回归和树模型",
+          "status": "proposed",
+          "turn": 1
+        },
+        "deliverable": {
+          "value": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项",
+          "quote": "请先帮我把问题变成能检验的实验，逐步给我可选的决定。",
+          "status": "proposed",
+          "turn": 1
+        },
+        "scope": {
+          "value": "仅限本校实验台的温度传感器日志",
+          "quote": "只讨论本校实验台的温度传感器日志",
+          "status": "proposed",
+          "turn": 2
+        },
+        "exclusions": {
+          "value": "不做因果解释；不推广到其他设备",
+          "quote": "不解释因果，也不推广到其他设备",
+          "status": "proposed",
+          "turn": 2
+        },
+        "experimental_unit": {
+          "value": "整台设备的一次运行",
+          "quote": "以整台设备的一次运行作观察单位",
+          "status": "declared",
+          "turn": 2
+        },
+        "analysis": {
+          "value": "同一设备的多次记录相互相关，不能当作独立重复（需考虑设备内相关性）",
+          "quote": "同一设备的多次记录相互相关，不能当成独立重复",
+          "status": "proposed",
+          "turn": 2
+        },
+        "data_source": {
+          "value": "本校实验台温度传感器日志",
+          "quote": "只讨论本校实验台的温度传感器日志",
+          "status": "proposed",
+          "turn": 2
+        }
+      },
+      "unknown": [],
+      "conflicts": {
+        "research_question": [
+          {
+            "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+            "quote": "我想研究设备故障预测，比较逻辑回归和树模型。",
+            "status": "proposed",
+            "turn": 1
+          },
+          {
+            "value": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+            "quote": "只讨论本校实验台的温度传感器日志，目标是预测下一次运行是否故障",
+            "status": "proposed",
+            "turn": 2
+          }
+        ],
+        "objective_type": [
+          {
+            "value": "comparison",
+            "quote": "比较逻辑回归和树模型",
+            "status": "declared",
+            "turn": 1
+          },
+          {
+            "value": "prediction",
+            "quote": "目标是预测下一次运行是否故障，不解释因果",
+            "status": "proposed",
+            "turn": 2
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "turn": 1,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "research_question",
+              "kind": "added",
+              "before": null,
+              "after": "设备故障预测：比较逻辑回归与树模型的预测表现"
+            },
+            {
+              "field": "objective_type",
+              "kind": "added",
+              "before": null,
+              "after": "comparison"
+            },
+            {
+              "field": "factors",
+              "kind": "added",
+              "before": null,
+              "after": "模型类型：逻辑回归 vs 树模型"
+            },
+            {
+              "field": "deliverable",
+              "kind": "added",
+              "before": null,
+              "after": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项"
+            }
+          ]
+        },
+        {
+          "turn": 2,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "research_question",
+              "kind": "conflict",
+              "before": "设备故障预测：比较逻辑回归与树模型的预测表现",
+              "after": "基于本校实验台温度传感器日志，预测下一次运行是否故障"
+            },
+            {
+              "field": "objective_type",
+              "kind": "conflict",
+              "before": "comparison",
+              "after": "prediction"
+            },
+            {
+              "field": "scope",
+              "kind": "added",
+              "before": null,
+              "after": "仅限本校实验台的温度传感器日志"
+            },
+            {
+              "field": "exclusions",
+              "kind": "added",
+              "before": null,
+              "after": "不做因果解释；不推广到其他设备"
+            },
+            {
+              "field": "experimental_unit",
+              "kind": "added",
+              "before": null,
+              "after": "整台设备的一次运行"
+            },
+            {
+              "field": "analysis",
+              "kind": "added",
+              "before": null,
+              "after": "同一设备的多次记录相互相关，不能当作独立重复（需考虑设备内相关性）"
+            },
+            {
+              "field": "data_source",
+              "kind": "added",
+              "before": null,
+              "after": "本校实验台温度传感器日志"
+            }
+          ]
+        }
+      ],
+      "approval": null,
+      "pending": {
+        "field": "research_question",
+        "kind": "conflict",
+        "question": "关于研究问题，你希望保留哪一项？",
+        "rationale": "这是当前最高优先级的冲突项，且直接决定后续假设、基线与验收的写法；你已说明的评估设计（设备级重采样、召回率差）需要与保留的问题版本对齐，否则方案内部会不一致。",
+        "references": [
+          {
+            "source": "conflict",
+            "key": "research_question:0",
+            "quote": "设备故障预测：比较逻辑回归与树模型的预测表现"
+          },
+          {
+            "source": "conflict",
+            "key": "research_question:1",
+            "quote": "基于本校实验台温度传感器日志，预测下一次运行是否故障"
+          },
+          {
+            "source": "answer",
+            "key": "current",
+            "quote": "我选择预测评估设计。主指标是每台设备汇总后的故障识别召回率，越高越好，同时报告误报率。估计两个模型的召回率差，以设备为重采样单位报告bootstrap区间。"
+          }
+        ],
+        "options": [
+          {
+            "label": "设备故障预测：比较逻辑回归与树模型的预测表现",
+            "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+            "action": "revise",
+            "id": "d29dd89b22fa"
+          },
+          {
+            "label": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+            "value": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+            "action": "revise",
+            "id": "d0e6cb5fdae6"
+          },
+          {
+            "label": "暂不确定",
+            "value": "未知",
+            "action": "unknown",
+            "id": "2c3af7fa609c"
+          },
+          {
+            "label": "其他，我来补充",
+            "value": "",
+            "action": "custom",
+            "id": "47de6eddb129"
+          }
+        ],
+        "origin": "model",
+        "allow_accept": false,
+        "choice_policy": {
+          "intent": "comparison",
+          "origin": "user_declared",
+          "policy_hash": null
+        },
+        "choice_id": "8c3424d6f3b842ce",
+        "choice_plan_hash": "71dd52dc7aeb177cf2611683ee06d48f5782a4832d83548bd1e0c45e79cb6c5e"
+      },
+      "reflections": [],
+      "changes": [
+        {
+          "field": "research_question",
+          "kind": "added",
+          "before": null,
+          "after": "设备故障预测：比较逻辑回归与树模型的预测表现"
+        },
+        {
+          "field": "objective_type",
+          "kind": "added",
+          "before": null,
+          "after": "comparison"
+        },
+        {
+          "field": "factors",
+          "kind": "added",
+          "before": null,
+          "after": "模型类型：逻辑回归 vs 树模型"
+        },
+        {
+          "field": "deliverable",
+          "kind": "added",
+          "before": null,
+          "after": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项"
+        },
+        {
+          "field": "research_question",
+          "kind": "conflict",
+          "before": "设备故障预测：比较逻辑回归与树模型的预测表现",
+          "after": "基于本校实验台温度传感器日志，预测下一次运行是否故障"
+        },
+        {
+          "field": "objective_type",
+          "kind": "conflict",
+          "before": "comparison",
+          "after": "prediction"
+        },
+        {
+          "field": "scope",
+          "kind": "added",
+          "before": null,
+          "after": "仅限本校实验台的温度传感器日志"
+        },
+        {
+          "field": "exclusions",
+          "kind": "added",
+          "before": null,
+          "after": "不做因果解释；不推广到其他设备"
+        },
+        {
+          "field": "experimental_unit",
+          "kind": "added",
+          "before": null,
+          "after": "整台设备的一次运行"
+        },
+        {
+          "field": "analysis",
+          "kind": "added",
+          "before": null,
+          "after": "同一设备的多次记录相互相关，不能当作独立重复（需考虑设备内相关性）"
+        },
+        {
+          "field": "data_source",
+          "kind": "added",
+          "before": null,
+          "after": "本校实验台温度传感器日志"
+        }
+      ],
+      "stale": {},
+      "turns": 4,
+      "audience": "researcher_student",
+      "last_notes": [
+        "本轮语义整理未被采纳；请使用 research_question: 你的回答，或选择当前问题的编号。"
+      ],
+      "last_export": null,
+      "clarification": {
+        "mode": "dynamic",
+        "reason": "validated_partial",
+        "rejected_questions": [
+          {
+            "field": "objective_type",
+            "reason": "InventedQuestionNumericAssumption"
+          }
+        ],
+        "model_used": true
+      },
+      "question_history": [
+        {
+          "turn": 1,
+          "field": "research_question",
+          "kind": "proposal",
+          "question": "关于研究问题，是否按当前理解继续？",
+          "origin": "model",
+          "basis_hash": "7a1912e70ace83cce2377664bdc5444b23e30ab9c4f2517dc5359dd59fa6f1bb"
+        },
+        {
+          "turn": 2,
+          "field": "research_question",
+          "kind": "conflict",
+          "question": "关于研究问题，你希望保留哪一项？",
+          "origin": "template",
+          "basis_hash": "c3dc2a0a2de43b2182c27cd4d8b7cf0a3b25f58fe5a98160f2fe25a9cf4e54ef"
+        },
+        {
+          "turn": 3,
+          "field": "research_question",
+          "kind": "conflict",
+          "question": "关于研究问题，你希望保留哪一项？",
+          "origin": "template",
+          "basis_hash": "c3dc2a0a2de43b2182c27cd4d8b7cf0a3b25f58fe5a98160f2fe25a9cf4e54ef"
+        },
+        {
+          "turn": 4,
+          "field": "research_question",
+          "kind": "conflict",
+          "question": "关于研究问题，你希望保留哪一项？",
+          "origin": "model",
+          "basis_hash": "c3dc2a0a2de43b2182c27cd4d8b7cf0a3b25f58fe5a98160f2fe25a9cf4e54ef"
+        }
+      ]
+    },
+    "known_field_missing_questions": [],
+    "state_changed": false,
+    "resources": {
+      "llm_requests": 7,
+      "llm_tokens": 16338,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 10,
+        "llm_tokens": 35000,
+        "tool_calls": 40,
+        "read_bytes": 24000
+      }
+    }
+  },
+  {
+    "turn": 5,
+    "input": "本轮只交付设计。后续最多十次模型拟合或两小时就停止，阴性和不确定结果也要报告，不为追求好结果加预算。数据来源是合成日志sensor_demo_v1；没有独立测试设备时停止并请导师判断。记录数据与代码版本、配置、种子及偏离；我确认范围，导师复核分析，人来另行授权执行。交付实验设计和验收表。",
+    "seconds": 5.906,
+    "exception": null,
+    "result": {
+      "intent": "planning",
+      "answer": "正在澄清\n\n关于研究问题，你希望保留哪一项？\n1. 设备故障预测：比较逻辑回归与树模型的预测表现\n2. 基于本校实验台温度传感器日志，预测下一次运行是否故障\n3. 暂不确定\n4. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+      "planning": {
+        "id": "575a1576136f48c8af8bfdc6d3302dfd",
+        "revision": 5,
+        "active": true,
+        "facts": {
+          "research_question": {
+            "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+            "quote": "我想研究设备故障预测，比较逻辑回归和树模型。",
+            "status": "proposed",
+            "turn": 1
+          },
+          "objective_type": {
+            "value": "comparison",
+            "quote": "比较逻辑回归和树模型",
+            "status": "declared",
+            "turn": 1
+          },
+          "factors": {
+            "value": "模型类型：逻辑回归 vs 树模型",
+            "quote": "比较逻辑回归和树模型",
+            "status": "proposed",
+            "turn": 1
+          },
+          "deliverable": {
+            "value": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项",
+            "quote": "请先帮我把问题变成能检验的实验，逐步给我可选的决定。",
+            "status": "proposed",
+            "turn": 1
+          },
+          "scope": {
+            "value": "仅限本校实验台的温度传感器日志",
+            "quote": "只讨论本校实验台的温度传感器日志",
+            "status": "proposed",
+            "turn": 2
+          },
+          "exclusions": {
+            "value": "不做因果解释；不推广到其他设备",
+            "quote": "不解释因果，也不推广到其他设备",
+            "status": "proposed",
+            "turn": 2
+          },
+          "experimental_unit": {
+            "value": "整台设备的一次运行",
+            "quote": "以整台设备的一次运行作观察单位",
+            "status": "declared",
+            "turn": 2
+          },
+          "analysis": {
+            "value": "同一设备的多次记录相互相关，不能当作独立重复（需考虑设备内相关性）",
+            "quote": "同一设备的多次记录相互相关，不能当成独立重复",
+            "status": "proposed",
+            "turn": 2
+          },
+          "data_source": {
+            "value": "本校实验台温度传感器日志",
+            "quote": "只讨论本校实验台的温度传感器日志",
+            "status": "proposed",
+            "turn": 2
+          },
+          "resources": {
+            "value": "后续最多十次模型拟合或两小时就停止",
+            "quote": "后续最多十次模型拟合或两小时就停止",
+            "status": "declared",
+            "turn": 5
+          },
+          "acceptance": {
+            "value": "阴性和不确定结果也要报告；不为追求好结果加预算",
+            "quote": "阴性和不确定结果也要报告，不为追求好结果加预算。",
+            "status": "proposed",
+            "turn": 5
+          },
+          "risks": {
+            "value": "没有独立测试设备时停止并请导师判断",
+            "quote": "没有独立测试设备时停止并请导师判断。",
+            "status": "declared",
+            "turn": 5
+          },
+          "reproducibility": {
+            "value": "记录数据与代码版本、配置、种子及偏离",
+            "quote": "记录数据与代码版本、配置、种子及偏离",
+            "status": "declared",
+            "turn": 5
+          },
+          "human_roles": {
+            "value": "我确认范围，导师复核分析，人来另行授权执行",
+            "quote": "我确认范围，导师复核分析，人来另行授权执行。",
+            "status": "declared",
+            "turn": 5
+          }
+        },
+        "unknown": [],
+        "conflicts": {
+          "research_question": [
+            {
+              "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+              "quote": "我想研究设备故障预测，比较逻辑回归和树模型。",
+              "status": "proposed",
+              "turn": 1
+            },
+            {
+              "value": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+              "quote": "只讨论本校实验台的温度传感器日志，目标是预测下一次运行是否故障",
+              "status": "proposed",
+              "turn": 2
+            }
+          ],
+          "objective_type": [
+            {
+              "value": "comparison",
+              "quote": "比较逻辑回归和树模型",
+              "status": "declared",
+              "turn": 1
+            },
+            {
+              "value": "prediction",
+              "quote": "目标是预测下一次运行是否故障，不解释因果",
+              "status": "proposed",
+              "turn": 2
+            }
+          ],
+          "deliverable": [
+            {
+              "value": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项",
+              "quote": "请先帮我把问题变成能检验的实验，逐步给我可选的决定。",
+              "status": "proposed",
+              "turn": 1
+            },
+            {
+              "value": "本轮只交付设计：实验设计和验收表",
+              "quote": "本轮只交付设计。",
+              "status": "proposed",
+              "turn": 5
+            }
+          ],
+          "data_source": [
+            {
+              "value": "本校实验台温度传感器日志",
+              "quote": "只讨论本校实验台的温度传感器日志",
+              "status": "proposed",
+              "turn": 2
+            },
+            {
+              "value": "合成日志 sensor_demo_v1",
+              "quote": "数据来源是合成日志sensor_demo_v1",
+              "status": "proposed",
+              "turn": 5
+            }
+          ]
+        },
+        "stale": {},
+        "pending": {
+          "field": "research_question",
+          "kind": "conflict",
+          "question": "关于研究问题，你希望保留哪一项？",
+          "rationale": "两个版本对应不同的目的类型与验收口径：comparison 关注两模型相对表现，prediction 关注对下一次运行的预测准确性。目的类型未定，假设、主要指标与基线都无法对齐。",
+          "references": [
+            {
+              "source": "conflict",
+              "key": "research_question:0",
+              "quote": "设备故障预测：比较逻辑回归与树模型的预测表现"
+            },
+            {
+              "source": "conflict",
+              "key": "research_question:1",
+              "quote": "基于本校实验台温度传感器日志，预测下一次运行是否故障"
+            },
+            {
+              "source": "conflict",
+              "key": "objective_type:1",
+              "quote": "prediction"
+            }
+          ],
+          "options": [
+            {
+              "label": "设备故障预测：比较逻辑回归与树模型的预测表现",
+              "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+              "action": "revise",
+              "id": "d29dd89b22fa"
+            },
+            {
+              "label": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+              "value": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+              "action": "revise",
+              "id": "d0e6cb5fdae6"
+            },
+            {
+              "label": "暂不确定",
+              "value": "未知",
+              "action": "unknown",
+              "id": "2c3af7fa609c"
+            },
+            {
+              "label": "其他，我来补充",
+              "value": "",
+              "action": "custom",
+              "id": "47de6eddb129"
+            }
+          ],
+          "origin": "model",
+          "allow_accept": false,
+          "choice_policy": {
+            "intent": "comparison",
+            "origin": "user_declared",
+            "policy_hash": null
+          },
+          "choice_id": "56e091f2bcbf8fc0",
+          "choice_plan_hash": "cc69c75f0e47761d9bef24e8afa6c5348d1d886d77dee308394c5ff9da46fba9"
+        },
+        "review": {
+          "ready": false,
+          "checks": [
+            {
+              "field": "hypothesis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+            },
+            {
+              "field": "scope",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "exclusions",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "experimental_unit",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "factors",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "design",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+            },
+            {
+              "field": "outcomes",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+            },
+            {
+              "field": "baseline",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+            },
+            {
+              "field": "sampling",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+            },
+            {
+              "field": "analysis",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "acceptance",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "resources",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "risks",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "reproducibility",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "human_roles",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "research_question",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "research_question",
+              "code": "unresolved_conflict",
+              "status": "blocked",
+              "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+            },
+            {
+              "field": "objective_type",
+              "code": "unresolved_conflict",
+              "status": "blocked",
+              "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+            },
+            {
+              "field": "scope",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "exclusions",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "factors",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "data_source",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "data_source",
+              "code": "unresolved_conflict",
+              "status": "blocked",
+              "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+            },
+            {
+              "field": "analysis",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "acceptance",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "deliverable",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "deliverable",
+              "code": "unresolved_conflict",
+              "status": "blocked",
+              "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+            },
+            {
+              "field": "objective_type",
+              "code": "objective_classified",
+              "status": "passed",
+              "detail": "需要明确比较、预测、因果、探索或复现目的。"
+            },
+            {
+              "field": "analysis",
+              "code": "estimand_declared",
+              "status": "blocked",
+              "detail": "写清估计对象或主要对比，不能只写运行统计检验。"
+            },
+            {
+              "field": "analysis",
+              "code": "uncertainty_declared",
+              "status": "blocked",
+              "detail": "声明置信区间或其他不确定性表达，避免只报告显著性。"
+            },
+            {
+              "field": "acceptance",
+              "code": "measurable_acceptance",
+              "status": "blocked",
+              "detail": "验收应有可测阈值或可逐项核对的产物，不只写结果更好。"
+            },
+            {
+              "field": "acceptance",
+              "code": "negative_outcomes",
+              "status": "passed",
+              "detail": "明确阴性、不确定或反向结果也应如实报告，不能继续试到显著。"
+            },
+            {
+              "field": "acceptance",
+              "code": "stopping_rule",
+              "status": "passed",
+              "detail": "预先声明预算、信息不足或失败时的停止/升级条件。"
+            },
+            {
+              "field": "resources",
+              "code": "resource_bound",
+              "status": "passed",
+              "detail": "声明可核对的资源数量、期限或硬上限。"
+            },
+            {
+              "field": "human_roles",
+              "code": "human_accountability",
+              "status": "passed",
+              "detail": "明确由谁确认边界、复核方法和批准结论，不把责任隐含交给模型。"
+            },
+            {
+              "field": "reproducibility",
+              "code": "reproducibility_records",
+              "status": "passed",
+              "detail": "至少明确数据/代码版本、种子、配置或日志中的两类复现记录。"
+            }
+          ],
+          "blockers": [
+            {
+              "field": "hypothesis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+            },
+            {
+              "field": "design",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+            },
+            {
+              "field": "outcomes",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+            },
+            {
+              "field": "baseline",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+            },
+            {
+              "field": "sampling",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+            },
+            {
+              "field": "research_question",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "research_question",
+              "code": "unresolved_conflict",
+              "status": "blocked",
+              "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+            },
+            {
+              "field": "objective_type",
+              "code": "unresolved_conflict",
+              "status": "blocked",
+              "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+            },
+            {
+              "field": "scope",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "exclusions",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "factors",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "data_source",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "data_source",
+              "code": "unresolved_conflict",
+              "status": "blocked",
+              "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+            },
+            {
+              "field": "analysis",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "acceptance",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "deliverable",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "deliverable",
+              "code": "unresolved_conflict",
+              "status": "blocked",
+              "detail": "存在相互冲突的版本，请明确保留哪一项及修订理由。"
+            },
+            {
+              "field": "analysis",
+              "code": "estimand_declared",
+              "status": "blocked",
+              "detail": "写清估计对象或主要对比，不能只写运行统计检验。"
+            },
+            {
+              "field": "analysis",
+              "code": "uncertainty_declared",
+              "status": "blocked",
+              "detail": "声明置信区间或其他不确定性表达，避免只报告显著性。"
+            },
+            {
+              "field": "acceptance",
+              "code": "measurable_acceptance",
+              "status": "blocked",
+              "detail": "验收应有可测阈值或可逐项核对的产物，不只写结果更好。"
+            }
+          ],
+          "required_fields": [
+            "research_question",
+            "objective_type",
+            "hypothesis",
+            "scope",
+            "exclusions",
+            "experimental_unit",
+            "factors",
+            "design",
+            "outcomes",
+            "baseline",
+            "data_source",
+            "sampling",
+            "analysis",
+            "acceptance",
+            "resources",
+            "risks",
+            "reproducibility",
+            "human_roles",
+            "deliverable"
+          ],
+          "scope": "planning_only",
+          "execution_authorized": false,
+          "scientific_claim_verified": false,
+          "readiness_meaning": "用户声明已足够形成待人类复核的计划；不表示假设、数据、功效或结论已被验证。"
+        },
+        "contract_hash": "cc69c75f0e47761d9bef24e8afa6c5348d1d886d77dee308394c5ff9da46fba9",
+        "approved": false,
+        "decisions_count": 3,
+        "reflections_count": 0,
+        "evidence": [],
+        "evidence_actions": {},
+        "clarification": {
+          "mode": "dynamic",
+          "reason": "validated_partial",
+          "rejected_questions": [
+            {
+              "field": "data_source",
+              "reason": "InventedQuestionNumericAssumption"
+            }
+          ],
+          "model_used": true
+        },
+        "last_export": null,
+        "execution_authorized": false
+      },
+      "questions": [
+        {
+          "field": "research_question",
+          "kind": "conflict",
+          "question": "关于研究问题，你希望保留哪一项？",
+          "rationale": "两个版本对应不同的目的类型与验收口径：comparison 关注两模型相对表现，prediction 关注对下一次运行的预测准确性。目的类型未定，假设、主要指标与基线都无法对齐。",
+          "references": [
+            {
+              "source": "conflict",
+              "key": "research_question:0",
+              "quote": "设备故障预测：比较逻辑回归与树模型的预测表现"
+            },
+            {
+              "source": "conflict",
+              "key": "research_question:1",
+              "quote": "基于本校实验台温度传感器日志，预测下一次运行是否故障"
+            },
+            {
+              "source": "conflict",
+              "key": "objective_type:1",
+              "quote": "prediction"
+            }
+          ],
+          "options": [
+            {
+              "label": "设备故障预测：比较逻辑回归与树模型的预测表现",
+              "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+              "action": "revise",
+              "id": "d29dd89b22fa"
+            },
+            {
+              "label": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+              "value": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+              "action": "revise",
+              "id": "d0e6cb5fdae6"
+            },
+            {
+              "label": "暂不确定",
+              "value": "未知",
+              "action": "unknown",
+              "id": "2c3af7fa609c"
+            },
+            {
+              "label": "其他，我来补充",
+              "value": "",
+              "action": "custom",
+              "id": "47de6eddb129"
+            }
+          ],
+          "origin": "model",
+          "allow_accept": false,
+          "choice_policy": {
+            "intent": "comparison",
+            "origin": "user_declared",
+            "policy_hash": null
+          },
+          "choice_id": "56e091f2bcbf8fc0",
+          "choice_plan_hash": "cc69c75f0e47761d9bef24e8afa6c5348d1d886d77dee308394c5ff9da46fba9"
+        }
+      ],
+      "execution_authorized": false,
+      "scientific_claim_verified": false,
+      "model_used": true,
+      "clarification": {
+        "mode": "dynamic",
+        "reason": "validated_partial",
+        "rejected_questions": [
+          {
+            "field": "data_source",
+            "reason": "InventedQuestionNumericAssumption"
+          }
+        ],
+        "model_used": true
+      },
+      "question_form": true
+    },
+    "before": {
+      "schema_version": "research_planning_v1",
+      "id": "575a1576136f48c8af8bfdc6d3302dfd",
+      "revision": 4,
+      "active": true,
+      "facts": {
+        "research_question": {
+          "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+          "quote": "我想研究设备故障预测，比较逻辑回归和树模型。",
+          "status": "proposed",
+          "turn": 1
+        },
+        "objective_type": {
+          "value": "comparison",
+          "quote": "比较逻辑回归和树模型",
+          "status": "declared",
+          "turn": 1
+        },
+        "factors": {
+          "value": "模型类型：逻辑回归 vs 树模型",
+          "quote": "比较逻辑回归和树模型",
+          "status": "proposed",
+          "turn": 1
+        },
+        "deliverable": {
+          "value": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项",
+          "quote": "请先帮我把问题变成能检验的实验，逐步给我可选的决定。",
+          "status": "proposed",
+          "turn": 1
+        },
+        "scope": {
+          "value": "仅限本校实验台的温度传感器日志",
+          "quote": "只讨论本校实验台的温度传感器日志",
+          "status": "proposed",
+          "turn": 2
+        },
+        "exclusions": {
+          "value": "不做因果解释；不推广到其他设备",
+          "quote": "不解释因果，也不推广到其他设备",
+          "status": "proposed",
+          "turn": 2
+        },
+        "experimental_unit": {
+          "value": "整台设备的一次运行",
+          "quote": "以整台设备的一次运行作观察单位",
+          "status": "declared",
+          "turn": 2
+        },
+        "analysis": {
+          "value": "同一设备的多次记录相互相关，不能当作独立重复（需考虑设备内相关性）",
+          "quote": "同一设备的多次记录相互相关，不能当成独立重复",
+          "status": "proposed",
+          "turn": 2
+        },
+        "data_source": {
+          "value": "本校实验台温度传感器日志",
+          "quote": "只讨论本校实验台的温度传感器日志",
+          "status": "proposed",
+          "turn": 2
+        }
+      },
+      "unknown": [],
+      "conflicts": {
+        "research_question": [
+          {
+            "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+            "quote": "我想研究设备故障预测，比较逻辑回归和树模型。",
+            "status": "proposed",
+            "turn": 1
+          },
+          {
+            "value": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+            "quote": "只讨论本校实验台的温度传感器日志，目标是预测下一次运行是否故障",
+            "status": "proposed",
+            "turn": 2
+          }
+        ],
+        "objective_type": [
+          {
+            "value": "comparison",
+            "quote": "比较逻辑回归和树模型",
+            "status": "declared",
+            "turn": 1
+          },
+          {
+            "value": "prediction",
+            "quote": "目标是预测下一次运行是否故障，不解释因果",
+            "status": "proposed",
+            "turn": 2
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "turn": 1,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "research_question",
+              "kind": "added",
+              "before": null,
+              "after": "设备故障预测：比较逻辑回归与树模型的预测表现"
+            },
+            {
+              "field": "objective_type",
+              "kind": "added",
+              "before": null,
+              "after": "comparison"
+            },
+            {
+              "field": "factors",
+              "kind": "added",
+              "before": null,
+              "after": "模型类型：逻辑回归 vs 树模型"
+            },
+            {
+              "field": "deliverable",
+              "kind": "added",
+              "before": null,
+              "after": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项"
+            }
+          ]
+        },
+        {
+          "turn": 2,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "research_question",
+              "kind": "conflict",
+              "before": "设备故障预测：比较逻辑回归与树模型的预测表现",
+              "after": "基于本校实验台温度传感器日志，预测下一次运行是否故障"
+            },
+            {
+              "field": "objective_type",
+              "kind": "conflict",
+              "before": "comparison",
+              "after": "prediction"
+            },
+            {
+              "field": "scope",
+              "kind": "added",
+              "before": null,
+              "after": "仅限本校实验台的温度传感器日志"
+            },
+            {
+              "field": "exclusions",
+              "kind": "added",
+              "before": null,
+              "after": "不做因果解释；不推广到其他设备"
+            },
+            {
+              "field": "experimental_unit",
+              "kind": "added",
+              "before": null,
+              "after": "整台设备的一次运行"
+            },
+            {
+              "field": "analysis",
+              "kind": "added",
+              "before": null,
+              "after": "同一设备的多次记录相互相关，不能当作独立重复（需考虑设备内相关性）"
+            },
+            {
+              "field": "data_source",
+              "kind": "added",
+              "before": null,
+              "after": "本校实验台温度传感器日志"
+            }
+          ]
+        }
+      ],
+      "approval": null,
+      "pending": {
+        "field": "research_question",
+        "kind": "conflict",
+        "question": "关于研究问题，你希望保留哪一项？",
+        "rationale": "这是当前最高优先级的冲突项，且直接决定后续假设、基线与验收的写法；你已说明的评估设计（设备级重采样、召回率差）需要与保留的问题版本对齐，否则方案内部会不一致。",
+        "references": [
+          {
+            "source": "conflict",
+            "key": "research_question:0",
+            "quote": "设备故障预测：比较逻辑回归与树模型的预测表现"
+          },
+          {
+            "source": "conflict",
+            "key": "research_question:1",
+            "quote": "基于本校实验台温度传感器日志，预测下一次运行是否故障"
+          },
+          {
+            "source": "answer",
+            "key": "current",
+            "quote": "我选择预测评估设计。主指标是每台设备汇总后的故障识别召回率，越高越好，同时报告误报率。估计两个模型的召回率差，以设备为重采样单位报告bootstrap区间。"
+          }
+        ],
+        "options": [
+          {
+            "label": "设备故障预测：比较逻辑回归与树模型的预测表现",
+            "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+            "action": "revise",
+            "id": "d29dd89b22fa"
+          },
+          {
+            "label": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+            "value": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+            "action": "revise",
+            "id": "d0e6cb5fdae6"
+          },
+          {
+            "label": "暂不确定",
+            "value": "未知",
+            "action": "unknown",
+            "id": "2c3af7fa609c"
+          },
+          {
+            "label": "其他，我来补充",
+            "value": "",
+            "action": "custom",
+            "id": "47de6eddb129"
+          }
+        ],
+        "origin": "model",
+        "allow_accept": false,
+        "choice_policy": {
+          "intent": "comparison",
+          "origin": "user_declared",
+          "policy_hash": null
+        },
+        "choice_id": "8c3424d6f3b842ce",
+        "choice_plan_hash": "71dd52dc7aeb177cf2611683ee06d48f5782a4832d83548bd1e0c45e79cb6c5e"
+      },
+      "reflections": [],
+      "changes": [
+        {
+          "field": "research_question",
+          "kind": "added",
+          "before": null,
+          "after": "设备故障预测：比较逻辑回归与树模型的预测表现"
+        },
+        {
+          "field": "objective_type",
+          "kind": "added",
+          "before": null,
+          "after": "comparison"
+        },
+        {
+          "field": "factors",
+          "kind": "added",
+          "before": null,
+          "after": "模型类型：逻辑回归 vs 树模型"
+        },
+        {
+          "field": "deliverable",
+          "kind": "added",
+          "before": null,
+          "after": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项"
+        },
+        {
+          "field": "research_question",
+          "kind": "conflict",
+          "before": "设备故障预测：比较逻辑回归与树模型的预测表现",
+          "after": "基于本校实验台温度传感器日志，预测下一次运行是否故障"
+        },
+        {
+          "field": "objective_type",
+          "kind": "conflict",
+          "before": "comparison",
+          "after": "prediction"
+        },
+        {
+          "field": "scope",
+          "kind": "added",
+          "before": null,
+          "after": "仅限本校实验台的温度传感器日志"
+        },
+        {
+          "field": "exclusions",
+          "kind": "added",
+          "before": null,
+          "after": "不做因果解释；不推广到其他设备"
+        },
+        {
+          "field": "experimental_unit",
+          "kind": "added",
+          "before": null,
+          "after": "整台设备的一次运行"
+        },
+        {
+          "field": "analysis",
+          "kind": "added",
+          "before": null,
+          "after": "同一设备的多次记录相互相关，不能当作独立重复（需考虑设备内相关性）"
+        },
+        {
+          "field": "data_source",
+          "kind": "added",
+          "before": null,
+          "after": "本校实验台温度传感器日志"
+        }
+      ],
+      "stale": {},
+      "turns": 4,
+      "audience": "researcher_student",
+      "last_notes": [
+        "本轮语义整理未被采纳；请使用 research_question: 你的回答，或选择当前问题的编号。"
+      ],
+      "last_export": null,
+      "clarification": {
+        "mode": "dynamic",
+        "reason": "validated_partial",
+        "rejected_questions": [
+          {
+            "field": "objective_type",
+            "reason": "InventedQuestionNumericAssumption"
+          }
+        ],
+        "model_used": true
+      },
+      "question_history": [
+        {
+          "turn": 1,
+          "field": "research_question",
+          "kind": "proposal",
+          "question": "关于研究问题，是否按当前理解继续？",
+          "origin": "model",
+          "basis_hash": "7a1912e70ace83cce2377664bdc5444b23e30ab9c4f2517dc5359dd59fa6f1bb"
+        },
+        {
+          "turn": 2,
+          "field": "research_question",
+          "kind": "conflict",
+          "question": "关于研究问题，你希望保留哪一项？",
+          "origin": "template",
+          "basis_hash": "c3dc2a0a2de43b2182c27cd4d8b7cf0a3b25f58fe5a98160f2fe25a9cf4e54ef"
+        },
+        {
+          "turn": 3,
+          "field": "research_question",
+          "kind": "conflict",
+          "question": "关于研究问题，你希望保留哪一项？",
+          "origin": "template",
+          "basis_hash": "c3dc2a0a2de43b2182c27cd4d8b7cf0a3b25f58fe5a98160f2fe25a9cf4e54ef"
+        },
+        {
+          "turn": 4,
+          "field": "research_question",
+          "kind": "conflict",
+          "question": "关于研究问题，你希望保留哪一项？",
+          "origin": "model",
+          "basis_hash": "c3dc2a0a2de43b2182c27cd4d8b7cf0a3b25f58fe5a98160f2fe25a9cf4e54ef"
+        }
+      ]
+    },
+    "after": {
+      "schema_version": "research_planning_v1",
+      "id": "575a1576136f48c8af8bfdc6d3302dfd",
+      "revision": 5,
+      "active": true,
+      "facts": {
+        "research_question": {
+          "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+          "quote": "我想研究设备故障预测，比较逻辑回归和树模型。",
+          "status": "proposed",
+          "turn": 1
+        },
+        "objective_type": {
+          "value": "comparison",
+          "quote": "比较逻辑回归和树模型",
+          "status": "declared",
+          "turn": 1
+        },
+        "factors": {
+          "value": "模型类型：逻辑回归 vs 树模型",
+          "quote": "比较逻辑回归和树模型",
+          "status": "proposed",
+          "turn": 1
+        },
+        "deliverable": {
+          "value": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项",
+          "quote": "请先帮我把问题变成能检验的实验，逐步给我可选的决定。",
+          "status": "proposed",
+          "turn": 1
+        },
+        "scope": {
+          "value": "仅限本校实验台的温度传感器日志",
+          "quote": "只讨论本校实验台的温度传感器日志",
+          "status": "proposed",
+          "turn": 2
+        },
+        "exclusions": {
+          "value": "不做因果解释；不推广到其他设备",
+          "quote": "不解释因果，也不推广到其他设备",
+          "status": "proposed",
+          "turn": 2
+        },
+        "experimental_unit": {
+          "value": "整台设备的一次运行",
+          "quote": "以整台设备的一次运行作观察单位",
+          "status": "declared",
+          "turn": 2
+        },
+        "analysis": {
+          "value": "同一设备的多次记录相互相关，不能当作独立重复（需考虑设备内相关性）",
+          "quote": "同一设备的多次记录相互相关，不能当成独立重复",
+          "status": "proposed",
+          "turn": 2
+        },
+        "data_source": {
+          "value": "本校实验台温度传感器日志",
+          "quote": "只讨论本校实验台的温度传感器日志",
+          "status": "proposed",
+          "turn": 2
+        },
+        "resources": {
+          "value": "后续最多十次模型拟合或两小时就停止",
+          "quote": "后续最多十次模型拟合或两小时就停止",
+          "status": "declared",
+          "turn": 5
+        },
+        "acceptance": {
+          "value": "阴性和不确定结果也要报告；不为追求好结果加预算",
+          "quote": "阴性和不确定结果也要报告，不为追求好结果加预算。",
+          "status": "proposed",
+          "turn": 5
+        },
+        "risks": {
+          "value": "没有独立测试设备时停止并请导师判断",
+          "quote": "没有独立测试设备时停止并请导师判断。",
+          "status": "declared",
+          "turn": 5
+        },
+        "reproducibility": {
+          "value": "记录数据与代码版本、配置、种子及偏离",
+          "quote": "记录数据与代码版本、配置、种子及偏离",
+          "status": "declared",
+          "turn": 5
+        },
+        "human_roles": {
+          "value": "我确认范围，导师复核分析，人来另行授权执行",
+          "quote": "我确认范围，导师复核分析，人来另行授权执行。",
+          "status": "declared",
+          "turn": 5
+        }
+      },
+      "unknown": [],
+      "conflicts": {
+        "research_question": [
+          {
+            "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+            "quote": "我想研究设备故障预测，比较逻辑回归和树模型。",
+            "status": "proposed",
+            "turn": 1
+          },
+          {
+            "value": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+            "quote": "只讨论本校实验台的温度传感器日志，目标是预测下一次运行是否故障",
+            "status": "proposed",
+            "turn": 2
+          }
+        ],
+        "objective_type": [
+          {
+            "value": "comparison",
+            "quote": "比较逻辑回归和树模型",
+            "status": "declared",
+            "turn": 1
+          },
+          {
+            "value": "prediction",
+            "quote": "目标是预测下一次运行是否故障，不解释因果",
+            "status": "proposed",
+            "turn": 2
+          }
+        ],
+        "deliverable": [
+          {
+            "value": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项",
+            "quote": "请先帮我把问题变成能检验的实验，逐步给我可选的决定。",
+            "status": "proposed",
+            "turn": 1
+          },
+          {
+            "value": "本轮只交付设计：实验设计和验收表",
+            "quote": "本轮只交付设计。",
+            "status": "proposed",
+            "turn": 5
+          }
+        ],
+        "data_source": [
+          {
+            "value": "本校实验台温度传感器日志",
+            "quote": "只讨论本校实验台的温度传感器日志",
+            "status": "proposed",
+            "turn": 2
+          },
+          {
+            "value": "合成日志 sensor_demo_v1",
+            "quote": "数据来源是合成日志sensor_demo_v1",
+            "status": "proposed",
+            "turn": 5
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "turn": 1,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "research_question",
+              "kind": "added",
+              "before": null,
+              "after": "设备故障预测：比较逻辑回归与树模型的预测表现"
+            },
+            {
+              "field": "objective_type",
+              "kind": "added",
+              "before": null,
+              "after": "comparison"
+            },
+            {
+              "field": "factors",
+              "kind": "added",
+              "before": null,
+              "after": "模型类型：逻辑回归 vs 树模型"
+            },
+            {
+              "field": "deliverable",
+              "kind": "added",
+              "before": null,
+              "after": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项"
+            }
+          ]
+        },
+        {
+          "turn": 2,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "research_question",
+              "kind": "conflict",
+              "before": "设备故障预测：比较逻辑回归与树模型的预测表现",
+              "after": "基于本校实验台温度传感器日志，预测下一次运行是否故障"
+            },
+            {
+              "field": "objective_type",
+              "kind": "conflict",
+              "before": "comparison",
+              "after": "prediction"
+            },
+            {
+              "field": "scope",
+              "kind": "added",
+              "before": null,
+              "after": "仅限本校实验台的温度传感器日志"
+            },
+            {
+              "field": "exclusions",
+              "kind": "added",
+              "before": null,
+              "after": "不做因果解释；不推广到其他设备"
+            },
+            {
+              "field": "experimental_unit",
+              "kind": "added",
+              "before": null,
+              "after": "整台设备的一次运行"
+            },
+            {
+              "field": "analysis",
+              "kind": "added",
+              "before": null,
+              "after": "同一设备的多次记录相互相关，不能当作独立重复（需考虑设备内相关性）"
+            },
+            {
+              "field": "data_source",
+              "kind": "added",
+              "before": null,
+              "after": "本校实验台温度传感器日志"
+            }
+          ]
+        },
+        {
+          "turn": 5,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "deliverable",
+              "kind": "conflict",
+              "before": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项",
+              "after": "本轮只交付设计：实验设计和验收表"
+            },
+            {
+              "field": "resources",
+              "kind": "added",
+              "before": null,
+              "after": "后续最多十次模型拟合或两小时就停止"
+            },
+            {
+              "field": "acceptance",
+              "kind": "added",
+              "before": null,
+              "after": "阴性和不确定结果也要报告；不为追求好结果加预算"
+            },
+            {
+              "field": "data_source",
+              "kind": "conflict",
+              "before": "本校实验台温度传感器日志",
+              "after": "合成日志 sensor_demo_v1"
+            },
+            {
+              "field": "risks",
+              "kind": "added",
+              "before": null,
+              "after": "没有独立测试设备时停止并请导师判断"
+            },
+            {
+              "field": "reproducibility",
+              "kind": "added",
+              "before": null,
+              "after": "记录数据与代码版本、配置、种子及偏离"
+            },
+            {
+              "field": "human_roles",
+              "kind": "added",
+              "before": null,
+              "after": "我确认范围，导师复核分析，人来另行授权执行"
+            }
+          ]
+        }
+      ],
+      "approval": null,
+      "pending": {
+        "field": "research_question",
+        "kind": "conflict",
+        "question": "关于研究问题，你希望保留哪一项？",
+        "rationale": "两个版本对应不同的目的类型与验收口径：comparison 关注两模型相对表现，prediction 关注对下一次运行的预测准确性。目的类型未定，假设、主要指标与基线都无法对齐。",
+        "references": [
+          {
+            "source": "conflict",
+            "key": "research_question:0",
+            "quote": "设备故障预测：比较逻辑回归与树模型的预测表现"
+          },
+          {
+            "source": "conflict",
+            "key": "research_question:1",
+            "quote": "基于本校实验台温度传感器日志，预测下一次运行是否故障"
+          },
+          {
+            "source": "conflict",
+            "key": "objective_type:1",
+            "quote": "prediction"
+          }
+        ],
+        "options": [
+          {
+            "label": "设备故障预测：比较逻辑回归与树模型的预测表现",
+            "value": "设备故障预测：比较逻辑回归与树模型的预测表现",
+            "action": "revise",
+            "id": "d29dd89b22fa"
+          },
+          {
+            "label": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+            "value": "基于本校实验台温度传感器日志，预测下一次运行是否故障",
+            "action": "revise",
+            "id": "d0e6cb5fdae6"
+          },
+          {
+            "label": "暂不确定",
+            "value": "未知",
+            "action": "unknown",
+            "id": "2c3af7fa609c"
+          },
+          {
+            "label": "其他，我来补充",
+            "value": "",
+            "action": "custom",
+            "id": "47de6eddb129"
+          }
+        ],
+        "origin": "model",
+        "allow_accept": false,
+        "choice_policy": {
+          "intent": "comparison",
+          "origin": "user_declared",
+          "policy_hash": null
+        },
+        "choice_id": "56e091f2bcbf8fc0",
+        "choice_plan_hash": "cc69c75f0e47761d9bef24e8afa6c5348d1d886d77dee308394c5ff9da46fba9"
+      },
+      "reflections": [],
+      "changes": [
+        {
+          "field": "research_question",
+          "kind": "added",
+          "before": null,
+          "after": "设备故障预测：比较逻辑回归与树模型的预测表现"
+        },
+        {
+          "field": "objective_type",
+          "kind": "added",
+          "before": null,
+          "after": "comparison"
+        },
+        {
+          "field": "factors",
+          "kind": "added",
+          "before": null,
+          "after": "模型类型：逻辑回归 vs 树模型"
+        },
+        {
+          "field": "deliverable",
+          "kind": "added",
+          "before": null,
+          "after": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项"
+        },
+        {
+          "field": "research_question",
+          "kind": "conflict",
+          "before": "设备故障预测：比较逻辑回归与树模型的预测表现",
+          "after": "基于本校实验台温度传感器日志，预测下一次运行是否故障"
+        },
+        {
+          "field": "objective_type",
+          "kind": "conflict",
+          "before": "comparison",
+          "after": "prediction"
+        },
+        {
+          "field": "scope",
+          "kind": "added",
+          "before": null,
+          "after": "仅限本校实验台的温度传感器日志"
+        },
+        {
+          "field": "exclusions",
+          "kind": "added",
+          "before": null,
+          "after": "不做因果解释；不推广到其他设备"
+        },
+        {
+          "field": "experimental_unit",
+          "kind": "added",
+          "before": null,
+          "after": "整台设备的一次运行"
+        },
+        {
+          "field": "analysis",
+          "kind": "added",
+          "before": null,
+          "after": "同一设备的多次记录相互相关，不能当作独立重复（需考虑设备内相关性）"
+        },
+        {
+          "field": "data_source",
+          "kind": "added",
+          "before": null,
+          "after": "本校实验台温度传感器日志"
+        },
+        {
+          "field": "deliverable",
+          "kind": "conflict",
+          "before": "把研究问题转化为可检验的实验方案，并逐步给出可选的决定项",
+          "after": "本轮只交付设计：实验设计和验收表"
+        },
+        {
+          "field": "resources",
+          "kind": "added",
+          "before": null,
+          "after": "后续最多十次模型拟合或两小时就停止"
+        },
+        {
+          "field": "acceptance",
+          "kind": "added",
+          "before": null,
+          "after": "阴性和不确定结果也要报告；不为追求好结果加预算"
+        },
+        {
+          "field": "data_source",
+          "kind": "conflict",
+          "before": "本校实验台温度传感器日志",
+          "after": "合成日志 sensor_demo_v1"
+        },
+        {
+          "field": "risks",
+          "kind": "added",
+          "before": null,
+          "after": "没有独立测试设备时停止并请导师判断"
+        },
+        {
+          "field": "reproducibility",
+          "kind": "added",
+          "before": null,
+          "after": "记录数据与代码版本、配置、种子及偏离"
+        },
+        {
+          "field": "human_roles",
+          "kind": "added",
+          "before": null,
+          "after": "我确认范围，导师复核分析，人来另行授权执行"
+        }
+      ],
+      "stale": {},
+      "turns": 5,
+      "audience": "researcher_student",
+      "last_notes": [
+        "语义改写和推断仅作为待确认提议展示，不会自动成为已确认边界。"
+      ],
+      "last_export": null,
+      "clarification": {
+        "mode": "dynamic",
+        "reason": "validated_partial",
+        "rejected_questions": [
+          {
+            "field": "data_source",
+            "reason": "InventedQuestionNumericAssumption"
+          }
+        ],
+        "model_used": true
+      },
+      "question_history": [
+        {
+          "turn": 1,
+          "field": "research_question",
+          "kind": "proposal",
+          "question": "关于研究问题，是否按当前理解继续？",
+          "origin": "model",
+          "basis_hash": "7a1912e70ace83cce2377664bdc5444b23e30ab9c4f2517dc5359dd59fa6f1bb"
+        },
+        {
+          "turn": 2,
+          "field": "research_question",
+          "kind": "conflict",
+          "question": "关于研究问题，你希望保留哪一项？",
+          "origin": "template",
+          "basis_hash": "c3dc2a0a2de43b2182c27cd4d8b7cf0a3b25f58fe5a98160f2fe25a9cf4e54ef"
+        },
+        {
+          "turn": 3,
+          "field": "research_question",
+          "kind": "conflict",
+          "question": "关于研究问题，你希望保留哪一项？",
+          "origin": "template",
+          "basis_hash": "c3dc2a0a2de43b2182c27cd4d8b7cf0a3b25f58fe5a98160f2fe25a9cf4e54ef"
+        },
+        {
+          "turn": 4,
+          "field": "research_question",
+          "kind": "conflict",
+          "question": "关于研究问题，你希望保留哪一项？",
+          "origin": "model",
+          "basis_hash": "c3dc2a0a2de43b2182c27cd4d8b7cf0a3b25f58fe5a98160f2fe25a9cf4e54ef"
+        },
+        {
+          "turn": 5,
+          "field": "research_question",
+          "kind": "conflict",
+          "question": "关于研究问题，你希望保留哪一项？",
+          "origin": "model",
+          "basis_hash": "3bfc999c1a532dff32ecb306a7070b152115910562f87ee6c7b37f4323f187d4"
+        }
+      ]
+    },
+    "known_field_missing_questions": [],
+    "state_changed": true,
+    "resources": {
+      "llm_requests": 9,
+      "llm_tokens": 21385,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 10,
+        "llm_tokens": 35000,
+        "tool_calls": 40,
+        "read_bytes": 24000
+      }
+    }
+  }
+]

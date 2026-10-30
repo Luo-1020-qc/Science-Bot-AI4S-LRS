@@ -1,0 +1,32 @@
+scenario_name: 两个监测点的水质指标比较
+domain: 环境科学
+skeleton: S1
+executable: true
+summary: 两个监测点在统一时间窗内的水质指标对比
+vocabulary:
+  treatment_name: 监测点
+  outcome_name: 水质指标（COD）
+  unit: mg/L
+  comparison: 点位 A vs 点位 B
+survey_questions:
+- 采样时间与频次是否一致？
+- 采样与保存方法是否统一？
+- 检测标准与检出限是什么？
+- 水文条件（流量、降雨）是否记录？
+- 每个点位多少个独立样品？
+rubric:
+- 采样时间窗一致
+- 采样与检测方法统一
+- 水文条件记录
+- 重复样本 >= 3
+- 检出限与缺失值处理
+- 时空依赖与不做趋势外推的声明
+proposal_template:
+- 研究目标
+- 采样设计
+- 检测方法
+- 统计方法
+- 验收标准
+- 局限
+source: 骨架聚类表 v1 · S1 · 环境科学行
+notes: 固定时间窗是防止滑向时间序列分析的关键

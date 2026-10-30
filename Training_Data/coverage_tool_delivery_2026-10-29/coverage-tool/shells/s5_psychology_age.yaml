@@ -1,0 +1,35 @@
+scenario_name: 多个年龄段的认知测试成绩比较
+domain: 心理学
+skeleton: S5
+executable: false
+summary: 不同年龄段被试在同一认知测试上的成绩比较（观察性分组）
+vocabulary:
+  treatment_name: 年龄段
+  outcome_name: 认知测试成绩
+  unit: 分
+  comparison: 年龄组 A / B / C
+survey_questions:
+- 年龄组如何划分？划分依据是什么？
+- 分组是观察性的还是随机分配的？（年龄不可随机）
+- 样本来源与招募方式？
+- 测验版本与施测条件是否一致？
+- 教育程度、健康状况等混杂是否记录？
+- 每组样本量与功效依据？
+- 计划做哪些比较？
+rubric:
+- 观察性分组已声明（不做因果归因）
+- 年龄组划分依据
+- 测验等值性与施测条件一致
+- 教育与健康混杂已记录
+- 方差齐性或非参备选
+- 多重性校正声明
+- 效应量报告
+proposal_template:
+- 研究目标
+- 年龄组与被试
+- 测量工具
+- 统计方法（ANOVA/非参 + 事后）
+- 验收标准
+- 局限（观察性、混杂）
+source: 骨架聚类表 v1 · S5 · 心理学行
+notes: 不可执行：S5 待开发。provenance=observational，不能声称年龄因果效应

@@ -1,0 +1,83 @@
+{
+  "passed": true,
+  "checked_utc": "2026-10-30T04:13:10.169815+00:00",
+  "integrity": {
+    "passed": true,
+    "protected_files_checked": 1745,
+    "authorized_host_changes": 5,
+    "integration_runtime_files_checked": 10,
+    "planning_authorized_host_changes": 4,
+    "planning_runtime_files_checked": 11,
+    "dynamic_runtime_files_checked": 6,
+    "planning_history_privacy_files_checked": 1,
+    "interface_runtime_files_checked": 11,
+    "question_tool_runtime_files_checked": 6,
+    "question_tool_training_files_checked": 7,
+    "branding_files_checked": 5,
+    "context_choices_runtime_files_checked": 11,
+    "context_choices_training_files_checked": 7,
+    "mainline_runtime_files_checked": 10,
+    "session_history_runtime_files_checked": 6,
+    "changed": []
+  },
+  "tests": {
+    "application": {
+      "run": 478,
+      "passed": true,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 2
+    },
+    "integrity_and_evaluation": {
+      "run": 40,
+      "passed": true,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "shipped_ui_with_mock_dom": {
+      "passed": true,
+      "result": {
+        "passed": true,
+        "checks": 5,
+        "mode": "mock_dom_actual_shipped_script_not_browser_visual_qa"
+      }
+    }
+  },
+  "authorized_changed_files": [
+    "RUT_Science/rut_science/science_bot/api.py",
+    "RUT_Science/rut_science/science_bot/workbench.py",
+    "RUT_Science/rut_science/science_bot/workbench_assets/dist/app.js",
+    "RUT_Science/rut_science/science_bot/workbench_assets/dist/styles.css",
+    "scripts/integrity.py",
+    "scripts/test_integrity.py",
+    "scripts/verify_planning_mainline.py",
+    "examples/interfaces/browser.html"
+  ],
+  "prior_files_unchanged": 168,
+  "all_prior_integration_json_unchanged": true,
+  "examples": {
+    "examples/interfaces/terminal.html": "445b43793d87061618b5a60a6aeb9e1f6e27b0c16bb7000c28fecf0bba3c201f",
+    "examples/interfaces/browser.html": "1175366e6426dc82c001b9ee29a02dd13f60d999f36c582db9e277b01b0deae3",
+    "examples/interfaces/delivery.html": "bc038ff9ae1a7e69f7e178488b33848de828320ca0e9572504eacc47b8c00c28"
+  },
+  "assets": {
+    "javascript_bindings_checked": 52,
+    "text_contrast_ratios": {
+      "primary_button": 8.276,
+      "body": 13.669,
+      "muted": 5.601,
+      "secondary_text": 4.648,
+      "sidebar_text": 4.893,
+      "selected_navigation": 8.545
+    },
+    "minimum_checked_text_contrast": 4.648
+  },
+  "real_user_sessions_deleted_during_implementation": 0,
+  "test_deletions": "disposable_test_sessions_only",
+  "model_requests": 0,
+  "real_scientific_executions": 0,
+  "training_runs": 0,
+  "browser_visual_qa": false,
+  "browser_visual_qa_reason": "No live browser verification; UI transitions tested against shipped script with mock DOM."
+}

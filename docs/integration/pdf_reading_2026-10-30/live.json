@@ -1,0 +1,91 @@
+{
+  "checked_utc": "2026-10-30T05:18:04.494212+00:00",
+  "source_kind": "explicitly_selected_author_synthetic_fixture",
+  "fixture_sha256": "8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b",
+  "page_range": [
+    1,
+    2
+  ],
+  "passed": true,
+  "answer": "论文解读（模型提议，待研究者复核）\n覆盖：examples/papers/synthetic_paper.pdf · PDF第1–2页\n\n研究问题：该合成示例的研究问题是：在合成的二维场上，模型A的预测误差是否低于模型B。\n原文 · PDF第1页：This fixture asks whether model A has lower prediction error than model B on\nsynthetic two-dimensional fields.\n\n数据与实验条件：两个模型评估的是同一批8个独立的合成场，并按场进行配对比较；场内的网格点属于技术测量，不是独立的实验单元。\n原文 · PDF第1页：Both models evaluate the same 8 independent synthetic fields, with paired\ncomparisons by field. Grid points within a field are technical measurements,\nnot independent experimental units.\n\n方法与设计：训练、验证和最终测试场按来源分离，两个模型使用相同的划分和调参预算。\n原文 · PDF第1页：Training, validation and final test fields are separated by source. Both\nmodels use the same splits and tuning budget.\n\n适用范围与局限：研究范围仅限于该合成场分布。\n原文 · PDF第1页：The scope is restricted to this\nsynthetic field distribution.\n\n报告的结果：示例性平均相对误差为模型A 0.12、模型B 0.15，但作者明确说明这些是编写出的示例数值，并非观测到的科学证据。\n原文 · PDF第2页：Illustrative mean relative errors are 0.12 for model A and 0.15 for model B.\nThese numbers are authored fixture values, not observed scientific evidence.\n\n适用范围与局限：未提供观测方差或置信区间，也未执行科学实验；该示例不能确立因果效应或分布外性能。\n原文 · PDF第2页：No observed variance or confidence interval is provided. No scientific\nexperiment was executed. This fixture does not establish a causal effect or\nout-of-distribution performance.\n\n复现所需信息：真实研究需要可追溯的数据集版本、代码与配置、独立单元核验以及试点变异性；无法从该示例推断样本量或统计功效保证。\n原文 · PDF第2页：A real study needs a traceable dataset version, code and configuration,\nindependent-unit verification and pilot variability. A sample-size or power\nguarantee cannot be inferred from this fixture.\n\n适用范围与局限：该示例检验的是PDF抽取与有依据的解释，而非科学有效性。\n原文 · PDF第2页：This fixture tests PDF extraction and grounded interpretation, not scientific\nvalidity.\n\n尚不能从所选页判断：\n- 所选页面未给出具体的数据集名称、版本或来源细节\n- 所选页面未提供代码、配置文件或复现步骤的具体内容\n- 所选页面未报告方差、置信区间或统计检验结果\n- 所选页面未说明模型A与模型B的具体结构或算法\n- 所选页面未给出样本量或统计功效计算\n- 所选页面未包含图表或表格\n\n解读未自动写成实验声明。可继续据此澄清研究边界，数值、图表和方法假设请回原文核对。",
+  "interpretation": {
+    "items": [
+      {
+        "category": "problem",
+        "statement": "该合成示例的研究问题是：在合成的二维场上，模型A的预测误差是否低于模型B。",
+        "page": 1,
+        "quote": "This fixture asks whether model A has lower prediction error than model B on\nsynthetic two-dimensional fields."
+      },
+      {
+        "category": "data",
+        "statement": "两个模型评估的是同一批8个独立的合成场，并按场进行配对比较；场内的网格点属于技术测量，不是独立的实验单元。",
+        "page": 1,
+        "quote": "Both models evaluate the same 8 independent synthetic fields, with paired\ncomparisons by field. Grid points within a field are technical measurements,\nnot independent experimental units."
+      },
+      {
+        "category": "methods",
+        "statement": "训练、验证和最终测试场按来源分离，两个模型使用相同的划分和调参预算。",
+        "page": 1,
+        "quote": "Training, validation and final test fields are separated by source. Both\nmodels use the same splits and tuning budget."
+      },
+      {
+        "category": "limits",
+        "statement": "研究范围仅限于该合成场分布。",
+        "page": 1,
+        "quote": "The scope is restricted to this\nsynthetic field distribution."
+      },
+      {
+        "category": "results",
+        "statement": "示例性平均相对误差为模型A 0.12、模型B 0.15，但作者明确说明这些是编写出的示例数值，并非观测到的科学证据。",
+        "page": 2,
+        "quote": "Illustrative mean relative errors are 0.12 for model A and 0.15 for model B.\nThese numbers are authored fixture values, not observed scientific evidence."
+      },
+      {
+        "category": "limits",
+        "statement": "未提供观测方差或置信区间，也未执行科学实验；该示例不能确立因果效应或分布外性能。",
+        "page": 2,
+        "quote": "No observed variance or confidence interval is provided. No scientific\nexperiment was executed. This fixture does not establish a causal effect or\nout-of-distribution performance."
+      },
+      {
+        "category": "reproduction",
+        "statement": "真实研究需要可追溯的数据集版本、代码与配置、独立单元核验以及试点变异性；无法从该示例推断样本量或统计功效保证。",
+        "page": 2,
+        "quote": "A real study needs a traceable dataset version, code and configuration,\nindependent-unit verification and pilot variability. A sample-size or power\nguarantee cannot be inferred from this fixture."
+      },
+      {
+        "category": "limits",
+        "statement": "该示例检验的是PDF抽取与有依据的解释，而非科学有效性。",
+        "page": 2,
+        "quote": "This fixture tests PDF extraction and grounded interpretation, not scientific\nvalidity."
+      }
+    ],
+    "unanswered": [
+      "所选页面未给出具体的数据集名称、版本或来源细节",
+      "所选页面未提供代码、配置文件或复现步骤的具体内容",
+      "所选页面未报告方差、置信区间或统计检验结果",
+      "所选页面未说明模型A与模型B的具体结构或算法",
+      "所选页面未给出样本量或统计功效计算",
+      "所选页面未包含图表或表格"
+    ],
+    "status": "model_interpretation_not_verified",
+    "source_sha256": "8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b",
+    "model_requested": "deepseek-flash",
+    "turn": 2
+  },
+  "resources": {
+    "llm_requests": 1,
+    "llm_tokens": 1764,
+    "tool_attempts": 0,
+    "limits": {
+      "llm_requests": 2,
+      "llm_tokens": 18000,
+      "tool_calls": 40,
+      "read_bytes": 18000
+    }
+  },
+  "plan_facts": {},
+  "human_expert_review": false,
+  "scientific_claim_verified": false,
+  "real_scientific_executions": 0,
+  "training_runs": 0
+}

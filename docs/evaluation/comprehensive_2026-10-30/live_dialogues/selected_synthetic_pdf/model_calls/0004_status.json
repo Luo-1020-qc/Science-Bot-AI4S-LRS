@@ -1,0 +1,7 @@
+{
+  "request_index": 4,
+  "role": "paper_reading",
+  "status": "schema_rejected",
+  "model": "deepseek-flash",
+  "error_type": "ValueError"
+}

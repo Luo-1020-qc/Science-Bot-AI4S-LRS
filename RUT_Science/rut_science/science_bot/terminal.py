@@ -25,6 +25,9 @@ COMMANDS += sorted(INTERVIEW_COMMANDS)
 COMMANDS += sorted(RESEARCH_COMMANDS)
 from .general.tool_library import COMMANDS as DETAILED_COMMANDS
 COMMANDS += sorted(DETAILED_COMMANDS)
+from .general.planning.runtime import COMMANDS as PLANNING_COMMANDS
+COMMANDS += sorted(PLANNING_COMMANDS)
+COMMANDS += ['/home', '/deliver']
 
 
 def plain_model_text(value):
@@ -32,6 +35,39 @@ def plain_model_text(value):
     text = value if isinstance(value, str) else json.dumps(value, ensure_ascii=False, indent=2)
     return "".join(f"\\u{ord(char):04x}" if char != "\n" and unicodedata.category(char) in {"Cc", "Cf", "Cs"}
                    else char for char in text)
+
+
+def response_text(response):
+    """Render the host answer, or structured/legacy clarification questions."""
+    answer=response.get('answer')
+    if answer:
+        return plain_model_text(answer)
+    questions=response.get('questions') or []
+    if not isinstance(questions,list):questions=[questions]
+    lines=[]
+    for question in questions:
+        if not isinstance(question,dict):
+            lines.append(plain_model_text(question));continue
+        prompt=question.get('question') or question.get('text')
+        if prompt:lines.append(plain_model_text(prompt))
+        else:lines.append(plain_model_text(question));continue
+        if question.get('rationale') and not question.get('choice_id'):
+            lines.append('为什么问：'+plain_model_text(question['rationale']))
+        options=question.get('options') or []
+        if not isinstance(options,list):options=[options]
+        for i,option in enumerate(options,1):
+            label=option.get('label',option.get('value',option)) if isinstance(option,dict) else option
+            lines.append(f'{i}. '+plain_model_text(label))
+    return '\n'.join(lines)
+
+
+def show_response(console,response,title='science Bot'):
+    text=response_text(response)
+    if text:console.print(Panel(Text(text),title=title,border_style='cyan'))
+    refs=response.get('evidence_refs') or []
+    if not isinstance(refs,list):refs=[refs]
+    if refs:
+        console.print(Text('来源：\n'+'\n'.join(plain_model_text(ref) for ref in refs),style='dim'))
 
 
 def show_model_output(console, session, selector="latest"):
@@ -117,6 +153,10 @@ def show_event(console, session, event):
 
 
 def banner(console, session):
+    if session.meta.get('engine_version') == 'general_v1':
+        from .presentation import show_home, session_view
+        show_home(console, session_view(session))
+        return
     title = Text("science ", style="bold bright_cyan") + Text("Bot", style="bold bright_magenta")
     console.print()
     console.print(Panel(title+Text("\nresearch, with evidence.", style="dim"), border_style="bright_black", padding=(1, 3)))
@@ -127,6 +167,11 @@ def banner(console, session):
 
 def show_status(console, session):
     status = session.status()
+    if status.get('planning') and status.get('active_task')=='research_planning':
+        from .general.planning.ledger import load
+        from .presentation import plan_view, show_planning
+        show_planning(console, plan_view(load(session), example=session.meta.get('interface_example', False)))
+        return
     detailed = status.get("tool_library", {}).get("state")
     if status.get("active_task") == "research" and detailed and detailed.get("calls"):
         console.print(Panel(Text(f"Phase: {status['phase']}\nMode: detailed offline tools\nRegistered: 20 implemented / 45 contracts\nCalls: {detailed['calls']}\nScenario: {detailed['scenario']}\nReferences: {', '.join(detailed['refs'])}\nExecution: not authorized"), title="detailed tool library", border_style="cyan"))
@@ -145,17 +190,8 @@ def show_status(console, session):
         console.print(Panel(Text(f"Phase: {status['phase']}\nDesign: {tabular['spec']['design']}\nCSV: {tabular['spec']['data_path']}\nResponse: {tabular['spec']['response']}\nUnit: {tabular['spec']['unit']}\nCompleted: {', '.join(tabular['completed']) or 'none'}\nDraft hash: {status['draft_hash']}\nConfirmed: {status['confirmed']}\nFolder: {tabular['folder']}"), title="tabular experiment", border_style="cyan"))
         return
     if status.get("engine_version") == "general_v1" and status["spec"] is None:
-        resources = status["resources"]
-        table = Table.grid(padding=(0, 2))
-        for label, value in (("Engine", "general_v1"), ("Phase", status["phase"]),
-                             ("Task", status["active_task"] or "awaiting request"),
-                             ("Project root", status["workspace"]["root"] if status["workspace"] else "not selected"),
-                             ("Numeric experiment", "none active"),
-                             ("Model requests", f"{resources['llm_requests']} / {resources['limits']['llm_requests']}"),
-                             ("Model tokens", f"{resources['llm_tokens']} / {resources['limits']['llm_tokens']}"),
-                             ("Host tool attempts", f"{resources['tool_attempts']} / {resources['limits']['tool_calls']}")):
-            table.add_row(Text(label, style="dim"), Text(value, overflow="fold"))
-        console.print(Panel(table, title="general workspace", border_style="cyan"))
+        from .presentation import show_planning
+        show_planning(console, None)
         return
     spec, obs = status["spec"], status["observation"]
     table = Table.grid(padding=(0, 2))
@@ -186,6 +222,9 @@ def show_experiments(console, session):
 
 
 def open_session(args):
+    if getattr(args, 'example', False):
+        from .interface_demo import create_example
+        return create_example(args.sessions or ROOT.parent/'.local/interface_examples/terminal', workspace=args.workspace)
     if args.resume:
         return ScienceSession.restore(args.resume, workspace=args.workspace)
     from .general.conversation import GeneralSession
@@ -217,7 +256,10 @@ async def interactive(args):
     task = None
 
     def on_event(event):
-        show_event(console, session, event)
+        if event['kind'] == 'model_output' and not getattr(args, 'verbose_events', False):
+            console.print(Text('  模型提议已保存；需要时用 /model-output 查看。', style='dim'))
+        else:
+            show_event(console, session, event)
     session.event_callback = on_event
     prompt = PromptSession(history=FileHistory(str(session.folder/"terminal.history")),
                            completer=WordCompleter(COMMANDS), complete_while_typing=False)
@@ -261,17 +303,27 @@ async def interactive(args):
                         session.pause(); await task
                     session.save(); break
                 elif command == "/help":
-                    from .general.research import HELP as RESEARCH_HELP
-                    console.print(Panel(Text(RESEARCH_HELP), title="research / DOE interfaces", border_style="cyan"))
-                    console.print(Panel("\n".join(COMMANDS)+"\n\n/workspace: current project and state directory\n/files [glob]: list project files\n/read <path>: display UTF-8 text locally (not sent to the model)\n/design <project-relative JSON file or JSON>: prepare a G2 tabular design draft\n/model-output [list|number]: replay saved model output locally; no new calls\n\nAsk a question, explicitly select a file for model analysis, or describe a registered experiment.\nAPI file questions send bounded selected snippets; CSV planning sends column metadata, not numeric rows. /read remains local.\nOffline mode supports local file excerpts, CSV profiles, structured G2 designs and generated / Darcy experiments.\nG2: independent Welch, paired t, mean/OLS prediction. /confirm executes the reviewed draft.\nUnknown tasks do not start a default experiment. Use --resume <session-folder> after restarting.", title="commands"))
+                    table = Table('你想做什么', '输入', border_style='green')
+                    for goal, commands in [('开始与继续', '直接描述目标；/plan start；/plan resume'),
+                        ('查看与理解', '/home；/status；/plan map；/plan explain 字段'),
+                        ('修订与复核', '/plan revise 字段: 内容；/plan review；/plan accept 字段'),
+                        ('论文证据', '/plan evidence list；/plan evidence add <JSON>'),
+                        ('交付与导出', '/report；/deliver；/plan approve <当前哈希>'),
+                        ('工作区与工具', '/workspace；/files；/read；/design；/tools；/research；/doe'),
+                        ('诊断与退出', '/model-output；/events；/pause；/cancel；/exit')]:
+                        table.add_row(goal, commands)
+                    console.print(table)
+                    console.print(Text('完整操作见项目 docs/USAGE.md 与 docs/HARNESS_PLANNING.md。规划确认不会启动实验。', style='dim'))
+                elif command == '/home':
+                    banner(console, session); show_status(console, session)
                 elif command == "/status":
                     show_status(console, session)
-                elif command in RESEARCH_COMMANDS or command in DETAILED_COMMANDS:
+                elif command in RESEARCH_COMMANDS or command in DETAILED_COMMANDS or command in PLANNING_COMMANDS:
                     if running:
                         console.print("Pause the current run before opening research tools."); continue
                     response = await asyncio.to_thread(session.message, line)
-                    console.print(Panel(Text(plain_model_text(response["answer"])), title="research / DOE", border_style="cyan"))
-                    show_status(console, session)
+                    show_response(console,response,title='研究规划' if command in PLANNING_COMMANDS else 'research / DOE')
+                    if response.get('intent') != 'planning':show_status(console, session)
                 elif command == "/interview-status":
                     from .general.interview.runtime import load, summary
                     value = load(session)
@@ -280,7 +332,7 @@ async def interactive(args):
                     if running:
                         console.print("Pause the current run before changing design declarations."); continue
                     response = await asyncio.to_thread(session.message, line)
-                    console.print(Panel(Text(plain_model_text(response["answer"])), title="design interview", border_style="cyan"))
+                    show_response(console,response,title='design interview')
                     show_status(console, session)
                 elif command == "/design":
                     if running:
@@ -291,7 +343,7 @@ async def interactive(args):
                             raise ValueError("Use -Workspace before selecting a specification file")
                         value = session.workspace.read_text(value)["text"]
                     response = await asyncio.to_thread(session.message, "/design "+value)
-                    console.print(Panel(Text(plain_model_text(response.get("answer") or "\n".join(response.get("questions", [])))), title="experiment design", border_style="cyan"))
+                    show_response(console,response,title='experiment design')
                     show_status(console, session)
                 elif command in {"/workspace", "/files", "/read"}:
                     result = project_command(session, command, argument)
@@ -321,8 +373,19 @@ async def interactive(args):
                 elif command == "/events":
                     console.print_json(data=session.events()[-8:])
                 elif command == "/report":
-                    report = session.research_report() if hasattr(session, "research_report") else session.env.state["report"]
-                    console.print_json(data=report or {"status": "not finalized"})
+                    if session.meta.get('last_report_kind') == 'research_planning':
+                        from .presentation import show_delivery
+                        show_delivery(console, session)
+                    else:
+                        report = session.research_report() if hasattr(session, "research_report") else session.env.state["report"]
+                        console.print_json(data=report or {"status": "not finalized"})
+                elif command == '/deliver':
+                    if running:console.print('请先暂停当前运行，再导出交付物。');continue
+                    from .presentation import export_bundle
+                    bundle = await asyncio.to_thread(export_bundle, session)
+                    body = Text('交付物已保存，保留草案/确认状态、缺口及未执行标记。\n\n')
+                    for kind in ('html', 'markdown', 'json'):body.append(kind.upper()+'  '+plain_model_text(str(bundle[kind]))+'\n')
+                    console.print(Panel(body, title='交付已生成', border_style='green'))
                 elif command == "/model-output":
                     show_model_output(console, session, argument.strip() or "latest")
                 elif command in {"/confirm", "/resume"}:
@@ -338,13 +401,8 @@ async def interactive(args):
                 else:
                     with console.status("Understanding research request…", spinner="dots"):
                         response = await asyncio.to_thread(session.message, line)
-                    if "questions" in response:
-                        console.print(Text("\n".join(response["questions"])))
-                    elif response.get("answer"):
-                        console.print(Panel(Text(plain_model_text(response["answer"])), title="science Bot", border_style="cyan"))
-                        if response.get("evidence_refs"):
-                            console.print(Text("来源：\n"+"\n".join(response["evidence_refs"]), style="dim"))
-                    show_status(console, session)
+                    show_response(console,response)
+                    if response.get('intent') != 'planning':show_status(console, session)
             except Exception as exc:
                 console.print(Text(f"{type(exc).__name__}: {exc}", style="yellow"))
     return 0
@@ -366,12 +424,24 @@ def main(argv=None):
     parser.add_argument("--resume", type=Path)
     parser.add_argument("--demo", action="store_true", help="Explicitly confirm and execute one noninteractive demo")
     parser.add_argument("--preview", action="store_true", help="Render the terminal entry without creating a session")
+    parser.add_argument('--example', action='store_true', help='Open a fresh synthetic offline planning example')
+    parser.add_argument('--preview-html', type=Path, help='Save a read-only terminal example as HTML without creating a session')
+    parser.add_argument('--verbose-events', action='store_true', help='Show full model proposals during interactive use')
     args = parser.parse_args(argv)
+    if args.example and (args.demo or args.dataset or args.resume):
+        parser.error('--example不能与数值演示、数据集或旧会话恢复混用')
     try:
+        if args.preview_html:
+            from .presentation import terminal_preview_html
+            args.preview_html.parent.mkdir(parents=True, exist_ok=True)
+            args.preview_html.write_text(terminal_preview_html(), encoding='utf-8')
+            print(args.preview_html)
+            return 0
         if args.preview:
-            console = Console(width=100)
-            console.print(Panel("[bold cyan]science[/bold cyan] [bold magenta]Bot[/bold magenta]\n[dim]research, with evidence.[/dim]", padding=(2, 4), border_style="bright_black"))
-            console.print("  describe → review → confirm → experiment → verify\n\n  /status   /experiments   /pause   /resume   /report   /model-output\n\n[cyan]you ›[/cyan]")
+            from .presentation import example_view, show_home, show_planning
+            console = Console(width=112)
+            view = example_view(); show_home(console, view); show_planning(console, view['planning'])
+            console.print(Text('先确认命题理解，再补充先导依据；/report 查看交付，/deliver 导出。\nyou ›', style='green'))
             return 0
         if args.demo:
             session = open_session(args)

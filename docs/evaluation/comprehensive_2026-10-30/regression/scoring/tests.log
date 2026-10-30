@@ -1,0 +1,9 @@
+test_agent_start_does_not_read_answers_or_expected_labels (test_mainline_evaluation.MainlineEvaluationTests.test_agent_start_does_not_read_answers_or_expected_labels) ... ok
+test_blocked_handoff_with_wrong_critical_answer_does_not_pass (test_mainline_evaluation.MainlineEvaluationTests.test_blocked_handoff_with_wrong_critical_answer_does_not_pass) ... ok
+test_only_terminal_punctuation_is_ignored_not_different_values (test_mainline_evaluation.MainlineEvaluationTests.test_only_terminal_punctuation_is_ignored_not_different_values) ... ok
+test_ten_cases_cover_five_mechanisms_in_two_source_groups (test_mainline_evaluation.MainlineEvaluationTests.test_ten_cases_cover_five_mechanisms_in_two_source_groups) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.010s
+
+OK

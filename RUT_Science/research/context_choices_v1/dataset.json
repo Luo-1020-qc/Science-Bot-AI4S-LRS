@@ -1,0 +1,4610 @@
+[
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_0",
+    "request": "我想比较候选模型的两种方案，保持条件一致。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_1",
+    "request": "帮我对比候选模型的候选与基线，判断差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_2",
+    "request": "关于候选模型，先看同等预算下谁的表现更好。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_3",
+    "request": "我想知道候选模型的新方法比简单基线有无优势。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_4",
+    "request": "对候选模型做公平比较，先固定数据和评估方式。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_5",
+    "request": "我的目标是评估候选模型不同方案的误差和成本差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_6",
+    "request": "希望比较候选模型的效果，允许没有差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_7",
+    "request": "我想比较候选模型，先澄清适用范围、实验单位和验收标准。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_8",
+    "request": "我想预测候选模型中未见对象的结果。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_9",
+    "request": "关于候选模型，重点评估独立留出数据上的预测能力。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_10",
+    "request": "希望用候选模型历史数据预测未来，不让未来信息泄漏。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_11",
+    "request": "对候选模型建立预测评估，区分训练验证与最终测试。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_12",
+    "request": "我想知道候选模型模型能否泛化到新对象。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_13",
+    "request": "请规划候选模型在未来时间段上的预测验证。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_14",
+    "request": "关注候选模型的新样本预测误差和留出划分。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_15",
+    "request": "我的目标是预测候选模型未见样本，而非解释因果。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_16",
+    "request": "我想复现候选模型论文中的核心结论。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_17",
+    "request": "关于候选模型，先把原论文的适用条件和实现对齐。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_18",
+    "request": "希望重现候选模型文章的结果，并记录实现差异。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_19",
+    "request": "对候选模型做论文复现，先选定具体命题。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_20",
+    "request": "我想核对候选模型已发表方法能否被独立复现。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_21",
+    "request": "请帮我制定候选模型最小复现流程。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_22",
+    "request": "按候选模型原文核对数据、配置和评估，再复现。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_23",
+    "request": "我的目标是复刻候选模型选定论文的实验条件。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_24",
+    "request": "我想估计对候选模型实施干预的因果效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_25",
+    "request": "关于候选模型，重点核查混杂与因果识别条件。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_26",
+    "request": "希望判断候选模型干预是否导致结局变化。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_27",
+    "request": "对候选模型设计随机分配研究来估计干预效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_28",
+    "request": "我想知道候选模型变化能否归因于所施加的处理。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_29",
+    "request": "请先审查候选模型观察数据支持因果结论的条件。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_30",
+    "request": "聚焦候选模型目标干预与反事实比较。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_31",
+    "request": "我的目标是识别候选模型处理对主要结局的因果效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_32",
+    "request": "我想探索候选模型中的现象与关联，先不预设方向。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_33",
+    "request": "关于候选模型，先筛选值得继续验证的因素。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_34",
+    "request": "希望对候选模型做探索性先导，形成研究假设。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_35",
+    "request": "对候选模型先找可能的机制，之后独立验证。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_36",
+    "request": "我想先描述候选模型数据的模式，不声称因果。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_37",
+    "request": "请规划候选模型的探索性分析，不预设谁更好。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_38",
+    "request": "先探索候选模型是否有值得检验的现象。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_39",
+    "request": "我的目标是从候选模型数据提出候选问题。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_40",
+    "request": "我对候选模型有想法，但还不知道应该问什么。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_41",
+    "request": "帮我把候选模型这个课题的边界逐步说清楚。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_42",
+    "request": "希望先讨论候选模型的应用场景和资源限制。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_43",
+    "request": "关于候选模型，我还没有选定研究目的。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_44",
+    "request": "我想开始候选模型研究，先让我选择合适的方向。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_45",
+    "request": "先把候选模型从模糊想法整理成研究计划。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_46",
+    "request": "关于候选模型，先确认我到底想解决什么问题。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "候选模型",
+    "case_id": "train_47",
+    "request": "我希望针对候选模型逐项确定实验边界。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_48",
+    "request": "我想比较电池材料的两种方案，保持条件一致。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_49",
+    "request": "帮我对比电池材料的候选与基线，判断差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_50",
+    "request": "关于电池材料，先看同等预算下谁的表现更好。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_51",
+    "request": "我想知道电池材料的新方法比简单基线有无优势。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_52",
+    "request": "对电池材料做公平比较，先固定数据和评估方式。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_53",
+    "request": "我的目标是评估电池材料不同方案的误差和成本差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_54",
+    "request": "希望比较电池材料的效果，允许没有差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_55",
+    "request": "我想比较电池材料，先澄清适用范围、实验单位和验收标准。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_56",
+    "request": "我想预测电池材料中未见对象的结果。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_57",
+    "request": "关于电池材料，重点评估独立留出数据上的预测能力。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_58",
+    "request": "希望用电池材料历史数据预测未来，不让未来信息泄漏。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_59",
+    "request": "对电池材料建立预测评估，区分训练验证与最终测试。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_60",
+    "request": "我想知道电池材料模型能否泛化到新对象。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_61",
+    "request": "请规划电池材料在未来时间段上的预测验证。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_62",
+    "request": "关注电池材料的新样本预测误差和留出划分。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_63",
+    "request": "我的目标是预测电池材料未见样本，而非解释因果。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_64",
+    "request": "我想复现电池材料论文中的核心结论。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_65",
+    "request": "关于电池材料，先把原论文的适用条件和实现对齐。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_66",
+    "request": "希望重现电池材料文章的结果，并记录实现差异。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_67",
+    "request": "对电池材料做论文复现，先选定具体命题。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_68",
+    "request": "我想核对电池材料已发表方法能否被独立复现。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_69",
+    "request": "请帮我制定电池材料最小复现流程。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_70",
+    "request": "按电池材料原文核对数据、配置和评估，再复现。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_71",
+    "request": "我的目标是复刻电池材料选定论文的实验条件。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_72",
+    "request": "我想估计对电池材料实施干预的因果效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_73",
+    "request": "关于电池材料，重点核查混杂与因果识别条件。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_74",
+    "request": "希望判断电池材料干预是否导致结局变化。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_75",
+    "request": "对电池材料设计随机分配研究来估计干预效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_76",
+    "request": "我想知道电池材料变化能否归因于所施加的处理。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_77",
+    "request": "请先审查电池材料观察数据支持因果结论的条件。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_78",
+    "request": "聚焦电池材料目标干预与反事实比较。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_79",
+    "request": "我的目标是识别电池材料处理对主要结局的因果效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_80",
+    "request": "我想探索电池材料中的现象与关联，先不预设方向。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_81",
+    "request": "关于电池材料，先筛选值得继续验证的因素。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_82",
+    "request": "希望对电池材料做探索性先导，形成研究假设。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_83",
+    "request": "对电池材料先找可能的机制，之后独立验证。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_84",
+    "request": "我想先描述电池材料数据的模式，不声称因果。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_85",
+    "request": "请规划电池材料的探索性分析，不预设谁更好。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_86",
+    "request": "先探索电池材料是否有值得检验的现象。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_87",
+    "request": "我的目标是从电池材料数据提出候选问题。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_88",
+    "request": "我对电池材料有想法，但还不知道应该问什么。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_89",
+    "request": "帮我把电池材料这个课题的边界逐步说清楚。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_90",
+    "request": "希望先讨论电池材料的应用场景和资源限制。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_91",
+    "request": "关于电池材料，我还没有选定研究目的。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_92",
+    "request": "我想开始电池材料研究，先让我选择合适的方向。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_93",
+    "request": "先把电池材料从模糊想法整理成研究计划。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_94",
+    "request": "关于电池材料，先确认我到底想解决什么问题。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "电池材料",
+    "case_id": "train_95",
+    "request": "我希望针对电池材料逐项确定实验边界。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_96",
+    "request": "我想比较合成传感器的两种方案，保持条件一致。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_97",
+    "request": "帮我对比合成传感器的候选与基线，判断差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_98",
+    "request": "关于合成传感器，先看同等预算下谁的表现更好。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_99",
+    "request": "我想知道合成传感器的新方法比简单基线有无优势。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_100",
+    "request": "对合成传感器做公平比较，先固定数据和评估方式。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_101",
+    "request": "我的目标是评估合成传感器不同方案的误差和成本差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_102",
+    "request": "希望比较合成传感器的效果，允许没有差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_103",
+    "request": "我想比较合成传感器，先澄清适用范围、实验单位和验收标准。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_104",
+    "request": "我想预测合成传感器中未见对象的结果。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_105",
+    "request": "关于合成传感器，重点评估独立留出数据上的预测能力。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_106",
+    "request": "希望用合成传感器历史数据预测未来，不让未来信息泄漏。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_107",
+    "request": "对合成传感器建立预测评估，区分训练验证与最终测试。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_108",
+    "request": "我想知道合成传感器模型能否泛化到新对象。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_109",
+    "request": "请规划合成传感器在未来时间段上的预测验证。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_110",
+    "request": "关注合成传感器的新样本预测误差和留出划分。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_111",
+    "request": "我的目标是预测合成传感器未见样本，而非解释因果。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_112",
+    "request": "我想复现合成传感器论文中的核心结论。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_113",
+    "request": "关于合成传感器，先把原论文的适用条件和实现对齐。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_114",
+    "request": "希望重现合成传感器文章的结果，并记录实现差异。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_115",
+    "request": "对合成传感器做论文复现，先选定具体命题。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_116",
+    "request": "我想核对合成传感器已发表方法能否被独立复现。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_117",
+    "request": "请帮我制定合成传感器最小复现流程。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_118",
+    "request": "按合成传感器原文核对数据、配置和评估，再复现。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_119",
+    "request": "我的目标是复刻合成传感器选定论文的实验条件。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_120",
+    "request": "我想估计对合成传感器实施干预的因果效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_121",
+    "request": "关于合成传感器，重点核查混杂与因果识别条件。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_122",
+    "request": "希望判断合成传感器干预是否导致结局变化。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_123",
+    "request": "对合成传感器设计随机分配研究来估计干预效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_124",
+    "request": "我想知道合成传感器变化能否归因于所施加的处理。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_125",
+    "request": "请先审查合成传感器观察数据支持因果结论的条件。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_126",
+    "request": "聚焦合成传感器目标干预与反事实比较。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_127",
+    "request": "我的目标是识别合成传感器处理对主要结局的因果效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_128",
+    "request": "我想探索合成传感器中的现象与关联，先不预设方向。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_129",
+    "request": "关于合成传感器，先筛选值得继续验证的因素。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_130",
+    "request": "希望对合成传感器做探索性先导，形成研究假设。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_131",
+    "request": "对合成传感器先找可能的机制，之后独立验证。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_132",
+    "request": "我想先描述合成传感器数据的模式，不声称因果。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_133",
+    "request": "请规划合成传感器的探索性分析，不预设谁更好。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_134",
+    "request": "先探索合成传感器是否有值得检验的现象。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_135",
+    "request": "我的目标是从合成传感器数据提出候选问题。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_136",
+    "request": "我对合成传感器有想法，但还不知道应该问什么。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_137",
+    "request": "帮我把合成传感器这个课题的边界逐步说清楚。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_138",
+    "request": "希望先讨论合成传感器的应用场景和资源限制。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_139",
+    "request": "关于合成传感器，我还没有选定研究目的。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_140",
+    "request": "我想开始合成传感器研究，先让我选择合适的方向。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_141",
+    "request": "先把合成传感器从模糊想法整理成研究计划。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_142",
+    "request": "关于合成传感器，先确认我到底想解决什么问题。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "合成传感器",
+    "case_id": "train_143",
+    "request": "我希望针对合成传感器逐项确定实验边界。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_144",
+    "request": "我想比较细胞图像的两种方案，保持条件一致。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_145",
+    "request": "帮我对比细胞图像的候选与基线，判断差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_146",
+    "request": "关于细胞图像，先看同等预算下谁的表现更好。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_147",
+    "request": "我想知道细胞图像的新方法比简单基线有无优势。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_148",
+    "request": "对细胞图像做公平比较，先固定数据和评估方式。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_149",
+    "request": "我的目标是评估细胞图像不同方案的误差和成本差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_150",
+    "request": "希望比较细胞图像的效果，允许没有差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_151",
+    "request": "我想比较细胞图像，先澄清适用范围、实验单位和验收标准。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_152",
+    "request": "我想预测细胞图像中未见对象的结果。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_153",
+    "request": "关于细胞图像，重点评估独立留出数据上的预测能力。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_154",
+    "request": "希望用细胞图像历史数据预测未来，不让未来信息泄漏。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_155",
+    "request": "对细胞图像建立预测评估，区分训练验证与最终测试。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_156",
+    "request": "我想知道细胞图像模型能否泛化到新对象。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_157",
+    "request": "请规划细胞图像在未来时间段上的预测验证。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_158",
+    "request": "关注细胞图像的新样本预测误差和留出划分。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_159",
+    "request": "我的目标是预测细胞图像未见样本，而非解释因果。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_160",
+    "request": "我想复现细胞图像论文中的核心结论。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_161",
+    "request": "关于细胞图像，先把原论文的适用条件和实现对齐。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_162",
+    "request": "希望重现细胞图像文章的结果，并记录实现差异。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_163",
+    "request": "对细胞图像做论文复现，先选定具体命题。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_164",
+    "request": "我想核对细胞图像已发表方法能否被独立复现。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_165",
+    "request": "请帮我制定细胞图像最小复现流程。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_166",
+    "request": "按细胞图像原文核对数据、配置和评估，再复现。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_167",
+    "request": "我的目标是复刻细胞图像选定论文的实验条件。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_168",
+    "request": "我想估计对细胞图像实施干预的因果效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_169",
+    "request": "关于细胞图像，重点核查混杂与因果识别条件。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_170",
+    "request": "希望判断细胞图像干预是否导致结局变化。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_171",
+    "request": "对细胞图像设计随机分配研究来估计干预效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_172",
+    "request": "我想知道细胞图像变化能否归因于所施加的处理。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_173",
+    "request": "请先审查细胞图像观察数据支持因果结论的条件。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_174",
+    "request": "聚焦细胞图像目标干预与反事实比较。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_175",
+    "request": "我的目标是识别细胞图像处理对主要结局的因果效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_176",
+    "request": "我想探索细胞图像中的现象与关联，先不预设方向。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_177",
+    "request": "关于细胞图像，先筛选值得继续验证的因素。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_178",
+    "request": "希望对细胞图像做探索性先导，形成研究假设。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_179",
+    "request": "对细胞图像先找可能的机制，之后独立验证。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_180",
+    "request": "我想先描述细胞图像数据的模式，不声称因果。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_181",
+    "request": "请规划细胞图像的探索性分析，不预设谁更好。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_182",
+    "request": "先探索细胞图像是否有值得检验的现象。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_183",
+    "request": "我的目标是从细胞图像数据提出候选问题。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_184",
+    "request": "我对细胞图像有想法，但还不知道应该问什么。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_185",
+    "request": "帮我把细胞图像这个课题的边界逐步说清楚。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_186",
+    "request": "希望先讨论细胞图像的应用场景和资源限制。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_187",
+    "request": "关于细胞图像，我还没有选定研究目的。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_188",
+    "request": "我想开始细胞图像研究，先让我选择合适的方向。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_189",
+    "request": "先把细胞图像从模糊想法整理成研究计划。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_190",
+    "request": "关于细胞图像，先确认我到底想解决什么问题。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "细胞图像",
+    "case_id": "train_191",
+    "request": "我希望针对细胞图像逐项确定实验边界。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_192",
+    "request": "我想比较表格模型的两种方案，保持条件一致。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_193",
+    "request": "帮我对比表格模型的候选与基线，判断差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_194",
+    "request": "关于表格模型，先看同等预算下谁的表现更好。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_195",
+    "request": "我想知道表格模型的新方法比简单基线有无优势。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_196",
+    "request": "对表格模型做公平比较，先固定数据和评估方式。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_197",
+    "request": "我的目标是评估表格模型不同方案的误差和成本差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_198",
+    "request": "希望比较表格模型的效果，允许没有差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_199",
+    "request": "我想比较表格模型，先澄清适用范围、实验单位和验收标准。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_200",
+    "request": "我想预测表格模型中未见对象的结果。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_201",
+    "request": "关于表格模型，重点评估独立留出数据上的预测能力。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_202",
+    "request": "希望用表格模型历史数据预测未来，不让未来信息泄漏。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_203",
+    "request": "对表格模型建立预测评估，区分训练验证与最终测试。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_204",
+    "request": "我想知道表格模型模型能否泛化到新对象。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_205",
+    "request": "请规划表格模型在未来时间段上的预测验证。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_206",
+    "request": "关注表格模型的新样本预测误差和留出划分。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_207",
+    "request": "我的目标是预测表格模型未见样本，而非解释因果。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_208",
+    "request": "我想复现表格模型论文中的核心结论。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_209",
+    "request": "关于表格模型，先把原论文的适用条件和实现对齐。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_210",
+    "request": "希望重现表格模型文章的结果，并记录实现差异。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_211",
+    "request": "对表格模型做论文复现，先选定具体命题。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_212",
+    "request": "我想核对表格模型已发表方法能否被独立复现。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_213",
+    "request": "请帮我制定表格模型最小复现流程。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_214",
+    "request": "按表格模型原文核对数据、配置和评估，再复现。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_215",
+    "request": "我的目标是复刻表格模型选定论文的实验条件。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_216",
+    "request": "我想估计对表格模型实施干预的因果效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_217",
+    "request": "关于表格模型，重点核查混杂与因果识别条件。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_218",
+    "request": "希望判断表格模型干预是否导致结局变化。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_219",
+    "request": "对表格模型设计随机分配研究来估计干预效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_220",
+    "request": "我想知道表格模型变化能否归因于所施加的处理。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_221",
+    "request": "请先审查表格模型观察数据支持因果结论的条件。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_222",
+    "request": "聚焦表格模型目标干预与反事实比较。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_223",
+    "request": "我的目标是识别表格模型处理对主要结局的因果效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_224",
+    "request": "我想探索表格模型中的现象与关联，先不预设方向。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_225",
+    "request": "关于表格模型，先筛选值得继续验证的因素。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_226",
+    "request": "希望对表格模型做探索性先导，形成研究假设。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_227",
+    "request": "对表格模型先找可能的机制，之后独立验证。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_228",
+    "request": "我想先描述表格模型数据的模式，不声称因果。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_229",
+    "request": "请规划表格模型的探索性分析，不预设谁更好。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_230",
+    "request": "先探索表格模型是否有值得检验的现象。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_231",
+    "request": "我的目标是从表格模型数据提出候选问题。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_232",
+    "request": "我对表格模型有想法，但还不知道应该问什么。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_233",
+    "request": "帮我把表格模型这个课题的边界逐步说清楚。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_234",
+    "request": "希望先讨论表格模型的应用场景和资源限制。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_235",
+    "request": "关于表格模型，我还没有选定研究目的。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_236",
+    "request": "我想开始表格模型研究，先让我选择合适的方向。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_237",
+    "request": "先把表格模型从模糊想法整理成研究计划。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_238",
+    "request": "关于表格模型，先确认我到底想解决什么问题。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "表格模型",
+    "case_id": "train_239",
+    "request": "我希望针对表格模型逐项确定实验边界。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_240",
+    "request": "我想比较反应条件的两种方案，保持条件一致。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_241",
+    "request": "帮我对比反应条件的候选与基线，判断差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_242",
+    "request": "关于反应条件，先看同等预算下谁的表现更好。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_243",
+    "request": "我想知道反应条件的新方法比简单基线有无优势。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_244",
+    "request": "对反应条件做公平比较，先固定数据和评估方式。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_245",
+    "request": "我的目标是评估反应条件不同方案的误差和成本差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_246",
+    "request": "希望比较反应条件的效果，允许没有差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_247",
+    "request": "我想比较反应条件，先澄清适用范围、实验单位和验收标准。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_248",
+    "request": "我想预测反应条件中未见对象的结果。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_249",
+    "request": "关于反应条件，重点评估独立留出数据上的预测能力。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_250",
+    "request": "希望用反应条件历史数据预测未来，不让未来信息泄漏。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_251",
+    "request": "对反应条件建立预测评估，区分训练验证与最终测试。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_252",
+    "request": "我想知道反应条件模型能否泛化到新对象。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_253",
+    "request": "请规划反应条件在未来时间段上的预测验证。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_254",
+    "request": "关注反应条件的新样本预测误差和留出划分。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_255",
+    "request": "我的目标是预测反应条件未见样本，而非解释因果。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_256",
+    "request": "我想复现反应条件论文中的核心结论。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_257",
+    "request": "关于反应条件，先把原论文的适用条件和实现对齐。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_258",
+    "request": "希望重现反应条件文章的结果，并记录实现差异。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_259",
+    "request": "对反应条件做论文复现，先选定具体命题。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_260",
+    "request": "我想核对反应条件已发表方法能否被独立复现。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_261",
+    "request": "请帮我制定反应条件最小复现流程。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_262",
+    "request": "按反应条件原文核对数据、配置和评估，再复现。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_263",
+    "request": "我的目标是复刻反应条件选定论文的实验条件。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_264",
+    "request": "我想估计对反应条件实施干预的因果效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_265",
+    "request": "关于反应条件，重点核查混杂与因果识别条件。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_266",
+    "request": "希望判断反应条件干预是否导致结局变化。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_267",
+    "request": "对反应条件设计随机分配研究来估计干预效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_268",
+    "request": "我想知道反应条件变化能否归因于所施加的处理。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_269",
+    "request": "请先审查反应条件观察数据支持因果结论的条件。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_270",
+    "request": "聚焦反应条件目标干预与反事实比较。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_271",
+    "request": "我的目标是识别反应条件处理对主要结局的因果效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_272",
+    "request": "我想探索反应条件中的现象与关联，先不预设方向。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_273",
+    "request": "关于反应条件，先筛选值得继续验证的因素。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_274",
+    "request": "希望对反应条件做探索性先导，形成研究假设。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_275",
+    "request": "对反应条件先找可能的机制，之后独立验证。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_276",
+    "request": "我想先描述反应条件数据的模式，不声称因果。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_277",
+    "request": "请规划反应条件的探索性分析，不预设谁更好。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_278",
+    "request": "先探索反应条件是否有值得检验的现象。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_279",
+    "request": "我的目标是从反应条件数据提出候选问题。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_280",
+    "request": "我对反应条件有想法，但还不知道应该问什么。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_281",
+    "request": "帮我把反应条件这个课题的边界逐步说清楚。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_282",
+    "request": "希望先讨论反应条件的应用场景和资源限制。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_283",
+    "request": "关于反应条件，我还没有选定研究目的。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_284",
+    "request": "我想开始反应条件研究，先让我选择合适的方向。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_285",
+    "request": "先把反应条件从模糊想法整理成研究计划。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_286",
+    "request": "关于反应条件，先确认我到底想解决什么问题。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "train",
+    "source_group": "反应条件",
+    "case_id": "train_287",
+    "request": "我希望针对反应条件逐项确定实验边界。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_288",
+    "request": "我想比较设备状态的两种方案，保持条件一致。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_289",
+    "request": "帮我对比设备状态的候选与基线，判断差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_290",
+    "request": "关于设备状态，先看同等预算下谁的表现更好。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_291",
+    "request": "我想知道设备状态的新方法比简单基线有无优势。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_292",
+    "request": "对设备状态做公平比较，先固定数据和评估方式。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_293",
+    "request": "我的目标是评估设备状态不同方案的误差和成本差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_294",
+    "request": "希望比较设备状态的效果，允许没有差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_295",
+    "request": "我想比较设备状态，先澄清适用范围、实验单位和验收标准。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_296",
+    "request": "我想预测设备状态中未见对象的结果。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_297",
+    "request": "关于设备状态，重点评估独立留出数据上的预测能力。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_298",
+    "request": "希望用设备状态历史数据预测未来，不让未来信息泄漏。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_299",
+    "request": "对设备状态建立预测评估，区分训练验证与最终测试。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_300",
+    "request": "我想知道设备状态模型能否泛化到新对象。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_301",
+    "request": "请规划设备状态在未来时间段上的预测验证。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_302",
+    "request": "关注设备状态的新样本预测误差和留出划分。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_303",
+    "request": "我的目标是预测设备状态未见样本，而非解释因果。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_304",
+    "request": "我想复现设备状态论文中的核心结论。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_305",
+    "request": "关于设备状态，先把原论文的适用条件和实现对齐。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_306",
+    "request": "希望重现设备状态文章的结果，并记录实现差异。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_307",
+    "request": "对设备状态做论文复现，先选定具体命题。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_308",
+    "request": "我想核对设备状态已发表方法能否被独立复现。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_309",
+    "request": "请帮我制定设备状态最小复现流程。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_310",
+    "request": "按设备状态原文核对数据、配置和评估，再复现。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_311",
+    "request": "我的目标是复刻设备状态选定论文的实验条件。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_312",
+    "request": "我想估计对设备状态实施干预的因果效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_313",
+    "request": "关于设备状态，重点核查混杂与因果识别条件。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_314",
+    "request": "希望判断设备状态干预是否导致结局变化。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_315",
+    "request": "对设备状态设计随机分配研究来估计干预效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_316",
+    "request": "我想知道设备状态变化能否归因于所施加的处理。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_317",
+    "request": "请先审查设备状态观察数据支持因果结论的条件。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_318",
+    "request": "聚焦设备状态目标干预与反事实比较。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_319",
+    "request": "我的目标是识别设备状态处理对主要结局的因果效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_320",
+    "request": "我想探索设备状态中的现象与关联，先不预设方向。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_321",
+    "request": "关于设备状态，先筛选值得继续验证的因素。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_322",
+    "request": "希望对设备状态做探索性先导，形成研究假设。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_323",
+    "request": "对设备状态先找可能的机制，之后独立验证。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_324",
+    "request": "我想先描述设备状态数据的模式，不声称因果。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_325",
+    "request": "请规划设备状态的探索性分析，不预设谁更好。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_326",
+    "request": "先探索设备状态是否有值得检验的现象。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_327",
+    "request": "我的目标是从设备状态数据提出候选问题。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_328",
+    "request": "我对设备状态有想法，但还不知道应该问什么。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_329",
+    "request": "帮我把设备状态这个课题的边界逐步说清楚。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_330",
+    "request": "希望先讨论设备状态的应用场景和资源限制。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_331",
+    "request": "关于设备状态，我还没有选定研究目的。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_332",
+    "request": "我想开始设备状态研究，先让我选择合适的方向。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_333",
+    "request": "先把设备状态从模糊想法整理成研究计划。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_334",
+    "request": "关于设备状态，先确认我到底想解决什么问题。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "设备状态",
+    "case_id": "dev_335",
+    "request": "我希望针对设备状态逐项确定实验边界。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_336",
+    "request": "我想比较合成流场的两种方案，保持条件一致。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_337",
+    "request": "帮我对比合成流场的候选与基线，判断差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_338",
+    "request": "关于合成流场，先看同等预算下谁的表现更好。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_339",
+    "request": "我想知道合成流场的新方法比简单基线有无优势。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_340",
+    "request": "对合成流场做公平比较，先固定数据和评估方式。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_341",
+    "request": "我的目标是评估合成流场不同方案的误差和成本差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_342",
+    "request": "希望比较合成流场的效果，允许没有差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_343",
+    "request": "我想比较合成流场，先澄清适用范围、实验单位和验收标准。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_344",
+    "request": "我想预测合成流场中未见对象的结果。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_345",
+    "request": "关于合成流场，重点评估独立留出数据上的预测能力。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_346",
+    "request": "希望用合成流场历史数据预测未来，不让未来信息泄漏。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_347",
+    "request": "对合成流场建立预测评估，区分训练验证与最终测试。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_348",
+    "request": "我想知道合成流场模型能否泛化到新对象。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_349",
+    "request": "请规划合成流场在未来时间段上的预测验证。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_350",
+    "request": "关注合成流场的新样本预测误差和留出划分。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_351",
+    "request": "我的目标是预测合成流场未见样本，而非解释因果。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_352",
+    "request": "我想复现合成流场论文中的核心结论。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_353",
+    "request": "关于合成流场，先把原论文的适用条件和实现对齐。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_354",
+    "request": "希望重现合成流场文章的结果，并记录实现差异。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_355",
+    "request": "对合成流场做论文复现，先选定具体命题。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_356",
+    "request": "我想核对合成流场已发表方法能否被独立复现。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_357",
+    "request": "请帮我制定合成流场最小复现流程。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_358",
+    "request": "按合成流场原文核对数据、配置和评估，再复现。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_359",
+    "request": "我的目标是复刻合成流场选定论文的实验条件。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_360",
+    "request": "我想估计对合成流场实施干预的因果效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_361",
+    "request": "关于合成流场，重点核查混杂与因果识别条件。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_362",
+    "request": "希望判断合成流场干预是否导致结局变化。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_363",
+    "request": "对合成流场设计随机分配研究来估计干预效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_364",
+    "request": "我想知道合成流场变化能否归因于所施加的处理。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_365",
+    "request": "请先审查合成流场观察数据支持因果结论的条件。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_366",
+    "request": "聚焦合成流场目标干预与反事实比较。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_367",
+    "request": "我的目标是识别合成流场处理对主要结局的因果效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_368",
+    "request": "我想探索合成流场中的现象与关联，先不预设方向。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_369",
+    "request": "关于合成流场，先筛选值得继续验证的因素。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_370",
+    "request": "希望对合成流场做探索性先导，形成研究假设。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_371",
+    "request": "对合成流场先找可能的机制，之后独立验证。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_372",
+    "request": "我想先描述合成流场数据的模式，不声称因果。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_373",
+    "request": "请规划合成流场的探索性分析，不预设谁更好。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_374",
+    "request": "先探索合成流场是否有值得检验的现象。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_375",
+    "request": "我的目标是从合成流场数据提出候选问题。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_376",
+    "request": "我对合成流场有想法，但还不知道应该问什么。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_377",
+    "request": "帮我把合成流场这个课题的边界逐步说清楚。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_378",
+    "request": "希望先讨论合成流场的应用场景和资源限制。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_379",
+    "request": "关于合成流场，我还没有选定研究目的。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_380",
+    "request": "我想开始合成流场研究，先让我选择合适的方向。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_381",
+    "request": "先把合成流场从模糊想法整理成研究计划。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_382",
+    "request": "关于合成流场，先确认我到底想解决什么问题。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "dev",
+    "source_group": "合成流场",
+    "case_id": "dev_383",
+    "request": "我希望针对合成流场逐项确定实验边界。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_384",
+    "request": "我想比较LinearNO与FNO的两种方案，保持条件一致。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_385",
+    "request": "帮我对比LinearNO与FNO的候选与基线，判断差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_386",
+    "request": "关于LinearNO与FNO，先看同等预算下谁的表现更好。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_387",
+    "request": "我想知道LinearNO与FNO的新方法比简单基线有无优势。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_388",
+    "request": "对LinearNO与FNO做公平比较，先固定数据和评估方式。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_389",
+    "request": "我的目标是评估LinearNO与FNO不同方案的误差和成本差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_390",
+    "request": "希望比较LinearNO与FNO的效果，允许没有差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_391",
+    "request": "我想比较LinearNO与FNO，先澄清适用范围、实验单位和验收标准。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_392",
+    "request": "我想预测LinearNO与FNO中未见对象的结果。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_393",
+    "request": "关于LinearNO与FNO，重点评估独立留出数据上的预测能力。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_394",
+    "request": "希望用LinearNO与FNO历史数据预测未来，不让未来信息泄漏。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_395",
+    "request": "对LinearNO与FNO建立预测评估，区分训练验证与最终测试。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_396",
+    "request": "我想知道LinearNO与FNO模型能否泛化到新对象。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_397",
+    "request": "请规划LinearNO与FNO在未来时间段上的预测验证。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_398",
+    "request": "关注LinearNO与FNO的新样本预测误差和留出划分。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_399",
+    "request": "我的目标是预测LinearNO与FNO未见样本，而非解释因果。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_400",
+    "request": "我想复现LinearNO与FNO论文中的核心结论。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_401",
+    "request": "关于LinearNO与FNO，先把原论文的适用条件和实现对齐。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_402",
+    "request": "希望重现LinearNO与FNO文章的结果，并记录实现差异。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_403",
+    "request": "对LinearNO与FNO做论文复现，先选定具体命题。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_404",
+    "request": "我想核对LinearNO与FNO已发表方法能否被独立复现。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_405",
+    "request": "请帮我制定LinearNO与FNO最小复现流程。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_406",
+    "request": "按LinearNO与FNO原文核对数据、配置和评估，再复现。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_407",
+    "request": "我的目标是复刻LinearNO与FNO选定论文的实验条件。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_408",
+    "request": "我想估计对LinearNO与FNO实施干预的因果效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_409",
+    "request": "关于LinearNO与FNO，重点核查混杂与因果识别条件。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_410",
+    "request": "希望判断LinearNO与FNO干预是否导致结局变化。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_411",
+    "request": "对LinearNO与FNO设计随机分配研究来估计干预效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_412",
+    "request": "我想知道LinearNO与FNO变化能否归因于所施加的处理。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_413",
+    "request": "请先审查LinearNO与FNO观察数据支持因果结论的条件。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_414",
+    "request": "聚焦LinearNO与FNO目标干预与反事实比较。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_415",
+    "request": "我的目标是识别LinearNO与FNO处理对主要结局的因果效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_416",
+    "request": "我想探索LinearNO与FNO中的现象与关联，先不预设方向。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_417",
+    "request": "关于LinearNO与FNO，先筛选值得继续验证的因素。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_418",
+    "request": "希望对LinearNO与FNO做探索性先导，形成研究假设。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_419",
+    "request": "对LinearNO与FNO先找可能的机制，之后独立验证。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_420",
+    "request": "我想先描述LinearNO与FNO数据的模式，不声称因果。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_421",
+    "request": "请规划LinearNO与FNO的探索性分析，不预设谁更好。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_422",
+    "request": "先探索LinearNO与FNO是否有值得检验的现象。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_423",
+    "request": "我的目标是从LinearNO与FNO数据提出候选问题。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_424",
+    "request": "我对LinearNO与FNO有想法，但还不知道应该问什么。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_425",
+    "request": "帮我把LinearNO与FNO这个课题的边界逐步说清楚。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_426",
+    "request": "希望先讨论LinearNO与FNO的应用场景和资源限制。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_427",
+    "request": "关于LinearNO与FNO，我还没有选定研究目的。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_428",
+    "request": "我想开始LinearNO与FNO研究，先让我选择合适的方向。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_429",
+    "request": "先把LinearNO与FNO从模糊想法整理成研究计划。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_430",
+    "request": "关于LinearNO与FNO，先确认我到底想解决什么问题。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "LinearNO与FNO",
+    "case_id": "test_431",
+    "request": "我希望针对LinearNO与FNO逐项确定实验边界。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_432",
+    "request": "我想比较土壤数据的两种方案，保持条件一致。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_433",
+    "request": "帮我对比土壤数据的候选与基线，判断差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_434",
+    "request": "关于土壤数据，先看同等预算下谁的表现更好。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_435",
+    "request": "我想知道土壤数据的新方法比简单基线有无优势。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_436",
+    "request": "对土壤数据做公平比较，先固定数据和评估方式。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_437",
+    "request": "我的目标是评估土壤数据不同方案的误差和成本差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_438",
+    "request": "希望比较土壤数据的效果，允许没有差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_439",
+    "request": "我想比较土壤数据，先澄清适用范围、实验单位和验收标准。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_440",
+    "request": "我想预测土壤数据中未见对象的结果。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_441",
+    "request": "关于土壤数据，重点评估独立留出数据上的预测能力。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_442",
+    "request": "希望用土壤数据历史数据预测未来，不让未来信息泄漏。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_443",
+    "request": "对土壤数据建立预测评估，区分训练验证与最终测试。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_444",
+    "request": "我想知道土壤数据模型能否泛化到新对象。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_445",
+    "request": "请规划土壤数据在未来时间段上的预测验证。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_446",
+    "request": "关注土壤数据的新样本预测误差和留出划分。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_447",
+    "request": "我的目标是预测土壤数据未见样本，而非解释因果。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_448",
+    "request": "我想复现土壤数据论文中的核心结论。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_449",
+    "request": "关于土壤数据，先把原论文的适用条件和实现对齐。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_450",
+    "request": "希望重现土壤数据文章的结果，并记录实现差异。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_451",
+    "request": "对土壤数据做论文复现，先选定具体命题。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_452",
+    "request": "我想核对土壤数据已发表方法能否被独立复现。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_453",
+    "request": "请帮我制定土壤数据最小复现流程。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_454",
+    "request": "按土壤数据原文核对数据、配置和评估，再复现。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_455",
+    "request": "我的目标是复刻土壤数据选定论文的实验条件。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_456",
+    "request": "我想估计对土壤数据实施干预的因果效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_457",
+    "request": "关于土壤数据，重点核查混杂与因果识别条件。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_458",
+    "request": "希望判断土壤数据干预是否导致结局变化。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_459",
+    "request": "对土壤数据设计随机分配研究来估计干预效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_460",
+    "request": "我想知道土壤数据变化能否归因于所施加的处理。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_461",
+    "request": "请先审查土壤数据观察数据支持因果结论的条件。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_462",
+    "request": "聚焦土壤数据目标干预与反事实比较。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_463",
+    "request": "我的目标是识别土壤数据处理对主要结局的因果效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_464",
+    "request": "我想探索土壤数据中的现象与关联，先不预设方向。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_465",
+    "request": "关于土壤数据，先筛选值得继续验证的因素。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_466",
+    "request": "希望对土壤数据做探索性先导，形成研究假设。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_467",
+    "request": "对土壤数据先找可能的机制，之后独立验证。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_468",
+    "request": "我想先描述土壤数据数据的模式，不声称因果。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_469",
+    "request": "请规划土壤数据的探索性分析，不预设谁更好。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_470",
+    "request": "先探索土壤数据是否有值得检验的现象。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_471",
+    "request": "我的目标是从土壤数据数据提出候选问题。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_472",
+    "request": "我对土壤数据有想法，但还不知道应该问什么。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_473",
+    "request": "帮我把土壤数据这个课题的边界逐步说清楚。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_474",
+    "request": "希望先讨论土壤数据的应用场景和资源限制。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_475",
+    "request": "关于土壤数据，我还没有选定研究目的。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_476",
+    "request": "我想开始土壤数据研究，先让我选择合适的方向。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_477",
+    "request": "先把土壤数据从模糊想法整理成研究计划。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_478",
+    "request": "关于土壤数据，先确认我到底想解决什么问题。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "土壤数据",
+    "case_id": "test_479",
+    "request": "我希望针对土壤数据逐项确定实验边界。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_480",
+    "request": "我想比较弹性场的两种方案，保持条件一致。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_481",
+    "request": "帮我对比弹性场的候选与基线，判断差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_482",
+    "request": "关于弹性场，先看同等预算下谁的表现更好。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_483",
+    "request": "我想知道弹性场的新方法比简单基线有无优势。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_484",
+    "request": "对弹性场做公平比较，先固定数据和评估方式。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_485",
+    "request": "我的目标是评估弹性场不同方案的误差和成本差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_486",
+    "request": "希望比较弹性场的效果，允许没有差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_487",
+    "request": "我想比较弹性场，先澄清适用范围、实验单位和验收标准。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_488",
+    "request": "我想预测弹性场中未见对象的结果。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_489",
+    "request": "关于弹性场，重点评估独立留出数据上的预测能力。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_490",
+    "request": "希望用弹性场历史数据预测未来，不让未来信息泄漏。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_491",
+    "request": "对弹性场建立预测评估，区分训练验证与最终测试。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_492",
+    "request": "我想知道弹性场模型能否泛化到新对象。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_493",
+    "request": "请规划弹性场在未来时间段上的预测验证。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_494",
+    "request": "关注弹性场的新样本预测误差和留出划分。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_495",
+    "request": "我的目标是预测弹性场未见样本，而非解释因果。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_496",
+    "request": "我想复现弹性场论文中的核心结论。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_497",
+    "request": "关于弹性场，先把原论文的适用条件和实现对齐。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_498",
+    "request": "希望重现弹性场文章的结果，并记录实现差异。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_499",
+    "request": "对弹性场做论文复现，先选定具体命题。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_500",
+    "request": "我想核对弹性场已发表方法能否被独立复现。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_501",
+    "request": "请帮我制定弹性场最小复现流程。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_502",
+    "request": "按弹性场原文核对数据、配置和评估，再复现。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_503",
+    "request": "我的目标是复刻弹性场选定论文的实验条件。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_504",
+    "request": "我想估计对弹性场实施干预的因果效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_505",
+    "request": "关于弹性场，重点核查混杂与因果识别条件。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_506",
+    "request": "希望判断弹性场干预是否导致结局变化。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_507",
+    "request": "对弹性场设计随机分配研究来估计干预效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_508",
+    "request": "我想知道弹性场变化能否归因于所施加的处理。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_509",
+    "request": "请先审查弹性场观察数据支持因果结论的条件。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_510",
+    "request": "聚焦弹性场目标干预与反事实比较。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_511",
+    "request": "我的目标是识别弹性场处理对主要结局的因果效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_512",
+    "request": "我想探索弹性场中的现象与关联，先不预设方向。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_513",
+    "request": "关于弹性场，先筛选值得继续验证的因素。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_514",
+    "request": "希望对弹性场做探索性先导，形成研究假设。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_515",
+    "request": "对弹性场先找可能的机制，之后独立验证。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_516",
+    "request": "我想先描述弹性场数据的模式，不声称因果。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_517",
+    "request": "请规划弹性场的探索性分析，不预设谁更好。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_518",
+    "request": "先探索弹性场是否有值得检验的现象。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_519",
+    "request": "我的目标是从弹性场数据提出候选问题。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_520",
+    "request": "我对弹性场有想法，但还不知道应该问什么。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_521",
+    "request": "帮我把弹性场这个课题的边界逐步说清楚。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_522",
+    "request": "希望先讨论弹性场的应用场景和资源限制。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_523",
+    "request": "关于弹性场，我还没有选定研究目的。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_524",
+    "request": "我想开始弹性场研究，先让我选择合适的方向。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_525",
+    "request": "先把弹性场从模糊想法整理成研究计划。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_526",
+    "request": "关于弹性场，先确认我到底想解决什么问题。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "弹性场",
+    "case_id": "test_527",
+    "request": "我希望针对弹性场逐项确定实验边界。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_528",
+    "request": "我想比较时序模型的两种方案，保持条件一致。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_529",
+    "request": "帮我对比时序模型的候选与基线，判断差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_530",
+    "request": "关于时序模型，先看同等预算下谁的表现更好。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_531",
+    "request": "我想知道时序模型的新方法比简单基线有无优势。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_532",
+    "request": "对时序模型做公平比较，先固定数据和评估方式。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_533",
+    "request": "我的目标是评估时序模型不同方案的误差和成本差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_534",
+    "request": "希望比较时序模型的效果，允许没有差异。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_535",
+    "request": "我想比较时序模型，先澄清适用范围、实验单位和验收标准。",
+    "intent": "comparison",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_536",
+    "request": "我想预测时序模型中未见对象的结果。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_537",
+    "request": "关于时序模型，重点评估独立留出数据上的预测能力。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_538",
+    "request": "希望用时序模型历史数据预测未来，不让未来信息泄漏。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_539",
+    "request": "对时序模型建立预测评估，区分训练验证与最终测试。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_540",
+    "request": "我想知道时序模型模型能否泛化到新对象。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_541",
+    "request": "请规划时序模型在未来时间段上的预测验证。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_542",
+    "request": "关注时序模型的新样本预测误差和留出划分。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_543",
+    "request": "我的目标是预测时序模型未见样本，而非解释因果。",
+    "intent": "prediction",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_544",
+    "request": "我想复现时序模型论文中的核心结论。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_545",
+    "request": "关于时序模型，先把原论文的适用条件和实现对齐。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_546",
+    "request": "希望重现时序模型文章的结果，并记录实现差异。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_547",
+    "request": "对时序模型做论文复现，先选定具体命题。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_548",
+    "request": "我想核对时序模型已发表方法能否被独立复现。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_549",
+    "request": "请帮我制定时序模型最小复现流程。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_550",
+    "request": "按时序模型原文核对数据、配置和评估，再复现。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_551",
+    "request": "我的目标是复刻时序模型选定论文的实验条件。",
+    "intent": "replication",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_552",
+    "request": "我想估计对时序模型实施干预的因果效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_553",
+    "request": "关于时序模型，重点核查混杂与因果识别条件。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_554",
+    "request": "希望判断时序模型干预是否导致结局变化。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_555",
+    "request": "对时序模型设计随机分配研究来估计干预效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_556",
+    "request": "我想知道时序模型变化能否归因于所施加的处理。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_557",
+    "request": "请先审查时序模型观察数据支持因果结论的条件。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_558",
+    "request": "聚焦时序模型目标干预与反事实比较。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_559",
+    "request": "我的目标是识别时序模型处理对主要结局的因果效应。",
+    "intent": "causal",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_560",
+    "request": "我想探索时序模型中的现象与关联，先不预设方向。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_561",
+    "request": "关于时序模型，先筛选值得继续验证的因素。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_562",
+    "request": "希望对时序模型做探索性先导，形成研究假设。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_563",
+    "request": "对时序模型先找可能的机制，之后独立验证。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_564",
+    "request": "我想先描述时序模型数据的模式，不声称因果。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_565",
+    "request": "请规划时序模型的探索性分析，不预设谁更好。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_566",
+    "request": "先探索时序模型是否有值得检验的现象。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_567",
+    "request": "我的目标是从时序模型数据提出候选问题。",
+    "intent": "exploration",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_568",
+    "request": "我对时序模型有想法，但还不知道应该问什么。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_569",
+    "request": "帮我把时序模型这个课题的边界逐步说清楚。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_570",
+    "request": "希望先讨论时序模型的应用场景和资源限制。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_571",
+    "request": "关于时序模型，我还没有选定研究目的。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_572",
+    "request": "我想开始时序模型研究，先让我选择合适的方向。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_573",
+    "request": "先把时序模型从模糊想法整理成研究计划。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_574",
+    "request": "关于时序模型，先确认我到底想解决什么问题。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  },
+  {
+    "split": "test",
+    "source_group": "时序模型",
+    "case_id": "test_575",
+    "request": "我希望针对时序模型逐项确定实验边界。",
+    "intent": "general",
+    "label_source": "scripted_synthetic_not_expert"
+  }
+]

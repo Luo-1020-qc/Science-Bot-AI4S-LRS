@@ -1,0 +1,39 @@
+{
+  "version": "scientific_dialogue_curriculum_v1",
+  "data_manifest_sha256": "fa539918fed13a0be466522d51957cd40252aa35a334ee546ac5038855e8de65",
+  "counts": {
+    "train": {
+      "stage1": 2144,
+      "stage2": 2513
+    },
+    "dev": {
+      "stage1": 594,
+      "stage2": 1663
+    },
+    "test": {
+      "stage1": 837,
+      "stage2": 3368
+    }
+  },
+  "skipped": {
+    "train:unaligned_annotations": 162,
+    "dev:unaligned_annotations": 101,
+    "test:unaligned_annotations": 186
+  },
+  "human_scientific_dialogues": 0,
+  "llm_training_performed": false,
+  "files": {
+    "stage1_dev.jsonl": "56d6c8a7dca74f9e6975055948e47c626d6522013ed6e77ddfe387e68722bee9",
+    "stage1_test.jsonl": "50a85949c02e205ce6fbb157ef0892436b5329147bd7854a36186fdb9b3b77fe",
+    "stage1_train.jsonl": "2171e915d76e610b9927dff282d97176aa71322aaeb8e08b0095fc6ddcbdc2c2",
+    "stage2_dev.jsonl": "9b1a11a556b6b6c55ea9a6250cb9e7c33d9a17db4facd3a83fffd9853dadb5c1",
+    "stage2_test.jsonl": "fdd172f5570c978dfc74e9dd8457d60276f433696793a6d47d25d2341481dd7b",
+    "stage2_train.jsonl": "a5ef37e35baabc308d7c474279105ce912f2f30e258ecfc152c33f3e9a5a9f99"
+  },
+  "schedule": [
+    "stage1_train.jsonl",
+    "stage2_train.jsonl",
+    "reviewed stage3 train.sft.jsonl when available"
+  ],
+  "limits": "Stage 1 has no contextual-option preference labels. Keep dev/test out of updates; use annotation weights if training on alternate answers. Raw third-party text stays local."
+}

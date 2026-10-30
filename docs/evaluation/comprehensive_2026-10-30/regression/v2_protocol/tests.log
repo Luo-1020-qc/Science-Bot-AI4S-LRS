@@ -1,0 +1,27 @@
+test_actual_tool_names_and_parameters_follow_pinned_catalog (test_rl_data.RLDataTests.test_actual_tool_names_and_parameters_follow_pinned_catalog) ... ok
+test_asking_then_observed_unavailable_supports_scoped_stop (test_rl_data.RLDataTests.test_asking_then_observed_unavailable_supports_scoped_stop) ... ok
+test_business_decision_budget_is_terminal_not_external_truncation (test_rl_data.RLDataTests.test_business_decision_budget_is_terminal_not_external_truncation) ... ok
+test_dev_and_evaluation_examples_cannot_enter_training (test_rl_data.RLDataTests.test_dev_and_evaluation_examples_cannot_enter_training) ... ok
+test_expert_cannot_change_observation_or_grant_missing_permissions (test_rl_data.RLDataTests.test_expert_cannot_change_observation_or_grant_missing_permissions) ... ok
+test_expert_extension_preflight_then_training_loader_roundtrip (test_rl_data.RLDataTests.test_expert_extension_preflight_then_training_loader_roundtrip) ... ok
+test_expert_extension_requires_review_and_no_cross_split_ancestors (test_rl_data.RLDataTests.test_expert_extension_requires_review_and_no_cross_split_ancestors) ... ok
+test_expert_multiple_acceptable_actions_validate_without_fabricated_identity (test_rl_data.RLDataTests.test_expert_multiple_acceptable_actions_validate_without_fabricated_identity) ... ok
+test_external_truncation_is_distinct (test_rl_data.RLDataTests.test_external_truncation_is_distinct) ... ok
+test_gae_bootstraps_truncation_but_not_termination (test_rl_data.RLDataTests.test_gae_bootstraps_truncation_but_not_termination) ... ok
+test_hidden_features_and_disabled_action_injection_are_rejected (test_rl_data.RLDataTests.test_hidden_features_and_disabled_action_injection_are_rejected) ... ok
+test_new_episode_reset_does_not_reuse_previous_episode_workspace (test_rl_data.RLDataTests.test_new_episode_reset_does_not_reuse_previous_episode_workspace) ... ok
+test_observation_has_no_task_id_split_or_hidden_mock_outcome (test_rl_data.RLDataTests.test_observation_has_no_task_id_split_or_hidden_mock_outcome) ... ok
+test_ppo_log_probabilities_recompute_from_real_behavior_snapshot (test_rl_data.RLDataTests.test_ppo_log_probabilities_recompute_from_real_behavior_snapshot) ... ok
+test_ppo_rejects_null_or_reference_probabilities (test_rl_data.RLDataTests.test_ppo_rejects_null_or_reference_probabilities) ... ok
+test_reference_tool_loop_completes_and_negative_science_does_not_change_success (test_rl_data.RLDataTests.test_reference_tool_loop_completes_and_negative_science_does_not_change_success) ... ok
+test_rollout_mask_must_match_observed_host_permissions (test_rl_data.RLDataTests.test_rollout_mask_must_match_observed_host_permissions) ... ok
+test_rollout_rejects_cross_task_join_and_changed_task_hash (test_rl_data.RLDataTests.test_rollout_rejects_cross_task_join_and_changed_task_hash) ... ok
+test_semantically_wrong_model_choices_are_not_hidden_by_mask (test_rl_data.RLDataTests.test_semantically_wrong_model_choices_are_not_hidden_by_mask) ... ok
+test_terminal_completion_reward_and_step_rewards_recompute (test_rl_data.RLDataTests.test_terminal_completion_reward_and_step_rewards_recompute) ... ok
+test_unknown_variance_cannot_use_template_default_to_pass_review (test_rl_data.RLDataTests.test_unknown_variance_cannot_use_template_default_to_pass_review) ... ok
+test_unobserved_future_unavailability_cannot_reward_stop (test_rl_data.RLDataTests.test_unobserved_future_unavailability_cannot_reward_stop) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 6.203s
+
+OK

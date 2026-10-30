@@ -1,0 +1,19 @@
+{
+  "files": {
+    "RUT_Science/pyproject.toml": {
+      "before_sha256": "889521fb94297e43474205bf11ba4d93d60183982af3250d2ff6298f330b1ae2",
+      "sha256": "bd9e74a07c4d2df062a26e46cc57621897ac0e14640e1534ed9f75f20aa53884",
+      "reason": "User authorized a trainable boundary-clarification question tool; existing scientific execution, model provider and weights preserved"
+    },
+    "RUT_Science/rut_science/science_bot/general/planning/runtime.py": {
+      "before_sha256": "cb2121da91626c828e52b1be1eb573ebe43b20e7337c5d2058470726c60e8d34",
+      "sha256": "0fc39a346b2bf19e013ad9cef71a1eac87a30f7783fe2a7c4948f266448c45d3",
+      "reason": "User authorized a trainable boundary-clarification question tool; existing scientific execution, model provider and weights preserved"
+    },
+    "RUT_Science/rut_science/science_bot/general/registry.py": {
+      "before_sha256": "1787619c71d10c276e52d8e20d4f546ae7c9ff3abc585323b3beeff258197b04",
+      "sha256": "edf8ba6ffe109087b18c256bddf4359674abb43bd4c29123cbf332ba6fa2a2a1",
+      "reason": "User authorized a trainable boundary-clarification question tool; existing scientific execution, model provider and weights preserved"
+    }
+  }
+}

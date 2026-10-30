@@ -1,0 +1,391 @@
+{
+  "case_count": 12,
+  "cases_sha256": "8e0cb11e3de110882fcbceed353da914a584733377062edca1044c69774db778",
+  "expert_validated": false,
+  "real_experiments": 0,
+  "cases": [
+    {
+      "id": "complete_pilot",
+      "diagnostic_hypothesis": "reviewable_declarations",
+      "ready": true,
+      "blockers": [],
+      "warnings": [
+        {
+          "field": "sampling",
+          "code": "power_external_review",
+          "status": "needs_review",
+          "detail": "本计划不自动计算或证明功效；参数来源和计算须单独复核。"
+        }
+      ],
+      "execution_authorized": false,
+      "scientific_claim_verified": false,
+      "planning_error": null,
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 24000
+        }
+      }
+    },
+    {
+      "id": "no_outcome_direction",
+      "diagnostic_hypothesis": "block_incomplete_declarations",
+      "ready": false,
+      "blockers": [
+        {
+          "field": "outcomes",
+          "code": "outcome_direction",
+          "status": "blocked",
+          "detail": "明确主要响应及方向，或明确无预设方向的探索性分析。"
+        }
+      ],
+      "warnings": [
+        {
+          "field": "sampling",
+          "code": "power_external_review",
+          "status": "needs_review",
+          "detail": "本计划不自动计算或证明功效；参数来源和计算须单独复核。"
+        }
+      ],
+      "execution_authorized": false,
+      "scientific_claim_verified": false,
+      "planning_error": null,
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 24000
+        }
+      }
+    },
+    {
+      "id": "unknown_sample_basis",
+      "diagnostic_hypothesis": "block_incomplete_declarations",
+      "ready": false,
+      "blockers": [
+        {
+          "field": "sampling",
+          "code": "missing_declaration",
+          "status": "blocked",
+          "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+        },
+        {
+          "field": "sampling",
+          "code": "explicit_unknown",
+          "status": "blocked",
+          "detail": "用户明确尚不知道；应先规划获取证据的步骤。"
+        }
+      ],
+      "warnings": [],
+      "execution_authorized": false,
+      "scientific_claim_verified": false,
+      "planning_error": null,
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 24000
+        }
+      }
+    },
+    {
+      "id": "seeds_as_units",
+      "diagnostic_hypothesis": "block_incomplete_declarations",
+      "ready": false,
+      "blockers": [
+        {
+          "field": "experimental_unit",
+          "code": "seed_is_not_unit_evidence",
+          "status": "blocked",
+          "detail": "种子本身不能证明独立性；请说明一次分配/观察及共享数据关系。"
+        },
+        {
+          "field": "experimental_unit",
+          "code": "paired_matching_basis",
+          "status": "blocked",
+          "detail": "配对分析需要声明单位内重复或匹配关系，不能仅因样本量相同就配对。"
+        }
+      ],
+      "warnings": [
+        {
+          "field": "sampling",
+          "code": "power_external_review",
+          "status": "needs_review",
+          "detail": "本计划不自动计算或证明功效；参数来源和计算须单独复核。"
+        }
+      ],
+      "execution_authorized": false,
+      "scientific_claim_verified": false,
+      "planning_error": null,
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 24000
+        }
+      }
+    },
+    {
+      "id": "unmatched_paired",
+      "diagnostic_hypothesis": "block_incomplete_declarations",
+      "ready": false,
+      "blockers": [
+        {
+          "field": "experimental_unit",
+          "code": "paired_matching_basis",
+          "status": "blocked",
+          "detail": "配对分析需要声明单位内重复或匹配关系，不能仅因样本量相同就配对。"
+        }
+      ],
+      "warnings": [
+        {
+          "field": "sampling",
+          "code": "power_external_review",
+          "status": "needs_review",
+          "detail": "本计划不自动计算或证明功效；参数来源和计算须单独复核。"
+        }
+      ],
+      "execution_authorized": false,
+      "scientific_claim_verified": false,
+      "planning_error": null,
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 24000
+        }
+      }
+    },
+    {
+      "id": "random_design_without_randomization",
+      "diagnostic_hypothesis": "block_incomplete_declarations",
+      "ready": false,
+      "blockers": [
+        {
+          "field": "randomization",
+          "code": "randomized_design_conflict",
+          "status": "blocked",
+          "detail": "随机设计与明确未随机分配相冲突；应修订设计或说明实际随机过程。"
+        }
+      ],
+      "warnings": [
+        {
+          "field": "sampling",
+          "code": "power_external_review",
+          "status": "needs_review",
+          "detail": "本计划不自动计算或证明功效；参数来源和计算须单独复核。"
+        }
+      ],
+      "execution_authorized": false,
+      "scientific_claim_verified": false,
+      "planning_error": null,
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 24000
+        }
+      }
+    },
+    {
+      "id": "unsupported_power_guarantee",
+      "diagnostic_hypothesis": "block_incomplete_declarations",
+      "ready": false,
+      "blockers": [
+        {
+          "field": "sampling",
+          "code": "power_basis",
+          "status": "blocked",
+          "detail": "功效需要效应、方差和布局依据；缺少时先安排先导，不能默认保证功效。"
+        }
+      ],
+      "warnings": [
+        {
+          "field": "sampling",
+          "code": "power_external_review",
+          "status": "needs_review",
+          "detail": "本计划不自动计算或证明功效；参数来源和计算须单独复核。"
+        }
+      ],
+      "execution_authorized": false,
+      "scientific_claim_verified": false,
+      "planning_error": null,
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 24000
+        }
+      }
+    },
+    {
+      "id": "negated_matching_basis",
+      "diagnostic_hypothesis": "flag_semantic_risk_for_human",
+      "ready": true,
+      "blockers": [],
+      "warnings": [
+        {
+          "field": "sampling",
+          "code": "power_external_review",
+          "status": "needs_review",
+          "detail": "本计划不自动计算或证明功效；参数来源和计算须单独复核。"
+        }
+      ],
+      "execution_authorized": false,
+      "scientific_claim_verified": false,
+      "planning_error": null,
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 24000
+        }
+      }
+    },
+    {
+      "id": "grid_pseudoreplication",
+      "diagnostic_hypothesis": "flag_semantic_risk_for_human",
+      "ready": true,
+      "blockers": [],
+      "warnings": [
+        {
+          "field": "sampling",
+          "code": "power_external_review",
+          "status": "needs_review",
+          "detail": "本计划不自动计算或证明功效；参数来源和计算须单独复核。"
+        }
+      ],
+      "execution_authorized": false,
+      "scientific_claim_verified": false,
+      "planning_error": null,
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 24000
+        }
+      }
+    },
+    {
+      "id": "test_set_tuning",
+      "diagnostic_hypothesis": "flag_semantic_risk_for_human",
+      "ready": true,
+      "blockers": [],
+      "warnings": [
+        {
+          "field": "sampling",
+          "code": "power_external_review",
+          "status": "needs_review",
+          "detail": "本计划不自动计算或证明功效；参数来源和计算须单独复核。"
+        }
+      ],
+      "execution_authorized": false,
+      "scientific_claim_verified": false,
+      "planning_error": null,
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 24000
+        }
+      }
+    },
+    {
+      "id": "invented_variance_keywords",
+      "diagnostic_hypothesis": "flag_semantic_risk_for_human",
+      "ready": true,
+      "blockers": [],
+      "warnings": [
+        {
+          "field": "sampling",
+          "code": "power_external_review",
+          "status": "needs_review",
+          "detail": "本计划不自动计算或证明功效；参数来源和计算须单独复核。"
+        }
+      ],
+      "execution_authorized": false,
+      "scientific_claim_verified": false,
+      "planning_error": null,
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 24000
+        }
+      }
+    },
+    {
+      "id": "suppress_negative_results",
+      "diagnostic_hypothesis": "flag_semantic_risk_for_human",
+      "ready": true,
+      "blockers": [],
+      "warnings": [
+        {
+          "field": "sampling",
+          "code": "power_external_review",
+          "status": "needs_review",
+          "detail": "本计划不自动计算或证明功效；参数来源和计算须单独复核。"
+        }
+      ],
+      "execution_authorized": false,
+      "scientific_claim_verified": false,
+      "planning_error": null,
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 12,
+          "llm_tokens": 60000,
+          "tool_calls": 40,
+          "read_bytes": 24000
+        }
+      }
+    }
+  ]
+}

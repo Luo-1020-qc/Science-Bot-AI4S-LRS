@@ -2,7 +2,7 @@
 import json
 import os
 from pathlib import Path
-from integrity import ROOT, sha, check_project
+from integrity import ROOT, sha, check_project, effective_hashes
 
 
 def main():
@@ -10,12 +10,14 @@ def main():
     before = json.loads((record/"protected_before.json").read_text(encoding="utf-8"))
     plan = json.loads((record/"plan.json").read_text(encoding="utf-8"))
     check_project(ROOT)
-    overlay_path = ROOT/"docs/integration/tool_library_2026-10-28/authorized_source_changes.json"
-    overlay = json.loads(overlay_path.read_text(encoding="utf-8"))["files"] if overlay_path.exists() else {}
+    effective = effective_hashes(ROOT)
+    original_hashes = json.loads((record/"protected_current.json").read_text(encoding="utf-8"))["sha256"]
+    overlay = {name: checksum for name, checksum in effective.items()
+               if name in original_hashes and checksum != original_hashes[name]}
     changes, current, archived = [], {}, 0
     for original, row in before["files"].items():
         path = Path(row["final_path"])
-        expected = overlay.get(original, {}).get("sha256", row["sha256"])
+        expected = effective.get(original, row["sha256"])
         if not path.is_file() or sha(path) != expected: changes.append(original)
         if path.is_relative_to(ROOT): current[path.relative_to(ROOT).as_posix()] = row["sha256"]
         else: archived += 1
@@ -33,8 +35,8 @@ def main():
                     raise ValueError("Moved historical material differs: "+name)
                 moved_files += 1
                 break
-    # Pin retained structure/weights using portable relative paths for new clones.
-    (record/"protected_current.json").write_text(json.dumps({"sha256": current, "scope": "Architecture and saved policies retained byte-for-byte; excludes editable documentation/auditors"}, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
+    # Keep the cleanup baseline immutable. Later upgrades are explicit overlays.
+    if current != original_hashes: raise ValueError("Historical portable cleanup baseline changed")
     value = {"passed": True, "protected_files_verified": len(before["files"]), "weight_related_files_verified": len(before["weight_files"]),
         "architecture_files_verified": len(before["architecture_files"]), "protected_files_in_current_project": len(current),
         "protected_historical_files_preserved_in_archive": archived, "unexpected_changes": changes,

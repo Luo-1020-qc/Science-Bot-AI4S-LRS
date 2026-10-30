@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Science Bot 本地科研工作台：澄清问题，复核计划，交付可追踪的研究方案。"><meta name="theme-color" content="#9f003b"><title>Science-Bot · 研究工作台</title><style>/* CityU-inspired red palette; application colors, not an official brand specification. */
+:root {
+  --ink: #33262b;
+  --muted: #75636a;
+  --quiet: #806b74;
+  --accent: #9f003b;
+  --accent-dark: #78002d;
+  --accent-bright: #d52042;
+  --accent-soft: #f6e4eb;
+  --line: #e8dce1;
+  --paper: #faf8f9;
+  --white: #ffffff;
+  --sidebar: #f4eef1;
+  --radius: 12px;
+  --mono: "Cascadia Code", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  color-scheme: light;
+  font: 14px/1.65 "Segoe UI", "Microsoft YaHei", sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); }
+button, input, select, textarea { font: inherit; }
+button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; color: inherit; }
+button:disabled { cursor: not-allowed; opacity: .48; }
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 3px solid #bd2854; outline-offset: 3px;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+h1, h2, h3, p { margin: 0; }
+h2 { font-size: 23px; line-height: 1.6; }
+h3 { font-size: 16px; font-weight: 600; }
+small { font-size: 11px; }
+.muted, .subtle { color: var(--muted); }
+.subtle { font-size: 13px; line-height: 1.8; }
+.app-shell { display: grid; grid-template-columns: 218px minmax(0, 1fr); min-height: 100vh; }
+.sidebar {
+  position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column;
+  background: var(--sidebar); border-right: 1px solid var(--line); padding: 30px 17px 20px;
+}
+.brand { display: flex; align-items: center; gap: 10px; padding: 0 2px 37px; color: var(--ink); white-space: nowrap; }
+.brand:hover { text-decoration: none; }
+.brand-mark {
+  display: grid; place-items: center; flex: 0 0 36px; height: 39px; border-radius: 7px;
+  color: white; background: linear-gradient(145deg, var(--accent-bright), var(--accent));
+}
+.brand-mark svg { display: block; width: 29px; height: 29px; }
+.brand-copy { display: block; min-width: 0; flex: 1; }
+.brand-wordmark { display: block; width: 130px; max-width: 100%; height: auto; overflow: visible; }
+.wordmark-science { fill: var(--muted); }
+.wordmark-bot { fill: var(--accent); }
+.brand small { display: block; font: 7.5px/1.7 var(--mono); letter-spacing: 1.1px; color: var(--muted); margin-top: 7px; }
+.workspace-label { padding: 0 13px 12px; color: var(--quiet); font-size: 11px; letter-spacing: .8px; display: flex; align-items: center; justify-content: space-between; }
+.nav-item { border: 0; background: transparent; width: 100%; display: flex; align-items: center; gap: 13px; padding: 12px 16px; border-radius: 8px; text-align: left; color: var(--muted); margin: 2px 0; }
+.nav-item span { font-size: 19px; width: 22px; text-align: center; color: var(--quiet); }
+.nav-item.active { color: var(--accent-dark); background: #efd9e2; font-weight: 600; }
+.nav-item.active span { color: var(--accent); }
+.nav-item:hover { background: #f0e1e7; }
+.sidebar-section { border-top: 1px solid var(--line); margin-top: 30px; padding-top: 23px; }
+.session-list { font-size: 12px; padding: 0 7px; }
+.session-list button { border: 0; background: transparent; padding: 9px 7px; text-align: left; width: 100%; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border-radius: 6px; }
+.session-list button:hover { background: #f0e1e7; }
+.session-row { display: flex; align-items: center; gap: 4px; min-width: 0; }
+.session-list .session-open { flex: 1; min-width: 0; width: auto; }
+.session-open[aria-current="true"] { color: var(--accent-dark); background: var(--accent-soft); }
+.session-list .session-delete { width: auto; flex: 0 0 auto; padding: 8px 5px; color: var(--accent); font-size: 11px; }
+.session-list .session-delete:hover { background: var(--accent-soft); color: var(--accent-dark); }
+.sidebar-bottom { margin-top: auto; padding: 24px 10px 0; font-size: 12px; }
+.sidebar-bottom > a { display: flex; justify-content: space-between; padding-bottom: 18px; }
+.local-indicator { border-top: 1px solid var(--line); padding-top: 16px; color: var(--quiet); font-size: 11px; display: flex; align-items: center; gap: 7px; }
+.local-indicator i { height: 6px; width: 6px; border-radius: 50%; background: var(--accent-bright); }
+.main-shell { min-width: 0; }
+.topbar { height: 74px; border-bottom: 1px solid var(--line); padding: 0 38px; display: flex; align-items: center; justify-content: space-between; background: #fdfbfc; }
+.breadcrumb { font-size: 12px; color: var(--quiet); display: flex; align-items: center; gap: 12px; }
+.breadcrumb b { font-weight: 500; color: var(--muted); }
+.topbar-actions { display: flex; align-items: center; gap: 15px; }
+.mode-pill { font-size: 11px; background: var(--accent-soft); color: var(--accent-dark); border: 1px solid #e7cbd6; padding: 3px 10px; border-radius: 20px; }
+.button { border: 1px solid transparent; border-radius: 7px; min-height: 40px; padding: 10px 17px; display: inline-flex; align-items: center; justify-content: center; gap: 16px; line-height: 1.2; font-size: 13px; font-weight: 550; white-space: nowrap; transition: background .15s, transform .15s; }
+.button:hover:not(:disabled) { transform: translateY(-1px); }
+.button.primary { background: var(--accent); color: #fff; }
+.button.primary:hover:not(:disabled) { background: var(--accent-dark); }
+.button.secondary { background: transparent; color: var(--accent-dark); border-color: #d9bdc8; }
+.button.secondary:hover:not(:disabled) { background: var(--accent-soft); }
+.button.small { min-height: 33px; padding: 8px 12px; font-size: 12px; }
+.button.full { width: 100%; }
+.icon-button { border: 0; background: transparent; font-size: 19px; padding: 0 4px; color: var(--muted); }
+.text-button { border: 0; background: transparent; color: var(--accent); font-size: 12px; padding: 4px 0; }
+main { max-width: 1540px; padding: 34px 38px 50px; margin: auto; }
+.page-heading { display: flex; gap: 24px; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+.eyebrow { font: 600 9px/1.65 var(--mono); letter-spacing: 1.7px; color: var(--accent); margin-bottom: 8px; }
+h1 { font-size: 27px; letter-spacing: -.5px; font-weight: 600; line-height: 1.5; }
+.page-heading p { font-size: 12px; color: var(--muted); margin-top: 6px; }
+.notice-bar { display: flex; align-items: center; gap: 8px; border: 1px solid #ead3dc; border-radius: 7px; background: #f8edf1; padding: 9px 13px; font-size: 11px; color: #865269; margin-bottom: 19px; }
+.notice-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+.stage-strip { display: flex; align-items: center; border-bottom: 1px solid var(--line); padding: 0 0 20px; margin-bottom: 24px; }
+.stage { display: flex; align-items: center; gap: 9px; color: var(--quiet); font-size: 12px; }
+.stage:not(:first-child):before { content: ""; height: 1px; width: 27px; background: #dfcdd5; margin: 0 17px; }
+.stage span { font: 11px var(--mono); border: 1px solid #ddc9d1; border-radius: 50%; height: 24px; width: 24px; display: grid; place-items: center; }
+.stage.active { color: var(--accent); font-weight: 600; }
+.stage.active span { background: var(--accent-soft); border-color: #ce9bb0; }
+.experiment-label { margin-left: auto; color: var(--quiet); font-size: 10px; white-space: nowrap; }
+.overview-grid { display: grid; grid-template-columns: minmax(0, 1fr) 286px; gap: 23px; }
+.primary-column { display: grid; gap: 18px; align-content: start; }
+.card { border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); padding: 24px; min-width: 0; }
+.card-kicker { font-size: 11px; color: var(--muted); display: flex; align-items: center; justify-content: space-between; letter-spacing: .3px; margin-bottom: 13px; }
+.question-card { border-top: 3px solid var(--accent); padding-top: 20px; }
+.question-card h2 { font-size: 21px; font-weight: 500; line-height: 1.85; letter-spacing: .1px; max-width: 760px; }
+.tag { display: inline-block; font-size: 10px; font-weight: 400; color: var(--accent-dark); padding: 2px 9px; background: var(--accent-soft); border-radius: 20px; white-space: nowrap; }
+.question-footer { display: flex; gap: 23px; border-top: 1px solid var(--line); margin-top: 23px; padding-top: 15px; color: var(--quiet); font-size: 10px; }
+.question-footer b { font-weight: 500; color: var(--accent-dark); margin-left: 8px; }
+.two-up { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.compact { padding: 20px 22px; }
+.compact p { font-size: 12px; line-height: 1.9; }
+.subsection-label { font-size: 10px; color: var(--quiet); margin: 18px 0 4px; }
+.definition-label { font-size: 10px; color: var(--quiet); margin: 14px 0 3px; }
+.definition-label:first-of-type { margin-top: 0; }
+.section-heading { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-bottom: 12px; }
+.intro-line { font-size: 11px; margin-bottom: 20px; }
+.path-preview { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px 12px; }
+.path-item { display: flex; align-items: flex-start; gap: 10px; }
+.path-number { background: #f7eef2; color: var(--accent); border-radius: 6px; width: 29px; height: 32px; display: grid; place-items: center; font: 10px var(--mono); flex-shrink: 0; }
+.path-item b { font-size: 11px; font-weight: 500; }
+.path-item small { display: block; color: var(--quiet); font-size: 9px; margin-top: 1px; }
+.source-summary { display: flex; gap: 16px; align-items: center; padding: 18px 22px; }
+.source-summary h3 { font-size: 12px; font-weight: 500; }
+.source-summary p { font-size: 10px; margin-top: 4px; }
+.source-summary .button { margin-left: auto; }
+.source-icon { font-size: 26px; color: var(--accent); }
+.inspector { display: flex; flex-direction: column; gap: 17px; }
+.next-card { background: #fdf8fa; border-color: #e7cfd9; }
+.next-card h3 { font-size: 17px; font-weight: 500; margin-bottom: 12px; }
+.question-item { padding: 15px 0; border-top: 1px solid var(--line); }
+.question-item p { font-size: 12px; line-height: 1.8; }
+.question-item .reason { font-size: 10px; color: var(--muted); margin-top: 8px; }
+.question-item .text-button { font-size: 11px; margin-top: 8px; }
+.question-item .reference { font-size: 10px; overflow-wrap: anywhere; color: var(--muted); margin-top: 8px; }
+.next-card > .button { margin-top: 15px; }
+.resource-stats { border-top: 1px solid var(--line); margin-top: 17px; padding-top: 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.resource-stats b { display: block; font: 18px var(--mono); color: var(--accent-dark); }
+.resource-stats small { display: block; color: var(--quiet); font-size: 9px; margin-top: 3px; }
+.ownership-note { padding: 0 12px; text-align: center; font-size: 10px; line-height: 1.9; color: var(--quiet); }
+.app-footer { border-top: 1px solid var(--line); padding: 18px 38px; display: flex; gap: 15px; justify-content: space-between; color: var(--quiet); font-size: 10px; }
+.footer-signature b { font: 600 10px var(--mono); color: var(--accent); }
+.chat-layout { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 22px; align-items: start; }
+.chat-card { padding: 23px; }
+.messages { height: 420px; overflow: auto; padding: 16px 0; display: flex; flex-direction: column; gap: 20px; }
+.message { max-width: 93%; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 13px; line-height: 1.9; background: #f8f2f5; padding: 16px 18px; border-radius: 9px; }
+.message.user { align-self: flex-end; background: #f2dfe7; }
+.message .speaker { font: 10px var(--mono); display: block; color: var(--accent-dark); margin-bottom: 7px; }
+.composer { border: 1px solid #dcc4ce; border-radius: 9px; overflow: hidden; }
+.composer textarea { width: 100%; resize: vertical; min-height: 92px; max-height: 300px; padding: 14px; border: 0; outline: none; color: var(--ink); background: transparent; font-size: 13px; }
+.composer:focus-within { border-color: var(--accent); box-shadow: 0 0 0 2px #9f003b18; }
+.composer-footer { padding: 9px 12px; background: #faf5f7; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; color: var(--quiet); font-size: 10px; }
+.quick-action { border: 0; border-bottom: 1px solid var(--line); background: transparent; text-align: left; display: block; padding: 14px 0; width: 100%; font-size: 12px; color: var(--accent); }
+.chat-layout aside .subtle { margin-top: 17px; font-size: 11px; }
+.issue-list { margin-bottom: 20px; }
+.issue { padding: 12px 17px; border-left: 3px solid #b94f76; background: #f7eaf0; font-size: 12px; margin: 7px 0; border-radius: 0 6px 6px 0; }
+.step-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; }
+.step-card { padding: 22px; }
+.step-card .step-title { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.step-card .step-title span { font: 18px var(--mono); color: var(--accent); }
+.step-card p { font-size: 12px; line-height: 1.9; }
+.step-card .acceptance { margin-top: 13px; padding-top: 13px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
+.step-card small { display: block; color: var(--quiet); margin-top: 12px; font-size: 10px; }
+.approval-card { margin-top: 25px; display: flex; align-items: center; justify-content: space-between; gap: 25px; }
+.approval-card code { font: 10px var(--mono); color: var(--muted); word-break: break-all; }
+.evidence-grid { display: grid; grid-template-columns: minmax(300px, 1fr) 1fr; gap: 23px; }
+.field-form { margin-top: 22px; }
+.field-form label, .dialog-label { display: block; font-size: 12px; color: var(--muted); margin-top: 15px; }
+.field-form input:not([type=checkbox]), .dialog-label select { width: 100%; border: 1px solid #dbc4ce; background: var(--white); border-radius: 6px; padding: 10px 12px; margin-top: 7px; color: var(--ink); }
+.field-form .two-up { gap: 15px; }
+.field-form .check-label { display: flex; align-items: center; gap: 8px; margin-top: 22px; }
+.check-label input { accent-color: var(--accent); width: 15px; height: 15px; }
+.field-form .subtle { font-size: 11px; margin: 14px 0 22px; }
+.source-list { display: flex; flex-direction: column; gap: 15px; }
+.source-entry h3 { font-size: 13px; overflow-wrap: anywhere; }
+.source-entry small { display: block; color: var(--quiet); overflow-wrap: anywhere; margin: 7px 0; }
+.source-entry .tag { margin-top: 8px; }
+.empty-card { text-align: center; color: var(--muted); min-height: 220px; display: grid; place-content: center; gap: 10px; border-style: dashed; }
+.empty-card span { font-size: 30px; }
+.delivery-hero { padding: 37px; background: #f6e7ed; border-color: #e4c7d3; }
+.delivery-hero h2 { font-size: 28px; font-weight: 500; margin: 10px 0; }
+.delivery-hero > p { color: var(--muted); font-size: 12px; max-width: 650px; margin: 13px 0 23px; }
+.delivery-hero > p.subtle { margin: 14px 0 0; font-size: 11px; }
+.format-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 24px; }
+.format-card { padding: 27px; }
+.format-label { font: 20px var(--mono); letter-spacing: 1px; color: var(--accent); display: block; margin-bottom: 26px; }
+.format-card h3 { font-size: 17px; font-weight: 500; }
+.format-card p { margin: 12px 0 25px; font-size: 11px; min-height: 40px; }
+.delivery-footer { display: flex; align-items: center; justify-content: space-between; gap: 25px; margin-top: 23px; font-size: 11px; color: var(--muted); padding: 18px 23px; }
+.delivery-footer a { white-space: nowrap; }
+.toast { position: fixed; bottom: 25px; left: 50%; transform: translateX(-50%); background: #5b1731; color: #fff; padding: 13px 23px; border-radius: 8px; max-width: min(90vw, 700px); font-size: 12px; box-shadow: 0 8px 30px #4d002520; z-index: 100; }
+.toast.error { background: #8b1736; }
+dialog { width: min(510px, 90vw); padding: 28px; border: 1px solid var(--line); border-radius: 14px; color: var(--ink); background: var(--white); box-shadow: 0 25px 100px #4d002530; }
+dialog::backdrop { background: #3c1f2b38; backdrop-filter: blur(2px); }
+.dialog-actions { margin-top: 26px; display: flex; justify-content: flex-end; gap: 12px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+[hidden] { display: none !important; }
+@media(min-width:1600px) {
+  main { padding-top: 45px; }
+  .overview-grid { grid-template-columns: minmax(0,1fr) 310px; gap: 28px; }
+  .question-card h2 { font-size: 23px; }
+}
+@media(max-width:1180px) {
+  .app-shell { grid-template-columns: 185px minmax(0,1fr); }
+  .sidebar { padding-inline: 12px; }
+  .brand { gap: 8px; }
+  .brand-mark { flex-basis: 32px; height: 36px; }
+  .brand small { font-size: 6.7px; letter-spacing: .8px; }
+  .topbar { padding-inline: 25px; }
+  main { padding: 28px 25px 40px; }
+  .overview-grid { grid-template-columns: minmax(0,1fr) 250px; gap: 17px; }
+  .card { padding: 19px; }
+  .two-up { gap: 15px; }
+  .stage:not(:first-child):before { width: 14px; margin: 0 11px; }
+  h1 { font-size: 24px; }
+  .page-heading > .button { font-size: 12px; padding: 10px 13px; }
+  .source-summary { flex-wrap: wrap; }
+  .source-summary .button { margin-left: 0; }
+  .question-card h2 { font-size: 18px; }
+  .chat-layout { grid-template-columns: minmax(0,1fr) 215px; }
+  .path-preview { gap: 17px 7px; }
+}
+@media(max-width:960px) {
+  .overview-grid { grid-template-columns: 1fr; }
+  .inspector { display: grid; grid-template-columns: 1fr 1fr; align-items: start; }
+  .ownership-note { grid-column: 1/-1; }
+  .chat-layout { grid-template-columns: 1fr; }
+  .chat-layout aside { display: none; }
+  .stage-strip { gap: 6px; }
+  .experiment-label { display: none; }
+  .page-heading { align-items: flex-start; }
+  .page-heading > .button { align-self: center; }
+  .evidence-grid { grid-template-columns: 1fr; }
+  .format-grid { gap: 12px; }
+  .format-card { padding: 20px; }
+  .delivery-footer { flex-wrap: wrap; }
+  .app-footer { padding-inline: 25px; }
+}
+@media(max-width:700px) {
+  .app-shell { grid-template-columns: 1fr; }
+  .sidebar { height: auto; position: static; padding: 15px; display: block; border-right: 0; border-bottom: 1px solid var(--line); }
+  .brand { padding: 0 2px 15px; gap: 10px; }
+  .brand-copy { flex: 0 1 140px; }
+  .brand-mark { flex-basis: 33px; height: 35px; }
+  .brand small { font-size: 7.5px; letter-spacing: 1.1px; margin-top: 6px; }
+  .sidebar > .workspace-label, .sidebar-section, .sidebar-bottom { display: none; }
+  .sidebar nav { display: flex; gap: 5px; overflow: auto; }
+  .nav-item { font-size: 11px; padding: 8px 10px; white-space: nowrap; justify-content: center; min-width: 79px; gap: 5px; }
+  .nav-item span { font-size: 14px; width: auto; }
+  .topbar { height: 59px; padding: 0 18px; }
+  .topbar-actions { gap: 10px; }
+  .breadcrumb { font-size: 11px; }
+  .topbar-actions .mode-pill { max-width: 120px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
+  .topbar-actions .button { font-size: 10px; padding: 7px 9px; }
+  main { padding: 23px 17px 35px; }
+  .page-heading { display: block; margin-bottom: 18px; }
+  h1 { font-size: 23px; }
+  .page-heading > .button { margin-top: 17px; }
+  .eyebrow { font-size: 8px; }
+  .notice-bar { font-size: 10px; padding: 9px 10px; }
+  .stage { font-size: 10px; gap: 5px; }
+  .stage span { height: 20px; width: 20px; font-size: 9px; }
+  .stage:not(:first-child):before { width: 7px; margin: 0 3px; }
+  .stage-strip { padding-bottom: 16px; margin-bottom: 18px; }
+  .two-up { grid-template-columns: 1fr; gap: 15px; }
+  .inspector { grid-template-columns: 1fr; }
+  .question-card h2 { font-size: 18px; }
+  .card { padding: 20px; }
+  .path-preview { grid-template-columns: 1fr 1fr; }
+  .source-summary { gap: 11px; }
+  .source-summary p { font-size: 10px; }
+  .source-summary .button { margin-left: 38px; }
+  .question-footer { gap: 16px; }
+  .step-grid { grid-template-columns: 1fr; }
+  .approval-card { flex-direction: column; align-items: stretch; }
+  .approval-card .button { align-self: flex-start; }
+  .messages { height: 380px; }
+  .composer-footer > span { font-size: 9px; }
+  .section-heading { align-items: flex-start; }
+  .section-heading h2 { font-size: 22px; }
+  .section-heading > .tag { font-size: 8px; }
+  .format-grid { grid-template-columns: 1fr; }
+  .format-card { display: grid; grid-template-columns: 1fr auto; gap: 9px; }
+  .format-label { font-size: 16px; margin: 0; grid-column: 1/-1; }
+  .format-card p { margin: 0; min-height: 0; grid-row: 3; }
+  .format-card .button { grid-row: 2/4; grid-column: 2; align-self: center; }
+  .format-card h3 { font-size: 16px; }
+  .delivery-hero { padding: 26px; }
+  .delivery-hero h2 { font-size: 23px; }
+  .app-footer { font-size: 9px; padding: 17px; flex-direction: column; gap: 6px; }
+  .dialog-actions { flex-direction: column; }
+  .dialog-actions .button { width: 100%; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .button { transition: none; }
+  .button:hover:not(:disabled) { transform: none; }
+}
+</style></head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="/" aria-label="Science-Bot 首页"><span class="brand-mark" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 6v4M4 16v5m24-5v5" stroke="currentColor" stroke-width="2" stroke-linecap="square"/><rect x="6" y="10" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/><rect x="10" y="15" width="3" height="3" fill="currentColor"/><rect x="19" y="15" width="3" height="3" fill="currentColor"/><path d="M12 22h8" stroke="currentColor" stroke-width="2"/><rect x="14.5" y="3" width="3" height="3" fill="currentColor"/></svg></span><span class="brand-copy"><svg class="brand-wordmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 7" role="img" aria-label="Science-Bot" shape-rendering="crispEdges"><title>Science-Bot</title><path class="wordmark-science" d="M1 2h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM0 3h1v1h-1zM1 4h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 5h1v1h-1zM0 6h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM7 2h1v1h-1zM8 2h1v1h-1zM9 2h1v1h-1zM10 2h1v1h-1zM6 3h1v1h-1zM6 4h1v1h-1zM6 5h1v1h-1zM7 6h1v1h-1zM8 6h1v1h-1zM9 6h1v1h-1zM10 6h1v1h-1zM14 0h1v1h-1zM13 2h1v1h-1zM14 2h1v1h-1zM14 3h1v1h-1zM14 4h1v1h-1zM14 5h1v1h-1zM13 6h1v1h-1zM14 6h1v1h-1zM15 6h1v1h-1zM19 2h1v1h-1zM20 2h1v1h-1zM21 2h1v1h-1zM18 3h1v1h-1zM22 3h1v1h-1zM18 4h1v1h-1zM19 4h1v1h-1zM20 4h1v1h-1zM21 4h1v1h-1zM22 4h1v1h-1zM18 5h1v1h-1zM19 6h1v1h-1zM20 6h1v1h-1zM21 6h1v1h-1zM22 6h1v1h-1zM24 2h1v1h-1zM25 2h1v1h-1zM26 2h1v1h-1zM27 2h1v1h-1zM24 3h1v1h-1zM28 3h1v1h-1zM24 4h1v1h-1zM28 4h1v1h-1zM24 5h1v1h-1zM28 5h1v1h-1zM24 6h1v1h-1zM28 6h1v1h-1zM31 2h1v1h-1zM32 2h1v1h-1zM33 2h1v1h-1zM34 2h1v1h-1zM30 3h1v1h-1zM30 4h1v1h-1zM30 5h1v1h-1zM31 6h1v1h-1zM32 6h1v1h-1zM33 6h1v1h-1zM34 6h1v1h-1zM37 2h1v1h-1zM38 2h1v1h-1zM39 2h1v1h-1zM36 3h1v1h-1zM40 3h1v1h-1zM36 4h1v1h-1zM37 4h1v1h-1zM38 4h1v1h-1zM39 4h1v1h-1zM40 4h1v1h-1zM36 5h1v1h-1zM37 6h1v1h-1zM38 6h1v1h-1zM39 6h1v1h-1zM40 6h1v1h-1z"/><path class="wordmark-bot" d="M43 4h1v1h-1zM44 4h1v1h-1zM45 4h1v1h-1zM48 0h1v1h-1zM48 1h1v1h-1zM48 2h1v1h-1zM49 2h1v1h-1zM50 2h1v1h-1zM51 2h1v1h-1zM48 3h1v1h-1zM52 3h1v1h-1zM48 4h1v1h-1zM52 4h1v1h-1zM48 5h1v1h-1zM52 5h1v1h-1zM48 6h1v1h-1zM49 6h1v1h-1zM50 6h1v1h-1zM51 6h1v1h-1zM55 2h1v1h-1zM56 2h1v1h-1zM57 2h1v1h-1zM54 3h1v1h-1zM58 3h1v1h-1zM54 4h1v1h-1zM58 4h1v1h-1zM54 5h1v1h-1zM58 5h1v1h-1zM55 6h1v1h-1zM56 6h1v1h-1zM57 6h1v1h-1zM62 0h1v1h-1zM62 1h1v1h-1zM60 2h1v1h-1zM61 2h1v1h-1zM62 2h1v1h-1zM63 2h1v1h-1zM64 2h1v1h-1zM62 3h1v1h-1zM62 4h1v1h-1zM62 5h1v1h-1zM63 6h1v1h-1zM64 6h1v1h-1z"/></svg><small>RESEARCH WORKSPACE</small></span></a>
+    <div class="workspace-label">你的研究空间</div>
+    <nav aria-label="工作台导航">
+      <button class="nav-item active" data-tab="overview"><span aria-hidden="true">◈</span>研究概览</button>
+      <button class="nav-item" data-tab="chat"><span aria-hidden="true">◷</span>对话规划</button>
+      <button class="nav-item" data-tab="plan"><span aria-hidden="true">▤</span>研究计划</button>
+      <button class="nav-item" data-tab="evidence"><span aria-hidden="true">⌑</span>证据材料</button>
+      <button class="nav-item" data-tab="delivery"><span aria-hidden="true">↗</span>交付中心</button>
+    </nav>
+    <div class="sidebar-section"><div class="workspace-label">最近研究 <button class="icon-button" id="refreshSessions" title="刷新会话" aria-label="刷新最近研究">↻</button></div><div id="sessionList" class="session-list"><span class="muted">尚未连接本地会话</span></div></div>
+    <div class="sidebar-bottom"><a href="terminal.html" target="_blank" rel="noopener">查看终端示例 <span>↗</span></a><div class="local-indicator"><i></i> 仅在本机运行</div></div>
+  </aside>
+  <div class="main-shell">
+    <header class="topbar"><div class="breadcrumb">工作台 <span>/</span> <b id="crumb">研究概览</b></div><div class="topbar-actions"><span class="mode-pill" id="modePill">离线示例</span><button class="button secondary small" id="newSession">＋ 新建研究</button></div></header>
+    <main>
+      <div class="page-heading"><div><div class="eyebrow">FROM QUESTION TO EVIDENCE</div><h1 id="projectTitle">让研究的每一步，都有依据。</h1><p id="pageSubtitle">从问题出发，明确边界与取舍，形成可以共同复核的计划。</p></div><button class="button primary" id="exportTop">导出交付物 <span>↗</span></button></div>
+      <div class="notice-bar" id="previewNotice"><span class="notice-dot"></span><span>合成界面示例 · 未执行实验。使用浏览器启动器可进入可交互的离线会话。</span></div>
+      <div class="stage-strip" aria-label="规划阶段"><div class="stage active"><span>01</span>明确问题</div><div class="stage"><span>02</span>设计方案</div><div class="stage"><span>03</span>复核确认</div><div class="stage"><span>04</span>导出交付</div><span class="experiment-label">实验尚未执行</span></div>
+
+      <section class="view-panel" data-panel="overview">
+        <div class="overview-grid"><div class="primary-column">
+          <article class="card question-card"><div class="card-kicker"><span>我们要回答什么</span><span class="tag" id="planStatus">正在澄清</span></div><h2 id="researchQuestion">正在读取研究概览…</h2><div class="question-footer"><span>研究目的 <b id="objective">—</b></span><span>版本 <b id="revision">—</b></span></div></article>
+          <div class="two-up"><article class="card compact"><div class="card-kicker">研究边界</div><p id="scopeText">尚待明确</p><div class="subsection-label">本轮不声称</div><p class="subtle" id="exclusionsText">尚待明确</p></article><article class="card compact"><div class="card-kicker">如何判断</div><div class="definition-label">实验与推断单位</div><p id="unitText">尚待明确</p><div class="definition-label">主要指标</div><p id="outcomeText">尚待明确</p></article></div>
+          <article class="card"><div class="section-heading"><h3>研究路径</h3><button class="text-button" data-go="plan">查看完整计划 →</button></div><p class="subtle intro-line">先形成共同理解，再逐步连接设计、证据与验收。</p><div id="pathPreview" class="path-preview"></div></article>
+          <article class="card source-summary"><span class="source-icon" aria-hidden="true">⌑</span><div><h3 id="sourceSummary">还没有选择论文证据</h3><p class="subtle">明确选择来源和行范围，让出处与计划版本一起保留。</p></div><button class="button secondary small" data-go="evidence">添加材料</button></article>
+        </div><aside class="inspector">
+          <article class="card next-card"><div class="card-kicker">下一步 · 一起澄清</div><h3 id="nextTitle">先解决关键缺口</h3><div id="questions"></div><button class="button primary full" data-go="chat">继续对话 <span>→</span></button></article>
+          <article class="card compact resource-card"><div class="card-kicker">资源边界</div><p id="resourceText">尚待明确</p><div class="resource-stats"><div><b id="requestCount">0 / 12</b><small>模型请求</small></div><div><b id="toolCount">0 / 40</b><small>工具调用</small></div></div></article>
+          <p class="ownership-note">计划由你复核与决定。<br>声明、出处和科学事实分开记录。</p>
+        </aside></div>
+      </section>
+
+      <section class="view-panel" data-panel="chat" hidden>
+        <div class="chat-layout"><article class="card chat-card"><div class="section-heading"><h3>把目标说清楚，一次推进一点</h3><span class="tag">最多两项优先问题</span></div><div id="messages" class="messages" aria-live="polite"></div><form id="messageForm" class="composer"><label for="messageText" class="sr-only">研究目标或当前回答</label><textarea id="messageText" maxlength="12000" rows="3" placeholder="描述你的研究目标、补充当前回答，或指出你不同意的地方…"></textarea><div class="composer-footer"><span>Enter 发送 · Shift+Enter 换行</span><button type="submit" class="button primary" id="sendButton">发送 →</button></div></form></article><aside class="card compact"><div class="card-kicker">你也可以</div><button class="quick-action" data-command="/plan map">查看当前研究地图</button><button class="quick-action" data-command="/plan review">检查方案还有什么缺口</button><button class="quick-action" data-command="/plan understanding">对照计划复述我的理解</button><button class="quick-action" id="pilotExample">填入合成先导回答</button><p class="subtle">快捷操作仍经过原规划流程。API模式下，发送研究回答可能消耗模型预算。</p></aside></div>
+      </section>
+
+      <section class="view-panel" data-panel="plan" hidden><div class="section-heading"><div><h2>从边界到交付</h2><p class="subtle">每一步保留输入、产物、责任与验收。这里展示计划，不表示已经执行。</p></div><button class="button secondary" id="reviewPlan">重新复核</button></div><div id="designReadout" class="step-grid" aria-label="当前实验设计"></div><div id="planIssues" class="issue-list"></div><div id="planSteps" class="step-grid"></div><div class="approval-card card"><div><h3>确认当前规划版本</h3><p class="subtle" id="approvalHint">先处理待确认、未知与冲突，再复核版本。</p><code id="hashText"></code></div><button class="button primary" id="approvePlan" disabled>确认此版本</button></div></section>
+
+      <section class="view-panel" data-panel="evidence" hidden><div class="section-heading"><div><h2>让每个依据，都能回到原文</h2><p class="subtle">默认只在本地展示；是否共享给模型，由你明确选择。</p></div><span class="tag" id="evidenceCount">0 个片段</span></div><div class="evidence-grid"><article class="card"><h3>选择论文片段</h3><p class="subtle" id="workspaceText">尚未绑定工作区。启动时使用 -Workspace 选择项目目录。</p><form id="evidenceForm" class="field-form"><label>项目内文件路径<input id="sourcePath" placeholder="papers/paper.pdf 或 papers/method.md" maxlength="1000" required></label><div class="two-up"><label><span id="startRangeLabel">起始行</span><input id="startLine" type="number" min="1" value="1" required></label><label><span id="endRangeLabel">结束行</span><input id="endLine" type="number" min="1" value="40" required></label></div><label class="check-label"><input id="shareSource" type="checkbox">允许所选内容用于模型澄清和论文理解</label><p class="subtle">PDF按物理页码读取：文件最多16 MiB，每次最多12页/18000字节；文字型PDF可提取正文，扫描页需先OCR。Markdown/TXT最多120行/6000字节。选定后可点击“让LLM理解所选页”。</p><button type="submit" class="button primary">选择并保存片段</button></form></article><div id="sourceList" class="source-list"></div></div></section>
+
+      <section class="view-panel" data-panel="delivery" hidden><article class="delivery-hero card"><div class="eyebrow">READY FOR HUMAN REVIEW</div><h2>交付一份能看懂、能追溯的计划。</h2><p>把目标、依据、未知与责任带到下一步。草案也可以导出，所有未决条件都会保留。</p><button class="button primary" id="exportDelivery">生成当前版本交付物 ↗</button><p class="subtle" id="exportState">尚未生成导出版本</p></article><div class="format-grid"><article class="card format-card"><span class="format-label">HTML</span><h3>阅读与复核版</h3><p class="subtle">完整计划、来源与验收，适合分享给复核者或打印。</p><button class="button secondary" data-download="html" disabled>下载阅读版</button></article><article class="card format-card"><span class="format-label">MD</span><h3>文档协作版</h3><p class="subtle">保留文字结构，便于继续批注、讨论与版本管理。</p><button class="button secondary" data-download="md" disabled>下载 Markdown</button></article><article class="card format-card"><span class="format-label">JSON</span><h3>结构化记录</h3><p class="subtle">保留字段、步骤、状态与版本，用于后续受限交接。</p><button class="button secondary" data-download="json" disabled>下载 JSON</button></article></div><div class="card delivery-footer"><p>导出与规划确认都不会启动真实实验。真实数据、执行参数和授权需要另行核实。</p><a href="delivery.html" target="_blank" rel="noopener">查看合成交付示例 ↗</a></div></section>
+    </main>
+    <footer class="app-footer"><span class="footer-signature"><b>Science-Bot</b> · 研究者保留方法选择与结论责任</span><span id="saveState">本地界面示例</span></footer>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" hidden></div>
+<dialog id="newDialog"><form id="newForm"><div class="section-heading"><h2>开始一项研究</h2><button type="button" class="icon-button" id="closeDialog" aria-label="关闭">×</button></div><p class="subtle">可以先从离线示例了解流程，再开始自己的研究。</p><label class="dialog-label">会话模式<select id="backendMode"><option value="offline">离线 · 使用字段与模板</option><option value="api">API · 使用现有DeepSeek配置</option></select></label><div class="dialog-actions"><button type="button" id="loadExample" class="button secondary">载入离线合成示例</button><button class="button primary" type="submit">新建空白研究</button></div></form></dialog>
+<noscript>工作台需要JavaScript。终端入口 science-bot.cmd 仍可独立使用。</noscript>
+<script>globalThis.__SCIENCE_BOT_DEMO__={"id": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", "backend": "offline", "model": "未调用模型", "phase": "needs_input", "workspace": null, "resources": {"llm_requests": 0, "tool_attempts": 0, "limits": {"llm_requests": 12, "tool_calls": 40}}, "planning": {"id": "dddddddddddddddddddddddddddddddd", "revision": 1, "hash": "2192bdb63ff706f2124698c41669cc9b813c4d1e5f2ad1a0fc87b232760f5176", "title": "算子模型比较 · 先导研究", "example": true, "status": "正在澄清", "approved": false, "ready": false, "facts": [{"field": "research_question", "label": "研究问题", "value": "在同一合成场数据与固定预算下，比较线性候选与非线性基线的误差，决定是否继续投入复现研究。", "status": "declared", "quote": "在同一合成场数据与固定预算下，比较线性候选与非线性基线的误差，决定是否继续投入复现研究。"}, {"field": "objective_type", "label": "研究目的", "value": "comparison", "status": "declared", "quote": "comparison"}, {"field": "hypothesis", "label": "待检验命题", "value": "线性候选能否在当前数据条件下保持接近基线的误差，同时降低运行成本？", "status": "proposed", "quote": "线性候选能否在当前数据条件下保持接近基线的误差，同时降低运行成本？"}, {"field": "scope", "label": "研究边界", "value": "仅限本示例声明的合成二维场、数据版本与预算。", "status": "declared", "quote": "仅限本示例声明的合成二维场、数据版本与预算。"}, {"field": "exclusions", "label": "本轮不回答的问题", "value": "不宣称已复现任何真实论文，不外推到其他方程或数据分布。", "status": "declared", "quote": "不宣称已复现任何真实论文，不外推到其他方程或数据分布。"}, {"field": "experimental_unit", "label": "实验与推断单位", "value": "每个独立合成数据实现为分配和推断单位；同一实现上的网格点不作为独立重复。", "status": "declared", "quote": "每个独立合成数据实现为分配和推断单位；同一实现上的网格点不作为独立重复。"}, {"field": "factors", "label": "因素与对比", "value": "线性候选与非线性基线两个水平，主要比较候选减基线。", "status": "declared", "quote": "线性候选与非线性基线两个水平，主要比较候选减基线。"}, {"field": "design", "label": "设计结构", "value": "crd", "status": "declared", "quote": "crd"}, {"field": "outcomes", "label": "主要响应与测量", "value": "每个独立实现的相对误差均值，越低越好；运行成本作为辅助指标。", "status": "declared", "quote": "每个独立实现的相对误差均值，越低越好；运行成本作为辅助指标。"}, {"field": "baseline", "label": "基线与公平比较", "value": "演示用非线性基线，保持相同数据版本、训练预算与评价规则。", "status": "declared", "quote": "演示用非线性基线，保持相同数据版本、训练预算与评价规则。"}, {"field": "data_source", "label": "数据与证据来源", "value": "合成界面示例 interface_demo_v1；没有真实观测或论文实验结果。", "status": "declared", "quote": "合成界面示例 interface_demo_v1；没有真实观测或论文实验结果。"}, {"field": "randomization", "label": "分配与偏差控制", "value": "正式先导前对独立实现随机分配，记录实际顺序与种子。", "status": "declared", "quote": "正式先导前对独立实现随机分配，记录实际顺序与种子。"}, {"field": "analysis", "label": "分析与不确定性", "value": "估计候选减基线的单位均值差及不确定区间，报告成本与诊断。", "status": "declared", "quote": "估计候选减基线的单位均值差及不确定区间，报告成本与诊断。"}, {"field": "acceptance", "label": "验收和停止规则", "value": "逐项交付误差差异、区间与成本记录；阴性、不确定结果同样交付，预算耗尽停止。", "status": "declared", "quote": "逐项交付误差差异、区间与成本记录；阴性、不确定结果同样交付，预算耗尽停止。"}, {"field": "resources", "label": "资源边界", "value": "演示约束：最多6次运行、2小时上限；界面示例不会执行这些运行。", "status": "declared", "quote": "演示约束：最多6次运行、2小时上限；界面示例不会执行这些运行。"}, {"field": "risks", "label": "风险与未决条件", "value": "独立性、指标口径或工具适配未核实时，由研究者停止并复核。", "status": "declared", "quote": "独立性、指标口径或工具适配未核实时，由研究者停止并复核。"}, {"field": "reproducibility", "label": "复现记录", "value": "保存数据版本、代码版本、配置、分配种子及偏离日志。", "status": "declared", "quote": "保存数据版本、代码版本、配置、分配种子及偏离日志。"}, {"field": "human_roles", "label": "人类职责", "value": "研究者确认目标与设计，方法负责人复核分析，执行者另行获得授权。", "status": "declared", "quote": "研究者确认目标与设计，方法负责人复核分析，执行者另行获得授权。"}, {"field": "deliverable", "label": "交付物", "value": "可复核计划、步骤与责任清单、来源及未知、执行交接说明。", "status": "declared", "quote": "可复核计划、步骤与责任清单、来源及未知、执行交接说明。"}], "unknown": [{"field": "sampling", "label": "样本与重复依据"}], "conflicts": [], "issues": [{"field": "sampling", "code": "missing_declaration", "status": "blocked", "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？", "label": "样本与重复依据"}, {"field": "hypothesis", "code": "unconfirmed_proposal", "status": "blocked", "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。", "label": "待检验命题"}], "questions": [{"field": "hypothesis", "kind": "proposal", "question": "关于待检验命题，是否按当前理解继续？", "rationale": "这是从你的描述整理出的理解，不是经验证的事实。", "options": [{"label": "按这个理解继续：线性候选能否在当前数据条件下保持接近基线的误差，同时降低运行成本？", "value": "线性候选能否在当前数据条件下保持接近基线的误差，同时降低运行成本？", "action": "accept", "id": "9a8bc71bc12c"}, {"label": "暂不确定", "value": "未知", "action": "unknown", "id": "2c3af7fa609c"}, {"label": "其他，我来补充", "value": "", "action": "custom", "id": "47de6eddb129"}], "allow_accept": false, "choice_policy": {"intent": "comparison", "origin": "user_declared", "policy_hash": null}, "choice_id": "6e3e3de971c41122", "choice_plan_hash": "2192bdb63ff706f2124698c41669cc9b813c4d1e5f2ad1a0fc87b232760f5176"}], "design_readout": {"title": "实验设计草案", "hash": "2192bdb63ff706f2124698c41669cc9b813c4d1e5f2ad1a0fc87b232760f5176", "ready": false, "approved": false, "sections": [{"title": "问题与结论边界", "items": [{"field": "research_question", "label": "研究问题", "value": "在同一合成场数据与固定预算下，比较线性候选与非线性基线的误差，决定是否继续投入复现研究。", "status": "declared"}, {"field": "objective_type", "label": "研究目的", "value": "比较", "status": "declared"}, {"field": "hypothesis", "label": "待检验命题", "value": "线性候选能否在当前数据条件下保持接近基线的误差，同时降低运行成本？", "status": "proposed"}, {"field": "scope", "label": "研究边界", "value": "仅限本示例声明的合成二维场、数据版本与预算。", "status": "declared"}, {"field": "exclusions", "label": "本轮不回答的问题", "value": "不宣称已复现任何真实论文，不外推到其他方程或数据分布。", "status": "declared"}]}, {"title": "实验设计与主要对比", "items": [{"field": "design", "label": "设计结构", "value": "独立随机分配", "status": "declared"}, {"field": "experimental_unit", "label": "实验与推断单位", "value": "每个独立合成数据实现为分配和推断单位；同一实现上的网格点不作为独立重复。", "status": "declared"}, {"field": "factors", "label": "因素与对比", "value": "线性候选与非线性基线两个水平，主要比较候选减基线。", "status": "declared"}, {"field": "baseline", "label": "基线与公平比较", "value": "演示用非线性基线，保持相同数据版本、训练预算与评价规则。", "status": "declared"}]}, {"title": "数据、样本与分配", "items": [{"field": "data_source", "label": "数据与证据来源", "value": "合成界面示例 interface_demo_v1；没有真实观测或论文实验结果。", "status": "declared"}, {"field": "sampling", "label": "样本与重复依据", "value": "明确未知，尚无依据", "status": "unknown"}, {"field": "randomization", "label": "分配与偏差控制", "value": "正式先导前对独立实现随机分配，记录实际顺序与种子。", "status": "declared"}]}, {"title": "指标与分析", "items": [{"field": "outcomes", "label": "主要响应与测量", "value": "每个独立实现的相对误差均值，越低越好；运行成本作为辅助指标。", "status": "declared"}, {"field": "analysis", "label": "分析与不确定性", "value": "估计候选减基线的单位均值差及不确定区间，报告成本与诊断。", "status": "declared"}]}, {"title": "验收、阴性结果与停止", "items": [{"field": "acceptance", "label": "验收和停止规则", "value": "逐项交付误差差异、区间与成本记录；阴性、不确定结果同样交付，预算耗尽停止。", "status": "declared"}, {"field": "resources", "label": "资源边界", "value": "演示约束：最多6次运行、2小时上限；界面示例不会执行这些运行。", "status": "declared"}, {"field": "risks", "label": "风险与未决条件", "value": "独立性、指标口径或工具适配未核实时，由研究者停止并复核。", "status": "declared"}]}, {"title": "复现、交付与责任", "items": [{"field": "reproducibility", "label": "复现记录", "value": "保存数据版本、代码版本、配置、分配种子及偏离日志。", "status": "declared"}, {"field": "deliverable", "label": "交付物", "value": "可复核计划、步骤与责任清单、来源及未知、执行交接说明。", "status": "declared"}, {"field": "human_roles", "label": "人类职责", "value": "研究者确认目标与设计，方法负责人复核分析，执行者另行获得授权。", "status": "declared"}]}], "issues": [{"field": "sampling", "label": "样本与重复依据", "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？", "blocking": true}, {"field": "hypothesis", "label": "待检验命题", "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。", "blocking": true}], "evidence_actions": [], "selected_evidence_count": 0, "execution_authorized": false, "next_step": "先处理阻断项；取得依据前可以导出带未决项的草案。"}, "evidence": [], "evidence_actions": {}, "steps": [{"id": "boundaries", "purpose": "明确要回答的问题和不能外推的边界", "dependencies": [], "inputs": ["research_question", "objective_type", "scope", "exclusions"], "outputs": ["问题与边界契约"], "acceptance": "研究者用自己的话确认问题、范围和排除项；模型建议保持待确认身份。", "owner": "研究者与Agent协作", "capability": "implemented", "suggested_tools": [], "executed": false, "label": "目标与边界", "capability_label": "规划支持"}, {"id": "evidence_inventory", "purpose": "区分已知声明、实际证据和未决信息", "dependencies": ["boundaries"], "inputs": ["data_source", "experimental_unit", "risks"], "outputs": ["证据来源清单", "未决问题清单"], "acceptance": "每项关键事实有来源或明确未知；真实单位独立性与测量质量需外部核实。", "owner": "研究者提供与核实，Agent整理", "capability": "manual", "suggested_tools": [], "executed": false, "label": "证据清单", "capability_label": "需人工或执行适配"}, {"id": "design", "purpose": "选择能检验命题的设计并说明合理替代方案", "dependencies": ["evidence_inventory"], "inputs": ["hypothesis", "factors", "design", "baseline", "sampling", "randomization"], "outputs": ["实验分配与分析单位说明", "样本/先导依据", "方案候选与取舍"], "acceptance": "对比可估计；单位、重复、区组和随机化关系明确；未知功效条件不能被默认值替代。", "owner": "研究者选择，方法专家复核", "capability": "manual", "suggested_tools": [], "executed": false, "label": "实验设计", "capability_label": "需人工或执行适配"}, {"id": "acceptance", "purpose": "预先锁定分析、验收和停止规则", "dependencies": ["design"], "inputs": ["outcomes", "analysis", "acceptance", "resources"], "outputs": ["主要指标与对比", "分析及不确定性规则", "验收/停止检查表"], "acceptance": "区分能否检验命题与证据是否支持；预设阴性和不确定结果处理，禁止按结果改阈值。", "owner": "研究者确认，Agent检查声明完整性", "capability": "implemented", "suggested_tools": [], "executed": false, "label": "分析与验收", "capability_label": "规划支持"}, {"id": "human_review", "purpose": "在执行前复核假设、可行性与责任", "dependencies": ["acceptance"], "inputs": ["human_roles", "risks", "reproducibility"], "outputs": ["人工复核记录", "批准版本或修订理由"], "acceptance": "逐项检查来源、统计/领域假设、资源及工具能力；修订关键事实后原确认失效。", "owner": "指定的人类复核者", "capability": "manual", "suggested_tools": [], "executed": false, "label": "人工复核", "capability_label": "需人工或执行适配"}, {"id": "preregister", "purpose": "冻结当前计划及其验收规则", "dependencies": ["human_review"], "inputs": ["完整计划", "人工确认记录"], "outputs": ["带版本和来源的计划快照"], "acceptance": "确认绑定当前版本，计划变更重新复核；计划确认不等于真实工具执行授权。", "owner": "研究者确认，宿主保存", "capability": "implemented", "suggested_tools": [], "executed": false, "label": "版本确认", "capability_label": "规划支持"}, {"id": "mock_rehearsal", "purpose": "可选：演练受支持工具闭环，不制造实测证据", "dependencies": ["preregister"], "inputs": ["明确受支持的设计映射"], "outputs": ["模拟工具轨迹", "能力缺口清单"], "acceptance": "仅显式进入详细工具库后运行；模拟输出明确标记，不能当作真实实验结论。", "owner": "Agent在宿主约束内", "capability": "mock", "suggested_tools": ["plan_review", "claim_check_plan", "workflow_verify", "job_run_mock"], "executed": false, "label": "可选离线演练", "capability_label": "离线模拟"}, {"id": "execute", "purpose": "按锁定计划采集数据或执行研究步骤", "dependencies": ["preregister"], "inputs": ["人工授权", "真实环境与数据", "冻结计划"], "outputs": ["原始观测", "实际分配与偏离记录", "失败和资源记录"], "acceptance": "真实任务由人类或另行接入的受限执行器完成；不能因已有工具契约而宣称已经执行。", "owner": "人类研究者/单独授权的执行器", "capability": "manual", "suggested_tools": [], "executed": false, "label": "实际执行", "capability_label": "需人工或执行适配"}, {"id": "analyze", "purpose": "依据预先声明的方法分析结果并检查偏离", "dependencies": ["execute"], "inputs": ["真实观测与版本", "冻结分析规则"], "outputs": ["估计量与不确定性", "诊断和偏离说明"], "acceptance": "不把技术重复当独立样本；不反复选方法直到显著；自动分析须先核对具体工具支持范围。", "owner": "研究者负责，Agent可辅助解释", "capability": "manual", "suggested_tools": [], "executed": false, "label": "结果分析", "capability_label": "需人工或执行适配"}, {"id": "claim_review", "purpose": "判断证据支持什么，以及仍不能判断什么", "dependencies": ["analyze"], "inputs": ["命题", "分析输出", "假设与外推限制"], "outputs": ["支持/不支持/不确定的结论", "限制与替代解释"], "acceptance": "设计可检验不等于结果支持；阴性、反向及不确定结果同样记录，因果与泛化不超出证据。", "owner": "人类研究者作最终判断", "capability": "manual", "suggested_tools": [], "executed": false, "label": "结论复核", "capability_label": "需人工或执行适配"}, {"id": "report", "purpose": "交付可追踪报告并选择下一步", "dependencies": ["claim_review"], "inputs": ["deliverable", "reproducibility", "全程决策与偏离记录"], "outputs": ["研究报告与复现清单", "下一步或停止理由"], "acceptance": "交付包含边界、设计选择、关键证据、局限、负结果和人类职责；新问题另开版本，不事后重写原验收。", "owner": "研究者签署，Agent整理", "capability": "manual", "suggested_tools": [], "executed": false, "label": "报告交付", "capability_label": "需人工或执行适配"}], "export": null, "export_current": false, "execution_authorized": false, "scientific_claim_verified": false}, "last_answer": null, "example": true};
+"use strict";
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const labels = { overview: "研究概览", chat: "对话规划", plan: "研究计划", evidence: "证据材料", delivery: "交付中心" };
+  const purpose = { comparison: "比较研究", prediction: "预测评估", causal: "因果研究", exploration: "探索研究", replication: "复现研究" };
+  const hash = new URLSearchParams(location.hash.slice(1));
+  // This is the existing local service capability, never the model API key.
+  // It is kept only in memory and removed from the address bar immediately.
+  let token = hash.get("access") || "";
+  let sessionId = hash.get("session") || "";
+  if (location.hash) history.replaceState(null, "", location.href.split("#")[0]);
+  let view = null, busy = false, currentTab = "overview", toastTimer = null;
+  let displayedSession = "";
+  let displayedChoiceId = "";
+  const el = (tag, text, className) => { const n = document.createElement(tag); if (text !== undefined) n.textContent = String(text); if (className) n.className = className; return n; };
+  const clear = (id) => $(id).replaceChildren();
+  const fact = (name) => view?.planning?.facts.find((r) => r.field === name)?.value || "尚待明确";
+
+  function toast(message, error = false) {
+    clearTimeout(toastTimer); $("toast").textContent = message; $("toast").className = "toast" + (error ? " error" : "");
+    $("toast").hidden = false; toastTimer = setTimeout(() => { $("toast").hidden = true; }, 6500);
+  }
+  function requireConnection() {
+    if (token) return true;
+    toast("当前是只读合成预览。运行 science-bot-web.cmd -Example 打开可交互的本地会话。", true);
+    return false;
+  }
+  function switchTab(name) {
+    if (!labels[name]) return;
+    currentTab = name; $("crumb").textContent = labels[name];
+    document.querySelectorAll("[data-panel]").forEach((n) => { n.hidden = n.dataset.panel !== name; });
+    document.querySelectorAll("[data-tab]").forEach((n) => { n.classList.toggle("active", n.dataset.tab === name); n.setAttribute("aria-current", n.dataset.tab === name ? "page" : "false"); });
+  }
+  function setBusy(value) {
+    busy = value;
+    $("sendButton").disabled = value;
+    $("sendButton").textContent = value ? "正在整理…" : "发送 →";
+    $("exportTop").disabled = value; $("exportDelivery").disabled = value;
+    $("newSession").disabled = value; $("reviewPlan").disabled = value;
+    $("approvePlan").disabled = value || !view?.planning?.ready || !!view?.planning?.approved;
+    $("saveState").textContent = value ? "正在处理，请勿重复提交" : token ? "已读取本地会话" : "本地界面示例";
+    document.querySelectorAll(".current-choice button").forEach((button) => { button.disabled = value; });
+    document.querySelectorAll(".session-row button").forEach((button) => { button.disabled = value || button.dataset.unavailable === "true"; });
+  }
+  async function request(path, body, key = null) {
+    const headers = { "Authorization": "Bearer " + token };
+    if (body !== undefined) {
+      headers["Content-Type"] = "application/json";
+      headers["Idempotency-Key"] = key || crypto.randomUUID();
+    }
+    let response;
+    try { response = await fetch(path, { method: body === undefined ? "GET" : "POST", headers, body: body === undefined ? undefined : JSON.stringify(body), cache: "no-store" }); }
+    catch (_) { throw new Error("本地服务暂时不可达。请求完成状态不明，请先刷新会话，不要重复提交。"); }
+    const data = await response.json();
+    if (!response.ok) throw new Error(response.status === 401 ? "本地访问凭据不可用，请重新运行浏览器启动器。" : (data.detail || data.error || "本次操作未完成"));
+    return data;
+  }
+  function message(text, role = "assistant") {
+    const item = el("div", undefined, "message " + role);
+    item.append(el("span", role === "user" ? "你" : "SCIENCE BOT", "speaker"), document.createTextNode(text));
+    $("messages").append(item); $("messages").scrollTop = $("messages").scrollHeight;
+  }
+  function renderQuestions(plan) {
+    clear("questions");
+    if (!plan?.questions?.length) {
+      $("nextTitle").textContent = plan?.ready ? "现在可以复核当前版本" : plan ? "等待依据或修订边界" : "从一个研究问题开始";
+      $("questions").append(el("p", plan?.ready ? "核对目标、设计与验收，再决定是否确认这份规划。" : plan ? "草案仍有未决项，请在研究计划中核对缺口及获取依据的步骤。" : "描述想回答的问题，也可以先说清你还不知道什么。", "subtle"));
+      return;
+    }
+    $("nextTitle").textContent = "先解决关键缺口";
+    plan.questions.forEach((q, i) => {
+      const row = el("div", undefined, "question-item");
+      row.append(el("p", String(i + 1).padStart(2, "0") + "  " + q.question));
+      if (q.kind === "proposal" && q.allow_accept !== false) {
+        const button = el("button", "确认这项理解 →", "text-button");
+        button.addEventListener("click", () => send("/plan accept " + q.field)); row.append(button);
+      }
+      (q.options || []).forEach((option, index) => {
+        const button = el("button", (index + 1) + ". " + option.label, "quick-action");
+        button.addEventListener("click", () => send(q.choice_id ? "/plan choose " + q.choice_id + " " + option.id : (q.kind === "conflict" ? "/plan revise " : "/plan ") + q.field + ": " + option.value, option.label)); row.append(button);
+      });
+      $("questions").append(row);
+    });
+  }
+  function renderChatChoices(plan) {
+    const q = plan?.questions?.[0];
+    if (q?.choice_id && displayedChoiceId === q.choice_id) return;
+    document.querySelectorAll(".choice-message").forEach((node) => {
+      node.classList.remove("current-choice");
+      node.querySelectorAll("button").forEach((button) => { button.disabled = true; });
+    });
+    displayedChoiceId = q?.choice_id || "";
+    if (!q?.choice_id) return;
+    const card = el("div", undefined, "message choice-message current-choice");
+    card.setAttribute("role", "group"); card.setAttribute("aria-label", q.question);
+    card.append(el("span", "SCIENCE BOT", "speaker"), el("p", q.question));
+    q.options.forEach((option, index) => {
+      const button = el("button", (index + 1) + ". " + option.label, "quick-action");
+      button.disabled = busy;
+      button.addEventListener("click", () => send("/plan choose " + q.choice_id + " " + option.id, option.label));
+      card.append(button);
+    });
+    $("messages").append(card); $("messages").scrollTop = $("messages").scrollHeight;
+  }
+  function renderPlan(plan) {
+    clear("pathPreview"); clear("planSteps"); clear("planIssues");
+    renderDesign("designReadout", plan);
+    (plan?.steps || []).forEach((step, i) => {
+      if (i < 6) {
+        const item = el("div", undefined, "path-item"), copy = el("div");
+        copy.append(el("b", step.label), el("small", step.capability_label));
+        item.append(el("span", String(i + 1).padStart(2, "0"), "path-number"), copy); $("pathPreview").append(item);
+      }
+      const card = el("article", undefined, "card step-card"), title = el("div", undefined, "step-title");
+      title.append(el("span", String(i + 1).padStart(2, "0")), el("h3", step.label));
+      card.append(title, el("p", step.purpose), el("p", "验收：" + step.acceptance, "acceptance"), el("small", step.owner + " · " + step.capability_label + " · 尚未执行"));
+      $("planSteps").append(card);
+    });
+    (plan?.issues || []).forEach((issue) => $("planIssues").append(el("div", issue.label + "：" + issue.detail, "issue")));
+    $("approvalHint").textContent = plan?.approved ? "当前内容版本已确认。任何关键修订都需要重新复核。" : plan?.ready ? "请先逐项检查目标、步骤与验收。确认规划不会启动实验。" : "先处理待确认、未知与冲突，再复核版本。";
+    $("hashText").textContent = plan?.hash || "尚未建立规划";
+    $("approvePlan").textContent = plan?.approved ? "此版本已确认" : "确认此版本";
+  }
+  function renderEvidence(plan) {
+    clear("sourceList");
+    const sources = plan?.evidence || [];
+    $("evidenceCount").textContent = sources.length + " 个片段";
+    $("sourceSummary").textContent = sources.length ? "已有 " + sources.length + " 个明确选择的片段" : "还没有选择论文证据";
+    $("workspaceText").textContent = view.workspace ? "当前工作区：" + view.workspace : "尚未绑定工作区。启动时使用 -Workspace 选择项目目录。";
+    if (!sources.length) {
+      const box = el("div", undefined, "card empty-card");
+      box.append(el("span", "⌑"), el("h3", "从明确选择的一段原文开始"), el("p", "出处与版本会随计划保存。", "subtle")); $("sourceList").append(box);
+    }
+    sources.forEach((source) => {
+      const card = el("article", undefined, "card source-entry");
+      const range = source.format === "pdf" ? "PDF第 " + source.start_page + "–" + source.end_page + " 页" : "第 " + source.start_line + "–" + source.end_line + " 行";
+      card.append(el("h3", source.path), el("small", range + " · " + source.sha256), el("span", source.share_with_model ? "已允许模型使用所选内容" : "仅本地展示", "tag"));
+      const button = el("button", "查看选定时的原文 →", "quick-action");
+      button.addEventListener("click", () => send("/plan evidence show " + source.id)); card.append(button);
+      if (source.format === "pdf") {
+        const understand = el("button", source.interpretation ? "查看已保存的论文解读 →" : "让LLM理解所选页 →", "quick-action");
+        understand.disabled = !source.share_with_model;
+        understand.title = source.share_with_model ? "使用现有模型理解这些页，保留逐页原文引用" : "请重新选择片段并明确允许模型使用";
+        understand.addEventListener("click", () => send("/plan evidence understand " + source.id)); card.append(understand);
+        if (source.interpretation) {
+          const reading = source.interpretation;
+          card.append(el("h3", "模型解读 · 待复核"));
+          reading.items.forEach((item) => card.append(el("p", item.statement), el("small", "PDF第 " + item.page + " 页 · 原文：" + item.quote)));
+          reading.unanswered.forEach((item) => card.append(el("p", "尚不能判断：" + item, "subtle")));
+          if (reading.rejected_items?.length) card.append(el("p", "有 " + reading.rejected_items.length + " 条模型要点未通过引用或数值校验，未采用。", "subtle"));
+        }
+      }
+      $("sourceList").append(card);
+    });
+  }
+  function renderDelivery(plan) {
+    if (!$('deliveryReadout')) {
+      const container = el('div', undefined, 'step-grid'); container.id = 'deliveryReadout';
+      container.setAttribute('aria-label', '交付前的实验设计');
+      document.querySelector('[data-panel="delivery"] .format-grid').before(container);
+    }
+    renderDesign('deliveryReadout', plan);
+    const exported = plan?.export;
+    $("exportState").textContent = exported ? (plan.export_current ? "当前版本已导出" : "现有导出属于旧内容版本，请重新导出") + " · " + exported.contract_hash.slice(0, 16) : "尚未生成导出版本";
+    document.querySelectorAll("[data-download]").forEach((button) => { button.disabled = !token || !exported || busy; });
+  }
+  function renderDesign(target, plan) {
+    clear(target);
+    const design = plan?.design_readout;
+    if (!design) { $(target).append(el('p', '描述目标后，这里将直接展示实验设计草案。', 'subtle')); return; }
+    const status = { proposed: '待确认', unknown: '未知', conflict: '冲突', stale: '需重新核对', missing: '待明确' };
+    design.sections.forEach((section) => {
+      const card = el('article', undefined, 'card compact'); card.append(el('h3', section.title));
+      section.items.forEach((item) => {
+        card.append(el('div', item.label + (status[item.status] ? ' · ' + status[item.status] : ''), 'definition-label'), el('p', item.value));
+      });
+      $(target).append(card);
+    });
+    if (design.evidence_actions.length) {
+      const card = el('article', undefined, 'card compact'); card.append(el('h3', '获取依据的拟议步骤 · 未执行'));
+      design.evidence_actions.forEach((item) => card.append(el('p', item.label + '：' + item.text))); $(target).append(card);
+    }
+    $(target).append(el('p', design.next_step, 'subtle'));
+  }
+  function render(data) {
+    view = data;
+    const plan = data.planning;
+    $("projectTitle").textContent = plan?.title || "让研究的每一步，都有依据。";
+    $("pageSubtitle").textContent = plan ? "保持目标、边界与未知可见。每个决定，都能回到它的依据。" : "从问题出发，明确边界与取舍，形成可以共同复核的计划。";
+    $("modePill").textContent = data.example ? "离线 · 合成示例" : data.backend === "offline" ? "离线模式" : "API模式";
+    $("previewNotice").hidden = !!token && !data.example;
+    $("previewNotice").lastElementChild.textContent = !token ? "合成界面预览 · 未连接私有会话，未执行实验。运行浏览器启动器可进入可交互示例。" : "合成离线示例 · 不调用模型、不读取真实论文，不执行实验。所有约束仅用于演示。";
+    $("researchQuestion").textContent = fact("research_question");
+    $("objective").textContent = purpose[fact("objective_type")] || fact("objective_type");
+    $("revision").textContent = plan ? "第 " + plan.revision + " 版" : "—";
+    $("planStatus").textContent = plan?.status || "尚未开始";
+    $("scopeText").textContent = fact("scope"); $("exclusionsText").textContent = fact("exclusions");
+    $("unitText").textContent = fact("experimental_unit"); $("outcomeText").textContent = fact("outcomes"); $("resourceText").textContent = fact("resources");
+    const resources = data.resources;
+    $("requestCount").textContent = resources.llm_requests + " / " + resources.limits.llm_requests;
+    $("toolCount").textContent = resources.tool_attempts + " / " + resources.limits.tool_calls;
+    document.querySelectorAll(".stage").forEach((node, i) => node.classList.toggle("active", !!plan && (i === 0 || i === 1 && plan.facts.length > 5 || i === 2 && plan.ready || i === 3 && plan.export_current)));
+    renderQuestions(plan); renderPlan(plan); renderEvidence(plan); renderDelivery(plan); setBusy(busy);
+    if (displayedSession !== data.id) {
+      clear("messages"); displayedSession = data.id; displayedChoiceId = "";
+      message(data.last_answer || "你好。我们可以先明确要回答的问题，也可以从右侧的待澄清项继续。规划确认与实际执行分开。" + (data.example ? "\n\n这是合成离线示例，当前命题待确认，先导依据仍未知。" : ""));
+    }
+    renderChatChoices(plan);
+  }
+  async function refresh() {
+    if (token && sessionId) render(await request("/ui/sessions/" + sessionId));
+    else if (token) render({ id: "", backend: view?.backend || "offline", model: view?.model || "", phase: "ready",
+      workspace: view?.workspace || null, resources: { llm_requests: 0, tool_attempts: 0, limits: { llm_requests: 12, tool_calls: 40 } },
+      planning: null, last_answer: "尚无研究会话。点击“新建研究”开始。", example: false });
+    else render(globalThis.__SCIENCE_BOT_DEMO__ || await (await fetch("/demo.json", { cache: "no-store" })).json());
+  }
+  async function listSessions() {
+    if (!token) return;
+    const result = await request("/ui/sessions"); clear("sessionList");
+    result.sessions.forEach((session) => {
+      const row = el("div", undefined, "session-row");
+      const button = el("button", (session.example ? "示例 · " : "") + session.title, "session-open");
+      button.title = session.title;
+      button.setAttribute("aria-current", session.id === sessionId ? "true" : "false");
+      button.dataset.unavailable = String(!!session.deletion_pending);
+      button.disabled = busy || !!session.deletion_pending;
+      button.addEventListener("click", async () => { if (busy) return; setBusy(true); sessionId = session.id; try { await refresh(); switchTab("overview"); } catch (error) { toast(error.message, true); } finally { setBusy(false); } });
+      const remove = el("button", "删除", "session-delete"); remove.type = "button"; remove.disabled = busy;
+      remove.title = "删除此研究及对话记录"; remove.setAttribute("aria-label", "删除研究：" + session.title);
+      remove.addEventListener("click", () => deleteSession(session));
+      row.append(button, remove); $("sessionList").append(row);
+    });
+    if (!result.sessions.length) $("sessionList").append(el("span", "尚无研究会话", "muted"));
+    return result.sessions;
+  }
+  async function deleteSession(session) {
+    if (busy || !requireConnection()) return;
+    if (!window.confirm("删除研究“" + session.title + "”？\n\n将清除该会话的研究计划、对话、导出和本地缓存，无法撤销。原始项目文件保留。")) return;
+    setBusy(true);
+    try {
+      await request("/ui/sessions/" + session.id + "/delete", { confirm: session.id });
+      if (sessionId === session.id) {
+        sessionId = ""; displayedSession = null; displayedChoiceId = ""; clear("messages");
+        $("messageText").value = ""; await refresh();
+        const remaining = await listSessions();
+        const next = remaining.find((item) => !item.deletion_pending);
+        if (next) { sessionId = next.id; await refresh(); await listSessions(); }
+        switchTab("overview");
+      } else await listSessions();
+      toast("已删除该研究及对话记录。");
+    } catch (error) { toast(error.message + " 请刷新历史列表核对状态。", true); }
+    finally { setBusy(false); }
+  }
+  async function send(text, displayText = text) {
+    if (busy || !text.trim() || !requireConnection()) return;
+    if (!sessionId) { toast("请先新建研究会话。", true); return; }
+    setBusy(true); message(displayText, "user"); switchTab("chat");
+    try {
+      const result = await request("/v1/sessions/" + sessionId + "/messages", { text: text.trim() });
+      if (!result.question_form) message(result.answer || "已保存，请查看研究概览。");
+      if (result.planning_error || result.research_error) toast("操作未采纳，请根据回答修正。", true);
+      await refresh(); await listSessions();
+      if (result.export) { switchTab("delivery"); toast("已导出当前版本，可下载三种交付格式。"); }
+    } catch (error) { message(error.message); toast(error.message, true); }
+    finally { setBusy(false); renderDelivery(view?.planning); }
+  }
+  async function newSession(example) {
+    if (!requireConnection() || busy) return;
+    setBusy(true);
+    try {
+      const result = await request(example ? "/ui/example" : "/v1/sessions", example ? {} : { backend: $("backendMode").value });
+      sessionId = result.id; $("newDialog").close(); await refresh(); await listSessions(); switchTab("overview");
+      toast(example ? "已创建独立离线示例，没有模型或实验调用。" : "研究会话已建立，可以描述你的目标。");
+    } catch (error) { toast(error.message, true); }
+    finally { setBusy(false); }
+  }
+  async function download(suffix) {
+    if (!requireConnection() || !sessionId || !view?.planning?.export) return;
+    try {
+      const response = await fetch("/ui/sessions/" + sessionId + "/delivery." + suffix, { headers: { Authorization: "Bearer " + token }, cache: "no-store" });
+      if (!response.ok) { const error = await response.json(); throw new Error(error.detail || "交付文件不可用，请重新导出。"); }
+      const blob = await response.blob(), url = URL.createObjectURL(blob), link = el("a");
+      link.href = url; link.download = "science-bot-plan." + suffix; document.body.append(link); link.click(); link.remove(); setTimeout(() => URL.revokeObjectURL(url), 2000);
+      toast("交付文件已下载，版本与缺口记录随文件保留。");
+    } catch (error) { toast(error.message, true); }
+  }
+  document.querySelectorAll("[data-tab]").forEach((button) => button.addEventListener("click", () => switchTab(button.dataset.tab)));
+  document.querySelectorAll("[data-go]").forEach((button) => button.addEventListener("click", () => switchTab(button.dataset.go)));
+  document.querySelectorAll("[data-command]").forEach((button) => button.addEventListener("click", () => send(button.dataset.command)));
+  document.querySelectorAll("[data-download]").forEach((button) => button.addEventListener("click", () => download(button.dataset.download)));
+  $("newSession").addEventListener("click", () => { if (requireConnection()) $("newDialog").showModal(); });
+  $("closeDialog").addEventListener("click", () => $("newDialog").close());
+  $("newForm").addEventListener("submit", (event) => { event.preventDefault(); newSession(false); });
+  $("loadExample").addEventListener("click", () => newSession(true));
+  $("refreshSessions").addEventListener("click", async () => { try { await listSessions(); await refresh(); } catch (error) { toast(error.message, true); } });
+  $("exportTop").addEventListener("click", () => { if (token) send("/plan export"); else { switchTab("delivery"); toast("当前是只读预览，下方可查看合成交付示例。"); } });
+  $("exportDelivery").addEventListener("click", () => { if (token) send("/plan export"); else window.open(globalThis.__SCIENCE_BOT_DEMO__ ? "delivery.html" : "/demo-delivery.html", "_blank", "noopener"); });
+  $("reviewPlan").addEventListener("click", () => send("/plan review"));
+  $("approvePlan").addEventListener("click", () => { if (view?.planning?.ready) send("/plan approve " + view.planning.hash); });
+  $("pilotExample").addEventListener("click", () => {
+    if (!view?.example) { toast("此快捷回答仅用于合成示例，真实研究请提供自己的依据。", true); return; }
+    $("messageText").value = "/plan sampling: 固定预算先导；先核实独立性与测量流程，不宣称功效保证。"; $("messageText").focus();
+  });
+  $("messageForm").addEventListener("submit", (event) => { event.preventDefault(); const text = $("messageText").value; if (text.trim() && !busy && token && sessionId) $("messageText").value = ""; send(text); });
+  $("messageText").addEventListener("keydown", (event) => { if (event.key === "Enter" && !event.shiftKey && !event.isComposing) { event.preventDefault(); $("messageForm").requestSubmit(); } });
+  $("evidenceForm").addEventListener("submit", (event) => {
+    event.preventDefault();
+    const start = Number($("startLine").value), end = Number($("endLine").value);
+    const pdf = /\.pdf$/i.test($("sourcePath").value.trim());
+    if (start < 1 || end < start || end - start + 1 > (pdf ? 12 : 120)) { toast(pdf ? "请选择最多12个连续PDF页。" : "请选择最多120行的连续片段。", true); return; }
+    const range = pdf ? {start_page:start,end_page:end} : {start_line:start,end_line:end};
+    send("/plan evidence add " + JSON.stringify({ path: $("sourcePath").value.trim(), ...range, share_with_model: $("shareSource").checked }));
+  });
+  $("sourcePath").addEventListener("input", () => {
+    const pdf = /\.pdf$/i.test($("sourcePath").value.trim());
+    $("startRangeLabel").textContent = pdf ? "起始PDF页" : "起始行";
+    $("endRangeLabel").textContent = pdf ? "结束PDF页" : "结束行";
+    if (pdf && Number($("endLine").value) > 12) $("endLine").value = "3";
+  });
+  async function init() {
+    try {
+      if (token && !sessionId) { const data = await request("/ui/sessions"); if (data.sessions.length) sessionId = data.sessions[0].id; }
+      await refresh(); await listSessions();
+    } catch (error) { token = ""; sessionId = ""; await refresh(); toast(error.message, true); }
+  }
+  init();
+})();
+</script></body></html>

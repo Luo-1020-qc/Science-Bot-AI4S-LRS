@@ -1,0 +1,32 @@
+scenario_name: 培养基配比对产物滴度的影响
+domain: 发酵/生物工程
+skeleton: S3
+executable: true
+summary: 碳源与氮源浓度对发酵产物滴度的因子试验
+vocabulary:
+  treatment_name: 碳源×氮源浓度
+  outcome_name: 产物滴度
+  unit: g/L
+  comparison: 浓度低/高的组合
+survey_questions:
+- 因子与水平的依据是什么（文献/预实验）？
+- 菌株与接种量是否固定？
+- 培养温度、pH、溶氧是否受控？
+- 重复批次几次？如何防染菌？
+- 产物检测方法是什么？
+rubric:
+- 因子水平有依据
+- 菌株与接种量一致
+- 培养条件受控并记录
+- 重复批次 >= 2
+- 染菌与异常批次记录
+- 统计结论与机制解释分开
+proposal_template:
+- 研究目标
+- 菌株与培养条件
+- 因子设计
+- 检测与统计
+- 验收标准
+- 局限
+source: 骨架聚类表 v1 · S3 · 发酵/生物工程行
+notes: 生物重复与技术重复必须分开记录

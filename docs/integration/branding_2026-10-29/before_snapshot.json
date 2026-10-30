@@ -1,0 +1,39 @@
+{
+  "version": "branding_before_v1",
+  "files": {
+    "RUT_Science/rut_science/science_bot/workbench_assets/dist/index.html": "e09e1414b85a5a417badabf3989c73c3b9dffdf8f0fa6de18087d81157f7d235",
+    "RUT_Science/rut_science/science_bot/workbench_assets/dist/styles.css": "ea5591effed198a1f652465be5642bb4f6c9a07eb3978d4f4306fad95997292e",
+    "RUT_Science/rut_science/science_bot/presentation.py": "a41b1b67a359273a533a83c05c96db4f4df618dc9f97d8f37e25bc3f34e41a06",
+    "examples/interfaces/browser.html": "319c98c39bf9e83d92f69a0d27b733029c5794bb2a5ac9cc7a86c0469988177a",
+    "examples/interfaces/delivery.html": "6e7b76df6b56f52fcb53a5b174e29f8832fd7f581d99744952fea1f82aaa9e80"
+  },
+  "unchanged_history": {
+    "docs/integration/dynamic_clarification_2026-10-29/authorized_source_changes.json": "b20e9bec0510fe1cb99c814f66430af6ce781f70f2ddc139786f49270b08ae3c",
+    "docs/integration/dynamic_clarification_2026-10-29/before_snapshot.json": "e1db022538bdaed2a371c1380fd2f9cac5c05753ef1149fd31ca7207049b3f57",
+    "docs/integration/dynamic_clarification_2026-10-29/evaluation_display_patch.json": "7e7b53a8643c90c1c4fa8f41e9ea7808de375b8dd62fad5403103341840427ef",
+    "docs/integration/dynamic_clarification_2026-10-29/full_tests.json": "df6feb3cc2a356504795cbe4fe4bb0ab67e6e85ff29b18b2234c7da460332bad",
+    "docs/integration/dynamic_clarification_2026-10-29/runtime_manifest.json": "ad148edea96fba09ce6721f98daf24595e4d7825e4f81c4aa4101e18ec442052",
+    "docs/integration/dynamic_clarification_2026-10-29/verification.json": "17066380771779c351c083d69d231407e1cc37b4e445c75caac17866ee77419b",
+    "docs/integration/interfaces_2026-10-29/authorized_source_changes.json": "be037e07c2ecaff4b587a288d454fc63af6dd6282b9920a00748cd6d0610d4f0",
+    "docs/integration/interfaces_2026-10-29/before_packaging.json": "e0d3d7bc1893ea6672cb4940df0cfea5396284bb2732765ff57af7032886cbbc",
+    "docs/integration/interfaces_2026-10-29/before_snapshot.json": "c035490d35dac2253f3980374a72046de64807905a5f55e2af69332d9139780b",
+    "docs/integration/interfaces_2026-10-29/full_tests.json": "830a961e68579524f35a90cc990bcd2b9e55465f6b63aaa4e508f56114300541",
+    "docs/integration/interfaces_2026-10-29/runtime_manifest.json": "52846722d9898980594f20b1ce58371ed116aeeb377c0c7f69f2250e78f73ed6",
+    "docs/integration/interfaces_2026-10-29/verification.json": "11e81286c50a3ae90d0edf88bc6e811d9cf3881716552deb25e8e935c2518c77",
+    "docs/integration/planning_2026-10-29/authorized_source_changes.json": "e03be241e38832ff9ca506aa6a8d46ce15a71fe0e404714e8d385537d88a19ad",
+    "docs/integration/planning_2026-10-29/before_snapshot.json": "7876b5696ffc7f5dbff02b1f7be48621632befb5eab365dc4f92206566cd065b",
+    "docs/integration/planning_2026-10-29/runtime_manifest.json": "7a6575e20b20fd3a411473cbee24597302de250b09d6821266c5449ec4dbe398",
+    "docs/integration/planning_2026-10-29/verification.json": "3ae88f8e42b0c19c808890210c50241ca447647ef8f134beae5944f58b9ce08a",
+    "docs/integration/question_tool_2026-10-29/authorized_source_changes.json": "b8e9c4a82f38e526fda1d9ad8d50bec645f2db9acd0a398f75e454fe46c77554",
+    "docs/integration/question_tool_2026-10-29/before_snapshot.json": "c3230e47e6e90e4a7d11e263e75f631ca3e9dd92d64bd74288be1b8b5e3f3c7a",
+    "docs/integration/question_tool_2026-10-29/full_tests.json": "b088eea905b69a189ab8e03a00c880b28e1ba80d4163c0ea941567c1028d1fd6",
+    "docs/integration/question_tool_2026-10-29/runtime_manifest.json": "916a317f711f8005094e2f3683bffa69d152ff5a0980d4c33e517603e21b3a99",
+    "docs/integration/question_tool_2026-10-29/training_manifest.json": "5d5c98010848ea52e13dd684ec9820d08fae89a586db61c2b8d7f9739c5257f5",
+    "docs/integration/question_tool_2026-10-29/verification.json": "8a03411ea31a3494bf4666577ced5d987ccb83295c2ed5be2ce1547077aae5d9",
+    "docs/integration/tool_library_2026-10-28/authorized_source_changes.json": "65eb2bb34f021a65481ff3b5e2fbf3f737a17ca5232e8e8e535b8c2a05db5343",
+    "docs/integration/tool_library_2026-10-28/runtime_manifest.json": "4123111580c7e3286c81b8d400ee303046d0c074d015f0c1e0196bf60fd1eb08",
+    "docs/integration/tool_library_2026-10-28/verification.json": "db652137e63e974d3ab2675f54118fa23362bbea221d35026c19b636ad08f6af",
+    "docs/integration/dynamic_clarification_2026-10-29/history_privacy/authorized_source_changes.json": "9ef1e9105a71122f76e6deaa6cec47a2a70f5e07930d924812c4ce260fa36310",
+    "docs/integration/dynamic_clarification_2026-10-29/history_privacy/before_snapshot.json": "17f7941194cf07c36d63e12ce9b7e6cbc5ecd282035c452cdd9d63e2026e5a4e"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "files": {
+    "RUT_Science/tests/test_workbench_http.py": {
+      "before_sha256": "91a1ab707921f8e8d3ea5033548a222c29fa4149c969ded9fc75fbc649f6d333",
+      "sha256": "917a5f922f804b919b867b6a50efcbe1b1c89e36189627e2082cea02784cd1c7",
+      "reason": "User authorized the agreed mainline package: full conversation acceptance cases, rule baseline, direct experimental-design delivery and targeted directory migration."
+    },
+    "scripts/check_repository.py": {
+      "before_sha256": "369a1366215545dc61e0bb96e668c74ead74d857a1382653a461ee85ee0fd531",
+      "sha256": "2c1c5fab4562ea1895a499b6aecc468d89d7841f48e1180f2fa7693bf2cee3be",
+      "reason": "User authorized the agreed mainline package: full conversation acceptance cases, rule baseline, direct experimental-design delivery and targeted directory migration."
+    },
+    "scripts/integrity.py": {
+      "before_sha256": "c3027049e1c197742ac37b233be10ae3d8ba098ec1d0950a4af12ddf0a1c1d9b",
+      "sha256": "de347ffad62891c7a60ba30f87be7dc748d3660aff9d5aa8d570084309b111fa",
+      "reason": "User authorized the agreed mainline package: full conversation acceptance cases, rule baseline, direct experimental-design delivery and targeted directory migration."
+    },
+    "scripts/test_integrity.py": {
+      "before_sha256": "1b6ad6b74d8cc5cfa7cdf205af3e4ea11167b51684e97ba08576fbc464197774",
+      "sha256": "9a82bd68a525068df5feecc159e7a468c575e43ca00c64e7e561aad03a03c5ca",
+      "reason": "User authorized the agreed mainline package: full conversation acceptance cases, rule baseline, direct experimental-design delivery and targeted directory migration."
+    },
+    "scripts/verify_context_choices.py": {
+      "before_sha256": "5cf204efbbc019d86d437fdb19b2d89b7664087f8a4f5de53e5b63f8ed150378",
+      "sha256": "50c72b049e6c033940bf8474cf521e1dd1b2a9a660a19425e266e82d75909026",
+      "reason": "User authorized the agreed mainline package: full conversation acceptance cases, rule baseline, direct experimental-design delivery and targeted directory migration."
+    },
+    "docs/ARCHITECTURE.md": {
+      "before_sha256": "ca544d881e12db26797dea000354d91cb372cdae355ccaed69c582c1838b8160",
+      "sha256": "73dfdecb94777d17d35765ba12b864fcb788f55b7de89df47b3c5b830ac70be3",
+      "reason": "User authorized the agreed mainline package: full conversation acceptance cases, rule baseline, direct experimental-design delivery and targeted directory migration."
+    },
+    "docs/HARNESS_PLANNING.md": {
+      "before_sha256": "f0dcf70734025f7752aca11bad28ef4df55c0b7e103d79cdc10d219bea03866e",
+      "sha256": "38b0ffac9eafe7b66831f64704c1d18d5e2c48335477ecd62d21040aac08c3a1",
+      "reason": "User authorized the agreed mainline package: full conversation acceptance cases, rule baseline, direct experimental-design delivery and targeted directory migration."
+    },
+    "docs/REPRODUCIBILITY.md": {
+      "before_sha256": "a5086f8b36939a3338a89acb444730e52d5e77e14194cf23ce84d7b976047b78",
+      "sha256": "400a86b6e72879f783296571a1a0ef1a3752a22a4678ab9dce9aa6ac3441577b",
+      "reason": "User authorized the agreed mainline package: full conversation acceptance cases, rule baseline, direct experimental-design delivery and targeted directory migration."
+    },
+    "docs/USAGE.md": {
+      "before_sha256": "88c06f2f58b9dbaefdb818f80d19db4ed7e7bf05fc2ddd296b8476ffce117b61",
+      "sha256": "0333574f9b20044cce5dc330b263871a1fc232bb13bee51b5208db94110ac0ce",
+      "reason": "User authorized the agreed mainline package: full conversation acceptance cases, rule baseline, direct experimental-design delivery and targeted directory migration."
+    },
+    "README.md": {
+      "before_sha256": "b5f4b513a5c692b9c552cc471ccfad1c7fe572b41b9164d9550bd1b87379c51f",
+      "sha256": "6c3fcad63b2fd93f8c0944c50c691338f47167e9c99f9ee794483b452363e172",
+      "reason": "User authorized the agreed mainline package: full conversation acceptance cases, rule baseline, direct experimental-design delivery and targeted directory migration."
+    },
+    "CONTRIBUTING.md": {
+      "before_sha256": "15aefc5c5425fa94fd618222ab37d7fcd3f17f61118a05dee227e1f777a403c2",
+      "sha256": "3da4b907bd73f86187683621aacef4b737a7b84a07a7e5d389d3532d50b2fea3",
+      "reason": "User authorized the agreed mainline package: full conversation acceptance cases, rule baseline, direct experimental-design delivery and targeted directory migration."
+    }
+  }
+}

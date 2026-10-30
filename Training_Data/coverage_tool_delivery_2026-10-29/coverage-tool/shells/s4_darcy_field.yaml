@@ -1,0 +1,32 @@
+scenario_name: Darcy 压力场预测
+domain: PDE/场预测
+skeleton: S4
+executable: true
+summary: 用回归模型预测 Darcy 压力场，与基线比较相对 L2 误差
+vocabulary:
+  treatment_name: 预测模型（mean/ridge）
+  outcome_name: 相对 L2 误差
+  unit: 无量纲
+  comparison: 模型 vs 基线
+survey_questions:
+- 数据来源与划分是否固定？
+- 是否下采样？分辨率如何？
+- 边界条件与生成机制是否公开？
+- 测试集是否只用一次？
+- 是否允许外推到未见机制？
+rubric:
+- 数据哈希与来源
+- 划分固定且测试集一次性
+- 预处理只在训练集拟合
+- 误差与不确定区间报告
+- 适用域声明
+- 不做跨机制泛化声明
+proposal_template:
+- 研究目标
+- 数据与划分
+- 模型与基线
+- 评价指标
+- 验收标准
+- 局限
+source: 骨架聚类表 v1 · S4 · PDE/场预测行
+notes: 项目已有真实实现（Darcy CPU 工作流），可作为执行层样板

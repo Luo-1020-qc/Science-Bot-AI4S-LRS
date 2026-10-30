@@ -1,0 +1,14 @@
+{
+  "sha256": {
+    ".gitignore": "bb8ee5aa878dde3fdded97be761a71d839505f06274e4909329d0638ec0710aa",
+    "RUT_Science/rut_science/science_bot/general/planning/delivery.py": "eea63dff7fcae6071fb035d441cef0abdabf89172e4853d85a5f406a053e0b5d",
+    "RUT_Science/rut_science/science_bot/general/planning/ledger.py": "e5bf3a1b688d73aaf2ba46faaae5a00b2a89fbcf38363a6ba1c0e59e261b4c8a",
+    "RUT_Science/rut_science/science_bot/general/planning/runtime.py": "32da1f6d3067ed038c7c448688048bf34a2d74c56377bd1f6475a8521878a8a3",
+    "RUT_Science/rut_science/science_bot/presentation.py": "6618a892ee6ec4c39c0dcb45193b308ed648123702a6e843f1b7073dcba7b86d",
+    "RUT_Science/rut_science/science_bot/workbench_assets/dist/app.js": "ff45fc1ce6996d83fed5daab6727a5a4d561fc0dd719f7ee9a06434528f5d6c0",
+    "RUT_Science/rut_science/science_bot/workbench_assets/dist/index.html": "1d122609177cec166718c0d51648b10767c6d3f7408e8a6ea470ec1a48eee308",
+    "examples/interfaces/browser.html": "c215ecf57febaaaddddd1a441bf957cf8a87942c980f376e90601a426d39422c",
+    "examples/interfaces/delivery.html": "bc038ff9ae1a7e69f7e178488b33848de828320ca0e9572504eacc47b8c00c28",
+    "examples/interfaces/terminal.html": "445b43793d87061618b5a60a6aeb9e1f6e27b0c16bb7000c28fecf0bba3c201f"
+  }
+}

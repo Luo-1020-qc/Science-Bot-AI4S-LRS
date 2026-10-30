@@ -1,0 +1,32 @@
+scenario_name: 特征到资产收益率的预测对比
+domain: 金融
+skeleton: S4
+executable: true
+summary: 用市场特征预测收益率，比较基线与回归模型（严格时序划分）
+vocabulary:
+  treatment_name: 预测模型
+  outcome_name: 预测误差/IC
+  unit: 无量纲
+  comparison: 模型 vs 基线
+survey_questions:
+- 数据频率与时间范围？
+- 是否使用走步（walk-forward）划分？
+- 特征是否含未来信息？
+- 交易成本是否计入？
+- 样本外期间是否锁定？
+rubric:
+- 走步/时序划分声明
+- 无未来信息泄漏
+- 交易成本与滑点说明
+- 样本外期锁定
+- 基线一致
+- 不做投资建议的声明
+proposal_template:
+- 研究目标
+- 数据与特征
+- 时序划分
+- 模型与基线
+- 评价与验收
+- 局限与风险
+source: 骨架聚类表 v1 扩展 · S4 · 金融（高风险）
+notes: 高风险场景：时序划分与泄漏检查是审阅重点

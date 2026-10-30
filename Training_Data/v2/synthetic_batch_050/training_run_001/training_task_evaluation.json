@@ -1,0 +1,407 @@
+{
+  "scope": "Greedy evaluation on the SAME 50 TRAINING tasks; not validation, blind testing or generalization evidence",
+  "successes": 50,
+  "tasks": 50,
+  "records": [
+    {
+      "task_id": "syn050_001_darcy_crd_two_arm_valid_null_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 11,
+      "return": 11.18,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_002_darcy_crd_two_arm_repair_model_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 14,
+      "return": 11.120000000000001,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_003_darcy_crd_two_arm_repair_response_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 12,
+      "return": 11.16,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_004_darcy_crd_two_arm_repair_draft_budget_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 12,
+      "return": 11.16,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_005_darcy_crd_two_arm_resolve_stale_review_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 11,
+      "return": 11.18,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_006_darcy_crd_two_arm_variance_unavailable_v2",
+      "classification": "justified_stop",
+      "success": true,
+      "steps": 2,
+      "return": 10.06,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_007_darcy_crd_two_arm_new_job_oom_v2",
+      "classification": "justified_stop",
+      "success": true,
+      "steps": 8,
+      "return": 9.84,
+      "errors": 1
+    },
+    {
+      "task_id": "syn050_008_darcy_crd_two_arm_reuse_job_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 10,
+      "return": 11.200000000000001,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_009_darcy_crd_two_arm_higher_score_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 11,
+      "return": 11.18,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_010_darcy_rcbd_two_arm_valid_null_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 11,
+      "return": 11.18,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_011_darcy_rcbd_two_arm_repair_model_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 14,
+      "return": 11.120000000000001,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_012_darcy_rcbd_two_arm_repair_response_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 12,
+      "return": 11.16,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_013_darcy_rcbd_two_arm_repair_draft_budget_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 12,
+      "return": 11.16,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_014_darcy_rcbd_two_arm_resolve_stale_review_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 11,
+      "return": 11.18,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_015_darcy_rcbd_two_arm_variance_unavailable_v2",
+      "classification": "justified_stop",
+      "success": true,
+      "steps": 2,
+      "return": 10.06,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_016_darcy_rcbd_two_arm_new_job_oom_v2",
+      "classification": "justified_stop",
+      "success": true,
+      "steps": 8,
+      "return": 9.84,
+      "errors": 1
+    },
+    {
+      "task_id": "syn050_017_darcy_rcbd_two_arm_reuse_job_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 10,
+      "return": 11.200000000000001,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_018_darcy_rcbd_two_arm_power_090_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 11,
+      "return": 11.18,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_019_darcy_factorial_2x2_valid_null_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 11,
+      "return": 11.18,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_020_darcy_factorial_2x2_repair_model_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 14,
+      "return": 11.120000000000001,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_021_darcy_factorial_2x2_repair_response_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 12,
+      "return": 11.16,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_022_darcy_factorial_2x2_repair_draft_budget_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 12,
+      "return": 11.16,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_023_darcy_factorial_2x2_resolve_stale_review_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 11,
+      "return": 11.18,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_024_darcy_factorial_2x2_variance_unavailable_v2",
+      "classification": "justified_stop",
+      "success": true,
+      "steps": 2,
+      "return": 10.06,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_025_darcy_factorial_2x2_new_job_oom_v2",
+      "classification": "justified_stop",
+      "success": true,
+      "steps": 8,
+      "return": 9.84,
+      "errors": 1
+    },
+    {
+      "task_id": "syn050_026_darcy_factorial_2x2_reuse_job_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 10,
+      "return": 11.200000000000001,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_027_cvit_crd_two_arm_valid_null_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 11,
+      "return": 11.18,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_028_cvit_crd_two_arm_repair_model_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 14,
+      "return": 11.120000000000001,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_029_cvit_crd_two_arm_repair_response_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 12,
+      "return": 11.16,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_030_cvit_crd_two_arm_repair_draft_budget_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 12,
+      "return": 11.16,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_031_cvit_crd_two_arm_resolve_stale_review_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 11,
+      "return": 11.18,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_032_cvit_crd_two_arm_variance_unavailable_v2",
+      "classification": "justified_stop",
+      "success": true,
+      "steps": 2,
+      "return": 10.06,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_033_cvit_crd_two_arm_new_job_oom_v2",
+      "classification": "justified_stop",
+      "success": true,
+      "steps": 8,
+      "return": 9.84,
+      "errors": 1
+    },
+    {
+      "task_id": "syn050_034_cvit_crd_two_arm_reuse_job_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 10,
+      "return": 11.200000000000001,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_035_cvit_rcbd_two_arm_valid_null_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 11,
+      "return": 11.18,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_036_cvit_rcbd_two_arm_repair_model_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 14,
+      "return": 11.120000000000001,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_037_cvit_rcbd_two_arm_repair_response_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 12,
+      "return": 11.16,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_038_cvit_rcbd_two_arm_repair_draft_budget_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 12,
+      "return": 11.16,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_039_cvit_rcbd_two_arm_resolve_stale_review_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 11,
+      "return": 11.18,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_040_cvit_rcbd_two_arm_variance_unavailable_v2",
+      "classification": "justified_stop",
+      "success": true,
+      "steps": 2,
+      "return": 10.06,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_041_cvit_rcbd_two_arm_new_job_oom_v2",
+      "classification": "justified_stop",
+      "success": true,
+      "steps": 8,
+      "return": 9.84,
+      "errors": 1
+    },
+    {
+      "task_id": "syn050_042_cvit_rcbd_two_arm_reuse_job_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 10,
+      "return": 11.200000000000001,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_043_cvit_factorial_2x2_valid_null_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 11,
+      "return": 11.18,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_044_cvit_factorial_2x2_repair_model_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 14,
+      "return": 11.120000000000001,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_045_cvit_factorial_2x2_repair_response_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 12,
+      "return": 11.16,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_046_cvit_factorial_2x2_repair_draft_budget_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 12,
+      "return": 11.16,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_047_cvit_factorial_2x2_resolve_stale_review_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 11,
+      "return": 11.18,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_048_cvit_factorial_2x2_variance_unavailable_v2",
+      "classification": "justified_stop",
+      "success": true,
+      "steps": 2,
+      "return": 10.06,
+      "errors": 0
+    },
+    {
+      "task_id": "syn050_049_cvit_factorial_2x2_new_job_oom_v2",
+      "classification": "justified_stop",
+      "success": true,
+      "steps": 8,
+      "return": 9.84,
+      "errors": 1
+    },
+    {
+      "task_id": "syn050_050_cvit_factorial_2x2_reuse_job_v2",
+      "classification": "completed_mock_research_loop",
+      "success": true,
+      "steps": 10,
+      "return": 11.200000000000001,
+      "errors": 0
+    }
+  ]
+}

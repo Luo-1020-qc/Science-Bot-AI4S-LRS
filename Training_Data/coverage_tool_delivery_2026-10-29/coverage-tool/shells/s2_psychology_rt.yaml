@@ -1,0 +1,32 @@
+scenario_name: 同一被试两种条件下的反应时比较
+domain: 心理学
+skeleton: S2
+executable: true
+summary: 被试内设计中两种条件反应时的配对比较
+vocabulary:
+  treatment_name: 实验条件
+  outcome_name: 反应时
+  unit: ms
+  comparison: 条件 A vs 条件 B（同一被试）
+survey_questions:
+- 每个条件多少试次？试次顺序如何平衡？
+- 是否设置练习试次？
+- 异常试次（过早/过晚）剔除规则？
+- 被试数量与纳入标准？
+- 是否考虑疲劳与顺序效应？
+rubric:
+- 试次设计与顺序平衡已声明
+- 练习与疲劳控制
+- 异常试次剔除规则事先声明
+- 被试内设计统计方法匹配（配对 t / 混合模型）
+- 多重比较校正（如适用）
+- 效应阈值
+proposal_template:
+- 研究目标
+- 被试与设计
+- 试次与平衡
+- 统计方法
+- 验收标准
+- 局限
+source: 骨架聚类表 v1 · S2 · 心理学行
+notes: 反应时数据通常需剔除异常试次并做对数变换

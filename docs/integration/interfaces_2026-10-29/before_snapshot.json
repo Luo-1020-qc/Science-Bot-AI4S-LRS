@@ -1,0 +1,29 @@
+{
+  "version": "interfaces_before_v1",
+  "files": {
+    "RUT_Science/rut_science/science_bot/terminal.py": "96742572fe586b71bb93f2320c027d60adc4e2b9c9a35c36b8e4fa12937909ad",
+    "Start-ScienceBot.ps1": "203f5d4665da05db75c62d5fd3f3a109ce96b062dbd18b9db49241821e17b070",
+    "RUT_Science/pyproject.toml": "a454c9eeaa4858219cfcf88722dd94680aaaedde251fafcee566e0ff44554c70"
+  },
+  "unchanged_history": {
+    "docs/integration/dynamic_clarification_2026-10-29/authorized_source_changes.json": "b20e9bec0510fe1cb99c814f66430af6ce781f70f2ddc139786f49270b08ae3c",
+    "docs/integration/dynamic_clarification_2026-10-29/before_snapshot.json": "e1db022538bdaed2a371c1380fd2f9cac5c05753ef1149fd31ca7207049b3f57",
+    "docs/integration/dynamic_clarification_2026-10-29/evaluation_display_patch.json": "7e7b53a8643c90c1c4fa8f41e9ea7808de375b8dd62fad5403103341840427ef",
+    "docs/integration/dynamic_clarification_2026-10-29/full_tests.json": "df6feb3cc2a356504795cbe4fe4bb0ab67e6e85ff29b18b2234c7da460332bad",
+    "docs/integration/dynamic_clarification_2026-10-29/runtime_manifest.json": "ad148edea96fba09ce6721f98daf24595e4d7825e4f81c4aa4101e18ec442052",
+    "docs/integration/dynamic_clarification_2026-10-29/verification.json": "17066380771779c351c083d69d231407e1cc37b4e445c75caac17866ee77419b",
+    "docs/integration/planning_2026-10-29/authorized_source_changes.json": "e03be241e38832ff9ca506aa6a8d46ce15a71fe0e404714e8d385537d88a19ad",
+    "docs/integration/planning_2026-10-29/before_snapshot.json": "7876b5696ffc7f5dbff02b1f7be48621632befb5eab365dc4f92206566cd065b",
+    "docs/integration/planning_2026-10-29/runtime_manifest.json": "7a6575e20b20fd3a411473cbee24597302de250b09d6821266c5449ec4dbe398",
+    "docs/integration/planning_2026-10-29/verification.json": "3ae88f8e42b0c19c808890210c50241ca447647ef8f134beae5944f58b9ce08a",
+    "docs/integration/tool_library_2026-10-28/authorized_source_changes.json": "65eb2bb34f021a65481ff3b5e2fbf3f737a17ca5232e8e8e535b8c2a05db5343",
+    "docs/integration/tool_library_2026-10-28/runtime_manifest.json": "4123111580c7e3286c81b8d400ee303046d0c074d015f0c1e0196bf60fd1eb08",
+    "docs/integration/tool_library_2026-10-28/verification.json": "db652137e63e974d3ab2675f54118fa23362bbea221d35026c19b636ad08f6af",
+    "docs/integration/dynamic_clarification_2026-10-29/history_privacy/authorized_source_changes.json": "9ef1e9105a71122f76e6deaa6cec47a2a70f5e07930d924812c4ce260fa36310",
+    "docs/integration/dynamic_clarification_2026-10-29/history_privacy/before_snapshot.json": "17f7941194cf07c36d63e12ce9b7e6cbc5ecd282035c452cdd9d63e2026e5a4e"
+  },
+  "provider_and_configuration": {
+    "RUT_Science/rut_science/science_bot/general/provider.py": "5cfaed544844ff7174c08acfbe42595c10528b099da16231a80201ac88c27755",
+    "RUT_Science/rut_science/configuration.py": "8d09463310d5419d614c137f68fc4bad3be491e47f7ccdb8ae8b28cc7771b194"
+  }
+}

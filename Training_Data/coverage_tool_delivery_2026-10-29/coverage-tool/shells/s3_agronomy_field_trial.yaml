@@ -1,0 +1,32 @@
+scenario_name: 品种与密度对产量的田间因子试验
+domain: 农学
+skeleton: S3
+executable: true
+summary: 品种与种植密度两因子对产量的影响，随机完全区组设计
+vocabulary:
+  treatment_name: 品种 × 密度
+  outcome_name: 产量
+  unit: kg/亩
+  comparison: 品种 {A, B} × 密度 {低, 高}，RCBD
+survey_questions:
+- 因子水平如何选定？是否有当地农艺依据？
+- 区组如何划分（地块、坡向、土壤）？
+- 随机化方案是什么？
+- 重复几次？小区面积多大？
+- 边际效应（边行）如何处理？
+rubric:
+- 因子水平有农艺依据
+- 区组划分依据与随机化方案已声明
+- 重复次数 >= 3
+- 边际效应处理规则已声明
+- 产量测定与折算一致
+- 功效/方差依据有来源
+proposal_template:
+- 研究目标与因子假设
+- 区组与随机化设计
+- 小区与测产计划
+- 统计方法（RCBD / 全因子）
+- 资源预算与验收标准
+- 局限（天气、地块异质性）
+source: 骨架聚类表 v1 · S3 · 农学行（RCBD 直接命中 G2.4）
+notes: 与现有 G2.4 的 RCBD 模板一一对应，可作为执行层示范

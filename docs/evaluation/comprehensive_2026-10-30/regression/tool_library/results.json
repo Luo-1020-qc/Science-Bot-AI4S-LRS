@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "run": 20,
+  "passed_tests": 20,
+  "failures": [],
+  "errors": [],
+  "skipped": [],
+  "seconds": 17.703,
+  "folder": "Research_Tool_Library/tests",
+  "pattern": "test*.py"
+}

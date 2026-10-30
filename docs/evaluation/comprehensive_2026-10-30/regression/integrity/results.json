@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "run": 39,
+  "passed_tests": 39,
+  "failures": [],
+  "errors": [],
+  "skipped": [],
+  "seconds": 38.813,
+  "folder": "scripts",
+  "pattern": "test_integrity.py"
+}

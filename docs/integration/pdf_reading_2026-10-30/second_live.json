@@ -1,0 +1,28 @@
+{
+  "checked_utc": "2026-10-30T05:16:41.465663+00:00",
+  "source_kind": "explicitly_selected_author_synthetic_fixture",
+  "fixture_sha256": "8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b",
+  "page_range": [
+    1,
+    2
+  ],
+  "passed": false,
+  "answer": "论文理解暂未通过校验或模型不可用；已选原文保留，可检查模型输出后重试。",
+  "interpretation": null,
+  "resources": {
+    "llm_requests": 1,
+    "llm_tokens": 1742,
+    "tool_attempts": 0,
+    "limits": {
+      "llm_requests": 2,
+      "llm_tokens": 18000,
+      "tool_calls": 40,
+      "read_bytes": 18000
+    }
+  },
+  "plan_facts": {},
+  "human_expert_review": false,
+  "scientific_claim_verified": false,
+  "real_scientific_executions": 0,
+  "training_runs": 0
+}

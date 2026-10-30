@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "run": 4,
+  "passed_tests": 4,
+  "failures": [],
+  "errors": [],
+  "skipped": [],
+  "seconds": 2.172,
+  "folder": "scripts",
+  "pattern": "test_mainline_evaluation.py"
+}

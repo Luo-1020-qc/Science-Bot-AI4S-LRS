@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "run": 495,
+  "passed_tests": 493,
+  "failures": [],
+  "errors": [],
+  "skipped": [
+    {
+      "id": "test_link_target_cannot_escape_workspace (test_general_tools.GeneralToolTests.test_link_target_cannot_escape_workspace)",
+      "reason": "Windows account cannot create symlinks"
+    },
+    {
+      "id": "test_symlink_escape_and_excluded_alias_rejected (test_science_workspace.WorkspaceTests.test_symlink_escape_and_excluded_alias_rejected)",
+      "reason": "Windows account cannot create symlinks"
+    }
+  ],
+  "seconds": 237.969,
+  "folder": "RUT_Science/tests",
+  "pattern": "test*.py"
+}

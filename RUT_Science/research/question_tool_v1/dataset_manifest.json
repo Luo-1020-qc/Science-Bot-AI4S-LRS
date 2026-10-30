@@ -1,0 +1,28 @@
+{
+  "sha256": {
+    "dataset.json": "4e7179ad371e0a688aff1b66fe292b1ff6e485c6a8f738be1007058c48dd7e1b"
+  },
+  "seed": 20261029,
+  "source_groups": {
+    "train": [
+      "synthetic_field",
+      "battery_lifetime",
+      "cell_assay",
+      "forecast",
+      "paired_sensor",
+      "image_baseline"
+    ],
+    "dev": [
+      "crop_block",
+      "chemical_screen"
+    ],
+    "test": [
+      "software_replication",
+      "elasticity_field",
+      "water_quality",
+      "time_group_split"
+    ]
+  },
+  "human_expert_labels": 0,
+  "limitations": "Disjoint named source groups share the same synthetic generator, answer templates and scripted teacher; not blind or real-world generalization."
+}

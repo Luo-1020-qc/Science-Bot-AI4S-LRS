@@ -1,0 +1,34 @@
+scenario_name: 多个样地的物种调查比较
+domain: 生态学
+skeleton: S5
+executable: false
+summary: 多个样地/生境的物种丰富度或多样性指数比较
+vocabulary:
+  treatment_name: 样地类型
+  outcome_name: 物种丰富度
+  unit: 种/样方
+  comparison: 样地 A / B / C
+survey_questions:
+- 样地如何选择？是否具有代表性？
+- 每个样地的样方数量与独立性？
+- 调查方法与努力量是否一致？
+- 调查季节与时间是否一致？
+- 是否存在空间自相关？
+- 物种鉴定口径是否统一？
+rubric:
+- 样地代表性与独立性
+- 调查努力量一致
+- 季节与时间一致
+- 空间依赖已评估或声明
+- 非参方法（Kruskal-Wallis）备选
+- 多重性校正声明
+- 不做区域外推声明
+proposal_template:
+- 研究目标
+- 样地与样方设计
+- 调查方法
+- 统计方法（非参 + 事后）
+- 验收标准
+- 局限
+source: 骨架聚类表 v1 · S5 · 生态学行
+notes: 不可执行：S5 待开发。生态数据通常偏态，非参是主路径

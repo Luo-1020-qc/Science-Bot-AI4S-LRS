@@ -183,6 +183,8 @@ class ToolRegistry:
             register(self)
             from .tool_library import register as register_detailed_tools
             register_detailed_tools(self)
+            from .planning.question_tool import register as register_question_tool
+            register_question_tool(self)
 
     def register(self, spec, handler):
         if not isinstance(spec, ToolSpec) or not callable(handler):

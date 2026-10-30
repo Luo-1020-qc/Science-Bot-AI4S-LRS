@@ -1,0 +1,16 @@
+{
+  "sha256": {
+    "RUT_Science/rut_science/configuration.py": "8d09463310d5419d614c137f68fc4bad3be491e47f7ccdb8ae8b28cc7771b194",
+    "RUT_Science/rut_science/science_bot/general/conversation.py": "b7b3db664572d257e7624aaa0854d5882e684ac686bd4da36af459833b96a5d0",
+    "RUT_Science/rut_science/science_bot/general/graph.py": "96ee489393ecc7079b220947c74a432332ff3835e30ab65e6d7c16c89c1ed61f",
+    "RUT_Science/rut_science/science_bot/general/planning/__init__.py": "a2bbb405ab46564e671816d5dc72cc7dccbd47406ac9210674396ecb5c8db6e7",
+    "RUT_Science/rut_science/science_bot/general/planning/blueprint.py": "bcf4b0c7ade070781e85840154d6b45d4d18216d0066b91f016e8836163b0d24",
+    "RUT_Science/rut_science/science_bot/general/planning/intake.py": "5ad58cc67d96a2e924e43b7c2e0002e8c323e407a7828bac68729afbf3ace21c",
+    "RUT_Science/rut_science/science_bot/general/planning/ledger.py": "4c48c705accd6dba1ab61d66d3c7804bc46c6bec4ea75b4d7af5be580b8fb2c9",
+    "RUT_Science/rut_science/science_bot/general/planning/runtime.py": "df5ad656842a448e07d20d9309f8035b655488d5080bbb8924baf32432eac205",
+    "RUT_Science/rut_science/science_bot/general/provider.py": "5cfaed544844ff7174c08acfbe42595c10528b099da16231a80201ac88c27755",
+    "RUT_Science/rut_science/science_bot/general/router.py": "e7de71a3d65f8d4d07f47d50b1ec5ee247e3e30503c64d86d3c75f2035e38745",
+    "RUT_Science/rut_science/science_bot/terminal.py": "96742572fe586b71bb93f2320c027d60adc4e2b9c9a35c36b8e4fa12937909ad"
+  },
+  "scope": "Chained planning source integration; old baselines and provider are not rewritten"
+}

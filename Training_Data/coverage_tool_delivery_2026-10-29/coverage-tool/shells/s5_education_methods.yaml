@@ -1,0 +1,36 @@
+scenario_name: 三种教学法的学生成绩比较
+domain: 教育学
+skeleton: S5
+executable: false
+summary: 三种教学法下学生测验成绩的多组比较
+vocabulary:
+  treatment_name: 教学法
+  outcome_name: 测验成绩
+  unit: 分
+  comparison: 方法 A / B / C
+survey_questions:
+- 独立单位是学生还是班级？
+- 三种教学法如何分配（随机还是自然班）？
+- 是否有前测或基线成绩？
+- 教师、教材与课时是否一致？
+- 测验的信度与评分规则是什么？
+- 三组样本量是否接近？
+- 计划做哪些两两比较？
+rubric:
+- 分析单位（学生/班级）已声明
+- 分配方式与聚类校正已说明
+- 基线或前测已报告
+- 教师/教材等混杂已控制
+- 测验信效度与评分规则
+- ANOVA 假设检验或非参备选
+- 多重性校正事先声明
+- 效应阈值有来源
+proposal_template:
+- 研究目标
+- 分析单位与分配
+- 测量工具
+- 统计方法（ANOVA/非参 + 事后）
+- 验收标准
+- 局限
+source: 骨架聚类表 v1 · S5 · 教育学行
+notes: 不可执行：S5 待开发。与 S1 教育壳同构，仅水平数 2→3

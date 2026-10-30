@@ -1,0 +1,45 @@
+{
+  "id": "materials_unknown",
+  "root_group": "implementer_synthetic_materials_v1",
+  "mechanism": "unknown",
+  "metrics": {
+    "outcome": "blocked_with_evidence_step",
+    "expected_outcome_met": true,
+    "critical_missing": [],
+    "answer_mismatches": [],
+    "question_count": 10,
+    "unnecessary_question_turns": [],
+    "no_progress_question_turns": [],
+    "multi_field_answer_turns": 5,
+    "host_violation_turns": [],
+    "ready": false,
+    "blocker_fields": [
+      "sampling"
+    ],
+    "all_steps_unexecuted": true,
+    "automatic_design_readout": true,
+    "semantic_quality_human_rated": false,
+    "researcher_understanding_measured": false
+  },
+  "resources": {
+    "llm_requests": 0,
+    "llm_tokens": 0,
+    "tool_attempts": 0,
+    "limits": {
+      "llm_requests": 12,
+      "llm_tokens": 60000,
+      "tool_calls": 40,
+      "read_bytes": 18000
+    }
+  },
+  "remaining_events": [],
+  "selected_evidence_count": 1,
+  "artifacts": {
+    "delivery.html": "fe81dbec3826f47b7255855b2a549561f7c7bb48c6901cff1a5a18f83bce8d6a",
+    "delivery.md": "70841234ee9b943c74c433e367f35a02c4e9ba05e20e8bf66618f1291d1df9b3",
+    "final_state.json": "1e0feef48993779d97584beb790e3baed5c410115a33c35f32feaa2ae3a14f77",
+    "plan.json": "12851f78f553571eb26e828d5f778853dbb91f04a8fa3f5644b5db9d9f9bf8f1",
+    "plan.md": "f575eea293ef51c9901882c2ac3f0a12179c7644cd9b839036bd72a1a578c640",
+    "trajectory.json": "f43693868705a29473df2396fa0dabc928605cc7448e23e9ea4ac2dcd8959313"
+  }
+}

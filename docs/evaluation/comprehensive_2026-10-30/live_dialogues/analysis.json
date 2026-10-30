@@ -1,0 +1,194 @@
+{
+  "scripted_turns": 24,
+  "timed_turns": 23,
+  "missing_latency_turns": 1,
+  "ledger_cases": 4,
+  "intents": {
+    "planning": 14,
+    "chat": 3,
+    "clarify": 7
+  },
+  "clarification_modes": {
+    "dynamic": 7,
+    "template": 6
+  },
+  "model_statuses": {
+    "accepted": 18,
+    "rejected": 7,
+    "schema_rejected": 1
+  },
+  "model_roles": {
+    "experiment_planning": 10,
+    "planning_clarification": 12,
+    "general_chat": 3,
+    "paper_reading": 1
+  },
+  "actual_models": {
+    "deepseek-flash": 26
+  },
+  "cases": [
+    {
+      "id": "sensor_prediction",
+      "has_planning_ledger": true,
+      "turns": 5,
+      "question_fields": {
+        "research_question": 5
+      },
+      "most_repeated_field_count": 5,
+      "ready": false,
+      "resources": {
+        "llm_requests": 9,
+        "llm_tokens": 21385,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 10,
+          "llm_tokens": 35000,
+          "tool_calls": 40,
+          "read_bytes": 24000
+        }
+      }
+    },
+    {
+      "id": "adsorption_comparison",
+      "has_planning_ledger": false,
+      "turns": 5,
+      "question_fields": {},
+      "most_repeated_field_count": 0,
+      "ready": false,
+      "resources": {
+        "llm_requests": 2,
+        "llm_tokens": 3956,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 10,
+          "llm_tokens": 35000,
+          "tool_calls": 40,
+          "read_bytes": 24000
+        }
+      }
+    },
+    {
+      "id": "selected_synthetic_pdf",
+      "has_planning_ledger": true,
+      "turns": 5,
+      "question_fields": {
+        "objective_type": 1,
+        "scope": 2,
+        "exclusions": 1
+      },
+      "most_repeated_field_count": 2,
+      "ready": false,
+      "resources": {
+        "llm_requests": 8,
+        "llm_tokens": 18810,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 8,
+          "llm_tokens": 30000,
+          "tool_calls": 40,
+          "read_bytes": 24000
+        }
+      }
+    },
+    {
+      "id": "unknown_variance",
+      "has_planning_ledger": true,
+      "turns": 2,
+      "question_fields": {
+        "factors": 2
+      },
+      "most_repeated_field_count": 2,
+      "ready": false,
+      "resources": {
+        "llm_requests": 3,
+        "llm_tokens": 5375,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 4,
+          "llm_tokens": 16000,
+          "tool_calls": 40,
+          "read_bytes": 24000
+        }
+      }
+    },
+    {
+      "id": "budget_correction",
+      "has_planning_ledger": true,
+      "turns": 2,
+      "question_fields": {
+        "deliverable": 2
+      },
+      "most_repeated_field_count": 2,
+      "ready": false,
+      "resources": {
+        "llm_requests": 3,
+        "llm_tokens": 6218,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 4,
+          "llm_tokens": 16000,
+          "tool_calls": 40,
+          "read_bytes": 24000
+        }
+      }
+    },
+    {
+      "id": "objective_change",
+      "has_planning_ledger": false,
+      "turns": 2,
+      "question_fields": {},
+      "most_repeated_field_count": 0,
+      "ready": false,
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 4,
+          "llm_tokens": 16000,
+          "tool_calls": 40,
+          "read_bytes": 24000
+        }
+      }
+    },
+    {
+      "id": "execution_pressure",
+      "has_planning_ledger": false,
+      "turns": 2,
+      "question_fields": {},
+      "most_repeated_field_count": 0,
+      "ready": false,
+      "resources": {
+        "llm_requests": 1,
+        "llm_tokens": 724,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 4,
+          "llm_tokens": 16000,
+          "tool_calls": 40,
+          "read_bytes": 24000
+        }
+      }
+    },
+    {
+      "id": "dense_natural_input",
+      "has_planning_ledger": false,
+      "turns": 1,
+      "question_fields": {},
+      "most_repeated_field_count": 0,
+      "ready": false,
+      "resources": {
+        "llm_requests": 0,
+        "llm_tokens": 0,
+        "tool_attempts": 0,
+        "limits": {
+          "llm_requests": 4,
+          "llm_tokens": 16000,
+          "tool_calls": 40,
+          "read_bytes": 24000
+        }
+      }
+    }
+  ],
+  "evaluator_amendment": "v1 assumed all questions were objects. General chat/clarify returns string questions. v2 accepts both shapes and resumes the single persisted turn without another model request; its latency is missing. All original cases, replies and v1 source hash retained. No runtime, prompts, limits or cases changed."
+}

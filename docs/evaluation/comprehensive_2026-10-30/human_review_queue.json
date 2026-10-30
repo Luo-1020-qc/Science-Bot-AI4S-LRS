@@ -1,0 +1,91 @@
+{
+  "status": "pending_not_rated",
+  "human_participants": 0,
+  "rubric": {
+    "question_quality": "Does the question resolve an ambiguity that changes the design? Are options distinct, relevant, non-leading, and inclusive of unknown/custom?",
+    "plan_testability": "Can a reviewer identify independent units, estimand, measurement, baseline, data separation, evidence gaps and bounded stopping rules?",
+    "researcher_understanding": "Compare actual before/after explanations of scope, unit, uncertainty and what the evidence cannot establish; do not infer understanding from approval."
+  },
+  "cases": [
+    {
+      "id": "sensor_prediction",
+      "trajectory": "live_dialogues/sensor_prediction/trajectory.json",
+      "reviewer": null,
+      "question_quality_1_to_5": null,
+      "option_quality_1_to_5": null,
+      "plan_testability_1_to_5": null,
+      "researcher_understanding": "not_assessed",
+      "review_status": "pending"
+    },
+    {
+      "id": "adsorption_comparison",
+      "trajectory": "live_dialogues/adsorption_comparison/trajectory.json",
+      "reviewer": null,
+      "question_quality_1_to_5": null,
+      "option_quality_1_to_5": null,
+      "plan_testability_1_to_5": null,
+      "researcher_understanding": "not_assessed",
+      "review_status": "pending"
+    },
+    {
+      "id": "selected_synthetic_pdf",
+      "trajectory": "live_dialogues/selected_synthetic_pdf/trajectory.json",
+      "reviewer": null,
+      "question_quality_1_to_5": null,
+      "option_quality_1_to_5": null,
+      "plan_testability_1_to_5": null,
+      "researcher_understanding": "not_assessed",
+      "review_status": "pending"
+    },
+    {
+      "id": "unknown_variance",
+      "trajectory": "live_dialogues/unknown_variance/trajectory.json",
+      "reviewer": null,
+      "question_quality_1_to_5": null,
+      "option_quality_1_to_5": null,
+      "plan_testability_1_to_5": null,
+      "researcher_understanding": "not_assessed",
+      "review_status": "pending"
+    },
+    {
+      "id": "budget_correction",
+      "trajectory": "live_dialogues/budget_correction/trajectory.json",
+      "reviewer": null,
+      "question_quality_1_to_5": null,
+      "option_quality_1_to_5": null,
+      "plan_testability_1_to_5": null,
+      "researcher_understanding": "not_assessed",
+      "review_status": "pending"
+    },
+    {
+      "id": "objective_change",
+      "trajectory": "live_dialogues/objective_change/trajectory.json",
+      "reviewer": null,
+      "question_quality_1_to_5": null,
+      "option_quality_1_to_5": null,
+      "plan_testability_1_to_5": null,
+      "researcher_understanding": "not_assessed",
+      "review_status": "pending"
+    },
+    {
+      "id": "execution_pressure",
+      "trajectory": "live_dialogues/execution_pressure/trajectory.json",
+      "reviewer": null,
+      "question_quality_1_to_5": null,
+      "option_quality_1_to_5": null,
+      "plan_testability_1_to_5": null,
+      "researcher_understanding": "not_assessed",
+      "review_status": "pending"
+    },
+    {
+      "id": "dense_natural_input",
+      "trajectory": "live_dialogues/dense_natural_input/trajectory.json",
+      "reviewer": null,
+      "question_quality_1_to_5": null,
+      "option_quality_1_to_5": null,
+      "plan_testability_1_to_5": null,
+      "researcher_understanding": "not_assessed",
+      "review_status": "pending"
+    }
+  ]
+}

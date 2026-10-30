@@ -8,7 +8,7 @@
 - 删除训练数据目录中的弃用v1及根目录重复兼容树，以及只用于建立v1快照的旧脚本与索引。保留当前v2基础集、示例批次、展开注释版和专家文档。
 - 旧delivery中的policy_checkpoint完整移到`RUT_Science/models/retained_delivery_checkpoint`；其他现存权重不删除、不改写。
 - 当前仍被代码加载的`models/planner/v1`、`data/darcy_cpu_v1`和general_v1不属于弃用版本。固定研究的reference_copy被回归测试／来源检查使用，保留为依赖，不作为重复交付入口。
-- 合并根规划、交接、交付和阶段总结到[PROGRESS](../../PROGRESS.md)；工作区、G1／G2／访谈和研究接口说明合并到[USAGE](../../USAGE.md)；API／动作／权重说明合并到[ARCHITECTURE](../../ARCHITECTURE.md)。专家交接只保留一份主文档。
+- 根规划、交接和阶段总结现统一见[变更记录](../../../CHANGELOG.md)（2026-10-29继续合并原PROGRESS）；工作区、G1／G2／访谈和研究接口说明见[USAGE](../../USAGE.md)；API／动作／权重说明见[ARCHITECTURE](../../ARCHITECTURE.md)。专家交接只保留一份主文档。
 - 旧迁移审计依赖已移出的delivery和v1副本；当前审计改为相对路径的protected_current清单。未改写原研究冻结源文件、奖励、选择规则或模型参数。
 - 研究上线交付中独有的26项会话／worker测试与3项HTTP测试归入`RUT_Science/tests`，复用现有HTTP辅助类，避免把有效Harness回归测试随旧交付一并弃用。
 

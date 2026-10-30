@@ -1,0 +1,24 @@
+{
+  "files": {
+    ".gitignore": {
+      "before_sha256": "c5a259cc4a865e0c1ddf119818c72022a7c70d2d135814f8b7a42f73354a6722",
+      "sha256": "b61fbb95345993651c4958101eee5a9dbe9ce64071509fbbfc0c4ad8f6e4e10b",
+      "reason": "User authorized terminal and local-browser entry/delivery examples on the existing planning engine; no MetaGPT, model or scientific execution changes"
+    },
+    "RUT_Science/pyproject.toml": {
+      "before_sha256": "a454c9eeaa4858219cfcf88722dd94680aaaedde251fafcee566e0ff44554c70",
+      "sha256": "889521fb94297e43474205bf11ba4d93d60183982af3250d2ff6298f330b1ae2",
+      "reason": "User authorized terminal and local-browser entry/delivery examples on the existing planning engine; no MetaGPT, model or scientific execution changes"
+    },
+    "RUT_Science/rut_science/science_bot/terminal.py": {
+      "before_sha256": "96742572fe586b71bb93f2320c027d60adc4e2b9c9a35c36b8e4fa12937909ad",
+      "sha256": "0f4a22f0a81b110768e15e72fd81a681358c85a6329c0e80a2d4907409abc3a0",
+      "reason": "User authorized terminal and local-browser entry/delivery examples on the existing planning engine; no MetaGPT, model or scientific execution changes"
+    },
+    "Start-ScienceBot.ps1": {
+      "before_sha256": "203f5d4665da05db75c62d5fd3f3a109ce96b062dbd18b9db49241821e17b070",
+      "sha256": "9359e0db53513fbc48de2111cde0e784795962488952403221ca13fe9bd2a382",
+      "reason": "User authorized terminal and local-browser entry/delivery examples on the existing planning engine; no MetaGPT, model or scientific execution changes"
+    }
+  }
+}

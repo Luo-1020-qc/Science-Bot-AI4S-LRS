@@ -1,0 +1,32 @@
+scenario_name: 培训前后测验成绩的配对比较
+domain: 教育学
+skeleton: S2
+executable: true
+summary: 同一批学生培训前后测验成绩的变化
+vocabulary:
+  treatment_name: 时间点
+  outcome_name: 测验成绩
+  unit: 分
+  comparison: 培训前 vs 培训后
+survey_questions:
+- 是否有对照组？
+- 前后测验是否等值（同卷/平行卷）？
+- 间隔多久？是否存在练习效应？
+- 脱落学生如何处理？
+- 是否有其他同期教学活动？
+rubric:
+- 测验等值性已声明
+- 无对照组的局限明确声明
+- 练习效应与间隔讨论
+- 脱落处理事先声明
+- 效应阈值有来源
+- 不做因果归因的声明
+proposal_template:
+- 研究目标
+- 测验与等值
+- 时间安排
+- 统计方法（配对 t）
+- 验收标准
+- 局限
+source: 骨架聚类表 v1 · S2 · 教育学行
+notes: 前后测无对照是常见误用，壳中必须强制声明局限

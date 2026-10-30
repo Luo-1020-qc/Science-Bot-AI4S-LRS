@@ -1,0 +1,32 @@
+scenario_name: 整改前后同一监测点污染物浓度比较
+domain: 环境科学
+skeleton: S2
+executable: true
+summary: 同一监测点在整改前后污染物浓度的配对比较
+vocabulary:
+  treatment_name: 时间点
+  outcome_name: 污染物浓度
+  unit: mg/L
+  comparison: 整改前 vs 整改后
+survey_questions:
+- 前后采样时间是否匹配（季节、水文）？
+- 期间是否有其他污染源变化？
+- 检测方法是否一致？
+- 每个时间点多少个独立样品？
+- 是否存在回归到均值或长期趋势？
+rubric:
+- 时间匹配与季节控制已声明
+- 其他污染源变化已记录
+- 方法一致
+- 重复样本
+- 回归到均值与趋势的讨论
+- 不做政策因果归因的声明
+proposal_template:
+- 研究目标
+- 采样时间设计
+- 检测方法
+- 统计方法
+- 验收标准
+- 局限
+source: 骨架聚类表 v1 · S2 · 环境科学行
+notes: 整改前后数据最容易被误读为因果，壳中必须拦住

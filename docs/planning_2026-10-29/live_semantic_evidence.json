@@ -1,0 +1,18 @@
+{
+  "source": "One real provider request with synthetic user goal; not a human expert evaluation",
+  "accepted_call_status": {
+    "request_index": 1,
+    "role": "experiment_planning",
+    "status": "accepted",
+    "model": "deepseek-flash",
+    "response_hash": "a3f94d537e1a103c4001c342671f27102930784784dfa7a84ea6788c75799cf0"
+  },
+  "initial_fields": [
+    "research_question",
+    "objective_type",
+    "factors",
+    "data_source",
+    "reproducibility"
+  ],
+  "model_requests_in_demonstration": 1
+}

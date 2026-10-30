@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "training_tasks": 50,
+  "bc_epochs": 300,
+  "ppo_iterations": 1,
+  "transitions": 800,
+  "gradient_steps": 52,
+  "steps_per_task_per_iteration": 16,
+  "seed": 281050,
+  "training_task_successes": 50,
+  "human_expert_labels": 0,
+  "new_independent_sources": 0,
+  "real_scientific_executions": 0,
+  "model_api_requests": 0,
+  "default_policy_promoted": false,
+  "frozen_environment_and_reward_unchanged": true,
+  "rollout_source_note": "fresh_on_policy_cpu_smoke is the pinned v2 schema tag; this is bounded synthetic candidate-policy training, not a proven production strategy",
+  "efficacy_claim": "No independent held-out evaluation; no claimed improvement over rules or generalization"
+}

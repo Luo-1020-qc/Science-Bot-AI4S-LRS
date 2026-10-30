@@ -1,0 +1,8 @@
+{
+  "sha256": {
+    "examples.json": "29ce1a2ba4f53d57620c0f0f563139b97c0e666a4f409f92dab9d33c3ee11dfc",
+    "policy.json": "948f159914c5800c268eddf20fe1689352148ac2a685cd7dc0a410638aff909b",
+    "results.json": "b015904797b7121882d2f8c4ffa61cfd8dcfca786f60b457281def5fb437ad7d"
+  },
+  "training_source_sha256": "e6e70352dcaf5359163cfb39cb63d58c53092a61a66b9e7504ea7a8d56c992d4"
+}

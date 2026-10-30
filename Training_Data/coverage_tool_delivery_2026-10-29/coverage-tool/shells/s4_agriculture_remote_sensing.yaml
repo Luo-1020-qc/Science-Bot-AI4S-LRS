@@ -1,0 +1,32 @@
+scenario_name: 遥感指数到作物产量的预测对比
+domain: 农业遥感
+skeleton: S4
+executable: true
+summary: 用遥感植被指数预测地块产量，比较基线与回归模型
+vocabulary:
+  treatment_name: 预测模型
+  outcome_name: 产量预测误差
+  unit: kg/亩
+  comparison: 模型 vs 基线
+survey_questions:
+- 遥感数据来源与时间窗口？
+- 划分是否按地块或年份分组？
+- 云覆盖与缺失如何处理？
+- 产量数据如何获取？
+- 空间自相关如何考虑？
+rubric:
+- 按地块/年份分组划分
+- 时间窗口一致
+- 缺失与云掩膜处理
+- 空间依赖声明
+- 基线一致
+- 不做区域外推的声明
+proposal_template:
+- 研究目标
+- 数据与特征
+- 划分
+- 模型与基线
+- 评价与验收
+- 局限
+source: 骨架聚类表 v1 扩展 · S4 · 农业遥感
+notes: 按地块分组是防泄漏的关键

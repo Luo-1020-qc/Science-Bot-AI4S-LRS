@@ -1,0 +1,88 @@
+{
+  "training": {
+    "algorithm": "pairwise_logistic_behavior_cloning",
+    "epochs": 800,
+    "learning_rate": 0.2,
+    "l2": 0.001,
+    "training_pairs": 312,
+    "initial_weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "parameter_l2_change": 5.887480567126574
+  },
+  "evaluation": {
+    "train": {
+      "cases": 96,
+      "scripted_teacher_agreement": {
+        "rule": 62,
+        "trained": 94
+      }
+    },
+    "dev": {
+      "cases": 32,
+      "scripted_teacher_agreement": {
+        "rule": 21,
+        "trained": 30
+      }
+    },
+    "test": {
+      "cases": 64,
+      "scripted_teacher_agreement": {
+        "rule": 39,
+        "trained": 57
+      }
+    },
+    "test_rollouts": {
+      "rule": {
+        "cases": 64,
+        "total_questions": 416,
+        "unknown_overwrites": 0,
+        "budget_exhausted": 0,
+        "ready_for_review": 40
+      },
+      "trained": {
+        "cases": 64,
+        "total_questions": 416,
+        "unknown_overwrites": 0,
+        "budget_exhausted": 0,
+        "ready_for_review": 40
+      }
+    }
+  },
+  "seed": 20261029,
+  "model_requests": 0,
+  "real_scientific_executions": 0,
+  "human_expert_labels": 0,
+  "understanding_improvement_measured": false,
+  "evaluation_type": "source_group_held_out_synthetic_diagnostic",
+  "limitations": "Teacher agreement measures imitation of the scripted curriculum, not human question quality or scientific validity."
+}

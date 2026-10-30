@@ -1,0 +1,62 @@
+{
+  "schema_version": "scientific_dialogue_curriculum_v1",
+  "dialogue_id": "pending:synthetic_walkthrough",
+  "source_group": "synthetic_walkthrough_excluded",
+  "provenance": {
+    "kind": "synthetic_demonstration_excluded",
+    "author_id": null,
+    "paper_ids": [],
+    "source_hashes": []
+  },
+  "consent": {"training_allowed": false, "deidentified": false},
+  "language": "zh",
+  "messages": [
+    {"role": "user", "content": "我想比较两种材料强度预测模型，但不知道怎样选择测试范围。"},
+    {"role": "assistant", "content": "你更希望检验哪一种泛化？\n1. 同分布的新材料样本\n2. 训练中未见的材料家族\n3. 暂不确定\n4. 其他，我来补充"},
+    {"role": "user", "content": "检验训练中未见的材料家族。"},
+    {"role": "assistant", "content": "数据中有可用于隔离材料家族的标签吗？\n1. 有已核实的材料家族标签\n2. 有成分或来源字段，但需核实分组方法\n3. 暂不确定\n4. 其他，我来补充"}
+  ],
+  "decisions": [
+    {
+      "assistant_turn": 1,
+      "action": "ask",
+      "target_field": "scope",
+      "based_on_user_turns": [0],
+      "question": "你更希望检验哪一种泛化？",
+      "options": [
+        {"id": "same", "type": "proposal", "label": "同分布的新材料样本"},
+        {"id": "family", "type": "proposal", "label": "训练中未见的材料家族"},
+        {"id": "unknown", "type": "unknown", "label": "暂不确定"},
+        {"id": "custom", "type": "custom", "label": "其他，我来补充"}
+      ],
+      "evidence_ids": []
+    },
+    {
+      "assistant_turn": 3,
+      "action": "ask",
+      "target_field": "data_source",
+      "based_on_user_turns": [0, 2],
+      "question": "数据中有可用于隔离材料家族的标签吗？",
+      "options": [
+        {"id": "verified", "type": "proposal", "label": "有已核实的材料家族标签"},
+        {"id": "proxy", "type": "proposal", "label": "有成分或来源字段，但需核实分组方法"},
+        {"id": "unknown", "type": "unknown", "label": "暂不确定"},
+        {"id": "custom", "type": "custom", "label": "其他，我来补充"}
+      ],
+      "evidence_ids": []
+    }
+  ],
+  "evidence": [],
+  "plan_declarations": [
+    {"field": "scope", "status": "declared", "value": "检验训练中未见的材料家族", "user_turn": 2}
+  ],
+  "understanding": {"status": "not_assessed", "before": null, "after": null},
+  "review": {
+    "decision": "pending",
+    "reviewer_id": null,
+    "reviewed_at": null,
+    "question_quality": null,
+    "plan_testability": null,
+    "notes": "这是结构演示，未采集真实用户回答，不能作为人工标注训练样本。"
+  }
+}

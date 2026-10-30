@@ -1,0 +1,191 @@
+{
+  "id": "unknown_variance",
+  "purpose": "Natural explicit unknowns must not become default sample or variance",
+  "scripted_turns": 2,
+  "ready": false,
+  "declarations": 4,
+  "proposals": 6,
+  "unknown_fields": [
+    "sampling",
+    "analysis",
+    "randomization"
+  ],
+  "conflict_fields": [],
+  "stale_fields": [],
+  "blockers": [
+    {
+      "field": "hypothesis",
+      "code": "missing_declaration",
+      "status": "blocked",
+      "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+    },
+    {
+      "field": "scope",
+      "code": "missing_declaration",
+      "status": "blocked",
+      "detail": "结论只适用于哪些对象、数据、条件和时间范围？"
+    },
+    {
+      "field": "exclusions",
+      "code": "missing_declaration",
+      "status": "blocked",
+      "detail": "本轮明确不研究什么，不准备声称什么？"
+    },
+    {
+      "field": "design",
+      "code": "missing_declaration",
+      "status": "blocked",
+      "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+    },
+    {
+      "field": "baseline",
+      "code": "missing_declaration",
+      "status": "blocked",
+      "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+    },
+    {
+      "field": "sampling",
+      "code": "missing_declaration",
+      "status": "blocked",
+      "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+    },
+    {
+      "field": "analysis",
+      "code": "missing_declaration",
+      "status": "blocked",
+      "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+    },
+    {
+      "field": "risks",
+      "code": "missing_declaration",
+      "status": "blocked",
+      "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+    },
+    {
+      "field": "reproducibility",
+      "code": "missing_declaration",
+      "status": "blocked",
+      "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+    },
+    {
+      "field": "experimental_unit",
+      "code": "unconfirmed_proposal",
+      "status": "blocked",
+      "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+    },
+    {
+      "field": "factors",
+      "code": "unconfirmed_proposal",
+      "status": "blocked",
+      "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+    },
+    {
+      "field": "data_source",
+      "code": "unconfirmed_proposal",
+      "status": "blocked",
+      "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+    },
+    {
+      "field": "sampling",
+      "code": "explicit_unknown",
+      "status": "blocked",
+      "detail": "用户明确尚不知道；应先规划获取证据的步骤。"
+    },
+    {
+      "field": "analysis",
+      "code": "explicit_unknown",
+      "status": "blocked",
+      "detail": "用户明确尚不知道；应先规划获取证据的步骤。"
+    },
+    {
+      "field": "resources",
+      "code": "unconfirmed_proposal",
+      "status": "blocked",
+      "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+    },
+    {
+      "field": "human_roles",
+      "code": "unconfirmed_proposal",
+      "status": "blocked",
+      "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+    },
+    {
+      "field": "deliverable",
+      "code": "unconfirmed_proposal",
+      "status": "blocked",
+      "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+    },
+    {
+      "field": "outcomes",
+      "code": "outcome_direction",
+      "status": "blocked",
+      "detail": "明确主要响应及方向，或明确无预设方向的探索性分析。"
+    },
+    {
+      "field": "outcomes",
+      "code": "unit_aggregation",
+      "status": "blocked",
+      "detail": "说明怎样按实验/推断单位汇总测量，不能用大量技术重复扩大样本量。"
+    },
+    {
+      "field": "acceptance",
+      "code": "measurable_acceptance",
+      "status": "blocked",
+      "detail": "验收应有可测阈值或可逐项核对的产物，不只写结果更好。"
+    },
+    {
+      "field": "acceptance",
+      "code": "negative_outcomes",
+      "status": "blocked",
+      "detail": "明确阴性、不确定或反向结果也应如实报告，不能继续试到显著。"
+    },
+    {
+      "field": "acceptance",
+      "code": "stopping_rule",
+      "status": "blocked",
+      "detail": "预先声明预算、信息不足或失败时的停止/升级条件。"
+    }
+  ],
+  "known_field_missing_questions": 0,
+  "questions": 2,
+  "clarification": [
+    {
+      "mode": "template",
+      "reason": "model_unavailable_or_rejected",
+      "model_used": true,
+      "error_type": "ValueError",
+      "validation_error": "NoValidPriorityQuestions: [{\"field\": \"sampling\", \"reason\": \"InventedQuestionNumericAssumption\"}, {\"field\": \"experimental_unit\", \"reason\": \"InventedQuestionNumericAssumption\"}]"
+    },
+    {
+      "mode": "template",
+      "reason": "model_unavailable_or_rejected",
+      "model_used": true,
+      "error_type": "RunLimitError",
+      "validation_error": "RunLimitError"
+    }
+  ],
+  "exceptions": [],
+  "fact_quote_not_literal_in_inputs": [],
+  "session_restore_exact": true,
+  "resources": {
+    "llm_requests": 3,
+    "llm_tokens": 5375,
+    "tool_attempts": 0,
+    "limits": {
+      "llm_requests": 4,
+      "llm_tokens": 16000,
+      "tool_calls": 40,
+      "read_bytes": 24000
+    }
+  },
+  "turn_seconds": [
+    5.625,
+    2.375
+  ],
+  "recovered_turns_without_latency": 0,
+  "approval": null,
+  "scientific_claim_verified": false,
+  "execution_authorized": false,
+  "human_quality_scores": null,
+  "researcher_understanding_measured": false
+}

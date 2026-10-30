@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "kind": "current_integrity_and_saved_regression",
+  "integrity": {
+    "passed": true,
+    "protected_files_checked": 1745,
+    "authorized_host_changes": 5,
+    "integration_runtime_files_checked": 10,
+    "planning_authorized_host_changes": 4,
+    "planning_runtime_files_checked": 11,
+    "dynamic_runtime_files_checked": 6,
+    "planning_history_privacy_files_checked": 1,
+    "interface_runtime_files_checked": 11,
+    "changed": []
+  },
+  "full_regression": {
+    "application": {
+      "run": 427,
+      "passed": true,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 2,
+      "seconds": 225.922
+    },
+    "integrity": {
+      "run": 19,
+      "passed": true,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 4.953
+    }
+  },
+  "example_sha256": {
+    "examples/interfaces/terminal.html": "445b43793d87061618b5a60a6aeb9e1f6e27b0c16bb7000c28fecf0bba3c201f",
+    "examples/interfaces/browser.html": "319c98c39bf9e83d92f69a0d27b733029c5794bb2a5ac9cc7a86c0469988177a",
+    "examples/interfaces/delivery.html": "6e7b76df6b56f52fcb53a5b174e29f8832fd7f581d99744952fea1f82aaa9e80"
+  },
+  "historical_dynamic_evidence_verified": true,
+  "retained_training_artifacts_checked": 64,
+  "browser_visual_qa": false,
+  "browser_visual_qa_reason": "Computer Use safety gate could not reliably identify the current browser URL; UI automation stopped.",
+  "human_participants": 0,
+  "understanding_improvement_measured": false,
+  "this_audit_model_requests": 0,
+  "real_scientific_executions": 0,
+  "committed_or_pushed": false
+}

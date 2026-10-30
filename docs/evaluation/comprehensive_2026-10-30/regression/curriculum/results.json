@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "run": 28,
+  "passed_tests": 28,
+  "failures": [],
+  "errors": [],
+  "skipped": [],
+  "seconds": 0.938,
+  "folder": "Training_Data/scientific_dialogue_v1/tests",
+  "pattern": "test*.py"
+}

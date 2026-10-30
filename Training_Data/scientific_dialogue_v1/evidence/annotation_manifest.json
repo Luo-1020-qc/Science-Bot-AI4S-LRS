@@ -1,0 +1,9 @@
+{
+  "version": "scientific_dialogue_curriculum_v1",
+  "files": {
+    "audit.json": "42cc533ae50bc7f6d5cf5a2e00b0b2b51fe6a0f3eca1365bd4d64381347f1c61",
+    "pending.jsonl": "a4aa17f920f6f653741526082640ad65f36db3b2e8af0472f2a99d038c73ff02",
+    "template.json": "c28174c53e643a501c2d4bc4bb8eda83adc05c2a3755408996e27112707ee268"
+  },
+  "eligible": 0
+}

@@ -1,0 +1,27 @@
+{
+  "sha256": {
+    "dataset.json": "29680e1a576af97b679c5d383a1609d6f2916cb2639737026ef4635701b17539"
+  },
+  "source_groups": {
+    "train": [
+      "候选模型",
+      "电池材料",
+      "合成传感器",
+      "细胞图像",
+      "表格模型",
+      "反应条件"
+    ],
+    "dev": [
+      "设备状态",
+      "合成流场"
+    ],
+    "test": [
+      "LinearNO与FNO",
+      "土壤数据",
+      "弹性场",
+      "时序模型"
+    ]
+  },
+  "human_labels": 0,
+  "limitation": "Disjoint topic groups share request templates and scripted intent labels; not a blind scientific or user study."
+}

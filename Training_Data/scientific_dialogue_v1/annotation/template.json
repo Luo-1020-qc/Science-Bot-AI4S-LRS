@@ -1,0 +1,33 @@
+{
+  "schema_version": "scientific_dialogue_curriculum_v1",
+  "dialogue_id": null,
+  "source_group": null,
+  "provenance": {
+    "kind": "human_collected",
+    "author_id": null,
+    "paper_ids": [],
+    "source_hashes": []
+  },
+  "consent": {
+    "training_allowed": false,
+    "deidentified": false
+  },
+  "language": "zh",
+  "messages": [],
+  "decisions": [],
+  "evidence": [],
+  "plan_declarations": [],
+  "understanding": {
+    "status": "not_assessed",
+    "before": null,
+    "after": null
+  },
+  "review": {
+    "decision": "pending",
+    "reviewer_id": null,
+    "reviewed_at": null,
+    "question_quality": null,
+    "plan_testability": null,
+    "notes": null
+  }
+}

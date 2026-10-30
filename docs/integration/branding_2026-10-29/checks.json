@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "groups": {
+    "test_interface_delivery.py": {
+      "run": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": true,
+      "seconds": 5.047
+    },
+    "test_workbench_http.py": {
+      "run": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": true,
+      "seconds": 5.172
+    },
+    "test_integrity.py": {
+      "run": 25,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": true,
+      "seconds": 11.297
+    }
+  },
+  "source_sha256": {
+    "docs/integration/branding_2026-10-29/authorized_source_changes.json": "e7ed6764c60f184e030c70b8927fb7ea4fed517fca8470f8a7640403f2ad149e",
+    "docs/integration/branding_2026-10-29/runtime_manifest.json": "d96a5c3db2bd0d21441ac86a915858037923b9339ba2a84c4a87b4b9f03171e9",
+    "examples/interfaces/browser.html": "2c6b1e72182f64f0c3a5677d5eb4285e268b2800965ef9bd9d81c6e914e01cb5",
+    "examples/interfaces/delivery.html": "bc038ff9ae1a7e69f7e178488b33848de828320ca0e9572504eacc47b8c00c28",
+    "RUT_Science/rut_science/science_bot/presentation.py": "d593537082f345da3512800205e138071bd9ff58067df22bf4a592fae4cdfb2a",
+    "RUT_Science/rut_science/science_bot/workbench_assets/dist/index.html": "af8033a982f398d8d4f4e3f1ade730a9a07afe387c1807c54f834b99b3047e27",
+    "RUT_Science/rut_science/science_bot/workbench_assets/dist/styles.css": "1074bd63e0ecfcbffab4538ac15bbb9787345ae3b4f7bb4333176e6c70c39da8",
+    "RUT_Science/tests/test_interface_delivery.py": "fe550392083eaa56ec555701e4685287539034969598379a9c65fb2351ba4ba6",
+    "RUT_Science/tests/test_workbench_http.py": "91a1ab707921f8e8d3ea5033548a222c29fa4149c969ded9fc75fbc649f6d333",
+    "scripts/integrity.py": "87ca37924d47aa01f34e6e7d0d14242c3bac1d38795b6953c3d1a53517921748",
+    "scripts/test_integrity.py": "8726c96702c6c8435c9a18946d027161f6b6e0f162015e93cf338bafd3dd60ee",
+    "scripts/verify_branding.py": "610c8a49758156821826e0346028dc39ea28e6f442a0aab57b37a6706d2e6385",
+    "scripts/verify_question_tool.py": "d065efadbdc9cfc876cfae51ef6522ad11240e21c75dd83cd52126ed179eb279"
+  },
+  "checked_utc": "2026-10-29T11:51:34.579505+00:00",
+  "full_application_regression": false,
+  "scope": "focused_presentation_http_and_integrity_not_a_new_full_application_regression"
+}

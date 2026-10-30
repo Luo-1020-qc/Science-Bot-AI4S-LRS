@@ -1,0 +1,343 @@
+{
+  "version": "expert_batch_review_2026_10_30_v1",
+  "checked_utc": "2026-10-29T17:24:36.658188+00:00",
+  "batches": [
+    {
+      "file": "expert_batch_001_decisions.jsonl",
+      "records": 8,
+      "sha256": "10e89dc8181df6b136731246ac20b5264e2ed363d9fbb41d0d68cd67d651f487",
+      "statuses": {
+        "approved": 8
+      },
+      "official_in_memory_validation": {
+        "record_validator_passed": true,
+        "records": 8,
+        "filesystem_import_performed": false,
+        "captured_in_memory": 1
+      }
+    },
+    {
+      "file": "expert_batch_002_decisions.jsonl",
+      "records": 23,
+      "sha256": "d6dc6084266f7116aa937ac17db5602c8e80cb8dd2d64f5796e05a16155bf55a",
+      "statuses": {
+        "approved": 23
+      },
+      "official_in_memory_validation": {
+        "record_validator_passed": true,
+        "records": 23,
+        "filesystem_import_performed": false,
+        "captured_in_memory": 1
+      }
+    }
+  ],
+  "combined_records": 31,
+  "unique_review_ids": 31,
+  "pending_source_records": 31,
+  "pending_source_sha256": "0658eaf34407925616e08458c43ce2b6e4b71df44e2fd0e0e3ccd4d11a74b111",
+  "uncovered_source_records": [],
+  "non_review_changes": [],
+  "observation_errors": [],
+  "policy_splits": {
+    "train": 31
+  },
+  "tasks": [
+    "cvit_train_04",
+    "cvit_train_05",
+    "cvit_train_06",
+    "cvit_train_07",
+    "darcy_train_00",
+    "darcy_train_01",
+    "darcy_train_02",
+    "darcy_train_03"
+  ],
+  "source_kinds": {
+    "synthetic_reference_only": 8
+  },
+  "acceptable_counts": {
+    "review": 8,
+    "read_plan": 31,
+    "repair_response": 1,
+    "freeze": 2,
+    "reconcile": 2,
+    "assess": 2,
+    "repair_budget": 2,
+    "ask_variance": 1,
+    "report": 1,
+    "resolve": 2,
+    "workflow": 5,
+    "run_mock": 4,
+    "next": 4,
+    "model_blocked_full_factorial": 1,
+    "analyze": 1
+  },
+  "rejected_counts": {
+    "stop": 31,
+    "model_full_factorial": 17,
+    "model_blocked_full_factorial": 17
+  },
+  "reviewers_as_declared": [
+    "RAOGUOCHONG"
+  ],
+  "reviewer_identity_verified": false,
+  "corrupted_rationales": [
+    {
+      "file": "expert_batch_001_decisions.jsonl",
+      "line": 1,
+      "source_index": 0,
+      "literal_question_marks": 132,
+      "cjk_characters": 0,
+      "ascii_escaped_prefix": "??????? candidate ? baseline ? relative L2????????review_passed=f"
+    },
+    {
+      "file": "expert_batch_001_decisions.jsonl",
+      "line": 2,
+      "source_index": 5,
+      "literal_question_marks": 106,
+      "cjk_characters": 0,
+      "ascii_escaped_prefix": "??????? training_loss??????? relative L2 ?????????????????????rep"
+    },
+    {
+      "file": "expert_batch_001_decisions.jsonl",
+      "line": 3,
+      "source_index": 6,
+      "literal_question_marks": 74,
+      "cjk_characters": 0,
+      "ascii_escaped_prefix": "history ????? repair_response?review?align_claim?review_current ?"
+    },
+    {
+      "file": "expert_batch_001_decisions.jsonl",
+      "line": 4,
+      "source_index": 7,
+      "literal_question_marks": 99,
+      "cjk_characters": 0,
+      "ascii_escaped_prefix": "align_claim?freeze?workflow_compile?workflow_verify ????? verify "
+    },
+    {
+      "file": "expert_batch_001_decisions.jsonl",
+      "line": 5,
+      "source_index": 8,
+      "literal_question_marks": 123,
+      "cjk_characters": 0,
+      "ascii_escaped_prefix": "mock ??????status=mock_completed??analyze ??????? 95% ?????analys"
+    },
+    {
+      "file": "expert_batch_001_decisions.jsonl",
+      "line": 6,
+      "source_index": 9,
+      "literal_question_marks": 80,
+      "cjk_characters": 0,
+      "ascii_escaped_prefix": "?? resources.budget=2?? goal ??? resource_budget=256 ????????????"
+    },
+    {
+      "file": "expert_batch_001_decisions.jsonl",
+      "line": 7,
+      "source_index": 22,
+      "literal_question_marks": 102,
+      "cjk_characters": 0,
+      "ascii_escaped_prefix": "??? factorial_2x2?architecture?learning_rate??variance_available="
+    },
+    {
+      "file": "expert_batch_001_decisions.jsonl",
+      "line": 8,
+      "source_index": 30,
+      "literal_question_marks": 104,
+      "cjk_characters": 0,
+      "ascii_escaped_prefix": "history ?? analyze?assess?next ?????assessment_ref ? next_step ??"
+    }
+  ],
+  "non_read_multisolution_source_indices": [
+    5,
+    9,
+    17,
+    22,
+    23
+  ],
+  "all_original_script_actions_accepted": true,
+  "frozen_states": 19,
+  "frozen_states_with_current_patch_hash": 19,
+  "budget_mismatches": [
+    {
+      "source_index": 9,
+      "task_id": "darcy_train_02",
+      "contract_budget": 2,
+      "user_budget": 256,
+      "planned_cost": 48.0
+    },
+    {
+      "source_index": 23,
+      "task_id": "cvit_train_06",
+      "contract_budget": 257,
+      "user_budget": 256,
+      "planned_cost": 48.0
+    },
+    {
+      "source_index": 24,
+      "task_id": "cvit_train_06",
+      "contract_budget": 257,
+      "user_budget": 256,
+      "planned_cost": 48.0
+    },
+    {
+      "source_index": 25,
+      "task_id": "cvit_train_06",
+      "contract_budget": 257,
+      "user_budget": 256,
+      "planned_cost": 48.0
+    },
+    {
+      "source_index": 26,
+      "task_id": "cvit_train_06",
+      "contract_budget": 257,
+      "user_budget": 256,
+      "planned_cost": 48.0
+    }
+  ],
+  "action_probes": [
+    {
+      "source_index": 22,
+      "exact_observation_reproduced": true,
+      "task_id": "cvit_train_05",
+      "action": "review",
+      "candidate_available": true,
+      "error": "Variance source is unresolved; a template default is not scientific evidence",
+      "result": {},
+      "reward": -1.02,
+      "classification": "in_progress",
+      "freeze_before": false,
+      "freeze_after": false,
+      "plan_changed": false,
+      "model_after": "blocked_full_factorial",
+      "budget_after": 256,
+      "audit_session": "Training_Data/v2/tool_runtime/sessions/annotation_audit_0c98d18f04_22_1",
+      "real_execution": false
+    },
+    {
+      "source_index": 24,
+      "exact_observation_reproduced": true,
+      "task_id": "cvit_train_06",
+      "action": "repair_budget",
+      "candidate_available": true,
+      "error": null,
+      "result": {
+        "plan_ref": "daf3c5d38d46d98f1640df2f89ce91270e782a7f2ced807dcef6e5045a1b60c6",
+        "prior_review_invalidated": true,
+        "execution_authorized": false
+      },
+      "reward": -0.02,
+      "classification": "in_progress",
+      "freeze_before": true,
+      "freeze_after": false,
+      "plan_changed": true,
+      "model_after": "blocked_full_factorial",
+      "budget_after": 256,
+      "audit_session": "Training_Data/v2/tool_runtime/sessions/annotation_audit_0c98d18f04_24_1",
+      "real_execution": false
+    },
+    {
+      "source_index": 5,
+      "exact_observation_reproduced": true,
+      "task_id": "darcy_train_01",
+      "action": "repair_response",
+      "candidate_available": true,
+      "error": null,
+      "result": {
+        "plan_ref": "dbd58046e3b748a15b7ca5c5762925e6eab1571922d8633f51d13639a730584c",
+        "prior_review_invalidated": true,
+        "execution_authorized": false
+      },
+      "reward": -0.02,
+      "classification": "in_progress",
+      "freeze_before": false,
+      "freeze_after": false,
+      "plan_changed": true,
+      "model_after": "additive_blocks",
+      "budget_after": 256,
+      "audit_session": "Training_Data/v2/tool_runtime/sessions/annotation_audit_0c98d18f04_5_1",
+      "real_execution": false
+    },
+    {
+      "source_index": 9,
+      "exact_observation_reproduced": true,
+      "task_id": "darcy_train_02",
+      "action": "repair_budget",
+      "candidate_available": true,
+      "error": null,
+      "result": {
+        "plan_ref": "1dda8fd9be35833dd9fb2b2264dec95ca882ce0f726c1c768f4071053baff9f9",
+        "prior_review_invalidated": true,
+        "execution_authorized": false
+      },
+      "reward": -0.02,
+      "classification": "in_progress",
+      "freeze_before": false,
+      "freeze_after": false,
+      "plan_changed": true,
+      "model_after": "additive_blocks",
+      "budget_after": 256,
+      "audit_session": "Training_Data/v2/tool_runtime/sessions/annotation_audit_0c98d18f04_9_1",
+      "real_execution": false
+    },
+    {
+      "source_index": 17,
+      "exact_observation_reproduced": true,
+      "task_id": "cvit_train_04",
+      "action": "model_blocked_full_factorial",
+      "candidate_available": true,
+      "error": null,
+      "result": {
+        "plan_ref": "be33103fee66a5b185ca71a520e56a4fd9eddf824c5a54777618f70c1e463fc1",
+        "prior_review_invalidated": true,
+        "execution_authorized": false
+      },
+      "reward": -0.02,
+      "classification": "in_progress",
+      "freeze_before": false,
+      "freeze_after": false,
+      "plan_changed": true,
+      "model_after": "blocked_full_factorial",
+      "budget_after": 256,
+      "audit_session": "Training_Data/v2/tool_runtime/sessions/annotation_audit_0c98d18f04_17_1",
+      "real_execution": false
+    }
+  ],
+  "constant_read_counterexample": {
+    "action": "read_plan",
+    "annotation_membership_score": 1.0,
+    "replayed_task": "darcy_train_00",
+    "steps": 40,
+    "success": false,
+    "classification": "decision_budget_exhausted",
+    "errors": 0,
+    "reward": -2.8000000000000003,
+    "scope": "One full-episode counterexample, not a trained-policy evaluation",
+    "audit_session": "Training_Data/v2/tool_runtime/sessions/annotation_audit_0c98d18f04_always_read_1"
+  },
+  "formal_import": false,
+  "training_started": false,
+  "real_scientific_executions": 0,
+  "model_api_calls": 0,
+  "source_sha256_before": {
+    "Training_Data/expert_batches_inbox_2026-10-30/inbox/expert_batches_合并复核请求.md": "2fd483bbcd810b05bea309dd126ac8f3639985398dae84e76431a7979a6144f3",
+    "Training_Data/expert_batches_inbox_2026-10-30/inbox/expert_batch_001_decisions.jsonl": "10e89dc8181df6b136731246ac20b5264e2ed363d9fbb41d0d68cd67d651f487",
+    "Training_Data/expert_batches_inbox_2026-10-30/inbox/expert_batch_001_依据与争议.md": "0fcb444f3293bff6bb2e4eced827da88d0e9cb43e29f059511ea40ed0c9de41f",
+    "Training_Data/expert_batches_inbox_2026-10-30/inbox/expert_batch_001_复核请求.md": "8c63cb96cee865ee3238efe43e2ff173a6e7363efd638b5e0eb0748a87fdfd33",
+    "Training_Data/expert_batches_inbox_2026-10-30/inbox/expert_batch_001_批次说明.md": "0bb29f0660f718b39df820925c511d4847e2aecf5b54eaff4d24f6aaead6ac30",
+    "Training_Data/expert_batches_inbox_2026-10-30/inbox/expert_batch_002_decisions.jsonl": "d6dc6084266f7116aa937ac17db5602c8e80cb8dd2d64f5796e05a16155bf55a",
+    "Training_Data/expert_batches_inbox_2026-10-30/inbox/expert_batch_002_依据与争议.md": "ee2a8a32663e607e94455540d08975e2fac35ad01fe46724e0a0cc77f8975c14",
+    "Training_Data/expert_batches_inbox_2026-10-30/inbox/expert_batch_002_批次说明.md": "896f4290ef9b9ad45f7469060bc4671254ffe25ce98c839ff94b0f1363a28850",
+    "Training_Data/v2/protocol.py": "a6752c742109b7ccd8026a810a72d69ba30e6f161db94834441f03c08891a276",
+    "Training_Data/v2/environment.py": "3f5ffcdb83b1e789f6d050b5f1632e5f5296eaa3b7b7d4656c57987d0f06b32e",
+    "Training_Data/v2/expert_import.py": "af8b03c44faa040d48de7ce747fc5a5d657957ffde360bb84e235c6203c85785",
+    "Training_Data/v2/expert/pending_decisions.jsonl": "0658eaf34407925616e08458c43ce2b6e4b71df44e2fd0e0e3ccd4d11a74b111",
+    "Training_Data/v2/tasks/train.jsonl": "50c629ab444fcbfaa9033cb56fac3828c1c0a5b67e58348ce4ae29ff41a01530",
+    "Training_Data/v2/tool_runtime/core.py": "4e15ce989d9aa7c1491e210c17b3b8839f9a7084ab95252ad722e5f7e4258f54",
+    "Training_Data/v2/tool_runtime/catalog.py": "b50231667247bbb9514fd2f0f7548d16b35764c6119acd9994732646522623b2",
+    "Training_Data/v2/tool_runtime/doe_adapter.py": "6f34aaf5869ee91f1c368fcd5d6cd1e22286d90c7c22bd49b94d954a37feb78c",
+    "Training_Data/v2/tool_runtime/source_manifest.json": "7fc0f104d8993c5c8e6281e10f1ba93a84f49c35ac4a3b59e527d4ee17f9be66"
+  },
+  "input_cli_location_supported": false,
+  "verdict": "Structurally compatible review candidates; correct text corruption and execution-semantic labels before BC. Not a multi-turn clarification or PPO dataset.",
+  "sources_unchanged": true,
+  "audit_script_sha256": "2ec346d15d53c965f8b8a31afca2f0a7a97aeaa5ec4bc7db4103d537a9c57679"
+}

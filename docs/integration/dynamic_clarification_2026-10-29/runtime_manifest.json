@@ -1,0 +1,11 @@
+{
+  "sha256": {
+    "RUT_Science/rut_science/science_bot/general/planning/blueprint.py": "c1d988615d7b3b23843fdd044c078a545c1e63f9743f4a239c9f93203dc0c73a",
+    "RUT_Science/rut_science/science_bot/general/planning/clarification.py": "590b014a2f6677bc71df8be9e8a0982da11d00963de2a282977a8586d8aeb457",
+    "RUT_Science/rut_science/science_bot/general/planning/evidence.py": "51e801640bb7ee4964169469dc0abb1c34367ad9567cda12bf17aecf9b951269",
+    "RUT_Science/rut_science/science_bot/general/planning/ledger.py": "37601d4a3fd9ee03dd3f110a0f7f3e31b6d8c8cf534876614c42114cb4f2a916",
+    "RUT_Science/rut_science/science_bot/general/planning/runtime.py": "cb2121da91626c828e52b1be1eb573ebe43b20e7337c5d2058470726c60e8d34",
+    "RUT_Science/rut_science/science_bot/general/planning/understanding.py": "5fffde0a44d5bcdca2aff2fa681f3e0666f4708e739541d3926a86ce48e4ead8"
+  },
+  "scope": "Chained dynamic clarification upgrade; prior planning manifests, API and weights unchanged"
+}

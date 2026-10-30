@@ -20,6 +20,8 @@ __pycache__/
 htmlcov/
 build/
 dist/
+!RUT_Science/rut_science/science_bot/workbench_assets/dist/
+!RUT_Science/rut_science/science_bot/workbench_assets/dist/**
 .idea/
 .vscode/
 .DS_Store
@@ -41,6 +43,12 @@ Thumbs.db
 /Training_Data_Darcy_CViT/v2/expert/inbox/
 /Training_Data_Darcy_CViT/v2/expert/imports/
 /Training_Data_Darcy_CViT/v2/tmp*/
+# Current name; retain the historical exclusions for older checkouts.
+/Training_Data/v2/tool_runtime/sessions/
+/Training_Data/v2/ppo_smoke_next*/
+/Training_Data/v2/expert/inbox/
+/Training_Data/v2/expert/imports/
+/Training_Data/v2/tmp*/
 
 # Distribute the directory / Git repository, not generated archives.
 *.zip

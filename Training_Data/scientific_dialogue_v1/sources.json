@@ -1,0 +1,38 @@
+{
+  "version": "scientific_dialogue_curriculum_v1",
+  "sources": {
+    "clariq": {
+      "homepage": "https://github.com/aliannejadi/ClariQ",
+      "revision": "46885a544581a0af8aff0681d29e4971807e2912",
+      "license": "not_explicitly_specified_in_upstream_repository",
+      "usage": "Local research candidate; retain attribution. Do not automatically redistribute data or candidate weights; upstream terms need clarification before publication.",
+      "files": {
+        "clariq_train.tsv": "https://raw.githubusercontent.com/aliannejadi/ClariQ/46885a544581a0af8aff0681d29e4971807e2912/data/train.tsv",
+        "clariq_dev.tsv": "https://raw.githubusercontent.com/aliannejadi/ClariQ/46885a544581a0af8aff0681d29e4971807e2912/data/dev.tsv",
+        "clariq_test.tsv": "https://raw.githubusercontent.com/aliannejadi/ClariQ/46885a544581a0af8aff0681d29e4971807e2912/data/test_with_labels.tsv",
+        "clariq_questions.tsv": "https://raw.githubusercontent.com/aliannejadi/ClariQ/46885a544581a0af8aff0681d29e4971807e2912/data/question_bank.tsv",
+        "clariq_README.md": "https://raw.githubusercontent.com/aliannejadi/ClariQ/46885a544581a0af8aff0681d29e4971807e2912/README.md"
+      }
+    },
+    "clarq": {
+      "homepage": "https://github.com/vaibhav4595/ClarQ",
+      "revision": "cb6c6ba0c76d1a6e6f2cf308b3c159bf0b7de119",
+      "license": "CC-BY-4.0_per_dataset_author_README; preserve_original_StackExchange_attribution",
+      "files": {
+        "clarq_README.md": "https://raw.githubusercontent.com/vaibhav4595/ClarQ/cb6c6ba0c76d1a6e6f2cf308b3c159bf0b7de119/README.md"
+      },
+      "data_access": "https://drive.google.com/drive/folders/1aqTiRgFq1pGVZhqJ_rDksZZg8v8m_3eX",
+      "import": "Optional local train.json/test.json JSONL import; context -> cquestion only. answer is the answer to the original post, never a clarification reply. No bulk download or mirror substitution."
+    },
+    "qasper": {
+      "homepage": "https://huggingface.co/datasets/allenai/qasper",
+      "revision": "v0.3; acquisition receipt pins the exact bytes",
+      "license": "CC-BY-4.0_per_official_dataset_card; preserve_paper_attribution",
+      "files": {
+        "qasper_train_dev.tgz": "https://qasper-dataset.s3.us-west-2.amazonaws.com/qasper-train-dev-v0.3.tgz",
+        "qasper_test.tgz": "https://qasper-dataset.s3.us-west-2.amazonaws.com/qasper-test-and-evaluator-v0.3.tgz"
+      },
+      "loader_reference": "https://huggingface.co/datasets/allenai/qasper/blob/fdc9d8214fbab5dd782958601db4d678e6934a54/qasper.py"
+    }
+  }
+}
