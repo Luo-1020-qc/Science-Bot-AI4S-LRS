@@ -1,0 +1,56 @@
+{
+  "request_index": 2,
+  "role": "planning_clarification",
+  "model": "deepseek-flash",
+  "response": {
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_00_S8f45z1lMqNquPgVV1db6072",
+        "name": "propose_clarification_questions",
+        "arguments": {
+          "questions": [
+            {
+              "field": "outcomes",
+              "kind": "missing",
+              "question": "比较两种吸附材料时，主要响应指标用哪一个（例如吸附容量、去除率或达到平衡的时间），并说明哪个方向算更好？",
+              "rationale": "目前只登记了“吸附材料（两种水平）”这一因素，没有主要响应就无法确定测量、汇总方式和后续分析；六次运行与两小时上限也需据此判断可行性。",
+              "references": [
+                {
+                  "source": "fact",
+                  "key": "factors",
+                  "quote": "吸附材料（两种水平）"
+                },
+                {
+                  "source": "fact",
+                  "key": "resources",
+                  "quote": "后续最多六次运行、两小时上限"
+                }
+              ]
+            },
+            {
+              "field": "design",
+              "kind": "missing",
+              "question": "六次运行打算怎样分配给两种材料：每种各三次的独立运行，还是按批次/时间配对或区组安排？",
+              "rationale": "在运行次数已固定的前提下，独立重复与配对/区组会改变推断单位与不确定性报告方式，需要先确定结构再谈分析与验收。",
+              "references": [
+                {
+                  "source": "fact",
+                  "key": "resources",
+                  "quote": "后续最多六次运行、两小时上限"
+                },
+                {
+                  "source": "fact",
+                  "key": "factors",
+                  "quote": "吸附材料（两种水平）"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "actual_model": "deepseek-flash"
+  },
+  "response_hash": "667bbc0ef64da62b4fbe6dab33eb553803d7dbc9825cd259f9e7dd384f2ca2ef"
+}

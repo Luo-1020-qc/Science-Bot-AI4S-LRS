@@ -1,0 +1,8 @@
+{
+  "request_index": 2,
+  "role": "planning_clarification",
+  "status": "rejected",
+  "model": "deepseek-flash",
+  "error_type": "ValueError",
+  "response_hash": "8dd655a387384dbd885458a0dfbb58a7e33b6fe35e12338be791b711df8863f8"
+}

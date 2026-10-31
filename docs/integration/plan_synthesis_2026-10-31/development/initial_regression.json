@@ -1,0 +1,25 @@
+{
+  "passed": false,
+  "run": 534,
+  "passed_tests": 531,
+  "failures": [
+    {
+      "id": "test_native_semantic_understanding_stays_same_http_provider (test_research_planning_http.ResearchPlanningHTTPTests.test_native_semantic_understanding_stays_same_http_provider)",
+      "traceback": "Traceback (most recent call last):\n  File \"D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent\\RUT_Science\\tests\\test_research_planning_http.py\", line 61, in test_native_semantic_understanding_stays_same_http_provider\n    self.assertEqual(bodies[1]['tools'][0]['function']['name'],'propose_clarification_questions')\nAssertionError: 'synthesize_experiment_plan' != 'propose_clarification_questions'\n- synthesize_experiment_plan\n+ propose_clarification_questions\n\n"
+    }
+  ],
+  "errors": [],
+  "skipped": [
+    {
+      "id": "test_link_target_cannot_escape_workspace (test_general_tools.GeneralToolTests.test_link_target_cannot_escape_workspace)",
+      "reason": "Windows account cannot create symlinks"
+    },
+    {
+      "id": "test_symlink_escape_and_excluded_alias_rejected (test_science_workspace.WorkspaceTests.test_symlink_escape_and_excluded_alias_rejected)",
+      "reason": "Windows account cannot create symlinks"
+    }
+  ],
+  "seconds": 280.875,
+  "folder": "RUT_Science/tests",
+  "pattern": "test*.py"
+}

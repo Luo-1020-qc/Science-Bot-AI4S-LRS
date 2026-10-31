@@ -1,0 +1,44 @@
+{
+  "files": {
+    ".gitignore": {
+      "before_sha256": "bb8ee5aa878dde3fdded97be761a71d839505f06274e4909329d0638ec0710aa",
+      "sha256": "9362219a10e7ac273a7d56a0a6a39e0a2a934c7a725e042f802f21f26dfc4182",
+      "reason": "User authorized direct PDF uploads and a local reusable paper library; preserve explicit model sharing, existing workspace policy and interface style."
+    },
+    "RUT_Science/rut_science/science_bot/general/planning/evidence.py": {
+      "before_sha256": "cac9874d10788c334af1f193a4d9a7fcc7cdebc2cd14add4bc60b4b788cfc736",
+      "sha256": "8a7ddb94153c769cf5a332bfc899f8c9bde309341621a2f646919776f06ba65d",
+      "reason": "User authorized direct PDF uploads and a local reusable paper library; preserve explicit model sharing, existing workspace policy and interface style."
+    },
+    "RUT_Science/rut_science/science_bot/general/planning/paper_reading.py": {
+      "before_sha256": "879947d93180043534d712d14aae5da71ee2db9f0650eb97178b364f1cd2f72c",
+      "sha256": "048fdcb2d579f09b89e7686fcc84d514f24f4ae5ef0022a0e3ba709d11627514",
+      "reason": "User authorized direct PDF uploads and a local reusable paper library; preserve explicit model sharing, existing workspace policy and interface style."
+    },
+    "RUT_Science/rut_science/science_bot/general/planning/pdf_document.py": {
+      "before_sha256": "eb33b5790566fb36aad744b93b84f0414a8affa0a05cb069651d0f6b61086c7f",
+      "sha256": "a2cce4b32d32cbfb2f6ff25d18fed7422bf2fd66420549907352095eb805a51f",
+      "reason": "User authorized direct PDF uploads and a local reusable paper library; preserve explicit model sharing, existing workspace policy and interface style."
+    },
+    "RUT_Science/rut_science/science_bot/general/planning/pdf_worker.py": {
+      "before_sha256": "6b8be6865ed3d59440a5dcb992f27ec048297009bf4211a97a2917c60ce466a7",
+      "sha256": "31d2d1fafca1542a6abbe46cd942baadfef4ebb2b4ceb5fb4e5442d1ce50119b",
+      "reason": "User authorized direct PDF uploads and a local reusable paper library; preserve explicit model sharing, existing workspace policy and interface style."
+    },
+    "RUT_Science/rut_science/science_bot/presentation.py": {
+      "before_sha256": "6ff85e9d374ef3f41af88ef15cf720925ffc7511e2ebef2f9f1409b6d386918e",
+      "sha256": "a6667188149414c20ff217020b9c9f627a7b3f254b827878beb615182aeac100",
+      "reason": "User authorized direct PDF uploads and a local reusable paper library; preserve explicit model sharing, existing workspace policy and interface style."
+    },
+    "RUT_Science/rut_science/science_bot/workbench.py": {
+      "before_sha256": "0ff7a79f7b23dc48d16f596bef1179c75e9047aaee12ec482f506e3005ba93bb",
+      "sha256": "26e7d4e7aa1fcbc628ae5e570075a8c5067efdc1ac110f1c9a4952d618d9de40",
+      "reason": "User authorized direct PDF uploads and a local reusable paper library; preserve explicit model sharing, existing workspace policy and interface style."
+    },
+    "RUT_Science/rut_science/science_bot/workbench_assets/dist/app.js": {
+      "before_sha256": "4b76ccf803a75d5054830ec2e7106c9cfccd729c626df79b1ef1ed8cd0afc1dd",
+      "sha256": "2eb56d65b74f2cd8b3f90f1835b61aba6b9c28adebe552690eb1445399cb571e",
+      "reason": "User authorized direct PDF uploads and a local reusable paper library; preserve explicit model sharing, existing workspace policy and interface style."
+    }
+  }
+}

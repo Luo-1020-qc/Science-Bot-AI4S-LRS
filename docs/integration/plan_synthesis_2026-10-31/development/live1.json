@@ -1,0 +1,3785 @@
+{
+  "protocol": {
+    "request_cap": 6,
+    "token_cap": 32000,
+    "automatic_retries": 0,
+    "provenance": "Implementer-authored synthetic development probes, not independent expert evaluation",
+    "cases": [
+      {
+        "id": "model_comparison",
+        "inputs": [
+          "/plan 我想比较模型甲和模型乙在同一份合成二维物理场数据上的预测误差，决定下一步是否继续研究。只有2小时计算预算，模型是否已经训练好还没核实。本轮只规划，不执行。",
+          "/plan revise resources: 最多1小时，先核算耗时；超限停止，不追加运行。"
+        ]
+      },
+      {
+        "id": "minimal_replication",
+        "inputs": [
+          "/plan 我想为合成论文中的模型A与B比较制定最小复现方案，先核对论文命题和条件再决定实验。最多2小时，不执行，不宣称已经复现。",
+          "/plan evidence add {\"path\":\"examples/papers/synthetic_paper.pdf\",\"start_page\":1,\"end_page\":2,\"share_with_model\":true}"
+        ]
+      }
+    ],
+    "source_sha256": {
+      "RUT_Science/rut_science/science_bot/api.py": "04f2b13f9f7e8aef4cd256766ae7b70ef2531d552787f7a6b308adaaccc15a63",
+      "RUT_Science/rut_science/science_bot/cache.py": "8b3d66f15a2c551c280db559ec1380947976d47580ea99d74cc5de904400345e",
+      "RUT_Science/rut_science/science_bot/contracts.py": "a02e467f926377a3c156543537846bd5bd576ef88a86e282be868d01d7198765",
+      "RUT_Science/rut_science/science_bot/environment.py": "d57c77584d2ad78100b194936cf70c47a46338de226a8e37e50554a23090c4f4",
+      "RUT_Science/rut_science/science_bot/evaluation.py": "7af37515969085ef5eee2aef6b718ec1c87e8b26b89eb9e5f637445d6e30bd3d",
+      "RUT_Science/rut_science/science_bot/graph.py": "d50f337744bac2090e516f63395b7cca50cabeb2dbb9cfb43e2988093a6f24cd",
+      "RUT_Science/rut_science/science_bot/gym_adapter.py": "b9eab718de4f6ce792c81175a2c17c054793a86e48d8eab649718a06779df05f",
+      "RUT_Science/rut_science/science_bot/interface_demo.py": "215058c4e1dee1022519abec592483d99798ca7ae46d6e646766ec6bd464f5e7",
+      "RUT_Science/rut_science/science_bot/llm.py": "a807b8b9dc10b4e7c000ba375a7aa393f3f926dd82755a2de9dac17987ba49c4",
+      "RUT_Science/rut_science/science_bot/model_output.py": "1fae502a6755e5c1e6d305fb8e598f002b8caece78a5672455c486e2b3e38b03",
+      "RUT_Science/rut_science/science_bot/numerics.py": "a6f8e527b5209f5292fbc20fd9e74169351dad0507f24c0b624c63acf3a258a0",
+      "RUT_Science/rut_science/science_bot/policies.py": "426fb3fd7dcae69d9e691b637816952e7bf5759689eb3b8b4225c09095d60e6b",
+      "RUT_Science/rut_science/science_bot/presentation.py": "681ecc9a8447d11d4e1c2987d93a27044dbce61eec183068d9a533d4a8982edb",
+      "RUT_Science/rut_science/science_bot/session.py": "d8ed0be7f41176fd18d2d9d35b5650f20513413958c70823bbccb20592f11619",
+      "RUT_Science/rut_science/science_bot/session_history.py": "45f9501e595186cbf15ab9358e9e04e5d9a4acea92976d25315a8adba2a3307f",
+      "RUT_Science/rut_science/science_bot/terminal.py": "80f7923a1fcc6fea2752207de91d48677a85d92d084f845663daf5851e2bf7c4",
+      "RUT_Science/rut_science/science_bot/training.py": "46f0813e7a7d056f2854e388eb2380d2cdfd620901a8e0fee98deb03f62c407e",
+      "RUT_Science/rut_science/science_bot/workbench.py": "0ff7a79f7b23dc48d16f596bef1179c75e9047aaee12ec482f506e3005ba93bb",
+      "RUT_Science/rut_science/science_bot/workspace.py": "fb9f8a4291c4e028edb49e7dc9b6b64ca529a38c7ecf25008ebaac5495ddea90",
+      "RUT_Science/rut_science/science_bot/__init__.py": "b9ab46276409bb4a986a7617463e1004aec326b6fa9e8d77374fddb45e99d47d",
+      "RUT_Science/rut_science/science_bot/general/contracts.py": "95567b828dcb3837d37085c53d8b15c05be83bbe26be59a6c06981648740ffa3",
+      "RUT_Science/rut_science/science_bot/general/conversation.py": "03176f3eecb8e37c5cbe8918f56af4d5d5d967aae791d1990229175835bd4f56",
+      "RUT_Science/rut_science/science_bot/general/executor.py": "b49b87880bb95a85f54eba4e9b6ba8ee92ad3b1f5001cacf523708653f08bf67",
+      "RUT_Science/rut_science/science_bot/general/experiment.py": "2e2a676b7a26bc94f91d702d4dfffb0a6d828a0bd304ed20ab288df184c57d79",
+      "RUT_Science/rut_science/science_bot/general/graph.py": "96ee489393ecc7079b220947c74a432332ff3835e30ab65e6d7c16c89c1ed61f",
+      "RUT_Science/rut_science/science_bot/general/planner.py": "25dbfdadee014ad3e9d7f9085a2b5b722120636522f0b890becb07e53a2b9a31",
+      "RUT_Science/rut_science/science_bot/general/provider.py": "5cfaed544844ff7174c08acfbe42595c10528b099da16231a80201ac88c27755",
+      "RUT_Science/rut_science/science_bot/general/registry.py": "edf8ba6ffe109087b18c256bddf4359674abb43bd4c29123cbf332ba6fa2a2a1",
+      "RUT_Science/rut_science/science_bot/general/research.py": "052f88c6c945dd5e91e8ff4424599c3dd15c2782622d167b9c1756fb1d3b0c80",
+      "RUT_Science/rut_science/science_bot/general/router.py": "e7de71a3d65f8d4d07f47d50b1ec5ee247e3e30503c64d86d3c75f2035e38745",
+      "RUT_Science/rut_science/science_bot/general/tool_library.py": "7bb8f33af0329ed0e8052e3fd00980b4e7da737cf9b9608d7055630bca8e2378",
+      "RUT_Science/rut_science/science_bot/general/__init__.py": "5e24adc2e8b007d77a39b5801e246b4adf469de7c1339c9c8e6a15a6f50ca295",
+      "RUT_Science/rut_science/science_bot/general/adapters/legacy_numeric.py": "327292c32a37b35914e413a739c20268743745fde74afa2b4adada5c3555bcca",
+      "RUT_Science/rut_science/science_bot/general/adapters/tabular.py": "70fb659e78a284d3defb99b2f92647dc24d5ed38790b845c7cb568fe994b9333",
+      "RUT_Science/rut_science/science_bot/general/adapters/__init__.py": "12564d557c142632817bb6bb7a740a6d94891d71b9d05c88c01fd33224a42566",
+      "RUT_Science/rut_science/science_bot/general/interview/intake.py": "2e280d56d616fdb13594448a100d90f2ac8ff18a6ee50af94ca90023f0597b85",
+      "RUT_Science/rut_science/science_bot/general/interview/learning.py": "b80d61a8962f2fcd5da2f69de0126f7d5206e7319063908c096003a6b6cd54cf",
+      "RUT_Science/rut_science/science_bot/general/interview/policy.py": "d38ac43889797d1c1f864e3e396e034495db30cc306de66c0676822043a279fe",
+      "RUT_Science/rut_science/science_bot/general/interview/runtime.py": "58931ef67320f4170e58fb7cc811c6a327d9cee367f3b9efccabe4e2a4bcd3f2",
+      "RUT_Science/rut_science/science_bot/general/interview/state.py": "3746c244dc8f80732c6de91d697f0ddd46caa0bc163869caa5943089ed72d86f",
+      "RUT_Science/rut_science/science_bot/general/interview/validation.py": "c1993841cd74e30e40e8efcde6bd9cea57c0d4791ce4120134a78143f10a9d13",
+      "RUT_Science/rut_science/science_bot/general/interview/__init__.py": "9663efbb1616a5cc86975ef2613d4121738146f1f298d630b8a76475ca023f0d",
+      "RUT_Science/rut_science/science_bot/general/planning/blueprint.py": "99f4f49376f559179bb6175dd346ef14305b6037fceb28f29f12a5f0890a5880",
+      "RUT_Science/rut_science/science_bot/general/planning/choices.py": "19937ab2de25123d71005191e12efe849364c8a56e8e5ab15846dfe53942b45c",
+      "RUT_Science/rut_science/science_bot/general/planning/choice_policy.json": "948f159914c5800c268eddf20fe1689352148ac2a685cd7dc0a410638aff909b",
+      "RUT_Science/rut_science/science_bot/general/planning/clarification.py": "cb775fa45a94fb097d69ff0e373f7ebbecaf48f0f2f8c8b831f7e7158c673b3f",
+      "RUT_Science/rut_science/science_bot/general/planning/delivery.py": "72bf9cb6a341b6054a961ea745530754c928819a6b331d6691b02b42c9dcd199",
+      "RUT_Science/rut_science/science_bot/general/planning/evidence.py": "b3d122f8db834eff305402c0ae206265d7bd82a9c162280f08486addbc5bd84f",
+      "RUT_Science/rut_science/science_bot/general/planning/intake.py": "91d6d82858d5cad896420edf1ae5b4d8ada4a7d94c7dafdd9839056a529c6127",
+      "RUT_Science/rut_science/science_bot/general/planning/ledger.py": "e0fb2367e7fbcfffcdc4cd3624280b102da49de8c95127980f403c8c89a112d7",
+      "RUT_Science/rut_science/science_bot/general/planning/method_review.py": "9c654ecbc6394bc89e8c96d0c0788912e6950e629a62681a9da4fb2ac4e10097",
+      "RUT_Science/rut_science/science_bot/general/planning/paper_reading.py": "e2db3f8174255da65c0cd80f5302f6267bfe86cb1fa3096f33a54b7c3c6ae0bb",
+      "RUT_Science/rut_science/science_bot/general/planning/pdf_document.py": "5d1fbe08ffee6cf0f8b05af1acb2e72ba64cca59fb2a813b7a49307868aaf357",
+      "RUT_Science/rut_science/science_bot/general/planning/pdf_worker.py": "4feb811ea03d9c9e34612640199dca17650e4059aa10a08fcab438499c3c0a75",
+      "RUT_Science/rut_science/science_bot/general/planning/question_policy.json": "46215bf6e7de4f421bb2a629ae612eeaae7fcb3e5d8d36ec3c427aa698fda5c9",
+      "RUT_Science/rut_science/science_bot/general/planning/question_ranker.py": "0b3b0765a8209e0a4e78f9810c0798ae86d41ec1f0520fd15a4b417c0b155b28",
+      "RUT_Science/rut_science/science_bot/general/planning/question_tool.py": "d8836a2d7e7897811627b1c5c697a6653f7edf1119ad8c0503dd008574818504",
+      "RUT_Science/rut_science/science_bot/general/planning/routing.py": "feaa2ff434d1155cd1ca64fb19c18ed57e2d7ae9cc117d13c1639acfe064467c",
+      "RUT_Science/rut_science/science_bot/general/planning/runtime.py": "edb5c486a5dce1c0569ba8ac87bf7d0f4b6e43a888cf0d3ef987195ecec8e33d",
+      "RUT_Science/rut_science/science_bot/general/planning/synthesis.py": "0714c02886c4115e993b70d7f1efeddb0c979d0aa4b89ee505dae9d48e9a174c",
+      "RUT_Science/rut_science/science_bot/general/planning/turn_feedback.py": "988d754b1fc8f143c3346c7dc9e73fe2b29e0a1677e4e8ab8daaa520bf155578",
+      "RUT_Science/rut_science/science_bot/general/planning/understanding.py": "5fffde0a44d5bcdca2aff2fa681f3e0666f4708e739541d3926a86ce48e4ead8",
+      "RUT_Science/rut_science/science_bot/general/planning/__init__.py": "a2bbb405ab46564e671816d5dc72cc7dccbd47406ac9210674396ecb5c8db6e7",
+      "RUT_Science/rut_science/science_bot/workbench_assets/dist/app.js": "6da182fd38758360cc505175836ee933609da2b4d597726a43adfe404a3a3793",
+      "RUT_Science/rut_science/science_bot/workbench_assets/dist/index.html": "80d1a4433a4aeb730f0ffb09ca4269f29dfcc300182cad86c4b56f9370d62995",
+      "RUT_Science/rut_science/science_bot/workbench_assets/dist/styles.css": "22bb3b1265e5c029bda9ec6b459cd107fcbb073eb911326aad2766e41d5f3c0b"
+    }
+  },
+  "results": {
+    "checked_utc": "2026-10-30T16:38:36.832991+00:00",
+    "cases": [
+      {
+        "id": "model_comparison",
+        "status": "fallback",
+        "reason": "RunLimitError",
+        "concrete_steps": 0,
+        "all_steps_have_actions_inputs_outputs_acceptance": false,
+        "has_comparison_matrix": false,
+        "has_alternative": false,
+        "has_uncertainty_and_stop_rule": false,
+        "references": [],
+        "resources": {
+          "llm_requests": 2,
+          "llm_tokens": 6319,
+          "tool_attempts": 0,
+          "limits": {
+            "llm_requests": 3,
+            "llm_tokens": 16000,
+            "tool_calls": 40,
+            "read_bytes": 24000
+          }
+        },
+        "no_experiment_session_created": true,
+        "all_steps_unexecuted": true,
+        "human_quality_rated": false
+      },
+      {
+        "id": "minimal_replication",
+        "status": "fallback",
+        "reason": "RunLimitError",
+        "concrete_steps": 0,
+        "all_steps_have_actions_inputs_outputs_acceptance": false,
+        "has_comparison_matrix": false,
+        "has_alternative": false,
+        "has_uncertainty_and_stop_rule": false,
+        "references": [],
+        "resources": {
+          "llm_requests": 1,
+          "llm_tokens": 1328,
+          "tool_attempts": 0,
+          "limits": {
+            "llm_requests": 3,
+            "llm_tokens": 16000,
+            "tool_calls": 40,
+            "read_bytes": 24000
+          }
+        },
+        "no_experiment_session_created": true,
+        "all_steps_unexecuted": true,
+        "human_quality_rated": false
+      }
+    ],
+    "requests": 3,
+    "accounted_tokens": 7647,
+    "automatic_retries": 0,
+    "real_experiments": 0,
+    "training_runs": 0,
+    "human_quality_rated": false
+  },
+  "trajectories": [
+    {
+      "case": "model_comparison",
+      "trajectory": [
+        {
+          "input": "/plan 我想比较模型甲和模型乙在同一份合成二维物理场数据上的预测误差，决定下一步是否继续研究。只有2小时计算预算，模型是否已经训练好还没核实。本轮只规划，不执行。",
+          "seconds": 12.109,
+          "result": {
+            "intent": "planning",
+            "answer": "正在澄清\n\n已采纳 · 研究问题：比较模型甲和模型乙在同一份合成二维物理场数据上的预测误差\n已采纳 · 研究目的：comparison\n待确认提议 · 研究边界：同一份合成二维物理场数据上的模型甲与模型乙预测误差比较；本轮只做规划\n已采纳 · 主要响应与测量：预测误差\n已采纳 · 数据与证据来源：同一份合成二维物理场数据\n待确认提议 · 资源边界：计算预算仅2小时\n已采纳 · 交付物：决定下一步是否继续研究\n未把模型推测的“基线与公平比较未知”写成用户声明；该字段仍待澄清。\n语义改写和推断仅作为待确认提议展示，不会自动成为已确认边界。\n\n声明状态：仍有未决项；方法状态：待人工复核，尚未验证科学有效性。\n\n实验初稿 · 设计建议，尚未执行\n在2小时计算预算内，判断模型甲与模型乙在同一份合成二维物理场数据上的预测误差差异是否大到值得继续研究。\n建议：推荐配对比较路线：固定同一数据划分与同一评估脚本，两模型在同一批留出样本上逐样本计算误差，以样本为配对单位做差值汇总；先花少量时间探测单次推理耗时，再决定留出样本量。\n理由：两模型共享数据与评估条件，配对设计能消除样本难度差异，比独立比较更省样本；预算紧张时先探测耗时再定规模，避免中途超时。\n下一步：确认模型甲、乙检查点、数据版本与评估脚本是否就绪；在少量样本上计时单次推理，记录每样本耗时与显存/内存占用。\n完整实验步骤、产物和验收见研究计划或 /plan draft。\n\n模型甲和模型乙目前处于什么状态？这决定本轮是只做推理评估，还是需要把训练也纳入2小时预算。\n1. 两者均已训练好\n2. 均未训练\n3. 不确定，需先核查\n4. 暂不确定\n5. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+            "planning": {
+              "id": "0849b34daedc4775869c679db773b183",
+              "revision": 1,
+              "active": true,
+              "facts": {
+                "research_question": {
+                  "value": "比较模型甲和模型乙在同一份合成二维物理场数据上的预测误差",
+                  "quote": "我想比较模型甲和模型乙在同一份合成二维物理场数据上的预测误差",
+                  "status": "declared",
+                  "turn": 1
+                },
+                "objective_type": {
+                  "value": "comparison",
+                  "quote": "我想比较模型甲和模型乙在同一份合成二维物理场数据上的预测误差",
+                  "status": "declared",
+                  "turn": 1
+                },
+                "scope": {
+                  "value": "同一份合成二维物理场数据上的模型甲与模型乙预测误差比较；本轮只做规划",
+                  "quote": "本轮只规划，不执行",
+                  "status": "proposed",
+                  "turn": 1
+                },
+                "outcomes": {
+                  "value": "预测误差",
+                  "quote": "预测误差",
+                  "status": "declared",
+                  "turn": 1
+                },
+                "data_source": {
+                  "value": "同一份合成二维物理场数据",
+                  "quote": "同一份合成二维物理场数据",
+                  "status": "declared",
+                  "turn": 1
+                },
+                "resources": {
+                  "value": "计算预算仅2小时",
+                  "quote": "只有2小时计算预算",
+                  "status": "proposed",
+                  "turn": 1
+                },
+                "deliverable": {
+                  "value": "决定下一步是否继续研究",
+                  "quote": "决定下一步是否继续研究",
+                  "status": "declared",
+                  "turn": 1
+                }
+              },
+              "unknown": [],
+              "conflicts": {},
+              "stale": {},
+              "pending": {
+                "field": "baseline",
+                "kind": "missing",
+                "question": "模型甲和模型乙目前处于什么状态？这决定本轮是只做推理评估，还是需要把训练也纳入2小时预算。",
+                "rationale": "若模型未训练，2小时内可能无法完成训练加评估，路线需改为缩小目标或只比较已有检查点。",
+                "references": [
+                  {
+                    "source": "answer",
+                    "key": "current",
+                    "quote": "模型是否已经训练好还没核实"
+                  },
+                  {
+                    "source": "fact",
+                    "key": "resources",
+                    "quote": "计算预算仅2小时"
+                  }
+                ],
+                "options": [
+                  {
+                    "label": "两者均已训练好",
+                    "value": "两模型均有可加载检查点，本轮只做推理评估，预算全部用于留出集评估",
+                    "action": "declare",
+                    "id": "51bf76a6a86c"
+                  },
+                  {
+                    "label": "均未训练",
+                    "value": "两模型均需训练，需先探测训练耗时，可能改为只评估小规模子集或停止",
+                    "action": "declare",
+                    "id": "619a7bf350f1"
+                  },
+                  {
+                    "label": "不确定，需先核查",
+                    "value": "先花少量时间核查检查点与训练日志，再决定路线",
+                    "action": "declare",
+                    "id": "e8d771a59246"
+                  },
+                  {
+                    "label": "暂不确定",
+                    "value": "未知",
+                    "action": "unknown",
+                    "id": "2c3af7fa609c"
+                  },
+                  {
+                    "label": "其他，我来补充",
+                    "value": "",
+                    "action": "custom",
+                    "id": "47de6eddb129"
+                  }
+                ],
+                "origin": "model",
+                "suggested_options": [
+                  {
+                    "label": "两者均已训练好",
+                    "value": "两模型均有可加载检查点，本轮只做推理评估，预算全部用于留出集评估"
+                  },
+                  {
+                    "label": "均未训练",
+                    "value": "两模型均需训练，需先探测训练耗时，可能改为只评估小规模子集或停止"
+                  },
+                  {
+                    "label": "不确定，需先核查",
+                    "value": "先花少量时间核查检查点与训练日志，再决定路线"
+                  }
+                ],
+                "allow_accept": false,
+                "choice_policy": {
+                  "intent": "comparison",
+                  "origin": "validated_model_suggestions",
+                  "policy_hash": null
+                },
+                "choice_id": "7a336ec030aef1bc",
+                "choice_plan_hash": "393c29d12c0bd0aa44e5eee65e71b1b75185fec6588cb30b69e09aa9c977e23b"
+              },
+              "review": {
+                "ready": false,
+                "checks": [
+                  {
+                    "field": "research_question",
+                    "code": "declaration_present",
+                    "status": "passed",
+                    "detail": "已记录用户声明；这不等于外部事实验证。"
+                  },
+                  {
+                    "field": "objective_type",
+                    "code": "declaration_present",
+                    "status": "passed",
+                    "detail": "已记录用户声明；这不等于外部事实验证。"
+                  },
+                  {
+                    "field": "hypothesis",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+                  },
+                  {
+                    "field": "scope",
+                    "code": "declaration_present",
+                    "status": "passed",
+                    "detail": "已记录用户声明；这不等于外部事实验证。"
+                  },
+                  {
+                    "field": "exclusions",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "本轮明确不研究什么，不准备声称什么？"
+                  },
+                  {
+                    "field": "experimental_unit",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "一次独立分配或观察是什么？哪些测量来自同一对象？"
+                  },
+                  {
+                    "field": "factors",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "改变哪些因素和水平，主要比较谁与谁？"
+                  },
+                  {
+                    "field": "design",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+                  },
+                  {
+                    "field": "outcomes",
+                    "code": "declaration_present",
+                    "status": "passed",
+                    "detail": "已记录用户声明；这不等于外部事实验证。"
+                  },
+                  {
+                    "field": "baseline",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+                  },
+                  {
+                    "field": "data_source",
+                    "code": "declaration_present",
+                    "status": "passed",
+                    "detail": "已记录用户声明；这不等于外部事实验证。"
+                  },
+                  {
+                    "field": "sampling",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+                  },
+                  {
+                    "field": "analysis",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+                  },
+                  {
+                    "field": "acceptance",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+                  },
+                  {
+                    "field": "resources",
+                    "code": "declaration_present",
+                    "status": "passed",
+                    "detail": "已记录用户声明；这不等于外部事实验证。"
+                  },
+                  {
+                    "field": "risks",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+                  },
+                  {
+                    "field": "reproducibility",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+                  },
+                  {
+                    "field": "human_roles",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+                  },
+                  {
+                    "field": "deliverable",
+                    "code": "declaration_present",
+                    "status": "passed",
+                    "detail": "已记录用户声明；这不等于外部事实验证。"
+                  },
+                  {
+                    "field": "scope",
+                    "code": "unconfirmed_proposal",
+                    "status": "blocked",
+                    "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+                  },
+                  {
+                    "field": "resources",
+                    "code": "unconfirmed_proposal",
+                    "status": "blocked",
+                    "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+                  },
+                  {
+                    "field": "objective_type",
+                    "code": "objective_classified",
+                    "status": "passed",
+                    "detail": "需要明确比较、预测、因果、探索或复现目的。"
+                  },
+                  {
+                    "field": "outcomes",
+                    "code": "outcome_direction",
+                    "status": "blocked",
+                    "detail": "明确主要响应及方向，或明确无预设方向的探索性分析。"
+                  },
+                  {
+                    "field": "outcomes",
+                    "code": "unit_aggregation",
+                    "status": "blocked",
+                    "detail": "说明怎样按实验/推断单位汇总测量，不能用大量技术重复扩大样本量。"
+                  },
+                  {
+                    "field": "resources",
+                    "code": "resource_bound",
+                    "status": "passed",
+                    "detail": "声明可核对的资源数量、期限或硬上限。"
+                  }
+                ],
+                "blockers": [
+                  {
+                    "field": "hypothesis",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+                  },
+                  {
+                    "field": "exclusions",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "本轮明确不研究什么，不准备声称什么？"
+                  },
+                  {
+                    "field": "experimental_unit",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "一次独立分配或观察是什么？哪些测量来自同一对象？"
+                  },
+                  {
+                    "field": "factors",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "改变哪些因素和水平，主要比较谁与谁？"
+                  },
+                  {
+                    "field": "design",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+                  },
+                  {
+                    "field": "baseline",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+                  },
+                  {
+                    "field": "sampling",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+                  },
+                  {
+                    "field": "analysis",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+                  },
+                  {
+                    "field": "acceptance",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+                  },
+                  {
+                    "field": "risks",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+                  },
+                  {
+                    "field": "reproducibility",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+                  },
+                  {
+                    "field": "human_roles",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+                  },
+                  {
+                    "field": "scope",
+                    "code": "unconfirmed_proposal",
+                    "status": "blocked",
+                    "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+                  },
+                  {
+                    "field": "resources",
+                    "code": "unconfirmed_proposal",
+                    "status": "blocked",
+                    "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+                  },
+                  {
+                    "field": "outcomes",
+                    "code": "outcome_direction",
+                    "status": "blocked",
+                    "detail": "明确主要响应及方向，或明确无预设方向的探索性分析。"
+                  },
+                  {
+                    "field": "outcomes",
+                    "code": "unit_aggregation",
+                    "status": "blocked",
+                    "detail": "说明怎样按实验/推断单位汇总测量，不能用大量技术重复扩大样本量。"
+                  }
+                ],
+                "required_fields": [
+                  "research_question",
+                  "objective_type",
+                  "hypothesis",
+                  "scope",
+                  "exclusions",
+                  "experimental_unit",
+                  "factors",
+                  "design",
+                  "outcomes",
+                  "baseline",
+                  "data_source",
+                  "sampling",
+                  "analysis",
+                  "acceptance",
+                  "resources",
+                  "risks",
+                  "reproducibility",
+                  "human_roles",
+                  "deliverable"
+                ],
+                "declarations_complete": false,
+                "method_risks": [],
+                "method_review_status": "pending_human_review",
+                "scope": "planning_only",
+                "execution_authorized": false,
+                "scientific_claim_verified": false,
+                "readiness_meaning": "用户声明已足够形成待人类复核的计划；不表示假设、数据、功效或结论已被验证。"
+              },
+              "contract_hash": "393c29d12c0bd0aa44e5eee65e71b1b75185fec6588cb30b69e09aa9c977e23b",
+              "approved": false,
+              "decisions_count": 2,
+              "reflections_count": 0,
+              "evidence": [],
+              "evidence_actions": {},
+              "clarification": {
+                "mode": "dynamic",
+                "reason": "synthesis_question",
+                "model_used": true
+              },
+              "plan_synthesis": {
+                "mode": "llm",
+                "status": "current",
+                "content": {
+                  "decision": "在2小时计算预算内，判断模型甲与模型乙在同一份合成二维物理场数据上的预测误差差异是否大到值得继续研究。",
+                  "recommendation": "推荐配对比较路线：固定同一数据划分与同一评估脚本，两模型在同一批留出样本上逐样本计算误差，以样本为配对单位做差值汇总；先花少量时间探测单次推理耗时，再决定留出样本量。",
+                  "rationale": "两模型共享数据与评估条件，配对设计能消除样本难度差异，比独立比较更省样本；预算紧张时先探测耗时再定规模，避免中途超时。",
+                  "alternatives": [
+                    "若两模型均未训练且训练成本不可控，改为只比较已训练检查点的推理误差，把训练排除在本轮之外。",
+                    "若留出样本量不足以给出区间，改为先导：只报告误差差值的点估计与描述性离散度，明确不下结论。"
+                  ],
+                  "assumptions": [
+                    "若模型甲、乙已有可加载的检查点，则本轮只做推理评估；待核实。",
+                    "若合成数据可复现生成或已有固定版本，则两模型使用完全相同的输入；待核实。",
+                    "若单样本推理耗时可在数分钟内测得，则2小时内可完成留出集评估；待核实。",
+                    "暂假设误差指标为逐样本标量（如场值均方误差），具体指标待确认。"
+                  ],
+                  "matrix": [
+                    {
+                      "comparison": "模型甲 vs 模型乙，同一留出样本上的逐样本误差",
+                      "unit": "一个留出样本（二维场）为配对单位；同一模型多次技术重复不视为独立样本",
+                      "controls": "同一数据版本、同一划分、同一预处理、同一误差指标与评估脚本；随机种子固定；两模型推理预算相同",
+                      "measurement": "逐样本误差及其差值，按样本汇总为均值差与离散度"
+                    },
+                    {
+                      "comparison": "误差差值在不同样本子集（如不同场区域或参数区间）上的稳定性",
+                      "unit": "子集内样本",
+                      "controls": "子集划分规则预先固定，不依据结果调整",
+                      "measurement": "各子集均值差，用于判断差异是否由少数样本驱动"
+                    }
+                  ],
+                  "steps": [
+                    {
+                      "title": "核实资产与耗时探测",
+                      "action": "确认模型甲、乙检查点、数据版本与评估脚本是否就绪；在少量样本上计时单次推理，记录每样本耗时与显存/内存占用。",
+                      "inputs": "模型检查点、合成数据、评估脚本",
+                      "output": "资产清单与耗时探测记录",
+                      "acceptance": "能列出缺失项；得到每样本耗时估计，并据此算出2小时内可评估的样本上限"
+                    },
+                    {
+                      "title": "锁定评估协议",
+                      "action": "固定数据划分与随机种子，写定误差指标与逐样本记录格式；两模型用同一脚本、同一批样本各跑一次，输出逐样本误差表。",
+                      "inputs": "评估脚本、划分规则、指标定义",
+                      "output": "逐样本误差表（两模型各一列）与运行日志",
+                      "acceptance": "两模型样本ID完全对齐、数量一致；日志含种子、版本、耗时；无样本被重复计入"
+                    },
+                    {
+                      "title": "汇总与判定",
+                      "action": "计算逐样本误差差值的均值、离散度与区间估计，按预定义子集检查稳定性，对照停止规则写出继续/停止建议。",
+                      "inputs": "逐样本误差表",
+                      "output": "差值汇总表与一页判定备忘",
+                      "acceptance": "报告点估计与不确定性；明确说明是支持继续、不支持还是不确定；未用留出结果调参"
+                    }
+                  ],
+                  "analysis": "估计对象为两模型在同一留出样本上的平均误差差（甲减乙），以样本为汇总层级，报告均值差、标准差与区间；若样本量小则只作描述性报告。训练/验证/测试严格分离：调参只在验证集，留出集只用一次。不把技术重复或网格点当独立重复，不以显著性替代效应大小。",
+                  "budget_plan": "2小时为硬上限：先做耗时探测（占小部分），按实测每样本耗时反推可评估样本量；若推算超出上限，缩减留出样本量或只评估单一子集，不追加预算。若探测显示连最小评估都无法完成，则停止并报告资源不足。",
+                  "stop_rule": "出现以下任一即停：预算耗尽；资产缺失无法评估；差值区间跨零且样本量不足以收窄——报告“不确定，暂不继续”；差值方向稳定且幅度在预设实用阈值之外——建议继续；方向稳定但幅度低于阈值——报告阴性，建议停止。阈值需用户确认后填入。",
+                  "open_questions": [
+                    {
+                      "field": "sampling",
+                      "issue": "留出样本量与误差方差未知，无法预估区间宽度",
+                      "action": "耗时探测后先在小样本上估计误差离散度，再反推可评估样本量"
+                    },
+                    {
+                      "field": "acceptance",
+                      "issue": "“值得继续研究”的误差差阈值未定",
+                      "action": "请用户给出实用阈值，或同意以描述性结果交人类判断"
+                    },
+                    {
+                      "field": "baseline",
+                      "issue": "模型是否已训练、是否有共同基线未核实",
+                      "action": "检查检查点与训练日志，确认两模型训练数据与轮次是否可比"
+                    }
+                  ],
+                  "references": [
+                    {
+                      "source": "fact",
+                      "key": "research_question",
+                      "quote": "比较模型甲和模型乙在同一份合成二维物理场数据上的预测误差"
+                    },
+                    {
+                      "source": "fact",
+                      "key": "resources",
+                      "quote": "计算预算仅2小时"
+                    },
+                    {
+                      "source": "fact",
+                      "key": "deliverable",
+                      "quote": "决定下一步是否继续研究"
+                    }
+                  ]
+                },
+                "basis_hash": "6df73fe303f177bef7243d1fff0481188503f6a92cc8da98192f7470821206d4",
+                "reason": "validated_proposal",
+                "message": "实验初稿已生成，以下均为待复核的设计建议。"
+              },
+              "last_export": null,
+              "execution_authorized": false
+            },
+            "questions": [
+              {
+                "field": "baseline",
+                "kind": "missing",
+                "question": "模型甲和模型乙目前处于什么状态？这决定本轮是只做推理评估，还是需要把训练也纳入2小时预算。",
+                "rationale": "若模型未训练，2小时内可能无法完成训练加评估，路线需改为缩小目标或只比较已有检查点。",
+                "references": [
+                  {
+                    "source": "answer",
+                    "key": "current",
+                    "quote": "模型是否已经训练好还没核实"
+                  },
+                  {
+                    "source": "fact",
+                    "key": "resources",
+                    "quote": "计算预算仅2小时"
+                  }
+                ],
+                "options": [
+                  {
+                    "label": "两者均已训练好",
+                    "value": "两模型均有可加载检查点，本轮只做推理评估，预算全部用于留出集评估",
+                    "action": "declare",
+                    "id": "51bf76a6a86c"
+                  },
+                  {
+                    "label": "均未训练",
+                    "value": "两模型均需训练，需先探测训练耗时，可能改为只评估小规模子集或停止",
+                    "action": "declare",
+                    "id": "619a7bf350f1"
+                  },
+                  {
+                    "label": "不确定，需先核查",
+                    "value": "先花少量时间核查检查点与训练日志，再决定路线",
+                    "action": "declare",
+                    "id": "e8d771a59246"
+                  },
+                  {
+                    "label": "暂不确定",
+                    "value": "未知",
+                    "action": "unknown",
+                    "id": "2c3af7fa609c"
+                  },
+                  {
+                    "label": "其他，我来补充",
+                    "value": "",
+                    "action": "custom",
+                    "id": "47de6eddb129"
+                  }
+                ],
+                "origin": "model",
+                "suggested_options": [
+                  {
+                    "label": "两者均已训练好",
+                    "value": "两模型均有可加载检查点，本轮只做推理评估，预算全部用于留出集评估"
+                  },
+                  {
+                    "label": "均未训练",
+                    "value": "两模型均需训练，需先探测训练耗时，可能改为只评估小规模子集或停止"
+                  },
+                  {
+                    "label": "不确定，需先核查",
+                    "value": "先花少量时间核查检查点与训练日志，再决定路线"
+                  }
+                ],
+                "allow_accept": false,
+                "choice_policy": {
+                  "intent": "comparison",
+                  "origin": "validated_model_suggestions",
+                  "policy_hash": null
+                },
+                "choice_id": "7a336ec030aef1bc",
+                "choice_plan_hash": "393c29d12c0bd0aa44e5eee65e71b1b75185fec6588cb30b69e09aa9c977e23b"
+              }
+            ],
+            "review_notice": "声明状态：仍有未决项；方法状态：待人工复核，尚未验证科学有效性。",
+            "execution_authorized": false,
+            "scientific_claim_verified": false,
+            "update_feedback": {
+              "turn": 1,
+              "entries": [
+                {
+                  "field": "research_question",
+                  "status": "declared",
+                  "before": null,
+                  "after": "比较模型甲和模型乙在同一份合成二维物理场数据上的预测误差"
+                },
+                {
+                  "field": "objective_type",
+                  "status": "declared",
+                  "before": null,
+                  "after": "comparison"
+                },
+                {
+                  "field": "scope",
+                  "status": "proposed",
+                  "before": null,
+                  "after": "同一份合成二维物理场数据上的模型甲与模型乙预测误差比较；本轮只做规划"
+                },
+                {
+                  "field": "outcomes",
+                  "status": "declared",
+                  "before": null,
+                  "after": "预测误差"
+                },
+                {
+                  "field": "data_source",
+                  "status": "declared",
+                  "before": null,
+                  "after": "同一份合成二维物理场数据"
+                },
+                {
+                  "field": "resources",
+                  "status": "proposed",
+                  "before": null,
+                  "after": "计算预算仅2小时"
+                },
+                {
+                  "field": "deliverable",
+                  "status": "declared",
+                  "before": null,
+                  "after": "决定下一步是否继续研究"
+                }
+              ],
+              "text": "已采纳 · 研究问题：比较模型甲和模型乙在同一份合成二维物理场数据上的预测误差\n已采纳 · 研究目的：comparison\n待确认提议 · 研究边界：同一份合成二维物理场数据上的模型甲与模型乙预测误差比较；本轮只做规划\n已采纳 · 主要响应与测量：预测误差\n已采纳 · 数据与证据来源：同一份合成二维物理场数据\n待确认提议 · 资源边界：计算预算仅2小时\n已采纳 · 交付物：决定下一步是否继续研究\n未把模型推测的“基线与公平比较未知”写成用户声明；该字段仍待澄清。\n语义改写和推断仅作为待确认提议展示，不会自动成为已确认边界。"
+            },
+            "model_used": true,
+            "clarification": {
+              "mode": "dynamic",
+              "reason": "synthesis_question",
+              "model_used": true
+            },
+            "plan_synthesis": {
+              "mode": "llm",
+              "status": "current",
+              "content": {
+                "decision": "在2小时计算预算内，判断模型甲与模型乙在同一份合成二维物理场数据上的预测误差差异是否大到值得继续研究。",
+                "recommendation": "推荐配对比较路线：固定同一数据划分与同一评估脚本，两模型在同一批留出样本上逐样本计算误差，以样本为配对单位做差值汇总；先花少量时间探测单次推理耗时，再决定留出样本量。",
+                "rationale": "两模型共享数据与评估条件，配对设计能消除样本难度差异，比独立比较更省样本；预算紧张时先探测耗时再定规模，避免中途超时。",
+                "alternatives": [
+                  "若两模型均未训练且训练成本不可控，改为只比较已训练检查点的推理误差，把训练排除在本轮之外。",
+                  "若留出样本量不足以给出区间，改为先导：只报告误差差值的点估计与描述性离散度，明确不下结论。"
+                ],
+                "assumptions": [
+                  "若模型甲、乙已有可加载的检查点，则本轮只做推理评估；待核实。",
+                  "若合成数据可复现生成或已有固定版本，则两模型使用完全相同的输入；待核实。",
+                  "若单样本推理耗时可在数分钟内测得，则2小时内可完成留出集评估；待核实。",
+                  "暂假设误差指标为逐样本标量（如场值均方误差），具体指标待确认。"
+                ],
+                "matrix": [
+                  {
+                    "comparison": "模型甲 vs 模型乙，同一留出样本上的逐样本误差",
+                    "unit": "一个留出样本（二维场）为配对单位；同一模型多次技术重复不视为独立样本",
+                    "controls": "同一数据版本、同一划分、同一预处理、同一误差指标与评估脚本；随机种子固定；两模型推理预算相同",
+                    "measurement": "逐样本误差及其差值，按样本汇总为均值差与离散度"
+                  },
+                  {
+                    "comparison": "误差差值在不同样本子集（如不同场区域或参数区间）上的稳定性",
+                    "unit": "子集内样本",
+                    "controls": "子集划分规则预先固定，不依据结果调整",
+                    "measurement": "各子集均值差，用于判断差异是否由少数样本驱动"
+                  }
+                ],
+                "steps": [
+                  {
+                    "title": "核实资产与耗时探测",
+                    "action": "确认模型甲、乙检查点、数据版本与评估脚本是否就绪；在少量样本上计时单次推理，记录每样本耗时与显存/内存占用。",
+                    "inputs": "模型检查点、合成数据、评估脚本",
+                    "output": "资产清单与耗时探测记录",
+                    "acceptance": "能列出缺失项；得到每样本耗时估计，并据此算出2小时内可评估的样本上限"
+                  },
+                  {
+                    "title": "锁定评估协议",
+                    "action": "固定数据划分与随机种子，写定误差指标与逐样本记录格式；两模型用同一脚本、同一批样本各跑一次，输出逐样本误差表。",
+                    "inputs": "评估脚本、划分规则、指标定义",
+                    "output": "逐样本误差表（两模型各一列）与运行日志",
+                    "acceptance": "两模型样本ID完全对齐、数量一致；日志含种子、版本、耗时；无样本被重复计入"
+                  },
+                  {
+                    "title": "汇总与判定",
+                    "action": "计算逐样本误差差值的均值、离散度与区间估计，按预定义子集检查稳定性，对照停止规则写出继续/停止建议。",
+                    "inputs": "逐样本误差表",
+                    "output": "差值汇总表与一页判定备忘",
+                    "acceptance": "报告点估计与不确定性；明确说明是支持继续、不支持还是不确定；未用留出结果调参"
+                  }
+                ],
+                "analysis": "估计对象为两模型在同一留出样本上的平均误差差（甲减乙），以样本为汇总层级，报告均值差、标准差与区间；若样本量小则只作描述性报告。训练/验证/测试严格分离：调参只在验证集，留出集只用一次。不把技术重复或网格点当独立重复，不以显著性替代效应大小。",
+                "budget_plan": "2小时为硬上限：先做耗时探测（占小部分），按实测每样本耗时反推可评估样本量；若推算超出上限，缩减留出样本量或只评估单一子集，不追加预算。若探测显示连最小评估都无法完成，则停止并报告资源不足。",
+                "stop_rule": "出现以下任一即停：预算耗尽；资产缺失无法评估；差值区间跨零且样本量不足以收窄——报告“不确定，暂不继续”；差值方向稳定且幅度在预设实用阈值之外——建议继续；方向稳定但幅度低于阈值——报告阴性，建议停止。阈值需用户确认后填入。",
+                "open_questions": [
+                  {
+                    "field": "sampling",
+                    "issue": "留出样本量与误差方差未知，无法预估区间宽度",
+                    "action": "耗时探测后先在小样本上估计误差离散度，再反推可评估样本量"
+                  },
+                  {
+                    "field": "acceptance",
+                    "issue": "“值得继续研究”的误差差阈值未定",
+                    "action": "请用户给出实用阈值，或同意以描述性结果交人类判断"
+                  },
+                  {
+                    "field": "baseline",
+                    "issue": "模型是否已训练、是否有共同基线未核实",
+                    "action": "检查检查点与训练日志，确认两模型训练数据与轮次是否可比"
+                  }
+                ],
+                "references": [
+                  {
+                    "source": "fact",
+                    "key": "research_question",
+                    "quote": "比较模型甲和模型乙在同一份合成二维物理场数据上的预测误差"
+                  },
+                  {
+                    "source": "fact",
+                    "key": "resources",
+                    "quote": "计算预算仅2小时"
+                  },
+                  {
+                    "source": "fact",
+                    "key": "deliverable",
+                    "quote": "决定下一步是否继续研究"
+                  }
+                ]
+              },
+              "basis_hash": "6df73fe303f177bef7243d1fff0481188503f6a92cc8da98192f7470821206d4",
+              "reason": "validated_proposal",
+              "message": "实验初稿已生成，以下均为待复核的设计建议。"
+            },
+            "synthesis_brief": "实验初稿 · 设计建议，尚未执行\n在2小时计算预算内，判断模型甲与模型乙在同一份合成二维物理场数据上的预测误差差异是否大到值得继续研究。\n建议：推荐配对比较路线：固定同一数据划分与同一评估脚本，两模型在同一批留出样本上逐样本计算误差，以样本为配对单位做差值汇总；先花少量时间探测单次推理耗时，再决定留出样本量。\n理由：两模型共享数据与评估条件，配对设计能消除样本难度差异，比独立比较更省样本；预算紧张时先探测耗时再定规模，避免中途超时。\n下一步：确认模型甲、乙检查点、数据版本与评估脚本是否就绪；在少量样本上计时单次推理，记录每样本耗时与显存/内存占用。\n完整实验步骤、产物和验收见研究计划或 /plan draft。",
+            "question_form": true
+          },
+          "state": {
+            "schema_version": "research_planning_v1",
+            "id": "0849b34daedc4775869c679db773b183",
+            "revision": 1,
+            "active": true,
+            "facts": {
+              "research_question": {
+                "value": "比较模型甲和模型乙在同一份合成二维物理场数据上的预测误差",
+                "quote": "我想比较模型甲和模型乙在同一份合成二维物理场数据上的预测误差",
+                "status": "declared",
+                "turn": 1
+              },
+              "objective_type": {
+                "value": "comparison",
+                "quote": "我想比较模型甲和模型乙在同一份合成二维物理场数据上的预测误差",
+                "status": "declared",
+                "turn": 1
+              },
+              "scope": {
+                "value": "同一份合成二维物理场数据上的模型甲与模型乙预测误差比较；本轮只做规划",
+                "quote": "本轮只规划，不执行",
+                "status": "proposed",
+                "turn": 1
+              },
+              "outcomes": {
+                "value": "预测误差",
+                "quote": "预测误差",
+                "status": "declared",
+                "turn": 1
+              },
+              "data_source": {
+                "value": "同一份合成二维物理场数据",
+                "quote": "同一份合成二维物理场数据",
+                "status": "declared",
+                "turn": 1
+              },
+              "resources": {
+                "value": "计算预算仅2小时",
+                "quote": "只有2小时计算预算",
+                "status": "proposed",
+                "turn": 1
+              },
+              "deliverable": {
+                "value": "决定下一步是否继续研究",
+                "quote": "决定下一步是否继续研究",
+                "status": "declared",
+                "turn": 1
+              }
+            },
+            "unknown": [],
+            "conflicts": {},
+            "decisions": [
+              {
+                "turn": 1,
+                "type": "intake",
+                "changes": [
+                  {
+                    "field": "research_question",
+                    "kind": "added",
+                    "before": null,
+                    "after": "比较模型甲和模型乙在同一份合成二维物理场数据上的预测误差"
+                  },
+                  {
+                    "field": "objective_type",
+                    "kind": "added",
+                    "before": null,
+                    "after": "comparison"
+                  },
+                  {
+                    "field": "scope",
+                    "kind": "added",
+                    "before": null,
+                    "after": "同一份合成二维物理场数据上的模型甲与模型乙预测误差比较；本轮只做规划"
+                  },
+                  {
+                    "field": "outcomes",
+                    "kind": "added",
+                    "before": null,
+                    "after": "预测误差"
+                  },
+                  {
+                    "field": "data_source",
+                    "kind": "added",
+                    "before": null,
+                    "after": "同一份合成二维物理场数据"
+                  },
+                  {
+                    "field": "resources",
+                    "kind": "added",
+                    "before": null,
+                    "after": "计算预算仅2小时"
+                  },
+                  {
+                    "field": "deliverable",
+                    "kind": "added",
+                    "before": null,
+                    "after": "决定下一步是否继续研究"
+                  }
+                ]
+              },
+              {
+                "turn": 1,
+                "type": "update_receipt",
+                "fields": {
+                  "research_question": "declared",
+                  "objective_type": "declared",
+                  "scope": "proposed",
+                  "outcomes": "declared",
+                  "data_source": "declared",
+                  "resources": "proposed",
+                  "deliverable": "declared"
+                }
+              }
+            ],
+            "approval": null,
+            "pending": {
+              "field": "baseline",
+              "kind": "missing",
+              "question": "模型甲和模型乙目前处于什么状态？这决定本轮是只做推理评估，还是需要把训练也纳入2小时预算。",
+              "rationale": "若模型未训练，2小时内可能无法完成训练加评估，路线需改为缩小目标或只比较已有检查点。",
+              "references": [
+                {
+                  "source": "answer",
+                  "key": "current",
+                  "quote": "模型是否已经训练好还没核实"
+                },
+                {
+                  "source": "fact",
+                  "key": "resources",
+                  "quote": "计算预算仅2小时"
+                }
+              ],
+              "options": [
+                {
+                  "label": "两者均已训练好",
+                  "value": "两模型均有可加载检查点，本轮只做推理评估，预算全部用于留出集评估",
+                  "action": "declare",
+                  "id": "51bf76a6a86c"
+                },
+                {
+                  "label": "均未训练",
+                  "value": "两模型均需训练，需先探测训练耗时，可能改为只评估小规模子集或停止",
+                  "action": "declare",
+                  "id": "619a7bf350f1"
+                },
+                {
+                  "label": "不确定，需先核查",
+                  "value": "先花少量时间核查检查点与训练日志，再决定路线",
+                  "action": "declare",
+                  "id": "e8d771a59246"
+                },
+                {
+                  "label": "暂不确定",
+                  "value": "未知",
+                  "action": "unknown",
+                  "id": "2c3af7fa609c"
+                },
+                {
+                  "label": "其他，我来补充",
+                  "value": "",
+                  "action": "custom",
+                  "id": "47de6eddb129"
+                }
+              ],
+              "origin": "model",
+              "suggested_options": [
+                {
+                  "label": "两者均已训练好",
+                  "value": "两模型均有可加载检查点，本轮只做推理评估，预算全部用于留出集评估"
+                },
+                {
+                  "label": "均未训练",
+                  "value": "两模型均需训练，需先探测训练耗时，可能改为只评估小规模子集或停止"
+                },
+                {
+                  "label": "不确定，需先核查",
+                  "value": "先花少量时间核查检查点与训练日志，再决定路线"
+                }
+              ],
+              "allow_accept": false,
+              "choice_policy": {
+                "intent": "comparison",
+                "origin": "validated_model_suggestions",
+                "policy_hash": null
+              },
+              "choice_id": "7a336ec030aef1bc",
+              "choice_plan_hash": "393c29d12c0bd0aa44e5eee65e71b1b75185fec6588cb30b69e09aa9c977e23b"
+            },
+            "reflections": [],
+            "changes": [
+              {
+                "field": "research_question",
+                "kind": "added",
+                "before": null,
+                "after": "比较模型甲和模型乙在同一份合成二维物理场数据上的预测误差"
+              },
+              {
+                "field": "objective_type",
+                "kind": "added",
+                "before": null,
+                "after": "comparison"
+              },
+              {
+                "field": "scope",
+                "kind": "added",
+                "before": null,
+                "after": "同一份合成二维物理场数据上的模型甲与模型乙预测误差比较；本轮只做规划"
+              },
+              {
+                "field": "outcomes",
+                "kind": "added",
+                "before": null,
+                "after": "预测误差"
+              },
+              {
+                "field": "data_source",
+                "kind": "added",
+                "before": null,
+                "after": "同一份合成二维物理场数据"
+              },
+              {
+                "field": "resources",
+                "kind": "added",
+                "before": null,
+                "after": "计算预算仅2小时"
+              },
+              {
+                "field": "deliverable",
+                "kind": "added",
+                "before": null,
+                "after": "决定下一步是否继续研究"
+              }
+            ],
+            "stale": {},
+            "turns": 1,
+            "audience": "researcher_student",
+            "last_notes": [
+              "未把模型推测的“基线与公平比较未知”写成用户声明；该字段仍待澄清。",
+              "语义改写和推断仅作为待确认提议展示，不会自动成为已确认边界。"
+            ],
+            "last_export": null,
+            "last_update": {
+              "turn": 1,
+              "entries": [
+                {
+                  "field": "research_question",
+                  "status": "declared",
+                  "before": null,
+                  "after": "比较模型甲和模型乙在同一份合成二维物理场数据上的预测误差"
+                },
+                {
+                  "field": "objective_type",
+                  "status": "declared",
+                  "before": null,
+                  "after": "comparison"
+                },
+                {
+                  "field": "scope",
+                  "status": "proposed",
+                  "before": null,
+                  "after": "同一份合成二维物理场数据上的模型甲与模型乙预测误差比较；本轮只做规划"
+                },
+                {
+                  "field": "outcomes",
+                  "status": "declared",
+                  "before": null,
+                  "after": "预测误差"
+                },
+                {
+                  "field": "data_source",
+                  "status": "declared",
+                  "before": null,
+                  "after": "同一份合成二维物理场数据"
+                },
+                {
+                  "field": "resources",
+                  "status": "proposed",
+                  "before": null,
+                  "after": "计算预算仅2小时"
+                },
+                {
+                  "field": "deliverable",
+                  "status": "declared",
+                  "before": null,
+                  "after": "决定下一步是否继续研究"
+                }
+              ],
+              "text": "已采纳 · 研究问题：比较模型甲和模型乙在同一份合成二维物理场数据上的预测误差\n已采纳 · 研究目的：comparison\n待确认提议 · 研究边界：同一份合成二维物理场数据上的模型甲与模型乙预测误差比较；本轮只做规划\n已采纳 · 主要响应与测量：预测误差\n已采纳 · 数据与证据来源：同一份合成二维物理场数据\n待确认提议 · 资源边界：计算预算仅2小时\n已采纳 · 交付物：决定下一步是否继续研究\n未把模型推测的“基线与公平比较未知”写成用户声明；该字段仍待澄清。\n语义改写和推断仅作为待确认提议展示，不会自动成为已确认边界。"
+            },
+            "plan_synthesis": {
+              "version": "experiment_plan_synthesis_v1",
+              "basis_hash": "6df73fe303f177bef7243d1fff0481188503f6a92cc8da98192f7470821206d4",
+              "mode": "llm",
+              "content": {
+                "decision": "在2小时计算预算内，判断模型甲与模型乙在同一份合成二维物理场数据上的预测误差差异是否大到值得继续研究。",
+                "recommendation": "推荐配对比较路线：固定同一数据划分与同一评估脚本，两模型在同一批留出样本上逐样本计算误差，以样本为配对单位做差值汇总；先花少量时间探测单次推理耗时，再决定留出样本量。",
+                "rationale": "两模型共享数据与评估条件，配对设计能消除样本难度差异，比独立比较更省样本；预算紧张时先探测耗时再定规模，避免中途超时。",
+                "alternatives": [
+                  "若两模型均未训练且训练成本不可控，改为只比较已训练检查点的推理误差，把训练排除在本轮之外。",
+                  "若留出样本量不足以给出区间，改为先导：只报告误差差值的点估计与描述性离散度，明确不下结论。"
+                ],
+                "assumptions": [
+                  "若模型甲、乙已有可加载的检查点，则本轮只做推理评估；待核实。",
+                  "若合成数据可复现生成或已有固定版本，则两模型使用完全相同的输入；待核实。",
+                  "若单样本推理耗时可在数分钟内测得，则2小时内可完成留出集评估；待核实。",
+                  "暂假设误差指标为逐样本标量（如场值均方误差），具体指标待确认。"
+                ],
+                "matrix": [
+                  {
+                    "comparison": "模型甲 vs 模型乙，同一留出样本上的逐样本误差",
+                    "unit": "一个留出样本（二维场）为配对单位；同一模型多次技术重复不视为独立样本",
+                    "controls": "同一数据版本、同一划分、同一预处理、同一误差指标与评估脚本；随机种子固定；两模型推理预算相同",
+                    "measurement": "逐样本误差及其差值，按样本汇总为均值差与离散度"
+                  },
+                  {
+                    "comparison": "误差差值在不同样本子集（如不同场区域或参数区间）上的稳定性",
+                    "unit": "子集内样本",
+                    "controls": "子集划分规则预先固定，不依据结果调整",
+                    "measurement": "各子集均值差，用于判断差异是否由少数样本驱动"
+                  }
+                ],
+                "steps": [
+                  {
+                    "title": "核实资产与耗时探测",
+                    "action": "确认模型甲、乙检查点、数据版本与评估脚本是否就绪；在少量样本上计时单次推理，记录每样本耗时与显存/内存占用。",
+                    "inputs": "模型检查点、合成数据、评估脚本",
+                    "output": "资产清单与耗时探测记录",
+                    "acceptance": "能列出缺失项；得到每样本耗时估计，并据此算出2小时内可评估的样本上限"
+                  },
+                  {
+                    "title": "锁定评估协议",
+                    "action": "固定数据划分与随机种子，写定误差指标与逐样本记录格式；两模型用同一脚本、同一批样本各跑一次，输出逐样本误差表。",
+                    "inputs": "评估脚本、划分规则、指标定义",
+                    "output": "逐样本误差表（两模型各一列）与运行日志",
+                    "acceptance": "两模型样本ID完全对齐、数量一致；日志含种子、版本、耗时；无样本被重复计入"
+                  },
+                  {
+                    "title": "汇总与判定",
+                    "action": "计算逐样本误差差值的均值、离散度与区间估计，按预定义子集检查稳定性，对照停止规则写出继续/停止建议。",
+                    "inputs": "逐样本误差表",
+                    "output": "差值汇总表与一页判定备忘",
+                    "acceptance": "报告点估计与不确定性；明确说明是支持继续、不支持还是不确定；未用留出结果调参"
+                  }
+                ],
+                "analysis": "估计对象为两模型在同一留出样本上的平均误差差（甲减乙），以样本为汇总层级，报告均值差、标准差与区间；若样本量小则只作描述性报告。训练/验证/测试严格分离：调参只在验证集，留出集只用一次。不把技术重复或网格点当独立重复，不以显著性替代效应大小。",
+                "budget_plan": "2小时为硬上限：先做耗时探测（占小部分），按实测每样本耗时反推可评估样本量；若推算超出上限，缩减留出样本量或只评估单一子集，不追加预算。若探测显示连最小评估都无法完成，则停止并报告资源不足。",
+                "stop_rule": "出现以下任一即停：预算耗尽；资产缺失无法评估；差值区间跨零且样本量不足以收窄——报告“不确定，暂不继续”；差值方向稳定且幅度在预设实用阈值之外——建议继续；方向稳定但幅度低于阈值——报告阴性，建议停止。阈值需用户确认后填入。",
+                "open_questions": [
+                  {
+                    "field": "sampling",
+                    "issue": "留出样本量与误差方差未知，无法预估区间宽度",
+                    "action": "耗时探测后先在小样本上估计误差离散度，再反推可评估样本量"
+                  },
+                  {
+                    "field": "acceptance",
+                    "issue": "“值得继续研究”的误差差阈值未定",
+                    "action": "请用户给出实用阈值，或同意以描述性结果交人类判断"
+                  },
+                  {
+                    "field": "baseline",
+                    "issue": "模型是否已训练、是否有共同基线未核实",
+                    "action": "检查检查点与训练日志，确认两模型训练数据与轮次是否可比"
+                  }
+                ],
+                "references": [
+                  {
+                    "source": "fact",
+                    "key": "research_question",
+                    "quote": "比较模型甲和模型乙在同一份合成二维物理场数据上的预测误差"
+                  },
+                  {
+                    "source": "fact",
+                    "key": "resources",
+                    "quote": "计算预算仅2小时"
+                  },
+                  {
+                    "source": "fact",
+                    "key": "deliverable",
+                    "quote": "决定下一步是否继续研究"
+                  }
+                ]
+              },
+              "turn": 1,
+              "reason": "validated_proposal"
+            },
+            "clarification": {
+              "mode": "dynamic",
+              "reason": "synthesis_question",
+              "model_used": true
+            },
+            "question_history": [
+              {
+                "turn": 1,
+                "field": "baseline",
+                "kind": "missing",
+                "question": "模型甲和模型乙目前处于什么状态？这决定本轮是只做推理评估，还是需要把训练也纳入2小时预算。",
+                "origin": "model",
+                "basis_hash": "a0be54b7baa7f4c171375479fa778fc9f5ec1024e51cf55a1e69f6a7297ef662"
+              }
+            ]
+          },
+          "resources": {
+            "llm_requests": 2,
+            "llm_tokens": 6319,
+            "tool_attempts": 0,
+            "limits": {
+              "llm_requests": 3,
+              "llm_tokens": 16000,
+              "tool_calls": 40,
+              "read_bytes": 24000
+            }
+          }
+        },
+        {
+          "input": "/plan revise resources: 最多1小时，先核算耗时；超限停止，不追加运行。",
+          "seconds": 0.14,
+          "result": {
+            "intent": "planning",
+            "answer": "正在澄清\n\n已采纳 · 资源边界：计算预算仅2小时 → 最多1小时，先核算耗时；超限停止，不追加运行\n\n声明状态：仍有未决项；方法状态：待人工复核，尚未验证科学有效性。\n\n本轮未取得有效的模型实验初稿，已保留字段与模板路径；可用 /plan synthesize refresh 重试。\n\n关于研究边界，是否按当前理解继续？\n1. 按这个理解继续：同一份合成二维物理场数据上的模型甲与模型乙预测误差比较；本轮只做规划\n2. 暂不确定\n3. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+            "planning": {
+              "id": "0849b34daedc4775869c679db773b183",
+              "revision": 2,
+              "active": true,
+              "facts": {
+                "research_question": {
+                  "value": "比较模型甲和模型乙在同一份合成二维物理场数据上的预测误差",
+                  "quote": "我想比较模型甲和模型乙在同一份合成二维物理场数据上的预测误差",
+                  "status": "declared",
+                  "turn": 1
+                },
+                "objective_type": {
+                  "value": "comparison",
+                  "quote": "我想比较模型甲和模型乙在同一份合成二维物理场数据上的预测误差",
+                  "status": "declared",
+                  "turn": 1
+                },
+                "scope": {
+                  "value": "同一份合成二维物理场数据上的模型甲与模型乙预测误差比较；本轮只做规划",
+                  "quote": "本轮只规划，不执行",
+                  "status": "proposed",
+                  "turn": 1
+                },
+                "outcomes": {
+                  "value": "预测误差",
+                  "quote": "预测误差",
+                  "status": "declared",
+                  "turn": 1
+                },
+                "data_source": {
+                  "value": "同一份合成二维物理场数据",
+                  "quote": "同一份合成二维物理场数据",
+                  "status": "declared",
+                  "turn": 1
+                },
+                "resources": {
+                  "value": "最多1小时，先核算耗时；超限停止，不追加运行",
+                  "quote": "resources: 最多1小时，先核算耗时；超限停止，不追加运行。",
+                  "status": "declared",
+                  "turn": 2
+                },
+                "deliverable": {
+                  "value": "决定下一步是否继续研究",
+                  "quote": "决定下一步是否继续研究",
+                  "status": "declared",
+                  "turn": 1
+                }
+              },
+              "unknown": [],
+              "conflicts": {},
+              "stale": {},
+              "pending": {
+                "field": "scope",
+                "kind": "proposal",
+                "question": "关于研究边界，是否按当前理解继续？",
+                "rationale": "这是从你的描述整理出的理解，不是经验证的事实。",
+                "options": [
+                  {
+                    "label": "按这个理解继续：同一份合成二维物理场数据上的模型甲与模型乙预测误差比较；本轮只做规划",
+                    "value": "同一份合成二维物理场数据上的模型甲与模型乙预测误差比较；本轮只做规划",
+                    "action": "accept",
+                    "id": "325a8e05d892"
+                  },
+                  {
+                    "label": "暂不确定",
+                    "value": "未知",
+                    "action": "unknown",
+                    "id": "2c3af7fa609c"
+                  },
+                  {
+                    "label": "其他，我来补充",
+                    "value": "",
+                    "action": "custom",
+                    "id": "47de6eddb129"
+                  }
+                ],
+                "allow_accept": false,
+                "choice_policy": {
+                  "intent": "comparison",
+                  "origin": "user_declared",
+                  "policy_hash": null
+                },
+                "choice_id": "810d07c55b8552d0",
+                "choice_plan_hash": "3494fa8cad9c11e2e2c08e90a29a1c1c613ce6a0000865485bc4d863ffab0ffc"
+              },
+              "review": {
+                "ready": false,
+                "checks": [
+                  {
+                    "field": "research_question",
+                    "code": "declaration_present",
+                    "status": "passed",
+                    "detail": "已记录用户声明；这不等于外部事实验证。"
+                  },
+                  {
+                    "field": "objective_type",
+                    "code": "declaration_present",
+                    "status": "passed",
+                    "detail": "已记录用户声明；这不等于外部事实验证。"
+                  },
+                  {
+                    "field": "hypothesis",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+                  },
+                  {
+                    "field": "scope",
+                    "code": "declaration_present",
+                    "status": "passed",
+                    "detail": "已记录用户声明；这不等于外部事实验证。"
+                  },
+                  {
+                    "field": "exclusions",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "本轮明确不研究什么，不准备声称什么？"
+                  },
+                  {
+                    "field": "experimental_unit",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "一次独立分配或观察是什么？哪些测量来自同一对象？"
+                  },
+                  {
+                    "field": "factors",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "改变哪些因素和水平，主要比较谁与谁？"
+                  },
+                  {
+                    "field": "design",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+                  },
+                  {
+                    "field": "outcomes",
+                    "code": "declaration_present",
+                    "status": "passed",
+                    "detail": "已记录用户声明；这不等于外部事实验证。"
+                  },
+                  {
+                    "field": "baseline",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+                  },
+                  {
+                    "field": "data_source",
+                    "code": "declaration_present",
+                    "status": "passed",
+                    "detail": "已记录用户声明；这不等于外部事实验证。"
+                  },
+                  {
+                    "field": "sampling",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+                  },
+                  {
+                    "field": "analysis",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+                  },
+                  {
+                    "field": "acceptance",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+                  },
+                  {
+                    "field": "resources",
+                    "code": "declaration_present",
+                    "status": "passed",
+                    "detail": "已记录用户声明；这不等于外部事实验证。"
+                  },
+                  {
+                    "field": "risks",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+                  },
+                  {
+                    "field": "reproducibility",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+                  },
+                  {
+                    "field": "human_roles",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+                  },
+                  {
+                    "field": "deliverable",
+                    "code": "declaration_present",
+                    "status": "passed",
+                    "detail": "已记录用户声明；这不等于外部事实验证。"
+                  },
+                  {
+                    "field": "scope",
+                    "code": "unconfirmed_proposal",
+                    "status": "blocked",
+                    "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+                  },
+                  {
+                    "field": "objective_type",
+                    "code": "objective_classified",
+                    "status": "passed",
+                    "detail": "需要明确比较、预测、因果、探索或复现目的。"
+                  },
+                  {
+                    "field": "outcomes",
+                    "code": "outcome_direction",
+                    "status": "blocked",
+                    "detail": "明确主要响应及方向，或明确无预设方向的探索性分析。"
+                  },
+                  {
+                    "field": "outcomes",
+                    "code": "unit_aggregation",
+                    "status": "blocked",
+                    "detail": "说明怎样按实验/推断单位汇总测量，不能用大量技术重复扩大样本量。"
+                  },
+                  {
+                    "field": "resources",
+                    "code": "resource_bound",
+                    "status": "passed",
+                    "detail": "声明可核对的资源数量、期限或硬上限。"
+                  }
+                ],
+                "blockers": [
+                  {
+                    "field": "hypothesis",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+                  },
+                  {
+                    "field": "exclusions",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "本轮明确不研究什么，不准备声称什么？"
+                  },
+                  {
+                    "field": "experimental_unit",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "一次独立分配或观察是什么？哪些测量来自同一对象？"
+                  },
+                  {
+                    "field": "factors",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "改变哪些因素和水平，主要比较谁与谁？"
+                  },
+                  {
+                    "field": "design",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+                  },
+                  {
+                    "field": "baseline",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+                  },
+                  {
+                    "field": "sampling",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+                  },
+                  {
+                    "field": "analysis",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+                  },
+                  {
+                    "field": "acceptance",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+                  },
+                  {
+                    "field": "risks",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+                  },
+                  {
+                    "field": "reproducibility",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+                  },
+                  {
+                    "field": "human_roles",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+                  },
+                  {
+                    "field": "scope",
+                    "code": "unconfirmed_proposal",
+                    "status": "blocked",
+                    "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+                  },
+                  {
+                    "field": "outcomes",
+                    "code": "outcome_direction",
+                    "status": "blocked",
+                    "detail": "明确主要响应及方向，或明确无预设方向的探索性分析。"
+                  },
+                  {
+                    "field": "outcomes",
+                    "code": "unit_aggregation",
+                    "status": "blocked",
+                    "detail": "说明怎样按实验/推断单位汇总测量，不能用大量技术重复扩大样本量。"
+                  }
+                ],
+                "required_fields": [
+                  "research_question",
+                  "objective_type",
+                  "hypothesis",
+                  "scope",
+                  "exclusions",
+                  "experimental_unit",
+                  "factors",
+                  "design",
+                  "outcomes",
+                  "baseline",
+                  "data_source",
+                  "sampling",
+                  "analysis",
+                  "acceptance",
+                  "resources",
+                  "risks",
+                  "reproducibility",
+                  "human_roles",
+                  "deliverable"
+                ],
+                "declarations_complete": false,
+                "method_risks": [],
+                "method_review_status": "pending_human_review",
+                "scope": "planning_only",
+                "execution_authorized": false,
+                "scientific_claim_verified": false,
+                "readiness_meaning": "用户声明已足够形成待人类复核的计划；不表示假设、数据、功效或结论已被验证。"
+              },
+              "contract_hash": "3494fa8cad9c11e2e2c08e90a29a1c1c613ce6a0000865485bc4d863ffab0ffc",
+              "approved": false,
+              "decisions_count": 4,
+              "reflections_count": 0,
+              "evidence": [],
+              "evidence_actions": {},
+              "clarification": {
+                "mode": "template",
+                "reason": "synthesis_template_question",
+                "model_used": true
+              },
+              "plan_synthesis": {
+                "mode": "template",
+                "status": "fallback",
+                "content": null,
+                "basis_hash": "1e42915408653f54ac75fe954cbf3f83f86261db7211fea90ad3f9b7db3ccac8",
+                "reason": "RunLimitError",
+                "message": "本轮未取得有效的模型实验初稿，已保留字段与模板路径；可用 /plan synthesize refresh 重试。"
+              },
+              "last_export": null,
+              "execution_authorized": false
+            },
+            "questions": [
+              {
+                "field": "scope",
+                "kind": "proposal",
+                "question": "关于研究边界，是否按当前理解继续？",
+                "rationale": "这是从你的描述整理出的理解，不是经验证的事实。",
+                "options": [
+                  {
+                    "label": "按这个理解继续：同一份合成二维物理场数据上的模型甲与模型乙预测误差比较；本轮只做规划",
+                    "value": "同一份合成二维物理场数据上的模型甲与模型乙预测误差比较；本轮只做规划",
+                    "action": "accept",
+                    "id": "325a8e05d892"
+                  },
+                  {
+                    "label": "暂不确定",
+                    "value": "未知",
+                    "action": "unknown",
+                    "id": "2c3af7fa609c"
+                  },
+                  {
+                    "label": "其他，我来补充",
+                    "value": "",
+                    "action": "custom",
+                    "id": "47de6eddb129"
+                  }
+                ],
+                "allow_accept": false,
+                "choice_policy": {
+                  "intent": "comparison",
+                  "origin": "user_declared",
+                  "policy_hash": null
+                },
+                "choice_id": "810d07c55b8552d0",
+                "choice_plan_hash": "3494fa8cad9c11e2e2c08e90a29a1c1c613ce6a0000865485bc4d863ffab0ffc"
+              }
+            ],
+            "review_notice": "声明状态：仍有未决项；方法状态：待人工复核，尚未验证科学有效性。",
+            "execution_authorized": false,
+            "scientific_claim_verified": false,
+            "update_feedback": {
+              "turn": 2,
+              "entries": [
+                {
+                  "field": "resources",
+                  "status": "declared",
+                  "before": "计算预算仅2小时",
+                  "after": "最多1小时，先核算耗时；超限停止，不追加运行"
+                }
+              ],
+              "text": "已采纳 · 资源边界：计算预算仅2小时 → 最多1小时，先核算耗时；超限停止，不追加运行"
+            },
+            "model_used": false,
+            "clarification": {
+              "mode": "template",
+              "reason": "synthesis_template_question",
+              "model_used": true
+            },
+            "plan_synthesis": {
+              "mode": "template",
+              "status": "fallback",
+              "content": null,
+              "basis_hash": "1e42915408653f54ac75fe954cbf3f83f86261db7211fea90ad3f9b7db3ccac8",
+              "reason": "RunLimitError",
+              "message": "本轮未取得有效的模型实验初稿，已保留字段与模板路径；可用 /plan synthesize refresh 重试。"
+            },
+            "synthesis_brief": "本轮未取得有效的模型实验初稿，已保留字段与模板路径；可用 /plan synthesize refresh 重试。",
+            "question_form": true
+          },
+          "state": {
+            "schema_version": "research_planning_v1",
+            "id": "0849b34daedc4775869c679db773b183",
+            "revision": 2,
+            "active": true,
+            "facts": {
+              "research_question": {
+                "value": "比较模型甲和模型乙在同一份合成二维物理场数据上的预测误差",
+                "quote": "我想比较模型甲和模型乙在同一份合成二维物理场数据上的预测误差",
+                "status": "declared",
+                "turn": 1
+              },
+              "objective_type": {
+                "value": "comparison",
+                "quote": "我想比较模型甲和模型乙在同一份合成二维物理场数据上的预测误差",
+                "status": "declared",
+                "turn": 1
+              },
+              "scope": {
+                "value": "同一份合成二维物理场数据上的模型甲与模型乙预测误差比较；本轮只做规划",
+                "quote": "本轮只规划，不执行",
+                "status": "proposed",
+                "turn": 1
+              },
+              "outcomes": {
+                "value": "预测误差",
+                "quote": "预测误差",
+                "status": "declared",
+                "turn": 1
+              },
+              "data_source": {
+                "value": "同一份合成二维物理场数据",
+                "quote": "同一份合成二维物理场数据",
+                "status": "declared",
+                "turn": 1
+              },
+              "resources": {
+                "value": "最多1小时，先核算耗时；超限停止，不追加运行",
+                "quote": "resources: 最多1小时，先核算耗时；超限停止，不追加运行。",
+                "status": "declared",
+                "turn": 2
+              },
+              "deliverable": {
+                "value": "决定下一步是否继续研究",
+                "quote": "决定下一步是否继续研究",
+                "status": "declared",
+                "turn": 1
+              }
+            },
+            "unknown": [],
+            "conflicts": {},
+            "decisions": [
+              {
+                "turn": 1,
+                "type": "intake",
+                "changes": [
+                  {
+                    "field": "research_question",
+                    "kind": "added",
+                    "before": null,
+                    "after": "比较模型甲和模型乙在同一份合成二维物理场数据上的预测误差"
+                  },
+                  {
+                    "field": "objective_type",
+                    "kind": "added",
+                    "before": null,
+                    "after": "comparison"
+                  },
+                  {
+                    "field": "scope",
+                    "kind": "added",
+                    "before": null,
+                    "after": "同一份合成二维物理场数据上的模型甲与模型乙预测误差比较；本轮只做规划"
+                  },
+                  {
+                    "field": "outcomes",
+                    "kind": "added",
+                    "before": null,
+                    "after": "预测误差"
+                  },
+                  {
+                    "field": "data_source",
+                    "kind": "added",
+                    "before": null,
+                    "after": "同一份合成二维物理场数据"
+                  },
+                  {
+                    "field": "resources",
+                    "kind": "added",
+                    "before": null,
+                    "after": "计算预算仅2小时"
+                  },
+                  {
+                    "field": "deliverable",
+                    "kind": "added",
+                    "before": null,
+                    "after": "决定下一步是否继续研究"
+                  }
+                ]
+              },
+              {
+                "turn": 1,
+                "type": "update_receipt",
+                "fields": {
+                  "research_question": "declared",
+                  "objective_type": "declared",
+                  "scope": "proposed",
+                  "outcomes": "declared",
+                  "data_source": "declared",
+                  "resources": "proposed",
+                  "deliverable": "declared"
+                }
+              },
+              {
+                "turn": 2,
+                "type": "revise",
+                "changes": [
+                  {
+                    "field": "resources",
+                    "kind": "revised",
+                    "before": "计算预算仅2小时",
+                    "after": "最多1小时，先核算耗时；超限停止，不追加运行"
+                  }
+                ]
+              },
+              {
+                "turn": 2,
+                "type": "update_receipt",
+                "fields": {
+                  "resources": "declared"
+                }
+              }
+            ],
+            "approval": null,
+            "pending": {
+              "field": "scope",
+              "kind": "proposal",
+              "question": "关于研究边界，是否按当前理解继续？",
+              "rationale": "这是从你的描述整理出的理解，不是经验证的事实。",
+              "options": [
+                {
+                  "label": "按这个理解继续：同一份合成二维物理场数据上的模型甲与模型乙预测误差比较；本轮只做规划",
+                  "value": "同一份合成二维物理场数据上的模型甲与模型乙预测误差比较；本轮只做规划",
+                  "action": "accept",
+                  "id": "325a8e05d892"
+                },
+                {
+                  "label": "暂不确定",
+                  "value": "未知",
+                  "action": "unknown",
+                  "id": "2c3af7fa609c"
+                },
+                {
+                  "label": "其他，我来补充",
+                  "value": "",
+                  "action": "custom",
+                  "id": "47de6eddb129"
+                }
+              ],
+              "allow_accept": false,
+              "choice_policy": {
+                "intent": "comparison",
+                "origin": "user_declared",
+                "policy_hash": null
+              },
+              "choice_id": "810d07c55b8552d0",
+              "choice_plan_hash": "3494fa8cad9c11e2e2c08e90a29a1c1c613ce6a0000865485bc4d863ffab0ffc"
+            },
+            "reflections": [],
+            "changes": [
+              {
+                "field": "research_question",
+                "kind": "added",
+                "before": null,
+                "after": "比较模型甲和模型乙在同一份合成二维物理场数据上的预测误差"
+              },
+              {
+                "field": "objective_type",
+                "kind": "added",
+                "before": null,
+                "after": "comparison"
+              },
+              {
+                "field": "scope",
+                "kind": "added",
+                "before": null,
+                "after": "同一份合成二维物理场数据上的模型甲与模型乙预测误差比较；本轮只做规划"
+              },
+              {
+                "field": "outcomes",
+                "kind": "added",
+                "before": null,
+                "after": "预测误差"
+              },
+              {
+                "field": "data_source",
+                "kind": "added",
+                "before": null,
+                "after": "同一份合成二维物理场数据"
+              },
+              {
+                "field": "resources",
+                "kind": "added",
+                "before": null,
+                "after": "计算预算仅2小时"
+              },
+              {
+                "field": "deliverable",
+                "kind": "added",
+                "before": null,
+                "after": "决定下一步是否继续研究"
+              },
+              {
+                "field": "resources",
+                "kind": "revised",
+                "before": "计算预算仅2小时",
+                "after": "最多1小时，先核算耗时；超限停止，不追加运行"
+              }
+            ],
+            "stale": {},
+            "turns": 2,
+            "audience": "researcher_student",
+            "last_notes": [],
+            "last_export": null,
+            "last_update": {
+              "turn": 2,
+              "entries": [
+                {
+                  "field": "resources",
+                  "status": "declared",
+                  "before": "计算预算仅2小时",
+                  "after": "最多1小时，先核算耗时；超限停止，不追加运行"
+                }
+              ],
+              "text": "已采纳 · 资源边界：计算预算仅2小时 → 最多1小时，先核算耗时；超限停止，不追加运行"
+            },
+            "plan_synthesis": {
+              "version": "experiment_plan_synthesis_v1",
+              "basis_hash": "1e42915408653f54ac75fe954cbf3f83f86261db7211fea90ad3f9b7db3ccac8",
+              "mode": "template",
+              "content": null,
+              "turn": 2,
+              "reason": "RunLimitError"
+            },
+            "clarification": {
+              "mode": "template",
+              "reason": "synthesis_template_question",
+              "model_used": true
+            },
+            "question_history": [
+              {
+                "turn": 1,
+                "field": "baseline",
+                "kind": "missing",
+                "question": "模型甲和模型乙目前处于什么状态？这决定本轮是只做推理评估，还是需要把训练也纳入2小时预算。",
+                "origin": "model",
+                "basis_hash": "a0be54b7baa7f4c171375479fa778fc9f5ec1024e51cf55a1e69f6a7297ef662"
+              },
+              {
+                "turn": 2,
+                "field": "scope",
+                "kind": "proposal",
+                "question": "关于研究边界，是否按当前理解继续？",
+                "origin": "template",
+                "basis_hash": "a1a95c431a3b96d99fc3251f125fd61e72fb2f845b27d734f89d5b877781905c"
+              }
+            ]
+          },
+          "resources": {
+            "llm_requests": 2,
+            "llm_tokens": 6319,
+            "tool_attempts": 0,
+            "limits": {
+              "llm_requests": 3,
+              "llm_tokens": 16000,
+              "tool_calls": 40,
+              "read_bytes": 24000
+            }
+          }
+        }
+      ]
+    },
+    {
+      "case": "minimal_replication",
+      "trajectory": [
+        {
+          "input": "/plan 我想为合成论文中的模型A与B比较制定最小复现方案，先核对论文命题和条件再决定实验。最多2小时，不执行，不宣称已经复现。",
+          "seconds": 2.047,
+          "result": {
+            "intent": "planning",
+            "answer": "正在澄清\n\n待确认提议 · 研究问题：比较合成论文中的模型A与模型B\n已采纳 · 研究目的：comparison\n待确认提议 · 研究边界：最小复现方案：先核对论文命题和条件，再决定实验\n待确认提议 · 交付物：最小复现方案（规划文档），不执行实验\n待确认提议 · 资源边界：时间上限2小时\n待确认提议 · 本轮不回答的问题：不执行实验\n已采纳 · 验收和停止规则：不宣称已经复现\n语义改写和推断仅作为待确认提议展示，不会自动成为已确认边界。\n\n声明状态：仍有未决项；方法状态：待人工复核，尚未验证科学有效性。\n\n本轮未取得有效的模型实验初稿，已保留字段与模板路径；可用 /plan synthesize refresh 重试。\n\n关于研究问题，是否按当前理解继续？\n1. 按这个理解继续：比较合成论文中的模型A与模型B\n2. 暂不确定\n3. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+            "planning": {
+              "id": "cb32f0fce2b3496d8877ee4da9cd2c28",
+              "revision": 1,
+              "active": true,
+              "facts": {
+                "research_question": {
+                  "value": "比较合成论文中的模型A与模型B",
+                  "quote": "我想为合成论文中的模型A与B比较制定最小复现方案",
+                  "status": "proposed",
+                  "turn": 1
+                },
+                "objective_type": {
+                  "value": "comparison",
+                  "quote": "我想为合成论文中的模型A与B比较制定最小复现方案",
+                  "status": "declared",
+                  "turn": 1
+                },
+                "scope": {
+                  "value": "最小复现方案：先核对论文命题和条件，再决定实验",
+                  "quote": "先核对论文命题和条件再决定实验",
+                  "status": "proposed",
+                  "turn": 1
+                },
+                "deliverable": {
+                  "value": "最小复现方案（规划文档），不执行实验",
+                  "quote": "制定最小复现方案",
+                  "status": "proposed",
+                  "turn": 1
+                },
+                "resources": {
+                  "value": "时间上限2小时",
+                  "quote": "最多2小时",
+                  "status": "proposed",
+                  "turn": 1
+                },
+                "exclusions": {
+                  "value": "不执行实验",
+                  "quote": "不执行",
+                  "status": "proposed",
+                  "turn": 1
+                },
+                "acceptance": {
+                  "value": "不宣称已经复现",
+                  "quote": "不宣称已经复现",
+                  "status": "declared",
+                  "turn": 1
+                }
+              },
+              "unknown": [],
+              "conflicts": {},
+              "stale": {},
+              "pending": {
+                "field": "research_question",
+                "kind": "proposal",
+                "question": "关于研究问题，是否按当前理解继续？",
+                "rationale": "这是从你的描述整理出的理解，不是经验证的事实。",
+                "options": [
+                  {
+                    "label": "按这个理解继续：比较合成论文中的模型A与模型B",
+                    "value": "比较合成论文中的模型A与模型B",
+                    "action": "accept",
+                    "id": "3898ccbad91b"
+                  },
+                  {
+                    "label": "暂不确定",
+                    "value": "未知",
+                    "action": "unknown",
+                    "id": "2c3af7fa609c"
+                  },
+                  {
+                    "label": "其他，我来补充",
+                    "value": "",
+                    "action": "custom",
+                    "id": "47de6eddb129"
+                  }
+                ],
+                "allow_accept": false,
+                "choice_policy": {
+                  "intent": "comparison",
+                  "origin": "user_declared",
+                  "policy_hash": null
+                },
+                "choice_id": "9cce6566372e15cb",
+                "choice_plan_hash": "3adec27d2054202c2ae07f8c15d71b815ef011d126c9a7e05e0afd58c05d03c5"
+              },
+              "review": {
+                "ready": false,
+                "checks": [
+                  {
+                    "field": "research_question",
+                    "code": "declaration_present",
+                    "status": "passed",
+                    "detail": "已记录用户声明；这不等于外部事实验证。"
+                  },
+                  {
+                    "field": "objective_type",
+                    "code": "declaration_present",
+                    "status": "passed",
+                    "detail": "已记录用户声明；这不等于外部事实验证。"
+                  },
+                  {
+                    "field": "hypothesis",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+                  },
+                  {
+                    "field": "scope",
+                    "code": "declaration_present",
+                    "status": "passed",
+                    "detail": "已记录用户声明；这不等于外部事实验证。"
+                  },
+                  {
+                    "field": "exclusions",
+                    "code": "declaration_present",
+                    "status": "passed",
+                    "detail": "已记录用户声明；这不等于外部事实验证。"
+                  },
+                  {
+                    "field": "experimental_unit",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "一次独立分配或观察是什么？哪些测量来自同一对象？"
+                  },
+                  {
+                    "field": "factors",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "改变哪些因素和水平，主要比较谁与谁？"
+                  },
+                  {
+                    "field": "design",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+                  },
+                  {
+                    "field": "outcomes",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+                  },
+                  {
+                    "field": "baseline",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+                  },
+                  {
+                    "field": "data_source",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。"
+                  },
+                  {
+                    "field": "sampling",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+                  },
+                  {
+                    "field": "analysis",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+                  },
+                  {
+                    "field": "acceptance",
+                    "code": "declaration_present",
+                    "status": "passed",
+                    "detail": "已记录用户声明；这不等于外部事实验证。"
+                  },
+                  {
+                    "field": "resources",
+                    "code": "declaration_present",
+                    "status": "passed",
+                    "detail": "已记录用户声明；这不等于外部事实验证。"
+                  },
+                  {
+                    "field": "risks",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+                  },
+                  {
+                    "field": "reproducibility",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+                  },
+                  {
+                    "field": "human_roles",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+                  },
+                  {
+                    "field": "deliverable",
+                    "code": "declaration_present",
+                    "status": "passed",
+                    "detail": "已记录用户声明；这不等于外部事实验证。"
+                  },
+                  {
+                    "field": "research_question",
+                    "code": "unconfirmed_proposal",
+                    "status": "blocked",
+                    "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+                  },
+                  {
+                    "field": "scope",
+                    "code": "unconfirmed_proposal",
+                    "status": "blocked",
+                    "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+                  },
+                  {
+                    "field": "exclusions",
+                    "code": "unconfirmed_proposal",
+                    "status": "blocked",
+                    "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+                  },
+                  {
+                    "field": "resources",
+                    "code": "unconfirmed_proposal",
+                    "status": "blocked",
+                    "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+                  },
+                  {
+                    "field": "deliverable",
+                    "code": "unconfirmed_proposal",
+                    "status": "blocked",
+                    "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+                  },
+                  {
+                    "field": "objective_type",
+                    "code": "objective_classified",
+                    "status": "passed",
+                    "detail": "需要明确比较、预测、因果、探索或复现目的。"
+                  },
+                  {
+                    "field": "acceptance",
+                    "code": "measurable_acceptance",
+                    "status": "blocked",
+                    "detail": "验收应有可测阈值或可逐项核对的产物，不只写结果更好。"
+                  },
+                  {
+                    "field": "acceptance",
+                    "code": "negative_outcomes",
+                    "status": "blocked",
+                    "detail": "明确阴性、不确定或反向结果也应如实报告，不能继续试到显著。"
+                  },
+                  {
+                    "field": "acceptance",
+                    "code": "stopping_rule",
+                    "status": "passed",
+                    "detail": "预先声明预算、信息不足或失败时的停止/升级条件。"
+                  },
+                  {
+                    "field": "resources",
+                    "code": "resource_bound",
+                    "status": "passed",
+                    "detail": "声明可核对的资源数量、期限或硬上限。"
+                  }
+                ],
+                "blockers": [
+                  {
+                    "field": "hypothesis",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+                  },
+                  {
+                    "field": "experimental_unit",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "一次独立分配或观察是什么？哪些测量来自同一对象？"
+                  },
+                  {
+                    "field": "factors",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "改变哪些因素和水平，主要比较谁与谁？"
+                  },
+                  {
+                    "field": "design",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+                  },
+                  {
+                    "field": "outcomes",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+                  },
+                  {
+                    "field": "baseline",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+                  },
+                  {
+                    "field": "data_source",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。"
+                  },
+                  {
+                    "field": "sampling",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+                  },
+                  {
+                    "field": "analysis",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+                  },
+                  {
+                    "field": "risks",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+                  },
+                  {
+                    "field": "reproducibility",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+                  },
+                  {
+                    "field": "human_roles",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+                  },
+                  {
+                    "field": "research_question",
+                    "code": "unconfirmed_proposal",
+                    "status": "blocked",
+                    "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+                  },
+                  {
+                    "field": "scope",
+                    "code": "unconfirmed_proposal",
+                    "status": "blocked",
+                    "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+                  },
+                  {
+                    "field": "exclusions",
+                    "code": "unconfirmed_proposal",
+                    "status": "blocked",
+                    "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+                  },
+                  {
+                    "field": "resources",
+                    "code": "unconfirmed_proposal",
+                    "status": "blocked",
+                    "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+                  },
+                  {
+                    "field": "deliverable",
+                    "code": "unconfirmed_proposal",
+                    "status": "blocked",
+                    "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+                  },
+                  {
+                    "field": "acceptance",
+                    "code": "measurable_acceptance",
+                    "status": "blocked",
+                    "detail": "验收应有可测阈值或可逐项核对的产物，不只写结果更好。"
+                  },
+                  {
+                    "field": "acceptance",
+                    "code": "negative_outcomes",
+                    "status": "blocked",
+                    "detail": "明确阴性、不确定或反向结果也应如实报告，不能继续试到显著。"
+                  }
+                ],
+                "required_fields": [
+                  "research_question",
+                  "objective_type",
+                  "hypothesis",
+                  "scope",
+                  "exclusions",
+                  "experimental_unit",
+                  "factors",
+                  "design",
+                  "outcomes",
+                  "baseline",
+                  "data_source",
+                  "sampling",
+                  "analysis",
+                  "acceptance",
+                  "resources",
+                  "risks",
+                  "reproducibility",
+                  "human_roles",
+                  "deliverable"
+                ],
+                "declarations_complete": false,
+                "method_risks": [],
+                "method_review_status": "pending_human_review",
+                "scope": "planning_only",
+                "execution_authorized": false,
+                "scientific_claim_verified": false,
+                "readiness_meaning": "用户声明已足够形成待人类复核的计划；不表示假设、数据、功效或结论已被验证。"
+              },
+              "contract_hash": "3adec27d2054202c2ae07f8c15d71b815ef011d126c9a7e05e0afd58c05d03c5",
+              "approved": false,
+              "decisions_count": 2,
+              "reflections_count": 0,
+              "evidence": [],
+              "evidence_actions": {},
+              "clarification": {
+                "mode": "template",
+                "reason": "synthesis_template_question",
+                "model_used": true
+              },
+              "plan_synthesis": {
+                "mode": "template",
+                "status": "fallback",
+                "content": null,
+                "basis_hash": "d24a2c9c0f1f6eb2909fc9891fa07107508a45ad075633e480ab205f4c180c95",
+                "reason": "RunLimitError",
+                "message": "本轮未取得有效的模型实验初稿，已保留字段与模板路径；可用 /plan synthesize refresh 重试。"
+              },
+              "last_export": null,
+              "execution_authorized": false
+            },
+            "questions": [
+              {
+                "field": "research_question",
+                "kind": "proposal",
+                "question": "关于研究问题，是否按当前理解继续？",
+                "rationale": "这是从你的描述整理出的理解，不是经验证的事实。",
+                "options": [
+                  {
+                    "label": "按这个理解继续：比较合成论文中的模型A与模型B",
+                    "value": "比较合成论文中的模型A与模型B",
+                    "action": "accept",
+                    "id": "3898ccbad91b"
+                  },
+                  {
+                    "label": "暂不确定",
+                    "value": "未知",
+                    "action": "unknown",
+                    "id": "2c3af7fa609c"
+                  },
+                  {
+                    "label": "其他，我来补充",
+                    "value": "",
+                    "action": "custom",
+                    "id": "47de6eddb129"
+                  }
+                ],
+                "allow_accept": false,
+                "choice_policy": {
+                  "intent": "comparison",
+                  "origin": "user_declared",
+                  "policy_hash": null
+                },
+                "choice_id": "9cce6566372e15cb",
+                "choice_plan_hash": "3adec27d2054202c2ae07f8c15d71b815ef011d126c9a7e05e0afd58c05d03c5"
+              }
+            ],
+            "review_notice": "声明状态：仍有未决项；方法状态：待人工复核，尚未验证科学有效性。",
+            "execution_authorized": false,
+            "scientific_claim_verified": false,
+            "update_feedback": {
+              "turn": 1,
+              "entries": [
+                {
+                  "field": "research_question",
+                  "status": "proposed",
+                  "before": null,
+                  "after": "比较合成论文中的模型A与模型B"
+                },
+                {
+                  "field": "objective_type",
+                  "status": "declared",
+                  "before": null,
+                  "after": "comparison"
+                },
+                {
+                  "field": "scope",
+                  "status": "proposed",
+                  "before": null,
+                  "after": "最小复现方案：先核对论文命题和条件，再决定实验"
+                },
+                {
+                  "field": "deliverable",
+                  "status": "proposed",
+                  "before": null,
+                  "after": "最小复现方案（规划文档），不执行实验"
+                },
+                {
+                  "field": "resources",
+                  "status": "proposed",
+                  "before": null,
+                  "after": "时间上限2小时"
+                },
+                {
+                  "field": "exclusions",
+                  "status": "proposed",
+                  "before": null,
+                  "after": "不执行实验"
+                },
+                {
+                  "field": "acceptance",
+                  "status": "declared",
+                  "before": null,
+                  "after": "不宣称已经复现"
+                }
+              ],
+              "text": "待确认提议 · 研究问题：比较合成论文中的模型A与模型B\n已采纳 · 研究目的：comparison\n待确认提议 · 研究边界：最小复现方案：先核对论文命题和条件，再决定实验\n待确认提议 · 交付物：最小复现方案（规划文档），不执行实验\n待确认提议 · 资源边界：时间上限2小时\n待确认提议 · 本轮不回答的问题：不执行实验\n已采纳 · 验收和停止规则：不宣称已经复现\n语义改写和推断仅作为待确认提议展示，不会自动成为已确认边界。"
+            },
+            "model_used": true,
+            "clarification": {
+              "mode": "template",
+              "reason": "synthesis_template_question",
+              "model_used": true
+            },
+            "plan_synthesis": {
+              "mode": "template",
+              "status": "fallback",
+              "content": null,
+              "basis_hash": "d24a2c9c0f1f6eb2909fc9891fa07107508a45ad075633e480ab205f4c180c95",
+              "reason": "RunLimitError",
+              "message": "本轮未取得有效的模型实验初稿，已保留字段与模板路径；可用 /plan synthesize refresh 重试。"
+            },
+            "synthesis_brief": "本轮未取得有效的模型实验初稿，已保留字段与模板路径；可用 /plan synthesize refresh 重试。",
+            "question_form": true
+          },
+          "state": {
+            "schema_version": "research_planning_v1",
+            "id": "cb32f0fce2b3496d8877ee4da9cd2c28",
+            "revision": 1,
+            "active": true,
+            "facts": {
+              "research_question": {
+                "value": "比较合成论文中的模型A与模型B",
+                "quote": "我想为合成论文中的模型A与B比较制定最小复现方案",
+                "status": "proposed",
+                "turn": 1
+              },
+              "objective_type": {
+                "value": "comparison",
+                "quote": "我想为合成论文中的模型A与B比较制定最小复现方案",
+                "status": "declared",
+                "turn": 1
+              },
+              "scope": {
+                "value": "最小复现方案：先核对论文命题和条件，再决定实验",
+                "quote": "先核对论文命题和条件再决定实验",
+                "status": "proposed",
+                "turn": 1
+              },
+              "deliverable": {
+                "value": "最小复现方案（规划文档），不执行实验",
+                "quote": "制定最小复现方案",
+                "status": "proposed",
+                "turn": 1
+              },
+              "resources": {
+                "value": "时间上限2小时",
+                "quote": "最多2小时",
+                "status": "proposed",
+                "turn": 1
+              },
+              "exclusions": {
+                "value": "不执行实验",
+                "quote": "不执行",
+                "status": "proposed",
+                "turn": 1
+              },
+              "acceptance": {
+                "value": "不宣称已经复现",
+                "quote": "不宣称已经复现",
+                "status": "declared",
+                "turn": 1
+              }
+            },
+            "unknown": [],
+            "conflicts": {},
+            "decisions": [
+              {
+                "turn": 1,
+                "type": "intake",
+                "changes": [
+                  {
+                    "field": "research_question",
+                    "kind": "added",
+                    "before": null,
+                    "after": "比较合成论文中的模型A与模型B"
+                  },
+                  {
+                    "field": "objective_type",
+                    "kind": "added",
+                    "before": null,
+                    "after": "comparison"
+                  },
+                  {
+                    "field": "scope",
+                    "kind": "added",
+                    "before": null,
+                    "after": "最小复现方案：先核对论文命题和条件，再决定实验"
+                  },
+                  {
+                    "field": "deliverable",
+                    "kind": "added",
+                    "before": null,
+                    "after": "最小复现方案（规划文档），不执行实验"
+                  },
+                  {
+                    "field": "resources",
+                    "kind": "added",
+                    "before": null,
+                    "after": "时间上限2小时"
+                  },
+                  {
+                    "field": "exclusions",
+                    "kind": "added",
+                    "before": null,
+                    "after": "不执行实验"
+                  },
+                  {
+                    "field": "acceptance",
+                    "kind": "added",
+                    "before": null,
+                    "after": "不宣称已经复现"
+                  }
+                ]
+              },
+              {
+                "turn": 1,
+                "type": "update_receipt",
+                "fields": {
+                  "research_question": "proposed",
+                  "objective_type": "declared",
+                  "scope": "proposed",
+                  "deliverable": "proposed",
+                  "resources": "proposed",
+                  "exclusions": "proposed",
+                  "acceptance": "declared"
+                }
+              }
+            ],
+            "approval": null,
+            "pending": {
+              "field": "research_question",
+              "kind": "proposal",
+              "question": "关于研究问题，是否按当前理解继续？",
+              "rationale": "这是从你的描述整理出的理解，不是经验证的事实。",
+              "options": [
+                {
+                  "label": "按这个理解继续：比较合成论文中的模型A与模型B",
+                  "value": "比较合成论文中的模型A与模型B",
+                  "action": "accept",
+                  "id": "3898ccbad91b"
+                },
+                {
+                  "label": "暂不确定",
+                  "value": "未知",
+                  "action": "unknown",
+                  "id": "2c3af7fa609c"
+                },
+                {
+                  "label": "其他，我来补充",
+                  "value": "",
+                  "action": "custom",
+                  "id": "47de6eddb129"
+                }
+              ],
+              "allow_accept": false,
+              "choice_policy": {
+                "intent": "comparison",
+                "origin": "user_declared",
+                "policy_hash": null
+              },
+              "choice_id": "9cce6566372e15cb",
+              "choice_plan_hash": "3adec27d2054202c2ae07f8c15d71b815ef011d126c9a7e05e0afd58c05d03c5"
+            },
+            "reflections": [],
+            "changes": [
+              {
+                "field": "research_question",
+                "kind": "added",
+                "before": null,
+                "after": "比较合成论文中的模型A与模型B"
+              },
+              {
+                "field": "objective_type",
+                "kind": "added",
+                "before": null,
+                "after": "comparison"
+              },
+              {
+                "field": "scope",
+                "kind": "added",
+                "before": null,
+                "after": "最小复现方案：先核对论文命题和条件，再决定实验"
+              },
+              {
+                "field": "deliverable",
+                "kind": "added",
+                "before": null,
+                "after": "最小复现方案（规划文档），不执行实验"
+              },
+              {
+                "field": "resources",
+                "kind": "added",
+                "before": null,
+                "after": "时间上限2小时"
+              },
+              {
+                "field": "exclusions",
+                "kind": "added",
+                "before": null,
+                "after": "不执行实验"
+              },
+              {
+                "field": "acceptance",
+                "kind": "added",
+                "before": null,
+                "after": "不宣称已经复现"
+              }
+            ],
+            "stale": {},
+            "turns": 1,
+            "audience": "researcher_student",
+            "last_notes": [
+              "语义改写和推断仅作为待确认提议展示，不会自动成为已确认边界。"
+            ],
+            "last_export": null,
+            "last_update": {
+              "turn": 1,
+              "entries": [
+                {
+                  "field": "research_question",
+                  "status": "proposed",
+                  "before": null,
+                  "after": "比较合成论文中的模型A与模型B"
+                },
+                {
+                  "field": "objective_type",
+                  "status": "declared",
+                  "before": null,
+                  "after": "comparison"
+                },
+                {
+                  "field": "scope",
+                  "status": "proposed",
+                  "before": null,
+                  "after": "最小复现方案：先核对论文命题和条件，再决定实验"
+                },
+                {
+                  "field": "deliverable",
+                  "status": "proposed",
+                  "before": null,
+                  "after": "最小复现方案（规划文档），不执行实验"
+                },
+                {
+                  "field": "resources",
+                  "status": "proposed",
+                  "before": null,
+                  "after": "时间上限2小时"
+                },
+                {
+                  "field": "exclusions",
+                  "status": "proposed",
+                  "before": null,
+                  "after": "不执行实验"
+                },
+                {
+                  "field": "acceptance",
+                  "status": "declared",
+                  "before": null,
+                  "after": "不宣称已经复现"
+                }
+              ],
+              "text": "待确认提议 · 研究问题：比较合成论文中的模型A与模型B\n已采纳 · 研究目的：comparison\n待确认提议 · 研究边界：最小复现方案：先核对论文命题和条件，再决定实验\n待确认提议 · 交付物：最小复现方案（规划文档），不执行实验\n待确认提议 · 资源边界：时间上限2小时\n待确认提议 · 本轮不回答的问题：不执行实验\n已采纳 · 验收和停止规则：不宣称已经复现\n语义改写和推断仅作为待确认提议展示，不会自动成为已确认边界。"
+            },
+            "plan_synthesis": {
+              "version": "experiment_plan_synthesis_v1",
+              "basis_hash": "d24a2c9c0f1f6eb2909fc9891fa07107508a45ad075633e480ab205f4c180c95",
+              "mode": "template",
+              "content": null,
+              "turn": 1,
+              "reason": "RunLimitError"
+            },
+            "clarification": {
+              "mode": "template",
+              "reason": "synthesis_template_question",
+              "model_used": true
+            },
+            "question_history": [
+              {
+                "turn": 1,
+                "field": "research_question",
+                "kind": "proposal",
+                "question": "关于研究问题，是否按当前理解继续？",
+                "origin": "template",
+                "basis_hash": "60d0e769ac31a78fafbe8f359beb894537bb95f98cfc10b4d875613128cb02ea"
+              }
+            ]
+          },
+          "resources": {
+            "llm_requests": 1,
+            "llm_tokens": 1328,
+            "tool_attempts": 0,
+            "limits": {
+              "llm_requests": 3,
+              "llm_tokens": 16000,
+              "tool_calls": 40,
+              "read_bytes": 24000
+            }
+          }
+        },
+        {
+          "input": "/plan evidence add {\"path\":\"examples/papers/synthetic_paper.pdf\",\"start_page\":1,\"end_page\":2,\"share_with_model\":true}",
+          "seconds": 0.719,
+          "result": {
+            "intent": "planning",
+            "answer": "正在澄清\n\n声明状态：仍有未决项；方法状态：待人工复核，尚未验证科学有效性。\n\n本轮未取得有效的模型实验初稿，已保留字段与模板路径；可用 /plan synthesize refresh 重试。\n\n关于研究边界，是否按当前理解继续？\n1. 按这个理解继续：最小复现方案：先核对论文命题和条件，再决定实验\n2. 暂不确定\n3. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+            "planning": {
+              "id": "cb32f0fce2b3496d8877ee4da9cd2c28",
+              "revision": 2,
+              "active": true,
+              "facts": {
+                "research_question": {
+                  "value": "比较合成论文中的模型A与模型B",
+                  "quote": "我想为合成论文中的模型A与B比较制定最小复现方案",
+                  "status": "proposed",
+                  "turn": 1
+                },
+                "objective_type": {
+                  "value": "comparison",
+                  "quote": "我想为合成论文中的模型A与B比较制定最小复现方案",
+                  "status": "declared",
+                  "turn": 1
+                },
+                "scope": {
+                  "value": "最小复现方案：先核对论文命题和条件，再决定实验",
+                  "quote": "先核对论文命题和条件再决定实验",
+                  "status": "proposed",
+                  "turn": 1
+                },
+                "deliverable": {
+                  "value": "最小复现方案（规划文档），不执行实验",
+                  "quote": "制定最小复现方案",
+                  "status": "proposed",
+                  "turn": 1
+                },
+                "resources": {
+                  "value": "时间上限2小时",
+                  "quote": "最多2小时",
+                  "status": "proposed",
+                  "turn": 1
+                },
+                "exclusions": {
+                  "value": "不执行实验",
+                  "quote": "不执行",
+                  "status": "proposed",
+                  "turn": 1
+                },
+                "acceptance": {
+                  "value": "不宣称已经复现",
+                  "quote": "不宣称已经复现",
+                  "status": "declared",
+                  "turn": 1
+                }
+              },
+              "unknown": [],
+              "conflicts": {},
+              "stale": {
+                "scope": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明",
+                "acceptance": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+              },
+              "pending": {
+                "field": "scope",
+                "kind": "stale",
+                "question": "关于研究边界，是否按当前理解继续？",
+                "rationale": "把对象范围写清楚，避免从一个数据集推广到所有场景。",
+                "options": [
+                  {
+                    "label": "按这个理解继续：最小复现方案：先核对论文命题和条件，再决定实验",
+                    "value": "最小复现方案：先核对论文命题和条件，再决定实验",
+                    "action": "accept",
+                    "id": "c32acacacc6f"
+                  },
+                  {
+                    "label": "暂不确定",
+                    "value": "未知",
+                    "action": "unknown",
+                    "id": "2c3af7fa609c"
+                  },
+                  {
+                    "label": "其他，我来补充",
+                    "value": "",
+                    "action": "custom",
+                    "id": "47de6eddb129"
+                  }
+                ],
+                "allow_accept": false,
+                "choice_policy": {
+                  "intent": "comparison",
+                  "origin": "user_declared",
+                  "policy_hash": null
+                },
+                "choice_id": "8ca0768054e480a6",
+                "choice_plan_hash": "8a39200be7523eb334206ad942c4d8b7ce6e4f340bc71aaf17d66f8fbdbbf27e"
+              },
+              "review": {
+                "ready": false,
+                "checks": [
+                  {
+                    "field": "research_question",
+                    "code": "declaration_present",
+                    "status": "passed",
+                    "detail": "已记录用户声明；这不等于外部事实验证。"
+                  },
+                  {
+                    "field": "objective_type",
+                    "code": "declaration_present",
+                    "status": "passed",
+                    "detail": "已记录用户声明；这不等于外部事实验证。"
+                  },
+                  {
+                    "field": "hypothesis",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+                  },
+                  {
+                    "field": "scope",
+                    "code": "declaration_present",
+                    "status": "passed",
+                    "detail": "已记录用户声明；这不等于外部事实验证。"
+                  },
+                  {
+                    "field": "exclusions",
+                    "code": "declaration_present",
+                    "status": "passed",
+                    "detail": "已记录用户声明；这不等于外部事实验证。"
+                  },
+                  {
+                    "field": "experimental_unit",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "一次独立分配或观察是什么？哪些测量来自同一对象？"
+                  },
+                  {
+                    "field": "factors",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "改变哪些因素和水平，主要比较谁与谁？"
+                  },
+                  {
+                    "field": "design",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+                  },
+                  {
+                    "field": "outcomes",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+                  },
+                  {
+                    "field": "baseline",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+                  },
+                  {
+                    "field": "data_source",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。"
+                  },
+                  {
+                    "field": "sampling",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+                  },
+                  {
+                    "field": "analysis",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+                  },
+                  {
+                    "field": "acceptance",
+                    "code": "declaration_present",
+                    "status": "passed",
+                    "detail": "已记录用户声明；这不等于外部事实验证。"
+                  },
+                  {
+                    "field": "resources",
+                    "code": "declaration_present",
+                    "status": "passed",
+                    "detail": "已记录用户声明；这不等于外部事实验证。"
+                  },
+                  {
+                    "field": "risks",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+                  },
+                  {
+                    "field": "reproducibility",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+                  },
+                  {
+                    "field": "human_roles",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+                  },
+                  {
+                    "field": "deliverable",
+                    "code": "declaration_present",
+                    "status": "passed",
+                    "detail": "已记录用户声明；这不等于外部事实验证。"
+                  },
+                  {
+                    "field": "research_question",
+                    "code": "unconfirmed_proposal",
+                    "status": "blocked",
+                    "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+                  },
+                  {
+                    "field": "scope",
+                    "code": "unconfirmed_proposal",
+                    "status": "blocked",
+                    "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+                  },
+                  {
+                    "field": "scope",
+                    "code": "dependent_declaration_stale",
+                    "status": "blocked",
+                    "detail": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+                  },
+                  {
+                    "field": "exclusions",
+                    "code": "unconfirmed_proposal",
+                    "status": "blocked",
+                    "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+                  },
+                  {
+                    "field": "acceptance",
+                    "code": "dependent_declaration_stale",
+                    "status": "blocked",
+                    "detail": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+                  },
+                  {
+                    "field": "resources",
+                    "code": "unconfirmed_proposal",
+                    "status": "blocked",
+                    "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+                  },
+                  {
+                    "field": "deliverable",
+                    "code": "unconfirmed_proposal",
+                    "status": "blocked",
+                    "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+                  },
+                  {
+                    "field": "objective_type",
+                    "code": "objective_classified",
+                    "status": "passed",
+                    "detail": "需要明确比较、预测、因果、探索或复现目的。"
+                  },
+                  {
+                    "field": "acceptance",
+                    "code": "measurable_acceptance",
+                    "status": "blocked",
+                    "detail": "验收应有可测阈值或可逐项核对的产物，不只写结果更好。"
+                  },
+                  {
+                    "field": "acceptance",
+                    "code": "negative_outcomes",
+                    "status": "blocked",
+                    "detail": "明确阴性、不确定或反向结果也应如实报告，不能继续试到显著。"
+                  },
+                  {
+                    "field": "acceptance",
+                    "code": "stopping_rule",
+                    "status": "passed",
+                    "detail": "预先声明预算、信息不足或失败时的停止/升级条件。"
+                  },
+                  {
+                    "field": "resources",
+                    "code": "resource_bound",
+                    "status": "passed",
+                    "detail": "声明可核对的资源数量、期限或硬上限。"
+                  }
+                ],
+                "blockers": [
+                  {
+                    "field": "hypothesis",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+                  },
+                  {
+                    "field": "experimental_unit",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "一次独立分配或观察是什么？哪些测量来自同一对象？"
+                  },
+                  {
+                    "field": "factors",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "改变哪些因素和水平，主要比较谁与谁？"
+                  },
+                  {
+                    "field": "design",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+                  },
+                  {
+                    "field": "outcomes",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+                  },
+                  {
+                    "field": "baseline",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+                  },
+                  {
+                    "field": "data_source",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。"
+                  },
+                  {
+                    "field": "sampling",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+                  },
+                  {
+                    "field": "analysis",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+                  },
+                  {
+                    "field": "risks",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+                  },
+                  {
+                    "field": "reproducibility",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+                  },
+                  {
+                    "field": "human_roles",
+                    "code": "missing_declaration",
+                    "status": "blocked",
+                    "detail": "谁确认边界、复核方案、执行实验，并对结论负责？"
+                  },
+                  {
+                    "field": "research_question",
+                    "code": "unconfirmed_proposal",
+                    "status": "blocked",
+                    "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+                  },
+                  {
+                    "field": "scope",
+                    "code": "unconfirmed_proposal",
+                    "status": "blocked",
+                    "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+                  },
+                  {
+                    "field": "scope",
+                    "code": "dependent_declaration_stale",
+                    "status": "blocked",
+                    "detail": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+                  },
+                  {
+                    "field": "exclusions",
+                    "code": "unconfirmed_proposal",
+                    "status": "blocked",
+                    "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+                  },
+                  {
+                    "field": "acceptance",
+                    "code": "dependent_declaration_stale",
+                    "status": "blocked",
+                    "detail": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+                  },
+                  {
+                    "field": "resources",
+                    "code": "unconfirmed_proposal",
+                    "status": "blocked",
+                    "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+                  },
+                  {
+                    "field": "deliverable",
+                    "code": "unconfirmed_proposal",
+                    "status": "blocked",
+                    "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+                  },
+                  {
+                    "field": "acceptance",
+                    "code": "measurable_acceptance",
+                    "status": "blocked",
+                    "detail": "验收应有可测阈值或可逐项核对的产物，不只写结果更好。"
+                  },
+                  {
+                    "field": "acceptance",
+                    "code": "negative_outcomes",
+                    "status": "blocked",
+                    "detail": "明确阴性、不确定或反向结果也应如实报告，不能继续试到显著。"
+                  }
+                ],
+                "required_fields": [
+                  "research_question",
+                  "objective_type",
+                  "hypothesis",
+                  "scope",
+                  "exclusions",
+                  "experimental_unit",
+                  "factors",
+                  "design",
+                  "outcomes",
+                  "baseline",
+                  "data_source",
+                  "sampling",
+                  "analysis",
+                  "acceptance",
+                  "resources",
+                  "risks",
+                  "reproducibility",
+                  "human_roles",
+                  "deliverable"
+                ],
+                "declarations_complete": false,
+                "method_risks": [],
+                "method_review_status": "pending_human_review",
+                "scope": "planning_only",
+                "execution_authorized": false,
+                "scientific_claim_verified": false,
+                "readiness_meaning": "用户声明已足够形成待人类复核的计划；不表示假设、数据、功效或结论已被验证。"
+              },
+              "contract_hash": "8a39200be7523eb334206ad942c4d8b7ce6e4f340bc71aaf17d66f8fbdbbf27e",
+              "approved": false,
+              "decisions_count": 3,
+              "reflections_count": 0,
+              "evidence": [
+                {
+                  "path": "examples/papers/synthetic_paper.pdf",
+                  "sha256": "8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b",
+                  "start_line": 1,
+                  "end_line": 30,
+                  "format": "pdf",
+                  "start_page": 1,
+                  "end_page": 2,
+                  "page_count": 2,
+                  "extractor": "pypdf-6.21.4",
+                  "workspace_id": "37e8405706a74e7485f0edf20b8ab77f",
+                  "workspace_root": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent",
+                  "excerpt_sha256": "660fae681da8279a07618a24c55a787e5cabe5fc94ee313d1fd2a6deb83bacd4",
+                  "share_with_model": true,
+                  "turn": 2,
+                  "status": "selected_excerpt_not_verified",
+                  "id": "58e9468bbdc1b787"
+                }
+              ],
+              "evidence_actions": {},
+              "clarification": {
+                "mode": "template",
+                "reason": "synthesis_template_question",
+                "model_used": true
+              },
+              "plan_synthesis": {
+                "mode": "template",
+                "status": "fallback",
+                "content": null,
+                "basis_hash": "55045fdc5e341109a2207639a70534936a704137026b258c7b77fa8854c4ccde",
+                "reason": "RunLimitError",
+                "message": "本轮未取得有效的模型实验初稿，已保留字段与模板路径；可用 /plan synthesize refresh 重试。"
+              },
+              "last_export": null,
+              "execution_authorized": false
+            },
+            "questions": [
+              {
+                "field": "scope",
+                "kind": "stale",
+                "question": "关于研究边界，是否按当前理解继续？",
+                "rationale": "把对象范围写清楚，避免从一个数据集推广到所有场景。",
+                "options": [
+                  {
+                    "label": "按这个理解继续：最小复现方案：先核对论文命题和条件，再决定实验",
+                    "value": "最小复现方案：先核对论文命题和条件，再决定实验",
+                    "action": "accept",
+                    "id": "c32acacacc6f"
+                  },
+                  {
+                    "label": "暂不确定",
+                    "value": "未知",
+                    "action": "unknown",
+                    "id": "2c3af7fa609c"
+                  },
+                  {
+                    "label": "其他，我来补充",
+                    "value": "",
+                    "action": "custom",
+                    "id": "47de6eddb129"
+                  }
+                ],
+                "allow_accept": false,
+                "choice_policy": {
+                  "intent": "comparison",
+                  "origin": "user_declared",
+                  "policy_hash": null
+                },
+                "choice_id": "8ca0768054e480a6",
+                "choice_plan_hash": "8a39200be7523eb334206ad942c4d8b7ce6e4f340bc71aaf17d66f8fbdbbf27e"
+              }
+            ],
+            "review_notice": "声明状态：仍有未决项；方法状态：待人工复核，尚未验证科学有效性。",
+            "execution_authorized": false,
+            "scientific_claim_verified": false,
+            "evidence": [
+              {
+                "path": "examples/papers/synthetic_paper.pdf",
+                "sha256": "8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b",
+                "text": "[PDF page 1]\nEngineering fixture - synthetic paper\nSYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.\n1. Research question\nThis fixture asks whether model A has lower prediction error than model B on\nsynthetic two-dimensional fields.\n2. Methods and data\nBoth models evaluate the same 8 independent synthetic fields, with paired\ncomparisons by field. Grid points within a field are technical measurements,\nnot independent experimental units.\nTraining, validation and final test fields are separated by source. Both\nmodels use the same splits and tuning budget. The scope is restricted to this\nsynthetic field distribution.\nSYNTHETIC / engineering fixture - PDF page 1\n\n[PDF page 2]\n3. Illustrative results\nIllustrative mean relative errors are 0.12 for model A and 0.15 for model B.\nThese numbers are authored fixture values, not observed scientific evidence.\n4. Limitations\nNo observed variance or confidence interval is provided. No scientific\nexperiment was executed. This fixture does not establish a causal effect or\nout-of-distribution performance.\n5. Reproduction information still needed\nA real study needs a traceable dataset version, code and configuration,\nindependent-unit verification and pilot variability. A sample-size or power\nguarantee cannot be inferred from this fixture.\nThis fixture tests PDF extraction and grounded interpretation, not scientific\nvalidity.\nSYNTHETIC / engineering fixture - PDF page 2",
+                "start_line": 1,
+                "end_line": 30,
+                "format": "pdf",
+                "start_page": 1,
+                "end_page": 2,
+                "page_count": 2,
+                "pages": [
+                  {
+                    "page": 1,
+                    "text": "Engineering fixture - synthetic paper\nSYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.\n1. Research question\nThis fixture asks whether model A has lower prediction error than model B on\nsynthetic two-dimensional fields.\n2. Methods and data\nBoth models evaluate the same 8 independent synthetic fields, with paired\ncomparisons by field. Grid points within a field are technical measurements,\nnot independent experimental units.\nTraining, validation and final test fields are separated by source. Both\nmodels use the same splits and tuning budget. The scope is restricted to this\nsynthetic field distribution.\nSYNTHETIC / engineering fixture - PDF page 1"
+                  },
+                  {
+                    "page": 2,
+                    "text": "3. Illustrative results\nIllustrative mean relative errors are 0.12 for model A and 0.15 for model B.\nThese numbers are authored fixture values, not observed scientific evidence.\n4. Limitations\nNo observed variance or confidence interval is provided. No scientific\nexperiment was executed. This fixture does not establish a causal effect or\nout-of-distribution performance.\n5. Reproduction information still needed\nA real study needs a traceable dataset version, code and configuration,\nindependent-unit verification and pilot variability. A sample-size or power\nguarantee cannot be inferred from this fixture.\nThis fixture tests PDF extraction and grounded interpretation, not scientific\nvalidity.\nSYNTHETIC / engineering fixture - PDF page 2"
+                  }
+                ],
+                "extractor": "pypdf-6.21.4",
+                "workspace_id": "37e8405706a74e7485f0edf20b8ab77f",
+                "workspace_root": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent",
+                "excerpt_sha256": "660fae681da8279a07618a24c55a787e5cabe5fc94ee313d1fd2a6deb83bacd4",
+                "share_with_model": true,
+                "turn": 2,
+                "status": "selected_excerpt_not_verified",
+                "id": "58e9468bbdc1b787"
+              }
+            ],
+            "clarification": {
+              "mode": "template",
+              "reason": "synthesis_template_question",
+              "model_used": true
+            },
+            "plan_synthesis": {
+              "mode": "template",
+              "status": "fallback",
+              "content": null,
+              "basis_hash": "55045fdc5e341109a2207639a70534936a704137026b258c7b77fa8854c4ccde",
+              "reason": "RunLimitError",
+              "message": "本轮未取得有效的模型实验初稿，已保留字段与模板路径；可用 /plan synthesize refresh 重试。"
+            },
+            "synthesis_brief": "本轮未取得有效的模型实验初稿，已保留字段与模板路径；可用 /plan synthesize refresh 重试。",
+            "question_form": true
+          },
+          "state": {
+            "schema_version": "research_planning_v1",
+            "id": "cb32f0fce2b3496d8877ee4da9cd2c28",
+            "revision": 2,
+            "active": true,
+            "facts": {
+              "research_question": {
+                "value": "比较合成论文中的模型A与模型B",
+                "quote": "我想为合成论文中的模型A与B比较制定最小复现方案",
+                "status": "proposed",
+                "turn": 1
+              },
+              "objective_type": {
+                "value": "comparison",
+                "quote": "我想为合成论文中的模型A与B比较制定最小复现方案",
+                "status": "declared",
+                "turn": 1
+              },
+              "scope": {
+                "value": "最小复现方案：先核对论文命题和条件，再决定实验",
+                "quote": "先核对论文命题和条件再决定实验",
+                "status": "proposed",
+                "turn": 1
+              },
+              "deliverable": {
+                "value": "最小复现方案（规划文档），不执行实验",
+                "quote": "制定最小复现方案",
+                "status": "proposed",
+                "turn": 1
+              },
+              "resources": {
+                "value": "时间上限2小时",
+                "quote": "最多2小时",
+                "status": "proposed",
+                "turn": 1
+              },
+              "exclusions": {
+                "value": "不执行实验",
+                "quote": "不执行",
+                "status": "proposed",
+                "turn": 1
+              },
+              "acceptance": {
+                "value": "不宣称已经复现",
+                "quote": "不宣称已经复现",
+                "status": "declared",
+                "turn": 1
+              }
+            },
+            "unknown": [],
+            "conflicts": {},
+            "decisions": [
+              {
+                "turn": 1,
+                "type": "intake",
+                "changes": [
+                  {
+                    "field": "research_question",
+                    "kind": "added",
+                    "before": null,
+                    "after": "比较合成论文中的模型A与模型B"
+                  },
+                  {
+                    "field": "objective_type",
+                    "kind": "added",
+                    "before": null,
+                    "after": "comparison"
+                  },
+                  {
+                    "field": "scope",
+                    "kind": "added",
+                    "before": null,
+                    "after": "最小复现方案：先核对论文命题和条件，再决定实验"
+                  },
+                  {
+                    "field": "deliverable",
+                    "kind": "added",
+                    "before": null,
+                    "after": "最小复现方案（规划文档），不执行实验"
+                  },
+                  {
+                    "field": "resources",
+                    "kind": "added",
+                    "before": null,
+                    "after": "时间上限2小时"
+                  },
+                  {
+                    "field": "exclusions",
+                    "kind": "added",
+                    "before": null,
+                    "after": "不执行实验"
+                  },
+                  {
+                    "field": "acceptance",
+                    "kind": "added",
+                    "before": null,
+                    "after": "不宣称已经复现"
+                  }
+                ]
+              },
+              {
+                "turn": 1,
+                "type": "update_receipt",
+                "fields": {
+                  "research_question": "proposed",
+                  "objective_type": "declared",
+                  "scope": "proposed",
+                  "deliverable": "proposed",
+                  "resources": "proposed",
+                  "exclusions": "proposed",
+                  "acceptance": "declared"
+                }
+              },
+              {
+                "turn": 2,
+                "type": "explicit_evidence_selection",
+                "summary": "已选论文片段：examples/papers/synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b"
+              }
+            ],
+            "approval": null,
+            "pending": {
+              "field": "scope",
+              "kind": "stale",
+              "question": "关于研究边界，是否按当前理解继续？",
+              "rationale": "把对象范围写清楚，避免从一个数据集推广到所有场景。",
+              "options": [
+                {
+                  "label": "按这个理解继续：最小复现方案：先核对论文命题和条件，再决定实验",
+                  "value": "最小复现方案：先核对论文命题和条件，再决定实验",
+                  "action": "accept",
+                  "id": "c32acacacc6f"
+                },
+                {
+                  "label": "暂不确定",
+                  "value": "未知",
+                  "action": "unknown",
+                  "id": "2c3af7fa609c"
+                },
+                {
+                  "label": "其他，我来补充",
+                  "value": "",
+                  "action": "custom",
+                  "id": "47de6eddb129"
+                }
+              ],
+              "allow_accept": false,
+              "choice_policy": {
+                "intent": "comparison",
+                "origin": "user_declared",
+                "policy_hash": null
+              },
+              "choice_id": "8ca0768054e480a6",
+              "choice_plan_hash": "8a39200be7523eb334206ad942c4d8b7ce6e4f340bc71aaf17d66f8fbdbbf27e"
+            },
+            "reflections": [],
+            "changes": [
+              {
+                "field": "research_question",
+                "kind": "added",
+                "before": null,
+                "after": "比较合成论文中的模型A与模型B"
+              },
+              {
+                "field": "objective_type",
+                "kind": "added",
+                "before": null,
+                "after": "comparison"
+              },
+              {
+                "field": "scope",
+                "kind": "added",
+                "before": null,
+                "after": "最小复现方案：先核对论文命题和条件，再决定实验"
+              },
+              {
+                "field": "deliverable",
+                "kind": "added",
+                "before": null,
+                "after": "最小复现方案（规划文档），不执行实验"
+              },
+              {
+                "field": "resources",
+                "kind": "added",
+                "before": null,
+                "after": "时间上限2小时"
+              },
+              {
+                "field": "exclusions",
+                "kind": "added",
+                "before": null,
+                "after": "不执行实验"
+              },
+              {
+                "field": "acceptance",
+                "kind": "added",
+                "before": null,
+                "after": "不宣称已经复现"
+              }
+            ],
+            "stale": {
+              "scope": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明",
+              "acceptance": "所选论文证据发生变化，请核对该声明与片段的关系；片段不自动覆盖用户声明"
+            },
+            "turns": 2,
+            "audience": "researcher_student",
+            "last_notes": [
+              "已选论文片段：examples/papers/synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b\n论文证据：选定时保存的原文快照，未经科学事实验证。\n- 58e9468bbdc1b787 · examples/papers/synthetic_paper.pdf:P1-P2#8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b · 允许用于模型澄清\n共享给模型须显式 share_with_model:true；文献内的指令不会扩大文件范围或执行权限。"
+            ],
+            "last_export": null,
+            "last_update": {
+              "turn": 1,
+              "entries": [
+                {
+                  "field": "research_question",
+                  "status": "proposed",
+                  "before": null,
+                  "after": "比较合成论文中的模型A与模型B"
+                },
+                {
+                  "field": "objective_type",
+                  "status": "declared",
+                  "before": null,
+                  "after": "comparison"
+                },
+                {
+                  "field": "scope",
+                  "status": "proposed",
+                  "before": null,
+                  "after": "最小复现方案：先核对论文命题和条件，再决定实验"
+                },
+                {
+                  "field": "deliverable",
+                  "status": "proposed",
+                  "before": null,
+                  "after": "最小复现方案（规划文档），不执行实验"
+                },
+                {
+                  "field": "resources",
+                  "status": "proposed",
+                  "before": null,
+                  "after": "时间上限2小时"
+                },
+                {
+                  "field": "exclusions",
+                  "status": "proposed",
+                  "before": null,
+                  "after": "不执行实验"
+                },
+                {
+                  "field": "acceptance",
+                  "status": "declared",
+                  "before": null,
+                  "after": "不宣称已经复现"
+                }
+              ],
+              "text": "待确认提议 · 研究问题：比较合成论文中的模型A与模型B\n已采纳 · 研究目的：comparison\n待确认提议 · 研究边界：最小复现方案：先核对论文命题和条件，再决定实验\n待确认提议 · 交付物：最小复现方案（规划文档），不执行实验\n待确认提议 · 资源边界：时间上限2小时\n待确认提议 · 本轮不回答的问题：不执行实验\n已采纳 · 验收和停止规则：不宣称已经复现\n语义改写和推断仅作为待确认提议展示，不会自动成为已确认边界。"
+            },
+            "plan_synthesis": {
+              "version": "experiment_plan_synthesis_v1",
+              "basis_hash": "55045fdc5e341109a2207639a70534936a704137026b258c7b77fa8854c4ccde",
+              "mode": "template",
+              "content": null,
+              "turn": 2,
+              "reason": "RunLimitError"
+            },
+            "clarification": {
+              "mode": "template",
+              "reason": "synthesis_template_question",
+              "model_used": true
+            },
+            "question_history": [
+              {
+                "turn": 1,
+                "field": "research_question",
+                "kind": "proposal",
+                "question": "关于研究问题，是否按当前理解继续？",
+                "origin": "template",
+                "basis_hash": "60d0e769ac31a78fafbe8f359beb894537bb95f98cfc10b4d875613128cb02ea"
+              },
+              {
+                "turn": 2,
+                "field": "scope",
+                "kind": "stale",
+                "question": "关于研究边界，是否按当前理解继续？",
+                "origin": "template",
+                "basis_hash": "53e1317c743405c8b388cce2c65ebc045b32a32a93d5521f8b898c321511cff4"
+              }
+            ],
+            "evidence": [
+              {
+                "path": "examples/papers/synthetic_paper.pdf",
+                "sha256": "8438a2486388fa42a4af3553f22ede42ff7032e7864cbcc7dc6b3fabcf4a842b",
+                "text": "[PDF page 1]\nEngineering fixture - synthetic paper\nSYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.\n1. Research question\nThis fixture asks whether model A has lower prediction error than model B on\nsynthetic two-dimensional fields.\n2. Methods and data\nBoth models evaluate the same 8 independent synthetic fields, with paired\ncomparisons by field. Grid points within a field are technical measurements,\nnot independent experimental units.\nTraining, validation and final test fields are separated by source. Both\nmodels use the same splits and tuning budget. The scope is restricted to this\nsynthetic field distribution.\nSYNTHETIC / engineering fixture - PDF page 1\n\n[PDF page 2]\n3. Illustrative results\nIllustrative mean relative errors are 0.12 for model A and 0.15 for model B.\nThese numbers are authored fixture values, not observed scientific evidence.\n4. Limitations\nNo observed variance or confidence interval is provided. No scientific\nexperiment was executed. This fixture does not establish a causal effect or\nout-of-distribution performance.\n5. Reproduction information still needed\nA real study needs a traceable dataset version, code and configuration,\nindependent-unit verification and pilot variability. A sample-size or power\nguarantee cannot be inferred from this fixture.\nThis fixture tests PDF extraction and grounded interpretation, not scientific\nvalidity.\nSYNTHETIC / engineering fixture - PDF page 2",
+                "start_line": 1,
+                "end_line": 30,
+                "format": "pdf",
+                "start_page": 1,
+                "end_page": 2,
+                "page_count": 2,
+                "pages": [
+                  {
+                    "page": 1,
+                    "text": "Engineering fixture - synthetic paper\nSYNTHETIC EXAMPLE ONLY. Not a published paper or a real experiment.\n1. Research question\nThis fixture asks whether model A has lower prediction error than model B on\nsynthetic two-dimensional fields.\n2. Methods and data\nBoth models evaluate the same 8 independent synthetic fields, with paired\ncomparisons by field. Grid points within a field are technical measurements,\nnot independent experimental units.\nTraining, validation and final test fields are separated by source. Both\nmodels use the same splits and tuning budget. The scope is restricted to this\nsynthetic field distribution.\nSYNTHETIC / engineering fixture - PDF page 1"
+                  },
+                  {
+                    "page": 2,
+                    "text": "3. Illustrative results\nIllustrative mean relative errors are 0.12 for model A and 0.15 for model B.\nThese numbers are authored fixture values, not observed scientific evidence.\n4. Limitations\nNo observed variance or confidence interval is provided. No scientific\nexperiment was executed. This fixture does not establish a causal effect or\nout-of-distribution performance.\n5. Reproduction information still needed\nA real study needs a traceable dataset version, code and configuration,\nindependent-unit verification and pilot variability. A sample-size or power\nguarantee cannot be inferred from this fixture.\nThis fixture tests PDF extraction and grounded interpretation, not scientific\nvalidity.\nSYNTHETIC / engineering fixture - PDF page 2"
+                  }
+                ],
+                "extractor": "pypdf-6.21.4",
+                "workspace_id": "37e8405706a74e7485f0edf20b8ab77f",
+                "workspace_root": "D:\\Python Files\\CityU_Project\\CityU_Hackathon_AI4S\\LangGraph_RL_Agent",
+                "excerpt_sha256": "660fae681da8279a07618a24c55a787e5cabe5fc94ee313d1fd2a6deb83bacd4",
+                "share_with_model": true,
+                "turn": 2,
+                "status": "selected_excerpt_not_verified",
+                "id": "58e9468bbdc1b787"
+              }
+            ]
+          },
+          "resources": {
+            "llm_requests": 1,
+            "llm_tokens": 1328,
+            "tool_attempts": 0,
+            "limits": {
+              "llm_requests": 3,
+              "llm_tokens": 16000,
+              "tool_calls": 40,
+              "read_bytes": 24000
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "files": {
+    "RUT_Science/rut_science/science_bot/general/planning/blueprint.py": {
+      "before_sha256": "1791352cbe255e11d32b2b5da04092eefa7d0fc03ed9a97d7668f5794762d0a3",
+      "sha256": "b2a461979611aa47de8ef013cf8866f1fc13d3deec1470e654ddb615ee1df808",
+      "reason": "User authorized delivery of LLM experiment-plan synthesis; preserve current interface style/layout, ledger and permissions."
+    },
+    "RUT_Science/rut_science/science_bot/general/planning/delivery.py": {
+      "before_sha256": "8fcaedc5005c1c425ab9334d53c49e7d63f9ad35d1987918a1d4083f2626ed58",
+      "sha256": "f814fe1a29ca12e1994e9c14c028841c98d638d14fa5b0177ba10df233f0824a",
+      "reason": "User authorized delivery of LLM experiment-plan synthesis; preserve current interface style/layout, ledger and permissions."
+    },
+    "RUT_Science/rut_science/science_bot/general/planning/ledger.py": {
+      "before_sha256": "39c137feb3374aeac00aebb5dd7e063c19994b04e25efa9ec8fe9e6e0a24a929",
+      "sha256": "e0fb2367e7fbcfffcdc4cd3624280b102da49de8c95127980f403c8c89a112d7",
+      "reason": "User authorized delivery of LLM experiment-plan synthesis; preserve current interface style/layout, ledger and permissions."
+    },
+    "RUT_Science/rut_science/science_bot/general/planning/runtime.py": {
+      "before_sha256": "56e9bb57cb7c570da29ce45ed34048da4325c5cfd01b2654cd8e4f6200cc55c8",
+      "sha256": "dab42dee3465934ddfac6d6a369cc62048195aa61a0609604ab38b0bbf411e84",
+      "reason": "User authorized delivery of LLM experiment-plan synthesis; preserve current interface style/layout, ledger and permissions."
+    },
+    "RUT_Science/rut_science/science_bot/presentation.py": {
+      "before_sha256": "0d3601501c8c666fdef5d52c1cf562a4fa851d1f9543787fc35bd029df47562b",
+      "sha256": "6ff85e9d374ef3f41af88ef15cf720925ffc7511e2ebef2f9f1409b6d386918e",
+      "reason": "User authorized delivery of LLM experiment-plan synthesis; preserve current interface style/layout, ledger and permissions."
+    },
+    "RUT_Science/rut_science/science_bot/workbench_assets/dist/app.js": {
+      "before_sha256": "16f09ee1cfac5772718c61dde5d0bdb4540e3836535add9e2039cec426c871c6",
+      "sha256": "6da182fd38758360cc505175836ee933609da2b4d597726a43adfe404a3a3793",
+      "reason": "User authorized delivery of LLM experiment-plan synthesis; preserve current interface style/layout, ledger and permissions."
+    }
+  }
+}

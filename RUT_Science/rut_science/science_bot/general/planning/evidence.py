@@ -10,7 +10,7 @@ from ..registry import _project_read, _validate
 
 MAX_SOURCES = 6
 MAX_EXCERPT_BYTES = 6000
-MAX_TOTAL_BYTES = 18000
+MAX_TOTAL_BYTES = 2*1024*1024
 SPEC = {"type": "object", "properties": {
     "path": {"type": "string", "minLength": 1, "maxLength": 1000},
     "start_line": {"type": "integer", "minimum": 1},
@@ -20,7 +20,11 @@ SPEC = {"type": "object", "properties": {
 PDF_SPEC={"type":"object","properties":{
     "path":{"type":"string","minLength":1,"maxLength":1000},
     "start_page":{"type":"integer","minimum":1},"end_page":{"type":"integer","minimum":1},
-    "share_with_model":{"type":"boolean"}},"required":["path","start_page","end_page"],"additionalProperties":False}
+    "share_with_model":{"type":"boolean"}},"required":["path"],"additionalProperties":False}
+LIBRARY_SPEC={"type":"object","properties":{
+    "paper_id":{"type":"string","minLength":64,"maxLength":64},
+    **{k:v for k,v in PDF_SPEC['properties'].items() if k!='path'}},
+    "required":["paper_id"],"additionalProperties":False}
 
 
 def location(row):
@@ -43,6 +47,7 @@ def validate_sources(sources):
         if pdf:
             keys|={'format','start_page','end_page','page_count','pages','extractor'}
             if 'interpretation' in row:keys.add('interpretation')
+            if 'library_id' in row or 'original_filename' in row:keys|={'library_id','original_filename'}
         if type(row) is not dict or set(row) != keys:
             raise ValueError('论文证据快照结构无效')
         if any(type(row[key]) is not str for key in ('id', 'path', 'sha256', 'text',
@@ -56,18 +61,22 @@ def validate_sources(sources):
                 or row['status'] != 'selected_excerpt_not_verified'):
             raise ValueError('论文证据绑定无效')
         if (type(row['start_line']) is not int or type(row['end_line']) is not int
-                or not 1 <= row['end_line']-row['start_line']+1 <= (3000 if pdf else 120) or row['start_line'] < 1):
+                or not 1 <= row['end_line']-row['start_line']+1 <= (1000000 if pdf else 120) or row['start_line'] < 1):
             raise ValueError('论文证据行范围无效')
         raw = row['text'].encode('utf-8')
         if pdf:
             from .pdf_document import page_text
+            if 'library_id' in row:
+                from ...paper_library import filename
+                if row['library_id']!=row['sha256'] or row['path']!=row['library_id']+'.pdf':raise ValueError('论文库来源绑定无效。')
+                filename(row['original_filename'])
             if (any(type(row[k]) is not int for k in ('start_page','end_page','page_count'))
                     or not 1<=row['start_page']<=row['end_page']<=row['page_count']
-                    or row['end_page']-row['start_page']+1>12 or type(row['pages']) is not list
+                    or row['end_page']-row['start_page']+1>256 or type(row['pages']) is not list
                     or len(row['pages'])!=row['end_page']-row['start_page']+1 or type(row['extractor']) is not str):
                 raise ValueError('PDF页范围或提取器信息无效')
             for number,page in enumerate(row['pages'],row['start_page']):
-                if type(page) is not dict or set(page)!={'page','text'} or type(page['page']) is not int or page['page']!=number or type(page['text']) is not str or not page['text'].strip():
+                if type(page) is not dict or set(page)!={'page','text'} or type(page['page']) is not int or page['page']!=number or type(page['text']) is not str:
                     raise ValueError('PDF原文页结构无效')
             if page_text(row['pages'])!=row['text'] or row['start_line']!=1 or row['end_line']!=len(row['text'].splitlines()):
                 raise ValueError('PDF页快照与提取文字不一致')
@@ -89,23 +98,32 @@ def source_id(row):
 
 
 def citation(row):
-    if row.get('format')=='pdf':return f"{row['path']}:P{row['start_page']}-P{row['end_page']}#{row['sha256']}"
+    if row.get('format')=='pdf':return f"{row.get('original_filename',row['path'])}:P{row['start_page']}-P{row['end_page']}#{row['sha256']}"
     return f"{row['path']}:L{row['start_line']}-L{row['end_line']}#{row['sha256']}"
 
 
 def select(session, arguments, turn):
-    pdf=type(arguments) is dict and Path(arguments.get('path','')).suffix.lower()=='.pdf'
-    _validate(arguments, PDF_SPEC if pdf else SPEC)
+    library=type(arguments) is dict and 'paper_id' in arguments
+    pdf=library or type(arguments) is dict and Path(arguments.get('path','')).suffix.lower()=='.pdf'
+    _validate(arguments, LIBRARY_SPEC if library else PDF_SPEC if pdf else SPEC)
+    stored=None
+    if library:
+        from ...paper_library import selection
+        workspace,stored=selection(session,arguments['paper_id'])
+        arguments={'path':stored['id']+'.pdf',**{k:v for k,v in arguments.items() if k!='paper_id'}}
+    else:workspace=session.workspace
     if not pdf and arguments['end_line']-arguments['start_line']+1 not in range(1, 121):
         raise ValueError('请选择最多120行的连续片段')
-    workspace = session.workspace
     if workspace is None:
-        raise ValueError('请先用 -Workspace 绑定包含所选论文的项目；不会读取工作区之外或IDE标签中的文件')
+        raise ValueError('可在“证据材料”上传PDF，无需绑定工作区；使用本地路径时请先用 -Workspace 绑定目录。')
     if pdf:
         from .pdf_document import extract
         row=extract(workspace,arguments)
+        if stored:
+            if row['sha256']!=stored['sha256']:raise ValueError('论文库文件内容已改变，请重新上传原文。')
+            row.update(library_id=stored['id'],original_filename=stored['filename'])
         if len(row['text'].encode('utf-8'))>min(MAX_TOTAL_BYTES,session.limits['read_bytes']):
-            raise ValueError('所选PDF页超过本次上下文预算，请缩小范围；未截断或上传。')
+            raise ValueError('所选PDF超过此会话的文件读取预算；旧会话保留原额度。请新建研究使用全文配置，或缩小范围；未截断或上传。')
         row.update(workspace_id=workspace.binding['workspace_id'],workspace_root=str(workspace.root),
             excerpt_sha256=hashlib.sha256(row['text'].encode('utf-8')).hexdigest(),
             share_with_model=arguments.get('share_with_model',False),turn=turn,status='selected_excerpt_not_verified')
@@ -173,7 +191,7 @@ def command(session, state, payload, turn):
         state['evidence'] = [deepcopy(r) for r in sources if r['id'] != value.strip()]
         description = '已从当前版本移除所选片段；历史快照仍保留。'
     else:
-        raise ValueError('用法：/plan evidence add {"path":"paper.pdf","start_page":1,"end_page":3,"share_with_model":true}；也可 list/show <id>/understand <id>/remove <id>')
+        raise ValueError('全文：/plan evidence add {"path":"paper.pdf","share_with_model":true}；可加 start_page/end_page 选择范围；也可 list/show <id>/understand <id>/remove <id>')
     state['approval'] = None
     for field in ('hypothesis', 'scope', 'baseline', 'outcomes', 'analysis', 'acceptance'):
         if field in state['facts']:
@@ -186,7 +204,9 @@ def render(sources):
     lines = ['论文证据：选定时保存的原文快照，未经科学事实验证。']
     for row in sources:
         lines.append(f"- {row['id']} · {citation(row)} · "+('允许用于模型澄清' if row['share_with_model'] else '仅本地展示'))
+        if row.get('format')=='pdf':
+            lines.append('  本地已读取'+str(len(row['pages']))+'页 / 文件共'+str(row['page_count'])+'页；'+str(len(row['text'].encode('utf-8')))+'字节正文。')
     if not sources:
-        lines.append('尚未选择片段。用 /plan evidence add 指定当前工作区中的文件及行号或PDF页码。')
+        lines.append('尚未选择文献。用 /plan evidence add 指定工作区中的PDF路径（省略页码读全文），或Markdown/TXT路径和行号。')
     lines.append('共享给模型须显式 share_with_model:true；文献内的指令不会扩大文件范围或执行权限。')
     return '\n'.join(lines)

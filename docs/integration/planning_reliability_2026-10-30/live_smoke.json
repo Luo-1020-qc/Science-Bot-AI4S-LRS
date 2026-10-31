@@ -1,0 +1,105 @@
+{
+  "model_requests_including_development": 7,
+  "accounted_tokens": 12675,
+  "automatic_retries": 0,
+  "real_scientific_executions": 0,
+  "human_quality_measured": false,
+  "runs": [
+    {
+      "phase": "development",
+      "checked_utc": "2026-10-30T15:29:50.095511+00:00",
+      "cases": [
+        {
+          "id": "prediction_continuation",
+          "planning_turns": 2,
+          "research_question_retained": true,
+          "research_question_conflict": false,
+          "feedback_visible": true,
+          "budget_after": null,
+          "scope_present": false,
+          "resources": {
+            "llm_requests": 3,
+            "llm_tokens": 5020,
+            "tool_attempts": 0,
+            "limits": {
+              "llm_requests": 4,
+              "llm_tokens": 12000,
+              "tool_calls": 40,
+              "read_bytes": 24000
+            }
+          },
+          "ready": false,
+          "scientific_claim_verified": false,
+          "execution_authorized": false,
+          "numeric_or_tabular_created": false
+        },
+        {
+          "id": "material_budget_correction",
+          "planning_turns": 2,
+          "research_question_retained": true,
+          "research_question_conflict": false,
+          "feedback_visible": true,
+          "budget_after": "后续最多两次运行、一小时上限",
+          "scope_present": false,
+          "resources": {
+            "llm_requests": 2,
+            "llm_tokens": 3777,
+            "tool_attempts": 0,
+            "limits": {
+              "llm_requests": 4,
+              "llm_tokens": 12000,
+              "tool_calls": 40,
+              "read_bytes": 24000
+            }
+          },
+          "ready": false,
+          "scientific_claim_verified": false,
+          "execution_authorized": false,
+          "numeric_or_tabular_created": false,
+          "literal_new_budget_adopted": true
+        }
+      ],
+      "requests": 5,
+      "accounted_tokens": 8797,
+      "automatic_retries": 0,
+      "human_quality_rated": false,
+      "real_experiments": 0
+    },
+    {
+      "phase": "budget_recheck",
+      "checked_utc": "2026-10-30T15:40:47.751002+00:00",
+      "cases": [
+        {
+          "id": "material_budget_correction",
+          "planning_turns": 2,
+          "research_question_retained": true,
+          "research_question_conflict": false,
+          "feedback_visible": true,
+          "budget_after": "后续最多两次运行、一小时上限",
+          "scope_present": false,
+          "resources": {
+            "llm_requests": 2,
+            "llm_tokens": 3878,
+            "tool_attempts": 0,
+            "limits": {
+              "llm_requests": 3,
+              "llm_tokens": 12000,
+              "tool_calls": 40,
+              "read_bytes": 24000
+            }
+          },
+          "ready": false,
+          "scientific_claim_verified": false,
+          "execution_authorized": false,
+          "numeric_or_tabular_created": false,
+          "literal_new_budget_adopted": true
+        }
+      ],
+      "requests": 2,
+      "accounted_tokens": 3878,
+      "automatic_retries": 0,
+      "human_quality_rated": false,
+      "real_experiments": 0
+    }
+  ]
+}

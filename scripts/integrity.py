@@ -88,6 +88,29 @@ PDF_HOST_FILES=frozenset('RUT_Science/rut_science/science_bot/'+n for n in (
     'workbench_assets/dist/app.js','workbench_assets/dist/index.html'))|frozenset({'RUT_Science/pyproject.toml','examples/interfaces/browser.html'})
 PDF_NEW_FILES=frozenset('RUT_Science/rut_science/science_bot/general/planning/'+n for n in (
     'pdf_document.py','pdf_worker.py','paper_reading.py'))|frozenset({'requirements-science-bot.lock.txt','examples/papers/synthetic_paper.pdf'})
+RELIABILITY_RECORD='docs/integration/planning_reliability_2026-10-30'
+RELIABILITY_HOST_FILES=frozenset('RUT_Science/rut_science/science_bot/'+n for n in (
+    'general/planning/runtime.py','general/planning/intake.py','general/planning/ledger.py',
+    'general/planning/blueprint.py','general/planning/delivery.py','presentation.py','workbench_assets/dist/app.js'))
+RELIABILITY_NEW_FILES=frozenset('RUT_Science/rut_science/science_bot/general/planning/'+n for n in (
+    'routing.py','turn_feedback.py','method_review.py'))
+RELIABILITY_STYLE_FILES=frozenset({'RUT_Science/rut_science/science_bot/workbench_assets/dist/index.html',
+    'RUT_Science/rut_science/science_bot/workbench_assets/dist/styles.css',
+    'examples/interfaces/browser.html','examples/interfaces/delivery.html','examples/interfaces/terminal.html'})
+SYNTHESIS_RECORD='docs/integration/plan_synthesis_2026-10-31'
+SYNTHESIS_HOST_FILES=RELIABILITY_HOST_FILES-frozenset({'RUT_Science/rut_science/science_bot/general/planning/intake.py'})
+SYNTHESIS_NEW_FILES=frozenset({'RUT_Science/rut_science/science_bot/general/planning/synthesis.py'})
+FULL_PDF_RECORD='docs/integration/full_pdf_2026-10-31'
+FULL_PDF_HOST_FILES=frozenset('RUT_Science/rut_science/science_bot/'+n for n in (
+    'general/conversation.py','general/provider.py','general/planning/pdf_document.py',
+    'general/planning/pdf_worker.py','general/planning/evidence.py','general/planning/paper_reading.py',
+    'general/planning/clarification.py','general/planning/synthesis.py','workbench_assets/dist/app.js'))
+FULL_PDF_NEW_FILES=frozenset({'RUT_Science/rut_science/science_bot/general/planning/paper_context.py'})
+PAPER_UPLOAD_RECORD='docs/integration/paper_upload_2026-10-31'
+PAPER_UPLOAD_HOST_FILES=frozenset('RUT_Science/rut_science/science_bot/'+n for n in (
+    'workbench.py','presentation.py','general/planning/pdf_document.py','general/planning/pdf_worker.py',
+    'general/planning/evidence.py','general/planning/paper_reading.py','workbench_assets/dist/app.js'))|frozenset({'.gitignore'})
+PAPER_UPLOAD_NEW_FILES=frozenset({'RUT_Science/rut_science/science_bot/paper_library.py'})
 
 
 def sha(path):
@@ -116,6 +139,17 @@ def _hashes(value):
 def _file_matches(root, name, expected):
     path = root/name
     return path.is_file() and path.resolve() == path and sha(path) == expected
+
+
+def _historical_matches(root,name,checksum):
+    if _file_matches(root,name,checksum):return True
+    # Only the explicitly authorized full-PDF transport update can supersede
+    # this provider pin. The old receipt stays intact; the final overlay below
+    # independently validates the complete prior map and allowed file scope.
+    path=root/FULL_PDF_RECORD/'authorized_source_changes.json'
+    if name!='RUT_Science/rut_science/science_bot/general/provider.py' or not path.exists():return False
+    row=_read(path).get('files',{}).get(name,{})
+    return row.get('before_sha256')==checksum and _file_matches(root,name,row.get('sha256'))
 
 
 def _apply_overlay(value, expected, allowed, label):
@@ -164,7 +198,7 @@ def _expectations(root):
         required = {"docs/cleanup/2026-10-28/protected_current.json",
                     TOOL_RECORD+"/authorized_source_changes.json", TOOL_RECORD+"/runtime_manifest.json"}|PROVIDER_FILES
         if set(constraints) != required: raise ValueError("Planning history/provider constraints incomplete")
-        if any(not _file_matches(root, name, h) for name, h in constraints.items()):
+        if any(not _historical_matches(root, name, h) for name, h in constraints.items()):
             raise ValueError("Historical baseline or unchanged API provider/configuration modified")
 
     new_overlay = record/"authorized_source_changes.json"
@@ -197,7 +231,7 @@ def _expectations(root):
             if expected.get(name) != checksum:
                 raise ValueError('Dynamic clarification does not chain from planning runtime')
         for name, checksum in _hashes(prior['unchanged_history_and_provider']).items():
-            if not _file_matches(root, name, checksum):
+            if not _historical_matches(root, name, checksum):
                 raise ValueError('Prior planning/history/API files changed: '+name)
     dynamic_overlay = dynamic/'authorized_source_changes.json'
     if dynamic_overlay.exists():
@@ -236,7 +270,7 @@ def _expectations(root):
                 raise ValueError('Interface source does not chain from previous runtime')
             expected[name] = checksum
         for name,checksum in _hashes({**before['unchanged_history'],**before['provider_and_configuration']}).items():
-            if not _file_matches(root,name,checksum):raise ValueError('Interface prior evidence or API changed: '+name)
+            if not _historical_matches(root,name,checksum):raise ValueError('Interface prior evidence or API changed: '+name)
         interface_edits = _apply_overlay(_read(interface/'authorized_source_changes.json'),expected,INTERFACE_HOST_FILES,'Interfaces')
         if set(interface_edits) != INTERFACE_HOST_FILES:raise ValueError('Interface source overlay incomplete')
         interface_runtime = _hashes(_read(interface/'runtime_manifest.json')['sha256'])
@@ -253,7 +287,7 @@ def _expectations(root):
             if expected.get(name) != checksum:
                 raise ValueError('Question tool source does not chain from previous runtime')
         for name, checksum in _hashes({**before['unchanged_history'], **before['provider_and_configuration']}).items():
-            if not _file_matches(root, name, checksum):
+            if not _historical_matches(root, name, checksum):
                 raise ValueError('Question tool prior evidence or provider changed: '+name)
         changes = _apply_overlay(_read(question/'authorized_source_changes.json'), expected, QUESTION_HOST_FILES, 'Question tool')
         if set(changes) != QUESTION_HOST_FILES:
@@ -279,7 +313,7 @@ def _expectations(root):
                 raise ValueError('Branding source does not chain from previous runtime')
             expected[name] = checksum
         for name, checksum in _hashes(before['unchanged_history']).items():
-            if not _file_matches(root, name, checksum):
+            if not _historical_matches(root, name, checksum):
                 raise ValueError('Branding prior evidence changed: '+name)
         changes = _apply_overlay(_read(branding/'authorized_source_changes.json'), expected, BRANDING_FILES, 'Branding')
         if set(changes) != BRANDING_FILES:
@@ -295,7 +329,7 @@ def _expectations(root):
         for name,checksum in _hashes(before['files']).items():
             if expected.get(name) != checksum:raise ValueError('Context choices do not chain from prior runtime')
         for name,checksum in _hashes(before['unchanged_history']).items():
-            if not _file_matches(root,name,checksum):raise ValueError('Context choices prior evidence changed: '+name)
+            if not _historical_matches(root,name,checksum):raise ValueError('Context choices prior evidence changed: '+name)
         changes = _apply_overlay(_read(choices/'authorized_source_changes.json'),expected,CHOICES_HOST_FILES,'Context choices')
         if set(changes) != CHOICES_HOST_FILES:raise ValueError('Context choices overlay incomplete')
         current = _hashes(_read(choices/'runtime_manifest.json')['sha256'])
@@ -325,7 +359,7 @@ def _expectations(root):
         # path map changes. Never rewrite old task/weight hashes to hide a move.
         for name, checksum in _hashes(before['files']).items():
             if name.startswith('docs/integration/') or name in PROVIDER_FILES:
-                if not _file_matches(root,name,checksum):
+                if not _historical_matches(root,name,checksum):
                     raise ValueError('Mainline prior evidence or provider changed: '+name)
         for name in MAINLINE_HOST_FILES:
             prior = before['files'].get(name)
@@ -350,7 +384,7 @@ def _expectations(root):
             raise ValueError('Session history does not chain from prior runtime')
         for name,checksum in _hashes(before['files']).items():
             if name.startswith('docs/integration/') or name in PROVIDER_FILES:
-                if not _file_matches(root,name,checksum):raise ValueError('Session history prior evidence/provider changed: '+name)
+                if not _historical_matches(root,name,checksum):raise ValueError('Session history prior evidence/provider changed: '+name)
         for name in SESSION_HISTORY_HOST_FILES:
             prior=before['files'].get(name)
             if prior is None or name in expected and prior!=expected[name]:raise ValueError('Session history before source mismatch')
@@ -369,7 +403,7 @@ def _expectations(root):
             raise ValueError('PDF reading does not chain from prior runtime')
         for name,checksum in _hashes(before['files']).items():
             if name.startswith('docs/integration/') or name in PROVIDER_FILES:
-                if not _file_matches(root,name,checksum):raise ValueError('PDF reading prior evidence/provider changed: '+name)
+                if not _historical_matches(root,name,checksum):raise ValueError('PDF reading prior evidence/provider changed: '+name)
         for name in PDF_HOST_FILES:
             if before['files'].get(name)!=expected.get(name):raise ValueError('PDF reading before source mismatch')
         changes=_apply_overlay(_read(pdf/'authorized_source_changes.json'),expected,PDF_HOST_FILES,'PDF reading')
@@ -378,6 +412,79 @@ def _expectations(root):
         if set(current)!=PDF_HOST_FILES|PDF_NEW_FILES:raise ValueError('PDF reading runtime scope mismatch')
         for name,checksum in current.items():
             if name in expected and expected[name]!=checksum:raise ValueError('PDF reading runtime disagrees with changes')
+            expected[name]=checksum
+    reliability=root/RELIABILITY_RECORD
+    if (reliability/'authorized_source_changes.json').exists():
+        before=_read(reliability/'before_snapshot.json')
+        if _hashes(before['protected_sha256'])!=expected:
+            raise ValueError('Planning reliability does not chain from prior runtime')
+        if set(before['style_files'])!=RELIABILITY_STYLE_FILES:
+            raise ValueError('Planning reliability style scope mismatch')
+        for name,checksum in _hashes(before['style_files']).items():
+            if not _file_matches(root,name,checksum):raise ValueError('Page style/layout changed: '+name)
+        for name,checksum in _hashes(before['files']).items():
+            if name.startswith('docs/integration/') or name in PROVIDER_FILES:
+                if not _historical_matches(root,name,checksum):raise ValueError('Planning reliability prior evidence/provider changed: '+name)
+        changes=_apply_overlay(_read(reliability/'authorized_source_changes.json'),expected,RELIABILITY_HOST_FILES,'Planning reliability')
+        if set(changes)!=RELIABILITY_HOST_FILES:raise ValueError('Planning reliability overlay incomplete')
+        current=_hashes(_read(reliability/'runtime_manifest.json')['sha256'])
+        if set(current)!=RELIABILITY_HOST_FILES|RELIABILITY_NEW_FILES:raise ValueError('Planning reliability runtime scope mismatch')
+        for name,checksum in current.items():
+            if name in expected and expected[name]!=checksum:raise ValueError('Planning reliability manifest mismatch')
+            expected[name]=checksum
+    synthesis=root/SYNTHESIS_RECORD
+    if (synthesis/'authorized_source_changes.json').exists():
+        before=_read(synthesis/'before_snapshot.json')
+        if before.get('version')!='plan_synthesis_before_v1' or _hashes(before['protected_sha256'])!=expected:
+            raise ValueError('Plan synthesis does not chain from prior runtime')
+        if set(before['style_files'])!=RELIABILITY_STYLE_FILES:raise ValueError('Plan synthesis style scope mismatch')
+        for name,checksum in _hashes(before['style_files']).items():
+            if not _file_matches(root,name,checksum):raise ValueError('Plan synthesis changed page style: '+name)
+        for name,checksum in _hashes(before['files']).items():
+            if name.startswith('docs/integration/') or name in PROVIDER_FILES:
+                if not _historical_matches(root,name,checksum):raise ValueError('Plan synthesis prior evidence/provider changed: '+name)
+        changes=_apply_overlay(_read(synthesis/'authorized_source_changes.json'),expected,SYNTHESIS_HOST_FILES,'Plan synthesis')
+        if set(changes)!=SYNTHESIS_HOST_FILES:raise ValueError('Plan synthesis overlay incomplete')
+        current=_hashes(_read(synthesis/'runtime_manifest.json')['sha256'])
+        if set(current)!=SYNTHESIS_HOST_FILES|SYNTHESIS_NEW_FILES:raise ValueError('Plan synthesis runtime scope mismatch')
+        for name,checksum in current.items():
+            if name in expected and expected[name]!=checksum:raise ValueError('Plan synthesis runtime manifest mismatch')
+            expected[name]=checksum
+    full_pdf=root/FULL_PDF_RECORD
+    if (full_pdf/'authorized_source_changes.json').exists():
+        before=_read(full_pdf/'before_snapshot.json')
+        if before.get('version')!='full_pdf_before_v1' or _hashes(before['protected_sha256'])!=expected:
+            raise ValueError('Full PDF does not chain from prior runtime')
+        if set(before['style_files'])!=RELIABILITY_STYLE_FILES:raise ValueError('Full PDF style scope mismatch')
+        for name,checksum in _hashes(before['style_files']).items():
+            if not _file_matches(root,name,checksum):raise ValueError('Full PDF changed page style/layout: '+name)
+        for name,checksum in _hashes(before['files']).items():
+            if name.startswith('docs/integration/') or name in PROVIDER_FILES-FULL_PDF_HOST_FILES:
+                if not _file_matches(root,name,checksum):raise ValueError('Full PDF changed prior evidence/configuration: '+name)
+        changes=_apply_overlay(_read(full_pdf/'authorized_source_changes.json'),expected,FULL_PDF_HOST_FILES,'Full PDF')
+        if set(changes)!=FULL_PDF_HOST_FILES:raise ValueError('Full PDF overlay incomplete')
+        current=_hashes(_read(full_pdf/'runtime_manifest.json')['sha256'])
+        if set(current)!=FULL_PDF_HOST_FILES|FULL_PDF_NEW_FILES:raise ValueError('Full PDF runtime scope mismatch')
+        for name,checksum in current.items():
+            if name in expected and expected[name]!=checksum:raise ValueError('Full PDF runtime manifest mismatch')
+            expected[name]=checksum
+    upload=root/PAPER_UPLOAD_RECORD
+    if (upload/'authorized_source_changes.json').exists():
+        before=_read(upload/'before_snapshot.json')
+        if before.get('version')!='paper_upload_before_v1' or _hashes(before['protected_sha256'])!=expected:
+            raise ValueError('Paper upload does not chain from prior runtime')
+        if set(before['style_files'])!=RELIABILITY_STYLE_FILES:raise ValueError('Paper upload style scope mismatch')
+        for name,checksum in _hashes(before['style_files']).items():
+            if not _file_matches(root,name,checksum):raise ValueError('Paper upload changed static layout/style: '+name)
+        for name,checksum in _hashes(before['files']).items():
+            if name.startswith('docs/integration/') or name in PROVIDER_FILES:
+                if not _file_matches(root,name,checksum):raise ValueError('Paper upload changed historical evidence/provider: '+name)
+        changes=_apply_overlay(_read(upload/'authorized_source_changes.json'),expected,PAPER_UPLOAD_HOST_FILES,'Paper upload')
+        if set(changes)!=PAPER_UPLOAD_HOST_FILES:raise ValueError('Paper upload overlay incomplete')
+        current=_hashes(_read(upload/'runtime_manifest.json')['sha256'])
+        if set(current)!=PAPER_UPLOAD_HOST_FILES|PAPER_UPLOAD_NEW_FILES:raise ValueError('Paper upload runtime scope mismatch')
+        for name,checksum in current.items():
+            if name in expected and expected[name]!=checksum:raise ValueError('Paper upload runtime manifest mismatch')
             expected[name]=checksum
     return expected, original, edits, runtime, planning_edits, planning_runtime
 
@@ -417,6 +524,14 @@ def check_project(root=ROOT):
                 if (root/SESSION_HISTORY_RECORD/'authorized_source_changes.json').exists() else 0,
             "pdf_runtime_files_checked": len(PDF_HOST_FILES|PDF_NEW_FILES)
                 if (root/PDF_RECORD/'authorized_source_changes.json').exists() else 0,
+            "planning_reliability_files_checked":len(RELIABILITY_HOST_FILES|RELIABILITY_NEW_FILES)
+                if (root/RELIABILITY_RECORD/'authorized_source_changes.json').exists() else 0,
+            "plan_synthesis_files_checked":len(SYNTHESIS_HOST_FILES|SYNTHESIS_NEW_FILES)
+                if (root/SYNTHESIS_RECORD/'authorized_source_changes.json').exists() else 0,
+            "full_pdf_files_checked":len(FULL_PDF_HOST_FILES|FULL_PDF_NEW_FILES)
+                if (root/FULL_PDF_RECORD/'authorized_source_changes.json').exists() else 0,
+            "paper_upload_files_checked":len(PAPER_UPLOAD_HOST_FILES|PAPER_UPLOAD_NEW_FILES)
+                if (root/PAPER_UPLOAD_RECORD/'authorized_source_changes.json').exists() else 0,
             "changed": []}
 
 

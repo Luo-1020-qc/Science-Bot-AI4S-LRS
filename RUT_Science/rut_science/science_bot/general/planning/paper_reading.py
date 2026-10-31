@@ -17,16 +17,33 @@ SPEC=ToolSpec('interpret_selected_paper',
             'required':['category','statement','page','quote'],'additionalProperties':False}},
         'unanswered':{'type':'array','maxItems':8,'items':{'type':'string','minLength':2,'maxLength':300}}},
         'required':['items','unanswered'],'additionalProperties':False},domain='planning')
+READ_SCHEMA=deepcopy(SPEC.input_schema)
+READ_SCHEMA['properties']['items']['maxItems']=8
+READ_SCHEMA['properties']['items']['items']['properties']['statement']['maxLength']=300
+READ_SCHEMA['properties']['items']['items']['properties']['quote']['maxLength']=240
+READ_SPEC=ToolSpec(SPEC.name,SPEC.description,READ_SCHEMA,domain='planning')
 
 
 def validate_reading(reading,source):
-    if (type(reading) is not dict or set(reading)-{'rejected_items'}!={'items','unanswered','status','source_sha256','model_requested','turn'}
+    if (type(reading) is not dict or set(reading)-{'rejected_items','coverage'}!={'items','unanswered','status','source_sha256','model_requested','turn'}
             or reading['status']!='model_interpretation_not_verified' or reading['source_sha256']!=source['sha256']
             or type(reading['model_requested']) is not str or type(reading['turn']) is not int):
         raise ValueError('论文解读与来源绑定无效。')
-    _validate({k:reading[k] for k in ('items','unanswered')},SPEC.input_schema)
+    schema=deepcopy(SPEC.input_schema);multiplier=1
+    if 'coverage' in reading:
+        from .paper_context import coverage
+        saved=reading['coverage'];expected=coverage(source)
+        if (type(saved) is not dict or set(saved)!=set(expected)
+                or saved['chunk_sha256']!=expected['chunk_sha256'] or saved['total_chunks']!=expected['total_chunks']
+                or type(saved['completed_chunks']) is not int or not 0<=saved['completed_chunks']<=expected['total_chunks']
+                or type(saved['last_error']) is not str or len(saved['last_error'])>200):
+            raise ValueError('论文分批阅读覆盖记录无效。')
+        multiplier=max(1,saved['completed_chunks'])
+        schema['properties']['items']['maxItems']=12*multiplier
+        schema['properties']['unanswered']['maxItems']=8*multiplier
+    _validate({k:reading[k] for k in ('items','unanswered')},schema)
     rejected=reading.get('rejected_items',[])
-    if type(rejected) is not list or len(rejected)>12 or any(type(r) is not dict or set(r)!={'category','reason'}
+    if type(rejected) is not list or len(rejected)>12*multiplier or any(type(r) is not dict or set(r)!={'category','reason'}
             or r['category'] not in set(LABELS)|{'unknown'} or r['reason']!='schema_or_grounding_failed' for r in rejected):
         raise ValueError('论文解读拒绝记录无效。')
     pages={p['page']:p['text'] for p in source['pages']}
@@ -46,7 +63,7 @@ def canonical_quote(text,quote):
     raise ValueError('Quotation is not in the selected PDF page')
 
 
-def understand(session,source,turn):
+def _understand_chunk(session,source,turn):
     if source.get('format')!='pdf':raise ValueError('请先选择PDF页码片段，再进行论文理解。')
     if not source['share_with_model']:raise ValueError('请先明确勾选“允许所选内容用于模型理解”，再理解该片段。')
     if source.get('interpretation'):return deepcopy(source['interpretation'])
@@ -60,11 +77,13 @@ def understand(session,source,turn):
              '每条statement是对quote的忠实解释，quote必须逐字摘录同一物理PDF页的原文，包括原有换行；page填写物理PDF页码。'
              '每条要点只能报告该条quote覆盖的信息，不能把同页其他句子的数值加入该条要点。'
              '严格遵循工具Schema，不添加未声明的字段。'
+             '工具参数必须是一个完整的JSON对象，根级只有items和unanswered两个键。不要添加外层包装，末尾应为 ]}，不要多写 }。'
+             '这是分批阅读的当前批次；最多8条关键要点，statement不超过300字符，quote不超过240字符，优先提取具体方法与限制，确保JSON闭合。'
              '保留原数值和单位，不进行百分比换算，不把预测说成因果，不把合成结果说成真实证据。'
              '没有依据的类别可以不填，缺少的方法、样本、图表或其他页信息放入unanswered。引用存在不代表解释已经科学验证。'},
             {'role':'user','content':json.dumps({'path':source['path'],'file_sha256':source['sha256'],
                                               'selected_pdf_pages':source['pages']},ensure_ascii=False)}],
-            tools=[SPEC.provider_schema()],role='paper_reading')
+            tools=[READ_SPEC.provider_schema()],role='paper_reading')
         if _stopped(session):raise ValueError('会话暂停或取消，论文解读未保存。')
         calls=result.get('tool_calls',[])
         if len(calls)!=1 or calls[0].get('name')!=SPEC.name:raise ValueError('论文理解未返回一个合法结构化提议。')
@@ -90,12 +109,58 @@ def understand(session,source,turn):
         return reading
     except Exception as exc:
         provider.mark_validation('rejected',type(exc).__name__)
+        from ..provider import OutputTruncatedError
+        from ....budget import RunLimitError
+        if isinstance(exc,(OutputTruncatedError,RunLimitError)):
+            raise ValueError('论文理解未完成：'+str(exc)+'；已选原文保留。') from None
         raise ValueError('论文理解暂未通过校验或模型不可用；已选原文保留，可检查模型输出后重试。') from None
+
+
+def understand(session,source,turn):
+    from .paper_context import chunks,coverage
+    if source.get('format')!='pdf':raise ValueError('请先选择PDF，再进行论文理解。')
+    if not source['share_with_model']:raise ValueError('请先允许所选内容用于模型理解。')
+    batches=chunks(source);previous=source.get('interpretation')
+    if len(batches)==1 and len(source['text'].encode('utf-8'))<=18000 and not (previous or {}).get('coverage'):
+        return _understand_chunk(session,source,turn)
+    if previous:
+        validate_reading(previous,source)
+        if not previous.get('coverage'):
+            raise ValueError('旧解读未记录全文覆盖，请重新选择该PDF后解读。')
+        reading=deepcopy(previous)
+    else:
+        reading={'items':[],'unanswered':[],'status':'model_interpretation_not_verified',
+                 'source_sha256':source['sha256'],'model_requested':session.meta['model'],'turn':turn,
+                 'coverage':coverage(source)}
+    if reading['coverage']['completed_chunks']==len(batches):return reading
+    if session.meta['backend']=='offline':raise ValueError('全文已保存在本地；分批论文理解需要API模式。')
+    if _stopped(session):raise ValueError('会话已暂停或取消。')
+    reading['coverage']['last_error']=''
+    for index in range(reading['coverage']['completed_chunks'],len(batches)):
+        chunk={k:deepcopy(v) for k,v in source.items() if k!='interpretation'}
+        chunk['pages']=batches[index]
+        try:
+            if _stopped(session):raise ValueError('会话暂停或取消，分批阅读停止。')
+            # Empty pages are retained locally and counted, with no fake model points.
+            part=(_understand_chunk(session,chunk,turn) if any(p['text'].strip() for p in chunk['pages'])
+                  else {'items':[],'unanswered':[]})
+        except ValueError as exc:
+            if not reading['coverage']['completed_chunks']:raise
+            reading['coverage']['last_error']=str(exc)[:200];break
+        reading['items']+=part['items'];reading['unanswered']+=part['unanswered']
+        if part.get('rejected_items'):reading.setdefault('rejected_items',[]).extend(part['rejected_items'])
+        reading['coverage']['completed_chunks']=index+1;reading['turn']=turn
+    validate_reading(reading,source)
+    return reading
 
 
 def render(source):
     reading=source['interpretation']
-    lines=['论文解读（模型提议，待研究者复核）','覆盖：'+source['path']+' · PDF第'+str(source['start_page'])+'–'+str(source['end_page'])+'页']
+    lines=['论文解读（模型提议，待研究者复核）','覆盖：'+source.get('original_filename',source['path'])+' · PDF第'+str(source['start_page'])+'–'+str(source['end_page'])+'页']
+    if reading.get('coverage'):
+        c=reading['coverage'];lines.append('分批处理覆盖：'+str(c['completed_chunks'])+'/'+str(c['total_chunks'])+'批。')
+        if c['completed_chunks']<c['total_chunks']:
+            lines.append('全文解读尚未完成；'+c['last_error']+'；再次点击论文理解可继续未完成批次，已完成部分不会重复调用。')
     for item in reading['items']:
         lines += ['',LABELS[item['category']]+'：'+item['statement'],
                   '原文 · PDF第'+str(item['page'])+'页：'+item['quote']]

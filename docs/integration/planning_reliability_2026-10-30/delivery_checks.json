@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "checked_utc": "2026-10-30T16:06:01.467304+00:00",
+  "three_deliveries": [
+    "planning_entry",
+    "update_feedback_and_revision_guard",
+    "declaration_and_method_review"
+  ],
+  "html_css_files_identical": 5,
+  "delivery_inline_css_identical": true,
+  "prior_source_or_evidence_unchanged": 178,
+  "local_links_checked": 63,
+  "mainline_cases": 10,
+  "mainline_expected_outcomes_met": 10,
+  "python_tests_run": 561,
+  "python_tests_passed": 559,
+  "python_tests_skipped": 2,
+  "python_failures": 0,
+  "ui_mock_dom_checks": 9,
+  "model_requests_including_development": 7,
+  "real_scientific_executions": 0,
+  "training_runs": 0,
+  "browser_visual_qa": false
+}

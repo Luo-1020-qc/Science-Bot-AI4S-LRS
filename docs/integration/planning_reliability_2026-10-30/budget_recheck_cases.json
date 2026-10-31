@@ -1,0 +1,22 @@
+{
+  "max_requests": 8,
+  "max_accounted_tokens": 24000,
+  "automatic_retries": 0,
+  "provenance": "Implementer-authored synthetic smoke, not independent quality evaluation",
+  "cases": [
+    {
+      "id": "prediction_continuation",
+      "inputs": [
+        "请帮我做设备故障预测的实验计划，比较逻辑回归与树模型。本轮只规划，不执行。",
+        "只限本校实验台的合成设备日志，不做因果结论，也不外推其他设备。训练与验证按设备来源隔离，最终测试另留设备。"
+      ]
+    },
+    {
+      "id": "material_budget_correction",
+      "inputs": [
+        "想比较两种吸附材料，请通过选项帮我做实验计划。后续最多六次运行、两小时上限，本轮不执行。",
+        "更正：经费缩减了，后续最多两次运行、一小时上限，之前六次运行的说法作废。请重查受影响的样本与验收，不要沿用旧确认。"
+      ]
+    }
+  ]
+}

@@ -21,11 +21,14 @@ science-bot.cmd / science-bot-web.cmd
 | `general/conversation.py`、`graph.py`、`router.py` | 会话、预算、LangGraph路由及检查点 |
 | `general/provider.py`、`../configuration.py` | 原生chat/completions、tool_calls、API配置及调用账本 |
 | `general/planning/intake.py`、`ledger.py` | 引文支持的字段提议、快照、冲突、未知、依赖和确认失效 |
+| `general/planning/routing.py`、`turn_feedback.py`、`method_review.py` | 规划持续路由、采纳回执与失败更正阻断、方法风险及待人审状态 |
 | `general/planning/blueprint.py`、`runtime.py` | 20类声明、11节点计划、复核与规划命令 |
 | `general/planning/clarification.py`、`choices.py` | 动态问题、候选校验、模板降级和版本绑定选项 |
+| `general/planning/synthesis.py` | 单次原生请求合成实验初稿及关键问题；建议与事实分开，绑定来源版本、缓存与模板降级 |
 | `general/planning/question_tool.py`、`question_ranker.py` | 只读字段排序、回答变化和脱敏观察 |
 | `general/planning/evidence.py`、`understanding.py` | 所选片段快照、共享授权和复述讨论 |
-| `general/planning/pdf_document.py`、`pdf_worker.py`、`paper_reading.py` | 按页隔离提取PDF、带原文引用的模型解读与逐项校验 |
+| `general/planning/pdf_document.py`、`pdf_worker.py`、`paper_reading.py`、`paper_context.py` | PDF全文/范围隔离提取、无损分批阅读、覆盖和续读、带原文引用的解读与规划摘录 |
+| `paper_library.py` | 显式二进制上传、本地内容寻址存储与去重、PDF检查、库索引和独立证据选择 |
 | `general/planning/delivery.py`、`presentation.py` | 实验设计阅读层、只读界面和版本绑定交付 |
 | `general/tool_library.py`、`registry.py`、`interview/` | 详细离线工具、契约和CSV访谈 |
 | `workbench.py`、`api.py`、`session_history.py` | 本地HTTP、历史删除、并发保护与缓存清理 |
@@ -58,5 +61,5 @@ science-bot.cmd / science-bot-web.cmd
 
 1. 在独立分支检查Git状态，保留未提交成果；协作要求见[CONTRIBUTING](../CONTRIBUTING.md)。
 2. 当前源码、权重及旧记录通过 `scripts/integrity.py` 的授权链校验。源码升级追加授权记录，历史清单保持原字节。
-3. 按影响范围验证，命令见[复现说明](REPRODUCIBILITY.md)。当前回执见[PDF阅读接入](integration/pdf_reading_2026-10-30/README.md)，阶段历史统一见[变更记录](../CHANGELOG.md)。
+3. 按影响范围验证，命令见[复现说明](REPRODUCIBILITY.md)。当前回执见[PDF上传验收](integration/paper_upload_2026-10-31/README.md)，规划和PDF等阶段历史保留于各接入记录及[变更记录](../CHANGELOG.md)。
 4. 训练与标注见[数据入口](../Training_Data/README_训练数据说明.md)。科研质量依赖独立领域审阅和实际用户观察，工程回归与合成诊断分别报告。

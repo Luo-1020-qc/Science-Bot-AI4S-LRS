@@ -1,0 +1,71 @@
+[
+  {
+    "role": "experiment_planning",
+    "request_index": 1,
+    "reservation": 5440,
+    "context_bytes": 3384,
+    "status": "ok",
+    "model": "deepseek-flash",
+    "submitted_utc": "2026-10-30T16:38:33.938767+00:00",
+    "request_body_hash": "26f269095789c2d9e2859ec85d811dd46a6c780a0b973ad099d5794c9fc6a9ba",
+    "response_id": "54dd25ac-75b0-41e1-8228-d5635bd24628",
+    "finish_reason": "tool_calls",
+    "usage": {
+      "prompt_tokens": 998,
+      "completion_tokens": 330,
+      "total_tokens": 1328,
+      "prompt_tokens_details": {
+        "cached_tokens": 768
+      },
+      "prompt_cache_hit_tokens": 768,
+      "prompt_cache_miss_tokens": 230
+    },
+    "actual_model": "deepseek-flash"
+  },
+  {
+    "role": "experiment_planning",
+    "request_index": 1,
+    "reservation": 5498,
+    "context_bytes": 3442,
+    "status": "ok",
+    "model": "deepseek-flash",
+    "submitted_utc": "2026-10-30T16:38:21.508576+00:00",
+    "request_body_hash": "1fb8ccb895be7fd895f4fdfb3c271797fe9e3057ea3ab46f6eb35ed7a18c9d7d",
+    "response_id": "ead4f178-4212-42bc-962a-ea3d824871c2",
+    "finish_reason": "tool_calls",
+    "usage": {
+      "prompt_tokens": 1004,
+      "completion_tokens": 364,
+      "total_tokens": 1368,
+      "prompt_tokens_details": {
+        "cached_tokens": 768
+      },
+      "prompt_cache_hit_tokens": 768,
+      "prompt_cache_miss_tokens": 236
+    },
+    "actual_model": "deepseek-flash"
+  },
+  {
+    "role": "planning_synthesis",
+    "request_index": 2,
+    "reservation": 14559,
+    "context_bytes": 12567,
+    "status": "ok",
+    "model": "deepseek-flash",
+    "submitted_utc": "2026-10-30T16:38:23.558876+00:00",
+    "request_body_hash": "a208a08dcd81e4a8819c9bbd07b9951194365d705f3dcc73ff9904ea6b83d219",
+    "response_id": "a959e582-1299-4774-83bc-0fa32467df28",
+    "finish_reason": "tool_calls",
+    "usage": {
+      "prompt_tokens": 3405,
+      "completion_tokens": 1546,
+      "total_tokens": 4951,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 3405
+    },
+    "actual_model": "deepseek-flash"
+  }
+]

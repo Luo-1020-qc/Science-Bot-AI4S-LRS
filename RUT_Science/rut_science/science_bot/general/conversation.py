@@ -16,7 +16,7 @@ from .adapters.legacy_numeric import prepare_numeric, restore_numeric
 
 ROOT = Path(__file__).resolve().parents[3]
 ENGINE_VERSION = "general_v1"
-DEFAULT_LIMITS = {"llm_requests": 12, "llm_tokens": 60000, "tool_calls": 40, "read_bytes": 24000}
+DEFAULT_LIMITS = {"llm_requests": 24, "llm_tokens": 300000, "tool_calls": 40, "read_bytes": 2*1024*1024}
 
 
 def numeric_parameters(text):
@@ -399,8 +399,11 @@ class GeneralSession:
             return execute(self, name, arguments, key)
 
     def _respond(self, request, turn):
+        # Full-paper storage has its own larger allowance. Generic file tools
+        # retain their existing per-turn context contract.
+        project_cap=min(self.limits['read_bytes'],128*1024)
         context = {"workspace": self.workspace, "allowed_paths": set(request["input_paths"]),
-                   "max_read_bytes": self.limits["read_bytes"], "remaining_read_bytes": self.limits["read_bytes"]}
+                   "max_read_bytes": project_cap, "remaining_read_bytes": project_cap}
         if self.meta["backend"] == "offline":
             if request["intent"] == "project_qa":
                 if request["input_paths"]:

@@ -90,6 +90,9 @@ def verify():
 
 
 def main():
+    if (ROOT/'docs/integration/planning_reliability_2026-10-30/authorized_source_changes.json').exists():
+        from verify_planning_reliability import main as verify_current
+        return verify_current()
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--finalize',action='store_true');p.add_argument('--run-tests',action='store_true')
     p.add_argument('--run-checks',dest='run_tests',action='store_true',help=argparse.SUPPRESS);args=p.parse_args()
     if args.finalize:finalize()

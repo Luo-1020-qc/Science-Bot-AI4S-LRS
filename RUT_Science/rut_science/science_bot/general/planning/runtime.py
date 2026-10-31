@@ -16,11 +16,16 @@ from .understanding import render as render_understanding
 from . import question_tool
 from . import choices
 from .delivery import render_design
+from .routing import natural_start, route_override, is_revision, revision_content
+from .turn_feedback import update_receipt, revision_targets, literal_resource_correction
+from .method_review import notice as review_notice
+from . import synthesis
 
 COMMANDS={'/plan'}
 HELP=('直接描述想研究的问题即可开始。每轮只优先澄清少数边界；可回答选项或使用“字段：内容”。\n'
       '/plan question [rule|trained] 启用边界问答工具；history/export 查看或导出训练观察；off 关闭；\n'
       '/plan map 查看研究地图；/plan draft 查看步骤与验收；/plan review 检查漏洞；\n'
+      '/plan synthesize 生成实验初稿；/plan synthesize refresh 明确重新生成；\n'
       '/plan accept [字段] 确认模型理解；/plan revise 字段: 内容 明确更正；\n'
       '/plan explain 字段 了解为什么要问；/plan reflect 我的理解是… 记录自己的理解；\n'
       '/plan export 导出计划；/plan approve <版本哈希> 确认规划；/plan handoff 获取工作交接；\n'
@@ -42,29 +47,6 @@ CONCEPTS={
 def _explanation(field):
     spec=FIELDS[field]
     return spec['label']+'\n'+CONCEPTS.get(field,('',spec['rationale']))[1]+'\n你需要决定：'+spec['prompt']
-
-
-def natural_start(text):
-    if not isinstance(text,str) or text.startswith('/'):return False
-    if re.search(r'^(?:什么是|解释|介绍|为什么|what\s+is|explain\b|介绍一下)',text,re.I):return False
-    if re.search(r'(?:我|我们|帮我|帮我们).{0,12}(?:想|希望|需要|打算|准备).{0,18}(?:改进|提高|复现|搞清楚|试试|判断|评估).{0,50}(?:模型|论文|方法|实验|研究|数据|项目|课题|LinearNO|CViT|FNO)|(?:我的|我们的).{0,15}(?:模型|实验|研究|数据).{0,25}(?:效果不好|不太好|没思路|不知道|不清楚)|\b(?:I|we)\s+need\b.{0,40}\b(?:plan|design|replicate|reproduce|evaluate)\b',text,re.I):return True
-    return bool(re.search(r'(?:帮我|帮我们|我们想|我想|我希望|一起|协助).{0,45}(?:设计|规划|研究|比较|验证|检验|探索).{0,65}(?:实验|研究|课题|项目|模型|方法|方案|效果|数据|结论|CViT|Darcy|FNO)|(?:帮我|帮我们).{0,20}(?:设计|规划).{0,12}实验|\b(?:help\s+(?:me|us)|I\s+want|we\s+want)\b.{0,60}\b(?:plan|design|study|compare|investigate)\b',text,re.I))
-
-
-def route_override(session,text,request):
-    text=text.strip()
-    if text.partition(' ')[0] in COMMANDS:return True
-    if text.startswith('/') or request.intent in {'research','project_qa'}:return False
-    # Preserve established explicit CSV interviews and execution requests.
-    if re.search(r'访谈|逐步设计|一步步.{0,8}实验|design interview',text,re.I):return False
-    if natural_start(text):return True
-    state=load(session)
-    if not state or not state['active']:return False
-    if request.intent in {'numeric','tabular'}:return False
-    if re.search(r'^(?:换个话题|先不谈|不讨论|不要规划|停止规划|今天天气|翻译|写一首|你好|谢谢|hi\b|hello\b|translate\b)',text,re.I):return False
-    if re.search(r'^(?:什么是|介绍|解释|如何|怎么|为什么|what\b|why\b|how\b)',text,re.I) and not re.search(
-        r'实验|方案|设计|研究|区组|单位|随机|方差|功效|验收|指标|基线|数据|对照|复现|因果|预测|误差|显著|plan|design|unit|power|variance|metric',text,re.I):return False
-    return True
 
 
 def review(state):
@@ -104,6 +86,7 @@ def summary(state):
         'evidence':[evidence_metadata(row) for row in state.get('evidence',[])],
         'evidence_actions':deepcopy(state.get('evidence_actions',{})),
         'clarification':deepcopy(state.get('clarification')),
+        'plan_synthesis':synthesis.projection(state),
         'last_export':state['last_export'],'execution_authorized':False}
 
 
@@ -142,9 +125,12 @@ def _questions(state,assessment):
     return _question_candidates(state,assessment)[:2]
 
 
-def _card(state,assessment,questions,changes=(),notes=()):
-    approved='规划已确认' if state['approval'] else '规划可复核' if assessment['ready'] else '正在澄清'
+def _card(state,assessment,questions,changes=(),notes=(),feedback=None):
+    approved='规划已确认' if state['approval'] and assessment['ready'] else '规划可复核' if assessment['ready'] else '正在澄清'
     lines=[approved]
+    if feedback:lines+=['',feedback['text']]
+    lines+=['',review_notice(assessment)]
+    if state.get('plan_synthesis'):lines+=['',synthesis.brief(state)]
     for n,q in enumerate(questions,1):
         lines+=['',q['question']]
         lines += [f"{i+1}. {o['label']}" for i,o in enumerate(q['options'])]
@@ -162,7 +148,7 @@ def _card(state,assessment,questions,changes=(),notes=()):
 def _plan(state):
     plan=build_blueprint(state)
     plan['review']=review(state)
-    plan['status']='approved_planning_contract' if state['approval'] else 'reviewable_plan' if plan['review']['ready'] else 'draft_with_open_questions'
+    plan['status']='approved_planning_contract' if state['approval'] and plan['review']['ready'] else 'reviewable_plan' if plan['review']['ready'] else 'draft_with_open_questions'
     plan['approval']=deepcopy(state['approval'])
     plan['contract_hash']=contract_hash(state)
     return plan
@@ -170,6 +156,8 @@ def _plan(state):
 
 def _draft_text(state):
     plan=_plan(state)
+    if synthesis.projection(state)['status']=='current':
+        return render_design(state)+'\n\n计划版本：'+contract_hash(state)+'\n初稿为设计建议；完整声明和治理步骤保留在导出中，尚未授权执行。'
     lines=[render_design(state),'','步骤与验收（尚未执行）：']
     for node in plan['nodes']:
         lines.append(f"- {node['id']}：{node['purpose']}\n  依赖：{', '.join(node['dependencies']) or '起点'}；责任：{node['owner']}；能力：{node['capability']}\n  验收：{node['acceptance']}")
@@ -185,7 +173,7 @@ def report(session):
 
 
 def _handoff(session,state):
-    if not state['approval'] or state['approval']['contract_hash']!=contract_hash(state):
+    if not state['approval'] or state['approval']['contract_hash']!=contract_hash(state) or not review(state)['ready']:
         raise ValueError('先复核并确认当前规划版本，再生成工作交接；确认规划不等于执行授权。')
     plan=_plan(state)
     tools={s['name']:s for s in session.registry.specs()}
@@ -195,6 +183,7 @@ def _handoff(session,state):
         suggestions.append({'step':node['id'],'registered_tools':names,'capability':node['capability'],
             'required_human_action':node['owner'],'arguments_bound':False,'executed':False})
     return {'schema_version':'research_handoff_v1','plan_hash':contract_hash(state),'facts':deepcopy(state['facts']),
+        'plan_synthesis':deepcopy(plan.get('plan_synthesis')),'experiment_steps':deepcopy(plan.get('experiment_steps',[])),
         'evidence':deepcopy(state.get('evidence',[])),'evidence_actions':deepcopy(state.get('evidence_actions',{})),
         'steps':plan['nodes'],'capabilities':suggestions,'open_checks':[r for r in plan['review']['checks'] if r['status']!='passed'],
         'execution_authorized':False,'instructions':'处理实际数据前绑定来源与字段、核实单位和方法；仅在已注册能力范围内另建执行草案。可用 /tools list 查看离线工具，/interview 或 /design 进入明确CSV执行协议。CViT等实际训练需要单独执行适配器。'}
@@ -213,7 +202,7 @@ def respond(session,text,turn):
     current=load(session)
     argument=text[len('/plan'):].strip() if text.partition(' ')[0]=='/plan' else text
     verb,_,payload=argument.partition(' ')
-    known={'start','new','status','map','draft','review','accept','revise','approve','explain','export','pause','resume','handoff','reflect','decisions','options','help','evidence','understanding','question','choose'}
+    known={'start','new','status','map','draft','review','accept','revise','approve','explain','export','pause','resume','handoff','reflect','decisions','options','help','evidence','understanding','question','choose','synthesize'}
     command=verb if text.startswith('/plan') and verb in known else 'intake'
     picked=choices.selection(current,payload,explicit=True) if command=='choose' and current else (
         choices.selection(current,argument) if command=='intake' and current else None)
@@ -225,9 +214,12 @@ def respond(session,text,turn):
     if command in {'start','new'} or current is None:state=new_state()
     else:state=deepcopy(current)
     state['turns']+=1
-    changes=[];notes=[];extra={};answer=None;clarify_text=None
+    changes=[];notes=[];extra={};answer=None;clarify_text=None;feedback=None
     session.meta.update(active_task='research_planning',phase='needs_input')
     if command=='help' or not argument:answer=HELP
+    elif command=='synthesize':
+        if payload.strip() not in {'','refresh'}:raise ValueError('使用 /plan synthesize，或 /plan synthesize refresh 明确重新生成。')
+        clarify_text=''
     elif command=='choice':
         changes,answer=choices.apply_selection(state,picked,turn)
         if answer is None:clarify_text=''
@@ -277,6 +269,9 @@ def respond(session,text,turn):
             clarify_text=content
             if state.get('pending',{} ) and state['pending'].get('kind')=='proposal' and content.strip() in {'是','是的','对','正确','确认','yes','correct'}:
                 selected=accept(state,[state['pending']['field']],turn);notes=['已确认当前展示的理解。']
+                changes=[{'field':f,'kind':'accepted'} for f in selected]
+                feedback=update_receipt(state,current,{'notes':notes},changes,content,turn)
+                extra['update_feedback']=feedback
             elif ((state.get('pending') or {}).get('kind')=='evidence_plan' and command!='revise'
                   and not re.search(r'[:：=]|^\s*\{',content)):
                 if len(content)>3000:raise ValueError('请将证据获取步骤限制在3000字以内')
@@ -288,16 +283,36 @@ def respond(session,text,turn):
                     state['approval']=None
                     state['decisions'].append({'turn':turn,'type':'evidence_acquisition_step','field':field,'text':content})
                     notes=['已记录拟议的证据获取步骤；原字段仍未知。拿到依据后请用“字段: 内容”更新，不会把获取步骤当作实测证据。']
+                feedback=update_receipt(state,current,{'notes':notes},[{'field':field,'kind':'evidence_acquisition'}],content,turn)
+                extra['update_feedback']=feedback
             else:
-                extraction=extract(session,content,state,turn)
+                pending_kind=(state.get('pending') or {}).get('kind')
+                explicit_revision=command=='revise' or is_revision(content) or pending_kind=='conflict' and bool(re.fullmatch(r'[12]',content.strip()))
+                literal=literal_resource_correction(content) if explicit_revision and revision_targets(content)==['resources'] else None
+                extraction=({'updates':{'resources':literal},'unknown':[],'notes':[], 'model_used':False}
+                            if literal else extract(session,revision_content(content) if explicit_revision else content,state,turn))
                 if session.pause_requested.is_set() or session.cancel_requested.is_set():
                     raise ValueError('会话暂停或取消，规划边界未更新')
-                pending_kind=(state.get('pending') or {}).get('kind')
-                explicit_revision=command=='revise' or bool(re.match(r'^(?:更正|修改为|改成|改为)[:：\s]',content)) or pending_kind=='conflict' and bool(re.fullmatch(r'[12]',content.strip()))
+                initial=current is None or command in {'start','new'}
+                provided_question=extraction['updates'].get('research_question')
+                if initial and not provided_question and (natural_start(content) or command in {'start','new'} and not re.search(r'[:：]|^\s*\{',content)):
+                    extraction['updates']['research_question']={'value':content[:3000],'quote':content,'status':'declared'}
+                elif not explicit_revision and state['facts'].get('research_question') and 'research_question' in extraction['updates']:
+                    proposed=extraction['updates']['research_question']
+                    if proposed['value']!=state['facts']['research_question']['value']:
+                        extraction['updates'].pop('research_question')
+                        extraction.setdefault('rejected_fields',[]).append({'field':'research_question',
+                            'reason':'本轮按补充处理，未替换已有研究问题；如需换目标请明确更正。'})
                 changes=apply(state,extraction,turn,revise=explicit_revision)
+                feedback=update_receipt(state,current,extraction,changes,content,turn,revision=explicit_revision)
+                extra['update_feedback']=feedback
                 notes+=extraction['notes']
                 extra['model_used']=extraction['model_used']
         state['active']=True
+    if feedback is None and command in {'choice','accept'}:
+        if command=='accept':changes=[{'field':f,'kind':'accepted'} for f in selected]
+        feedback=update_receipt(state,current,{'notes':[]},changes,content if command=='intake' else payload,turn)
+        extra['update_feedback']=feedback
     advanced=_planning_graph().invoke({'planning_state':state},{'recursion_limit':8})
     assessment=advanced['assessment'];questions=advanced['questions']
     read_only_view = (concept is not None or command in {'map','draft','review','status','decisions','options','explain','export','understanding','reflect','help'}
@@ -318,7 +333,31 @@ def respond(session,text,turn):
             questions=deepcopy(tool_result['questions'])
             extra['question_tool']={k:v for k,v in tool_result.items() if k not in {'questions','candidate_features','feature_names'}}
             if tool_result.get('reused_pending'):clarify_text=None
-    if clarify_text is not None and state['active']:
+    compose = (state['active'] and (command=='synthesize' or
+               (clarify_text is not None or responding_to_question and state.get('plan_synthesis'))
+               and session.meta.get('backend')!='offline' and state['facts'].get('research_question')))
+    if compose:
+        generated=synthesis.generate(session,state,clarify_text or '',assessment,turn,force=command=='synthesize' and payload.strip()=='refresh')
+        if session.pause_requested.is_set() or session.cancel_requested.is_set():
+            raise ValueError('会话暂停或取消，实验初稿和本轮边界未保存')
+        if state.get('plan_synthesis')!=generated['record']:
+            state['approval']=None
+        state['plan_synthesis']=generated['record']
+        assessment=review(state)
+        if generated['questions']:
+            selected={q['field'] for q in questions} if tool_result is not None else None
+            matched=[q for q in generated['questions'] if selected is None or q['field'] in selected]
+            if matched:questions=matched
+        elif generated['cached'] and state.get('pending') and state['pending'].get('choice_plan_hash')==contract_hash(state):
+            questions=[deepcopy(state['pending'])]
+        state['clarification']={'mode':'dynamic' if generated['questions'] else 'template',
+            'reason':'synthesis_question' if generated['questions'] else 'synthesis_template_question',
+            'model_used':generated['model_used']}
+        extra['clarification']=deepcopy(state['clarification'])
+        extra['plan_synthesis']=synthesis.projection(state)
+        extra['synthesis_brief']=synthesis.brief(state)
+        if clarify_text is None:clarify_text=''
+    if clarify_text is not None and state['active'] and not compose:
         clarified=propose_questions(session,state,clarify_text,assessment,questions)
         if session.pause_requested.is_set() or session.cancel_requested.is_set():
             raise ValueError('会话暂停或取消，动态澄清和本轮边界未保存')
@@ -351,7 +390,7 @@ def respond(session,text,turn):
     elif command=='options':answer='\n\n'.join(q['question']+'\n'+'\n'.join(f"{i+1}. {o['label']}" for i,o in enumerate(q['options'])) for q in questions) or '当前没有待选问题，可查看 /plan draft。'
     elif command=='handoff':extra['handoff']=_handoff(session,state);answer='已生成当前确认版本的工作交接：\n'+extra['handoff']['instructions']
     if answer is None:
-        answer=_card(state,assessment,questions,changes,notes)
+        answer=_card(state,assessment,questions,changes,notes,feedback)
         extra['question_form']=bool(questions)
     save(session,state)
     if responding_to_question:
@@ -375,5 +414,7 @@ def respond(session,text,turn):
     session.save()
     session.emit('planning_updated',{'revision':state['revision'],'contract_hash':contract_hash(state),
         'known_fields':len(state['facts']),'blockers':len(assessment['blockers']),'approved':bool(state['approval'])})
+    if state.get('plan_synthesis'):extra.setdefault('synthesis_brief',synthesis.brief(state))
     return {'intent':'planning','answer':answer,'planning':summary(state),'questions':questions,
+        'review_notice':review_notice(assessment),
         'execution_authorized':False,'scientific_claim_verified':False,**extra}

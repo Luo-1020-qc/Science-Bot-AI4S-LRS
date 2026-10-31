@@ -39,14 +39,28 @@ def design_readout(state):
                 continue
             items.append({'field': field, 'label': FIELDS[field]['label'], 'value': value, 'status': status})
         sections.append({'title': title, 'items': items})
+    from .synthesis import sections as synthesized_sections, projection
+    composed=synthesized_sections(state)
+    synthesis=projection(state)
+    if composed:
+        for section,items in zip(sections,composed):
+            section['items']=items+[r for r in section['items'] if r['status']!='missing']
     issues = []
+    unconfirmed=[]
     for row in assessment['checks']:
-        if row['status'] != 'passed' and not any(r['field'] == row['field'] for r in issues):
+        if composed and row['code']=='missing_declaration':
+            unconfirmed.append(FIELDS[row['field']]['label']);continue
+        if row['status'] != 'passed' and (row.get('category')=='method_risk' or not any(r['field'] == row['field'] for r in issues)):
             issues.append({'field': row['field'], 'label': FIELDS[row['field']]['label'],
                            'detail': row['detail'], 'blocking': row['status'] == 'blocked'})
+    if unconfirmed:
+        issues.append({'field':'design','label':'待确认的设计声明','detail':'初稿尚未写成用户声明；仍需确认：'+'、'.join(unconfirmed),'blocking':True})
     actions = [{'field': f, 'label': FIELDS[f]['label'], 'text': row['text'], 'executed': False}
                for f, row in state.get('evidence_actions', {}).items()]
+    from .method_review import notice
     return {'title': '实验设计草案', 'hash': contract_hash(state), 'ready': assessment['ready'],
+            'review_notice':notice(assessment),'method_review_status':assessment['method_review_status'],
+            'synthesis_status':synthesis['status'],'synthesis_message':synthesis['message'],
             'approved': bool(state['approval']), 'sections': sections, 'issues': issues,
             'evidence_actions': actions, 'selected_evidence_count': len(state.get('evidence', [])),
             'execution_authorized': False,
@@ -58,7 +72,8 @@ def design_readout(state):
 def render_design(state):
     readout = design_readout(state)
     labels = {'proposed': '待确认提议', 'unknown': '未知', 'conflict': '冲突', 'stale': '需重新核对', 'missing': '待明确'}
-    lines = [readout['title']+'（规划，尚未执行）']
+    lines = [readout['title']+'（规划，尚未执行）',readout['review_notice']]
+    if state.get('plan_synthesis'):lines.append(readout['synthesis_message'])
     for section in readout['sections']:
         lines += ['', section['title']]
         for item in section['items']:

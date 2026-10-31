@@ -25,6 +25,8 @@ endpoint会补全 `/chat/completions`，默认选第一个profile。终端默认
 
 先做离线检查，再测试真实接口并单独记录费用、模型和请求预算。
 
+论文解读和实验计划合成的单次输出分别默认8192 token，可在启动前设置 `SCIENCE_BOT_PAPER_OUTPUT_TOKENS` / `SCIENCE_BOT_PLAN_OUTPUT_TOKENS`；数值须符合所用服务的能力。普通对话仍为1800。全文阅读、分批处理及新旧会话预算差别见[PDF全文读取](integration/full_pdf_2026-10-31/README.md)。
+
 ## 当前检查
 
 ```powershell
@@ -32,21 +34,21 @@ endpoint会补全 `/chat/completions`，默认选第一个profile。终端默认
 & '.\RUT_Science\.venv\Scripts\python.exe' -B scripts/check_repository.py
 
 # 核对当前完整性和已保存的测试证据
-& '.\RUT_Science\.venv\Scripts\python.exe' -B scripts/verify_pdf_reading.py
+& '.\RUT_Science\.venv\Scripts\python.exe' -B scripts/verify_paper_upload.py
 
 # 需要实际重跑当前应用、完整性和界面状态测试时
-& '.\RUT_Science\.venv\Scripts\python.exe' -B scripts/verify_pdf_reading.py --run-tests
+& '.\RUT_Science\.venv\Scripts\python.exe' -B scripts/verify_paper_upload.py --run-tests
 ```
 
-默认检查不联网、不训练、不执行真实科研任务。当前层记录在[PDF阅读验收](integration/pdf_reading_2026-10-30/README.md)，便携检查输出在 `.local/checks/`。界面状态测试使用发布的JavaScript和模拟DOM，浏览器视觉验收仍待完成。PDF解析依赖已加入安装清单；旧环境重新运行安装脚本即可补齐。
+默认检查不联网、不训练、不执行真实科研任务。当前层记录在[PDF上传验收](integration/paper_upload_2026-10-31/README.md)，此前[PDF全文读取验收](integration/full_pdf_2026-10-31/README.md)等保持原记录。便携检查输出在 `.local/checks/`。界面状态测试使用发布的JavaScript和模拟DOM，浏览器视觉验收仍待完成；现有HTML/CSS及交付内联样式另做原字节核对。PDF解析依赖已加入安装清单；旧环境重新运行安装脚本即可补齐。
 
-`verify_dynamic_upgrade.py`、`verify_interfaces.py`、`verify_question_tool.py`、`verify_branding.py`、`verify_context_choices.py`、`verify_planning_mainline.py` 和 `verify_session_history.py` 的默认当前验收链均转入上述入口。旧回执只说明各自版本；历史训练重算按原实验说明执行。
+`verify_dynamic_upgrade.py`、`verify_interfaces.py`、`verify_question_tool.py`、`verify_branding.py`、`verify_context_choices.py`、`verify_planning_mainline.py`、`verify_session_history.py`、`verify_pdf_reading.py`、`verify_planning_reliability.py`、`verify_plan_synthesis.py` 和 `verify_full_pdf.py` 的默认当前验收链均转入上述入口。旧回执只说明各自版本；历史训练重算按原实验说明执行。
 
 ## 规划评估与示例
 
 ```powershell
 # 完整回合规则基线：输出目录必须是新目录
-& '.\RUT_Science\.venv\Scripts\python.exe' -B scripts/evaluate_planning_mainline.py --output .local/mainline_evaluation/new_run
+& '.\RUT_Science\.venv\Scripts\python.exe' -B scripts/evaluate_planning_mainline.py --output .local/mainline_next
 
 # 重新生成三份静态界面示例
 & '.\RUT_Science\.venv\Scripts\python.exe' -B scripts/preview_interfaces.py

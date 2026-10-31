@@ -9,7 +9,7 @@ from urllib.error import HTTPError, URLError
 
 from rut_science.agents import ModelServiceError
 from rut_science.budget import RunBudget, RunLimitError
-from rut_science.science_bot.general.provider import GeneralProvider
+from rut_science.science_bot.general.provider import GeneralProvider,MAX_CONTEXT_BYTES
 from rut_science.science_bot.model_output import read_output
 from rut_science.util import digest, write_json
 
@@ -195,7 +195,7 @@ class GeneralProviderTests(unittest.TestCase):
 
     def test_budget_admission_includes_tool_schemas(self):
         large_tools = copy.deepcopy(TOOLS)
-        large_tools[0]["function"]["description"] = "x" * 50_000
+        large_tools[0]["function"]["description"] = "x" * MAX_CONTEXT_BYTES
         with tempfile.TemporaryDirectory() as folder:
             provider = self.provider(folder)
             with self.request(envelope()) as network, self.assertRaises(RunLimitError):

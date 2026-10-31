@@ -86,7 +86,8 @@ def context(state, text, assessment):
         add('stale', field, reason)
     for row in state.get('evidence', []):
         if row['share_with_model']:
-            add('evidence', row['id'], row['text'], citation=citation(row), status=row['status'])
+            from .paper_context import model_source
+            sources.append(model_source(row))
     allowed = allowed_fields(state, assessment)
     return {'sources': sources, 'allowed_fields': {f: {'kind': kind, 'label': FIELDS[f]['label'],
             'value': state['facts'].get(f, {}).get('value', '')[:3000],

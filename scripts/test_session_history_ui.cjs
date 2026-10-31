@@ -14,6 +14,7 @@ async function harness(ids, pdf = false) {
     set id(v) { this._id = v; elements.set(v, this); } get id() { return this._id; }
     set textContent(v) { this._text = String(v); this.children = []; } get textContent() { return (this._text || '') + this.children.map(n => n.textContent).join(''); }
     append(...ns) { this.children.push(...ns); ns.forEach(n => n.parent = this); }
+    prepend(...ns) { this.children.unshift(...ns); ns.forEach(n => n.parent = this); }
     replaceChildren(...ns) { this._text = ''; this.children = []; this.append(...ns); }
     setAttribute(k,v) { this.attrs[k] = String(v); }
     addEventListener(k,v) { this.listeners[k] = v; }
@@ -47,7 +48,7 @@ async function harness(ids, pdf = false) {
   }
   let sessions = ids.map(id => ({ id, title: '研究 ' + id, example: false }));
   const requests = [], confirmations = [], alerts = [];
-  const state = { confirm: true, reject: false, deletes: 0 };
+  const state = { confirm: true, reject: false, deletes: 0, papers: [], uploads: 0 };
   function view(id) { return { id, backend:pdf ? 'api' : 'offline', phase:'ready', workspace:null, model:'fixed', example:false,
     resources:{llm_requests:0,tool_attempts:0,limits:{llm_requests:12,tool_calls:40}},
     planning:pdf ? {id:'plan',hash:'f'.repeat(64),revision:1,facts:[],questions:[],steps:[],issues:[],evidence:[{
@@ -60,8 +61,14 @@ async function harness(ids, pdf = false) {
     window:{confirm:text=>{confirmations.push(text);return state.confirm;},open(){}},
     fetch:async (url,options={})=>{
       requests.push({url,options}); let data, status=200;
-      if (url==='/ui/sessions') data={sessions};
-      else if (url.startsWith('/v1/sessions/') && url.endsWith('/messages')) data={answer:'已处理选定片段。'};
+      if (url==='/ui/papers') {
+        if (options.method==='POST') {
+          state.uploads++;assert.equal(options.headers['Content-Type'],'application/pdf');assert.equal(typeof options.body,'object');
+          assert.equal(decodeURIComponent(options.headers['X-File-Name']),options.body.name);
+          const paper={id:'a'.repeat(64),filename:options.body.name,page_count:2};state.papers=[paper];data={paper,shared_with_model:false};
+        } else data={papers:state.papers,storage_root:'LOCAL_LIBRARY'};
+      } else if (url==='/ui/sessions') data={sessions};
+      else if (url.startsWith('/v1/sessions/') && url.endsWith('/messages')) data=state.reply || {answer:'已处理选定片段。'};
       else if (url.endsWith('/delete')) {
         state.deletes++; const id=url.split('/')[3];
         assert.equal(JSON.parse(options.body).confirm,id);assert.equal(options.headers.Authorization,'Bearer token');
@@ -95,9 +102,33 @@ async function harness(ids, pdf = false) {
   const understand=h.elements.get('sourceList').descendants().find(n=>n.textContent==='查看已保存的论文解读 →');
   await understand.click();await h.settle();assert.equal(JSON.parse(h.requests.filter(r=>r.url.endsWith('/messages')).at(-1).options.body).text,'/plan evidence understand paper1');
   h.elements.get('sourcePath').value='papers/paper.pdf';h.elements.get('endLine').value='40';
-  h.elements.get('sourcePath').listeners.input();assert.equal(h.elements.get('startRangeLabel').textContent,'起始PDF页');
-  h.elements.get('startLine').value='1';h.elements.get('evidenceForm').listeners.submit({preventDefault(){}});await h.settle();
+  h.elements.get('sourcePath').listeners.input();assert.match(h.elements.get('startRangeLabel').textContent,/起始PDF页/);
+  assert.equal(h.elements.get('startLine').required,false);assert.equal(h.elements.get('endLine').value,'');
+  h.elements.get('evidenceForm').listeners.submit({preventDefault(){}});await h.settle();
   const add=JSON.parse(h.requests.filter(r=>r.url.endsWith('/messages')).at(-1).options.body).text;
-  assert.equal(JSON.parse(add.slice('/plan evidence add '.length)).end_page,3);
-  console.log(JSON.stringify({passed:true,checks:7,mode:'mock_dom_actual_shipped_script_not_browser_visual_qa'}));
+  assert.equal(JSON.parse(add.slice('/plan evidence add '.length)).end_page,undefined);
+  assert.equal(JSON.parse(add.slice('/plan evidence add '.length)).start_page,undefined);
+  h.elements.get('startLine').value='1';h.elements.get('endLine').value='31';
+  h.elements.get('evidenceForm').listeners.submit({preventDefault(){}});await h.settle();
+  const ranged=JSON.parse(h.requests.filter(r=>r.url.endsWith('/messages')).at(-1).options.body).text;
+  assert.equal(JSON.parse(ranged.slice('/plan evidence add '.length)).end_page,31);
+  h.elements.get('paperFile').files=[{name:'研究论文.pdf',size:2048}];h.elements.get('shareSource').checked=false;
+  h.elements.get('paperFile').listeners.change();await h.elements.get('uploadPaper').click();await h.settle();
+  assert.equal(h.state.uploads,1);assert.equal(h.elements.get('startLine').value,'');
+  const attached=JSON.parse(JSON.parse(h.requests.filter(r=>r.url.endsWith('/messages')).at(-1).options.body).text.slice('/plan evidence add '.length));
+  assert.equal(attached.paper_id,'a'.repeat(64));assert.equal(attached.share_with_model,false);assert.equal(attached.path,undefined);
+  h.elements.get('shareSource').checked=true;h.elements.get('savedPaper').value='a'.repeat(64);
+  await h.elements.get('selectSavedPaper').click();await h.settle();
+  const reused=JSON.parse(JSON.parse(h.requests.filter(r=>r.url.endsWith('/messages')).at(-1).options.body).text.slice('/plan evidence add '.length));
+  assert.equal(reused.share_with_model,true);assert.equal(h.state.uploads,1);
+  h.state.reply={question_form:true,answer:'QUESTION_CARD_SHOULD_NOT_DUPLICATE',
+    update_feedback:{text:'未采纳 · 资源边界：更正尚未写入。'},review_notice:'声明状态：仍有未决项；方法状态：待人工复核。',
+    synthesis_brief:'实验初稿 · 建议按完整场配对评测，先核算原预算内是否可行。'};
+  await understand.click();await h.settle();
+  assert.match(h.elements.get('messages').textContent,/未采纳 · 资源边界/);
+  assert.match(h.elements.get('messages').textContent,/方法状态：待人工复核/);
+  assert.doesNotMatch(h.elements.get('messages').textContent,/QUESTION_CARD_SHOULD_NOT_DUPLICATE/);
+  assert.match(h.elements.get('approvalHint').textContent,/方法风险/);
+  assert.match(h.elements.get('messages').textContent,/建议按完整场配对评测/);
+  console.log(JSON.stringify({passed:true,checks:16,mode:'mock_dom_actual_shipped_script_not_browser_visual_qa'}));
 })().catch(error=>{console.error(error);process.exitCode=1;});

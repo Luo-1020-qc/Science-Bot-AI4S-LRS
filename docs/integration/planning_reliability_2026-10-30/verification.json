@@ -1,0 +1,76 @@
+{
+  "passed": true,
+  "checked_utc": "2026-10-30T16:03:26.373895+00:00",
+  "integrity": {
+    "passed": true,
+    "protected_files_checked": 1745,
+    "authorized_host_changes": 5,
+    "integration_runtime_files_checked": 10,
+    "planning_authorized_host_changes": 4,
+    "planning_runtime_files_checked": 11,
+    "dynamic_runtime_files_checked": 6,
+    "planning_history_privacy_files_checked": 1,
+    "interface_runtime_files_checked": 11,
+    "question_tool_runtime_files_checked": 6,
+    "question_tool_training_files_checked": 7,
+    "branding_files_checked": 5,
+    "context_choices_runtime_files_checked": 11,
+    "context_choices_training_files_checked": 7,
+    "mainline_runtime_files_checked": 10,
+    "session_history_runtime_files_checked": 6,
+    "pdf_runtime_files_checked": 13,
+    "planning_reliability_files_checked": 10,
+    "changed": []
+  },
+  "tests": {
+    "application": {
+      "passed": true,
+      "run": 515,
+      "passed_tests": 513,
+      "seconds": 271.828,
+      "folder": "RUT_Science/tests",
+      "pattern": "test*.py"
+    },
+    "integrity_and_scoring": {
+      "passed": true,
+      "run": 46,
+      "passed_tests": 46,
+      "seconds": 56.984,
+      "folder": "scripts",
+      "pattern": "test*.py"
+    },
+    "ui": {
+      "passed": true,
+      "result": {
+        "passed": true,
+        "checks": 9,
+        "mode": "mock_dom_actual_shipped_script_not_browser_visual_qa"
+      }
+    }
+  },
+  "authorized_changed_files": [
+    "RUT_Science/rut_science/science_bot/presentation.py",
+    "RUT_Science/rut_science/science_bot/general/planning/blueprint.py",
+    "RUT_Science/rut_science/science_bot/general/planning/delivery.py",
+    "RUT_Science/rut_science/science_bot/general/planning/intake.py",
+    "RUT_Science/rut_science/science_bot/general/planning/ledger.py",
+    "RUT_Science/rut_science/science_bot/general/planning/runtime.py",
+    "RUT_Science/rut_science/science_bot/workbench_assets/dist/app.js",
+    "scripts/integrity.py",
+    "scripts/test_integrity.py",
+    "scripts/test_session_history_ui.cjs",
+    "scripts/verify_pdf_reading.py"
+  ],
+  "html_and_css_files_unchanged": 5,
+  "delivery_inline_style_unchanged": true,
+  "prior_integration_evidence_unchanged": true,
+  "provider_configuration_and_weights_unchanged": true,
+  "this_verification_model_requests": 0,
+  "real_scientific_executions": 0,
+  "training_runs": 0,
+  "browser_visual_qa": false,
+  "limitations": [
+    "Method checks flag bounded declaration contradictions; no scientific-validity certification.",
+    "New phrasing tests are implementer-authored regressions, not independent human evaluation."
+  ]
+}

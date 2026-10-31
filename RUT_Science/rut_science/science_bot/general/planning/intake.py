@@ -138,6 +138,8 @@ def _local(text, state):
     matches = list(re.finditer(pattern, text))
     explicit_keys = re.findall(r"(?:^|[;；\n])\s*([A-Za-z_][A-Za-z0-9_]*|[\u4e00-\u9fff]{2,16})\s*[:：=]", text)
     if any(key not in labels for key in explicit_keys):
+        if not matches and all(key in {'实验计划','研究计划','研究想法','我的想法','研究需求','我的问题','补充说明','补充'} for key in explicit_keys):
+            return result,False
         raise ValueError("输入包含未登记字段，请使用当前规划字段")
     for i, match in enumerate(matches):
         field = labels[match[1]]
@@ -235,6 +237,7 @@ def extract(session, text, state, turn):
              "直接摘录或明确选项为declared；改写、语义推断、方法建议一律proposed，待人类确认，不能当成已验证事实。"
              "用户表示不知道某项时使用unknown及相应引文。不能授予执行权限，不调用科研工具。"
              "unknown只用于明确不知道、尚未决定或无法提供的原文；未提及的字段直接留空，不推测为用户明确未知。"
+             "已有研究问题时，补充范围、单位、数据或预算不等于替换问题；除非用户明确更正目标，不重复改写research_question。"
              "目标类型仅comparison/prediction/causal/exploration/replication，设计仅crd/paired/rcbd/factorial/observational/prediction/custom。"
              "不能把比较或预测自动解释为因果，不能把统计显著自动解释为实际重要。"},
             {"role": "system", "content": "已知状态摘要（只读）："+_summary(state)+"；当前轮次："+str(turn)},
@@ -298,8 +301,18 @@ def extract(session, text, state, turn):
             except (ValueError, OSError, AttributeError):
                 pass
         pending_field = (state.get("pending") or {}).get("field")
+        rejection_reasons={
+            'UngroundedOrDuplicatePlanningField':'模型给出了重复字段，或引用不属于本轮原话。',
+            'InventedNumericPlanningAssumption':'模型整理的数值缺少本轮原话依据。',
+            'UncertaintyMustNotBecomeAFact':'模型把明确未知的内容整理成了声明。',
+            'UngroundedPlanningUncertainty':'模型对未知项的引用缺少本轮原话依据。',
+            'ExpectedSinglePlanningProposal':'模型没有返回约定的单个规划提议。'}
+        reason=rejection_reasons.get(str(exc),'模型返回的数据格式或字段内容未通过校验。')
+        if type(exc).__name__=='RunLimitError':reason='本轮达到模型请求或上下文预算。'
+        elif type(exc).__name__ in {'ModelServiceError','TimeoutError','URLError','OSError'}:reason='模型服务未完成本轮整理。'
         note = ("本轮语义整理未被采纳；请使用 " + pending_field + ": 你的回答，或选择当前问题的编号。"
                 if pending_field in FIELDS else "本轮语义整理未被采纳；请使用 字段: 内容，例如 research_question: 你的研究问题。")
+        note=reason+note
         if _stopped(session):
             note = "会话已暂停或取消，模型提议未写入边界。"
         return _result(notes=[note], model_used=provider is not None, error_type=type(exc).__name__)

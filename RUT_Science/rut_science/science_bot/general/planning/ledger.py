@@ -8,7 +8,7 @@ import uuid
 from ....util import digest,write_json
 
 VERSION='research_planning_v1'
-EXTENSIONS={'evidence','question_history','clarification','evidence_actions'}
+EXTENSIONS={'evidence','question_history','clarification','evidence_actions','pending_revisions','last_update','plan_synthesis'}
 IMPACTS={
     'research_question':('hypothesis','scope','outcomes','analysis','acceptance'),
     'objective_type':('hypothesis','experimental_unit','factors','design','baseline','sampling','outcomes','randomization','analysis','acceptance'),
@@ -32,8 +32,11 @@ def contract_hash(state):
     content={'version':VERSION,'id':state['id'],'facts':state['facts'],'unknown':state['unknown'],
         'conflicts':state['conflicts'],'stale':state['stale']}
     # Empty extensions preserve every old v1 approval hash without migration.
-    for key in ('evidence','evidence_actions'):
+    for key in ('evidence','evidence_actions','pending_revisions'):
         if state.get(key):content[key]=state[key]
+    synthesis=state.get('plan_synthesis')
+    if synthesis and synthesis.get('content'):
+        content['plan_synthesis']={'basis_hash':synthesis['basis_hash'],'content':synthesis['content']}
     return digest(content)
 
 
@@ -60,6 +63,26 @@ def validate(state):
         raise ValueError('研究计划记录超过会话限制')
     from .evidence import validate_sources
     validate_sources(state.get('evidence',[]))
+    if 'plan_synthesis' in state:
+        from .synthesis import validate_record
+        validate_record(state['plan_synthesis'])
+    guards=state.get('pending_revisions',{})
+    if type(guards) is not dict or set(guards)-set(FIELDS):raise ValueError('未完成更正字段无效')
+    for row in guards.values():
+        if (type(row) is not dict or set(row)!={'turn','reason'} or type(row['turn']) is not int
+                or type(row['reason']) is not str or not 1<=len(row['reason'])<=500):
+            raise ValueError('未完成更正记录无效')
+    receipt=state.get('last_update')
+    if receipt is not None:
+        if (type(receipt) is not dict or set(receipt)!={'turn','entries','text'}
+                or type(receipt['turn']) is not int or type(receipt['entries']) is not list
+                or len(receipt['entries'])>45 or type(receipt['text']) is not str or len(receipt['text'])>20000):
+            raise ValueError('更新反馈结构无效')
+        for row in receipt['entries']:
+            if (type(row) is not dict or row.get('field') not in FIELDS
+                    or row.get('status') not in {'declared','proposed','unknown','conflict','rejected'}
+                    or set(row)-{'field','status','before','after','reason'}):
+                raise ValueError('更新反馈字段无效')
     history=state.get('question_history',[])
     if type(history) is not list or len(history)>40:
         raise ValueError('澄清历史超出限制')
@@ -129,6 +152,7 @@ def apply(state,extraction,turn,*,revise=False):
                 state['conflicts'][field]=[deepcopy(old),fact]
                 changed.append({'field':field,'kind':'conflict','before':old['value'],'after':value})
                 continue
+            state.get('pending_revisions',{}).pop(field,None)
             if old and old['value']==value and old['status']==fact['status'] and field not in state['stale'] and field not in state['conflicts'] and field not in state['unknown']:continue
             state['facts'][field]=fact
             state.get('evidence_actions',{}).pop(field,None)
@@ -140,6 +164,7 @@ def apply(state,extraction,turn,*,revise=False):
                     if dependent in state['facts'] and dependent not in updates:
                         state['stale'][dependent]=f'{field} 已改变，需要重新检查该声明是否仍适用'
         for field in unknown:
+            state.get('pending_revisions',{}).pop(field,None)
             if field not in state['unknown']:state['unknown'].append(field)
             state['facts'].pop(field,None)
             state['conflicts'].pop(field,None)

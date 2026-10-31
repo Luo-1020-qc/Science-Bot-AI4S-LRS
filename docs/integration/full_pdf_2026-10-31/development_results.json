@@ -1,0 +1,148 @@
+{
+  "version": "full_pdf_development_v1",
+  "synthetic_only": true,
+  "physical_pages": 31,
+  "fixture_provenance": "Repeated two-page engineering fixture, not a real paper or independent scientific evaluation",
+  "requests": 9,
+  "accounted_tokens": 31828,
+  "automatic_retries": 0,
+  "final_full_extraction": true,
+  "final_reading_complete": true,
+  "final_grounded_points": 28,
+  "final_rejected_points": 1,
+  "last_page_text_in_last_chunk": true,
+  "last_page_has_grounded_point": false,
+  "final_plan_status": "current",
+  "final_plan_steps": 3,
+  "final_paper_cited": true,
+  "latest_plan_probe_runtime_matches_current": true,
+  "reading_runtime_matches_final": true,
+  "latest_successful_session_calls": [
+    {
+      "request_index": 1,
+      "role": "paper_reading",
+      "status": "ok",
+      "finish_reason": "tool_calls",
+      "argument_normalizations": [
+        {
+          "tool": "interpret_selected_paper",
+          "type": "removed_one_redundant_final_brace"
+        }
+      ],
+      "prompt_tokens": 2074,
+      "completion_tokens": 720,
+      "total_tokens": 2794
+    },
+    {
+      "request_index": 2,
+      "role": "paper_reading",
+      "status": "ok",
+      "finish_reason": "tool_calls",
+      "argument_normalizations": null,
+      "prompt_tokens": 2074,
+      "completion_tokens": 695,
+      "total_tokens": 2769
+    },
+    {
+      "request_index": 3,
+      "role": "paper_reading",
+      "status": "ok",
+      "finish_reason": "tool_calls",
+      "argument_normalizations": null,
+      "prompt_tokens": 2074,
+      "completion_tokens": 685,
+      "total_tokens": 2759
+    },
+    {
+      "request_index": 4,
+      "role": "paper_reading",
+      "status": "ok",
+      "finish_reason": "tool_calls",
+      "argument_normalizations": null,
+      "prompt_tokens": 1907,
+      "completion_tokens": 732,
+      "total_tokens": 2639
+    },
+    {
+      "request_index": 5,
+      "role": "planning_synthesis",
+      "status": "ok",
+      "finish_reason": "tool_calls",
+      "argument_normalizations": [
+        {
+          "tool": "synthesize_experiment_plan",
+          "type": "removed_one_redundant_final_brace"
+        }
+      ],
+      "prompt_tokens": 4659,
+      "completion_tokens": 1475,
+      "total_tokens": 6134
+    },
+    {
+      "request_index": 6,
+      "role": "planning_synthesis",
+      "status": "ok",
+      "finish_reason": "tool_calls",
+      "argument_normalizations": [
+        {
+          "tool": "synthesize_experiment_plan",
+          "type": "removed_one_redundant_final_brace"
+        }
+      ],
+      "prompt_tokens": 4671,
+      "completion_tokens": 1684,
+      "total_tokens": 6355
+    }
+  ],
+  "runs": [
+    {
+      "result": "development/live_20261031.json",
+      "requests": 1,
+      "tokens": 2833,
+      "reading_complete": false,
+      "plan_status": "not_generated",
+      "plan_reason": null
+    },
+    {
+      "result": "development/live2_20261031.json",
+      "requests": 1,
+      "tokens": 2793,
+      "reading_complete": false,
+      "plan_status": "not_generated",
+      "plan_reason": null
+    },
+    {
+      "result": "development/live3_20261031.json",
+      "requests": 1,
+      "tokens": 2752,
+      "reading_complete": false,
+      "plan_status": "not_generated",
+      "plan_reason": null
+    },
+    {
+      "result": "development/live4_20261031.json",
+      "requests": 5,
+      "tokens": 17095,
+      "reading_complete": true,
+      "plan_status": "fallback",
+      "plan_reason": "UngroundedPlanReference"
+    },
+    {
+      "result": "development/live5_20261031.json",
+      "requests": 1,
+      "tokens": 6355,
+      "reading_complete": true,
+      "plan_status": "current",
+      "plan_reason": "validated_proposal"
+    }
+  ],
+  "real_scientific_executions": 0,
+  "training_runs": 0,
+  "independent_human_quality_evaluations": 0,
+  "browser_visual_qa": false,
+  "limitations": [
+    "Text extraction and sent-chunk coverage do not prove complete semantic understanding.",
+    "One repeated synthetic document is not evidence of cross-paper reliability.",
+    "Scans require OCR; equations and figures need original-page review."
+  ]
+}

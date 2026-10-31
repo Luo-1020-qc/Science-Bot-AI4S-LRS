@@ -1,0 +1,49 @@
+{
+  "files": {
+    "RUT_Science/rut_science/science_bot/general/conversation.py": {
+      "before_sha256": "03176f3eecb8e37c5cbe8918f56af4d5d5d967aae791d1990229175835bd4f56",
+      "sha256": "b5ed6b2a0506baf37e728352ddff27f2c961fcb043871635e0fd66f563918401",
+      "reason": "User authorized full-PDF reading and task-specific output configuration; retain explicit sharing, planning-only permissions and interface layout."
+    },
+    "RUT_Science/rut_science/science_bot/general/planning/clarification.py": {
+      "before_sha256": "cb775fa45a94fb097d69ff0e373f7ebbecaf48f0f2f8c8b831f7e7158c673b3f",
+      "sha256": "dc636d28e5ae551df4ded143ae858253527ca066d0aa29ac1a69cd5b061c09d1",
+      "reason": "User authorized full-PDF reading and task-specific output configuration; retain explicit sharing, planning-only permissions and interface layout."
+    },
+    "RUT_Science/rut_science/science_bot/general/planning/evidence.py": {
+      "before_sha256": "b3d122f8db834eff305402c0ae206265d7bd82a9c162280f08486addbc5bd84f",
+      "sha256": "cac9874d10788c334af1f193a4d9a7fcc7cdebc2cd14add4bc60b4b788cfc736",
+      "reason": "User authorized full-PDF reading and task-specific output configuration; retain explicit sharing, planning-only permissions and interface layout."
+    },
+    "RUT_Science/rut_science/science_bot/general/planning/paper_reading.py": {
+      "before_sha256": "e2db3f8174255da65c0cd80f5302f6267bfe86cb1fa3096f33a54b7c3c6ae0bb",
+      "sha256": "879947d93180043534d712d14aae5da71ee2db9f0650eb97178b364f1cd2f72c",
+      "reason": "User authorized full-PDF reading and task-specific output configuration; retain explicit sharing, planning-only permissions and interface layout."
+    },
+    "RUT_Science/rut_science/science_bot/general/planning/pdf_document.py": {
+      "before_sha256": "5d1fbe08ffee6cf0f8b05af1acb2e72ba64cca59fb2a813b7a49307868aaf357",
+      "sha256": "eb33b5790566fb36aad744b93b84f0414a8affa0a05cb069651d0f6b61086c7f",
+      "reason": "User authorized full-PDF reading and task-specific output configuration; retain explicit sharing, planning-only permissions and interface layout."
+    },
+    "RUT_Science/rut_science/science_bot/general/planning/pdf_worker.py": {
+      "before_sha256": "4feb811ea03d9c9e34612640199dca17650e4059aa10a08fcab438499c3c0a75",
+      "sha256": "6b8be6865ed3d59440a5dcb992f27ec048297009bf4211a97a2917c60ce466a7",
+      "reason": "User authorized full-PDF reading and task-specific output configuration; retain explicit sharing, planning-only permissions and interface layout."
+    },
+    "RUT_Science/rut_science/science_bot/general/planning/synthesis.py": {
+      "before_sha256": "c8d8c2c9fc65f9c0b84cb0d77b50144c24f04b0ee4b0317ca427ec5dd3b38294",
+      "sha256": "fc62a1ed66219089568d25e76a61a15bd0f9292c137f968069f66ed1329d6919",
+      "reason": "User authorized full-PDF reading and task-specific output configuration; retain explicit sharing, planning-only permissions and interface layout."
+    },
+    "RUT_Science/rut_science/science_bot/general/provider.py": {
+      "before_sha256": "5cfaed544844ff7174c08acfbe42595c10528b099da16231a80201ac88c27755",
+      "sha256": "650da49699269d104091aa23be3c46b37898c3fb3390ed8eb6bc425c8865990a",
+      "reason": "User authorized full-PDF reading and task-specific output configuration; retain explicit sharing, planning-only permissions and interface layout."
+    },
+    "RUT_Science/rut_science/science_bot/workbench_assets/dist/app.js": {
+      "before_sha256": "6da182fd38758360cc505175836ee933609da2b4d597726a43adfe404a3a3793",
+      "sha256": "4b76ccf803a75d5054830ec2e7106c9cfccd729c626df79b1ef1ed8cd0afc1dd",
+      "reason": "User authorized full-PDF reading and task-specific output configuration; retain explicit sharing, planning-only permissions and interface layout."
+    }
+  }
+}

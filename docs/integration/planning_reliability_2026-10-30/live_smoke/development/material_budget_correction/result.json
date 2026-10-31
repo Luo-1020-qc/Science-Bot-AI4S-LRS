@@ -1,0 +1,25 @@
+{
+  "id": "material_budget_correction",
+  "planning_turns": 2,
+  "research_question_retained": true,
+  "research_question_conflict": false,
+  "feedback_visible": true,
+  "budget_after": "后续最多两次运行、一小时上限",
+  "scope_present": false,
+  "resources": {
+    "llm_requests": 2,
+    "llm_tokens": 3777,
+    "tool_attempts": 0,
+    "limits": {
+      "llm_requests": 4,
+      "llm_tokens": 12000,
+      "tool_calls": 40,
+      "read_bytes": 24000
+    }
+  },
+  "ready": false,
+  "scientific_claim_verified": false,
+  "execution_authorized": false,
+  "numeric_or_tabular_created": false,
+  "literal_new_budget_adopted": true
+}

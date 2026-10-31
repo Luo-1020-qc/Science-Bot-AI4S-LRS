@@ -1,0 +1,60 @@
+{
+  "passed": true,
+  "local_links_checked": 100,
+  "credential_ignored_and_untracked": true,
+  "current_v2_artifacts_checked": 13,
+  "protected_harness_files_checked": 1745,
+  "frozen_research_artifacts_checked": 78,
+  "terminal_preview": true,
+  "research_checks": [
+    {
+      "request": {
+        "study": "g2_2",
+        "action": "verify"
+      },
+      "passed": true,
+      "result_sha256": "d060ce5275dcacd0b58400ecddcc416ea116b34076f4091b109ad90049cdd1aa"
+    },
+    {
+      "request": {
+        "study": "g2_3",
+        "action": "verify"
+      },
+      "passed": true,
+      "result_sha256": "fb3a9b381f73ec6c09836cf7cea6caf3349646ac8a569f6ad2f9ad977c83b4bc"
+    },
+    {
+      "request": {
+        "study": "g2_4",
+        "action": "verify"
+      },
+      "passed": true,
+      "result_sha256": "832b1dd257ef86b8a155f2cd7fd7e21c386a0ef3555e063e1e3afe8b2b472a82"
+    },
+    {
+      "request": {
+        "study": "g2_3",
+        "action": "simulate",
+        "policy": "bc_ppo",
+        "seed": 37,
+        "domain": "cvit",
+        "scenario": "existing_running"
+      },
+      "passed": true,
+      "result_sha256": "676ef293615860d91eedca2d34af1008a163c360366ea7468772b53f3d76f3d9"
+    },
+    {
+      "request": {
+        "study": "g2_4",
+        "action": "demo"
+      },
+      "passed": true,
+      "result_sha256": "d83f84f7ebadfe1df6990949b3dbb56e34057929bae9116fa9e9aba65ec50360"
+    }
+  ],
+  "network_or_model_api_calls": 0,
+  "real_scientific_executions": 0,
+  "training_requested": false,
+  "checked_utc": "2026-10-31T06:18:10.715970+00:00",
+  "local_api_key_unchanged": true
+}

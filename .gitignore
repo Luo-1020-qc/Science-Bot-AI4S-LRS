@@ -34,6 +34,7 @@ Thumbs.db
 **/.matplotlib/
 **/.sciencebot/
 /RUT_Science/outputs/
+**/paper_library/
 /RUT_Science/data/darcy*/
 /Research_Tool_Library/sandbox/
 /Research_Tool_Library/test_fixture/

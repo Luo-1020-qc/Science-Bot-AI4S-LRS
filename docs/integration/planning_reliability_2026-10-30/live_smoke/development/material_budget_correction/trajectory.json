@@ -1,0 +1,1398 @@
+[
+  {
+    "input": "想比较两种吸附材料，请通过选项帮我做实验计划。后续最多六次运行、两小时上限，本轮不执行。",
+    "seconds": 4.188,
+    "result": {
+      "intent": "planning",
+      "answer": "正在澄清\n\n已采纳 · 研究问题：想比较两种吸附材料，请通过选项帮我做实验计划。后续最多六次运行、两小时上限，本轮不执行。\n待确认提议 · 研究目的：comparison\n待确认提议 · 因素与对比：吸附材料（两种水平）\n已采纳 · 资源边界：后续最多六次运行、两小时上限\n待确认提议 · 人类职责：本轮不执行，仅通过选项协助制定实验计划\n语义改写和推断仅作为待确认提议展示，不会自动成为已确认边界。\n\n声明状态：仍有未决项；方法状态：待人工复核，尚未验证科学有效性。\n\n关于研究目的，是否按当前理解继续？\n1. 按这个理解继续：comparison\n2. 暂不确定\n3. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+      "planning": {
+        "id": "421a331a6ee64bac9bf4e99e151ab507",
+        "revision": 1,
+        "active": true,
+        "facts": {
+          "research_question": {
+            "value": "想比较两种吸附材料，请通过选项帮我做实验计划。后续最多六次运行、两小时上限，本轮不执行。",
+            "quote": "想比较两种吸附材料，请通过选项帮我做实验计划。后续最多六次运行、两小时上限，本轮不执行。",
+            "status": "declared",
+            "turn": 1
+          },
+          "objective_type": {
+            "value": "comparison",
+            "quote": "想比较两种吸附材料",
+            "status": "proposed",
+            "turn": 1
+          },
+          "factors": {
+            "value": "吸附材料（两种水平）",
+            "quote": "两种吸附材料",
+            "status": "proposed",
+            "turn": 1
+          },
+          "resources": {
+            "value": "后续最多六次运行、两小时上限",
+            "quote": "后续最多六次运行、两小时上限",
+            "status": "declared",
+            "turn": 1
+          },
+          "human_roles": {
+            "value": "本轮不执行，仅通过选项协助制定实验计划",
+            "quote": "请通过选项帮我做实验计划。后续最多六次运行、两小时上限，本轮不执行。",
+            "status": "proposed",
+            "turn": 1
+          }
+        },
+        "unknown": [],
+        "conflicts": {},
+        "stale": {},
+        "pending": {
+          "field": "objective_type",
+          "kind": "proposal",
+          "question": "关于研究目的，是否按当前理解继续？",
+          "rationale": "这是从你的描述整理出的理解，不是经验证的事实。",
+          "options": [
+            {
+              "label": "按这个理解继续：comparison",
+              "value": "comparison",
+              "action": "accept",
+              "id": "a77ba349a78e"
+            },
+            {
+              "label": "暂不确定",
+              "value": "未知",
+              "action": "unknown",
+              "id": "2c3af7fa609c"
+            },
+            {
+              "label": "其他，我来补充",
+              "value": "",
+              "action": "custom",
+              "id": "47de6eddb129"
+            }
+          ],
+          "origin": "template",
+          "allow_accept": false,
+          "choice_policy": {
+            "intent": "comparison",
+            "origin": "trained_context_match",
+            "policy_hash": "6b7d865a492eaba9c5db239e5f5eaa833184d3b21fe3496f358d525504207ded"
+          },
+          "choice_id": "2c513b984cd9765d",
+          "choice_plan_hash": "59d5688d4161a6333ecc57b09bfdfd77c158e7b312d1373986f9731e5eaa98b9"
+        },
+        "review": {
+          "ready": false,
+          "checks": [
+            {
+              "field": "research_question",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "objective_type",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "hypothesis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+            },
+            {
+              "field": "scope",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "结论只适用于哪些对象、数据、条件和时间范围？"
+            },
+            {
+              "field": "exclusions",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "本轮明确不研究什么，不准备声称什么？"
+            },
+            {
+              "field": "experimental_unit",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "一次独立分配或观察是什么？哪些测量来自同一对象？"
+            },
+            {
+              "field": "factors",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "design",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+            },
+            {
+              "field": "outcomes",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+            },
+            {
+              "field": "baseline",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+            },
+            {
+              "field": "data_source",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。"
+            },
+            {
+              "field": "sampling",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+            },
+            {
+              "field": "analysis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+            },
+            {
+              "field": "acceptance",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+            },
+            {
+              "field": "resources",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "risks",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+            },
+            {
+              "field": "reproducibility",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+            },
+            {
+              "field": "human_roles",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "deliverable",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "最后交付什么：方案、脚本、表格、报告或可复现实验记录？"
+            },
+            {
+              "field": "objective_type",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "factors",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "human_roles",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "objective_type",
+              "code": "objective_classified",
+              "status": "passed",
+              "detail": "需要明确比较、预测、因果、探索或复现目的。"
+            },
+            {
+              "field": "resources",
+              "code": "resource_bound",
+              "status": "passed",
+              "detail": "声明可核对的资源数量、期限或硬上限。"
+            },
+            {
+              "field": "human_roles",
+              "code": "human_accountability",
+              "status": "blocked",
+              "detail": "明确由谁确认边界、复核方法和批准结论，不把责任隐含交给模型。"
+            }
+          ],
+          "blockers": [
+            {
+              "field": "hypothesis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+            },
+            {
+              "field": "scope",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "结论只适用于哪些对象、数据、条件和时间范围？"
+            },
+            {
+              "field": "exclusions",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "本轮明确不研究什么，不准备声称什么？"
+            },
+            {
+              "field": "experimental_unit",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "一次独立分配或观察是什么？哪些测量来自同一对象？"
+            },
+            {
+              "field": "design",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+            },
+            {
+              "field": "outcomes",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+            },
+            {
+              "field": "baseline",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+            },
+            {
+              "field": "data_source",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。"
+            },
+            {
+              "field": "sampling",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+            },
+            {
+              "field": "analysis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+            },
+            {
+              "field": "acceptance",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+            },
+            {
+              "field": "risks",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+            },
+            {
+              "field": "reproducibility",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+            },
+            {
+              "field": "deliverable",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "最后交付什么：方案、脚本、表格、报告或可复现实验记录？"
+            },
+            {
+              "field": "objective_type",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "factors",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "human_roles",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "human_roles",
+              "code": "human_accountability",
+              "status": "blocked",
+              "detail": "明确由谁确认边界、复核方法和批准结论，不把责任隐含交给模型。"
+            }
+          ],
+          "required_fields": [
+            "research_question",
+            "objective_type",
+            "hypothesis",
+            "scope",
+            "exclusions",
+            "experimental_unit",
+            "factors",
+            "design",
+            "outcomes",
+            "baseline",
+            "data_source",
+            "sampling",
+            "analysis",
+            "acceptance",
+            "resources",
+            "risks",
+            "reproducibility",
+            "human_roles",
+            "deliverable"
+          ],
+          "declarations_complete": false,
+          "method_risks": [],
+          "method_review_status": "pending_human_review",
+          "scope": "planning_only",
+          "execution_authorized": false,
+          "scientific_claim_verified": false,
+          "readiness_meaning": "用户声明已足够形成待人类复核的计划；不表示假设、数据、功效或结论已被验证。"
+        },
+        "contract_hash": "59d5688d4161a6333ecc57b09bfdfd77c158e7b312d1373986f9731e5eaa98b9",
+        "approved": false,
+        "decisions_count": 2,
+        "reflections_count": 0,
+        "evidence": [],
+        "evidence_actions": {},
+        "clarification": {
+          "mode": "template",
+          "reason": "model_unavailable_or_rejected",
+          "model_used": true,
+          "error_type": "ValueError",
+          "validation_error": "NoValidPriorityQuestions: [{\"field\": \"outcomes\", \"reason\": \"InventedQuestionNumericAssumption\"}, {\"field\": \"design\", \"reason\": \"InventedQuestionNumericAssumption\"}]"
+        },
+        "last_export": null,
+        "execution_authorized": false
+      },
+      "questions": [
+        {
+          "field": "objective_type",
+          "kind": "proposal",
+          "question": "关于研究目的，是否按当前理解继续？",
+          "rationale": "这是从你的描述整理出的理解，不是经验证的事实。",
+          "options": [
+            {
+              "label": "按这个理解继续：comparison",
+              "value": "comparison",
+              "action": "accept",
+              "id": "a77ba349a78e"
+            },
+            {
+              "label": "暂不确定",
+              "value": "未知",
+              "action": "unknown",
+              "id": "2c3af7fa609c"
+            },
+            {
+              "label": "其他，我来补充",
+              "value": "",
+              "action": "custom",
+              "id": "47de6eddb129"
+            }
+          ],
+          "origin": "template",
+          "allow_accept": false,
+          "choice_policy": {
+            "intent": "comparison",
+            "origin": "trained_context_match",
+            "policy_hash": "6b7d865a492eaba9c5db239e5f5eaa833184d3b21fe3496f358d525504207ded"
+          },
+          "choice_id": "2c513b984cd9765d",
+          "choice_plan_hash": "59d5688d4161a6333ecc57b09bfdfd77c158e7b312d1373986f9731e5eaa98b9"
+        }
+      ],
+      "review_notice": "声明状态：仍有未决项；方法状态：待人工复核，尚未验证科学有效性。",
+      "execution_authorized": false,
+      "scientific_claim_verified": false,
+      "update_feedback": {
+        "turn": 1,
+        "entries": [
+          {
+            "field": "research_question",
+            "status": "declared",
+            "before": null,
+            "after": "想比较两种吸附材料，请通过选项帮我做实验计划。后续最多六次运行、两小时上限，本轮不执行。"
+          },
+          {
+            "field": "objective_type",
+            "status": "proposed",
+            "before": null,
+            "after": "comparison"
+          },
+          {
+            "field": "factors",
+            "status": "proposed",
+            "before": null,
+            "after": "吸附材料（两种水平）"
+          },
+          {
+            "field": "resources",
+            "status": "declared",
+            "before": null,
+            "after": "后续最多六次运行、两小时上限"
+          },
+          {
+            "field": "human_roles",
+            "status": "proposed",
+            "before": null,
+            "after": "本轮不执行，仅通过选项协助制定实验计划"
+          }
+        ],
+        "text": "已采纳 · 研究问题：想比较两种吸附材料，请通过选项帮我做实验计划。后续最多六次运行、两小时上限，本轮不执行。\n待确认提议 · 研究目的：comparison\n待确认提议 · 因素与对比：吸附材料（两种水平）\n已采纳 · 资源边界：后续最多六次运行、两小时上限\n待确认提议 · 人类职责：本轮不执行，仅通过选项协助制定实验计划\n语义改写和推断仅作为待确认提议展示，不会自动成为已确认边界。"
+      },
+      "model_used": true,
+      "clarification": {
+        "mode": "template",
+        "reason": "model_unavailable_or_rejected",
+        "model_used": true,
+        "error_type": "ValueError",
+        "validation_error": "NoValidPriorityQuestions: [{\"field\": \"outcomes\", \"reason\": \"InventedQuestionNumericAssumption\"}, {\"field\": \"design\", \"reason\": \"InventedQuestionNumericAssumption\"}]"
+      },
+      "question_form": true
+    },
+    "state": {
+      "schema_version": "research_planning_v1",
+      "id": "421a331a6ee64bac9bf4e99e151ab507",
+      "revision": 1,
+      "active": true,
+      "facts": {
+        "research_question": {
+          "value": "想比较两种吸附材料，请通过选项帮我做实验计划。后续最多六次运行、两小时上限，本轮不执行。",
+          "quote": "想比较两种吸附材料，请通过选项帮我做实验计划。后续最多六次运行、两小时上限，本轮不执行。",
+          "status": "declared",
+          "turn": 1
+        },
+        "objective_type": {
+          "value": "comparison",
+          "quote": "想比较两种吸附材料",
+          "status": "proposed",
+          "turn": 1
+        },
+        "factors": {
+          "value": "吸附材料（两种水平）",
+          "quote": "两种吸附材料",
+          "status": "proposed",
+          "turn": 1
+        },
+        "resources": {
+          "value": "后续最多六次运行、两小时上限",
+          "quote": "后续最多六次运行、两小时上限",
+          "status": "declared",
+          "turn": 1
+        },
+        "human_roles": {
+          "value": "本轮不执行，仅通过选项协助制定实验计划",
+          "quote": "请通过选项帮我做实验计划。后续最多六次运行、两小时上限，本轮不执行。",
+          "status": "proposed",
+          "turn": 1
+        }
+      },
+      "unknown": [],
+      "conflicts": {},
+      "decisions": [
+        {
+          "turn": 1,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "research_question",
+              "kind": "added",
+              "before": null,
+              "after": "想比较两种吸附材料，请通过选项帮我做实验计划。后续最多六次运行、两小时上限，本轮不执行。"
+            },
+            {
+              "field": "objective_type",
+              "kind": "added",
+              "before": null,
+              "after": "comparison"
+            },
+            {
+              "field": "factors",
+              "kind": "added",
+              "before": null,
+              "after": "吸附材料（两种水平）"
+            },
+            {
+              "field": "resources",
+              "kind": "added",
+              "before": null,
+              "after": "后续最多六次运行、两小时上限"
+            },
+            {
+              "field": "human_roles",
+              "kind": "added",
+              "before": null,
+              "after": "本轮不执行，仅通过选项协助制定实验计划"
+            }
+          ]
+        },
+        {
+          "turn": 1,
+          "type": "update_receipt",
+          "fields": {
+            "research_question": "declared",
+            "objective_type": "proposed",
+            "factors": "proposed",
+            "resources": "declared",
+            "human_roles": "proposed"
+          }
+        }
+      ],
+      "approval": null,
+      "pending": {
+        "field": "objective_type",
+        "kind": "proposal",
+        "question": "关于研究目的，是否按当前理解继续？",
+        "rationale": "这是从你的描述整理出的理解，不是经验证的事实。",
+        "options": [
+          {
+            "label": "按这个理解继续：comparison",
+            "value": "comparison",
+            "action": "accept",
+            "id": "a77ba349a78e"
+          },
+          {
+            "label": "暂不确定",
+            "value": "未知",
+            "action": "unknown",
+            "id": "2c3af7fa609c"
+          },
+          {
+            "label": "其他，我来补充",
+            "value": "",
+            "action": "custom",
+            "id": "47de6eddb129"
+          }
+        ],
+        "origin": "template",
+        "allow_accept": false,
+        "choice_policy": {
+          "intent": "comparison",
+          "origin": "trained_context_match",
+          "policy_hash": "6b7d865a492eaba9c5db239e5f5eaa833184d3b21fe3496f358d525504207ded"
+        },
+        "choice_id": "2c513b984cd9765d",
+        "choice_plan_hash": "59d5688d4161a6333ecc57b09bfdfd77c158e7b312d1373986f9731e5eaa98b9"
+      },
+      "reflections": [],
+      "changes": [
+        {
+          "field": "research_question",
+          "kind": "added",
+          "before": null,
+          "after": "想比较两种吸附材料，请通过选项帮我做实验计划。后续最多六次运行、两小时上限，本轮不执行。"
+        },
+        {
+          "field": "objective_type",
+          "kind": "added",
+          "before": null,
+          "after": "comparison"
+        },
+        {
+          "field": "factors",
+          "kind": "added",
+          "before": null,
+          "after": "吸附材料（两种水平）"
+        },
+        {
+          "field": "resources",
+          "kind": "added",
+          "before": null,
+          "after": "后续最多六次运行、两小时上限"
+        },
+        {
+          "field": "human_roles",
+          "kind": "added",
+          "before": null,
+          "after": "本轮不执行，仅通过选项协助制定实验计划"
+        }
+      ],
+      "stale": {},
+      "turns": 1,
+      "audience": "researcher_student",
+      "last_notes": [
+        "语义改写和推断仅作为待确认提议展示，不会自动成为已确认边界。",
+        "本轮动态澄清不可用或未通过校验，已使用模板继续；已有边界保留。"
+      ],
+      "last_export": null,
+      "last_update": {
+        "turn": 1,
+        "entries": [
+          {
+            "field": "research_question",
+            "status": "declared",
+            "before": null,
+            "after": "想比较两种吸附材料，请通过选项帮我做实验计划。后续最多六次运行、两小时上限，本轮不执行。"
+          },
+          {
+            "field": "objective_type",
+            "status": "proposed",
+            "before": null,
+            "after": "comparison"
+          },
+          {
+            "field": "factors",
+            "status": "proposed",
+            "before": null,
+            "after": "吸附材料（两种水平）"
+          },
+          {
+            "field": "resources",
+            "status": "declared",
+            "before": null,
+            "after": "后续最多六次运行、两小时上限"
+          },
+          {
+            "field": "human_roles",
+            "status": "proposed",
+            "before": null,
+            "after": "本轮不执行，仅通过选项协助制定实验计划"
+          }
+        ],
+        "text": "已采纳 · 研究问题：想比较两种吸附材料，请通过选项帮我做实验计划。后续最多六次运行、两小时上限，本轮不执行。\n待确认提议 · 研究目的：comparison\n待确认提议 · 因素与对比：吸附材料（两种水平）\n已采纳 · 资源边界：后续最多六次运行、两小时上限\n待确认提议 · 人类职责：本轮不执行，仅通过选项协助制定实验计划\n语义改写和推断仅作为待确认提议展示，不会自动成为已确认边界。"
+      },
+      "clarification": {
+        "mode": "template",
+        "reason": "model_unavailable_or_rejected",
+        "model_used": true,
+        "error_type": "ValueError",
+        "validation_error": "NoValidPriorityQuestions: [{\"field\": \"outcomes\", \"reason\": \"InventedQuestionNumericAssumption\"}, {\"field\": \"design\", \"reason\": \"InventedQuestionNumericAssumption\"}]"
+      },
+      "question_history": [
+        {
+          "turn": 1,
+          "field": "objective_type",
+          "kind": "proposal",
+          "question": "关于研究目的，是否按当前理解继续？",
+          "origin": "template",
+          "basis_hash": "8cbf7168c952babe394c395d883fba937d59f29b13d2d4bdf4a2a4e9c358568c"
+        }
+      ]
+    },
+    "resources": {
+      "llm_requests": 2,
+      "llm_tokens": 3777,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 4,
+        "llm_tokens": 12000,
+        "tool_calls": 40,
+        "read_bytes": 24000
+      }
+    }
+  },
+  {
+    "input": "更正：经费缩减了，后续最多两次运行、一小时上限，之前六次运行的说法作废。请重查受影响的样本与验收，不要沿用旧确认。",
+    "seconds": 0.125,
+    "result": {
+      "intent": "planning",
+      "answer": "正在澄清\n\n已采纳 · 资源边界：后续最多六次运行、两小时上限 → 后续最多两次运行、一小时上限\n\n声明状态：仍有未决项；方法状态：待人工复核，尚未验证科学有效性。\n\n关于研究目的，是否按当前理解继续？\n1. 按这个理解继续：comparison\n2. 暂不确定\n3. 其他，我来补充\n\n选择编号，或直接输入你的想法。",
+      "planning": {
+        "id": "421a331a6ee64bac9bf4e99e151ab507",
+        "revision": 2,
+        "active": true,
+        "facts": {
+          "research_question": {
+            "value": "想比较两种吸附材料，请通过选项帮我做实验计划。后续最多六次运行、两小时上限，本轮不执行。",
+            "quote": "想比较两种吸附材料，请通过选项帮我做实验计划。后续最多六次运行、两小时上限，本轮不执行。",
+            "status": "declared",
+            "turn": 1
+          },
+          "objective_type": {
+            "value": "comparison",
+            "quote": "想比较两种吸附材料",
+            "status": "proposed",
+            "turn": 1
+          },
+          "factors": {
+            "value": "吸附材料（两种水平）",
+            "quote": "两种吸附材料",
+            "status": "proposed",
+            "turn": 1
+          },
+          "resources": {
+            "value": "后续最多两次运行、一小时上限",
+            "quote": "后续最多两次运行、一小时上限",
+            "status": "declared",
+            "turn": 2
+          },
+          "human_roles": {
+            "value": "本轮不执行，仅通过选项协助制定实验计划",
+            "quote": "请通过选项帮我做实验计划。后续最多六次运行、两小时上限，本轮不执行。",
+            "status": "proposed",
+            "turn": 1
+          }
+        },
+        "unknown": [],
+        "conflicts": {},
+        "stale": {},
+        "pending": {
+          "field": "objective_type",
+          "kind": "proposal",
+          "question": "关于研究目的，是否按当前理解继续？",
+          "rationale": "这是从你的描述整理出的理解，不是经验证的事实。",
+          "options": [
+            {
+              "label": "按这个理解继续：comparison",
+              "value": "comparison",
+              "action": "accept",
+              "id": "a77ba349a78e"
+            },
+            {
+              "label": "暂不确定",
+              "value": "未知",
+              "action": "unknown",
+              "id": "2c3af7fa609c"
+            },
+            {
+              "label": "其他，我来补充",
+              "value": "",
+              "action": "custom",
+              "id": "47de6eddb129"
+            }
+          ],
+          "origin": "template",
+          "allow_accept": false,
+          "choice_policy": {
+            "intent": "comparison",
+            "origin": "trained_context_match",
+            "policy_hash": "6b7d865a492eaba9c5db239e5f5eaa833184d3b21fe3496f358d525504207ded"
+          },
+          "choice_id": "00467e8253cf4ce5",
+          "choice_plan_hash": "e41a4f81d9bb3bbf37bd58776fd9aeeb3f9fdcc15f761a926ec6768b2ac22af1"
+        },
+        "review": {
+          "ready": false,
+          "checks": [
+            {
+              "field": "research_question",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "objective_type",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "hypothesis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+            },
+            {
+              "field": "scope",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "结论只适用于哪些对象、数据、条件和时间范围？"
+            },
+            {
+              "field": "exclusions",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "本轮明确不研究什么，不准备声称什么？"
+            },
+            {
+              "field": "experimental_unit",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "一次独立分配或观察是什么？哪些测量来自同一对象？"
+            },
+            {
+              "field": "factors",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "design",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+            },
+            {
+              "field": "outcomes",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+            },
+            {
+              "field": "baseline",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+            },
+            {
+              "field": "data_source",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。"
+            },
+            {
+              "field": "sampling",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+            },
+            {
+              "field": "analysis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+            },
+            {
+              "field": "acceptance",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+            },
+            {
+              "field": "resources",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "risks",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+            },
+            {
+              "field": "reproducibility",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+            },
+            {
+              "field": "human_roles",
+              "code": "declaration_present",
+              "status": "passed",
+              "detail": "已记录用户声明；这不等于外部事实验证。"
+            },
+            {
+              "field": "deliverable",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "最后交付什么：方案、脚本、表格、报告或可复现实验记录？"
+            },
+            {
+              "field": "objective_type",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "factors",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "human_roles",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "objective_type",
+              "code": "objective_classified",
+              "status": "passed",
+              "detail": "需要明确比较、预测、因果、探索或复现目的。"
+            },
+            {
+              "field": "resources",
+              "code": "resource_bound",
+              "status": "passed",
+              "detail": "声明可核对的资源数量、期限或硬上限。"
+            },
+            {
+              "field": "human_roles",
+              "code": "human_accountability",
+              "status": "blocked",
+              "detail": "明确由谁确认边界、复核方法和批准结论，不把责任隐含交给模型。"
+            }
+          ],
+          "blockers": [
+            {
+              "field": "hypothesis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "请给出可能被否定的命题；探索阶段也可明确不预设方向。"
+            },
+            {
+              "field": "scope",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "结论只适用于哪些对象、数据、条件和时间范围？"
+            },
+            {
+              "field": "exclusions",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "本轮明确不研究什么，不准备声称什么？"
+            },
+            {
+              "field": "experimental_unit",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "一次独立分配或观察是什么？哪些测量来自同一对象？"
+            },
+            {
+              "field": "design",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "单位之间是独立、配对、区组、多因素，还是观察性研究？"
+            },
+            {
+              "field": "outcomes",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "主要指标是什么、哪个方向更好、怎样在实验单位上汇总？"
+            },
+            {
+              "field": "baseline",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "与哪个基线比较，如何保持数据、预算和评估条件公平？"
+            },
+            {
+              "field": "data_source",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "使用已有数据、公开来源、自采数据还是合成数据？给出可追踪标识。"
+            },
+            {
+              "field": "sampling",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "样本量、重复数及其依据是什么？没有方差依据时是否先做先导？"
+            },
+            {
+              "field": "analysis",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "估计什么量、用什么方法，并怎样报告区间或不确定性？"
+            },
+            {
+              "field": "acceptance",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样判定完成或不支持命题？请给出阈值、阴性处理和停止条件。"
+            },
+            {
+              "field": "risks",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "哪些假设最可能不成立？出现什么情况要交还人类判断？"
+            },
+            {
+              "field": "reproducibility",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "怎样记录数据版本、代码配置、随机种子、偏离和结果？"
+            },
+            {
+              "field": "deliverable",
+              "code": "missing_declaration",
+              "status": "blocked",
+              "detail": "最后交付什么：方案、脚本、表格、报告或可复现实验记录？"
+            },
+            {
+              "field": "objective_type",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "factors",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "human_roles",
+              "code": "unconfirmed_proposal",
+              "status": "blocked",
+              "detail": "这项仍是待用户确认的建议，不能作为已知实验事实。"
+            },
+            {
+              "field": "human_roles",
+              "code": "human_accountability",
+              "status": "blocked",
+              "detail": "明确由谁确认边界、复核方法和批准结论，不把责任隐含交给模型。"
+            }
+          ],
+          "required_fields": [
+            "research_question",
+            "objective_type",
+            "hypothesis",
+            "scope",
+            "exclusions",
+            "experimental_unit",
+            "factors",
+            "design",
+            "outcomes",
+            "baseline",
+            "data_source",
+            "sampling",
+            "analysis",
+            "acceptance",
+            "resources",
+            "risks",
+            "reproducibility",
+            "human_roles",
+            "deliverable"
+          ],
+          "declarations_complete": false,
+          "method_risks": [],
+          "method_review_status": "pending_human_review",
+          "scope": "planning_only",
+          "execution_authorized": false,
+          "scientific_claim_verified": false,
+          "readiness_meaning": "用户声明已足够形成待人类复核的计划；不表示假设、数据、功效或结论已被验证。"
+        },
+        "contract_hash": "e41a4f81d9bb3bbf37bd58776fd9aeeb3f9fdcc15f761a926ec6768b2ac22af1",
+        "approved": false,
+        "decisions_count": 4,
+        "reflections_count": 0,
+        "evidence": [],
+        "evidence_actions": {},
+        "clarification": {
+          "mode": "template",
+          "reason": "model_unavailable_or_rejected",
+          "model_used": true,
+          "error_type": "RunLimitError",
+          "validation_error": "RunLimitError"
+        },
+        "last_export": null,
+        "execution_authorized": false
+      },
+      "questions": [
+        {
+          "field": "objective_type",
+          "kind": "proposal",
+          "question": "关于研究目的，是否按当前理解继续？",
+          "rationale": "这是从你的描述整理出的理解，不是经验证的事实。",
+          "options": [
+            {
+              "label": "按这个理解继续：comparison",
+              "value": "comparison",
+              "action": "accept",
+              "id": "a77ba349a78e"
+            },
+            {
+              "label": "暂不确定",
+              "value": "未知",
+              "action": "unknown",
+              "id": "2c3af7fa609c"
+            },
+            {
+              "label": "其他，我来补充",
+              "value": "",
+              "action": "custom",
+              "id": "47de6eddb129"
+            }
+          ],
+          "origin": "template",
+          "allow_accept": false,
+          "choice_policy": {
+            "intent": "comparison",
+            "origin": "trained_context_match",
+            "policy_hash": "6b7d865a492eaba9c5db239e5f5eaa833184d3b21fe3496f358d525504207ded"
+          },
+          "choice_id": "00467e8253cf4ce5",
+          "choice_plan_hash": "e41a4f81d9bb3bbf37bd58776fd9aeeb3f9fdcc15f761a926ec6768b2ac22af1"
+        }
+      ],
+      "review_notice": "声明状态：仍有未决项；方法状态：待人工复核，尚未验证科学有效性。",
+      "execution_authorized": false,
+      "scientific_claim_verified": false,
+      "update_feedback": {
+        "turn": 2,
+        "entries": [
+          {
+            "field": "resources",
+            "status": "declared",
+            "before": "后续最多六次运行、两小时上限",
+            "after": "后续最多两次运行、一小时上限"
+          }
+        ],
+        "text": "已采纳 · 资源边界：后续最多六次运行、两小时上限 → 后续最多两次运行、一小时上限"
+      },
+      "model_used": false,
+      "clarification": {
+        "mode": "template",
+        "reason": "model_unavailable_or_rejected",
+        "model_used": true,
+        "error_type": "RunLimitError",
+        "validation_error": "RunLimitError"
+      },
+      "question_form": true
+    },
+    "state": {
+      "schema_version": "research_planning_v1",
+      "id": "421a331a6ee64bac9bf4e99e151ab507",
+      "revision": 2,
+      "active": true,
+      "facts": {
+        "research_question": {
+          "value": "想比较两种吸附材料，请通过选项帮我做实验计划。后续最多六次运行、两小时上限，本轮不执行。",
+          "quote": "想比较两种吸附材料，请通过选项帮我做实验计划。后续最多六次运行、两小时上限，本轮不执行。",
+          "status": "declared",
+          "turn": 1
+        },
+        "objective_type": {
+          "value": "comparison",
+          "quote": "想比较两种吸附材料",
+          "status": "proposed",
+          "turn": 1
+        },
+        "factors": {
+          "value": "吸附材料（两种水平）",
+          "quote": "两种吸附材料",
+          "status": "proposed",
+          "turn": 1
+        },
+        "resources": {
+          "value": "后续最多两次运行、一小时上限",
+          "quote": "后续最多两次运行、一小时上限",
+          "status": "declared",
+          "turn": 2
+        },
+        "human_roles": {
+          "value": "本轮不执行，仅通过选项协助制定实验计划",
+          "quote": "请通过选项帮我做实验计划。后续最多六次运行、两小时上限，本轮不执行。",
+          "status": "proposed",
+          "turn": 1
+        }
+      },
+      "unknown": [],
+      "conflicts": {},
+      "decisions": [
+        {
+          "turn": 1,
+          "type": "intake",
+          "changes": [
+            {
+              "field": "research_question",
+              "kind": "added",
+              "before": null,
+              "after": "想比较两种吸附材料，请通过选项帮我做实验计划。后续最多六次运行、两小时上限，本轮不执行。"
+            },
+            {
+              "field": "objective_type",
+              "kind": "added",
+              "before": null,
+              "after": "comparison"
+            },
+            {
+              "field": "factors",
+              "kind": "added",
+              "before": null,
+              "after": "吸附材料（两种水平）"
+            },
+            {
+              "field": "resources",
+              "kind": "added",
+              "before": null,
+              "after": "后续最多六次运行、两小时上限"
+            },
+            {
+              "field": "human_roles",
+              "kind": "added",
+              "before": null,
+              "after": "本轮不执行，仅通过选项协助制定实验计划"
+            }
+          ]
+        },
+        {
+          "turn": 1,
+          "type": "update_receipt",
+          "fields": {
+            "research_question": "declared",
+            "objective_type": "proposed",
+            "factors": "proposed",
+            "resources": "declared",
+            "human_roles": "proposed"
+          }
+        },
+        {
+          "turn": 2,
+          "type": "revise",
+          "changes": [
+            {
+              "field": "resources",
+              "kind": "revised",
+              "before": "后续最多六次运行、两小时上限",
+              "after": "后续最多两次运行、一小时上限"
+            }
+          ]
+        },
+        {
+          "turn": 2,
+          "type": "update_receipt",
+          "fields": {
+            "resources": "declared"
+          }
+        }
+      ],
+      "approval": null,
+      "pending": {
+        "field": "objective_type",
+        "kind": "proposal",
+        "question": "关于研究目的，是否按当前理解继续？",
+        "rationale": "这是从你的描述整理出的理解，不是经验证的事实。",
+        "options": [
+          {
+            "label": "按这个理解继续：comparison",
+            "value": "comparison",
+            "action": "accept",
+            "id": "a77ba349a78e"
+          },
+          {
+            "label": "暂不确定",
+            "value": "未知",
+            "action": "unknown",
+            "id": "2c3af7fa609c"
+          },
+          {
+            "label": "其他，我来补充",
+            "value": "",
+            "action": "custom",
+            "id": "47de6eddb129"
+          }
+        ],
+        "origin": "template",
+        "allow_accept": false,
+        "choice_policy": {
+          "intent": "comparison",
+          "origin": "trained_context_match",
+          "policy_hash": "6b7d865a492eaba9c5db239e5f5eaa833184d3b21fe3496f358d525504207ded"
+        },
+        "choice_id": "00467e8253cf4ce5",
+        "choice_plan_hash": "e41a4f81d9bb3bbf37bd58776fd9aeeb3f9fdcc15f761a926ec6768b2ac22af1"
+      },
+      "reflections": [],
+      "changes": [
+        {
+          "field": "research_question",
+          "kind": "added",
+          "before": null,
+          "after": "想比较两种吸附材料，请通过选项帮我做实验计划。后续最多六次运行、两小时上限，本轮不执行。"
+        },
+        {
+          "field": "objective_type",
+          "kind": "added",
+          "before": null,
+          "after": "comparison"
+        },
+        {
+          "field": "factors",
+          "kind": "added",
+          "before": null,
+          "after": "吸附材料（两种水平）"
+        },
+        {
+          "field": "resources",
+          "kind": "added",
+          "before": null,
+          "after": "后续最多六次运行、两小时上限"
+        },
+        {
+          "field": "human_roles",
+          "kind": "added",
+          "before": null,
+          "after": "本轮不执行，仅通过选项协助制定实验计划"
+        },
+        {
+          "field": "resources",
+          "kind": "revised",
+          "before": "后续最多六次运行、两小时上限",
+          "after": "后续最多两次运行、一小时上限"
+        }
+      ],
+      "stale": {},
+      "turns": 2,
+      "audience": "researcher_student",
+      "last_notes": [
+        "本轮动态澄清不可用或未通过校验，已使用模板继续；已有边界保留。"
+      ],
+      "last_export": null,
+      "last_update": {
+        "turn": 2,
+        "entries": [
+          {
+            "field": "resources",
+            "status": "declared",
+            "before": "后续最多六次运行、两小时上限",
+            "after": "后续最多两次运行、一小时上限"
+          }
+        ],
+        "text": "已采纳 · 资源边界：后续最多六次运行、两小时上限 → 后续最多两次运行、一小时上限"
+      },
+      "clarification": {
+        "mode": "template",
+        "reason": "model_unavailable_or_rejected",
+        "model_used": true,
+        "error_type": "RunLimitError",
+        "validation_error": "RunLimitError"
+      },
+      "question_history": [
+        {
+          "turn": 1,
+          "field": "objective_type",
+          "kind": "proposal",
+          "question": "关于研究目的，是否按当前理解继续？",
+          "origin": "template",
+          "basis_hash": "8cbf7168c952babe394c395d883fba937d59f29b13d2d4bdf4a2a4e9c358568c"
+        },
+        {
+          "turn": 2,
+          "field": "objective_type",
+          "kind": "proposal",
+          "question": "关于研究目的，是否按当前理解继续？",
+          "origin": "template",
+          "basis_hash": "85dea56f859833b7cb82c22b4902af7d81e18c6c51aa225daebf4e57e70ad3c5"
+        }
+      ]
+    },
+    "resources": {
+      "llm_requests": 2,
+      "llm_tokens": 3777,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 4,
+        "llm_tokens": 12000,
+        "tool_calls": 40,
+        "read_bytes": 24000
+      }
+    }
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "files": {
+    "RUT_Science/rut_science/science_bot/general/planning/blueprint.py": {
+      "before_sha256": "f076b194c875af2a815f7f5578c7d62e16b20c269cde8723db73e53cd18f99d5",
+      "sha256": "1791352cbe255e11d32b2b5da04092eefa7d0fc03ed9a97d7668f5794762d0a3",
+      "reason": "User requested reliable planning entry, explicit update feedback and trustworthy review; preserve all page styles and layout."
+    },
+    "RUT_Science/rut_science/science_bot/general/planning/delivery.py": {
+      "before_sha256": "eea63dff7fcae6071fb035d441cef0abdabf89172e4853d85a5f406a053e0b5d",
+      "sha256": "8fcaedc5005c1c425ab9334d53c49e7d63f9ad35d1987918a1d4083f2626ed58",
+      "reason": "User requested reliable planning entry, explicit update feedback and trustworthy review; preserve all page styles and layout."
+    },
+    "RUT_Science/rut_science/science_bot/general/planning/intake.py": {
+      "before_sha256": "db1797dc5870634b3bbdd875a7f7ce007c1f4b7541318cb21bf9bd258c5c253d",
+      "sha256": "91d6d82858d5cad896420edf1ae5b4d8ada4a7d94c7dafdd9839056a529c6127",
+      "reason": "User requested reliable planning entry, explicit update feedback and trustworthy review; preserve all page styles and layout."
+    },
+    "RUT_Science/rut_science/science_bot/general/planning/ledger.py": {
+      "before_sha256": "e5bf3a1b688d73aaf2ba46faaae5a00b2a89fbcf38363a6ba1c0e59e261b4c8a",
+      "sha256": "39c137feb3374aeac00aebb5dd7e063c19994b04e25efa9ec8fe9e6e0a24a929",
+      "reason": "User requested reliable planning entry, explicit update feedback and trustworthy review; preserve all page styles and layout."
+    },
+    "RUT_Science/rut_science/science_bot/general/planning/runtime.py": {
+      "before_sha256": "222f27c2a49943d8fde2cb08801918eb4d69d4ea45aabd6e64eab2d835ba20ab",
+      "sha256": "56e9bb57cb7c570da29ce45ed34048da4325c5cfd01b2654cd8e4f6200cc55c8",
+      "reason": "User requested reliable planning entry, explicit update feedback and trustworthy review; preserve all page styles and layout."
+    },
+    "RUT_Science/rut_science/science_bot/presentation.py": {
+      "before_sha256": "5cea33a7afb34d0384b51ed49f6811f7ccd801f21a863f497a3cc1bcdf4b848a",
+      "sha256": "0d3601501c8c666fdef5d52c1cf562a4fa851d1f9543787fc35bd029df47562b",
+      "reason": "User requested reliable planning entry, explicit update feedback and trustworthy review; preserve all page styles and layout."
+    },
+    "RUT_Science/rut_science/science_bot/workbench_assets/dist/app.js": {
+      "before_sha256": "94242e2cda5c0e966864f24ac03045aeac357ea78e84f828c7a96fd79c7cf52a",
+      "sha256": "16f09ee1cfac5772718c61dde5d0bdb4540e3836535add9e2039cec426c871c6",
+      "reason": "User requested reliable planning entry, explicit update feedback and trustworthy review; preserve all page styles and layout."
+    }
+  }
+}

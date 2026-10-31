@@ -1,0 +1,13 @@
+{
+  "sha256": {
+    ".gitignore": "9362219a10e7ac273a7d56a0a6a39e0a2a934c7a725e042f802f21f26dfc4182",
+    "RUT_Science/rut_science/science_bot/general/planning/evidence.py": "8a7ddb94153c769cf5a332bfc899f8c9bde309341621a2f646919776f06ba65d",
+    "RUT_Science/rut_science/science_bot/general/planning/paper_reading.py": "048fdcb2d579f09b89e7686fcc84d514f24f4ae5ef0022a0e3ba709d11627514",
+    "RUT_Science/rut_science/science_bot/general/planning/pdf_document.py": "a2cce4b32d32cbfb2f6ff25d18fed7422bf2fd66420549907352095eb805a51f",
+    "RUT_Science/rut_science/science_bot/general/planning/pdf_worker.py": "31d2d1fafca1542a6abbe46cd942baadfef4ebb2b4ceb5fb4e5442d1ce50119b",
+    "RUT_Science/rut_science/science_bot/paper_library.py": "6e9712d68f11235ec088c2de39a536c5052d8860dda023d94f184b8283395c5a",
+    "RUT_Science/rut_science/science_bot/presentation.py": "a6667188149414c20ff217020b9c9f627a7b3f254b827878beb615182aeac100",
+    "RUT_Science/rut_science/science_bot/workbench.py": "26e7d4e7aa1fcbc628ae5e570075a8c5067efdc1ac110f1c9a4952d618d9de40",
+    "RUT_Science/rut_science/science_bot/workbench_assets/dist/app.js": "2eb56d65b74f2cd8b3f90f1835b61aba6b9c28adebe552690eb1445399cb571e"
+  }
+}

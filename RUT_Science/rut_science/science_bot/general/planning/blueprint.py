@@ -172,8 +172,19 @@ def review(state):
     if reproducibility:
         groups = [r"版本|git|hash|commit", r"种子|seed|随机", r"数据|data|来源|source", r"配置|日志|记录|config|log"]
         add("reproducibility", "reproducibility_records", sum(_has(reproducibility, p) for p in groups) >= 2, "至少明确数据/代码版本、种子、配置或日志中的两类复现记录。")
+    for field,row in state.get('pending_revisions',{}).items():
+        add(field,'unapplied_revision',False,row['reason'])
+    from .synthesis import projection
+    if projection(state)['status']=='stale':
+        add('design','synthesized_plan_stale',False,'实验初稿依据已变更，请用 /plan synthesize 更新后再确认。')
+    declarations_complete = not any(row['status']=='blocked' for row in checks)
+    from .method_review import risks
+    method_risks=risks(state)
+    checks.extend(method_risks)
     blockers = [deepcopy(row) for row in checks if row["status"] == "blocked"]
     return {"ready": not blockers, "checks": checks, "blockers": blockers, "required_fields": required,
+            "declarations_complete":declarations_complete,"method_risks":method_risks,
+            "method_review_status":"risks_detected" if method_risks else "pending_human_review",
             "scope": "planning_only", "execution_authorized": False, "scientific_claim_verified": False,
             "readiness_meaning": "用户声明已足够形成待人类复核的计划；不表示假设、数据、功效或结论已被验证。"}
 
@@ -209,7 +220,9 @@ def build_blueprint(state):
          ("支持/不支持/不确定的结论", "限制与替代解释"), "设计可检验不等于结果支持；阴性、反向及不确定结果同样记录，因果与泛化不超出证据。", "人类研究者作最终判断", "manual")
     node("report", "交付可追踪报告并选择下一步", ("claim_review",), ("deliverable", "reproducibility", "全程决策与偏离记录"),
          ("研究报告与复现清单", "下一步或停止理由"), "交付包含边界、设计选择、关键证据、局限、负结果和人类职责；新问题另开版本，不事后重写原验收。", "研究者签署，Agent整理", "manual")
-    return {"version": VERSION, "plan_id": state.get("id"), "revision": state.get("revision", 0),
+    from .synthesis import projection
+    synthesis=projection(state)
+    result={"version": VERSION, "plan_id": state.get("id"), "revision": state.get("revision", 0),
         "evidence": deepcopy(state.get("evidence", [])), "evidence_actions": deepcopy(state.get("evidence_actions", {})),
         "status": "reviewable_plan" if assessment["ready"] else "draft_with_open_questions", "facts": facts,
         "fact_sources": deepcopy(state.get("facts", {})), "nodes": nodes, "review": assessment,
@@ -217,12 +230,16 @@ def build_blueprint(state):
         "out_of_scope": [_text(state, "exclusions")] if _text(state, "exclusions") else ["外推边界尚未声明"],
         "scientific_claim_verified": False, "execution_authorized": False,
         "capability_legend": {"implemented": "当前Harness可保存、检查或展示的规划操作，不代表步骤已执行", "mock": "受支持详细工具库的显式模拟演练", "manual": "需人类或另行授权/接入工具完成"}}
+    if state.get('plan_synthesis'):
+        result.update(plan_synthesis=synthesis,experiment_steps=deepcopy(synthesis['content']['steps']) if synthesis['status']=='current' else [])
+    return result
 
 
 def render_map(state):
     """A compact awareness view: purpose, boundaries, evidence gaps, choices, next step."""
     assessment = review(state)
-    lines = [f"研究地图 · 第 {state.get('revision', 0)} 版", ""]
+    from .method_review import notice
+    lines = [f"研究地图 · 第 {state.get('revision', 0)} 版", notice(assessment), ""]
     for key in ("research_question", "objective_type", "scope", "exclusions", "experimental_unit", "design", "outcomes", "acceptance"):
         value = _text(state, key)
         fact = state.get("facts", {}).get(key, {})
@@ -250,8 +267,13 @@ def render_map(state):
 
 def export_markdown(state):
     plan = build_blueprint(state)
+    from .method_review import notice
     lines = ["# 科研任务计划", "", f"版本：{state.get('revision', 0)}；状态：{plan['status']}。", "",
-        "本文件是待复核的规划契约，不是实验完成证明，也不授权真实工具执行。", "", "## 已声明的边界与设计", ""]
+        "本文件是待复核的规划契约，不是实验完成证明，也不授权真实工具执行。", "",notice(plan['review']),""]
+    if state.get('plan_synthesis'):
+        from .delivery import render_design
+        lines+=['## 实验设计初稿','',render_design(state),'']
+    lines += ['## 已声明的边界与设计','']
     for key, spec in FIELDS.items():
         fact = state.get("facts", {}).get(key, {})
         value = _text(state, key) or "尚未明确"

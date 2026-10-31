@@ -6,6 +6,7 @@ marks their saved output as accepted or rejected.
 import copy
 from datetime import datetime, timezone
 import json
+import os
 from pathlib import Path
 import time
 import urllib.error
@@ -18,8 +19,20 @@ from ...configuration import load_api_config
 from ...util import canonical, digest, write_json
 
 
-MAX_CONTEXT_BYTES = 50_000
+MAX_CONTEXT_BYTES = 100_000
 MAX_OUTPUT_TOKENS = 1800
+
+
+class OutputTruncatedError(ValueError):
+    """The service explicitly exhausted its completion allowance."""
+
+
+def output_tokens(role):
+    if role not in {'paper_reading','planning_synthesis'}:return MAX_OUTPUT_TOKENS
+    name='SCIENCE_BOT_PAPER_OUTPUT_TOKENS' if role=='paper_reading' else 'SCIENCE_BOT_PLAN_OUTPUT_TOKENS'
+    value=int(os.environ.get(name,'8192'))
+    if not 1024<=value<=32768:raise ValueError(name+' must be between 1024 and 32768')
+    return value
 
 
 def _strict_json(value):
@@ -173,6 +186,8 @@ class _NativeHTTPAgent(JSONHTTPAgent):
                 raise ValueError("Exactly one provider choice is required")
             choice = choices[0]
             record.update(response_id=result.get("id"), finish_reason=choice.get("finish_reason"))
+            if choice.get('finish_reason')=='length':
+                raise OutputTruncatedError('模型输出达到长度上限，未采用不完整结果；可提高该任务输出额度后重试。')
             message = choice.get("message")
             if not isinstance(message, dict) or message.get("role", "assistant") != "assistant":
                 raise ValueError("Provider assistant message is missing")
@@ -198,7 +213,18 @@ class _NativeHTTPAgent(JSONHTTPAgent):
                 try:
                     arguments = _strict_json(arguments)
                 except (ValueError, TypeError):
-                    raise ValueError("Provider tool arguments are invalid JSON") from None
+                    # Some document-tool responses append one redundant '}' to
+                    # an otherwise complete object. Never repair truncation,
+                    # missing syntax, duplicate keys or any other trailing data.
+                    if (getattr(self,'document_role',False) and choice.get('finish_reason')=='tool_calls'
+                            and function['name'] in {'interpret_selected_paper','synthesize_experiment_plan'}
+                            and isinstance(arguments,str) and arguments.rstrip().endswith('}}')):
+                        try:arguments=_strict_json(arguments.rstrip()[:-1])
+                        except (ValueError,TypeError):raise ValueError('Provider tool arguments are invalid JSON') from None
+                        record.setdefault('argument_normalizations',[]).append({
+                            'tool':function['name'],'type':'removed_one_redundant_final_brace'})
+                    else:
+                        raise ValueError("Provider tool arguments are invalid JSON") from None
                 if not isinstance(arguments, dict):
                     raise ValueError("Provider tool arguments must be a JSON object")
                 seen.add(call_id)
@@ -267,7 +293,8 @@ class GeneralProvider:
         config = load_api_config()
         agent = _NativeHTTPAgent(config["endpoint"], self.model, api_key=config["api_key"],
                                  budget=self.budget, episode_id=self.folder.name,
-                                 max_output_tokens=MAX_OUTPUT_TOKENS)
+                                 max_output_tokens=output_tokens(role))
+        agent.document_role=role in {'paper_reading','planning_synthesis'}
         agent.reset("", [], 0)
         before = len(self.budget.calls)
         try:

@@ -1,0 +1,157 @@
+{
+  "version": "plan_synthesis_development_v1",
+  "model_requests": 6,
+  "accounted_tokens": 21845,
+  "automatic_retries": 0,
+  "real_experiments": 0,
+  "training_runs": 0,
+  "independent_human_quality_evaluations": 0,
+  "first_run": {
+    "checked_utc": "2026-10-30T16:38:36.832991+00:00",
+    "cases": [
+      {
+        "id": "model_comparison",
+        "status": "fallback",
+        "reason": "RunLimitError",
+        "concrete_steps": 0,
+        "all_steps_have_actions_inputs_outputs_acceptance": false,
+        "has_comparison_matrix": false,
+        "has_alternative": false,
+        "has_uncertainty_and_stop_rule": false,
+        "references": [],
+        "resources": {
+          "llm_requests": 2,
+          "llm_tokens": 6319,
+          "tool_attempts": 0,
+          "limits": {
+            "llm_requests": 3,
+            "llm_tokens": 16000,
+            "tool_calls": 40,
+            "read_bytes": 24000
+          }
+        },
+        "no_experiment_session_created": true,
+        "all_steps_unexecuted": true,
+        "human_quality_rated": false
+      },
+      {
+        "id": "minimal_replication",
+        "status": "fallback",
+        "reason": "RunLimitError",
+        "concrete_steps": 0,
+        "all_steps_have_actions_inputs_outputs_acceptance": false,
+        "has_comparison_matrix": false,
+        "has_alternative": false,
+        "has_uncertainty_and_stop_rule": false,
+        "references": [],
+        "resources": {
+          "llm_requests": 1,
+          "llm_tokens": 1328,
+          "tool_attempts": 0,
+          "limits": {
+            "llm_requests": 3,
+            "llm_tokens": 16000,
+            "tool_calls": 40,
+            "read_bytes": 24000
+          }
+        },
+        "no_experiment_session_created": true,
+        "all_steps_unexecuted": true,
+        "human_quality_rated": false
+      }
+    ],
+    "requests": 3,
+    "accounted_tokens": 7647,
+    "automatic_retries": 0,
+    "real_experiments": 0,
+    "training_runs": 0,
+    "human_quality_rated": false
+  },
+  "prepared_validation": {
+    "checked_utc": "2026-10-30T16:42:17.416746+00:00",
+    "cases": [
+      {
+        "id": "model_comparison",
+        "status": "current",
+        "reason": "validated_proposal",
+        "concrete_steps": 3,
+        "all_steps_have_actions_inputs_outputs_acceptance": true,
+        "has_comparison_matrix": true,
+        "has_alternative": true,
+        "has_uncertainty_and_stop_rule": true,
+        "references": [
+          {
+            "source": "fact",
+            "key": "research_question",
+            "quote": "比较模型甲乙在合成二维场上的误差与成本，以决定是否继续研究，模型是否已训练待核实。"
+          },
+          {
+            "source": "fact",
+            "key": "resources",
+            "quote": "最多1小时，先核算耗时；超限停止，不追加运行"
+          },
+          {
+            "source": "fact",
+            "key": "scope",
+            "quote": "只限所选合成场景；本轮交付规划，不执行。"
+          }
+        ],
+        "resources": {
+          "llm_requests": 2,
+          "llm_tokens": 8820,
+          "tool_attempts": 0,
+          "limits": {
+            "llm_requests": 2,
+            "llm_tokens": 24353,
+            "tool_calls": 40,
+            "read_bytes": 24000
+          }
+        },
+        "no_experiment_session_created": true,
+        "all_steps_unexecuted": true,
+        "human_quality_rated": false
+      },
+      {
+        "id": "minimal_replication",
+        "status": "fallback",
+        "reason": "Provider tool arguments are invalid JSON",
+        "concrete_steps": 0,
+        "all_steps_have_actions_inputs_outputs_acceptance": false,
+        "has_comparison_matrix": false,
+        "has_alternative": false,
+        "has_uncertainty_and_stop_rule": false,
+        "references": [],
+        "resources": {
+          "llm_requests": 1,
+          "llm_tokens": 5378,
+          "tool_attempts": 0,
+          "limits": {
+            "llm_requests": 1,
+            "llm_tokens": 15533,
+            "tool_calls": 40,
+            "read_bytes": 24000
+          }
+        },
+        "no_experiment_session_created": true,
+        "all_steps_unexecuted": true,
+        "human_quality_rated": false
+      }
+    ],
+    "requests": 3,
+    "accounted_tokens": 14198,
+    "automatic_retries": 0,
+    "real_experiments": 0,
+    "training_runs": 0,
+    "human_quality_rated": false,
+    "cumulative_requests": 6,
+    "cumulative_accounted_tokens": 21845
+  },
+  "interpretation": "Model comparison and its budget revision generated concrete drafts; initial admission failures and selected synthetic-paper output truncation preserved. No cross-task success rate inferred.",
+  "changes_after_last_live_request": [
+    "Tighter output limits and short citations within unchanged provider token cap",
+    "Selected shared paper citation required for replication",
+    "Refresh after accepting displayed declarations",
+    "Compact readout without blank-field repetition"
+  ],
+  "latest_code_real_model_retest": false
+}

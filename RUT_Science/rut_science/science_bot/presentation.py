@@ -30,12 +30,14 @@ def safe(value):
 def plan_view(state, *, example=False):
     assessment = review(state)
     plan = build_blueprint(state)
+    readout=design_readout(state)
     facts = [{'field': f, 'label': FIELDS[f]['label'], 'value': row['value'],
               'status': row['status'], 'quote': row['quote']} for f, row in state['facts'].items()]
     issues = []
     for row in assessment['blockers']:
-        if not any(i['field'] == row['field'] for i in issues):
+        if row.get('category')=='method_risk' or not any(i['field'] == row['field'] for i in issues):
             issues.append({**row, 'label': FIELDS[row['field']]['label']})
+    if readout['synthesis_status']=='current':issues=[r for r in readout['issues'] if r['blocking']]
     questions = _questions(state, assessment)
     pending = state.get('pending')
     if pending:
@@ -43,17 +45,20 @@ def plan_view(state, *, example=False):
     from .general.planning.choices import decorate
     questions = decorate(state, questions)
     exported = state.get('last_export')
+    steps=([{**r,'id':'experiment_'+str(i),'label':r['title'],'purpose':r['action']+' 输入：'+r['inputs']+'；产物：'+r['output'],
+             'owner':'研究者或另行授权的执行器','capability':'manual','capability_label':'设计建议 · 需核实执行条件','executed':False}
+            for i,r in enumerate(plan['experiment_steps'],1)] if plan.get('experiment_steps') else
+           [{**node,'label':STEP_LABELS[node['id']],'capability_label':MODE_LABELS[node['capability']]} for node in plan['nodes']])
     return {'id': state['id'], 'revision': state['revision'], 'hash': contract_hash(state),
         'title': '算子模型比较 · 先导研究' if example else state['facts'].get('research_question', {}).get('value', '新的研究计划')[:80],
-        'example': example, 'status': '规划已确认' if state['approval'] else '可供复核' if assessment['ready'] else '正在澄清',
-        'approved': bool(state['approval']), 'ready': assessment['ready'], 'facts': facts,
+        'example': example, 'status': '规划已确认' if state['approval'] and assessment['ready'] else '可供复核' if assessment['ready'] else '正在澄清',
+        'approved': bool(state['approval']) and assessment['ready'], 'ready': assessment['ready'], 'facts': facts,
         'unknown': [{'field': f, 'label': FIELDS[f]['label']} for f in state['unknown']],
         'conflicts': [{'field': f, 'label': FIELDS[f]['label'], 'values': rows} for f, rows in state['conflicts'].items()],
-        'issues': issues, 'questions': questions, 'design_readout': design_readout(state),
+        'issues': issues, 'questions': questions, 'design_readout': readout,
         'evidence': [evidence_metadata(row) for row in state.get('evidence', [])],
         'evidence_actions': state.get('evidence_actions', {}),
-        'steps': [{**node, 'label': STEP_LABELS[node['id']], 'capability_label': MODE_LABELS[node['capability']]}
-                  for node in plan['nodes']],
+        'steps': steps,
         'export': exported, 'export_current': bool(exported and exported['contract_hash'] == contract_hash(state)),
         'execution_authorized': False, 'scientific_claim_verified': False}
 
@@ -65,7 +70,12 @@ def session_view(session):
     if state and isinstance(last_answer,str) and session.meta.get('last_report_kind')=='research_planning':
         last_answer='\n'.join(line for line in last_answer.splitlines() if not line.startswith(('为什么问：','依据：')))
         if (state.get('pending') or {}).get('choice_id') and last_answer.startswith(('正在澄清\n','规划可复核\n')):
-            last_answer=None
+            from .general.planning.turn_feedback import last_receipt
+            from .general.planning.method_review import notice
+            receipt=last_receipt(state)
+            last_answer=(receipt['text']+'\n\n'+notice(review(state))) if receipt else None
+            from .general.planning.synthesis import brief
+            if state.get('plan_synthesis'):last_answer=(last_answer+'\n\n' if last_answer else '')+brief(state)
     return {'id': session.meta['id'], 'backend': session.meta['backend'], 'model': session.meta['model'],
         'phase': session.meta['phase'], 'workspace': str(session.workspace.root) if session.workspace else None,
         'resources': session.resources(), 'planning': planning, 'last_answer': last_answer,
@@ -124,10 +134,23 @@ def delivery_html(plan):
     steps = ''.join('<li><b>'+e(STEP_LABELS.get(n['id'], n['id']))+'</b><p>'+e(n['purpose'])+
         '</p><small>'+e(n['owner'])+' · '+e(MODE_LABELS.get(n['capability'], n['capability']))+
         ' · 尚未执行</small><p class="accept">验收：'+e(n['acceptance'])+'</p></li>' for n in plan['nodes'])
+    synthesis=plan.get('plan_synthesis',{})
+    if synthesis.get('status')=='current':
+        content=synthesis['content']
+        rows=('<tr><th>设计建议 · 待复核</th><td>'+e(content['decision'])+'</td></tr>'+rows+
+              ''.join('<tr><th>'+e(label)+'</th><td>'+e(value)+'</td></tr>' for label,value in
+                  [('推荐路线',content['recommendation']),('设计理由',content['rationale']),
+                   ('替代方案','；'.join(content['alternatives'])),('条件假设','；'.join(content['assumptions'])),
+                   ('实验对比','\n'.join(r['comparison']+'；单位：'+r['unit']+'；控制：'+r['controls']+'；测量：'+r['measurement'] for r in content['matrix'])),
+                   ('分析与不确定性',content['analysis']),('预算安排',content['budget_plan']),('验收和停止',content['stop_rule']),
+                   ('未决条件','\n'.join(r['issue']+'；获取办法：'+r['action'] for r in content['open_questions']))]))
+        steps=''.join('<li><b>'+e(r['title'])+'</b><p>'+e(r['action'])+'</p><small>设计建议 · 尚未执行</small><p>'+e('输入：'+r['inputs']+'；产物：'+r['output'])+'</p><p class="accept">验收：'+e(r['acceptance'])+'</p></li>' for r in content['steps'])
+    elif synthesis.get('status')=='stale':
+        rows='<tr><th>实验初稿已过期</th><td>'+e(synthesis['message'])+'</td></tr>'+rows
     issues = ''.join('<li>'+e(FIELDS[r['field']]['label'])+'：'+e(r['detail'])+'</li>'
                      for r in plan['review']['checks'] if r['status'] != 'passed')
     from .general.planning.paper_reading import render as render_reading
-    sources = ''.join('<article><h3>'+e(r['path'])+'</h3><small>'+e(evidence_location(r))+
+    sources = ''.join('<article><h3>'+e(r.get('original_filename',r['path']))+'</h3><small>'+e(evidence_location(r))+
         ' · '+e(r['sha256'])+'</small><pre>'+e(r['text'])+'</pre>'+
         ('<h3>模型解读 · 待复核</h3><pre>'+e(render_reading(r))+'</pre>' if r.get('interpretation') else '')+
         '</article>' for r in plan.get('evidence', []))

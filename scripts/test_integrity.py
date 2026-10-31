@@ -18,7 +18,7 @@ class ChainedIntegrityTests(unittest.TestCase):
         self.root = Path(self.tmp.name).resolve()
         self.hosts = guard.TOOL_HOST_FILES|guard.PLANNING_HOST_FILES
         self.base = {}
-        for name in self.hosts|guard.PROVIDER_FILES|{"saved/policy.json"}:
+        for name in self.hosts|guard.PROVIDER_FILES|{"saved/policy.json",".gitignore"}:
             self.put(name, b"original "+name.encode())
             self.base[name] = guard.sha(self.root/name)
         self.put_json("docs/cleanup/2026-10-28/protected_current.json", {"sha256":self.base})
@@ -380,6 +380,39 @@ class ChainedIntegrityTests(unittest.TestCase):
         value=json.loads((self.root/name).read_text());value['rewritten']=True;self.put_json(name,value)
         with self.assertRaises(ValueError):guard.check_project(self.root)
 
+    def reliability_upgrade(self):
+        self.pdf_upgrade();prior=guard.effective_hashes(self.root)
+        for name in guard.RELIABILITY_STYLE_FILES:
+            if not (self.root/name).exists():self.put(name,b'original page style')
+        before={'protected_sha256':prior,'files':{p.relative_to(self.root).as_posix():guard.sha(p) for p in self.root.rglob('*') if p.is_file()},
+                'style_files':{n:guard.sha(self.root/n) for n in guard.RELIABILITY_STYLE_FILES}}
+        self.put_json(guard.RELIABILITY_RECORD+'/before_snapshot.json',before)
+        changes={}
+        for name in guard.RELIABILITY_HOST_FILES:
+            self.put(name,b'planning reliability '+name.encode())
+            changes[name]={'before_sha256':prior[name],'sha256':guard.sha(self.root/name),'reason':'user requested three planning deliveries without layout changes'}
+        for name in guard.RELIABILITY_NEW_FILES:self.put(name,b'new planning host helper')
+        self.put_json(guard.RELIABILITY_RECORD+'/authorized_source_changes.json',{'files':changes})
+        self.put_json(guard.RELIABILITY_RECORD+'/runtime_manifest.json',{'sha256':{
+            n:guard.sha(self.root/n) for n in guard.RELIABILITY_HOST_FILES|guard.RELIABILITY_NEW_FILES}})
+        return changes
+
+    def test_reliability_upgrade_preserves_page_style_and_layout(self):
+        self.reliability_upgrade()
+        self.assertEqual(guard.check_project(self.root)['planning_reliability_files_checked'],10)
+        self.put(next(iter(guard.RELIABILITY_STYLE_FILES)),b'changed layout')
+        with self.assertRaises(ValueError):guard.check_project(self.root)
+
+    def test_reliability_upgrade_protects_helpers_and_old_evidence(self):
+        self.reliability_upgrade();self.put(next(iter(guard.RELIABILITY_NEW_FILES)),b'changed host')
+        with self.assertRaises(ValueError):guard.check_project(self.root)
+
+    def test_reliability_scope_cannot_rewrite_weights(self):
+        changes=self.reliability_upgrade();name='saved/policy.json'
+        changes[name]={'before_sha256':self.base[name],'sha256':self.base[name],'reason':'out of scope'}
+        self.put_json(guard.RELIABILITY_RECORD+'/authorized_source_changes.json',{'files':changes})
+        with self.assertRaisesRegex(ValueError,'exceeds authorized'):guard.check_project(self.root)
+
     def test_retained_weights_cannot_be_added_to_source_overlay(self):
         changes=self.upgrade()
         changes["saved/policy.json"]={"before_sha256":self.base["saved/policy.json"],"sha256":checksum(b"other"),"reason":"not allowed"}
@@ -418,5 +451,96 @@ class ChainedIntegrityTests(unittest.TestCase):
     def test_path_traversal_is_not_an_artifact(self):
         with self.assertRaisesRegex(ValueError,"relative artifact"):guard._hashes({"../outside.py":"0"*64})
 
+
+    def synthesis_upgrade(self):
+        self.reliability_upgrade();prior=guard.effective_hashes(self.root)
+        before={'version':'plan_synthesis_before_v1','protected_sha256':prior,
+                'files':{p.relative_to(self.root).as_posix():guard.sha(p) for p in self.root.rglob('*') if p.is_file()},
+                'style_files':{n:guard.sha(self.root/n) for n in guard.RELIABILITY_STYLE_FILES}}
+        self.put_json(guard.SYNTHESIS_RECORD+'/before_snapshot.json',before)
+        changes={}
+        for name in guard.SYNTHESIS_HOST_FILES:
+            self.put(name,b'plan synthesis host '+name.encode())
+            changes[name]={'before_sha256':prior[name],'sha256':guard.sha(self.root/name),'reason':'user requested LLM experimental plan synthesis'}
+        for name in guard.SYNTHESIS_NEW_FILES:self.put(name,b'new proposal composer')
+        self.put_json(guard.SYNTHESIS_RECORD+'/authorized_source_changes.json',{'files':changes})
+        self.put_json(guard.SYNTHESIS_RECORD+'/runtime_manifest.json',{'sha256':{
+            n:guard.sha(self.root/n) for n in guard.SYNTHESIS_HOST_FILES|guard.SYNTHESIS_NEW_FILES}})
+        return changes
+
+    def full_pdf_upgrade(self):
+        self.synthesis_upgrade();prior=guard.effective_hashes(self.root)
+        before={'version':'full_pdf_before_v1','protected_sha256':prior,
+                'files':{p.relative_to(self.root).as_posix():guard.sha(p) for p in self.root.rglob('*') if p.is_file()},
+                'style_files':{n:guard.sha(self.root/n) for n in guard.RELIABILITY_STYLE_FILES}}
+        self.put_json(guard.FULL_PDF_RECORD+'/before_snapshot.json',before)
+        changes={}
+        for name in guard.FULL_PDF_HOST_FILES:
+            self.put(name,b'full PDF authorized source '+name.encode())
+            changes[name]={'before_sha256':prior[name],'sha256':guard.sha(self.root/name),'reason':'user authorized full PDF reading'}
+        for name in guard.FULL_PDF_NEW_FILES:self.put(name,b'lossless chunking')
+        self.put_json(guard.FULL_PDF_RECORD+'/authorized_source_changes.json',{'files':changes})
+        self.put_json(guard.FULL_PDF_RECORD+'/runtime_manifest.json',{'sha256':{
+            n:guard.sha(self.root/n) for n in guard.FULL_PDF_HOST_FILES|guard.FULL_PDF_NEW_FILES}})
+        return changes
+
+    def paper_upload_upgrade(self):
+        self.full_pdf_upgrade();prior=guard.effective_hashes(self.root)
+        before={'version':'paper_upload_before_v1','protected_sha256':prior,
+                'files':{p.relative_to(self.root).as_posix():guard.sha(p) for p in self.root.rglob('*') if p.is_file()},
+                'style_files':{n:guard.sha(self.root/n) for n in guard.RELIABILITY_STYLE_FILES}}
+        self.put_json(guard.PAPER_UPLOAD_RECORD+'/before_snapshot.json',before);changes={}
+        for name in guard.PAPER_UPLOAD_HOST_FILES:
+            self.put(name,b'paper upload host '+name.encode())
+            changes[name]={'before_sha256':prior[name],'sha256':guard.sha(self.root/name),'reason':'user authorized a local PDF upload library'}
+        for name in guard.PAPER_UPLOAD_NEW_FILES:self.put(name,b'local content addressed paper library')
+        self.put_json(guard.PAPER_UPLOAD_RECORD+'/authorized_source_changes.json',{'files':changes})
+        self.put_json(guard.PAPER_UPLOAD_RECORD+'/runtime_manifest.json',{'sha256':{
+            n:guard.sha(self.root/n) for n in guard.PAPER_UPLOAD_HOST_FILES|guard.PAPER_UPLOAD_NEW_FILES}})
+        return changes
+
+    def test_paper_upload_layer_cannot_rewrite_provider_or_old_receipts(self):
+        self.paper_upload_upgrade();self.assertEqual(guard.check_project(self.root)['paper_upload_files_checked'],9)
+        self.put('RUT_Science/rut_science/science_bot/general/provider.py',b'changed API')
+        with self.assertRaises(ValueError):guard.check_project(self.root)
+
+    def test_paper_upload_scope_does_not_include_weights_or_static_layout(self):
+        changes=self.paper_upload_upgrade();name='saved/policy.json'
+        changes[name]={'before_sha256':self.base[name],'sha256':self.base[name],'reason':'not upload scope'}
+        self.put_json(guard.PAPER_UPLOAD_RECORD+'/authorized_source_changes.json',{'files':changes})
+        with self.assertRaisesRegex(ValueError,'exceeds authorized'):guard.check_project(self.root)
+        changes.pop(name);self.put_json(guard.PAPER_UPLOAD_RECORD+'/authorized_source_changes.json',{'files':changes})
+        self.put(next(iter(guard.RELIABILITY_STYLE_FILES)),b'changed layout')
+        with self.assertRaises(ValueError):guard.check_project(self.root)
+
+    def test_full_pdf_provider_upgrade_preserves_old_receipts_and_configuration(self):
+        self.full_pdf_upgrade();self.assertEqual(guard.check_project(self.root)['full_pdf_files_checked'],10)
+        self.put('RUT_Science/rut_science/configuration.py',b'changed credentials')
+        with self.assertRaises(ValueError):guard.check_project(self.root)
+
+    def test_full_pdf_overlay_cannot_change_weights_or_rebase_history(self):
+        changes=self.full_pdf_upgrade();name='saved/policy.json'
+        changes[name]={'before_sha256':self.base[name],'sha256':self.base[name],'reason':'out of scope'}
+        self.put_json(guard.FULL_PDF_RECORD+'/authorized_source_changes.json',{'files':changes})
+        with self.assertRaisesRegex(ValueError,'exceeds authorized'):guard.check_project(self.root)
+        changes.pop(name);self.put_json(guard.FULL_PDF_RECORD+'/authorized_source_changes.json',{'files':changes})
+        self.put_json(guard.SYNTHESIS_RECORD+'/verification.json',{'tampered':True})
+        # Only files actually present in the prior snapshot are frozen.
+        self.put_json(guard.SYNTHESIS_RECORD+'/runtime_manifest.json',{'sha256':{}})
+        with self.assertRaises(ValueError):guard.check_project(self.root)
+
+    def test_plan_synthesis_module_protection_and_old_receipts(self):
+        self.synthesis_upgrade();self.assertEqual(guard.check_project(self.root)['plan_synthesis_files_checked'],7)
+        self.put(next(iter(guard.SYNTHESIS_NEW_FILES)),b'tampered synthesis')
+        with self.assertRaisesRegex(ValueError,'files changed'):guard.check_project(self.root)
+
+    def test_plan_synthesis_cannot_expand_scope_or_rewrite_previous_evidence(self):
+        changes=self.synthesis_upgrade();name='saved/policy.json'
+        changes[name]={'before_sha256':self.base[name],'sha256':self.base[name],'reason':'not synthesis wiring'}
+        self.put_json(guard.SYNTHESIS_RECORD+'/authorized_source_changes.json',{'files':changes})
+        with self.assertRaisesRegex(ValueError,'exceeds authorized'):guard.check_project(self.root)
+        changes.pop(name);self.put_json(guard.SYNTHESIS_RECORD+'/authorized_source_changes.json',{'files':changes})
+        self.put_json(guard.RELIABILITY_RECORD+'/runtime_manifest.json',{'sha256':{}})
+        with self.assertRaises(ValueError):guard.check_project(self.root)
 
 if __name__=="__main__":unittest.main()

@@ -51,6 +51,13 @@ class ResearchPlanningHTTPTests(unittest.TestCase):
                   'rationale':'当前只提出比较CViT与FNO，需先界定结论适用范围。',
                   'references':[{'source':'answer','key':'current','quote':'比较CViT与FNO'}]}]},ensure_ascii=False)}}]}}],
             'usage':{'prompt_tokens':30,'completion_tokens':30}}
+        from test_plan_synthesis import fixture,fact
+        from rut_science.science_bot.general.planning.ledger import new_state
+        state=new_state();state['facts']={'research_question':fact(text)}
+        plan=json.loads(json.dumps(fixture(state),ensure_ascii=False).replace('甲','CViT').replace('乙','FNO'))
+        function=clarification['choices'][0]['message']['tool_calls'][0]['function']
+        questions=json.loads(function['arguments'])['questions']
+        function.update(name='synthesize_experiment_plan',arguments=json.dumps({'plan':plan,'questions':questions},ensure_ascii=False))
         with self.api(response,clarification) as (network,bodies):
             created=self.create(backend='api');identity=created['id']
             status,result=self.request(f'/{identity}/messages',{'text':text},'semantic-planning')
@@ -58,8 +65,10 @@ class ResearchPlanningHTTPTests(unittest.TestCase):
             self.assertTrue(result['model_used'])
             self.assertEqual(network.call_count,2)
             self.assertEqual(bodies[0]['tools'][0]['function']['name'],'propose_research_scope')
-            self.assertEqual(bodies[1]['tools'][0]['function']['name'],'propose_clarification_questions')
+            self.assertEqual(bodies[1]['tools'][0]['function']['name'],'synthesize_experiment_plan')
             self.assertEqual(result['clarification']['mode'],'dynamic')
+            self.assertEqual(result['plan_synthesis']['status'],'current')
+            self.assertEqual(len(result['plan_synthesis']['content']['steps']),3)
             self.assertEqual(result['planning']['facts']['research_question']['value'],text)
             _,current=self.request(f'/{identity}')
             self.assertEqual(current['resources']['llm_requests'],2)

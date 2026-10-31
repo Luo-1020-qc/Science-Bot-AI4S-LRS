@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 import re
 import secrets
-from urllib.parse import urlsplit
+from urllib.parse import urlsplit,unquote
 import webbrowser
 
 from .api import make_server
@@ -76,6 +76,9 @@ def make_workbench(folder=None, host='127.0.0.1', port=8765, *, workspace=None):
                 return super().do_GET()
             if not self.authorized(): return
             try:
+                if path=='/ui/papers':
+                    from .paper_library import listing
+                    self.reply(200,listing(service.folder));return
                 if path == '/ui/sessions':
                     rows = []
                     for folder in sorted(service.folder.iterdir(), key=lambda p: p.name, reverse=True):
@@ -116,6 +119,32 @@ def make_workbench(folder=None, host='127.0.0.1', port=8765, *, workspace=None):
 
         def do_POST(self):
             if not self.guard(): return
+            if urlsplit(self.path).path=='/ui/papers':
+                if not self.authorized():return
+                size=0
+                class UploadBody:
+                    consumed=0
+                    def read(body,count):
+                        data=self.rfile.read(count);body.consumed+=len(data);return data
+                incoming=UploadBody()
+                try:
+                    from .paper_library import receive
+                    size=int(self.headers.get('Content-Length','0'))
+                    if (self.headers.get('Content-Type','').split(';')[0].strip().lower()!='application/pdf'
+                            or self.headers.get('Transfer-Encoding')):
+                        raise ValueError('请以application/pdf直接上传PDF文件。')
+                    self.connection.settimeout(30)
+                    result=receive(service,unquote(self.headers.get('X-File-Name',''),errors='strict'),
+                                   size,incoming,self.headers.get('Idempotency-Key',''))
+                    self.reply(200,result)
+                except (ValueError,OSError,KeyError,TypeError) as exc:
+                    if 0<size<=65536 and incoming.consumed<size:
+                        try:
+                            self.connection.settimeout(2);incoming.read(size-incoming.consumed)
+                        except OSError:pass
+                    self.close_connection=True
+                    self.reply(409,{'error':type(exc).__name__,'detail':str(exc)[:160]})
+                return
             delete_match=re.fullmatch(r'/ui/sessions/([a-f0-9]{32})/delete',urlsplit(self.path).path)
             if delete_match:
                 if not self.authorized():return

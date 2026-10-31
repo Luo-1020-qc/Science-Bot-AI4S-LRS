@@ -41,6 +41,9 @@
     $("saveState").textContent = value ? "正在处理，请勿重复提交" : token ? "已读取本地会话" : "本地界面示例";
     document.querySelectorAll(".current-choice button").forEach((button) => { button.disabled = value; });
     document.querySelectorAll(".session-row button").forEach((button) => { button.disabled = value || button.dataset.unavailable === "true"; });
+    if ($("uploadPaper")) $("uploadPaper").disabled = value || !token;
+    if ($("selectSavedPaper")) $("selectSavedPaper").disabled = value || !token;
+    if ($("paperFile")) $("paperFile").disabled = value || !token;
   }
   async function request(path, body, key = null) {
     const headers = { "Authorization": "Bearer " + token };
@@ -54,6 +57,59 @@
     const data = await response.json();
     if (!response.ok) throw new Error(response.status === 401 ? "本地访问凭据不可用，请重新运行浏览器启动器。" : (data.detail || data.error || "本次操作未完成"));
     return data;
+  }
+  function pdfRange() {
+    const from = $("startLine").value.trim(), to = $("endLine").value.trim();
+    const start = from ? Number(from) : 1, end = to ? Number(to) : null;
+    if (!Number.isInteger(start) || start < 1 || end !== null && (!Number.isInteger(end) || end < start || end - start + 1 > 256)) throw new Error("请选择有效PDF页码（最多256页），留空读取全文。");
+    return { ...(from ? {start_page:start} : {}), ...(to ? {end_page:end} : {}) };
+  }
+  function preparePdfRange() {
+    $("startLine").value = ""; $("endLine").value = "";
+    $("startLine").required = false; $("endLine").required = false;
+    $("startRangeLabel").textContent = "起始PDF页"; $("endRangeLabel").textContent = "结束PDF页";
+    $("startLine").placeholder = "留空：全文"; $("endLine").placeholder = "留空：末页";
+  }
+  async function refreshLibrary() {
+    const select = $("savedPaper"); if (!select) return;
+    const selected = select.value; select.replaceChildren();
+    const first = el("option", token ? "选择已上传的论文" : "连接本地服务后可上传论文"); first.value = ""; select.append(first);
+    if (!token) return;
+    const result = await request("/ui/papers");
+    result.papers.forEach((paper) => { const option = el("option", paper.filename + " · " + paper.page_count + " 页 · " + paper.id.slice(0,6)); option.value = paper.id; select.append(option); });
+    select.value = result.papers.some((p) => p.id === selected) ? selected : "";
+  }
+  async function uploadPaper() {
+    if (busy || !requireConnection()) return;
+    if (!sessionId) { toast("请先新建研究会话。", true); return; }
+    const file = $("paperFile").files?.[0];
+    if (!file || !/\.pdf$/i.test(file.name) || !file.size || file.size > 64 * 1024 * 1024) { toast("请选择不超过64 MiB的PDF文件。", true); return; }
+    let paper, range;
+    setBusy(true);
+    try {
+      range = pdfRange();
+      const response = await fetch("/ui/papers", {method:"POST",headers:{Authorization:"Bearer " + token,"Content-Type":"application/pdf","X-File-Name":encodeURIComponent(file.name),"Idempotency-Key":crypto.randomUUID()},body:file,cache:"no-store"});
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.detail || result.error || "PDF上传失败。");
+      paper = result.paper; await refreshLibrary(); $("savedPaper").value = paper.id; $("paperFile").value = "";
+    } catch (error) { toast((paper ? "论文已保存到本地库；" : "") + error.message + " 可刷新论文库核对状态。", true); }
+    finally { setBusy(false); }
+    if (paper) await send("/plan evidence add " + JSON.stringify({paper_id:paper.id,...range,share_with_model:$("shareSource").checked}), "选用已上传论文：" + paper.filename);
+  }
+  function setupPaperLibrary() {
+    const label = el("label", "上传PDF到本地论文库"), file = el("input"); file.id = "paperFile"; file.type = "file"; file.accept = ".pdf,application/pdf";
+    file.addEventListener("change", () => { if (file.files?.length) preparePdfRange(); }); label.append(file);
+    const upload = el("button", "上传并选用PDF", "button primary"); upload.id = "uploadPaper"; upload.type = "button"; upload.addEventListener("click", uploadPaper);
+    const libraryLabel = el("label", "或复用本地论文库", "dialog-label"), select = el("select"); select.id = "savedPaper"; select.addEventListener("change", preparePdfRange); libraryLabel.append(select);
+    const use = el("button", "选入当前研究", "quick-action"); use.id = "selectSavedPaper"; use.type = "button";
+    use.addEventListener("click", () => {
+      if (!select.value) { toast("请先选择已上传的论文。", true); return; }
+      try { send("/plan evidence add " + JSON.stringify({paper_id:select.value,...pdfRange(),share_with_model:$("shareSource").checked}), "从本地论文库选用PDF"); }
+      catch (error) { toast(error.message, true); }
+    });
+    $("evidenceForm").prepend(label, upload, libraryLabel, use);
+    const hint = $("evidenceForm").querySelector?.("p.subtle");
+    if (hint) hint.textContent = "上传仅保存到本地论文库，不需要工作区路径。勾选允许模型使用后可解读；页码留空读取全文。单个PDF最多64 MiB，扫描页需先OCR。也可继续使用下面的工作区路径。";
   }
   function message(text, role = "assistant") {
     const item = el("div", undefined, "message " + role);
@@ -117,7 +173,7 @@
       $("planSteps").append(card);
     });
     (plan?.issues || []).forEach((issue) => $("planIssues").append(el("div", issue.label + "：" + issue.detail, "issue")));
-    $("approvalHint").textContent = plan?.approved ? "当前内容版本已确认。任何关键修订都需要重新复核。" : plan?.ready ? "请先逐项检查目标、步骤与验收。确认规划不会启动实验。" : "先处理待确认、未知与冲突，再复核版本。";
+    $("approvalHint").textContent = plan?.approved ? "规划版本已确认；方法仍需人工核实。关键修订后重新复核。" : plan?.ready ? "声明已齐全；方法待人工复核。确认规划不会启动实验。" : "先处理待确认、未知、冲突及方法风险，再复核版本。";
     $("hashText").textContent = plan?.hash || "尚未建立规划";
     $("approvePlan").textContent = plan?.approved ? "此版本已确认" : "确认此版本";
   }
@@ -126,7 +182,7 @@
     const sources = plan?.evidence || [];
     $("evidenceCount").textContent = sources.length + " 个片段";
     $("sourceSummary").textContent = sources.length ? "已有 " + sources.length + " 个明确选择的片段" : "还没有选择论文证据";
-    $("workspaceText").textContent = view.workspace ? "当前工作区：" + view.workspace : "尚未绑定工作区。启动时使用 -Workspace 选择项目目录。";
+    $("workspaceText").textContent = view.workspace ? "可直接上传PDF；工作区路径仍可用：" + view.workspace : "可直接上传PDF到本地论文库，无需绑定工作区。";
     if (!sources.length) {
       const box = el("div", undefined, "card empty-card");
       box.append(el("span", "⌑"), el("h3", "从明确选择的一段原文开始"), el("p", "出处与版本会随计划保存。", "subtle")); $("sourceList").append(box);
@@ -134,17 +190,20 @@
     sources.forEach((source) => {
       const card = el("article", undefined, "card source-entry");
       const range = source.format === "pdf" ? "PDF第 " + source.start_page + "–" + source.end_page + " 页" : "第 " + source.start_line + "–" + source.end_line + " 行";
-      card.append(el("h3", source.path), el("small", range + " · " + source.sha256), el("span", source.share_with_model ? "已允许模型使用所选内容" : "仅本地展示", "tag"));
+      card.append(el("h3", source.original_filename || source.path), el("small", range + " · " + source.sha256), el("span", source.share_with_model ? "已允许模型使用所选内容" : "仅本地展示", "tag"));
       const button = el("button", "查看选定时的原文 →", "quick-action");
       button.addEventListener("click", () => send("/plan evidence show " + source.id)); card.append(button);
       if (source.format === "pdf") {
-        const understand = el("button", source.interpretation ? "查看已保存的论文解读 →" : "让LLM理解所选页 →", "quick-action");
+        const coverage = source.interpretation?.coverage;
+        const partial = coverage && coverage.completed_chunks < coverage.total_chunks;
+        const understand = el("button", partial ? "继续未完成的论文解读 →" : source.interpretation ? "查看已保存的论文解读 →" : "让LLM理解所选页 →", "quick-action");
         understand.disabled = !source.share_with_model;
         understand.title = source.share_with_model ? "使用现有模型理解这些页，保留逐页原文引用" : "请重新选择片段并明确允许模型使用";
         understand.addEventListener("click", () => send("/plan evidence understand " + source.id)); card.append(understand);
         if (source.interpretation) {
           const reading = source.interpretation;
           card.append(el("h3", "模型解读 · 待复核"));
+          if (coverage) card.append(el("p", "分批处理覆盖：" + coverage.completed_chunks + "/" + coverage.total_chunks + " 批。" + (partial ? "全文解读尚未完成；" + coverage.last_error : "所有批次已处理，含义仍需复核。"), "subtle"));
           reading.items.forEach((item) => card.append(el("p", item.statement), el("small", "PDF第 " + item.page + " 页 · 原文：" + item.quote)));
           reading.unanswered.forEach((item) => card.append(el("p", "尚不能判断：" + item, "subtle")));
           if (reading.rejected_items?.length) card.append(el("p", "有 " + reading.rejected_items.length + " 条模型要点未通过引用或数值校验，未采用。", "subtle"));
@@ -213,6 +272,7 @@
       workspace: view?.workspace || null, resources: { llm_requests: 0, tool_attempts: 0, limits: { llm_requests: 12, tool_calls: 40 } },
       planning: null, last_answer: "尚无研究会话。点击“新建研究”开始。", example: false });
     else render(globalThis.__SCIENCE_BOT_DEMO__ || await (await fetch("/demo.json", { cache: "no-store" })).json());
+    await refreshLibrary();
   }
   async function listSessions() {
     if (!token) return;
@@ -257,6 +317,10 @@
     setBusy(true); message(displayText, "user"); switchTab("chat");
     try {
       const result = await request("/v1/sessions/" + sessionId + "/messages", { text: text.trim() });
+      if (result.question_form) {
+        const feedback = [result.update_feedback?.text, result.review_notice, result.synthesis_brief].filter(Boolean).join("\n\n");
+        if (feedback) message(feedback);
+      }
       if (!result.question_form) message(result.answer || "已保存，请查看研究概览。");
       if (result.planning_error || result.research_error) toast("操作未采纳，请根据回答修正。", true);
       await refresh(); await listSessions();
@@ -307,15 +371,25 @@
     event.preventDefault();
     const start = Number($("startLine").value), end = Number($("endLine").value);
     const pdf = /\.pdf$/i.test($("sourcePath").value.trim());
-    if (start < 1 || end < start || end - start + 1 > (pdf ? 12 : 120)) { toast(pdf ? "请选择最多12个连续PDF页。" : "请选择最多120行的连续片段。", true); return; }
-    const range = pdf ? {start_page:start,end_page:end} : {start_line:start,end_line:end};
+    const full = pdf && !$('startLine').value.trim() && !$('endLine').value.trim();
+    const from = pdf && !$('startLine').value.trim() ? 1 : start;
+    const toEnd = pdf && !$('endLine').value.trim();
+    if (!full && (!Number.isInteger(from) || from < 1 || (!toEnd && (!Number.isInteger(end) || end < from || end - from + 1 > (pdf ? 256 : 120))))) { toast(pdf ? "请选择有效PDF页码（最多256页），留空读取全文。" : "请选择最多120行的连续片段。", true); return; }
+    const range = pdf ? (full ? {} : {start_page:from,...(toEnd ? {} : {end_page:end})}) : {start_line:start,end_line:end};
     send("/plan evidence add " + JSON.stringify({ path: $("sourcePath").value.trim(), ...range, share_with_model: $("shareSource").checked }));
   });
   $("sourcePath").addEventListener("input", () => {
     const pdf = /\.pdf$/i.test($("sourcePath").value.trim());
     $("startRangeLabel").textContent = pdf ? "起始PDF页" : "起始行";
     $("endRangeLabel").textContent = pdf ? "结束PDF页" : "结束行";
-    if (pdf && Number($("endLine").value) > 12) $("endLine").value = "3";
+    $("startLine").placeholder = pdf ? "留空：全文" : "";
+    $("endLine").placeholder = pdf ? "留空：末页" : "";
+    $("startLine").required = !pdf; $("endLine").required = !pdf;
+    if (pdf && $("sourcePath").dataset.pdf !== "true") { $("startLine").value = ""; $("endLine").value = ""; }
+    if (!pdf && $("sourcePath").dataset.pdf === "true") { $("startLine").value = "1"; $("endLine").value = "40"; }
+    $("sourcePath").dataset.pdf = String(pdf);
+    const hint = $("evidenceForm").querySelector?.("p.subtle");
+    if (hint) hint.textContent = pdf ? "页码留空读取整篇文字型PDF，或指定物理页码；最多64 MiB、256页、2 MiB提取文字。长文分批解读并保留引用；扫描页需先OCR。" : "Markdown/TXT最多120行/6000字节。选定内容默认仅保存在本地。";
   });
   async function init() {
     try {
@@ -323,5 +397,6 @@
       await refresh(); await listSessions();
     } catch (error) { token = ""; sessionId = ""; await refresh(); toast(error.message, true); }
   }
+  setupPaperLibrary();
   init();
 })();

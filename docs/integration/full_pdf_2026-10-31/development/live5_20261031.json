@@ -1,0 +1,84 @@
+{
+  "checked_utc": "2026-10-31T06:10:15.822013+00:00",
+  "synthetic_only": true,
+  "physical_pages": 31,
+  "full_extraction": true,
+  "reading_complete": true,
+  "coverage": {
+    "chunk_sha256": [
+      "ae3d730d526fb2f37376ef72ef3cb1ad2bb276ce3af54bcdb318928f0a07af62",
+      "919fd37f09ebe8ae5aaecaa713a131def4b777b4d3b9849fc890ae63cddef947",
+      "ab4850fcf677ca463e553aea2f73f2c4389362564a94a2c75ee4de4e4f24f8d3",
+      "a18e5e92ca706d0eeedb395f4823077d007aac2c6ea3eab1b439b04e592a5ada"
+    ],
+    "total_chunks": 4,
+    "completed_chunks": 4,
+    "last_error": ""
+  },
+  "grounded_items": 28,
+  "last_page_has_grounded_point": false,
+  "rejected_items": 1,
+  "read_error": null,
+  "plan_status": "current",
+  "plan_reason": "validated_proposal",
+  "concrete_steps": 3,
+  "paper_cited": true,
+  "resources": {
+    "llm_requests": 6,
+    "llm_tokens": 23450,
+    "tool_attempts": 0,
+    "limits": {
+      "llm_requests": 6,
+      "llm_tokens": 200000,
+      "tool_calls": 40,
+      "read_bytes": 2097152
+    }
+  },
+  "this_run_requests": 1,
+  "this_run_tokens": 6355,
+  "automatic_retries": 0,
+  "scientific_executions": 0,
+  "training_runs": 0,
+  "independent_human_quality_evaluations": 0,
+  "session": ".local\\full_pdf\\live4_20261031\\sessions\\0dbd36540c8e46158a7595ed9e2b2ef0",
+  "requests_this_probe": 1,
+  "tokens_this_probe": 6355,
+  "protocol": {
+    "synthetic_only": true,
+    "provenance": "31 pages repeat the two-page engineering fixture; not a real scientific article or independent quality evaluation.",
+    "pdf_sha256": "5e03202d7e11992c11197cd7e907f7e3fb74d8db6e29930d4d30a32a9d4d50cd",
+    "resumed": true,
+    "previous_resources": {
+      "llm_requests": 5,
+      "llm_tokens": 17095,
+      "tool_attempts": 0,
+      "limits": {
+        "llm_requests": 6,
+        "llm_tokens": 200000,
+        "tool_calls": 40,
+        "read_bytes": 2097152
+      }
+    },
+    "physical_pages": 31,
+    "text_bytes": 22335,
+    "chunks": 4,
+    "request_cap": 6,
+    "token_cap": 200000,
+    "automatic_retries": 0,
+    "runtime_manifest": {
+      "sha256": {
+        "RUT_Science/rut_science/science_bot/general/conversation.py": "b5ed6b2a0506baf37e728352ddff27f2c961fcb043871635e0fd66f563918401",
+        "RUT_Science/rut_science/science_bot/general/planning/clarification.py": "dc636d28e5ae551df4ded143ae858253527ca066d0aa29ac1a69cd5b061c09d1",
+        "RUT_Science/rut_science/science_bot/general/planning/evidence.py": "cac9874d10788c334af1f193a4d9a7fcc7cdebc2cd14add4bc60b4b788cfc736",
+        "RUT_Science/rut_science/science_bot/general/planning/paper_context.py": "5ddcc2d23c5927ff3a351716db86c6f29b61f3b458e15c3f4f493b906963caa5",
+        "RUT_Science/rut_science/science_bot/general/planning/paper_reading.py": "879947d93180043534d712d14aae5da71ee2db9f0650eb97178b364f1cd2f72c",
+        "RUT_Science/rut_science/science_bot/general/planning/pdf_document.py": "eb33b5790566fb36aad744b93b84f0414a8affa0a05cb069651d0f6b61086c7f",
+        "RUT_Science/rut_science/science_bot/general/planning/pdf_worker.py": "6b8be6865ed3d59440a5dcb992f27ec048297009bf4211a97a2917c60ce466a7",
+        "RUT_Science/rut_science/science_bot/general/planning/synthesis.py": "fc62a1ed66219089568d25e76a61a15bd0f9292c137f968069f66ed1329d6919",
+        "RUT_Science/rut_science/science_bot/general/provider.py": "650da49699269d104091aa23be3c46b37898c3fb3390ed8eb6bc425c8865990a",
+        "RUT_Science/rut_science/science_bot/workbench_assets/dist/app.js": "4b76ccf803a75d5054830ec2e7106c9cfccd729c626df79b1ef1ed8cd0afc1dd"
+      }
+    }
+  },
+  "private_result_path": ".local/full_pdf/live5_20261031/results.json"
+}
